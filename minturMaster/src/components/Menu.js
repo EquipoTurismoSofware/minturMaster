@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ZonasMenu from "./subcomponentes/ZonasMenu";
+import Phome from "../pages/PHome"
+
 
 class Menu extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -26,6 +29,7 @@ class Menu extends Component {
       MsgVisible: false,
       MsgBody: "",
     };
+
     this.cambiar = this.cambiar.bind(this);
     this.handleFiltroClick = this.handleFiltroClick.bind(this);
     this.handleBusquedaChange = this.handleBusquedaChange.bind(this);
@@ -37,29 +41,36 @@ class Menu extends Component {
     this.handleFormError = this.handleFormError.bind(this);
     this.handleFormOk = this.handleFormOk.bind(this);
     this.handleFormCancel = this.handleFormCancel.bind(this);
+
   }
+
+
+
   cambiar() {
     this.setState({ mostrar: "none" });
     console.log("GOLA");
   }
-
-  closeMenu() {
-    this.setState({ visibleMenu: !this.state.visibleMenu });
-  }
+//funcion para ocultar el las opciones desplegadas
+   closeMenu(){
+     
+     this.setState({ visibleMenu: false });
+   }
 
   setMenu(id) {
-    if (this.state.idSubMenu === id) {
-      this.setState({ visibleMenu: !this.state.visibleMenu });
+    console.log(this.state)
+   
+    if (this.state.visibleMenu == false || id!= this.state.idSubMenu) {
+      this.setState({ visibleMenu: true });
+      console.log(id)
     } else {
       this.setState(
-        {
-          idSubMenu: id,
-        },
+
         () => {
           this.setState({ visibleMenu: false });
         }
       );
     }
+    this.state.idSubMenu= id
   }
   fireNew() {
     this.setState({
@@ -215,13 +226,17 @@ class Menu extends Component {
       () => {
         if (window.scrollY > 350) {
           window.scrollTo(0, 140);
+          
         }
       }
     );
+ 
   }
 
   componentDidMount() {
     //Lista de Localidades
+
+
     fetch(`${process.env.REACT_APP_API}/ciudades`, {
       method: "GET",
       headers: {
@@ -275,10 +290,10 @@ class Menu extends Component {
           key={`lloc-${lf.id}`}
           to={`/localidad/${lf.id}`}
           className="linkBusqueda"
-          onClick={this.cambiar}
+          onMouseOver={this.cambiar}
           style={{ display: this.state.mostrar }}
         >
-          <div
+          <div    
             className={`spanloc ${
               lf.id === this.state.localidades.selected ? "active" : ""
             }${lf.visible ? " d-block" : " d-none"}`}
@@ -293,8 +308,10 @@ class Menu extends Component {
       );
     });
     return (
-      <div className="Menu">
-        <div className="container-fluid menu-ul animated bounceInDown delay-2s">
+  
+      <div className="Menu"   >
+   
+        <div className="container-fluid menu-ul animated bounceInDown delay-2s  ">
           <ul>
             <li>
               <Link to="/" className="link-menu">
@@ -302,32 +319,32 @@ class Menu extends Component {
               </Link>
             </li>
             <li>
-              <span className="link-menu" onClick={(e) => this.setMenu(1, e)}>
+              <span className="link-menu"  onMouseOver={(e) => this.setMenu(1, e)}>
                 ¿QUÉ VISITAMOS?
               </span>
             </li>
             <li>
-              <span className="link-menu" onClick={(e) => this.setMenu(4, e)}>
+              <span className="link-menu" onMouseOver={(e) => this.setMenu(4, e)}>
                 ¿Qué hacemos?
               </span>
             </li>
             {/*<li>
-              <span className="link-menu" onClick={e => this.setMenu(2, e)}>
+              <span className="link-menu" onMouseOver={e => this.setMenu(2, e)}>
                 ¡PARQUES Y PLAZAS!
               </span>
             </li> */}
             <li>
-              <span className="link-menu" onClick={(e) => this.setMenu(2, e)}>
+              <span className="link-menu"  onMouseOver={(e) => this.setMenu(2, e)}>
                 ¡A PLANIFICAR!
               </span>
             </li>
             <li>
-              <span className="link-menu" onClick={(e) => this.setMenu(5, e)}>
+              <span className="link-menu"  onMouseOver={(e) => this.setMenu(5, e)}>
                 Turismo Interno
               </span>
             </li>
             <li>
-              <span className="link-menu" onClick={(e) => this.setMenu(4, e)}>
+              <span className="link-menu" onMouseOver={(e) => this.setMenu(4, e)}>
                 <img
                   style={{ height: `20px`, marginLeft: "-15px" }}
                   src={`${process.env.REACT_APP_API_RECURSOS}/recursos/coronel3.png`}
@@ -403,7 +420,7 @@ class Menu extends Component {
             </li>*/}
           </ul>
         </div>
-        <div className="logo">
+        <div className="logo" >
           {/* <a
             href="https://goo.gl/KdkxQM"
             target="_blank"
@@ -456,9 +473,9 @@ class Menu extends Component {
           </Link>
         </div>
         {this.state.visibleMenu ? (
-          <div className="menu-visita-container animated fadeIn">
-            <div className="menu-visita">
-              <ZonasMenu
+          <div className="menu-visita-container animated fadeIn" onMouseLeave={(e)=>this.closeMenu(e)} >
+            <div className="menu-visita"  >
+              <ZonasMenu 
                 idMenu={this.state.idSubMenu}
                 onZonaClick={this.closeMenu}
               />
@@ -467,9 +484,12 @@ class Menu extends Component {
         ) : (
           ""
         )}
+      
       </div>
+
     );
-  }
+
+   }
 }
 
 export default Menu;
