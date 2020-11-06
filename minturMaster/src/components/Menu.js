@@ -57,19 +57,12 @@ class Menu extends Component {
    }
 
   setMenu(id) {
-    console.log(this.state)
+   
    
     if (this.state.visibleMenu == false || id!= this.state.idSubMenu) {
       this.setState({ visibleMenu: true });
-      console.log(id)
-    } else {
-      this.setState(
-
-        () => {
-          this.setState({ visibleMenu: false });
-        }
-      );
-    }
+      
+    } 
     this.state.idSubMenu= id
   }
   fireNew() {
