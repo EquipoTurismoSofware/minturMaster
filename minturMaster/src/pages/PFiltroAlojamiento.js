@@ -35,6 +35,7 @@ class PFiltroAlojamiento extends Component {
 
         let filtrado = this.state.alojamientos.filter((value) => {
             let respuesta = true;
+            console.log("Nuevo valor: " + value);
             //Validar la Localidad seleccionada
             if(idlocalidad !== 0) {
                 if(parseInt(value.idciudad, 10) !== idlocalidad) {
@@ -49,7 +50,7 @@ class PFiltroAlojamiento extends Component {
             }
             //Validar Nombre
             if(nombreAloja.length) {
-                if(value.nombre.search(nombreAloja) === -1) {
+                if(value.nombre.toLowerCase().search(nombreAloja.toLowerCase()) === -1) {
                     respuesta = false;
                 }
             }
@@ -60,6 +61,7 @@ class PFiltroAlojamiento extends Component {
             return respuesta;
         });
         this.setState({
+            //Aca estoy metiendo en el estado filtro el array de Alojamientos filtrado.
             filtro: filtrado
         });
     }
@@ -165,7 +167,6 @@ class PFiltroAlojamiento extends Component {
             .catch((error) => {
                 console.log(error);
             });
-            console.log(this.state.alojamientos);
         } catch(err) {
             // catches errors both in fetch and response.json
             console.log(err);
@@ -241,7 +242,7 @@ class PFiltroAlojamiento extends Component {
                         <div className="container">
                             <div className="row">
                                 <div className="col">
-                                    <Alojamientos idLocalidad={0} data={this.state.filtro} />
+                                    <Alojamientos idLocalidad={0} data={this.state.filtro} />                             
                                 </div>
                             </div>
                         </div>

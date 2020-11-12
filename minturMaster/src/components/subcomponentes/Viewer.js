@@ -3,6 +3,7 @@ import React, { Component } from "react";
 class Viewer extends Component {
 	constructor(props) {
 		super(props);
+
 		this.state = {
 			loading: true,
 			preset: {
@@ -11,11 +12,15 @@ class Viewer extends Component {
 				total_items: 0,
 				pagina_actual: 1
 			},
-			visibility: []
+			visibility: [],
+			//Agregue esta propiedad al estado para poder hacer la paginacion
+			paginationVisibility: []
 		};
 		this.setPagina = this.setPagina.bind(this);
 		this.movePageBack = this.movePageBack.bind(this);
 		this.movePageFoward = this.movePageFoward.bind(this);
+		this.moveFirstPage = this.moveFirstPage.bind(this);
+		this.moveLastPage = this.moveLastPage.bind(this);
 		this.calcular = this.calcular.bind(this);
 	}
 
@@ -35,18 +40,33 @@ class Viewer extends Component {
 		this.setPagina(pagina);
 	}
 
+	//Estos dos metodos son para llevar al inicio o al final directamente
+	moveLastPage(){
+		this.setPagina(this.state.preset.total_paginas);
+	}
+
+	moveFirstPage(){
+		this.setPagina(1)
+	}
+
 	setPagina(nro_pagina) {
 		let mostrar_desde = (nro_pagina * this.state.preset.items_visibles) - (this.state.preset.items_visibles - 1);
 		let mostrar_hasta = (nro_pagina * this.state.preset.items_visibles);
+		//En estas variables encierro el total de paginas y la pagina inicial/final para el paginado
+		let totalPages = this.state.preset.total_paginas;
+		let startPage, endPage;
+
 		if(mostrar_hasta > this.state.preset.total_items) {
 			mostrar_hasta = this.state.preset.total_items;
 		}
+
 		this.setState({
 			preset: {
 				...this.state.preset,
 				pagina_actual: nro_pagina
 			}
 		});
+
 		let buffer = Object.assign([], this.state.visibility);
 		for(let i=0; i < buffer.length; i++) {
 			if(((i + 1) >= mostrar_desde) && ((i + 1) <= mostrar_hasta)) {
@@ -55,8 +75,40 @@ class Viewer extends Component {
 				buffer[i] = {display: "none"};
 			}
 		}
+		//Algoritmo para paginado
+		if (totalPages <= 10) {
+            // Si son menos de 10 que me muestre todo
+            startPage = 1;
+            endPage = totalPages;
+        } else {
+            // Si son menos o igual a 6 que me siga mostrando la misma cantidad de paginas
+            if (nro_pagina <= 6) {
+                startPage = 1;
+				endPage = 10;
+			//Si estamos en las ultimas 4 paginas que no cargue mas paginas
+            } else if (nro_pagina + 4 >= totalPages) {				
+                startPage = totalPages - 9;
+				endPage = totalPages;
+			//Y por ultimo sino se cumple ninguna de las condiciones anteriores, que cargue mas paginas.
+            } else {
+                startPage = nro_pagina - 5;
+                endPage = nro_pagina + 4;
+            }
+		}
+		
+		//Buffer donde se van a guardar el display de las paginas
+		let paginationBuffer = Object.assign([], this.state.paginationVisibility);
+		for(let i=0; i < paginationBuffer.length; i++) {
+			if(((i + 1) >= startPage) && ((i + 1) <= endPage)) {
+				paginationBuffer[i] = {display: "block"};
+			} else {
+				paginationBuffer[i] = {display: "none"};
+			}
+		}
+		
 		this.setState({
-			visibility: buffer
+			visibility: buffer,
+			paginationVisibility: paginationBuffer
 		});
 	}
 
@@ -73,8 +125,14 @@ class Viewer extends Component {
 		for(let i=0; i < total; i++) {
 			buffer.push({display: "none"});
 		}
+		//Genera Buffer para el paginado
+		let paginationBuffer = [];
+		for(let i=0; i < paginas; i++) {
+			paginationBuffer.push({display: "none"});
+		}
 		this.setState({
-			visibility: buffer
+			visibility: buffer,
+			paginationVisibility: paginationBuffer
 		}, () => {
 			this.setState({
 				loading: false,
@@ -106,9 +164,9 @@ class Viewer extends Component {
 		const paginas = [];
 		for(let i = 1; i < (this.state.preset.total_paginas + 1); i++) {
 			if(i===this.state.preset.pagina_actual) {
-				paginas.push(<li key={`btn-pag-${i}`} className="selected" onClick={(e) => this.setPagina(i)}>{i}</li>);
+				paginas.push(<li key={`btn-pag-${i}`} style={this.state.paginationVisibility[i-1]} className="selected" onClick={(e) => this.setPagina(i)}>{i}</li>);
 			} else {
-				paginas.push(<li key={`btn-pag-${i}`} onClick={(e) => this.setPagina(i)}>{i}</li>);
+				paginas.push(<li key={`btn-pag-${i}`} style={this.state.paginationVisibility[i-1]} onClick={(e) => this.setPagina(i)}>{i}</li>);
 			}
 		}
 		let i = -1;
@@ -126,6 +184,11 @@ class Viewer extends Component {
 				this.state.loading ?
 				"Cargando..."
 				:
+				this.props.children.length === 0 ?
+				<div className="ZonaLocalidad-titulo" style={{textAlign: 'center'}}>
+					<h3 style={{color: `#722789`}}>No se encontraron Alojamientos</h3>
+				</div>
+				:
 				<div className="Viewer">
 					<div className="btn-left" onClick={this.movePageBack}>
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
@@ -136,11 +199,19 @@ class Viewer extends Component {
 					<div className="btn-right" onClick={this.movePageFoward}>
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
 					</div>
-					<div className="pages">
-						<ul>
+					<div className="pages" >
+						<div className="btn-left" onClick={this.moveFirstPage}>
+							<i class="fas fa-backward"></i>					
+						</div>
+						<ul style={{textAlign: 'center'}}>
 							{paginas}
 						</ul>
+						<div className="btn-right" onClick={this.moveLastPage}>
+							<i class="fas fa-forward"></i>
+						</div>
 					</div>
+					
+					
 				</div>
 			}
 			</React.Fragment>

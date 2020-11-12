@@ -11,6 +11,13 @@ class PLocalidad extends Component {
     this.state = {
       loading: true,
       id: 0,
+      tipos: [],
+
+      filtro: [],
+      alojamientos: [],
+
+      nombreAloja: "",
+      idtipo: 0,
       dataLocalidad: {
         id: 0,
         color: "722789",
@@ -20,6 +27,8 @@ class PLocalidad extends Component {
       imperdibles: []
     };
     this.getData = this.getData.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.aplicarFiltro = this.aplicarFiltro.bind(this);
   }
 
   getData() {
@@ -111,7 +120,49 @@ class PLocalidad extends Component {
       .catch(error => {
         console.log(error);
       });
-
+     //Traigo todos los tipos 
+    axios({
+        method: "get",
+        headers: {
+            "Authorization": token
+        },
+        url: `${process.env.REACT_APP_API}/tipos`,
+        responseType: "json"
+    })
+    .then((response) => {
+        if(response.data.data.count > 0) {
+            response.data.data.registros.unshift({
+                id: 0,
+                descripcion: "Todos los Tipos"
+            });
+            self.setState({
+                tipos: response.data.data.registros
+            });
+        }
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+    //Traigo los alojamientos de esas localidades
+    axios({
+      method: "get",
+      headers: {
+          "Authorization": token
+      },
+      url: `${process.env.REACT_APP_API}/guias/ciudad/${self.state.id}/full`,
+      responseType: 'json'
+    })
+    .then((response) => {
+        self.setState({
+          alojamientos: response.data.data.registros,
+          filtro: response.data.data.registros,
+          loading: false
+        });
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+   
     self.setState({ loading: false });
   }
 
@@ -140,6 +191,47 @@ class PLocalidad extends Component {
       }
     );
   }
+  
+  //Filtrado
+  aplicarFiltro(event) {
+    event.preventDefault();
+    let {idtipo, nombreAloja} = this.state;
+    idtipo = parseInt(idtipo, 10);
+    //Aca el tipo donde coincidan ambos ID's asi le saco la descripcion
+    let desc  = this.state.tipos.filter(t => parseInt(t.id, 10) === idtipo);
+    let filtrado = this.state.alojamientos.filter((value) => {
+        let respuesta = true;
+
+        //Validar el Tipo seleccionado
+        if(idtipo !== 0) {
+           if(value.tipo !== desc[0].descripcion) {
+                respuesta = false;
+           }
+        }
+        //Validar Nombre
+        if(nombreAloja.length) {
+            if(value.nombre.toLowerCase().search(nombreAloja) === -1) {
+                respuesta = false;
+            }
+        }
+
+        return respuesta;
+    });
+    this.setState({
+        //Aca estoy metiendo en el estado filtro el array de Alojamientos filtrado.
+        filtro: filtrado
+    });
+}
+
+//Manejador de evento
+handleChange(event) {
+  const target = event.target;
+  const value = target.value;
+  const name = target.name;
+  this.setState({
+      [name]: value
+  });
+}
 
   render() {
     const loading = this.state.loading;
@@ -153,6 +245,11 @@ class PLocalidad extends Component {
         </Link>
       );
     });
+    
+    const tipos = this.state.tipos.map((tipo) => {
+      return(<option key={`tipo-${tipo.id}`} value={tipo.id}>{tipo.descripcion}</option>);
+    });
+
     let hay = this.state.dataLocalidad.imagenes.length - 1; //Puede ser default.jpg
     let x = Math.floor(Math.random() * (hay - 0 + 1)) + 0;
     let selecciono = this.state.dataLocalidad.imagenes[x].imagen;
@@ -321,10 +418,25 @@ class PLocalidad extends Component {
               <div className="row">
                 <div className="col">
                   <h4>Alojamientos</h4>
-                  <Alojamientos
-                    idLocalidad={this.state.dataLocalidad.id}
-                    data={[]}
-                  />
+                  <form onSubmit={this.aplicarFiltro} className="mb-5">
+                    <div className="form-row">
+                        <div className="form-group col-md-3">
+                            <label htmlFor="idtipo">Tipo</label>
+                            <select id="idtipo" name="idtipo" className="form-control" value={this.state.idtipo} onChange={this.handleChange}>
+                                {tipos}
+                            </select>
+                        </div>
+                        <div className="form-group col-md-3">
+                            <label htmlFor="nombreAloja">Nombre</label>
+                            <input type="text" id="nombreAloja" name="nombreAloja" className="form-control" value={this.state.nombreAloja} onChange={this.handleChange} />
+                        </div>
+                        <div className="form-group col-md-3 d-flex align-items-end justify-content-end">
+                            <button type="submit" className="btn btn-primary">Buscar</button>
+                        </div>
+                    </div>
+                </form> 
+
+                  <Alojamientos idLocalidad={0} data={this.state.filtro} />
                 </div>
               </div>
             </div>
