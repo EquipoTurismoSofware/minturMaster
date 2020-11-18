@@ -193,10 +193,10 @@ class PLocalidad extends Component {
   }
   
   //Filtrado
-  aplicarFiltro(event) {
-    event.preventDefault();
+  aplicarFiltro() {
     let {idtipo, nombreAloja} = this.state;
     idtipo = parseInt(idtipo, 10);
+    
     //Aca el tipo donde coincidan ambos ID's asi le saco la descripcion
     let desc  = this.state.tipos.filter(t => parseInt(t.id, 10) === idtipo);
     let filtrado = this.state.alojamientos.filter((value) => {
@@ -210,7 +210,7 @@ class PLocalidad extends Component {
         }
         //Validar Nombre
         if(nombreAloja.length) {
-            if(value.nombre.toLowerCase().search(nombreAloja) === -1) {
+           if(value.nombre.toLowerCase().search(nombreAloja) === -1) {
                 respuesta = false;
             }
         }
@@ -228,8 +228,12 @@ handleChange(event) {
   const target = event.target;
   const value = target.value;
   const name = target.name;
+
   this.setState({
       [name]: value
+  },
+  () => {
+    this.aplicarFiltro();
   });
 }
 
@@ -418,7 +422,7 @@ handleChange(event) {
               <div className="row">
                 <div className="col">
                   <h4>Alojamientos</h4>
-                  <form onSubmit={this.aplicarFiltro} className="mb-5">
+                  <form /*onSubmit={this.aplicarFiltro}*/ className="mb-5">
                     <div className="form-row">
                         <div className="form-group col-md-3">
                             <label htmlFor="idtipo">Tipo</label>
@@ -430,9 +434,9 @@ handleChange(event) {
                             <label htmlFor="nombreAloja">Nombre</label>
                             <input type="text" id="nombreAloja" name="nombreAloja" className="form-control" value={this.state.nombreAloja} onChange={this.handleChange} />
                         </div>
-                        <div className="form-group col-md-3 d-flex align-items-end justify-content-end">
+                        {/*<div className="form-group col-md-3 d-flex align-items-end justify-content-end">
                             <button type="submit" className="btn btn-primary">Buscar</button>
-                        </div>
+                        </div>*/}
                     </div>
                 </form> 
 

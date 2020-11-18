@@ -27,14 +27,13 @@ class PFiltroAlojamiento extends Component {
         this.aplicarFiltro = this.aplicarFiltro.bind(this);
     }
 
-    aplicarFiltro(event) {
-        event.preventDefault();
+    aplicarFiltro() {
         let { idlocalidad, idtipo, nombreAloja, serviciosSelected } = this.state;
         idlocalidad = parseInt(idlocalidad, 10);
         idtipo = parseInt(idtipo, 10);
-
         let filtrado = this.state.alojamientos.filter((value) => {
             let respuesta = true;
+            //console.log("Nuevo valor: " + value);
             //Validar la Localidad seleccionada
             if(idlocalidad !== 0) {
                 if(parseInt(value.idciudad, 10) !== idlocalidad) {
@@ -49,9 +48,8 @@ class PFiltroAlojamiento extends Component {
             }
             //Validar Nombre
             if(nombreAloja.length) {
-                console.log(nombreAloja)
-                if(value.nombre.toLowerCase().search(nombreAloja) === -1) {
-                  respuesta = false;
+                if(value.nombre.toLowerCase().search(nombreAloja.toLowerCase()) === -1) {
+                    respuesta = false;
                 }
             }
             //Validar los servicios seleccionados
@@ -61,6 +59,7 @@ class PFiltroAlojamiento extends Component {
             return respuesta;
         });
         this.setState({
+            //Aca estoy metiendo en el estado filtro el array de Alojamientos filtrado.
             filtro: filtrado
         });
     }
@@ -71,6 +70,9 @@ class PFiltroAlojamiento extends Component {
         const name = target.name;
         this.setState({
             [name]: value
+        },
+        () => {
+          this.aplicarFiltro();
         });
     }
 
@@ -166,25 +168,10 @@ class PFiltroAlojamiento extends Component {
             .catch((error) => {
                 console.log(error);
             });
-            console.log(this.state.alojamientos);
         } catch(err) {
             // catches errors both in fetch and response.json
             console.log(err);
         }
-        /*
-        this.setState({
-            formulario: {
-                ...this.state.formulario,
-                idlocalidad: idLocalidad
-            }
-        });
-        /*
-        /*
-        const {localidades, tipos, servicios} = this.state;
-        console.log(localidades);
-        console.log(tipos);
-        console.log(servicios);
-        */
     }
     
     componentDidMount() {
@@ -213,7 +200,7 @@ class PFiltroAlojamiento extends Component {
                         <div className="container">
                             <div className="row">
                                 <div className="col">
-                                    <form onSubmit={this.aplicarFiltro} className="mb-5">
+                                    <form /*onSubmit={this.aplicarFiltro}*/ className="mb-5">
                                         <div className="form-row">
                                             <div className="form-group col-md-3">
                                                 <label htmlFor="idlocalidad">Localidad</label>
@@ -231,9 +218,9 @@ class PFiltroAlojamiento extends Component {
                                                 <label htmlFor="nombreAloja">Nombre</label>
                                                 <input type="text" id="nombreAloja" name="nombreAloja" className="form-control" value={this.state.nombreAloja} onChange={this.handleChange} />
                                             </div>
-                                            <div className="form-group col-md-3 d-flex align-items-end justify-content-end">
+                                            {/*<div className="form-group col-md-3 d-flex align-items-end justify-content-end">
                                                 <button type="submit" className="btn btn-primary">Buscar</button>
-                                            </div>
+                                            </div>*/}
                                         </div>
                                     </form>
                                 </div>
@@ -242,7 +229,7 @@ class PFiltroAlojamiento extends Component {
                         <div className="container">
                             <div className="row">
                                 <div className="col">
-                                    <Alojamientos idLocalidad={0} data={this.state.filtro} />
+                                    <Alojamientos idLocalidad={0} data={this.state.filtro} />                             
                                 </div>
                             </div>
                         </div>
