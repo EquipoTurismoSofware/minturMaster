@@ -199,24 +199,31 @@ class PFiltroAlojamiento extends Component {
                         </div>
                         <div className="container">
                             <div className="row">
-                                <div className="col">
+                                <div className="col offset-md-1">
                                     <form /*onSubmit={this.aplicarFiltro}*/ className="mb-5">
                                         <div className="form-row">
-                                            <div className="form-group col-md-3">
-                                                <label htmlFor="idlocalidad">Localidad</label>
-                                                <select id="idlocalidad" name="idlocalidad" className="form-control" value={this.state.idlocalidad} onChange={this.handleChange}>
-                                                    {localidades}
-                                                </select>
+                                            <div className="form-group col-md-4">
+                                                <div className="container"> 
+                                                    <label htmlFor="idlocalidad">Localidad</label>
+                                                    <select id="idlocalidad" name="idlocalidad" className="form-control" value={this.state.idlocalidad} onChange={this.handleChange}>
+                                                        {localidades}
+                                                    </select>
+                                                </div>
                                             </div>
-                                            <div className="form-group col-md-3">
-                                                <label htmlFor="idtipo">Tipo</label>
-                                                <select id="idtipo" name="idtipo" className="form-control" value={this.state.idtipo} onChange={this.handleChange}>
-                                                    {tipos}
-                                                </select>
+                                            <div className="form-group col-md-4">
+                                                <div className="container"> 
+                                                    <label htmlFor="idtipo">Tipo</label>
+                                                    <select id="idtipo" name="idtipo" className="form-control" value={this.state.idtipo} onChange={this.handleChange}>
+                                                        {tipos}
+                                                    </select>
+                                                </div>
                                             </div>
-                                            <div className="form-group col-md-3">
-                                                <label htmlFor="nombreAloja">Nombre</label>
-                                                <input type="text" id="nombreAloja" name="nombreAloja" className="form-control" value={this.state.nombreAloja} onChange={this.handleChange} />
+                                            <div className="form-group col-md-4">
+                                                <div className="container">
+                                                  <label htmlFor="nombreAloja">Nombre</label>
+                                                    <input type="text" id="nombreAloja" name="nombreAloja" className="form-control" value={this.state.nombreAloja} onChange={this.handleChange} />
+                                                </div>
+                                                
                                             </div>
                                             {/*<div className="form-group col-md-3 d-flex align-items-end justify-content-end">
                                                 <button type="submit" className="btn btn-primary">Buscar</button>

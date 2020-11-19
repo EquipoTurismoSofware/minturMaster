@@ -55,6 +55,7 @@ class Viewer extends Component {
 		//En estas variables encierro el total de paginas y la pagina inicial/final para el paginado
 		let totalPages = this.state.preset.total_paginas;
 		let startPage, endPage;
+		var w = window.innerWidth;
 
 		if(mostrar_hasta > this.state.preset.total_items) {
 			mostrar_hasta = this.state.preset.total_items;
@@ -75,26 +76,51 @@ class Viewer extends Component {
 				buffer[i] = {display: "none"};
 			}
 		}
-		//Algoritmo para paginado
-		if (totalPages <= 10) {
-            // Si son menos de 10 que me muestre todo
-            startPage = 1;
-            endPage = totalPages;
-        } else {
-            // Si son menos o igual a 6 que me siga mostrando la misma cantidad de paginas
-            if (nro_pagina <= 6) {
-                startPage = 1;
-				endPage = 10;
-			//Si estamos en las ultimas 4 paginas que no cargue mas paginas
-            } else if (nro_pagina + 4 >= totalPages) {				
-                startPage = totalPages - 9;
+		if(w < 460){
+			console.log("F");
+			//Algoritmo para paginado
+			if (totalPages <= 6) {
+				// Si son menos de 10 que me muestre todo
+				startPage = 1;
 				endPage = totalPages;
-			//Y por ultimo sino se cumple ninguna de las condiciones anteriores, que cargue mas paginas.
-            } else {
-                startPage = nro_pagina - 5;
-                endPage = nro_pagina + 4;
-            }
+			} else {
+				// Si son menos o igual a 6 que me siga mostrando la misma cantidad de paginas
+				if (nro_pagina <= 3) {
+					startPage = 1;
+					endPage = 6;
+				//Si estamos en las ultimas 4 paginas que no cargue mas paginas
+				} else if (nro_pagina + 3 >= totalPages) {				
+					startPage = totalPages - 5;
+					endPage = totalPages;
+				//Y por ultimo sino se cumple ninguna de las condiciones anteriores, que cargue mas paginas.
+				} else {
+					startPage = nro_pagina - 2;
+					endPage = nro_pagina + 3;
+				}
+			}	
+		}else{
+			//Algoritmo para paginado
+			if (totalPages <= 10) {
+				// Si son menos de 10 que me muestre todo
+				startPage = 1;
+				endPage = totalPages;
+			} else {
+				// Si son menos o igual a 6 que me siga mostrando la misma cantidad de paginas
+				if (nro_pagina <= 6) {
+					startPage = 1;
+					endPage = 10;
+				//Si estamos en las ultimas 4 paginas que no cargue mas paginas
+				} else if (nro_pagina + 4 >= totalPages) {				
+					startPage = totalPages - 9;
+					endPage = totalPages;
+				//Y por ultimo sino se cumple ninguna de las condiciones anteriores, que cargue mas paginas.
+				} else {
+					startPage = nro_pagina - 5;
+					endPage = nro_pagina + 4;
+				}
+			}
 		}
+		
 		
 		//Buffer donde se van a guardar el display de las paginas
 		let paginationBuffer = Object.assign([], this.state.paginationVisibility);
@@ -157,6 +183,7 @@ class Viewer extends Component {
 	}
 
 	componentDidMount() {
+		window.addEventListener("resize", this.calcular);
 		this.calcular();
 	}
 
