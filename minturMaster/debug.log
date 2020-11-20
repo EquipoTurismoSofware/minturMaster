@@ -10,3 +10,4 @@
 [0419/140042.350:ERROR:crash_report_database_win.cc(428)] unexpected header
 [1120/124814.961:ERROR:process_info.cc(359)] UncheckedAllocate
 [1022/231739.015:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
+[1120/094213.020:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)

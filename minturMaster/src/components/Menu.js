@@ -1,15 +1,20 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ZonasMenu from "./subcomponentes/ZonasMenu";
-import Phome from "../pages/PHome"
-
+import Phome from "../pages/PHome";
+import { Fragment } from "react";
+import { SelectPicker } from "rsuite";
 
 class Menu extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
+      ocultar: 0,
+      nav: "navbar navbar-expand-lg navbar-light Menu",
+      mov: 0,
+      selec: null,
       idSubMenu: 1,
+      lista: true,
       visibleMenu: false,
       mostrar: "block",
       isLoaded: false,
@@ -30,6 +35,7 @@ class Menu extends Component {
       MsgBody: "",
     };
 
+    this.link = React.createRef();
     this.cambiar = this.cambiar.bind(this);
     this.handleFiltroClick = this.handleFiltroClick.bind(this);
     this.handleBusquedaChange = this.handleBusquedaChange.bind(this);
@@ -41,29 +47,143 @@ class Menu extends Component {
     this.handleFormError = this.handleFormError.bind(this);
     this.handleFormOk = this.handleFormOk.bind(this);
     this.handleFormCancel = this.handleFormCancel.bind(this);
+    this.selectOption = this.selectOption.bind(this);
+    this.selectFirsElement = this.selectFirsElement.bind(this);
+    this.closeLista = this.closeLista.bind(this);
+  }
+
+  closeLista() {
+    console.log("close lista");
+    this.state.lista = false;
+  }
+  //selecciona la localidad con el tipeo de la felcha
+  selectFirsElement() {
+    // console.log("Seleccionar primero" );
+    let select = document.getElementsByName(0);
+
+
+
+      let selec = document.getElementsByName(this.state.mov);
+      console.log(this.state.mov);
+      selec.forEach((e) => {
+        console.log(e);
+        this.state.mov = -1;
+        e.style = "";
+      });
+         
 
   }
 
+  setValueInput() {
+    let text = document.getElementById("buscar");
 
+    text.value = "";
+  }
+  selectOption(event) {
+    this.state.lista = true;
+    var lin = this.link.current;
+    let key = event.key;
+
+    console.log(key);
+
+    switch (key) {
+      //presion boton abajo
+      case "Backspace":
+this.selectFirsElement()
+        break;
+
+      case "Enter":
+        if (this.state.selec != null) {
+          let select = document.getElementsByName(this.state.mov - 1);
+          select.forEach((e) => {
+            e.style = "";
+          });
+
+          this.state.mov = -1;
+          // console.log(this.state.selec.id);
+          window.location.href = `http://localhost:3000/#${this.state.selec.id}`;
+          this.cambiar();
+        }
+        break;
+      case "ArrowDown":
+        if (
+          this.state.mov <
+          document.getElementsByClassName("linkBusqueda").length - 1
+        ) {
+          this.state.mov++;
+
+          //console.log(this.state.mov);
+          //console.log(document.getElementsByName("links").length);
+          let select = document.getElementsByName(this.state.mov);
+          select.forEach((e) => {
+            this.state.selec = e;
+            // console.log(e);
+
+            e.style =
+              "text-decoration-line: underline ; font-size: 18px;";
+          });
+          console.log(this.state.selec.id);
+        }
+        if (true) {
+          let select = document.getElementsByName(this.state.mov - 1);
+          select.forEach((e) => {
+            // console.log(e);
+
+            e.style = "";
+          });
+        }
+
+        break;
+
+      //flecha hacia arriba
+      case "ArrowUp":
+        // console.log(key);
+        if (this.state.mov != 0) {
+          this.state.mov--;
+          // console.log(this.state.mov);
+          //console.log(document.getElementsByName("links").length);
+          let select = document.getElementsByName(this.state.mov);
+          select.forEach((e) => {
+            // console.log(e);
+            this.state.selec = e;
+
+            e.style =
+              "text-decoration-line: underline ; font-size: 18px;";
+          });
+
+          //console.log(document.getElementsByName(this.state.mov));
+        }
+        if (true) {
+          let select = document.getElementsByName(this.state.mov + 1);
+          select.forEach((e) => {
+            //console.log(e);
+            e.style = "";
+          });
+        }
+
+        break;
+    }
+  }
 
   cambiar() {
     this.setState({ mostrar: "none" });
-    console.log("GOLA");
+    this.setValueInput();
   }
-//funcion para ocultar el las opciones desplegadas
-   closeMenu(){
-     
-     this.setState({ visibleMenu: false });
-   }
+  //funcion para ocultar el las opciones desplegadas
+  closeMenu() {
+    console.log("close");
+    if (this.state.ocultar == 0) this.setState({ visibleMenu: false });
+    this.cambiar();
+  }
 
   setMenu(id) {
-   
-   
-    if (this.state.visibleMenu == false || id!= this.state.idSubMenu) {
+    this.closeLista();
+
+    if (this.state.visibleMenu == false || id != this.state.idSubMenu) {
       this.setState({ visibleMenu: true });
-      
-    } 
-    this.state.idSubMenu= id
+      this.cambiar();
+    }
+    this.state.idSubMenu = id;
   }
   fireNew() {
     this.setState({
@@ -184,13 +304,17 @@ class Menu extends Component {
       );
   }
 
+  //Metodo que filtra las localidades
   handleBusquedaChange(event) {
+    // console.log("change");
     let valor = event.target.value;
+
     this.setState({ filtro: valor }, () => {
       var copy = Object.assign([], this.state.localidades.data);
       copy = copy.map((d) => {
         if (d.nombre.toLowerCase().indexOf(valor.toLowerCase()) > -1) {
           d.visible = true;
+          return d;
         } else {
           d.visible = false;
         }
@@ -200,7 +324,7 @@ class Menu extends Component {
         localidades: {
           ...this.state.localidades,
           data: copy,
-          selected: 0,
+          selected: 1,
         },
         mostrar: "block",
       });
@@ -219,16 +343,13 @@ class Menu extends Component {
       () => {
         if (window.scrollY > 350) {
           window.scrollTo(0, 140);
-          
         }
       }
     );
- 
   }
 
   componentDidMount() {
     //Lista de Localidades
-
 
     fetch(`${process.env.REACT_APP_API}/ciudades`, {
       method: "GET",
@@ -275,200 +396,193 @@ class Menu extends Component {
       );
   }
   render() {
-    const filtro = this.state.localidades.data.map((lf) => {
-      return (
-        // active
+    var cont = 0;
 
-        <Link
-          key={`lloc-${lf.id}`}
-          to={`/localidad/${lf.id}`}
-          className="linkBusqueda"
-          onMouseOver={this.cambiar}
-          style={{ display: this.state.mostrar }}
-        >
-          <div    
-            className={`spanloc ${
-              lf.id === this.state.localidades.selected ? "active" : ""
-            }${lf.visible ? " d-block" : " d-none"}`}
+    const filtro = this.state.localidades.data.map((lf) => {
+      this.selectFirsElement();
+      if (lf.visible == true) {
+        return (
+          // active
+
+          <li
+            value=""
             key={`lloc-${lf.id}`}
+            key={`lloc-${lf.id}`}
+            
+            className="linkBusqueda"
+            ref={this.link}
+            onClick={this.cambiar}
+            to={`/localidad/${lf.id}`}
+            
+            style={{ textDecoration: "none" }}
           >
-            <center>
-              <p style={{ textDecoration: "none" }}>{lf.nombre} </p>
-            </center>
-            <hr />
-          </div>
-        </Link>
-      );
+            <Link id={`/localidad/${lf.id}`}  name={cont++} to={`/localidad/${lf.id}`}>{lf.nombre} </Link>
+          </li>
+        );
+      }
     });
     return (
-  
-      <div className="Menu"   >
-   
-        <div className="container-fluid menu-ul animated bounceInDown delay-2s  ">
-          <ul>
-            <li>
-              <Link to="/" className="link-menu">
-                <i className="fas fa-home" />
-              </Link>
-            </li>
-            <li>
-              <span className="link-menu"  onMouseOver={(e) => this.setMenu(1, e)}>
-                ¿QUÉ VISITAMOS?
-              </span>
-            </li>
-            <li>
-              <span className="link-menu" onMouseOver={(e) => this.setMenu(4, e)}>
-                ¿Qué hacemos?
-              </span>
-            </li>
-            {/*<li>
-              <span className="link-menu" onMouseOver={e => this.setMenu(2, e)}>
-                ¡PARQUES Y PLAZAS!
-              </span>
-            </li> */}
-            <li>
-              <span className="link-menu"  onMouseOver={(e) => this.setMenu(2, e)}>
-                ¡A PLANIFICAR!
-              </span>
-            </li>
-            <li>
-              <span className="link-menu"  onMouseOver={(e) => this.setMenu(5, e)}>
-                Turismo Interno
-              </span>
-            </li>
-            <li>
-              <span className="link-menu" onMouseOver={(e) => this.setMenu(4, e)}>
-                <img
-                  style={{ height: `20px`, marginLeft: "-15px" }}
-                  src={`${process.env.REACT_APP_API_RECURSOS}/recursos/coronel3.png`}
-                />
-              </span>
-            </li>
+      <React.Fragment>
+        <nav class="navbar navbar-expand-lg  Menu" id="nav">
+          <Link
+            to="/"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Menu principal "
+            className="link-menu mr-3"
+          >
+            <i className="fas fa-home" />
+          </Link>
 
-            <li className="link-menu">
-              <div className="containeres">
-                <input
-                  type="text"
-                  placeholder="Buscar localidades..."
-                  name="buscar"
-                  id="buscar"
-                  className="buscador"
-                  value={this.state.filtro}
-                  onChange={this.handleBusquedaChange}
-                  autoComplete="on"
-                />
-                <div className="search" />
-              </div>
-              <ul>
-                <li className="listaBusqueda">{filtro}</li>
-              </ul>
-            </li>
-            {/*<li>
-              <a
-                href="https://goo.gl/KdkxQM"
-                target="_blank"
-                rel="noopener noreferrer"
+          <button
+            id="toggle"
+            class="navbar-toggler navbar-light"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            onClick={() => this.closeMenu()}
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+              <li
+                class="nav-item link-menu"
+                onMouseOver={(e) => this.setMenu(1, e)}
               >
-                <i
-                  class="redesMobile fab fa-whatsapp"
-                  style={{ paddingLeft: "0px" }}
-                />
-              </a>
-              <a
-                href="https://www.facebook.com/turismodesanluis/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="redesMobile fab fa-facebook" />
-              </a>
-              <a
-                href="https://twitter.com/TurismoSanLuis_"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="redesMobile fab fa-twitter" />
-              </a>
-              <a
-                href="https://www.instagram.com/turismo_san_luis/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="redesMobile fab fa-instagram" />
-              </a>
-            </li>
-            <li>
-              <div className="link-menu">
-                <div className="form-group">
+                <span className="nav-link">¿QUÉ VISITAMOS?</span>
+              </li>
+              <li class="nav-item link-menu">
+                <span
+                  className="nav-link"
+                  onMouseOver={(e) => this.setMenu(4, e)}
+                >
+                  ¿QUÉ HACEMOS?
+                </span>
+              </li>
+              <li class="nav-item link-menu">
+                <span
+                  className="nav-link"
+                  onMouseOver={(e) => this.setMenu(2, e)}
+                >
+                  ¡A PLANIFICAR!
+                </span>
+              </li>
+              <li class="nav-item link-menu">
+                <span
+                  className="nav-link"
+                  onMouseOver={(e) => this.setMenu(5, e)}
+                >
+                  TURISMO INTERNO
+                </span>
+              </li>
+              <li class="nav-item link-menu">
+                <span
+                  className="nav-link"
+                  onMouseOver={(e) => this.setMenu(4, e)}
+                >
+                  CORONAVIRUS
+                  <img
+                    style={{ height: `20px`, marginBottom: "5px" }}
+                    src={`${process.env.REACT_APP_API_RECURSOS}/recursos/coronel3.png`}
+                  />
+                </span>
+              </li>
+
+              <li className="nav-item">
+                <div className="containeres">
                   <input
+                    onKeyDown={(e) => this.selectOption(e)}
+                    onClick={(e) => this.closeMenu(e)}
+                    onBlur={() => this.closeLista()}
                     type="text"
-                    name="buscar"
+                    holder="Buscar localidades..."
                     id="buscar"
-                    className="form-control"
+                    class="buscador input form-control  "
                     value={this.state.filtro}
                     onChange={this.handleBusquedaChange}
-                    autoComplete="on"
+                    autoComplete="off"
                   />
+                  <div class="search" onClick={() => this.closeLista()}></div>
                 </div>
+                {this.state.lista ? (
+                  <ul class="listaBusqueda ">{filtro}</ul>
+                ) : (
+                  ""
+                )}
+              </li>
+            </ul>
+
+            <ul>
+              <div className="logo mt-3">
+                <a
+                  className="alink link-menu"
+                  href="https://www.facebook.com/turismodesanluis/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i
+                    className="redes fab fa-facebook animated bounceInDown delay-2s"
+                    style={{ right: "50px" }}
+                  />
+                </a>
+
+                <a
+                  className="alink link-menu"
+                  href="https://twitter.com/TurismoSanLuis_"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i
+                    className="redes fab fa-twitter animated bounceInDown delay-2s"
+                    style={{ right: "80px" }}
+                  />
+                </a>
+                <a
+                  className="alink link-menu"
+                  href="https://www.instagram.com/turismo_san_luis/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="redes fab fa-instagram animated bounceInDown delay-2s" />
+                </a>
+
+                <Link
+                  to="/"
+                  className="link-menu  animated bounceInDown delay-2s"
+                >
+                  <img
+                    src={`https://i.ibb.co/ft02QmL/SAN-LUIS-TURISMO-FULL-COLOR-TRANSP.png`}
+                    alt="San Luis"
+                  />
+                </Link>
               </div>
-            </li>*/}
-          </ul>
-        </div>
-        <div className="logo" >
-          {/* <a
-            href="https://goo.gl/KdkxQM"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i
-              class="redes fab fa-whatsapp animated bounceInDown delay-2s"
-              style={{ right: "110px" }}
-            />
-          </a> */}
-          <a
-            href="https://www.facebook.com/turismodesanluis/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i
-              className="redes fab fa-facebook animated bounceInDown delay-2s"
-              style={{ right: "50px" }}
-            />
-          </a>
-          <a
-            href="https://twitter.com/TurismoSanLuis_"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i
-              className="redes fab fa-twitter animated bounceInDown delay-2s"
-              style={{ right: "80px" }}
-            />
-          </a>
-          <a
-            href="https://www.instagram.com/turismo_san_luis/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="redes fab fa-instagram animated bounceInDown delay-2s" />
-          </a>
-
-          <Link to="/" className="link-menu  animated bounceInDown delay-2s">
-            <img
-              src={`https://i.ibb.co/ft02QmL/SAN-LUIS-TURISMO-FULL-COLOR-TRANSP.png`}
-              alt="San Luis"
-            />
-          </Link>
-        </div>
-
-        <div className="logoGob animated bounceInDown delay-2s" style={{}}>
-          <Link to="/" className="link-menu  ">
-            <img src={`https://i.ibb.co/7g7LDjz/logo-gob.png`} alt="San Luis" />
-          </Link>
-        </div>
+            </ul>
+            <span class="navbar-text mr-5">
+              <div
+                className="logoGob animated bounceInDown delay-2s"
+                style={{}}
+              >
+                <Link to="/" className="link-menu  ">
+                  <img
+                    src={`https://i.ibb.co/7g7LDjz/logo-gob.png`}
+                    alt="San Luis"
+                  />
+                </Link>
+              </div>
+            </span>
+          </div>
+        </nav>
         {this.state.visibleMenu ? (
-          <div className="menu-visita-container animated fadeIn" onMouseLeave={(e)=>this.closeMenu(e)} >
-            <div className="menu-visita"  >
-              <ZonasMenu 
+          <div
+            className="menu-visita-container animated fadeIn"
+            onMouseLeave={(e) => this.closeMenu(e)}
+          >
+            <div className="menu-visita">
+              <ZonasMenu
                 idMenu={this.state.idSubMenu}
                 onZonaClick={this.closeMenu}
               />
@@ -477,12 +591,9 @@ class Menu extends Component {
         ) : (
           ""
         )}
-      
-      </div>
-
+      </React.Fragment>
     );
-
-   }
+  }
 }
 
 export default Menu;
