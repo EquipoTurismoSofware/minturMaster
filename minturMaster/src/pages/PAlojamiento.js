@@ -189,11 +189,8 @@ class PAlojamiento extends Component {
           <div>Cargando...</div>
         ) : (
           <React.Fragment>
-            <div
-              className="ZonaLocalidad-titulo"
-              style={{ backgroundColor: `#722789` }}
-            >
-              <h3 style={{ color: `#722789` }}>
+            <div className="ZonaLocalidad-titulo">
+              <h3>
                 {this.state.dataAlojamiento.nombre}
               </h3>
             </div>

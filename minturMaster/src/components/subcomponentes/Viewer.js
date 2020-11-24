@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Loading from "../../utils/Loading";
 
 class Viewer extends Component {
 	constructor(props) {
@@ -77,7 +78,6 @@ class Viewer extends Component {
 			}
 		}
 		if(w < 460){
-			console.log("F");
 			//Algoritmo para paginado
 			if (totalPages <= 6) {
 				// Si son menos de 10 que me muestre todo
@@ -121,7 +121,6 @@ class Viewer extends Component {
 			}
 		}
 		
-		
 		//Buffer donde se van a guardar el display de las paginas
 		let paginationBuffer = Object.assign([], this.state.paginationVisibility);
 		for(let i=0; i < paginationBuffer.length; i++) {
@@ -133,6 +132,7 @@ class Viewer extends Component {
 		}
 		
 		this.setState({
+			loading: false,
 			visibility: buffer,
 			paginationVisibility: paginationBuffer
 		});
@@ -156,12 +156,12 @@ class Viewer extends Component {
 		for(let i=0; i < paginas; i++) {
 			paginationBuffer.push({display: "none"});
 		}
+
 		this.setState({
 			visibility: buffer,
 			paginationVisibility: paginationBuffer
 		}, () => {
 			this.setState({
-				loading: false,
 				preset: {
 					...this.state.preset,
 					items_visibles: visibles,
@@ -209,13 +209,14 @@ class Viewer extends Component {
 			<React.Fragment>
 			{
 				this.state.loading ?
-				"Cargando..."
+					<div><Loading margins="150px" /></div>
 				:
 				this.props.children.length === 0 ?
 				<div className="ZonaLocalidad-titulo" style={{textAlign: 'center'}}>
-					<h3 style={{color: `#722789`}}>No se encontraron Alojamientos</h3>
+					<h3 style={{color: `#722789`}}>No se encontraron elementos</h3>
 				</div>
 				:
+				this.props.clase === "alojamiento" ?
 				<div className="Viewer">
 					<div className="btn-left" onClick={this.movePageBack}>
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
@@ -228,18 +229,33 @@ class Viewer extends Component {
 					</div>
 					<div className="pages" >
 						<div className="btn-left" onClick={this.moveFirstPage}>
-							<i class="fas fa-backward"></i>					
+							<i className="fas fa-backward"></i>					
 						</div>
 						<ul style={{textAlign: 'center'}}>
 							{paginas}
 						</ul>
 						<div className="btn-right" onClick={this.moveLastPage}>
-							<i class="fas fa-forward"></i>
+							<i className="fas fa-forward"></i>
 						</div>
-					</div>
-					
-					
+					</div>	
 				</div>
+				:
+				<div className="ViewerListados">
+					<div>
+						{childrens}
+					</div>
+					<div className="pages" >
+						<div className="btn-left" onClick={this.moveFirstPage}>
+							<i className="fas fa-backward"></i>					
+						</div>
+						<ul style={{textAlign: 'center'}}>
+							{paginas}
+						</ul>
+						<div className="btn-right" onClick={this.moveLastPage}>
+							<i className="fas fa-forward"></i>
+						</div>
+					</div>	
+				</div>				
 			}
 			</React.Fragment>
 		);

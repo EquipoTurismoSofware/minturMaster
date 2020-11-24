@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
-import { Link } from "react-router-dom";
 import axios from "axios";
+import Listados from "../../components/Listados"
+import Loading from "../../utils/Loading";
 
 class PListadoGastronomia extends Component {
 	constructor(props) {
@@ -11,11 +12,16 @@ class PListadoGastronomia extends Component {
 			id: 0,
 			data: [{ 
 				descripcion: "",
-				imagenes: [{imagen: "default.jpg"}] }
+				imagenes: [{imagen: "default.jpg"}]
+				 }
 			],
+			nombreGastro: "",
+			filtro: [],
 			index: 0
 		};
 		this.getData = this.getData.bind(this);
+		this.aplicarFiltro = this.aplicarFiltro.bind(this);
+		this.handleChange = this.handleChange.bind(this);
 	}
 
 	getData() {
@@ -32,11 +38,11 @@ class PListadoGastronomia extends Component {
 		.then((response) => {
 			if(response.data.data.count > 0) {
 				self.setState({
-					data: response.data.data.registros
+					data: response.data.data.registros,
+					filtro: response.data.data.registros,
+					loading: false
 				});
-			} else {
-				//Error no se enocntró el id
-			}
+			} 
 		})
 		.catch((error) => {
 			console.log(error);
@@ -54,58 +60,65 @@ class PListadoGastronomia extends Component {
         });
 	}
 
+	aplicarFiltro() {
+        let {nombreGastro} = this.state;
+        let filtrado = this.state.data.filter((value) => {
+            let respuesta = true;
+            //Validar Nombre
+            if(nombreGastro.length) {
+                if(value.nombre.toLowerCase().search(nombreGastro.toLowerCase()) === -1) {
+                    respuesta = false;
+                }
+            }
+            return respuesta;
+        });
+        this.setState({
+            //Aca estoy metiendo en el estado filtro el array de Alojamientos filtrado.
+            filtro: filtrado
+        });
+	}
+	
+	handleChange(event) {
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+        this.setState({
+            [name]: value
+        },
+        () => {
+          this.aplicarFiltro();
+        });
+    }
+
 	render() {
 		const loading = this.state.loading;
-		var ListadoAtractivofull = null;
-		if(this.state.data.length > 0) {
-			ListadoAtractivofull = this.state.data.map(atrac => {
-				let descripcion = "";
-				if(atrac.descripcion.length > 395) {
-					descripcion = atrac.descripcion.substr(0, 395) + "...";
-				} else {
-					descripcion = atrac.descripcion;
-				}
-				let indice = Math.floor(Math.random() * atrac.imagenes.length);
-				return (
-					<Link to={`/gastronomia/${atrac.id}`} key={`atractivo-${atrac.id}`}>
-						<div className="row mb-5">
-							<div className="col">
-								<div className="atractivo-full-item">
-									<div className="imagen">
-										<span style={{ backgroundColor: `#${atrac.color}` }}>{atrac.localidad} - {atrac.tipo}</span>
-										<img className="img-fluid" src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${atrac.imagenes[indice].imagen}`} alt="Img" />
-									</div>
-									<div className="titulo" style={{ backgroundColor: `#${atrac.color}` }}>
-										<h3>{atrac.nombre}</h3>
-									</div>
-									<div className="body">
-										<p className="text-dark mb-2">{descripcion}</p>
-										<span className="btn-novedades">Leer <i className="fas fa-arrow-right" /></span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</Link>
-				);
-			});
-		}
-
 		return (
-			<React.Fragment>
+			<div>
 			{
 				loading ?
-				<div>Cargando...</div>
+					<div><Loading margins="150px" /></div>
 				:
 				<React.Fragment>
 					<div className="container ListadoAtractivofull">
 						<div className="nf-titulo">
 							<span>GASTRONOMÍA</span>
 						</div>
+						<div className="form-row">
+							<div className="form-group col-md-4">                        
+								<label htmlFor="nombreGastro">Nombre</label>
+								<input type="text" id="nombreGastro" name="nombreGastro" className="form-control" value={this.state.nombre} onChange={this.handleChange} />
+							</div>
+							{/*<div className="form-group col-md-3 d-flex align-items-end justify-content-end">
+								<button type="submit" className="btn btn-primary">Buscar</button>
+							</div>*/}
+						</div>						
 					</div>
-					<div className="container">{ListadoAtractivofull}</div>
+					<div className="container">
+						<Listados idLocalidad={this.state.id} data={this.state.filtro} tipo={"gastronomia"}  />
+					</div>
 				</React.Fragment>
 			}
-			</React.Fragment>
+			</div>
 		);
 	}
 }

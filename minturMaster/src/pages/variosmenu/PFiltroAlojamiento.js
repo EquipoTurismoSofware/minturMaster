@@ -12,15 +12,12 @@ class PFiltroAlojamiento extends Component {
 
             localidades: [],
             tipos: [],
-            servicios: [],
-
             alojamientos: [],
             filtro: [],
 
             idlocalidad: 0,
             idtipo: 0,
-            nombreAloja: "",
-            serviciosSelected: []
+            nombreAloja: ""
         };
         this.getData = this.getData.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -28,7 +25,7 @@ class PFiltroAlojamiento extends Component {
     }
 
     aplicarFiltro() {
-        let { idlocalidad, idtipo, nombreAloja, serviciosSelected } = this.state;
+        let { idlocalidad, idtipo, nombreAloja} = this.state;
         idlocalidad = parseInt(idlocalidad, 10);
         idtipo = parseInt(idtipo, 10);
         let filtrado = this.state.alojamientos.filter((value) => {
@@ -52,10 +49,7 @@ class PFiltroAlojamiento extends Component {
                     respuesta = false;
                 }
             }
-            //Validar los servicios seleccionados
-            if(serviciosSelected.length) {
-
-            }
+        
             return respuesta;
         });
         this.setState({
@@ -128,25 +122,6 @@ class PFiltroAlojamiento extends Component {
             .catch((error) => {
                 console.log(error);
             });
-            //Todos los Servicios
-            await axios({
-                method: "get",
-                headers: {
-                    "Authorization": token
-                },
-                url: `${process.env.REACT_APP_API}/tipos`,
-                responseType: "json"
-            })
-            .then((response) => {
-                if(response.data.data.count > 0) {
-                    self.setState({
-                        servicios: response.data.data.registros
-                    });
-                }
-            })
-            .catch((error) => {
-                console.log(error);
-            });
             //Todos los Alojamientos
             await axios({
                 method: "get",
@@ -191,11 +166,11 @@ class PFiltroAlojamiento extends Component {
             <div className="PFiltroAlojamiento mb-5">
                 {
                     this.state.loading ?
-                    <div><Loading margins="150px" /></div>
+                        <div><Loading margins="150px" /></div>
                     :
                     <React.Fragment>
-                        <div className="ZonaLocalidad-titulo" style={{backgroundColor: `#722789`, marginTop: "150px"}}>
-                            <h3 style={{color: `#722789`}}>Alojamientos</h3>
+                        <div className="ZonaLocalidad-titulo" style={{backgroundColor: '#722789'}}>
+                            <h3 style={{color: '#722789'}}>Alojamientos</h3>
                         </div>
                         <div className="container">
                             <div className="row">

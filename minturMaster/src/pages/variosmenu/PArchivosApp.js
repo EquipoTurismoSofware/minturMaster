@@ -10,70 +10,14 @@ class PArchiApp extends Component {
       data: [],
       carousel: []
     };
-    this.getData = this.getData.bind(this);
-  }
-
-  getData() {
-    var token = this.context.token;
-    var self = this;
-    axios({
-      method: "get",
-      headers: {
-        Authorization: token
-      },
-      url: `${process.env.REACT_APP_API}/eventos/50`,
-      responseType: "json"
-    })
-      .then(response => {
-        if (response.data.data.count > 0) {
-          let activo = false;
-          let carousel = response.data.data.registros.map((a, index) => {
-            if (a.imagen === "default.jpg") {
-              return null;
-            }
-            let estilo = {
-              backgroundImage: `url(https://www.revistasavia.com/wp-content/uploads/2018/03/analisis-08-1.jpg)`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat"
-            };
-            if (!activo) {
-              activo = true;
-              return (
-                <div
-                  key={`caro-${index}`}
-                  className="carousel-item active"
-                  style={estilo}
-                />
-              );
-            } else {
-              return (
-                <div
-                  key={`caro-${index}`}
-                  className="carousel-item"
-                  style={estilo}
-                />
-              );
-            }
-          });
-          self.setState({
-            data: response.data.data.registros,
-            carousel: carousel,
-            loading: false
-          });
-        } else {
-          //No hay registros o el id no es correcto
-        }
-      })
-      .catch(error => {
-        console.log(error);
-      });
   }
 
   componentDidMount() {
     document.body.scrollTop = 0; // Safari
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
-    this.getData();
+    this.setState({
+      loading: false
+    })
   }
 
   render() {
@@ -85,7 +29,7 @@ class PArchiApp extends Component {
           <React.Fragment>
             <div className="archivosApp ">
               <div className="container ">
-                <div className="row mb-3" style={{ paddingTop: "150px" }}>
+                <div className="row mb-3" >
                   <div
                     className="ZonaDetalle-titulo"
                     style={{ paddingTop: "50px", backgroundColor: `#722789` }}

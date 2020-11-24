@@ -171,7 +171,7 @@ class PGastronomia extends Component {
   render() {
     const fotos = this.state.fotos;
     return (
-      <div className="Atractivo" style={{ marginTop: "150px"}}>
+      <div className="Atractivo" style={{ paddingTop: "150px"}}>
         {this.state.loading ? (
           <div>Cargando...</div>
         ) : (

@@ -9,7 +9,7 @@ class PCoronavirus extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true,
+      loading: false,
       data: [],
       carousel: [],
     };
@@ -88,7 +88,7 @@ class PCoronavirus extends Component {
           <React.Fragment>
             <div className="container mb-5" />
             <div className="container">
-              <div className="row mb-3" style={{ paddingTop: "150px" }}>
+              <div className="row mb-3" >
                 <div
                   className="ZonaDetalle-titulo"
                   style={{ paddingTop: "50px", backgroundColor: `#722789` }}

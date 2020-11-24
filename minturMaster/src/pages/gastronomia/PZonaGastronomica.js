@@ -163,8 +163,7 @@ class PZonaGastronomica extends Component {
             <div
               className="ZonaDetalle-titulo"
               style={{
-                backgroundColor: `#${this.state.dataZona.color}`,
-                marginTop: "150px"
+                backgroundColor: `#${this.state.dataZona.color}`
               }}
             >
               <h3 style={{ color: `#${this.state.dataZona.color}` }}>

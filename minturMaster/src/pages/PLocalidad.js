@@ -99,6 +99,7 @@ class PLocalidad extends Component {
       .catch(error => {
         console.log(error);
       });
+      
     //Atractivos de la Localidad (Imperdibles)
     axios({
       method: "get",

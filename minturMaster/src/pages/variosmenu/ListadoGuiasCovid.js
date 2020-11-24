@@ -321,9 +321,8 @@ class ListadoGuiasCovid extends Component {
           <div>Cargando...</div>
         ) : (
           <React.Fragment>
-            <div className="container mb-5" />
             <div className="container">
-              <div className="row mb-3" style={{ paddingTop: "150px" }}>
+              <div className="row mb-3">
                 <div
                   className="ZonaDetalle-titulo"
                   style={{ paddingTop: "50px", backgroundColor: `#722789` }}

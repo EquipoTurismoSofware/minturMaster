@@ -55,12 +55,6 @@ body {
 }
 .Viewer .items {
   grid-area: items;
-  /*
-      display: grid;
-      grid-template-columns: repeat(auto-fill, $item-width);
-      grid-gap: 10px;
-      justify-content: center;
-      */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -117,6 +111,59 @@ body {
   cursor: pointer;
 }
 
+.ViewerListados .btn-left {
+  grid-area: btn-left;
+}
+.ViewerListados .btn-right {
+  grid-area: btn-right;
+}
+.ViewerListados .pages {
+  grid-area: pages;
+}
+.ViewerListados .pages ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+.ViewerListados .pages ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2em;
+  padding: 2px;
+  min-width: 30px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #ed0f68;
+  color: white;
+  cursor: pointer;
+  transition: all 1.5s;
+}
+.ViewerListados .pages ul li.selected {
+  background-color: #722789;
+  color: white;
+}
+.ViewerListados .btn-left,
+.ViewerListados .btn-right,
+.ViewerListados .pages {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.ViewerListados .btn-left,
+.ViewerListados .btn-right {
+  cursor: pointer;
+}
+
 .City {
   display: flex;
   height: 300px;
@@ -134,15 +181,7 @@ body {
 /*
     Componente Menu.js
 */
-select {
-  width: 30px;
-  z-index: 4;
-  position: absolute;
-  height: 10%;
-  opacity: 0.2;
-}
-
-input {
+.input {
   z-index: 5;
   width: 0px;
   outline: none;
@@ -157,14 +196,14 @@ input {
   font-weight: 500;
   letter-spacing: 0.1em;
 }
-input:hover {
+.input:hover {
   cursor: pointer;
 }
-input:focus {
+.input:focus {
   opacity: 1;
   cursor: text;
 }
-input:focus .listaBusqueda {
+.input:focus .listaBusqueda {
   background-color: #722789;
   width: 200px;
   max-height: auto;
@@ -178,20 +217,20 @@ input:focus .listaBusqueda {
   font-weight: 500;
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
 }
-input:focus .listaBusqueda a {
+.input:focus .listaBusqueda a {
   list-style: none;
   padding-left: 10px;
 }
-input:focus ~ .search {
+.input:focus ~ .search {
   background: #151515;
   z-index: 6;
 }
-input:focus ~ .search::before {
+.input:focus ~ .search::before {
   top: 0;
   left: 0;
   width: 25px;
 }
-input:focus ~ .search::after {
+.input:focus ~ .search::after {
   top: 0;
   left: 0;
   width: 25px;
@@ -201,7 +240,7 @@ input:focus ~ .search::after {
   border-radius: 0%;
   transform: rotate(-45deg);
 }
-input::placeholder {
+.input::placeholder {
   color: white;
   opacity: 0.5;
   font-weight: bolder;
@@ -583,7 +622,7 @@ input::placeholder {
     border: 2px solid white;
     transition: all 0.5s;
   }
-  .containeres input {
+  .containeres .input {
     margin-top: 0px;
     z-index: 5;
     width: 40px;
@@ -599,25 +638,25 @@ input::placeholder {
     opacity: 0;
     letter-spacing: 0.1em;
   }
-  .containeres input:hover {
+  .containeres .input:hover {
     cursor: pointer;
   }
-  .containeres input:focus {
+  .containeres .input:focus {
     width: 100px;
     opacity: 1;
     cursor: text;
   }
-  .containeres input:focus ~ .search {
+  .containeres .input:focus ~ .search {
     left: 250px;
     background: #151515;
     z-index: 6;
   }
-  .containeres input:focus ~ .search::before {
+  .containeres .input:focus ~ .search::before {
     top: 0;
     left: 0;
     width: 25px;
   }
-  .containeres input:focus ~ .search::after {
+  .containeres .input:focus ~ .search::after {
     top: 0;
     left: 0;
     width: 25px;
@@ -627,7 +666,7 @@ input::placeholder {
     border-radius: 0%;
     transform: rotate(-45deg);
   }
-  .containeres input::placeholder {
+  .containeres .input::placeholder {
     color: white;
     opacity: 0.5;
     font-weight: bolder;
@@ -2329,6 +2368,10 @@ input::placeholder {
 /*
     Componente PEventos.js
 */
+.PEventos {
+  padding-top: 160px;
+}
+
 .single-card {
   min-height: 250px;
   background: #ddd;
@@ -3492,10 +3535,20 @@ h3.bgc_4 {
 }
 */
 /*
-    Componente PAlojamiento.js
+    Componente PAlojamiento.js y PFiltroAlojamiento.js
 */
+.PFiltroAlojamiento {
+  padding-top: 160px;
+}
+
 .Alojamiento {
-  margin-top: 150px;
+  padding-top: 150px;
+}
+.Alojamiento .ZonaLocalidad-titulo {
+  background-color: #722789;
+}
+.Alojamiento .ZonaLocalidad-titulo h3 {
+  color: #722789;
 }
 
 .Alojamiento-data {

@@ -16,7 +16,8 @@ class Alojamientos extends Component {
             idLocalidad: 0,
             data: [],
             alojamientos: [],
-            visibles: 4
+            visibles: 4,
+            clase: "alojamiento"
         };
         this.setData = this.setData.bind(this);
         this.calculoVisibles = this.calculoVisibles.bind(this);
@@ -132,13 +133,13 @@ class Alojamientos extends Component {
         return(
             <React.Fragment>
                 {
-                    loading ?
+                    /*loading ?
                     <div>Cargando...</div>
-                    :
+                    :*/
                     <div className="container">
                         <div className="row">
                             <div className="col">
-                                <Viewer visibles={this.state.visibles}>
+                                <Viewer visibles={this.state.visibles} clase={this.state.clase}>
                                     {alojamientos}
                                 </Viewer>
                             </div>

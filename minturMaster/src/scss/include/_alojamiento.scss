@@ -1,9 +1,19 @@
 /*
-    Componente PAlojamiento.js
+    Componente PAlojamiento.js y PFiltroAlojamiento.js
 */
 
+.PFiltroAlojamiento {
+    padding-top: 160px;
+}
+
 .Alojamiento {
-    margin-top: 150px;
+    padding-top: 150px;
+    .ZonaLocalidad-titulo {
+        background-color: #722789;
+        h3 {
+            color: #722789;
+        }
+    }
 }
 
 .Alojamiento-data {
