@@ -6,10 +6,10 @@ import React, { Component } from "react";
 
 class GoogleMap extends Component {
     constructor(props) {
-        super(props);
+        super(props);   
         this.state = {
             loading: true,
-            id: "",
+            id: "ec94e128ca41ccaf",
             lat: 0,
             lng: 0,
             zoom: 13,
@@ -80,6 +80,7 @@ class GoogleMap extends Component {
         return(
             <React.Fragment>
                 <div id={`${this.state.id}`} className="gmapa" />
+                
                 <style jsx="true">{`
                     .gmapa {
                         width: ${this.state.gwidth};
