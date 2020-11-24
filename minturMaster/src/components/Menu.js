@@ -477,20 +477,13 @@ this.selectFirsElement()
                   onMouseOver={(e) => this.setMenu(5, e)}
                 >
                   TURISMO INTERNO
-                </span>
-              </li>
-              <li class="nav-item link-menu">
-                <span
-                  className="nav-link"
-                  onMouseOver={(e) => this.setMenu(4, e)}
-                >
-                  CORONAVIRUS
                   <img
                     style={{ height: `20px`, marginBottom: "5px" }}
                     src={`${process.env.REACT_APP_API_RECURSOS}/recursos/coronel3.png`}
                   />
                 </span>
               </li>
+
 
               <li className="nav-item">
                 <div className="containeres">
