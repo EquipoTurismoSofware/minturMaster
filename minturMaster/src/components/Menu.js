@@ -53,7 +53,7 @@ class Menu extends Component {
   }
 
   closeLista() {
-    console.log("close lista");
+   // console.log("close lista");
     this.state.lista = false;
   }
   //selecciona la localidad con el tipeo de la felcha
@@ -64,9 +64,9 @@ class Menu extends Component {
 
 
       let selec = document.getElementsByName(this.state.mov);
-      console.log(this.state.mov);
+     // console.log(this.state.mov);
       selec.forEach((e) => {
-        console.log(e);
+        //console.log(e);
         this.state.mov = -1;
         e.style = "";
       });
@@ -84,7 +84,7 @@ class Menu extends Component {
     var lin = this.link.current;
     let key = event.key;
 
-    console.log(key);
+    //console.log(key);
 
     switch (key) {
       //presion boton abajo
@@ -122,7 +122,7 @@ this.selectFirsElement()
             e.style =
               "text-decoration-line: underline ; font-size: 18px;";
           });
-          console.log(this.state.selec.id);
+         // console.log(this.state.selec.id);
         }
         if (true) {
           let select = document.getElementsByName(this.state.mov - 1);
@@ -171,7 +171,7 @@ this.selectFirsElement()
   }
   //funcion para ocultar el las opciones desplegadas
   closeMenu() {
-    console.log("close");
+   // console.log("close");
     if (this.state.ocultar == 0) this.setState({ visibleMenu: false });
     this.cambiar();
   }
@@ -416,7 +416,7 @@ this.selectFirsElement()
             
             style={{ textDecoration: "none" }}
           >
-            <Link id={`/localidad/${lf.id}`}  name={cont++} to={`/localidad/${lf.id}`}>{lf.nombre} </Link>
+            <Link id={`/localidad/${lf.id}`} className="liLista" name={cont++} to={`/localidad/${lf.id}`}>{lf.nombre} </Link>
           </li>
         );
       }
@@ -429,11 +429,21 @@ this.selectFirsElement()
             data-toggle="tooltip"
             data-placement="top"
             title="Menu principal "
-            className="link-menu mr-3"
+            className="link-menu mr-3 linkHome"
           >
             <i className="fas fa-home" />
           </Link>
-
+          <div
+                className="logoGob2 animated bounceInDown delay-2s"
+                style={{}}
+              >
+                <Link to="/" className="link-menu  ">
+                  <img
+                    src={`https://i.ibb.co/7g7LDjz/logo-gob.png`}
+                    alt="San Luis"
+                  />
+                </Link>
+              </div>
           <button
             id="toggle"
             class="navbar-toggler navbar-light"
@@ -571,6 +581,15 @@ this.selectFirsElement()
         </nav>
         {this.state.visibleMenu ? (
           <div
+          id="toggle"
+          class="navbar-toggler navbar-light"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          onClick={() => this.closeMenu()}
             className="menu-visita-container animated fadeIn"
             onMouseLeave={(e) => this.closeMenu(e)}
           >

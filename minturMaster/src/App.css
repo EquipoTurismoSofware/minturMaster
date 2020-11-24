@@ -326,6 +326,12 @@ body {
   padding: 0 5rem;
   color: #fff;
 }
+.Menu .linkHome {
+  display: inline;
+}
+.Menu .logoGob2 {
+  display: none;
+}
 .Menu ul {
   color: #fff;
 }
@@ -338,6 +344,11 @@ body {
   color: #fff;
   font-weight: 500;
   white-space: nowrap;
+}
+
+.liLista:hover {
+  text-decoration-line: underline;
+  font-size: 18px;
 }
 
 @media only screen and (max-width: 992px) {
@@ -353,6 +364,18 @@ body {
     width: 100%;
     height: auto;
     margin-top: 45px;
+  }
+  .Menu .linkHome {
+    display: none;
+  }
+  .Menu .logoGob2 {
+    display: inline;
+    margin-left: -1.5%;
+  }
+  .Menu .logoGob2 img {
+    height: 40px;
+    width: 250px;
+    opacity: 1 !important;
   }
   .Menu ul {
     color: #fff;
@@ -373,7 +396,7 @@ body {
 
   .menu-visita-container {
     position: absolute;
-    margin-top: 290px;
+    margin-top: 250px;
     left: 0px;
     padding-bottom: 20px;
     display: block;
