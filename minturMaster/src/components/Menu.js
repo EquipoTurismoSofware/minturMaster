@@ -53,7 +53,7 @@ class Menu extends Component {
   }
 
   closeLista() {
-    console.log("close lista");
+    //console.log("close lista");
     this.state.lista = false;
   }
   //selecciona la localidad con el tipeo de la felcha
@@ -64,9 +64,9 @@ class Menu extends Component {
 
 
       let selec = document.getElementsByName(this.state.mov);
-      console.log(this.state.mov);
+      //console.log(this.state.mov);
       selec.forEach((e) => {
-        console.log(e);
+        //console.log(e);
         this.state.mov = -1;
         e.style = "";
       });
@@ -84,7 +84,7 @@ class Menu extends Component {
     var lin = this.link.current;
     let key = event.key;
 
-    console.log(key);
+    //console.log(key);
 
     switch (key) {
       //presion boton abajo
@@ -171,7 +171,7 @@ this.selectFirsElement()
   }
   //funcion para ocultar el las opciones desplegadas
   closeMenu() {
-    console.log("close");
+    //console.log("close");
     if (this.state.ocultar == 0) this.setState({ visibleMenu: false });
     this.cambiar();
   }
@@ -477,20 +477,13 @@ this.selectFirsElement()
                   onMouseOver={(e) => this.setMenu(5, e)}
                 >
                   TURISMO INTERNO
-                </span>
-              </li>
-              <li class="nav-item link-menu">
-                <span
-                  className="nav-link"
-                  onMouseOver={(e) => this.setMenu(4, e)}
-                >
-                  CORONAVIRUS
                   <img
                     style={{ height: `20px`, marginBottom: "5px" }}
                     src={`${process.env.REACT_APP_API_RECURSOS}/recursos/coronel3.png`}
                   />
                 </span>
               </li>
+
 
               <li className="nav-item">
                 <div className="containeres">
