@@ -22,7 +22,7 @@ class PContacto extends Component {
 
   render() {
     return (
-      <div className="PEventos">
+      <div className="PEventos" style={{paddingTop: "110px"}}>
         {this.state.loading ? (
           <div>Cargando...</div>
         ) : (

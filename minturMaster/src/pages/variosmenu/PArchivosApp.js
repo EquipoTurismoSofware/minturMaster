@@ -22,12 +22,12 @@ class PArchiApp extends Component {
 
   render() {
     return (
-      <div className="PEventos">
+      <div className="PEventos" style={{paddingTop: "110px"}}>
         {this.state.loading ? (
           <div>Cargando...</div>
         ) : (
           <React.Fragment>
-            <div className="archivosApp ">
+            <div className="archivosApp"  >
               <div className="container ">
                 <div className="row mb-3" >
                   <div

@@ -2369,7 +2369,7 @@ body {
     Componente PEventos.js
 */
 .PEventos {
-  padding-top: 160px;
+  padding-top: 60px;
 }
 
 .single-card {
@@ -2561,7 +2561,7 @@ h3.bgc_4 {
     Componente PNovedad.js
 */
 .PNovedad {
-  padding-top: 160px;
+  padding-top: 110px;
 }
 .PNovedad .n-titulo {
   background-color: #722789;
@@ -2796,7 +2796,7 @@ h3.bgc_4 {
     Componente Novedadesfull.js
 */
 .Novedadesfull {
-  padding-top: 160px;
+  padding-top: 110px;
 }
 .Novedadesfull .nf-titulo {
   background-color: #722789;
@@ -2929,6 +2929,10 @@ h3.bgc_4 {
 /*
     Componente PZona.js
 */
+.Zona {
+  padding-top: 110px;
+}
+
 .carousel-inner .carousel-item h5 {
   text-align: center;
   color: white;
@@ -3220,7 +3224,7 @@ h3.bgc_4 {
     Componente Novedadesfull.js
 */
 .ListadoAtractivofull {
-  padding-top: 160px;
+  padding-top: 110px;
 }
 .ListadoAtractivofull .nf-titulo {
   background-color: #722789;

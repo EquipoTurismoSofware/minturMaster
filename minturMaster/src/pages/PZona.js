@@ -171,7 +171,7 @@ class Zona extends Component {
         const links = this.state.links;
         const carousel = this.state.carousel;
         return (
-            <div className="Zona">
+            <div className="ZonaSlider">
                 {
                     this.state.loading ?
                     <div>Cargando...</div>

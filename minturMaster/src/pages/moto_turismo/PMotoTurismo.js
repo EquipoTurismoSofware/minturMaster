@@ -110,7 +110,7 @@ class PMotoTurismo extends Component {
       <React.Fragment>
         <React.Fragment>
           <div className="container ListadoAtractivofull">
-            <br></br>
+
             <div
               className="ZonaLocalidad-titulo"
               style={{ backgroundColor: `#722789` }}
