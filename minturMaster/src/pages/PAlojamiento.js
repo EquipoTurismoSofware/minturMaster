@@ -4,6 +4,8 @@ import axios from "axios";
 import GoogleMap from "../components/subcomponentes/GoogleMap";
 import MaxImage from "../components/subcomponentes/MaxImage";
 
+import Loading from "../utils/Loading";
+
 const Pild = (props) => (
   <span className="bg-dark text-white p-1 rounded m-1">{props.text}</span>
 );
@@ -16,6 +18,7 @@ class PAlojamiento extends Component {
       id: 0,
       dataAlojamiento: {},
       fotos: [],
+      src:[],
       servicios: [],
       tarifas: [],
       img: {
@@ -78,9 +81,9 @@ class PAlojamiento extends Component {
                   if (response.data.data.count > 0) {
                     let fotos = response.data.data.registros.map((a, index) => {
                       return (
-                        <img
+                        <img 
                           key={`img-atr-${a.id}`}
-                          className="img-fluid"
+                          className="img-fluid img"
                           src={`${process.env.REACT_APP_API_RECURSOS}/imagenes/${a.imagen}`}
                           alt="Img"
                           onClick={(e) => {
@@ -88,9 +91,18 @@ class PAlojamiento extends Component {
                           }}
                         />
                       );
+                      
                     });
+                    let src= response.data.data.registros.map((a, index) => {
+                      let sr= `${process.env.REACT_APP_API_RECURSOS}/imagenes/${a.imagen}`;
+                      return sr
+                      
+                    });
+                    console.log(src );
+                    
                     self.setState({
                       fotos: fotos,
+                      src:src, // variable para pasar las iamgenes a MaxImage
                     });
                   } else {
                     //Error no se enocntró el id
@@ -186,11 +198,15 @@ class PAlojamiento extends Component {
     return (
       <div className="Alojamiento mb-5">
         {this.state.loading ? (
-          <div>Cargando...</div>
+          
+          <div><Loading margins="150px" /></div>
         ) : (
           <React.Fragment>
-            <div className="ZonaLocalidad-titulo">
-              <h3>
+            <div
+              className="ZonaLocalidad-titulo"
+              style={{ backgroundColor: `#722789` }}
+            >
+              <h3 style={{ color: `#722789` }}>
                 {this.state.dataAlojamiento.nombre}
               </h3>
             </div>
@@ -309,7 +325,7 @@ class PAlojamiento extends Component {
               </div>
             </div>
             <MaxImage
-              src={this.state.img.src}
+              src={this.state.src}
               visible={this.state.img.visible}
               onClose={this.closeImg}
             />
