@@ -12,9 +12,18 @@ class MaxImage extends Component {
       top: 1,
       visible: "hidden",
       fotos: [],
+      auxFotos: [],
+      imgSelected: this.props.id,
     };
+
     this.setData = this.setData.bind(this);
+    this.resetImg = this.resetImg.bind(this);
   }
+
+  /* buscarImagen(img) {
+    console.log(fotos.indexOf(img));
+    //return  fotos.indexOf(img)
+  }*/
 
   setData() {
     let visibilidad = "hidden";
@@ -28,13 +37,52 @@ class MaxImage extends Component {
     } else {
       top = document.documentElement.scrollTop;
     }
-    //console.log(this.props)
+
+    
     this.setState({
       top: top,
       visible: visibilidad,
       fotos: this.props.src,
+      auxFotos: this.props.src,
+      imgSelected: this.props.id,
     });
-    // console.log(this.state.fotos); 
+
+    /////acomodar el array para mostrar bien las imagenes
+   /* var i = this.props.src.indexOf(this.props.id);
+    //console.log(this.props.src);
+    if (i > -1) {
+      for (var x = i; x > 0; console.log(x)) {
+        this.props.src[x] = this.props.src[--x];
+      }
+      this.props.src[0] = this.props.id;
+    } */
+
+    var i = this.props.src.indexOf(this.props.id);
+    //console.log(this.props.src);
+    if (i > -1) {
+      for (var x = i; x > 0; console.log(x)) {
+        this.props.src[x] = this.props.src[--x];
+      }
+      this.props.src[0] = this.props.id;
+    }
+
+
+
+
+    //console.log("Flag MaxImage- variable (fotos)--->" + this.state.fotos);
+    //console.log("Flag MaxImage- variable (props.src)--->" + this.state.src);
+    //console.log("indexOf-->  " + this.props.src.indexOf(this.props.id));
+
+    //if ((this.props.src).indexOf(this.props.id) > -1) {
+
+    //console.log(removeItemFromArr(this.props.src,this.props.id))
+  }
+
+  resetImg() {
+    this.props.onClose();
+    this.state.fotos = [];
+    //this.setData();
+
   }
 
   componentDidUpdate(prevProps) {
@@ -51,14 +99,13 @@ class MaxImage extends Component {
   }
 
   render() {
-    const fotos = this.props.src.map((img) => {
-      console.log(img);
+    const fotos = this.props.src.map((listaImg) => {
+      //  console.log("flag (img) nueva variable--->" + listaImg);
       return (
         <Carousel.Item>
-          <img className="d-block w-100 " src={img} alt="" />
+          <img className="d-block w-100 " src={listaImg} alt="" />
         </Carousel.Item>
       );
-      
     });
 
     return (
@@ -68,12 +115,18 @@ class MaxImage extends Component {
           style={{ visibility: this.state.visible, top: this.state.top }}
         >
           <div className="visor-content">
-            <div className="visor-close" onClick={this.props.onClose}>
+            <div className="visor-close" onClick={(e) => this.resetImg(e)}>
               <i className="fas fa-times"></i>
             </div>
             {/* <img className="" fotos={this.state.fotos} alt="Full-View" /> */}
 
-            <Carousel clasname="pb-5">{fotos}</Carousel>
+            <Carousel clasname="pb-5">
+              {/*<div class="carousel-inner">
+               */}
+
+              {fotos}
+              {/* </div>*/}
+            </Carousel>
           </div>
         </div>
         <style jsx="true">{`
@@ -118,7 +171,7 @@ class MaxImage extends Component {
             height: 50px;
             border-radius: 50%;
             background-color: white;
-            color: black;           
+            color: black;
           }
           .visor .visor-content img {
             position: absolute;

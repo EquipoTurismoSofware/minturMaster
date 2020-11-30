@@ -37,7 +37,9 @@ class PAlojamiento extends Component {
         src: e.target.src,
         visible: true,
       },
+      
     });
+    
   }
 
   closeImg() {
@@ -94,11 +96,23 @@ class PAlojamiento extends Component {
                       
                     });
                     let src= response.data.data.registros.map((a, index) => {
-                      let sr= `${process.env.REACT_APP_API_RECURSOS}/imagenes/${a.imagen}`;
-                      return sr
-                      
+                      const sr= `${process.env.REACT_APP_API_RECURSOS}/imagenes/${a.imagen}`;
+                      return sr 
+                     {/* (
+                                                   
+                        <React.Fragment>
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="..." alt="First slide"/>
+                           </div>
+                         <div class="carousel-item">
+                          <img class="d-block w-100" src={sr} alt="Second slide"/>
+                         </div>
+                         </React.Fragment>
+                         
+                      );
+                      */}
                     });
-                    console.log(src );
+                    console.log("Flag src paloja----->" + src );
                     
                     self.setState({
                       fotos: fotos,
@@ -217,7 +231,7 @@ class PAlojamiento extends Component {
                     <div className="alojamiento-texto">
                       {this.state.dataAlojamiento.descripcion}
                     </div>
-                    <div className="alojamiento-fotos">{fotos}</div>
+                    <div className="alojamiento-fotos">{fotos}</div> {/* Lista de Fotos */}
                     <div className="alojamiento-ubicacion">
                       <span>
                         <i className="fas fa-map-marker"></i> Ubicación
@@ -325,9 +339,11 @@ class PAlojamiento extends Component {
               </div>
             </div>
             <MaxImage
+              id={this.state.img.src}
               src={this.state.src}
               visible={this.state.img.visible}
               onClose={this.closeImg}
+             
             />
           </React.Fragment>
         )}
