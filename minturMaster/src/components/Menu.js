@@ -98,20 +98,27 @@ this.selectFirsElement()
           select.forEach((e) => {
             e.style = "";
           });
-
+        
           this.state.mov = -1;
           // console.log(this.state.selec.id);
-          window.location.href = `http://turismo.sanluis.gov.ar/#${this.state.selec.id}`;
+          if(window.location.hostname=="localhost"){
+            window.location.href = `http://localhost:3000/#${this.state.selec.id}`;
+          }
+          else{
+
+        
+          window.location.href = `http://turismo.sanluis.gov.ar/#${this.state.selec.id}`;  }
           this.cambiar();
         }
         break;
       case "ArrowDown":
+       
         if (
           this.state.mov <
           document.getElementsByClassName("linkBusqueda").length - 1
         ) {
           this.state.mov++;
-
+         
           //console.log(this.state.mov);
           //console.log(document.getElementsByName("links").length);
           let select = document.getElementsByName(this.state.mov);
