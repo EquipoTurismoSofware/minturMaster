@@ -37,7 +37,6 @@ class MaxImage extends Component {
     } else {
       top = document.documentElement.scrollTop;
     }
-
     
     this.setState({
       top: top,

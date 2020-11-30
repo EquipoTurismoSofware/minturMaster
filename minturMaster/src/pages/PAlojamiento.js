@@ -343,7 +343,7 @@ class PAlojamiento extends Component {
               src={this.state.src}
               visible={this.state.img.visible}
               onClose={this.closeImg}
-             
+          
             />
           </React.Fragment>
         )}
