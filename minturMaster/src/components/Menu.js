@@ -101,7 +101,7 @@ this.selectFirsElement()
 
           this.state.mov = -1;
           // console.log(this.state.selec.id);
-          window.location.href = `http://localhost:3000/#${this.state.selec.id}`;
+          window.location.href = `http://turismo.sanluis.gov.ar/#${this.state.selec.id}`;
           this.cambiar();
         }
         break;
