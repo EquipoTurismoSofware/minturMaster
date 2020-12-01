@@ -122,7 +122,14 @@ class PNovedad extends Component {
                           className="img-fluid"
                           src={`${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_dos}`}
                           alt="Img"
+                          onClick={e =>
+                            this.clickImg(
+                              true,
+                              `${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_dos}`
+                            )
+                          }
                         />
+                        
                       ) : (
                         ""
                       )}
