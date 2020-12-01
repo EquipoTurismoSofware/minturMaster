@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Consumer } from "../context";
 import axios from "axios";
 import GoogleMap from "../components/subcomponentes/GoogleMap";
-import MaxImage from "../components/subcomponentes/MaxImage";
+import MaxImage from "../components/subcomponentes/MaxImageAlojamientos";
 
 import Loading from "../utils/Loading";
 

@@ -45,6 +45,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "create-react-class": "^15.6.3"
+    "create-react-class": "^15.7.0"
   }
 }
