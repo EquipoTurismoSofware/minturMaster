@@ -1,7 +1,12 @@
 /*
     Componente PEvento.js
 */
-
+#desHTML{
+    margin-top: -55px;
+}
+p{
+    font-size: 1.2em;
+}
 .evento-titulo {
     text-transform: uppercase;
     font-weight: 800;
@@ -17,6 +22,7 @@
 
 .evento-data {
     li {
+        font-size: 1.3em;
         list-style-type: none;
         color: #fff;
         margin-bottom: 5px;

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Consumer } from "../context";
 import axios from "axios";
-import Loading from "../utils/Loading";
 
 class PEventos extends Component {
   constructor(props) {
@@ -10,7 +9,7 @@ class PEventos extends Component {
     this.state = {
       loading: true,
       data: [],
-      carousel: [],
+      carousel: []
     };
     this.getData = this.getData.bind(this);
   }
@@ -21,12 +20,12 @@ class PEventos extends Component {
     axios({
       method: "get",
       headers: {
-        Authorization: token,
+        Authorization: token
       },
       url: `${process.env.REACT_APP_API}/eventos/200`,
-      responseType: "json",
+      responseType: "json"
     })
-      .then((response) => {
+      .then(response => {
         if (response.data.data.count > 0) {
           let activo = false;
           let carousel = response.data.data.registros.map((a, index) => {
@@ -34,10 +33,12 @@ class PEventos extends Component {
               return null;
             }
             let estilo = {
-              backgroundImage: `url(${process.env.REACT_APP_API_RECURSOS}/recursos/festi.jpg)`,
+              backgroundImage: `url(${
+                process.env.REACT_APP_API_RECURSOS
+              }/recursos/festi.jpg)`,
               backgroundSize: "cover",
               backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
+              backgroundRepeat: "no-repeat"
             };
             if (!activo) {
               activo = true;
@@ -61,13 +62,13 @@ class PEventos extends Component {
           self.setState({
             data: response.data.data.registros,
             carousel: carousel,
-            loading: false,
+            loading: false
           });
         } else {
           //No hay registros o el id no es correcto
         }
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   }
@@ -80,12 +81,14 @@ class PEventos extends Component {
 
   render() {
     const carousel = this.state.carousel;
-    const items = this.state.data.map((e) => {
+    const items = this.state.data.map(e => {
       let estilo = {
-        backgroundImage: `url(${process.env.REACT_APP_API_RECURSOS}/recursos/eventos/${e.foto_uno})`,
+        backgroundImage: `url(${
+          process.env.REACT_APP_API_RECURSOS
+        }/recursos/eventos/${e.foto_uno})`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
+        backgroundSize: "cover"
       };
       let dfecha = e.dfecha.split("-");
       let hfecha = e.hfecha.split("-");
@@ -118,11 +121,7 @@ class PEventos extends Component {
     return (
       <div className="PEventos">
         {this.state.loading ? (
-          <div className="PFiltroAlojamiento mb-5">
-            <div>
-              <Loading margins="96px" />
-            </div>
-          </div>
+          <div>Cargando...</div>
         ) : (
           <React.Fragment>
             <div className="menu-y-slider">
