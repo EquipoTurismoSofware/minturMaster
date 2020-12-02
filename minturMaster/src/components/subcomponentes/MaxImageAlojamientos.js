@@ -41,6 +41,7 @@ class MaxImage extends Component {
 
     //acomodar el array para mostrar bien las imagenes
     var i = this.state.fotos.indexOf(this.state.imgSelected);
+    console.log(i);
     var arrayAux = this.state.fotos;
     //console.log(this.props.src);
     if (i > -1) {
