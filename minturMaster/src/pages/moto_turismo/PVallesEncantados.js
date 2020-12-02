@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Consumer } from "../../context";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Loading from "../../utils/Loading";
 
 class PVallesEncantados extends Component {
   constructor(props) {
@@ -108,9 +109,11 @@ class PVallesEncantados extends Component {
 
     return (
       <React.Fragment>
-        {loading ? (
-          <div>Cargando...</div>
-        ) : (
+        {loading ? 
+<div className="PFiltroAlojamiento mb-5">
+   <div><Loading margins="96px" /></div>
+</div>
+:(
           <React.Fragment>
             <div className="container ListadoAtractivofull">
               <div

@@ -257,7 +257,7 @@ class PMotoTurismo extends Component {
             </div>
           </center>
         </React.Fragment>
-        )}
+        )
       </React.Fragment>
     );
   }

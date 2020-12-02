@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Consumer } from "../../context";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Loading from "../../utils/Loading";
+
 
 class PTelefonosUtiles extends Component {
   constructor(props) {
@@ -12,10 +14,10 @@ class PTelefonosUtiles extends Component {
       data: [
         {
           descripcion: "",
-          imagenes: [{ imagen: "default.jpg" }]
-        }
+          imagenes: [{ imagen: "default.jpg" }],
+        },
       ],
-      index: 0
+      index: 0,
     };
     this.getData = this.getData.bind(this);
   }
@@ -26,21 +28,21 @@ class PTelefonosUtiles extends Component {
     axios({
       method: "get",
       headers: {
-        Authorization: token
+        Authorization: token,
       },
       url: `${process.env.REACT_APP_API}/atractivo/moto/'10'`,
-      responseType: "json"
+      responseType: "json",
     })
-      .then(response => {
+      .then((response) => {
         if (response.data.data.count > 0) {
           self.setState({
-            data: response.data.data.registros
+            data: response.data.data.registros,
           });
         } else {
           //Error no se enocntró el id
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
     self.setState({ loading: false });
@@ -51,7 +53,7 @@ class PTelefonosUtiles extends Component {
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
     this.setState(
       {
-        id: this.props.match.params.id
+        id: this.props.match.params.id,
       },
       () => {
         this.getData();
@@ -63,7 +65,7 @@ class PTelefonosUtiles extends Component {
     const loading = this.state.loading;
     var ListadoAtractivofull = null;
     if (this.state.data.length > 0) {
-      ListadoAtractivofull = this.state.data.map(atrac => {
+      ListadoAtractivofull = this.state.data.map((atrac) => {
         let descripcion = "";
         if (atrac.descripcion.length > 395) {
           descripcion = atrac.descripcion.substr(0, 395) + "...";
@@ -109,7 +111,11 @@ class PTelefonosUtiles extends Component {
     return (
       <React.Fragment>
         {loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div className="container ListadoAtractivofull">
@@ -195,7 +201,6 @@ class PTelefonosUtiles extends Component {
                 <li>Tilisarao (02656) 420031</li>
               </h4>
               <br />
-            
             </div>
             <br />
             <br />
