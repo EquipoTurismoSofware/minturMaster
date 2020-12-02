@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
 import axios from "axios";
+import Loading from "../../utils/Loading";
 
 class PAeropuerto extends Component {
   constructor(props) {
@@ -8,23 +9,27 @@ class PAeropuerto extends Component {
     this.state = {
       loading: true,
       data: [],
-      carousel: []
-    }
+      carousel: [],
+    };
   }
 
   componentDidMount() {
     document.body.scrollTop = 0; // Safari
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
     this.setState({
-      loading: false
-    })
+      loading: false,
+    });
   }
 
   render() {
     return (
       <div className="PEventos">
         {this.state.loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div className="container mb-5" />
@@ -42,7 +47,7 @@ class PAeropuerto extends Component {
                     style={{
                       width: "100%",
                       height: "300px",
-                      objectFit: "cover"
+                      objectFit: "cover",
                     }}
                     src="http://agenciasanluis.com/wp-content/uploads/2017/09/terrazas.jpg"
                   />
@@ -58,7 +63,7 @@ class PAeropuerto extends Component {
                       height: "50px",
                       fontSize: "1.2rem",
                       lineHeight: "1.8rem",
-                      fontWeight: "700"
+                      fontWeight: "700",
                     }}
                   >
                     San Luis
@@ -129,7 +134,7 @@ class PAeropuerto extends Component {
                   style={{
                     width: "100%",
                     height: "300px",
-                    objectFit: "cover"
+                    objectFit: "cover",
                   }}
                   src="https://www.welcomeargentina.com/paseos/citytour-villa-mercedes/villa-mercedes-4.jpg"
                 />
@@ -145,7 +150,7 @@ class PAeropuerto extends Component {
                     height: "50px",
                     fontSize: "1.2rem",
                     lineHeight: "1.8rem",
-                    fontWeight: "700"
+                    fontWeight: "700",
                   }}
                 >
                   Villa mercedes
@@ -164,21 +169,20 @@ class PAeropuerto extends Component {
                             <br />
                             <span className="pr-4">
                               <i className="fas fa-user" />
-                              &nbsp; Tel./Cel.: +54 02657 22-4773 / +54 2657-678041
+                              &nbsp; Tel./Cel.: +54 02657 22-4773 / +54
+                              2657-678041
                             </span>
                             <br />
                             <span>
                               <i class="fas fa-globe-americas" />
-                              &nbsp;www.movecar.com.ar -
-                              admin@movecar.com.ar
+                              &nbsp;www.movecar.com.ar - admin@movecar.com.ar
                             </span>
                             <br />
                             <span>
-                              <i class="fas fa-clock" /> &nbsp; Horario: 9:30 hrs a
-                              12:00 hrs / 18:30 hrs a 20:30 hrs
+                              <i class="fas fa-clock" /> &nbsp; Horario: 9:30
+                              hrs a 12:00 hrs / 18:30 hrs a 20:30 hrs
                             </span>
                             <hr />
-                           
                           </div>
                           <hr />
                         </div>

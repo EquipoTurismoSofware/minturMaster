@@ -5,6 +5,7 @@ import MetaTags from "react-meta-tags";
 import CompartirPost from "../compartirPost";
 //import GoogleMap from "../components/subcomponentes/GoogleMap";
 import MaxImage from "../../components/subcomponentes/MaxImage";
+import Loading from "../../utils/Loading";
 
 class PNovedad extends Component {
   constructor(props) {
@@ -18,12 +19,12 @@ class PNovedad extends Component {
         subtitulo: "",
         descripcion: "",
         foto_uno: "default.jpg",
-        foto_dos: "default.jpg"
+        foto_dos: "default.jpg",
       },
       img: {
         visible: false,
-        src: ""
-      }
+        src: "",
+      },
     };
     this.clickImg = this.clickImg.bind(this);
     this.closeImg = this.closeImg.bind(this);
@@ -35,8 +36,8 @@ class PNovedad extends Component {
     this.setState({
       img: {
         visible: visible,
-        src: src
-      }
+        src: src,
+      },
     });
   }
 
@@ -44,8 +45,8 @@ class PNovedad extends Component {
     this.setState({
       img: {
         visible: false,
-        src: ""
-      }
+        src: "",
+      },
     });
   }
 
@@ -58,18 +59,18 @@ class PNovedad extends Component {
     axios({
       method: "get",
       headers: {
-        Authorization: token
+        Authorization: token,
       },
       url: `${process.env.REACT_APP_API}/novedad/${id}`,
-      responseType: "json"
+      responseType: "json",
     })
-      .then(response => {
+      .then((response) => {
         self.setState({
           data: response.data.data.registros[0],
-          loading: false
+          loading: false,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }
@@ -83,7 +84,11 @@ class PNovedad extends Component {
     return (
       <React.Fragment>
         {this.state.loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div className="container PNovedad">
@@ -110,7 +115,7 @@ class PNovedad extends Component {
                         className="img-fluid"
                         src={`${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_uno}`}
                         alt="Img"
-                        onClick={e =>
+                        onClick={(e) =>
                           this.clickImg(
                             true,
                             `${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_uno}`
@@ -122,14 +127,13 @@ class PNovedad extends Component {
                           className="img-fluid"
                           src={`${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_dos}`}
                           alt="Img"
-                          onClick={e =>
+                          onClick={(e) =>
                             this.clickImg(
                               true,
                               `${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_dos}`
                             )
                           }
                         />
-                        
                       ) : (
                         ""
                       )}

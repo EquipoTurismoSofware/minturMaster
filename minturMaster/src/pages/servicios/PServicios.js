@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Consumer } from "../../context";
 import axios from "axios";
+import Loading from "../../utils/Loading";
 
 class PServicio extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class PServicio extends Component {
     this.state = {
       loading: false,
       data: [],
-      carousel: []
+      carousel: [],
     };
     this.getData = this.getData.bind(this);
   }
@@ -20,12 +21,12 @@ class PServicio extends Component {
     axios({
       method: "get",
       headers: {
-        Authorization: token
+        Authorization: token,
       },
       url: `${process.env.REACT_APP_API}/eventos/50`,
-      responseType: "json"
+      responseType: "json",
     })
-      .then(response => {
+      .then((response) => {
         if (response.data.data.count > 0) {
           let activo = false;
           let carousel = response.data.data.registros.map((a, index) => {
@@ -36,7 +37,7 @@ class PServicio extends Component {
               backgroundImage: `url(https://www.revistasavia.com/wp-content/uploads/2018/03/analisis-08-1.jpg)`,
               backgroundSize: "cover",
               backgroundPosition: "center",
-              backgroundRepeat: "no-repeat"
+              backgroundRepeat: "no-repeat",
             };
             if (!activo) {
               activo = true;
@@ -60,13 +61,13 @@ class PServicio extends Component {
           self.setState({
             data: response.data.data.registros,
             carousel: carousel,
-            loading: false
+            loading: false,
           });
         } else {
           //No hay registros o el id no es correcto
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }
@@ -81,7 +82,11 @@ class PServicio extends Component {
     return (
       <div className="PEventos">
         {this.state.loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div className="container">
@@ -95,11 +100,12 @@ class PServicio extends Component {
 
                 <div className="row mb-3">
                   <div className="col">
-                    <img alt="avion"
+                    <img
+                      alt="avion"
                       style={{
                         width: "100%",
                         height: "300px",
-                        objectFit: "cover"
+                        objectFit: "cover",
                       }}
                       src="http://www.rovellacarranza.com.ar/wp-content/uploads/2015/04/MG_6247.jpg"
                     />
@@ -116,7 +122,7 @@ class PServicio extends Component {
                           height: "50px",
                           fontSize: "1.2rem",
                           lineHeight: "1.8rem",
-                          fontWeight: "700"
+                          fontWeight: "700",
                         }}
                       >
                         Aeropuertos
@@ -126,11 +132,12 @@ class PServicio extends Component {
                 </div>
                 <div className="row mb-3">
                   <div className="col">
-                    <img alt="agencia"
+                    <img
+                      alt="agencia"
                       style={{
                         width: "100%",
                         height: "300px",
-                        objectFit: "cover"
+                        objectFit: "cover",
                       }}
                       src="https://img.lagaceta.com.ar/fotos/notas/2018/12/28/recomendaciones-hora-contratar-paquete-turistico-agencia-viajes-794018-153357.jpg"
                     />
@@ -147,7 +154,7 @@ class PServicio extends Component {
                           height: "50px",
                           fontSize: "1.2rem",
                           lineHeight: "1.8rem",
-                          fontWeight: "700"
+                          fontWeight: "700",
                         }}
                       >
                         Agencias de Viajes
@@ -157,11 +164,12 @@ class PServicio extends Component {
                 </div>
                 <div className="row mb-3">
                   <div className="col">
-                    <img alt="default"
+                    <img
+                      alt="default"
                       style={{
                         width: "100%",
                         height: "300px",
-                        objectFit: "cover"
+                        objectFit: "cover",
                       }}
                       src="https://i.ytimg.com/vi/MjaCNUOwLRo/maxresdefault.jpg"
                     />
@@ -178,7 +186,7 @@ class PServicio extends Component {
                           height: "50px",
                           fontSize: "1.2rem",
                           lineHeight: "1.8rem",
-                          fontWeight: "700"
+                          fontWeight: "700",
                         }}
                       >
                         Alojamientos
@@ -188,11 +196,12 @@ class PServicio extends Component {
                 </div>
                 <div className="row mb-3">
                   <div className="col">
-                    <img alt="avion2"
+                    <img
+                      alt="avion2"
                       style={{
                         width: "100%",
                         height: "300px",
-                        objectFit: "cover"
+                        objectFit: "cover",
                       }}
                       src="https://www.apertura.com/__export/1443539630183/sites/revistaap/img/clase/2015/09/29/auto_lujjo_crop1443539630002.jpg"
                     />
@@ -209,7 +218,7 @@ class PServicio extends Component {
                           height: "50px",
                           fontSize: "1.2rem",
                           lineHeight: "1.8rem",
-                          fontWeight: "700"
+                          fontWeight: "700",
                         }}
                       >
                         Alquiler de autos
@@ -219,11 +228,12 @@ class PServicio extends Component {
                 </div>
                 <div className="row mb-3">
                   <div className="col">
-                    <img  alt="guia"
+                    <img
+                      alt="guia"
                       style={{
                         width: "100%",
                         height: "300px",
-                        objectFit: "cover"
+                        objectFit: "cover",
                       }}
                       src="https://www.cenfotur.edu.pe/wp-content/uploads/2016/11/CENFOTUR-GUIA-OFICIAL.jpg"
                     />
@@ -240,7 +250,7 @@ class PServicio extends Component {
                           height: "50px",
                           fontSize: "1.2rem",
                           lineHeight: "1.8rem",
-                          fontWeight: "700"
+                          fontWeight: "700",
                         }}
                       >
                         Guías de turismo

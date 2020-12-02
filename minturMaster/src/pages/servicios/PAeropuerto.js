@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
 import axios from "axios";
+import Loading from "../../utils/Loading";
 
 class PAeropuerto extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class PAeropuerto extends Component {
     this.state = {
       loading: true,
       data: [],
-      carousel: []
+      carousel: [],
     };
   }
 
@@ -16,7 +17,7 @@ class PAeropuerto extends Component {
     document.body.scrollTop = 0; // Safari
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
     this.setState({
-      loading: false
+      loading: false,
     });
   }
 
@@ -24,7 +25,11 @@ class PAeropuerto extends Component {
     return (
       <div className="PEventos">
         {this.state.loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div className="container mb-5" />
@@ -37,11 +42,12 @@ class PAeropuerto extends Component {
                   <h3 style={{ color: `#722789` }}>Aeropuertos</h3>
                 </div>
                 <div className="col">
-                  <img alt="avion"
+                  <img
+                    alt="avion"
                     style={{
                       width: "100%",
                       height: "300px",
-                      objectFit: "cover"
+                      objectFit: "cover",
                     }}
                     src="http://agenciasanluis.com/wp-content/uploads/2017/09/terrazas.jpg"
                   />
@@ -57,7 +63,7 @@ class PAeropuerto extends Component {
                       height: "50px",
                       fontSize: "1.2rem",
                       lineHeight: "1.8rem",
-                      fontWeight: "700"
+                      fontWeight: "700",
                     }}
                   >
                     San Luis
@@ -102,11 +108,12 @@ class PAeropuerto extends Component {
                   <br />
                   <div className="row mb-3">
                     <div className="col">
-                      <img alt="avion1"
+                      <img
+                        alt="avion1"
                         style={{
                           width: "100%",
                           height: "300px",
-                          objectFit: "cover"
+                          objectFit: "cover",
                         }}
                         src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/santa_rosa_conlara_aeropuerto.jpg"
                       />
@@ -122,7 +129,7 @@ class PAeropuerto extends Component {
                           height: "50px",
                           fontSize: "1.2rem",
                           lineHeight: "1.8rem",
-                          fontWeight: "700"
+                          fontWeight: "700",
                         }}
                       >
                         Santa Rosa del Conlara
