@@ -80,7 +80,7 @@ export default class Newsletter extends Component {
       });
     }else{
       this.setState({
-        msg: "Mail ingresado incorrectamente"
+        msg: "Mail incorrecto"
       });    
     }
   }
@@ -98,6 +98,12 @@ export default class Newsletter extends Component {
     this.setState({
         [name]: value
     });
+
+    if(this.state.msg != ""){
+      this.setState({
+        msg: ""
+      });
+    }
 }
 
   render() {
@@ -106,7 +112,7 @@ export default class Newsletter extends Component {
       <React.Fragment>
         <Container className="newsletter" style={{display: this.state.visible}}>
           <Row className="newsHeader">
-            <Col md={10}><h5>Ingrese su email:</h5></Col>
+            <Col md={10}><h5>Sumate al Newsletter:</h5></Col>
             <Col md={2}><button style={{right: 0, border: "none", background: "none"}} onClick={() => this.closeModal()}><i className="fas fa-times"></i></button> </Col>
           </Row>
           <Row className="newsBody">

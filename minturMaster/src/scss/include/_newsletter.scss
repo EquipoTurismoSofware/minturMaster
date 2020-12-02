@@ -24,6 +24,7 @@
         border: none;
         border-radius: 20px;
         outline: none;
+        text-align: center;
         &:disabled{
             @include degrado(0.6, 0.7);
             background-color: rgba(237,15,104, 1);

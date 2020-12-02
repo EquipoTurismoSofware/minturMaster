@@ -4191,6 +4191,7 @@ h3.bgc_4 {
   border: none;
   border-radius: 20px;
   outline: none;
+  text-align: center;
 }
 .newsletter .newsMsg:disabled {
   background: #722789;
