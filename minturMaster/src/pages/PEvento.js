@@ -205,8 +205,8 @@ class PEvento extends Component {
                     )}
                   </div>
                 </div>
-                <div className="col-xs-12 col-md-4">
-                  {this.state.evento.descripcionHTML}
+                <div className="col-xs-12 col-md-4" id="desHTML" dangerouslySetInnerHTML={{__html: this.state.evento.descripcionHTML}} >
+                 
                 </div>
                 <div className="col">
                   <ul className="evento-data">
