@@ -110,16 +110,18 @@ class PParques extends Component {
 
     return (
       <React.Fragment>
-        {loading ? (
-          <div>Cargando...</div>
-        ) : (
+        {loading ? 
+                   <div className="PFiltroAlojamiento mb-5">
+                   <div><Loading margins="96px" /></div>
+                   </div>
+                    : (
           <React.Fragment>
             <div className="container ListadoAtractivofull">
               <div className="nf-titulo">
                 <span>Parques y Urbanización</span>
               </div>
               <h4 className="" style={{ color: `#808080` }}>
-                Los parques provinciales, con su cuidadoso diseño paisajístico,
+                ----Los parques provinciales, con su cuidadoso diseño paisajístico,
                 te permiten relajarte y disfrutar de la naturaleza, en medio del
                 ambiente urbano. Estos placenteros refugios verdes te ofrecen
                 recreación, eventos y propuestas para todos los gustos y edades.
