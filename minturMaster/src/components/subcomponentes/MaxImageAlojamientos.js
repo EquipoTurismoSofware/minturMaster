@@ -12,7 +12,9 @@ class MaxImage extends Component {
       top: 1,
       visible: "hidden",
       fotos: [],
-      imgSelected: this.props.id,
+      fotosAux: [],
+      imgSelected: "",
+      index: 0
     };
 
     this.setData = this.setData.bind(this);
@@ -24,7 +26,7 @@ class MaxImage extends Component {
     //return  fotos.indexOf(img)
   }*/
 
-  setData() {
+  setData() {  
     let visibilidad = "hidden";
     let top = 0;
     if (this.props.visible === true) {
@@ -37,54 +39,61 @@ class MaxImage extends Component {
       top = document.documentElement.scrollTop;
     }
 
-    /////acomodar el array para mostrar bien las imagenes
-    var i = this.props.src.indexOf(this.props.id);
+    //acomodar el array para mostrar bien las imagenes
+    var i = this.state.fotos.indexOf(this.state.imgSelected);
+    var arrayAux = this.state.fotos;
     //console.log(this.props.src);
     if (i > -1) {
-      for (var x = i; x > 0; console.log(x)) {
-        this.props.src[x] = this.props.src[--x];
+      for (var x = i; x > 0; /*console.log(x)*/) {
+        arrayAux[x] = arrayAux[--x];
       }
-      this.props.src[0] = this.props.id;
-    }
 
+      arrayAux[0] = this.state.imgSelected;
+    }
     this.setState({
       top: top,
+      fotosAux: arrayAux,
       visible: visibilidad,
-      fotos: this.props.src,
-      imgSelected: this.props.id,
+      index: i
     });
 
-    console.log("Flag MaxImage- variable (fotos)--->" + this.state.fotos);
-    console.log("Flag MaxImage- variable (props.src)--->" + this.state.src);
-    console.log("indexOf-->  " + this.props.src.indexOf(this.props.id));
+    //console.log("Flag MaxImage- variable (fotos)--->" + this.state.fotos);
+    //console.log("Flag MaxImage- variable (props.src)--->" + this.state.src);
+    //console.log("indexOf-->  " + this.props.src.indexOf(this.props.id));
 
     //if ((this.props.src).indexOf(this.props.id) > -1) {
 
     //console.log(removeItemFromArr(this.props.src,this.props.id))
   }
 
-  resetImg() {
+  resetImg() { 
     this.props.onClose();
-    this.state.fotos = [];
    // this.setData();
 
   }
 
   componentDidUpdate(prevProps) {
-    if (
-      this.props.fotos !== prevProps.fotos ||
-      this.props.visible !== prevProps.visible
-    ) {
-      this.setData();
+    if(this.props.src !== prevProps.src || this.props.id !== prevProps.id) {
+      this.setState({
+        fotos: this.props.src,
+        imgSelected: this.props.id
+      }, () => {
+          this.setData();
+      });
     }
   }
 
   componentDidMount() {
-    this.setData();
+    this.setState({
+      fotos: this.props.src,
+      imgSelected: this.props.id
+    }, () => {
+        this.setData();
+    });
   }
 
   render() {
-    const fotos = this.props.src.map((listaImg) => {
+    const fotos = this.state.fotosAux.map((listaImg) => {
       //  console.log("flag (img) nueva variable--->" + listaImg);
       return (
         <Carousel.Item>
@@ -97,20 +106,14 @@ class MaxImage extends Component {
       <React.Fragment>
         <div
           className="visor animated bounceIn delay-2s"
-          style={{ visibility: this.state.visible, top: this.state.top }}
+          style={{visibility: this.state.visible, top: this.state.top }}
         >
           <div className="visor-content">
             <div className="visor-close" onClick={(e) => this.resetImg(e)}>
               <i className="fas fa-times"></i>
             </div>
-            {/* <img className="" fotos={this.state.fotos} alt="Full-View" /> */}
-
-            <Carousel clasname="pb-5">
-              {/*<div class="carousel-inner">
-               */}
-
+            <Carousel clasname="pb-5" >
               {fotos}
-              {/* </div>*/}
             </Carousel>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Consumer } from "../context";
+//import { Consumer } from "../context";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -170,6 +170,6 @@ class Novedades extends Component {
   }
 }
 
-Novedades.contextType = Consumer;
+//Novedades.contextType = Consumer;
 
 export default Novedades;

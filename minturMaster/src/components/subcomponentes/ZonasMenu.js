@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Consumer } from "../../context";
+//import { Consumer } from "../../context";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -583,6 +583,6 @@ class ZonasMenu extends Component {
   }
 }
 
-ZonasMenu.contextType = Consumer;
+//ZonasMenu.contextType = Consumer;
 
 export default ZonasMenu;

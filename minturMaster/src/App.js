@@ -6,6 +6,7 @@ import "./App.css";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Menu from "./components/Menu";
 import ToTop from "./components/ToTop";
+import Newsletter from "./components/subcomponentes/Newsletter";
 
 import PHome from "./pages/PHome";
 import PZona from "./pages/PZona";
@@ -198,6 +199,7 @@ class App extends Component {
               />
             </Switch>
             <ToTop showAt={400} />
+
             <Footer />
           </React.Fragment>
         </Router>

@@ -338,13 +338,22 @@ class PAlojamiento extends Component {
                 </div>
               </div>
             </div>
-            <MaxImage
-              id={this.state.img.src}
-              src={this.state.src}
-              visible={this.state.img.visible}
-              onClose={this.closeImg}
-          
-            />
+            <div>
+              {
+                this.state.img.visible ?
+                <MaxImage
+                    id={this.state.img.src}
+                    src={this.state.src}
+                    visible={this.state.img.visible}
+                    onClose={this.closeImg}
+                
+                /> 
+                :
+                ""
+              }
+            </div>
+            
+           
           </React.Fragment>
         )}
       </div>

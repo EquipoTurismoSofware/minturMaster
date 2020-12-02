@@ -1,0 +1,46 @@
+.newsletter {
+    width: 250px;
+    z-index: 99;
+    position: fixed; /* Fixed/sticky position */
+    bottom: 0px; /* Place the button at the bottom of the page */
+    right: 20px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 20px ;
+
+    .newsEmail{
+        border-radius: 5px;
+        border: solid lightgray;
+        width: 90%;
+        height: 40px;        
+        &:focus{
+            outline-color: darkgray;
+        }
+    }
+
+    .newsMsg {
+        width: 90%;
+        height: 40px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        &:disabled{
+            @include degrado(0.6, 0.7);
+            background-color: rgba(237,15,104, 1);
+            color: white;
+        }
+    }
+
+    .newsFooterButton {
+        width: 90%; 
+        height: 40px; 
+        border-radius: 5px;
+        border: none;
+        background-color: rgba(114,39,137, 1);
+        color: white;
+        &:hover{
+            outline: none;
+            background-color: rgb(127, 62, 146);
+        }
+    }
+}
