@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Consumer } from "../context";
 import { Link } from "react-router-dom";
+import Loading from "../utils/Loading";
+
+
 
 import axios from "axios";
 
@@ -10,7 +13,7 @@ class PCursoMarketing extends Component {
     this.state = {
       loading: true,
       data: [],
-      carousel: []
+      carousel: [],
     };
     this.getData = this.getData.bind(this);
   }
@@ -21,12 +24,12 @@ class PCursoMarketing extends Component {
     axios({
       method: "get",
       headers: {
-        Authorization: token
+        Authorization: token,
       },
       url: `${process.env.REACT_APP_API}/eventos/50`,
-      responseType: "json"
+      responseType: "json",
     })
-      .then(response => {
+      .then((response) => {
         if (response.data.data.count > 0) {
           let activo = false;
           let carousel = response.data.data.registros.map((a, index) => {
@@ -37,7 +40,7 @@ class PCursoMarketing extends Component {
               backgroundImage: `url(https://www.revistasavia.com/wp-content/uploads/2018/03/analisis-08-1.jpg)`,
               backgroundSize: "cover",
               backgroundPosition: "center",
-              backgroundRepeat: "no-repeat"
+              backgroundRepeat: "no-repeat",
             };
             if (!activo) {
               activo = true;
@@ -61,13 +64,13 @@ class PCursoMarketing extends Component {
           self.setState({
             data: response.data.data.registros,
             carousel: carousel,
-            loading: false
+            loading: false,
           });
         } else {
           //No hay registros o el id no es correcto
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }
@@ -82,7 +85,11 @@ class PCursoMarketing extends Component {
     return (
       <div className="PEventos">
         {this.state.loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div className="container mb-5" />

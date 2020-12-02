@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
 import axios from "axios";
+import Loading from "../../utils/Loading";
 
 class ListadoGuiasCovid extends Component {
   constructor(props) {
@@ -318,7 +319,11 @@ class ListadoGuiasCovid extends Component {
     return (
       <div className="PEventos">
         {this.state.loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div className="container mb-5" />

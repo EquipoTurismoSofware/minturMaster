@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Consumer } from "../../context";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+import Loading from "../../utils/Loading";
 class PDiques extends Component {
   constructor(props) {
     super(props);
@@ -12,10 +12,10 @@ class PDiques extends Component {
       data: [
         {
           descripcion: "",
-          imagenes: [{ imagen: "default.jpg" }]
-        }
+          imagenes: [{ imagen: "default.jpg" }],
+        },
       ],
-      index: 0
+      index: 0,
     };
     this.getData = this.getData.bind(this);
   }
@@ -26,21 +26,21 @@ class PDiques extends Component {
     axios({
       method: "get",
       headers: {
-        Authorization: token
+        Authorization: token,
       },
       url: `${process.env.REACT_APP_API}/atractivo/'diques'`,
-      responseType: "json"
+      responseType: "json",
     })
-      .then(response => {
+      .then((response) => {
         if (response.data.data.count > 0) {
           self.setState({
-            data: response.data.data.registros
+            data: response.data.data.registros,
           });
         } else {
           //Error no se enocntró el id
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
     self.setState({ loading: false });
@@ -51,7 +51,7 @@ class PDiques extends Component {
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
     this.setState(
       {
-        id: this.props.match.params.id
+        id: this.props.match.params.id,
       },
       () => {
         this.getData();
@@ -63,7 +63,7 @@ class PDiques extends Component {
     const loading = this.state.loading;
     var ListadoAtractivofull = null;
     if (this.state.data.length > 0) {
-      ListadoAtractivofull = this.state.data.map(atrac => {
+      ListadoAtractivofull = this.state.data.map((atrac) => {
         let descripcion = "";
         if (atrac.descripcion.length > 395) {
           descripcion = atrac.descripcion.substr(0, 395) + "...";
@@ -82,9 +82,7 @@ class PDiques extends Component {
                     </span>
                     <img
                       className="img-fluid"
-                      src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${
-                        atrac.imagenes[indice].imagen
-                      }`}
+                      src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${atrac.imagenes[indice].imagen}`}
                       alt="Img"
                     />
                   </div>
@@ -111,13 +109,18 @@ class PDiques extends Component {
     return (
       <React.Fragment>
         {loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <Loading margins="96px" />
+          </div>
         ) : (
           <React.Fragment>
             <div className="container ListadoAtractivofull">
-            <div className="ZonaLocalidad-titulo" style={{backgroundColor: `#722789`}}>
-                            <h3 style={{color: `#722789`}}>Diques</h3>
-                        </div>
+              <div
+                className="ZonaLocalidad-titulo"
+                style={{ backgroundColor: `#722789` }}
+              >
+                <h3 style={{ color: `#722789` }}>Diques</h3>
+              </div>
               <h4 className="" style={{ color: `#808080` }}>
                 A lo largo de más de tres décadas, el Estado Provincial trabajó
                 en la construcción de grandes obras de almacenamiento y

@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import GoogleMap from "../components/subcomponentes/GoogleMap";
 import Alojamientos from "../components/subcomponentes/Alojamientos";
+import Loading from "../utils/Loading";
+
 
 class PLocalidad extends Component {
   constructor(props) {
@@ -21,10 +23,10 @@ class PLocalidad extends Component {
       dataLocalidad: {
         id: 0,
         color: "722789",
-        imagenes: [{ imagen: "default.jpg" }]
+        imagenes: [{ imagen: "default.jpg" }],
       },
       carousel: [],
-      imperdibles: []
+      imperdibles: [],
     };
     this.getData = this.getData.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -37,16 +39,16 @@ class PLocalidad extends Component {
     axios({
       method: "get",
       headers: {
-        Authorization: token
+        Authorization: token,
       },
       url: `${process.env.REACT_APP_API}/ciudad/${self.state.id}`,
-      responseType: "json"
+      responseType: "json",
     })
-      .then(response => {
+      .then((response) => {
         if (response.data.data.count > 0) {
           self.setState(
             {
-              dataLocalidad: response.data.data.registros[0]
+              dataLocalidad: response.data.data.registros[0],
             },
             () => {
               //Carousel
@@ -57,12 +59,10 @@ class PLocalidad extends Component {
                   return null;
                 }
                 let estilo = {
-                  backgroundImage: `url(${
-                    process.env.REACT_APP_API_RECURSOS
-                  }/atractivos/${a.imagen})`,
+                  backgroundImage: `url(${process.env.REACT_APP_API_RECURSOS}/atractivos/${a.imagen})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat"
+                  backgroundRepeat: "no-repeat",
                 };
                 if (!activo) {
                   activo = true;
@@ -96,74 +96,72 @@ class PLocalidad extends Component {
           //Error no se encontro el id
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
-      
+
     //Atractivos de la Localidad (Imperdibles)
     axios({
       method: "get",
       headers: {
-        Authorization: token
+        Authorization: token,
       },
-      url: `${process.env.REACT_APP_API}/ciudad/${
-        self.state.id
-      }/atractivos/imperdibles`,
-      responseType: "json"
+      url: `${process.env.REACT_APP_API}/ciudad/${self.state.id}/atractivos/imperdibles`,
+      responseType: "json",
     })
-      .then(response => {
+      .then((response) => {
         if (response.data.data.count > 0) {
           self.setState({ imperdibles: response.data.data.registros });
         } else {
           //Error no se enocntró el id
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
-     //Traigo todos los tipos 
+    //Traigo todos los tipos
     axios({
-        method: "get",
-        headers: {
-            "Authorization": token
-        },
-        url: `${process.env.REACT_APP_API}/tipos`,
-        responseType: "json"
+      method: "get",
+      headers: {
+        Authorization: token,
+      },
+      url: `${process.env.REACT_APP_API}/tipos`,
+      responseType: "json",
     })
-    .then((response) => {
-        if(response.data.data.count > 0) {
-            response.data.data.registros.unshift({
-                id: 0,
-                descripcion: "Todos los Tipos"
-            });
-            self.setState({
-                tipos: response.data.data.registros
-            });
+      .then((response) => {
+        if (response.data.data.count > 0) {
+          response.data.data.registros.unshift({
+            id: 0,
+            descripcion: "Todos los Tipos",
+          });
+          self.setState({
+            tipos: response.data.data.registros,
+          });
         }
-    })
-    .catch((error) => {
+      })
+      .catch((error) => {
         console.log(error);
-    });
+      });
     //Traigo los alojamientos de esas localidades
     axios({
       method: "get",
       headers: {
-          "Authorization": token
+        Authorization: token,
       },
       url: `${process.env.REACT_APP_API}/guias/ciudad/${self.state.id}/full`,
-      responseType: 'json'
+      responseType: "json",
     })
-    .then((response) => {
+      .then((response) => {
         self.setState({
           alojamientos: response.data.data.registros,
           filtro: response.data.data.registros,
-          loading: false
+          loading: false,
         });
-    })
-    .catch((error) => {
+      })
+      .catch((error) => {
         console.log(error);
-    });
-   
+      });
+
     self.setState({ loading: false });
   }
 
@@ -171,7 +169,7 @@ class PLocalidad extends Component {
     if (this.props.match.params.id !== prevProps.match.params.id) {
       this.setState(
         {
-          id: this.props.match.params.id
+          id: this.props.match.params.id,
         },
         () => {
           this.getData();
@@ -185,58 +183,60 @@ class PLocalidad extends Component {
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
     this.setState(
       {
-        id: this.props.match.params.id
+        id: this.props.match.params.id,
       },
       () => {
         this.getData();
       }
     );
   }
-  
+
   //Filtrado
   aplicarFiltro() {
-    let {idtipo, nombreAloja} = this.state;
+    let { idtipo, nombreAloja } = this.state;
     idtipo = parseInt(idtipo, 10);
-    
+
     //Aca el tipo donde coincidan ambos ID's asi le saco la descripcion
-    let desc  = this.state.tipos.filter(t => parseInt(t.id, 10) === idtipo);
+    let desc = this.state.tipos.filter((t) => parseInt(t.id, 10) === idtipo);
     let filtrado = this.state.alojamientos.filter((value) => {
-        let respuesta = true;
+      let respuesta = true;
 
-        //Validar el Tipo seleccionado
-        if(idtipo !== 0) {
-           if(value.tipo !== desc[0].descripcion) {
-                respuesta = false;
-           }
+      //Validar el Tipo seleccionado
+      if (idtipo !== 0) {
+        if (value.tipo !== desc[0].descripcion) {
+          respuesta = false;
         }
-        //Validar Nombre
-        if(nombreAloja.length) {
-           if(value.nombre.toLowerCase().search(nombreAloja) === -1) {
-                respuesta = false;
-            }
+      }
+      //Validar Nombre
+      if (nombreAloja.length) {
+        if (value.nombre.toLowerCase().search(nombreAloja) === -1) {
+          respuesta = false;
         }
+      }
 
-        return respuesta;
+      return respuesta;
     });
     this.setState({
-        //Aca estoy metiendo en el estado filtro el array de Alojamientos filtrado.
-        filtro: filtrado
+      //Aca estoy metiendo en el estado filtro el array de Alojamientos filtrado.
+      filtro: filtrado,
     });
-}
+  }
 
-//Manejador de evento
-handleChange(event) {
-  const target = event.target;
-  const value = target.value;
-  const name = target.name;
+  //Manejador de evento
+  handleChange(event) {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
 
-  this.setState({
-      [name]: value
-  },
-  () => {
-    this.aplicarFiltro();
-  });
-}
+    this.setState(
+      {
+        [name]: value,
+      },
+      () => {
+        this.aplicarFiltro();
+      }
+    );
+  }
 
   render() {
     const loading = this.state.loading;
@@ -250,9 +250,13 @@ handleChange(event) {
         </Link>
       );
     });
-    
+
     const tipos = this.state.tipos.map((tipo) => {
-      return(<option key={`tipo-${tipo.id}`} value={tipo.id}>{tipo.descripcion}</option>);
+      return (
+        <option key={`tipo-${tipo.id}`} value={tipo.id}>
+          {tipo.descripcion}
+        </option>
+      );
     });
 
     let hay = this.state.dataLocalidad.imagenes.length - 1; //Puede ser default.jpg
@@ -268,7 +272,11 @@ handleChange(event) {
     return (
       <div className="Localidad">
         {loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div className="menu-y-slider">
@@ -324,9 +332,7 @@ handleChange(event) {
                         <FotoRandom />
                       ) : (
                         <iframe
-                          title={`#${this.state.dataLocalidad.id}-${
-                            this.state.dataLocalidad.nombre
-                          }`}
+                          title={`#${this.state.dataLocalidad.id}-${this.state.dataLocalidad.nombre}`}
                           src={this.state.dataLocalidad.video}
                           width="100%"
                           height="315"
@@ -344,7 +350,7 @@ handleChange(event) {
                           <div
                             className="al-nombre"
                             style={{
-                              color: `#${this.state.dataLocalidad.color}`
+                              color: `#${this.state.dataLocalidad.color}`,
                             }}
                           >
                             {this.state.dataLocalidad.nombre} <br />
@@ -353,7 +359,7 @@ handleChange(event) {
                           <div
                             className="al-texto"
                             style={{
-                              color: `#${this.state.dataLocalidad.color}`
+                              color: `#${this.state.dataLocalidad.color}`,
                             }}
                           >
                             ATRACTIVOS TURÍSTICOS <br />
@@ -361,19 +367,21 @@ handleChange(event) {
                           <div
                             className="al-boton"
                             style={{
-                              color: `#${this.state.dataLocalidad.color}`
+                              color: `#${this.state.dataLocalidad.color}`,
                             }}
                           >
                             <i className="fas fa-arrow-alt-circle-right" />
                           </div>
                         </div>
                       </Link>
-                      <Link to={`/gastronomialistado/${this.state.dataLocalidad.id}`}>
+                      <Link
+                        to={`/gastronomialistado/${this.state.dataLocalidad.id}`}
+                      >
                         <div className="all-link">
                           <div
                             className="al-texto"
                             style={{
-                              color: `#${this.state.dataLocalidad.color}`
+                              color: `#${this.state.dataLocalidad.color}`,
                             }}
                           >
                             GASTRONOMÍA
@@ -381,7 +389,7 @@ handleChange(event) {
                           <div
                             className="al-boton"
                             style={{
-                              color: `#${this.state.dataLocalidad.color}`
+                              color: `#${this.state.dataLocalidad.color}`,
                             }}
                           >
                             <i className="fas fa-arrow-alt-circle-right" />
@@ -401,13 +409,13 @@ handleChange(event) {
                     <div
                       id="imperdibles"
                       style={{
-                        backgroundColor: `#${this.state.dataLocalidad.color}`
+                        backgroundColor: `#${this.state.dataLocalidad.color}`,
                       }}
                     >
                       <div className="imp-titulo">
                         <h3
                           style={{
-                            color: `#${this.state.dataLocalidad.color}`
+                            color: `#${this.state.dataLocalidad.color}`,
                           }}
                         >
                           Imperdibles
@@ -425,37 +433,48 @@ handleChange(event) {
                 <div className="col offset-md-1">
                   <form /*onSubmit={this.aplicarFiltro}*/ className="mb-5">
                     <div className="form-row">
-                        <div className="form-group col-md-4">
-                          <div className="container">
-                            <label htmlFor="idtipo">Tipo</label>
-                            <select id="idtipo" name="idtipo" className="form-control" value={this.state.idtipo} onChange={this.handleChange}>
-                              {tipos}
-                            </select>
-                          </div>
+                      <div className="form-group col-md-4">
+                        <div className="container">
+                          <label htmlFor="idtipo">Tipo</label>
+                          <select
+                            id="idtipo"
+                            name="idtipo"
+                            className="form-control"
+                            value={this.state.idtipo}
+                            onChange={this.handleChange}
+                          >
+                            {tipos}
+                          </select>
                         </div>
-                        <div className="form-group col-md-4">
-                          <div className="container">
-                            <label htmlFor="nombreAloja">Nombre</label>
-                            <input type="text" id="nombreAloja" name="nombreAloja" className="form-control" value={this.state.nombreAloja} onChange={this.handleChange} />
-                          </div>
+                      </div>
+                      <div className="form-group col-md-4">
+                        <div className="container">
+                          <label htmlFor="nombreAloja">Nombre</label>
+                          <input
+                            type="text"
+                            id="nombreAloja"
+                            name="nombreAloja"
+                            className="form-control"
+                            value={this.state.nombreAloja}
+                            onChange={this.handleChange}
+                          />
                         </div>
-                        {/*<div className="form-group col-md-3 d-flex align-items-end justify-content-end">
+                      </div>
+                      {/*<div className="form-group col-md-3 d-flex align-items-end justify-content-end">
                             <button type="submit" className="btn btn-primary">Buscar</button>
                         </div>*/}
                     </div>
-                </form>
+                  </form>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="container">
-            <div className="row">
-              <div className="col">
-                <Alojamientos idLocalidad={0} data={this.state.filtro} />                           
+            <div className="container">
+              <div className="row">
+                <div className="col">
+                  <Alojamientos idLocalidad={0} data={this.state.filtro} />
+                </div>
               </div>
             </div>
-          </div>
-
-                  
           </React.Fragment>
         )}
       </div>

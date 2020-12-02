@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Consumer } from "../context";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Loading from "../utils/Loading";
 
 class PCreerGnral extends Component {
   constructor(props) {
@@ -12,10 +13,10 @@ class PCreerGnral extends Component {
       data: [
         {
           descripcion: "",
-          imagenes: [{ imagen: "default.jpg" }]
-        }
+          imagenes: [{ imagen: "default.jpg" }],
+        },
       ],
-      index: 0
+      index: 0,
     };
     this.getData = this.getData.bind(this);
   }
@@ -26,21 +27,21 @@ class PCreerGnral extends Component {
     axios({
       method: "get",
       headers: {
-        Authorization: token
+        Authorization: token,
       },
       url: `${process.env.REACT_APP_API}/atractivo/creer/'2'`,
-      responseType: "json"
+      responseType: "json",
     })
-      .then(response => {
+      .then((response) => {
         if (response.data.data.count > 0) {
           self.setState({
-            data: response.data.data.registros
+            data: response.data.data.registros,
           });
         } else {
           //Error no se enocntró el id
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
     self.setState({ loading: false });
@@ -51,7 +52,7 @@ class PCreerGnral extends Component {
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
     this.setState(
       {
-        id: this.props.match.params.id
+        id: this.props.match.params.id,
       },
       () => {
         this.getData();
@@ -63,7 +64,7 @@ class PCreerGnral extends Component {
     const loading = this.state.loading;
     var ListadoAtractivofull = null;
     if (this.state.data.length > 0) {
-      ListadoAtractivofull = this.state.data.map(atrac => {
+      ListadoAtractivofull = this.state.data.map((atrac) => {
         let descripcion = "";
         if (atrac.descripcion.length > 395) {
           descripcion = atrac.descripcion.substr(0, 395) + "...";
@@ -78,13 +79,11 @@ class PCreerGnral extends Component {
                 <div className="atractivo-full-item">
                   <div className="imagen">
                     <span style={{ backgroundColor: `#${atrac.color}` }}>
-                      {atrac.localidad} 
+                      {atrac.localidad}
                     </span>
-                    <img 
+                    <img
                       className="img-fluid"
-                      src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${
-                        atrac.imagenes[indice].imagen
-                      }`}
+                      src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${atrac.imagenes[indice].imagen}`}
                       alt="Img"
                     />
                   </div>
@@ -111,13 +110,20 @@ class PCreerGnral extends Component {
     return (
       <React.Fragment>
         {loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div className="container ListadoAtractivofull">
-            <div className="ZonaLocalidad-titulo" style={{backgroundColor: `#722789`}}>
-                            <h3 style={{color: `#722789`}}>Creer en San Luis</h3>
-                        </div>
+              <div
+                className="ZonaLocalidad-titulo"
+                style={{ backgroundColor: `#722789` }}
+              >
+                <h3 style={{ color: `#722789` }}>Creer en San Luis</h3>
+              </div>
               <h4 className="" style={{ color: `#808080` }}>
                 “Creer en San Luis” es encontrar las razones para vivir y
                 disfrutar el espíritu de Semana Santa durante todo el año,
@@ -138,19 +144,17 @@ class PCreerGnral extends Component {
             <div className="container">{ListadoAtractivofull}</div>
             <center>
               <div className="Recorridos">
-              <div>
-                <div className="titulo-creer" >
-                  <span className="reco-t-sub2">También vení a conocer:</span>
+                <div>
+                  <div className="titulo-creer">
+                    <span className="reco-t-sub2">También vení a conocer:</span>
+                  </div>
                 </div>
-              </div>
-                <div className="reco-container" style={{maxWidth: "924px"}}>
+                <div className="reco-container" style={{ maxWidth: "924px" }}>
                   <Link to="PZonaCreer/4/Sierras de San Luis">
                     <div id="sierras">
                       <div className="cuadro-color" />
                       <img
-                        src={`${
-                          process.env.REACT_APP_API_RECURSOS
-                        }/recursos/zonas/sierrasreli.jpg`}
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/zonas/sierrasreli.jpg`}
                         className="thumbnail"
                         alt=""
                       />
@@ -164,9 +168,7 @@ class PCreerGnral extends Component {
                     <div id="norte">
                       <div className="cuadro-color" />
                       <img
-                        src={`${
-                          process.env.REACT_APP_API_RECURSOS
-                        }/recursos/zonas/nortereli.jpg`}
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/zonas/nortereli.jpg`}
                         className="thumbnail"
                         alt=""
                       />
@@ -180,9 +182,7 @@ class PCreerGnral extends Component {
                     <div id="costa">
                       <div className="cuadro-color" />
                       <img
-                        src={`${
-                          process.env.REACT_APP_API_RECURSOS
-                        }/recursos/zonas/comechingonesreli.jpg`}
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/zonas/comechingonesreli.jpg`}
                         className="thumbnail"
                         alt=""
                       />
@@ -196,9 +196,7 @@ class PCreerGnral extends Component {
                     <div id="valle">
                       <div className="cuadro-color" />
                       <img
-                        src={`${
-                          process.env.REACT_APP_API_RECURSOS
-                        }/recursos/zonas/conlarareli.jpg`}
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/zonas/conlarareli.jpg`}
                         className="thumbnail"
                         alt=""
                       />
@@ -212,9 +210,7 @@ class PCreerGnral extends Component {
                     <div id="villa">
                       <div className="cuadro-color" />
                       <img
-                        src={`${
-                          process.env.REACT_APP_API_RECURSOS
-                        }/recursos/zonas/mercedesreli.jpg`}
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/zonas/mercedesreli.jpg`}
                         className="thumbnail"
                         alt=""
                       />
@@ -228,9 +224,7 @@ class PCreerGnral extends Component {
                     <div id="llanura">
                       <div className="cuadro-color" />
                       <img
-                        src={`${
-                          process.env.REACT_APP_API_RECURSOS
-                        }/recursos/zonas/llanurareli.jpg`}
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/zonas/llanurareli.jpg`}
                         className="thumbnail"
                         alt=""
                       />

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import ReactWOW from "react-wow";
 import PantallaModal from "../components/subcomponentes/Modal";
 import Newsletter from "../components/subcomponentes/Newsletter";
-
+import Loading from "../utils/Loading";
 
 class Home extends Component {
   constructor(props) {
@@ -17,7 +17,6 @@ class Home extends Component {
       contador: "",
       visible: true,
     };
-
 
     //Cuanta regresiva Eclipse
     /*this.state = { time: {} };
@@ -133,7 +132,11 @@ class Home extends Component {
     return (
       <div className="Home">
         {this.state.loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div className="menu-y-slider">
@@ -187,10 +190,7 @@ class Home extends Component {
                     <div className="carousel-inner">
                       <center>
                         <div className="pantallaGrande">
-                        <Newsletter 
-                              anchoMargen="400px"
-                              altoMargen="250px"                          
-                            />     
+                          <Newsletter anchoMargen="400px" altoMargen="250px" />
                           <PantallaModal
                             anchoMargen="850px"
                             altoMargen="600px"
@@ -200,7 +200,7 @@ class Home extends Component {
                           />
                         </div>
                       </center>
-                    
+
                       <div className="pantallaChica">
                         <PantallaModal
                           anchoMargen="280px"

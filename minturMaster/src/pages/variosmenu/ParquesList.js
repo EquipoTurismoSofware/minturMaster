@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Consumer } from "../../context";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Loading from "../../utils/Loading";
 
 class PParques extends Component {
   constructor(props) {
@@ -110,14 +111,16 @@ class PParques extends Component {
 
     return (
       <React.Fragment>
-        {loading ? (
-          <div>Cargando...</div>
-        ) : (
+        {loading ? 
+                   <div className="PFiltroAlojamiento mb-5">
+                   <div><Loading margins="96px" /></div>
+                   </div>
+                    : (
           <React.Fragment>
             <div className="container ListadoAtractivofull">
-            <div className="ZonaLocalidad-titulo" style={{backgroundColor: `#722789`}}>
-                            <h3 style={{color: `#722789`}}>Parques Provinciales</h3>
-                        </div>
+              <div className="nf-titulo">
+                <span>Parques y Urbanización</span>
+              </div>
               <h4 className="" style={{ color: `#808080` }}>
                 Los parques provinciales, con su cuidadoso diseño paisajístico,
                 te permiten relajarte y disfrutar de la naturaleza, en medio del

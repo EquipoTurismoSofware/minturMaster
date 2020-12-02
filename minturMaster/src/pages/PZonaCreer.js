@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Consumer } from "../context";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Loading from "../utils/Loading";
 
 class PZonaCreer extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class PZonaCreer extends Component {
       localidadesDataZona: [],
       carousel: [],
       links: [],
-      atractivos: []
+      atractivos: [],
     };
     this.getData = this.getData.bind(this);
   }
@@ -25,7 +26,7 @@ class PZonaCreer extends Component {
     axios({
       method: "get",
       headers: {
-        Authorization: token
+        Authorization: token,
       },
       url: `${process.env.REACT_APP_API}/zona/${this.props.match.params.id}`,
       /*
@@ -34,21 +35,21 @@ class PZonaCreer extends Component {
                 password: 's00pers3cret'
             },
             */
-      responseType: "json"
+      responseType: "json",
     })
-      .then(response => {
+      .then((response) => {
         console.log("zonaas");
         console.log(response.data.data.registros[0].nombre);
         if (response.data.data.count > 0) {
           self.setState({
-            dataZona: response.data.data.registros[0]
+            dataZona: response.data.data.registros[0],
           });
         } else {
           //Error no se enocntró el id
         }
         this.setState({ loading: false });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
         this.setState({ loading: false });
       });
@@ -56,35 +57,33 @@ class PZonaCreer extends Component {
     axios({
       method: "get",
       headers: {
-        Authorization: token
+        Authorization: token,
       },
       url:
         `${process.env.REACT_APP_API}/atractivo/'Creer "Camino de la Fe de ` +
         this.props.match.params.zona +
         `"'`,
-      responseType: "json"
+      responseType: "json",
     })
-      .then(response => {
-        console.log( this.props.match.params.zona);
+      .then((response) => {
+        console.log(this.props.match.params.zona);
         console.log(response.data.data.count);
         if (response.data.data.count > 0) {
           self.setState(
             {
-              localidadesDataZona: response.data.data.registros
+              localidadesDataZona: response.data.data.registros,
             },
             () => {
               //Para armar el Carousel y los Links
               axios({
                 method: "get",
                 headers: {
-                  Authorization: token
+                  Authorization: token,
                 },
-                url: `${process.env.REACT_APP_API}/zona/${
-                  this.props.match.params.id
-                }/creer/'Creer "Camino de La Fe Circuito del Morro"'`,
-                responseType: "json"
+                url: `${process.env.REACT_APP_API}/zona/${this.props.match.params.id}/creer/'Creer "Camino de La Fe Circuito del Morro"'`,
+                responseType: "json",
               })
-                .then(response => {
+                .then((response) => {
                   if (response.data.imagenes.length > 0) {
                     //Carousel
                     var activo = false;
@@ -93,12 +92,10 @@ class PZonaCreer extends Component {
                         return null;
                       }
                       let estilo = {
-                        backgroundImage: `url(${
-                          process.env.REACT_APP_API_RECURSOS
-                        }/atractivos/${a.imagen})`,
+                        backgroundImage: `url(${process.env.REACT_APP_API_RECURSOS}/atractivos/${a.imagen})`,
                         backgroundSize: "cover",
                         backgroundPosition: "center",
-                        backgroundRepeat: "no-repeat"
+                        backgroundRepeat: "no-repeat",
                       };
                       if (!activo) {
                         activo = true;
@@ -145,11 +142,9 @@ class PZonaCreer extends Component {
                           <img
                             className="img-fluid"
                             style={{
-                              borderColor: `#${self.state.dataZona.color}`
+                              borderColor: `#${self.state.dataZona.color}`,
                             }}
-                            src={`${
-                              process.env.REACT_APP_API_RECURSOS
-                            }/atractivos/${a.imagen}`}
+                            src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${a.imagen}`}
                             title={a.nombre_atractivo}
                             alt="Thubmail"
                           />
@@ -162,7 +157,7 @@ class PZonaCreer extends Component {
                   }
                   this.setState({ loading: false });
                 })
-                .catch(error => {
+                .catch((error) => {
                   console.log(error);
                   this.setState({ loading: false });
                 });
@@ -173,7 +168,7 @@ class PZonaCreer extends Component {
         }
         this.setState({ loading: false });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
         this.setState({ loading: false });
       });
@@ -193,7 +188,7 @@ class PZonaCreer extends Component {
 
   render() {
     //console.log(atractivosData);
-    const localidades = this.state.localidadesDataZona.map(atrac => {
+    const localidades = this.state.localidadesDataZona.map((atrac) => {
       return (
         <Link to={`/atractivo/${atrac.id}`} key={`atractivo-${atrac.id}`}>
           <div className="row mb-5">
@@ -207,9 +202,7 @@ class PZonaCreer extends Component {
                   </span>
                   <img
                     className="img-fluid"
-                    src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${
-                      atrac.imagenes[0].imagen
-                    }`}
+                    src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${atrac.imagenes[0].imagen}`}
                     alt="Img"
                   />
                 </div>
@@ -239,13 +232,17 @@ class PZonaCreer extends Component {
     return (
       <div className="Zona">
         {this.state.loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div
               className="ZonaDetalle-titulo"
               style={{
-                backgroundColor: `#${this.state.dataZona.color}`
+                backgroundColor: `#${this.state.dataZona.color}`,
               }}
             >
               <h3 style={{ color: `#${this.state.dataZona.color}` }}>
@@ -258,14 +255,14 @@ class PZonaCreer extends Component {
                   <div id="mapasl">
                     <img
                       className="img-fluid"
-                      src={`${process.env.REACT_APP_API_RECURSOS}/mapas/mini/${
-                        this.state.dataZona.mini
-                      }`}
+                      src={`${process.env.REACT_APP_API_RECURSOS}/mapas/mini/${this.state.dataZona.mini}`}
                       alt="SL"
                     />
                   </div>
                   <div id="texto">
-                    <p style={{fontSize:"20px"}}>{this.state.dataZona.descripcionCreer}</p>
+                    <p style={{ fontSize: "20px" }}>
+                      {this.state.dataZona.descripcionCreer}
+                    </p>
                     <div>
                       <h3 style={{ color: `#${this.state.dataZona.color}` }}>
                         Postas religiosas de
@@ -278,9 +275,7 @@ class PZonaCreer extends Component {
                   <div id="mapa">
                     <img
                       className="img-fluid"
-                      src={`${process.env.REACT_APP_API_RECURSOS}/mapas/${
-                        this.state.dataZona.mapa
-                      }`}
+                      src={`${process.env.REACT_APP_API_RECURSOS}/mapas/${this.state.dataZona.mapa}`}
                       alt="Mapa"
                     />
                   </div>

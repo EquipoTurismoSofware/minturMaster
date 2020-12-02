@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
 import axios from "axios";
+import Loading from "../../utils/Loading";
 
 class Pueba extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class Pueba extends Component {
     this.state = {
       loading: true,
       data: [],
-      carousel: []
+      carousel: [],
     };
     this.getData = this.getData.bind(this);
   }
@@ -19,12 +20,12 @@ class Pueba extends Component {
     axios({
       method: "get",
       headers: {
-        Authorization: token
+        Authorization: token,
       },
       url: `${process.env.REACT_APP_API}/eventos/50`,
-      responseType: "json"
+      responseType: "json",
     })
-      .then(response => {
+      .then((response) => {
         if (response.data.data.count > 0) {
           let activo = false;
           let carousel = response.data.data.registros.map((a, index) => {
@@ -35,7 +36,7 @@ class Pueba extends Component {
               backgroundImage: `url(https://www.revistasavia.com/wp-content/uploads/2018/03/analisis-08-1.jpg)`,
               backgroundSize: "cover",
               backgroundPosition: "center",
-              backgroundRepeat: "no-repeat"
+              backgroundRepeat: "no-repeat",
             };
             if (!activo) {
               activo = true;
@@ -59,13 +60,13 @@ class Pueba extends Component {
           self.setState({
             data: response.data.data.registros,
             carousel: carousel,
-            loading: false
+            loading: false,
           });
         } else {
           //No hay registros o el id no es correcto
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }
@@ -80,7 +81,11 @@ class Pueba extends Component {
     return (
       <div className="PEventos">
         {this.state.loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div className="container">
@@ -89,16 +94,19 @@ class Pueba extends Component {
                   className="ZonaDetalle-titulo"
                   style={{ paddingTop: "50px", backgroundColor: `#722789` }}
                 >
-                  <h3 style={{ color: `#722789` }}>Parque Nativo Prueba Video</h3>
+                  <h3 style={{ color: `#722789` }}>
+                    Parque Nativo Prueba Video
+                  </h3>
                 </div>
 
                 <div className="row mb-3">
                   <div className="col">
-                    <img alt="avion"
+                    <img
+                      alt="avion"
                       style={{
                         width: "100%",
                         height: "300px",
-                        objectFit: "cover"
+                        objectFit: "cover",
                       }}
                       src="http://agenciasanluis.com/wp-content/uploads/2016/07/FAU_4596.jpg"
                     />
@@ -115,7 +123,7 @@ class Pueba extends Component {
                         height: "50px",
                         fontSize: "1.2rem",
                         lineHeight: "1.8rem",
-                        fontWeight: "700"
+                        fontWeight: "700",
                       }}
                     >
                       <a href="https://www.youtube.com/watch_popup?v=VwFrSHxso4A">
