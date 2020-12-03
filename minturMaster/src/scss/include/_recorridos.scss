@@ -61,28 +61,7 @@
     background-image: url($server_path+"imgs/INF-DER.png");
     background-repeat: no-repeat;
   }
-  .reco-leyenda {
-    padding-left: 40px;
-    padding-right: 40px;
-    text-align: justify; /* For Edge */
-    -moz-text-align-last: justify; /* For Firefox prior 58.0 */
-    text-align-last: justify;
-    max-width: 800px;
-    margin: 20px 0 0 auto;
-    .reco-l-sub1,
-    .reco-l-sub2 {
-      text-align: right;
-      text-transform: uppercase;
-      color: #fff;
-      text-shadow: 1px 1px 1px #000000;
-      font-size: 3rem;
-      margin-bottom: 0px;
-      line-height: 3rem;
-    }
-    .reco-l-sub2 {
-      letter-spacing: -1px;
-    }
-  }
+  
   .reco-titulo {
     display: flex;
     flex-direction: column;
@@ -103,16 +82,108 @@
       text-transform: uppercase;
     }
   }
+  .reco-container-altcaminos{
+    margin: 40px auto;
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 240px);
+    grid-gap: 20px;
+    widows: 100%;
+    align-content: space-between;
+    justify-content: space-around;
+
+    //grid-auto-flow: column;
+    #sierras {
+      //grid-area: sierras;
+      @include reco-zona();
+      .cuadro-color {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: (100% - 5%);
+        display: block;
+        background-color: #cb6120;
+        width: 40%;
+      }
+      img {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+        z-index: 2;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+      }
+      .cuadro-titulo {
+        position: absolute;
+        bottom: 0;
+        left: 45%;
+        z-index: 3;
+        color: #cb6120;
+        font-size: 1.5em;
+        font-weight: 600;
+        width: 250px;
+        p {
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+  .reco-cont-down {
+      margin: 40px auto;
+      max-width: 1024px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 240px);
+      grid-gap: 20px;
+      widows: 100%;
+      align-content: space-between;
+      justify-content: space-around;
+      padding-bottom: 60px;
+      //grid-auto-flow: column;
+      #sierras {
+        //grid-area: sierras;
+        @include reco-zona();
+        .cuadro-color {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: (100% - 5%);
+          display: block;
+          background-color: #cb6120;
+          width: 40%;
+        }
+        img {
+          position: absolute;
+          top: 5px;
+          left: 10px;
+          z-index: 2;
+          width: 200px;
+          height: 200px;
+          object-fit: cover;
+        }
+        .cuadro-titulo {
+          position: absolute;
+          bottom: 0;
+          left: 45%;
+          z-index: 3;
+          color: #cb6120;
+          font-size: 1.5em;
+          font-weight: 600;
+          width: 250px;
+          p {
+            margin-bottom: 0px;
+          }
+      }
+   }
+  }
+
   .reco-container {
     margin: 40px auto;
     max-width: 1024px;
     display: grid;
     grid-template-columns: repeat(auto-fit, 240px);
-    //grid-auto-flow: column;
-    //grid-auto-columns: minmax(200px, 1fr);
     grid-gap: 20px;
     widows: 100%;
-    //justify-items: center;
     align-content: space-between;
     justify-content: space-around;
 
@@ -385,24 +456,13 @@
   }
 }
 
-@media only screen and (max-width: 790px) {
+@media only screen and (max-width: 880px) {
   .Recorridos {
     .mancha-inf-der {
       display: none;
     }
     .mancha-sup-izq {
       display: none;
-    }
-    .reco-leyenda {
-      text-align: right;
-      -moz-text-align-last: none; /* For Firefox prior 58.0 */
-      text-align-last: none;
-      max-width: 600px;
-      .reco-l-sub1,
-      .reco-l-sub2 {
-        font-size: 2.1rem;
-        line-height: 2.4rem;
-      }
     }
   }
 }
@@ -419,15 +479,86 @@
     .mancha-inf-izq {
       height: 190px;
     }
-    .reco-leyenda {
-      text-align: center;
-      -moz-text-align-last: center;
-      text-align-last: center;
-      max-width: 580px;
-      .reco-l-sub1,
-      .reco-l-sub2 {
-        font-size: 1.1rem;
-        line-height: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 970px) {
+  .Recorridos {
+    .reco-container-altcaminos {
+      #sierras {
+        @include reco-zona();
+        .cuadro-titulo {
+          position: absolute;
+          bottom: 0;
+          left: 45%;
+          z-index: 3;
+          color: #cb6120;
+          font-size: 1.5em;
+          font-weight: 600;
+          width: 200px;
+          p {
+            margin-bottom: 0px;
+          }
+        }
+      }
+    }
+    .reco-cont-down {
+      #sierras {
+        @include reco-zona();
+        .cuadro-titulo {
+          position: absolute;
+          bottom: 0;
+          left: 45%;
+          z-index: 3;
+          color: #cb6120;
+          font-size: 1.5em;
+          font-weight: 600;
+          width: 200px;
+          p {
+            margin-bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 771px) {
+  .Recorridos {
+    .reco-container-altcaminos {
+      #sierras {
+        @include reco-zona();
+        .cuadro-titulo {
+          position: absolute;
+          bottom: 0;
+          left: 45%;
+          z-index: 3;
+          color: #cb6120;
+          font-size: 1.2em;
+          font-weight: 600;
+          width: 150px;
+          p {
+            margin-bottom: 0px;
+          }
+        }
+      }
+    }
+    .reco-cont-down {
+      #sierras {
+        @include reco-zona();
+        .cuadro-titulo {
+          position: absolute;
+          bottom: 0;
+          left: 45%;
+          z-index: 3;
+          color: #cb6120;
+          font-size: 1.2em;
+          font-weight: 600;
+          width: 150px;
+          p {
+            margin-bottom: 0px;
+          }
+        }
       }
     }
   }
