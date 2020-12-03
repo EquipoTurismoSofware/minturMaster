@@ -18,6 +18,7 @@ class PNovedad extends Component {
         titulo: "",
         subtitulo: "",
         descripcion: "",
+        descripcionHTML:"",
         foto_uno: "default.jpg",
         foto_dos: "default.jpg",
       },
@@ -146,10 +147,10 @@ class PNovedad extends Component {
 
                       <h3>{this.state.data.subtitulo}</h3>
                     </div>
-
+                    
                     <div className="body">
-                      <p className="text-dark mb-2">
-                        {this.state.data.descripcion}
+                      <p className="text-dark mb-2" dangerouslySetInnerHTML={{__html: this.state.data.descripcionHTML}} >
+                        
                       </p>
                     </div>
                   </div>
