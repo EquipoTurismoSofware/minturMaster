@@ -185,6 +185,7 @@ class PAlojamiento extends Component {
         <Pild key={`servicio-${servicio.id}`} text={servicio.descripcion} />
       );
     });
+    /*
     const tarifas = this.state.tarifas.map((tarifa) => {
       return (
         <span
@@ -194,7 +195,7 @@ class PAlojamiento extends Component {
           {tarifa.descripcion} - $ {tarifa.importe}
         </span>
       );
-    });
+    });*/
     return (
       <div className="Alojamiento mb-5">
         {this.state.loading ? (

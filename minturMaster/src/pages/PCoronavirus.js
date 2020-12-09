@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Consumer } from "../context";
 import CompendioDeMedidas from "../components/coronavirus/CompendioDeMedidas";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 import axios from "axios";
 import Loading from "../utils/Loading";

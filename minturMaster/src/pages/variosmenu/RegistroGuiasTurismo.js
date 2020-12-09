@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
-import axios from "axios";
+//import axios from "axios";
 import Loading from "../../utils/Loading";
 
 class RegistroGuiasTurismo extends Component {
@@ -68,6 +68,7 @@ class RegistroGuiasTurismo extends Component {
                 <br />
                 <div className="registro1">
                   <iframe
+                    title="formRegistro1"
                     src="https://docs.google.com/forms/d/e/1FAIpQLSewGme5ICurcsrLc46CXryvUqVwzcO0UvZr0oyIQO9xIqB8mg/viewform?embedded=true"
                     width="400"
                     height="1100"
@@ -80,6 +81,7 @@ class RegistroGuiasTurismo extends Component {
                 </div>
                 <div className="registro2">
                   <iframe
+                    title="formRegistro2"
                     src="https://docs.google.com/forms/d/e/1FAIpQLSewGme5ICurcsrLc46CXryvUqVwzcO0UvZr0oyIQO9xIqB8mg/viewform?embedded=true"
                     width="1150"
                     height="1000"

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-import axios from "axios";
+//import axios from "axios";
 
 class RegistroAlojamientosCovid extends Component {
   constructor(props) {

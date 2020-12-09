@@ -26,7 +26,7 @@ class PDesuscribir extends Component {
             [name]: value
         });
 
-        if(this.state.msg != ""){
+        if(this.state.msg !== ""){
         this.setState({
             msg: "",
             visible: "none"

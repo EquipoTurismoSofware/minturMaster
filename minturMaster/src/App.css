@@ -366,7 +366,7 @@ body {
     margin-top: 45px;
   }
   .Menu .linkHome {
-    display: none;
+    display: inline;
   }
   .Menu .logoGob {
     display: none;
@@ -3454,6 +3454,10 @@ h3.bgc_4 {
 /*
     Componente Novedadesfull.js
 */
+.LoadingListadoAtractivo {
+  padding-top: 110px;
+}
+
 .ListadoAtractivofull {
   padding-top: 110px;
 }

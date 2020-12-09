@@ -176,24 +176,6 @@ const DataZona = (props) => {
     </Link>
   );
 };
-{
-  /*const ZonaMenuDos = (props) => {
-    return(
-        <React.Fragment>
-            <div className="ZonaMenu-Lista">
-                <ul>
-                    <li><Link to="/atractivo/153" className="link" onClick={props.onZonaClick}>Parque de las Naciones</Link></li>
-                    <li><Link to="/atractivo/154" className="link" onClick={props.onZonaClick}>Parque la Cerámica</Link></li>
-                    <li><Link to="/atractivo/8" className="link" onClick={props.onZonaClick}>Parque Nativo</Link></li>
-                    <li><Link to="/atractivo/46" className="link" onClick={props.onZonaClick}>Parque Provincial Costanera Río Quinto</Link></li>
-                    <li><Link to="/atractivo/73" className="link" onClick={props.onZonaClick}>Monumento Al Pueblo Puntano De La Independencia</Link></li>
-                    <li><Link to="/atractivo/35" className="link" onClick={props.onZonaClick}>Parque Zanjitas Pueblo Heroico</Link></li>
-                </ul>
-            </div>
-        </React.Fragment>
-    );
-} */
-}
 
 const ZonaMenuDos = (props) => {
   return (
@@ -452,6 +434,7 @@ const ZonaMenuCinco = (props) => {
               </Link>
               <span className="link-menu" onClick={(e) => this.setMenu(4, e)}>
                 <img
+                  alt="coronel3"
                   style={{
                     height: `20px`,
                     marginLeft: "5px",

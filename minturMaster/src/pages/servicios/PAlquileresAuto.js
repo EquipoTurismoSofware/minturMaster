@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
-import axios from "axios";
+//import axios from "axios";
 import Loading from "../../utils/Loading";
 
 class PAeropuerto extends Component {

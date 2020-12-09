@@ -17,7 +17,7 @@ class Descarga extends Component {
             src={`https://i.ibb.co/ft02QmL/SAN-LUIS-TURISMO-FULL-COLOR-TRANSP.png`}
             alt="Logo"
           />
-          <a href="" style={{ textDecoration: "none" }}>
+          <a href="#" style={{ textDecoration: "none" }}>
             <div className="descarga-leyenda">
               <div className="descarga-titulos">
                 <span className="dt-1"> ¡Hacé click acá!</span>
