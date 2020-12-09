@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
 import axios from "axios";
-import MetaTags from "react-meta-tags";
+//import MetaTags from "react-meta-tags";
+import {Helmet} from "react-helmet";
 //import CompartirPost from "../compartirPost";
 //import GoogleMap from "../components/subcomponentes/GoogleMap";
 import MaxImage from "../../components/subcomponentes/MaxImage";
@@ -78,7 +79,7 @@ class PNovedad extends Component {
 
   render() {
     let fecha = this.state.data.fecha.split("-");
-    const shareUrl = window.location;
+    const shareUrl = window.location.href;
     const title = `${this.state.data.titulo}`;
     const descripcion = `${this.state.data.descripcion}`;
     const image = `${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_uno}`;
@@ -93,14 +94,14 @@ class PNovedad extends Component {
         ) : (
           <React.Fragment>
             <div className="container PNovedad">
-              <MetaTags>
+              <Helmet>
                 <title>{this.state.data.titulo}</title>
                 <meta property="og:url" content={shareUrl} />
-                <meta property="og:type" content="website" />
+                <meta property="og:type" content="article" />
                 <meta property="og:title" content={title} />
                 <meta property="og:description" content={descripcion} />
                 <meta property="og:image" content={image} />
-              </MetaTags>
+              </Helmet>
               <div className="n-titulo">
                 <span>
                   {`${fecha[2]}/${fecha[1]}`} - {this.state.data.localidad}
@@ -159,6 +160,7 @@ class PNovedad extends Component {
                     ) : (
                       <div className="body">
                         <p className="text-dark mb-2">{descripcion}</p>
+                        <iframe src={`https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%3A3000%2F%23%2Fnovedad%2F${this.props.match.params.id}&layout=button_count&size=small&width=99&height=20&appId`} width="99" height="20" style={{border: "none", overflow: "hidden"}} scrolling="no" frameBorder="0" allowFullScreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                       </div>
                     )}
                   </div>
