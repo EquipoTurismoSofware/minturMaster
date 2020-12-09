@@ -559,8 +559,6 @@ class PGuiaTurismo extends Component {
 PGuiaTurismo.contextType = Consumer;
 
 export default PGuiaTurismo;
-
-{
   /*
 
                 <br></br>
@@ -635,4 +633,3 @@ export default PGuiaTurismo;
                       </div>
                     </div>
                   </div>*/
-}

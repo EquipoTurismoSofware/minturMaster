@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import axios from "axios";
 import Loading from "../../utils/Loading";
 
@@ -62,7 +62,8 @@ class PConsejos extends Component {
 
   render() {
     const loading = this.state.loading;
-    var ListadoAtractivofull = null;
+    
+    /*var ListadoAtractivofull = null;
     if (this.state.data.length > 0) {
       ListadoAtractivofull = this.state.data.map((atrac) => {
         let descripcion = "";
@@ -106,7 +107,7 @@ class PConsejos extends Component {
         );
       });
     }
-
+  */
     return (
       <React.Fragment>
         {loading ? (

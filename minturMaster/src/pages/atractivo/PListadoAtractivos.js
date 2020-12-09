@@ -35,18 +35,16 @@ class PListadoAtractivos extends Component {
 			responseType: 'json'
 		})
 		.then((response) => {
-			if(response.data.data.count > 0) {
-				self.setState({
-					data: response.data.data.registros,
-					filtro: response.data.data.registros,
-					loading: false
-				});
-			}
+			self.setState({
+				data: response.data.data.registros,
+				filtro: response.data.data.registros,
+				loading: false
+			});		
 		})
 		.catch((error) => {
 			console.log(error);
 		});
-		self.setState({loading: false});
+
 	}
 
 	componentDidMount() {
@@ -96,7 +94,7 @@ class PListadoAtractivos extends Component {
 			<div>
 			{
 				loading ?
-					<div><Loading margins="150px" /></div>
+					<div className="LoadingListadoAtractivo"><Loading margins="150px" /></div>
 				:
 				<React.Fragment>
 					<div className="container ListadoAtractivofull">

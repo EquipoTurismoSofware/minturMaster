@@ -99,7 +99,7 @@ export default class Newsletter extends Component {
         [name]: value
     });
 
-    if(this.state.msg != ""){
+    if(this.state.msg !== ""){
       this.setState({
         msg: ""
       });
@@ -117,7 +117,7 @@ export default class Newsletter extends Component {
           </Row>
           <Row className="newsBody">
             <Col>{
-                 this.state.msg == "" ?
+                 this.state.msg === "" ?
                  <input type="hidden" disabled className="newsMsg form-control" id="msg" name="text" value={this.state.msg}/>              
               :
                 <input type="text"  disabled className="newsMsg form-control" id="msg" name="text" value={this.state.msg}/>

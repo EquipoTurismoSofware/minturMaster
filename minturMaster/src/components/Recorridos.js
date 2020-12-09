@@ -147,7 +147,7 @@ class Recorridos extends Component {
               <span className="reco-t-sub2">Caminos Alternativos</span>
             </div>
           </center>
-          <div className="reco-container">
+          <div className="reco-container-altcaminos">
             <Link to="/PPrincipalGastronomia">
               <div id="sierras">
                 <div
@@ -161,7 +161,7 @@ class Recorridos extends Component {
                 />
                 <div
                   className="cuadro-titulo"
-                  style={{ color: "#EEB70C", width: "250px" }}
+                  style={{ color: "#EEB70C"}}
                 >
                   <p>Disfrutar</p>
                   <p>Ruta del Sabor</p>
@@ -181,7 +181,7 @@ class Recorridos extends Component {
                 />
                 <div
                   className="cuadro-titulo"
-                  style={{ color: "#EEB70C", width: "250px" }}
+                  style={{ color: "#EEB70C"}}
                 >
                   <p>Disfrutar</p>
                   <p>Camino cervecero</p>
@@ -189,7 +189,7 @@ class Recorridos extends Component {
               </div>
             </Link>
           </div>
-          <div className="reco-container">
+          <div className="reco-cont-down">
             <Link to="/PCreerGnral">
               <div id="sierras">
                 <div
@@ -203,7 +203,7 @@ class Recorridos extends Component {
                 />
                 <div
                   className="cuadro-titulo"
-                  style={{ color: "#F1948A", width: "250px" }}
+                  style={{ color: "#F1948A" }}
                 >
                   <p>Creer</p>
                   <p>Caminos de la Fe</p>
@@ -223,7 +223,7 @@ class Recorridos extends Component {
                 />
                 <div
                   className="cuadro-titulo"
-                  style={{ color: "#F1948A", width: "250px" }}
+                  style={{ color: "#F1948A"}}
                 >
                   <p>Disfrutar</p>
                   <p>Moto Turismo</p>

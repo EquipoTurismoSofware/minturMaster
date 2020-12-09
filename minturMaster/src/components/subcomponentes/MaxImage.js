@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Carousel } from "react-bootstrap";
+//import { Carousel } from "react-bootstrap";
 
 /*
     <MaxImage fotos={} visible={} onClose={this.closeImg} />

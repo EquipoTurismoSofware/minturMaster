@@ -351,6 +351,27 @@ body {
   font-size: 18px;
 }
 
+@media only screen and (max-width: 1185px) {
+  .Menu {
+    background: #722789;
+    background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
+    background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
+    background: linear-gradient(to right, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
+    position: absolute;
+    z-index: 30;
+    color: #fff;
+    width: 100%;
+    height: auto;
+    margin-top: 45px;
+  }
+  .Menu .linkHome {
+    display: inline;
+  }
+  .Menu .logoGob {
+    display: none;
+  }
+}
 @media only screen and (max-width: 992px) {
   .Menu {
     background: #722789;
@@ -1307,30 +1328,6 @@ body {
   background-image: url("http://turismo.sanluis.gov.ar/api-turismo/public/imgs/INF-DER.png");
   background-repeat: no-repeat;
 }
-.Recorridos .reco-leyenda {
-  padding-left: 40px;
-  padding-right: 40px;
-  text-align: justify;
-  /* For Edge */
-  -moz-text-align-last: justify;
-  /* For Firefox prior 58.0 */
-  text-align-last: justify;
-  max-width: 800px;
-  margin: 20px 0 0 auto;
-}
-.Recorridos .reco-leyenda .reco-l-sub1,
-.Recorridos .reco-leyenda .reco-l-sub2 {
-  text-align: right;
-  text-transform: uppercase;
-  color: #fff;
-  text-shadow: 1px 1px 1px #000000;
-  font-size: 3rem;
-  margin-bottom: 0px;
-  line-height: 3rem;
-}
-.Recorridos .reco-leyenda .reco-l-sub2 {
-  letter-spacing: -1px;
-}
 .Recorridos .reco-titulo {
   display: flex;
   flex-direction: column;
@@ -1350,6 +1347,119 @@ body {
   background-color: #722789;
   color: #fff;
   text-transform: uppercase;
+}
+.Recorridos .reco-container-altcaminos {
+  margin: 40px auto;
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 240px);
+  grid-gap: 20px;
+  widows: 100%;
+  align-content: space-between;
+  justify-content: space-around;
+}
+.Recorridos .reco-container-altcaminos #sierras {
+  position: relative;
+  height: 260px;
+  width: 100%;
+  cursor: pointer;
+}
+.Recorridos .reco-container-altcaminos #sierras .cuadro-titulo p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+.Recorridos .reco-container-altcaminos #sierras:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.Recorridos .reco-container-altcaminos #sierras .cuadro-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 95%;
+  display: block;
+  background-color: #cb6120;
+  width: 40%;
+}
+.Recorridos .reco-container-altcaminos #sierras img {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  z-index: 2;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+.Recorridos .reco-container-altcaminos #sierras .cuadro-titulo {
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  z-index: 3;
+  color: #cb6120;
+  font-size: 1.5em;
+  font-weight: 600;
+  width: 250px;
+}
+.Recorridos .reco-container-altcaminos #sierras .cuadro-titulo p {
+  margin-bottom: 0px;
+}
+.Recorridos .reco-cont-down {
+  margin: 40px auto;
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 240px);
+  grid-gap: 20px;
+  widows: 100%;
+  align-content: space-between;
+  justify-content: space-around;
+  padding-bottom: 60px;
+}
+.Recorridos .reco-cont-down #sierras {
+  position: relative;
+  height: 260px;
+  width: 100%;
+  cursor: pointer;
+}
+.Recorridos .reco-cont-down #sierras .cuadro-titulo p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+.Recorridos .reco-cont-down #sierras:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.Recorridos .reco-cont-down #sierras .cuadro-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 95%;
+  display: block;
+  background-color: #cb6120;
+  width: 40%;
+}
+.Recorridos .reco-cont-down #sierras img {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  z-index: 2;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+.Recorridos .reco-cont-down #sierras .cuadro-titulo {
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  z-index: 3;
+  color: #cb6120;
+  font-size: 1.5em;
+  font-weight: 600;
+  width: 250px;
+}
+.Recorridos .reco-cont-down #sierras .cuadro-titulo p {
+  margin-bottom: 0px;
 }
 .Recorridos .reco-container {
   margin: 40px auto;
@@ -1715,24 +1825,12 @@ body {
   margin-bottom: 0px;
 }
 
-@media only screen and (max-width: 790px) {
+@media only screen and (max-width: 880px) {
   .Recorridos .mancha-inf-der {
     display: none;
   }
   .Recorridos .mancha-sup-izq {
     display: none;
-  }
-  .Recorridos .reco-leyenda {
-    text-align: right;
-    -moz-text-align-last: none;
-    /* For Firefox prior 58.0 */
-    text-align-last: none;
-    max-width: 600px;
-  }
-  .Recorridos .reco-leyenda .reco-l-sub1,
-.Recorridos .reco-leyenda .reco-l-sub2 {
-    font-size: 2.1rem;
-    line-height: 2.4rem;
   }
 }
 @media only screen and (max-width: 580px) {
@@ -1746,16 +1844,121 @@ body {
   .Recorridos .mancha-inf-izq {
     height: 190px;
   }
-  .Recorridos .reco-leyenda {
-    text-align: center;
-    -moz-text-align-last: center;
-    text-align-last: center;
-    max-width: 580px;
+}
+@media only screen and (max-width: 970px) {
+  .Recorridos .reco-container-altcaminos #sierras {
+    position: relative;
+    height: 260px;
+    width: 100%;
+    cursor: pointer;
   }
-  .Recorridos .reco-leyenda .reco-l-sub1,
-.Recorridos .reco-leyenda .reco-l-sub2 {
-    font-size: 1.1rem;
-    line-height: 1.4rem;
+  .Recorridos .reco-container-altcaminos #sierras .cuadro-titulo p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    line-height: 1em;
+    text-transform: uppercase;
+  }
+  .Recorridos .reco-container-altcaminos #sierras:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .Recorridos .reco-container-altcaminos #sierras .cuadro-titulo {
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    z-index: 3;
+    color: #cb6120;
+    font-size: 1.5em;
+    font-weight: 600;
+    width: 200px;
+  }
+  .Recorridos .reco-container-altcaminos #sierras .cuadro-titulo p {
+    margin-bottom: 0px;
+  }
+  .Recorridos .reco-cont-down #sierras {
+    position: relative;
+    height: 260px;
+    width: 100%;
+    cursor: pointer;
+  }
+  .Recorridos .reco-cont-down #sierras .cuadro-titulo p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    line-height: 1em;
+    text-transform: uppercase;
+  }
+  .Recorridos .reco-cont-down #sierras:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .Recorridos .reco-cont-down #sierras .cuadro-titulo {
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    z-index: 3;
+    color: #cb6120;
+    font-size: 1.5em;
+    font-weight: 600;
+    width: 200px;
+  }
+  .Recorridos .reco-cont-down #sierras .cuadro-titulo p {
+    margin-bottom: 0px;
+  }
+}
+@media only screen and (max-width: 771px) {
+  .Recorridos .reco-container-altcaminos #sierras {
+    position: relative;
+    height: 260px;
+    width: 100%;
+    cursor: pointer;
+  }
+  .Recorridos .reco-container-altcaminos #sierras .cuadro-titulo p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    line-height: 1em;
+    text-transform: uppercase;
+  }
+  .Recorridos .reco-container-altcaminos #sierras:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .Recorridos .reco-container-altcaminos #sierras .cuadro-titulo {
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    z-index: 3;
+    color: #cb6120;
+    font-size: 1.2em;
+    font-weight: 600;
+    width: 150px;
+  }
+  .Recorridos .reco-container-altcaminos #sierras .cuadro-titulo p {
+    margin-bottom: 0px;
+  }
+  .Recorridos .reco-cont-down #sierras {
+    position: relative;
+    height: 260px;
+    width: 100%;
+    cursor: pointer;
+  }
+  .Recorridos .reco-cont-down #sierras .cuadro-titulo p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    line-height: 1em;
+    text-transform: uppercase;
+  }
+  .Recorridos .reco-cont-down #sierras:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .Recorridos .reco-cont-down #sierras .cuadro-titulo {
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    z-index: 3;
+    color: #cb6120;
+    font-size: 1.2em;
+    font-weight: 600;
+    width: 150px;
+  }
+  .Recorridos .reco-cont-down #sierras .cuadro-titulo p {
+    margin-bottom: 0px;
   }
 }
 /*
@@ -2559,10 +2762,6 @@ h3.bgc_4 {
     Componente PEvento.js
 */
 #desHTML {
-  margin-top: -55px;
-}
-
-p {
   font-size: 1.2em;
 }
 
@@ -3255,6 +3454,10 @@ p {
 /*
     Componente Novedadesfull.js
 */
+.LoadingListadoAtractivo {
+  padding-top: 110px;
+}
+
 .ListadoAtractivofull {
   padding-top: 110px;
 }
@@ -4185,6 +4388,9 @@ p {
   border-radius: 5px;
   padding: 5px 20px;
 }
+.newsletter .newsHeader {
+  padding-top: 5px;
+}
 .newsletter .newsEmail {
   border-radius: 5px;
   border: solid lightgray;
@@ -4222,6 +4428,38 @@ p {
 .newsletter .newsFooterButton:hover {
   outline: none;
   background-color: #7f3e92;
+}
+
+.PDesuscribir {
+  padding-top: 160px;
+  padding-bottom: 100px;
+  text-align: center;
+}
+.PDesuscribir .DesEmail {
+  border-radius: 5px;
+  border: solid lightgray;
+  width: 60%;
+  margin-top: 40px;
+  height: 40px;
+}
+.PDesuscribir .DesEmail:focus {
+  outline-color: darkgray;
+}
+.PDesuscribir .DesConfirm {
+  width: 60%;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 40px;
+  border: none;
+  background-color: #722789;
+  color: white;
+}
+.PDesuscribir .DesConfirm:hover {
+  outline: none;
+  background-color: #7f3e92;
+}
+.PDesuscribir .DesMsg {
+  color: #ed0f68;
 }
 
 /*

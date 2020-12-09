@@ -9,6 +9,7 @@ import ToTop from "./components/ToTop";
 
 import PHome from "./pages/PHome";
 import PZona from "./pages/PZona";
+import PDesuscribir from "./pages/PDesuscribir";
 import PNovedades from "./pages/novedades/PNovedades";
 import PNovedad from "./pages/novedades/PNovedad";
 import PLocalidad from "./pages/PLocalidad";
@@ -74,6 +75,7 @@ class App extends Component {
               <Route exact path="/localidad/:id" component={PLocalidad} />
               <Route exact path="/atractivo/:id" component={PAtractivo} />
               <Route exact path="/gastronomia/:id" component={PGastronomia} />
+              <Route exact path="/desuscripcion" component={PDesuscribir} />
               <Route
                 exact
                 path="/atractivos/:id"

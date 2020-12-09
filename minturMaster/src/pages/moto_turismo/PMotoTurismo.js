@@ -120,6 +120,7 @@ class PMotoTurismo extends Component {
             <div className="motoVideo1">
               <center>
                 <iframe
+                  title="motoVideo1-iframe"
                   width="956"
                   height="538"
                   src="https://www.youtube.com/embed/x-f83n_o7-c"
@@ -132,6 +133,7 @@ class PMotoTurismo extends Component {
             <div className="motoVideo">
               <center>
                 <iframe
+                  title="motoVideo-iframe"
                   width="300"
                   height="400"
                   src="https://www.youtube.com/embed/x-f83n_o7-c"
@@ -257,7 +259,6 @@ class PMotoTurismo extends Component {
             </div>
           </center>
         </React.Fragment>
-        )
       </React.Fragment>
     );
   }

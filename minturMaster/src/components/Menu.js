@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ZonasMenu from "./subcomponentes/ZonasMenu";
-import Phome from "../pages/PHome";
-import { Fragment } from "react";
-import { SelectPicker } from "rsuite";
+//import Phome from "../pages/PHome";
+//import { Fragment } from "react";
+//import { SelectPicker } from "rsuite";
 
 class Menu extends Component {
   constructor(props) {
@@ -54,12 +54,15 @@ class Menu extends Component {
 
   closeLista() {
    // console.log("close lista");
-    this.state.lista = false;
+   this.setState({
+      lista: false
+   });
+
   }
   //selecciona la localidad con el tipeo de la felcha
   selectFirsElement() {
     // console.log("Seleccionar primero" );
-    let select = document.getElementsByName(0);
+    //let select = document.getElementsByName(0);
 
 
 
@@ -67,7 +70,10 @@ class Menu extends Component {
      // console.log(this.state.mov);
       selec.forEach((e) => {
         //console.log(e);
-        this.state.mov = -1;
+        this.setState({
+          mov: -1
+        });
+        //this.state.mov = -1;
         e.style = "";
       });
          
@@ -101,7 +107,7 @@ this.selectFirsElement()
         
           this.state.mov = -1;
           // console.log(this.state.selec.id);
-          if(window.location.hostname=="localhost"){
+          if(window.location.hostname==="localhost"){
             window.location.href = `http://localhost:3000/#${this.state.selec.id}`;
           }
           else{
@@ -145,7 +151,7 @@ this.selectFirsElement()
       //flecha hacia arriba
       case "ArrowUp":
         // console.log(key);
-        if (this.state.mov != 0) {
+        if (this.state.mov !== 0) {
           this.state.mov--;
           // console.log(this.state.mov);
           //console.log(document.getElementsByName("links").length);
@@ -179,14 +185,14 @@ this.selectFirsElement()
   //funcion para ocultar el las opciones desplegadas
   closeMenu() {
    // console.log("close");
-    if (this.state.ocultar == 0) this.setState({ visibleMenu: false });
+    if (this.state.ocultar === 0) this.setState({ visibleMenu: false });
     this.cambiar();
   }
 
   setMenu(id) {
     this.closeLista();
 
-    if (this.state.visibleMenu == false || id != this.state.idSubMenu) {
+    if (this.state.visibleMenu === false || id !== this.state.idSubMenu) {
       this.setState({ visibleMenu: true });
       this.cambiar();
     }
@@ -407,7 +413,7 @@ this.selectFirsElement()
 
     const filtro = this.state.localidades.data.map((lf) => {
       this.selectFirsElement();
-      if (lf.visible == true) {
+      if (lf.visible === true) {
         return (
           // active
 

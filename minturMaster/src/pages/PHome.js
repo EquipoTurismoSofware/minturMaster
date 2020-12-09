@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Recorridos from "../components/Recorridos";
-import EventoForm from "../components/EventoForm";
+//import EventoForm from "../components/EventoForm";
 import Descarga from "../components/Descarga";
 import Novedades from "../components/Novedades";
 import { Link } from "react-router-dom";
@@ -214,21 +214,25 @@ class Home extends Component {
                       <ReactWOW animation="fadeIn" data-wow-delay="10s">
                         <div className="carousel-item img-slider-2 active">
                           <img
+                            alt="colores"
                             className=" tituloCarrusel  animated flipInX delay-2s"
                             src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/colores.png"
                           />
                           <img
+                            alt="enSanLuis"
                             className=" tituloCarrusel2  animated flipInX delay-2s"
                             src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/enSanLuis.png"
                           />
                         </div>
                         <div className="carousel-item img-slider-3">
                           <img
+                            alt="serenidad"
                             className="tituloCarrusel  animated flipInX delay-2s"
                             src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/serenidad.png"
                           />
 
                           <img
+                            alt="enSanLuis"
                             className="tituloCarrusel2  animated flipInX delay-2s"
                             src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/enSanLuis.png"
                           />
@@ -236,10 +240,12 @@ class Home extends Component {
 
                         <div className="carousel-item img-slider-1">
                           <img
+                            alt="calidez"
                             className=" tituloCarrusel  animated flipInX delay-2s"
                             src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/calidez.png"
                           />
                           <img
+                            alt="enSanLuis"
                             className=" tituloCarrusel2  animated flipInX delay-2s"
                             src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/enSanLuis.png"
                           />
@@ -322,6 +328,7 @@ class Home extends Component {
                   />*/}
                   <script src="https://cdn.lightwidget.com/widgets/lightwidget.js" />
                   <iframe
+                    title="lightwidgetInstagram"
                     src="//lightwidget.com/widgets/b6f0a3e74f58596f8c1d72d412fc2b0f.html"
                     scrolling="no"
                     allowtransparency="true"
@@ -343,6 +350,7 @@ class Home extends Component {
                   </div>
                   <br />
                   <iframe
+                    title="facebook"
                     src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fturismodesanluis%2F&tabs=timeline&width=1000&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=1914035878882625"
                     className="facebook"
                     scrolling="no"

@@ -99,7 +99,6 @@ class Alojamientos extends Component {
     }
 
     render() {
-        const loading = this.state.loading;
         const alojamientos = this.state.alojamientos.map((alo) => {
             let foto = "default.jpg";
             if(alo.fotos.length > 0) {

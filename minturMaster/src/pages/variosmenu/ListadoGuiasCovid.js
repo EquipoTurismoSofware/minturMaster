@@ -221,7 +221,6 @@ class ListadoGuiasCovid extends Component {
         </div>
       );
     });
-    {
       /*
      const potrero = this.state.potrero.map((nov) => {
       return (
@@ -284,7 +283,6 @@ class ListadoGuiasCovid extends Component {
       );
     });
     */
-    }
     const laCarolina = this.state.laCarolina.map((nov) => {
       return (
         <div key={`nov-f-${nov.nombre}`} className="row mb-5">
@@ -724,8 +722,6 @@ class ListadoGuiasCovid extends Component {
 ListadoGuiasCovid.contextType = Consumer;
 
 export default ListadoGuiasCovid;
-
-{
   /*
 
                 <br></br>
@@ -800,4 +796,4 @@ export default ListadoGuiasCovid;
                       </div>
                     </div>
                   </div>*/
-}
+
