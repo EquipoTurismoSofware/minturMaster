@@ -169,8 +169,13 @@ class Viewer extends Component {
 					total_paginas: paginas
 				}
 			}, () => {
+				console.log(total +" "+ visibles)
 				if(total > 0 && visibles > 0) {
 					this.setPagina(1);
+				}else{
+					this.setState({
+						loading: false
+					})
 				}
 			});
 		});
@@ -183,8 +188,9 @@ class Viewer extends Component {
 	}
 
 	componentDidMount() {
-		window.addEventListener("resize", this.calcular);
 		this.calcular();
+		window.addEventListener("resize", this.calcular);
+
 	}
 
 	render() {

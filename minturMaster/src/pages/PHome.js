@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import Recorridos from "../components/Recorridos";
-import EventoForm from "../components/EventoForm";
+//import EventoForm from "../components/EventoForm";
 import Descarga from "../components/Descarga";
 import Novedades from "../components/Novedades";
 import { Link } from "react-router-dom";
 import ReactWOW from "react-wow";
 import PantallaModal from "../components/subcomponentes/Modal";
+import Newsletter from "../components/subcomponentes/Newsletter";
+import Loading from "../utils/Loading";
 
 class Home extends Component {
   constructor(props) {
@@ -16,14 +18,16 @@ class Home extends Component {
       visible: true,
     };
 
-    this.state = { time: {} };
+    //Cuanta regresiva Eclipse
+    /*this.state = { time: {} };
 
     this.timer = 0;
 
     this.startTimer = this.startTimer.bind(this);
 
-    this.countDown = this.countDown.bind(this);
+    this.countDown = this.countDown.bind(this);*/
   }
+  /*
   secondsToTime() {
     let now = new Date();
     let y2k = new Date("Jul 02 2019 16:27:59");
@@ -46,7 +50,7 @@ class Home extends Component {
     let dy = daysRound == 1 ? " día" : " días ";
 
     {
-      /*let hours = Math.floor(secs / (60 * 60));
+    let hours = Math.floor(secs / (60 * 60));
 
     let divisor_for_minutes = secs % (60 * 60);
 
@@ -55,7 +59,7 @@ class Home extends Component {
     let divisor_for_seconds = divisor_for_minutes % 60;
 
     let seconds = Math.ceil(divisor_for_seconds);
-    */
+    
     }
     if (hoursRound.toString().length == 1) {
       hoursRound = "0" + hoursRound;
@@ -80,7 +84,7 @@ class Home extends Component {
 
     return obj;
   }
-
+  */
   closeModal() {
     this.setState({
       visible: false,
@@ -95,12 +99,12 @@ class Home extends Component {
     document.body.scrollTop = 0; // Safari
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
     this.setState({ loading: false });
-    let timeLeftVar = this.secondsToTime();
+    /*let timeLeftVar = this.secondsToTime();
 
     this.setState({ time: timeLeftVar });
-    this.startTimer();
+    this.startTimer();*/
   }
-  startTimer() {
+  /*startTimer() {
     if (this.timer == 0) {
       this.timer = setInterval(this.countDown, 1000);
     }
@@ -123,12 +127,16 @@ class Home extends Component {
       clearInterval(this.timer);
     }
   }
-
+*/
   render() {
     return (
       <div className="Home">
         {this.state.loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div className="menu-y-slider">
@@ -182,6 +190,7 @@ class Home extends Component {
                     <div className="carousel-inner">
                       <center>
                         <div className="pantallaGrande">
+                          <Newsletter anchoMargen="400px" altoMargen="250px" />
                           <PantallaModal
                             anchoMargen="850px"
                             altoMargen="600px"
@@ -191,6 +200,7 @@ class Home extends Component {
                           />
                         </div>
                       </center>
+
                       <div className="pantallaChica">
                         <PantallaModal
                           anchoMargen="280px"
@@ -204,21 +214,25 @@ class Home extends Component {
                       <ReactWOW animation="fadeIn" data-wow-delay="10s">
                         <div className="carousel-item img-slider-2 active">
                           <img
+                            alt="colores"
                             className=" tituloCarrusel  animated flipInX delay-2s"
                             src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/colores.png"
                           />
                           <img
+                            alt="enSanLuis"
                             className=" tituloCarrusel2  animated flipInX delay-2s"
                             src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/enSanLuis.png"
                           />
                         </div>
                         <div className="carousel-item img-slider-3">
                           <img
+                            alt="serenidad"
                             className="tituloCarrusel  animated flipInX delay-2s"
                             src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/serenidad.png"
                           />
 
                           <img
+                            alt="enSanLuis"
                             className="tituloCarrusel2  animated flipInX delay-2s"
                             src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/enSanLuis.png"
                           />
@@ -226,10 +240,12 @@ class Home extends Component {
 
                         <div className="carousel-item img-slider-1">
                           <img
+                            alt="calidez"
                             className=" tituloCarrusel  animated flipInX delay-2s"
                             src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/calidez.png"
                           />
                           <img
+                            alt="enSanLuis"
                             className=" tituloCarrusel2  animated flipInX delay-2s"
                             src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/enSanLuis.png"
                           />
@@ -289,7 +305,7 @@ class Home extends Component {
               </div>
             </div>
             <br />
-            <div class="grid-container">
+            <div className="grid-container">
               <div>
                 <center>
                   <Link to="/" className="link-menu">
@@ -312,6 +328,7 @@ class Home extends Component {
                   />*/}
                   <script src="https://cdn.lightwidget.com/widgets/lightwidget.js" />
                   <iframe
+                    title="lightwidgetInstagram"
                     src="//lightwidget.com/widgets/b6f0a3e74f58596f8c1d72d412fc2b0f.html"
                     scrolling="no"
                     allowtransparency="true"
@@ -333,11 +350,12 @@ class Home extends Component {
                   </div>
                   <br />
                   <iframe
+                    title="facebook"
                     src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fturismodesanluis%2F&tabs=timeline&width=1000&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=1914035878882625"
                     className="facebook"
                     scrolling="no"
-                    frameborder="0"
-                    allowTransparency="true"
+                    frameBorder="0"
+                    allowtransparency="true"
                     allow="encrypted-media"
                   />
                 </center>

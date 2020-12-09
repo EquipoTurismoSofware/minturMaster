@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
-import axios from "axios";
+//import axios from "axios";
+import Loading from "../../utils/Loading";
 
 class RegistroAgenciasdeViajes extends Component {
   constructor(props) {
@@ -16,15 +17,19 @@ class RegistroAgenciasdeViajes extends Component {
     document.body.scrollTop = 0; // Safari
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
     this.setState({
-      loading: false
-    })
+      loading: false,
+    });
   }
 
   render() {
     return (
       <div className="PEventos">
         {this.state.loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div className="container mb-5" />
@@ -46,16 +51,14 @@ class RegistroAgenciasdeViajes extends Component {
                     </h2>
 
                     <a
-                      href= "https://www.sanluis.gov.ar/wp-content/uploads/PROTOCOLO-PARA-EXCURSIONES-Y-GUI%CC%81AS-DE-TURISMO.pdf"
+                      href="https://www.sanluis.gov.ar/wp-content/uploads/PROTOCOLO-PARA-EXCURSIONES-Y-GUI%CC%81AS-DE-TURISMO.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <img
                         style={{ height: `200px`, fontWeight: "bold" }}
                         className="img-fluid"
-                        src={`${
-                          process.env.REACT_APP_API_RECURSOS
-                        }/recursos/DNU.png`}
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/DNU.png`}
                         alt="Img"
                       />
                     </a>
@@ -65,6 +68,7 @@ class RegistroAgenciasdeViajes extends Component {
                 <br />
                 <div className="registro1">
                   <iframe
+                    title="formRegistro1"
                     src="https://docs.google.com/forms/d/e/1FAIpQLSfkGGXb1U0fgSYXztRLMRiOhDVSk2tAVldR-yEUzZsf9BQxeA/viewform?embedded=true"
                     width="400"
                     height="1200"
@@ -77,6 +81,7 @@ class RegistroAgenciasdeViajes extends Component {
                 </div>
                 <div className="registro2">
                   <iframe
+                    title="formRegistro2"
                     src="https://docs.google.com/forms/d/e/1FAIpQLSfkGGXb1U0fgSYXztRLMRiOhDVSk2tAVldR-yEUzZsf9BQxeA/viewform?embedded=true"
                     width="1150"
                     height="1300"

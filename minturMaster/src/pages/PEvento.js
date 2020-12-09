@@ -3,6 +3,8 @@ import { Consumer } from "../context";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import MaxImage from "../components/subcomponentes/MaxImage";
+import Loading from "../utils/Loading";
+
 
 class PEvento extends Component {
   constructor(props) {
@@ -145,9 +147,11 @@ class PEvento extends Component {
         className="PEvento"
         style={{ background: "#" + this.state.evento.color }}
       >
-        {this.state.loading ? (
-          <div>Cargando...</div>
-        ) : (
+        {this.state.loading ? 
+<div className="PFiltroAlojamiento mb-5">
+   <div><Loading margins="96px" /></div>
+</div>
+:(
           <React.Fragment>
             "
             <div className="container p-4">
@@ -201,8 +205,8 @@ class PEvento extends Component {
                     )}
                   </div>
                 </div>
-                <div className="col-xs-12 col-md-4">
-                  {this.state.evento.descripcionHTML}
+                <div className="col-xs-12 col-md-4" id="desHTML" dangerouslySetInnerHTML={{__html: this.state.evento.descripcionHTML}} >
+                 
                 </div>
                 <div className="col">
                   <ul className="evento-data">

@@ -52,6 +52,7 @@ export default class PantallaModal extends Component {
           </Link>
           <a
             className="close"
+            //Que hago? lo borro o lo dejo porque no noto cambios
             href="javascript:void(0);"
             onClick={() => this.closeModal()}
           />

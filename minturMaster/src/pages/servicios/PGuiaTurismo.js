@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
 import axios from "axios";
+import Loading from "../../utils/Loading";
 
 class PGuiaTurismo extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class PGuiaTurismo extends Component {
       volcan: [],
       potrero: [],
       merlo: [],
-      punta: []
+      punta: [],
     };
     this.getData = this.getData.bind(this);
   }
@@ -25,12 +26,12 @@ class PGuiaTurismo extends Component {
     axios({
       method: "get",
       headers: {
-        Authorization: token
+        Authorization: token,
       },
       url: `${process.env.REACT_APP_API}/guiasturismo`,
-      responseType: "json"
+      responseType: "json",
     })
-      .then(response => {
+      .then((response) => {
         console.log(response.data.data.registros.length);
         var i = 0;
         for (i = 0; i < response.data.data.registros.length; i++) {
@@ -51,10 +52,10 @@ class PGuiaTurismo extends Component {
         }
         console.log(this.state.sanluis);
         self.setState({
-          loading: false
+          loading: false,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }
@@ -66,7 +67,7 @@ class PGuiaTurismo extends Component {
   }
 
   render() {
-    const sanluis = this.state.sanluis.map(nov => {
+    const sanluis = this.state.sanluis.map((nov) => {
       return (
         <div key={`nov-f-${nov.nombre}`} className="row mb-5">
           <div className="col">
@@ -96,7 +97,7 @@ class PGuiaTurismo extends Component {
         </div>
       );
     });
-    const merlo = this.state.merlo.map(nov => {
+    const merlo = this.state.merlo.map((nov) => {
       return (
         <div key={`nov-f-${nov.nombre}`} className="row mb-5">
           <div className="col">
@@ -126,7 +127,7 @@ class PGuiaTurismo extends Component {
         </div>
       );
     });
-    const punta = this.state.punta.map(nov => {
+    const punta = this.state.punta.map((nov) => {
       return (
         <div key={`nov-f-${nov.nombre}`} className="row mb-5">
           <div className="col">
@@ -156,7 +157,7 @@ class PGuiaTurismo extends Component {
         </div>
       );
     });
-    const carpinteria = this.state.carpinteria.map(nov => {
+    const carpinteria = this.state.carpinteria.map((nov) => {
       return (
         <div key={`nov-f-${nov.nombre}`} className="row mb-5">
           <div className="col">
@@ -186,7 +187,7 @@ class PGuiaTurismo extends Component {
         </div>
       );
     });
-    const potrero = this.state.potrero.map(nov => {
+    const potrero = this.state.potrero.map((nov) => {
       return (
         <div key={`nov-f-${nov.nombre}`} className="row mb-5">
           <div className="col">
@@ -216,7 +217,7 @@ class PGuiaTurismo extends Component {
         </div>
       );
     });
-    const volcan = this.state.volcan.map(nov => {
+    const volcan = this.state.volcan.map((nov) => {
       return (
         <div key={`nov-f-${nov.nombre}`} className="row mb-5">
           <div className="col">
@@ -250,7 +251,11 @@ class PGuiaTurismo extends Component {
     return (
       <div className="PEventos">
         {this.state.loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div className="container mb-5" />
@@ -269,7 +274,7 @@ class PGuiaTurismo extends Component {
                       style={{
                         width: "100%",
                         height: "300px",
-                        objectFit: "cover"
+                        objectFit: "cover",
                       }}
                       src="http://agenciasanluis.com/wp-content/uploads/2017/09/terrazas.jpg"
                     />
@@ -285,7 +290,7 @@ class PGuiaTurismo extends Component {
                         height: "50px",
                         fontSize: "1.2rem",
                         lineHeight: "1.8rem",
-                        fontWeight: "700"
+                        fontWeight: "700",
                       }}
                     >
                       San Luis
@@ -314,7 +319,7 @@ class PGuiaTurismo extends Component {
                       style={{
                         width: "100%",
                         height: "300px",
-                        objectFit: "cover"
+                        objectFit: "cover",
                       }}
                       src="http://www.lavillademerlo.com.ar/data1/images/merlosanluis01.jpg"
                     />
@@ -330,7 +335,7 @@ class PGuiaTurismo extends Component {
                         height: "50px",
                         fontSize: "1.2rem",
                         lineHeight: "1.8rem",
-                        fontWeight: "700"
+                        fontWeight: "700",
                       }}
                     >
                       Merlo
@@ -360,7 +365,7 @@ class PGuiaTurismo extends Component {
                       style={{
                         width: "100%",
                         height: "300px",
-                        objectFit: "cover"
+                        objectFit: "cover",
                       }}
                       src="https://cypnoticias.com.ar/wp-content/uploads/2018/01/parque-astron%C3%B3mico-la-punta-san-luis.jpg"
                     />
@@ -376,7 +381,7 @@ class PGuiaTurismo extends Component {
                         height: "50px",
                         fontSize: "1.2rem",
                         lineHeight: "1.8rem",
-                        fontWeight: "700"
+                        fontWeight: "700",
                       }}
                     >
                       La Punta
@@ -406,7 +411,7 @@ class PGuiaTurismo extends Component {
                       style={{
                         width: "100%",
                         height: "300px",
-                        objectFit: "cover"
+                        objectFit: "cover",
                       }}
                       src="https://www.tripin.travel/wp-content/uploads/2017/04/carpinteria2.jpg"
                     />
@@ -422,7 +427,7 @@ class PGuiaTurismo extends Component {
                         height: "50px",
                         fontSize: "1.2rem",
                         lineHeight: "1.8rem",
-                        fontWeight: "700"
+                        fontWeight: "700",
                       }}
                     >
                       Carpintería
@@ -454,7 +459,7 @@ class PGuiaTurismo extends Component {
                       style={{
                         width: "100%",
                         height: "300px",
-                        objectFit: "cover"
+                        objectFit: "cover",
                       }}
                       src="http://www.hotelpotrero.sanluis.gov.ar/images/slider/index/f1.jpg"
                     />
@@ -470,7 +475,7 @@ class PGuiaTurismo extends Component {
                         height: "50px",
                         fontSize: "1.2rem",
                         lineHeight: "1.8rem",
-                        fontWeight: "700"
+                        fontWeight: "700",
                       }}
                     >
                       Potrero de los Funes
@@ -502,7 +507,7 @@ class PGuiaTurismo extends Component {
                       style={{
                         width: "100%",
                         height: "300px",
-                        objectFit: "cover"
+                        objectFit: "cover",
                       }}
                       src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Balneario_La_Hoya_en_El_Volc%C3%A1n.jpg"
                     />
@@ -518,7 +523,7 @@ class PGuiaTurismo extends Component {
                         height: "50px",
                         fontSize: "1.2rem",
                         lineHeight: "1.8rem",
-                        fontWeight: "700"
+                        fontWeight: "700",
                       }}
                     >
                       El Volcán
@@ -554,8 +559,6 @@ class PGuiaTurismo extends Component {
 PGuiaTurismo.contextType = Consumer;
 
 export default PGuiaTurismo;
-
-{
   /*
 
                 <br></br>
@@ -630,4 +633,3 @@ export default PGuiaTurismo;
                       </div>
                     </div>
                   </div>*/
-}

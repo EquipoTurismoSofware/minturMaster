@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
-import axios from "axios";
+//import axios from "axios";
+import Loading from "../../utils/Loading";
 
 class PTaxis extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class PTaxis extends Component {
     this.state = {
       loading: false,
       data: [],
-      carousel: []
+      carousel: [],
     };
   }
 
@@ -16,21 +17,24 @@ class PTaxis extends Component {
     document.body.scrollTop = 0; // Safari
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
     this.setState({
-      loading: false
-    })
+      loading: false,
+    });
   }
 
   render() {
-
     return (
       <div className="PEventos">
         {this.state.loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div className="container mb-5" />
             <div className="container">
-              <div className="row mb-3" >
+              <div className="row mb-3">
                 <div
                   className="ZonaDetalle-titulo"
                   style={{ paddingTop: "50px", backgroundColor: `#722789` }}
@@ -40,11 +44,12 @@ class PTaxis extends Component {
                   </h3>
                 </div>
                 <div className="col">
-                  <img alt="sanluis"
+                  <img
+                    alt="sanluis"
                     style={{
                       width: "100%",
                       height: "300px",
-                      objectFit: "cover"
+                      objectFit: "cover",
                     }}
                     src="http://agenciasanluis.com/wp-content/uploads/2017/09/terrazas.jpg"
                   />
@@ -60,7 +65,7 @@ class PTaxis extends Component {
                       height: "50px",
                       fontSize: "1.2rem",
                       lineHeight: "1.8rem",
-                      fontWeight: "700"
+                      fontWeight: "700",
                     }}
                   >
                     San Luis
@@ -236,11 +241,12 @@ class PTaxis extends Component {
                   <br />
                   <div className="row mb-3">
                     <div className="col">
-                      <img alt="merlo"
+                      <img
+                        alt="merlo"
                         style={{
                           width: "100%",
                           height: "300px",
-                          objectFit: "cover"
+                          objectFit: "cover",
                         }}
                         src="http://www.rovellacarranza.com.ar/wp-content/uploads/2015/04/MG_6247.jpg"
                       />
@@ -256,7 +262,7 @@ class PTaxis extends Component {
                           height: "50px",
                           fontSize: "1.2rem",
                           lineHeight: "1.8rem",
-                          fontWeight: "700"
+                          fontWeight: "700",
                         }}
                       >
                         Villa De Merlo

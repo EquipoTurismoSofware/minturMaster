@@ -36,18 +36,16 @@ class PListadoGastronomia extends Component {
 			responseType: 'json'
 		})
 		.then((response) => {
-			if(response.data.data.count > 0) {
-				self.setState({
-					data: response.data.data.registros,
-					filtro: response.data.data.registros,
-					loading: false
-				});
-			} 
+			self.setState({
+				data: response.data.data.registros,
+				filtro: response.data.data.registros,
+				loading: false
+			});		
 		})
 		.catch((error) => {
 			console.log(error);
 		});
-		self.setState({loading: false});
+
 	}
 
 	componentDidMount() {
@@ -63,7 +61,8 @@ class PListadoGastronomia extends Component {
 	aplicarFiltro() {
         let {nombreGastro} = this.state;
         let filtrado = this.state.data.filter((value) => {
-            let respuesta = true;
+			let respuesta = true;
+			console.log(nombreGastro.length)
             //Validar Nombre
             if(nombreGastro.length) {
                 if(value.nombre.toLowerCase().search(nombreGastro.toLowerCase()) === -1) {
@@ -93,10 +92,10 @@ class PListadoGastronomia extends Component {
 	render() {
 		const loading = this.state.loading;
 		return (
-			<div>
+			<div >
 			{
 				loading ?
-					<div><Loading margins="150px" /></div>
+					<div className="LoadingListadoAtractivo"><Loading margins="150px" /></div>
 				:
 				<React.Fragment>
 					<div className="container ListadoAtractivofull">
@@ -106,7 +105,7 @@ class PListadoGastronomia extends Component {
 						<div className="form-row">
 							<div className="form-group col-md-4">                        
 								<label htmlFor="nombreGastro">Nombre</label>
-								<input type="text" id="nombreGastro" name="nombreGastro" className="form-control" value={this.state.nombre} onChange={this.handleChange} />
+								<input type="text" id="nombreGastro" name="nombreGastro" className="form-control" value={this.state.nombreGastro} onChange={this.handleChange} />
 							</div>
 							{/*<div className="form-group col-md-3 d-flex align-items-end justify-content-end">
 								<button type="submit" className="btn btn-primary">Buscar</button>

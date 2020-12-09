@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Consumer } from "../context";
 import CompendioDeMedidas from "../components/coronavirus/CompendioDeMedidas";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 import axios from "axios";
+import Loading from "../utils/Loading";
 
 class PCoronavirus extends Component {
   constructor(props) {
@@ -83,12 +84,16 @@ class PCoronavirus extends Component {
     return (
       <div className="PEventos">
         {this.state.loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div className="container mb-5" />
             <div className="container">
-              <div className="row mb-3" >
+              <div className="row mb-3">
                 <div
                   className="ZonaDetalle-titulo"
                   style={{ paddingTop: "50px", backgroundColor: `#722789` }}
@@ -105,18 +110,14 @@ class PCoronavirus extends Component {
                     </h2>
 
                     <a
-                      href={`${
-                        process.env.REACT_APP_API_RECURSOS
-                      }/recursos/protocoloAlojamientos.pdf`}
+                      href={`${process.env.REACT_APP_API_RECURSOS}/recursos/protocoloAlojamientos.pdf`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <img
                         style={{ height: `200px`, fontWeight: "bold" }}
                         className="img-fluid"
-                        src={`${
-                          process.env.REACT_APP_API_RECURSOS
-                        }/recursos/DNU.png`}
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/DNU.png`}
                         alt="Img"
                       />
                     </a>
@@ -158,9 +159,7 @@ class PCoronavirus extends Component {
                     <img
                       style={{ fontWeight: "bold" }}
                       className="img-fluid placasCoronavirus"
-                      src={`${
-                        process.env.REACT_APP_API_RECURSOS
-                      }/recursos/prevencion.jpeg`}
+                      src={`${process.env.REACT_APP_API_RECURSOS}/recursos/prevencion.jpeg`}
                       alt="Img"
                     />
                   </center>
@@ -174,54 +173,42 @@ class PCoronavirus extends Component {
                   <p>Hacé Click en el icono para descargar el Instructivo</p>
                   <center>
                     <a
-                      href={`${
-                        process.env.REACT_APP_API_RECURSOS
-                      }/recursos/Agencia.pdf`}
+                      href={`${process.env.REACT_APP_API_RECURSOS}/recursos/Agencia.pdf`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <img
                         style={{ height: `200px` }}
                         className="img-fluid"
-                        src={`${
-                          process.env.REACT_APP_API_RECURSOS
-                        }/recursos/boton agencia.png`}
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/boton agencia.png`}
                         alt="Img"
                       />
                     </a>
                     <br />
                     <h2>Agencias de viajes - Resolución 125</h2>
                     <a
-                      href={`${
-                        process.env.REACT_APP_API_RECURSOS
-                      }/recursos/Hotelero.pdf`}
+                      href={`${process.env.REACT_APP_API_RECURSOS}/recursos/Hotelero.pdf`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <img
                         style={{ height: `200px`, fontWeight: "bold" }}
                         className="img-fluid"
-                        src={`${
-                          process.env.REACT_APP_API_RECURSOS
-                        }/recursos/boton hoteleria.png`}
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/boton hoteleria.png`}
                         alt="Img"
                       />
                     </a>
                     <br />
                     <h2>Hoteleros/Gastronómicos - Resolución 126</h2>
                     <a
-                      href={`${
-                        process.env.REACT_APP_API_RECURSOS
-                      }/recursos/DNU.pdf`}
+                      href={`${process.env.REACT_APP_API_RECURSOS}/recursos/DNU.pdf`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <img
                         style={{ height: `200px`, fontWeight: "bold" }}
                         className="img-fluid"
-                        src={`${
-                          process.env.REACT_APP_API_RECURSOS
-                        }/recursos/DNU.png`}
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/DNU.png`}
                         alt="Img"
                       />
                     </a>
@@ -240,9 +227,7 @@ class PCoronavirus extends Component {
                     <img
                       style={{ fontWeight: "bold" }}
                       className="img-fluid placasCoronavirus"
-                      src={`${
-                        process.env.REACT_APP_API_RECURSOS
-                      }/recursos/placa-enfermedad.jpg`}
+                      src={`${process.env.REACT_APP_API_RECURSOS}/recursos/placa-enfermedad.jpg`}
                       alt="Img"
                     />
                     <br />
@@ -250,9 +235,7 @@ class PCoronavirus extends Component {
                     <img
                       style={{ fontWeight: "bold" }}
                       className="img-fluid placasCoronavirus"
-                      src={`${
-                        process.env.REACT_APP_API_RECURSOS
-                      }/recursos/MEDIDAS3.jpg`}
+                      src={`${process.env.REACT_APP_API_RECURSOS}/recursos/MEDIDAS3.jpg`}
                       alt="Img"
                     />
                     <br />
@@ -260,9 +243,7 @@ class PCoronavirus extends Component {
                     <img
                       style={{ fontWeight: "bold" }}
                       className="img-fluid placasCoronavirus"
-                      src={`${
-                        process.env.REACT_APP_API_RECURSOS
-                      }/recursos/MEDIDAS2.jpg`}
+                      src={`${process.env.REACT_APP_API_RECURSOS}/recursos/MEDIDAS2.jpg`}
                       alt="Img"
                     />
                     <br />
@@ -270,9 +251,7 @@ class PCoronavirus extends Component {
                     <img
                       style={{ fontWeight: "bold" }}
                       className="img-fluid placasCoronavirus"
-                      src={`${
-                        process.env.REACT_APP_API_RECURSOS
-                      }/recursos/MEDIDAS1.jpg`}
+                      src={`${process.env.REACT_APP_API_RECURSOS}/recursos/MEDIDAS1.jpg`}
                       alt="Img"
                     />
                     <br />
@@ -281,9 +260,7 @@ class PCoronavirus extends Component {
                     <img
                       style={{ fontWeight: "bold" }}
                       className="img-fluid placasCoronavirus"
-                      src={`${
-                        process.env.REACT_APP_API_RECURSOS
-                      }/recursos/MEDIDAS.jpg`}
+                      src={`${process.env.REACT_APP_API_RECURSOS}/recursos/MEDIDAS.jpg`}
                       alt="Img"
                     />
                   </center>

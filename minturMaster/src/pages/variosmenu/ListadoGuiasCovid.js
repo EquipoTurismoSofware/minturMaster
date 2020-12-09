@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
 import axios from "axios";
+import Loading from "../../utils/Loading";
 
 class ListadoGuiasCovid extends Component {
   constructor(props) {
@@ -220,7 +221,6 @@ class ListadoGuiasCovid extends Component {
         </div>
       );
     });
-    {
       /*
      const potrero = this.state.potrero.map((nov) => {
       return (
@@ -283,7 +283,6 @@ class ListadoGuiasCovid extends Component {
       );
     });
     */
-    }
     const laCarolina = this.state.laCarolina.map((nov) => {
       return (
         <div key={`nov-f-${nov.nombre}`} className="row mb-5">
@@ -318,7 +317,11 @@ class ListadoGuiasCovid extends Component {
     return (
       <div className="PEventos">
         {this.state.loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div className="container mb-5" />
@@ -719,8 +722,6 @@ class ListadoGuiasCovid extends Component {
 ListadoGuiasCovid.contextType = Consumer;
 
 export default ListadoGuiasCovid;
-
-{
   /*
 
                 <br></br>
@@ -795,4 +796,4 @@ export default ListadoGuiasCovid;
                       </div>
                     </div>
                   </div>*/
-}
+

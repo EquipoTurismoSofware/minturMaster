@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
 import { Link } from "react-router-dom";
-import axios from "axios";
+//import axios from "axios";
 
 class PPrincipalGastronomia extends Component {
   constructor(props) {
@@ -37,6 +37,7 @@ class PPrincipalGastronomia extends Component {
 
   render() {
     const loading = this.state.loading;
+    /*
     var ListadoAtractivofull = null;
     if (this.state.data.length > 0) {
       ListadoAtractivofull = this.state.data.map(atrac => {
@@ -49,7 +50,7 @@ class PPrincipalGastronomia extends Component {
         let indice = Math.floor(Math.random() * atrac.imagenes.length);
       });
     }
-
+  */
     return (
       <React.Fragment>
         {loading ? (
@@ -76,7 +77,7 @@ class PPrincipalGastronomia extends Component {
             </div>
             <br />
             <br />
-            <div className="container">{ListadoAtractivofull}</div>
+            {/*<div className="container">{ListadoAtractivofull}</div>*/}
             <center>
               <div className="Recorridos">
                 <div>

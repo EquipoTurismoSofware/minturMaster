@@ -1,0 +1,83 @@
+.newsletter {
+    width: 250px;
+    z-index: 99;
+    position: fixed; /* Fixed/sticky position */
+    bottom: 0px; /* Place the button at the bottom of the page */
+    right: 20px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 20px ;
+
+    .newsHeader{
+        padding-top: 5px;
+    }
+
+    .newsEmail{
+        border-radius: 5px;
+        border: solid lightgray;
+        width: 90%;
+        height: 40px;        
+        &:focus{
+            outline-color: darkgray;
+        }
+    }
+
+    .newsMsg {
+        width: 90%;
+        height: 40px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        text-align: center;
+        &:disabled{
+            @include degrado(0.6, 0.7);
+            background-color: rgba(237,15,104, 1);
+            color: white;
+        }
+    }
+
+    .newsFooterButton {
+        width: 90%; 
+        height: 40px; 
+        border-radius: 5px;
+        border: none;
+        background-color: rgba(114,39,137, 1);
+        color: white;
+        &:hover{
+            outline: none;
+            background-color: rgb(127, 62, 146);
+        }
+    }
+}
+.PDesuscribir {
+    padding-top: 160px;
+    padding-bottom: 100px;
+    text-align: center;
+    .DesEmail{
+        border-radius: 5px;
+        border: solid lightgray;
+        width: 60%;
+        margin-top: 40px;
+        height: 40px;       
+        &:focus{
+            outline-color: darkgray;
+        }
+    }
+    .DesConfirm{
+        width: 60%; 
+        height: 40px; 
+        border-radius: 5px;
+        margin-top: 40px;
+        border: none;
+        background-color: rgba(114,39,137, 1);
+        color: white;
+        &:hover{
+            outline: none;
+            background-color: rgb(127, 62, 146);
+        }
+    }
+    .DesMsg{
+        color: rgba(237,15,104, 1);
+    }
+    
+}

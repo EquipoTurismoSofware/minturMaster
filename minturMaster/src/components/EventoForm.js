@@ -210,8 +210,8 @@ class Eventos extends Component {
 Eventos.contextType = Consumer;
 
 export default Eventos;
-{
-  /*import React, { Component } from "react";
+
+/*import React, { Component } from "react";
 import { Consumer } from "../context";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -328,12 +328,12 @@ class EventoForm extends Component {
       <ReactWOW animation="fadeIn" data-wow-delay="10s">
         <div className="EventoForm">
           {/* EMPIEZA PRUEBA SLIDE*/
-}
 
-{
+
+
   /* TERMINA PRUEBA SLIDE */
-}
-{
+
+
   /*
           <div className="leyenda">
             <h1>¡VENÍ A VIVIR SAN LUIS!</h1>
@@ -399,8 +399,8 @@ class EventoForm extends Component {
                         </div>
                     </form>
         </div>*/
-}
-{
+
+
   /*
           <div className="right-bottom-bars" />
         </div>
@@ -412,4 +412,4 @@ class EventoForm extends Component {
 EventoForm.contextType = Consumer;
 
 export default EventoForm;*/
-}
+

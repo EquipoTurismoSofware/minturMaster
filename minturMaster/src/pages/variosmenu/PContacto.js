@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
-import axios from "axios";
+//import axios from "axios";
+import Loading from "../../utils/Loading";
 
 class PContacto extends Component {
   constructor(props) {
@@ -11,24 +12,28 @@ class PContacto extends Component {
       carousel: [],
     };
   }
-  
+
   componentDidMount() {
     document.body.scrollTop = 0; // Safari
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
     this.setState({
-      loading: false
-    })
+      loading: false,
+    });
   }
 
   render() {
     return (
-      <div className="PEventos" style={{paddingTop: "110px"}}>
+      <div className="PEventos" style={{ paddingTop: "110px" }}>
         {this.state.loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div className="container">
-              <div className="row mb-3" >
+              <div className="row mb-3">
                 <div
                   className="ZonaDetalle-titulo"
                   style={{ paddingTop: "50px", backgroundColor: `#722789` }}

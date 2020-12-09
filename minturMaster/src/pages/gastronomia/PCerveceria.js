@@ -36,7 +36,7 @@ class PCerveceria extends Component {
 
   render() {
     const loading = this.state.loading;
-    var ListadoAtractivofull = null;
+    /*var ListadoAtractivofull = null;
     if (this.state.data.length > 0) {
       ListadoAtractivofull = this.state.data.map(atrac => {
         let descripcion = "";
@@ -47,7 +47,7 @@ class PCerveceria extends Component {
         }
         let indice = Math.floor(Math.random() * atrac.imagenes.length);
       });
-    }
+    }*/
 
     return (
       <React.Fragment>
@@ -168,7 +168,7 @@ class PCerveceria extends Component {
                 </div>
               </Link>**/}
             </div>
-            <div className="container">{ListadoAtractivofull}</div>
+            {/*<div className="container">{ListadoAtractivofull}</div>*/}
             <center>
               <div className="Recorridos">
                 <div>

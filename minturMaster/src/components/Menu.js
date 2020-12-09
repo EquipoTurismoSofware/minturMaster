@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ZonasMenu from "./subcomponentes/ZonasMenu";
-import Phome from "../pages/PHome";
-import { Fragment } from "react";
-import { SelectPicker } from "rsuite";
+//import Phome from "../pages/PHome";
+//import { Fragment } from "react";
+//import { SelectPicker } from "rsuite";
 
 class Menu extends Component {
   constructor(props) {
@@ -54,12 +54,15 @@ class Menu extends Component {
 
   closeLista() {
    // console.log("close lista");
-    this.state.lista = false;
+   this.setState({
+      lista: false
+   });
+
   }
   //selecciona la localidad con el tipeo de la felcha
   selectFirsElement() {
     // console.log("Seleccionar primero" );
-    let select = document.getElementsByName(0);
+    //let select = document.getElementsByName(0);
 
 
 
@@ -67,7 +70,10 @@ class Menu extends Component {
      // console.log(this.state.mov);
       selec.forEach((e) => {
         //console.log(e);
-        this.state.mov = -1;
+        this.setState({
+          mov: -1
+        });
+        //this.state.mov = -1;
         e.style = "";
       });
          
@@ -98,20 +104,27 @@ this.selectFirsElement()
           select.forEach((e) => {
             e.style = "";
           });
-
+        
           this.state.mov = -1;
           // console.log(this.state.selec.id);
-          window.location.href = `http://localhost:3000/#${this.state.selec.id}`;
+          if(window.location.hostname==="localhost"){
+            window.location.href = `http://localhost:3000/#${this.state.selec.id}`;
+          }
+          else{
+
+        
+          window.location.href = `http://turismo.sanluis.gov.ar/#${this.state.selec.id}`;  }
           this.cambiar();
         }
         break;
       case "ArrowDown":
+       
         if (
           this.state.mov <
           document.getElementsByClassName("linkBusqueda").length - 1
         ) {
           this.state.mov++;
-
+         
           //console.log(this.state.mov);
           //console.log(document.getElementsByName("links").length);
           let select = document.getElementsByName(this.state.mov);
@@ -138,7 +151,7 @@ this.selectFirsElement()
       //flecha hacia arriba
       case "ArrowUp":
         // console.log(key);
-        if (this.state.mov != 0) {
+        if (this.state.mov !== 0) {
           this.state.mov--;
           // console.log(this.state.mov);
           //console.log(document.getElementsByName("links").length);
@@ -172,14 +185,14 @@ this.selectFirsElement()
   //funcion para ocultar el las opciones desplegadas
   closeMenu() {
    // console.log("close");
-    if (this.state.ocultar == 0) this.setState({ visibleMenu: false });
+    if (this.state.ocultar === 0) this.setState({ visibleMenu: false });
     this.cambiar();
   }
 
   setMenu(id) {
     this.closeLista();
 
-    if (this.state.visibleMenu == false || id != this.state.idSubMenu) {
+    if (this.state.visibleMenu === false || id !== this.state.idSubMenu) {
       this.setState({ visibleMenu: true });
       this.cambiar();
     }
@@ -400,7 +413,7 @@ this.selectFirsElement()
 
     const filtro = this.state.localidades.data.map((lf) => {
       this.selectFirsElement();
-      if (lf.visible == true) {
+      if (lf.visible === true) {
         return (
           // active
 
@@ -423,7 +436,7 @@ this.selectFirsElement()
     });
     return (
       <React.Fragment>
-        <nav class="navbar navbar-expand-lg  Menu" id="nav">
+        <nav className="navbar navbar-expand-lg  Menu" id="nav">
           <Link
             to="/"
             data-toggle="tooltip"
@@ -446,7 +459,7 @@ this.selectFirsElement()
               </div>
           <button
             id="toggle"
-            class="navbar-toggler navbar-light"
+            className="navbar-toggler navbar-light"
             type="button"
             data-toggle="collapse"
             data-target="#navbarText"
@@ -455,17 +468,17 @@ this.selectFirsElement()
             aria-label="Toggle navigation"
             onClick={() => this.closeMenu()}
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto">
+          <div className="collapse navbar-collapse" id="navbarText">
+            <ul className="navbar-nav mr-auto">
               <li
-                class="nav-item link-menu"
+                className="nav-item link-menu"
                 onMouseOver={(e) => this.setMenu(1, e)}
               >
                 <span className="nav-link">¿QUÉ VISITAMOS?</span>
               </li>
-              <li class="nav-item link-menu">
+              <li className="nav-item link-menu">
                 <span
                   className="nav-link"
                   onMouseOver={(e) => this.setMenu(4, e)}
@@ -473,7 +486,7 @@ this.selectFirsElement()
                   ¿QUÉ HACEMOS?
                 </span>
               </li>
-              <li class="nav-item link-menu">
+              <li className="nav-item link-menu">
                 <span
                   className="nav-link"
                   onMouseOver={(e) => this.setMenu(2, e)}
@@ -481,7 +494,7 @@ this.selectFirsElement()
                   ¡A PLANIFICAR!
                 </span>
               </li>
-              <li class="nav-item link-menu">
+              <li className="nav-item link-menu">
                 <span
                   className="nav-link"
                   onMouseOver={(e) => this.setMenu(5, e)}
@@ -504,15 +517,15 @@ this.selectFirsElement()
                     type="text"
                     holder="Buscar localidades..."
                     id="buscar"
-                    class="buscador input form-control  "
+                    className="buscador input form-control  "
                     value={this.state.filtro}
                     onChange={this.handleBusquedaChange}
                     autoComplete="off"
                   />
-                  <div class="search" onClick={() => this.closeLista()}></div>
+                  <div className="search" onClick={() => this.closeLista()}></div>
                 </div>
                 {this.state.lista ? (
-                  <ul class="listaBusqueda ">{filtro}</ul>
+                  <ul className="listaBusqueda ">{filtro}</ul>
                 ) : (
                   ""
                 )}
@@ -564,7 +577,7 @@ this.selectFirsElement()
                 </Link>
               </div>
             </ul>
-            <span class="navbar-text mr-5">
+            <span className="navbar-text mr-5">
               <div
                 className="logoGob animated bounceInDown delay-2s"
                 style={{}}
@@ -582,7 +595,7 @@ this.selectFirsElement()
         {this.state.visibleMenu ? (
           <div
           id="toggle"
-          class="navbar-toggler navbar-light"
+          className="navbar-toggler navbar-light"
           type="button"
           data-toggle="collapse"
           data-target="#navbarText"

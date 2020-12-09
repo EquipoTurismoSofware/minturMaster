@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
 import axios from "axios";
-import MetaTags from "react-meta-tags";
-import CompartirPost from "../compartirPost";
+//import MetaTags from "react-meta-tags";
+import {Helmet} from "react-helmet";
+//import CompartirPost from "../compartirPost";
 //import GoogleMap from "../components/subcomponentes/GoogleMap";
 import MaxImage from "../../components/subcomponentes/MaxImage";
+import Loading from "../../utils/Loading";
 
 class PNovedad extends Component {
   constructor(props) {
@@ -17,13 +19,14 @@ class PNovedad extends Component {
         titulo: "",
         subtitulo: "",
         descripcion: "",
+        descripcionHTML: "",
         foto_uno: "default.jpg",
-        foto_dos: "default.jpg"
+        foto_dos: "default.jpg",
       },
       img: {
         visible: false,
-        src: ""
-      }
+        src: "",
+      },
     };
     this.clickImg = this.clickImg.bind(this);
     this.closeImg = this.closeImg.bind(this);
@@ -35,8 +38,8 @@ class PNovedad extends Component {
     this.setState({
       img: {
         visible: visible,
-        src: src
-      }
+        src: src,
+      },
     });
   }
 
@@ -44,8 +47,8 @@ class PNovedad extends Component {
     this.setState({
       img: {
         visible: false,
-        src: ""
-      }
+        src: "",
+      },
     });
   }
 
@@ -58,43 +61,47 @@ class PNovedad extends Component {
     axios({
       method: "get",
       headers: {
-        Authorization: token
+        Authorization: token,
       },
       url: `${process.env.REACT_APP_API}/novedad/${id}`,
-      responseType: "json"
+      responseType: "json",
     })
-      .then(response => {
+      .then((response) => {
         self.setState({
           data: response.data.data.registros[0],
-          loading: false
+          loading: false,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }
 
   render() {
     let fecha = this.state.data.fecha.split("-");
-    const shareUrl = window.location;
+    const shareUrl = window.location.href;
     const title = `${this.state.data.titulo}`;
-    const description = `${this.state.data.descripcion}`;
+    const descripcion = `${this.state.data.descripcion}`;
     const image = `${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_uno}`;
     return (
       <React.Fragment>
         {this.state.loading ? (
-          <div>Cargando...</div>
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
         ) : (
           <React.Fragment>
             <div className="container PNovedad">
-              <MetaTags>
+              <Helmet>
                 <title>{this.state.data.titulo}</title>
                 <meta property="og:url" content={shareUrl} />
-                <meta property="og:type" content="website" />
+                <meta property="og:type" content="article" />
                 <meta property="og:title" content={title} />
-                <meta property="og:description" content={description} />
+                <meta property="og:description" content={descripcion} />
                 <meta property="og:image" content={image} />
-              </MetaTags>
+              </Helmet>
               <div className="n-titulo">
                 <span>
                   {`${fecha[2]}/${fecha[1]}`} - {this.state.data.localidad}
@@ -110,7 +117,7 @@ class PNovedad extends Component {
                         className="img-fluid"
                         src={`${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_uno}`}
                         alt="Img"
-                        onClick={e =>
+                        onClick={(e) =>
                           this.clickImg(
                             true,
                             `${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_uno}`
@@ -122,6 +129,12 @@ class PNovedad extends Component {
                           className="img-fluid"
                           src={`${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_dos}`}
                           alt="Img"
+                          onClick={(e) =>
+                            this.clickImg(
+                              true,
+                              `${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_dos}`
+                            )
+                          }
                         />
                       ) : (
                         ""
@@ -135,12 +148,21 @@ class PNovedad extends Component {
 
                       <h3>{this.state.data.subtitulo}</h3>
                     </div>
-
-                    <div className="body">
-                      <p className="text-dark mb-2">
-                        {this.state.data.descripcion}
-                      </p>
-                    </div>
+                    {this.state.data.descripcionHTML != "" ? (
+                      <div className="body">
+                        <p
+                          className="text-dark mb-2"
+                          dangerouslySetInnerHTML={{
+                            __html: this.state.data.descripcionHTML,
+                          }}
+                        ></p>
+                      </div>
+                    ) : (
+                      <div className="body">
+                        <p className="text-dark mb-2">{descripcion}</p>
+                        <iframe src={`https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fturismo.sanluis.gov.ar%2F%23%2Fnovedad%2F${this.props.match.params.id}&layout=button_count&size=small&width=99&height=20&appId`} width="99" height="20" style={{border: "none", overflow: "hidden"}} scrolling="no" frameBorder="0" allowFullScreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
