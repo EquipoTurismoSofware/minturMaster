@@ -18,7 +18,7 @@ class PNovedad extends Component {
         titulo: "",
         subtitulo: "",
         descripcion: "",
-        descripcionHTML:"",
+        descripcionHTML: "",
         foto_uno: "default.jpg",
         foto_dos: "default.jpg",
       },
@@ -80,7 +80,7 @@ class PNovedad extends Component {
     let fecha = this.state.data.fecha.split("-");
     const shareUrl = window.location;
     const title = `${this.state.data.titulo}`;
-    const description = `${this.state.data.descripcion}`;
+    const descripcion = `${this.state.data.descripcion}`;
     const image = `${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_uno}`;
     return (
       <React.Fragment>
@@ -98,7 +98,7 @@ class PNovedad extends Component {
                 <meta property="og:url" content={shareUrl} />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content={title} />
-                <meta property="og:description" content={description} />
+                <meta property="og:description" content={descripcion} />
                 <meta property="og:image" content={image} />
               </MetaTags>
               <div className="n-titulo">
@@ -147,12 +147,20 @@ class PNovedad extends Component {
 
                       <h3>{this.state.data.subtitulo}</h3>
                     </div>
-                    
-                    <div className="body">
-                      <p className="text-dark mb-2" dangerouslySetInnerHTML={{__html: this.state.data.descripcionHTML}} >
-                        
-                      </p>
-                    </div>
+                    {this.state.data.descripcionHTML != "" ? (
+                      <div className="body">
+                        <p
+                          className="text-dark mb-2"
+                          dangerouslySetInnerHTML={{
+                            __html: this.state.data.descripcionHTML,
+                          }}
+                        ></p>
+                      </div>
+                    ) : (
+                      <div className="body">
+                        <p className="text-dark mb-2">{descripcion}</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
