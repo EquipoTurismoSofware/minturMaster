@@ -94,14 +94,14 @@ class PNovedad extends Component {
         ) : (
           <React.Fragment>
             <div className="container PNovedad">
-              <Helmet>
+              {/*<Helmet>
                 <title>{this.state.data.titulo}</title>
                 <meta property="og:url" content={shareUrl} />
                 <meta property="og:type" content="article" />
                 <meta property="og:title" content={title} />
                 <meta property="og:description" content={descripcion} />
                 <meta property="og:image" content={image} />
-              </Helmet>
+              </Helmet>*/}
               <div className="n-titulo">
                 <span>
                   {`${fecha[2]}/${fecha[1]}`} - {this.state.data.localidad}
@@ -155,8 +155,9 @@ class PNovedad extends Component {
                           dangerouslySetInnerHTML={{
                             __html: this.state.data.descripcionHTML,
                           }}
-                        ></p>                                               
+                        ></p>
                         <iframe src={`https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fturismo.sanluis.gov.ar%2F%23%2Fnovedad%2F${this.props.match.params.id}&layout=button_count&size=small&width=99&height=20&appId`} width="99" height="20" style={{border: "none", overflow: "hidden"}} scrolling="no" frameBorder="0" allowFullScreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
                       </div>
                     ) : (
                       <div className="body">
