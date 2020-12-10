@@ -53,31 +53,26 @@ class Menu extends Component {
   }
 
   closeLista() {
-   // console.log("close lista");
-   this.setState({
-      lista: false
-   });
-
+    // console.log("close lista");
+    this.setState({
+      lista: false,
+    });
   }
   //selecciona la localidad con el tipeo de la felcha
   selectFirsElement() {
     // console.log("Seleccionar primero" );
     //let select = document.getElementsByName(0);
 
-
-
-      let selec = document.getElementsByName(this.state.mov);
-     // console.log(this.state.mov);
-      selec.forEach((e) => {
-        //console.log(e);
-        this.setState({
-          mov: -1
-        });
-        //this.state.mov = -1;
-        e.style = "";
+    let selec = document.getElementsByName(this.state.mov);
+    // console.log(this.state.mov);
+    selec.forEach((e) => {
+      //console.log(e);
+      this.setState({
+        mov: -1,
       });
-         
-
+      //this.state.mov = -1;
+      e.style = "";
+    });
   }
 
   setValueInput() {
@@ -95,7 +90,7 @@ class Menu extends Component {
     switch (key) {
       //presion boton abajo
       case "Backspace":
-this.selectFirsElement()
+        this.selectFirsElement();
         break;
 
       case "Enter":
@@ -104,27 +99,24 @@ this.selectFirsElement()
           select.forEach((e) => {
             e.style = "";
           });
-        
+
           this.state.mov = -1;
           // console.log(this.state.selec.id);
-          if(window.location.hostname==="localhost"){
+          if (window.location.hostname === "localhost") {
             window.location.href = `http://localhost:3000/#${this.state.selec.id}`;
+          } else {
+            window.location.href = `http://turismo.sanluis.gov.ar/#${this.state.selec.id}`;
           }
-          else{
-
-        
-          window.location.href = `http://turismo.sanluis.gov.ar/#${this.state.selec.id}`;  }
           this.cambiar();
         }
         break;
       case "ArrowDown":
-       
         if (
           this.state.mov <
           document.getElementsByClassName("linkBusqueda").length - 1
         ) {
           this.state.mov++;
-         
+
           //console.log(this.state.mov);
           //console.log(document.getElementsByName("links").length);
           let select = document.getElementsByName(this.state.mov);
@@ -132,10 +124,9 @@ this.selectFirsElement()
             this.state.selec = e;
             // console.log(e);
 
-            e.style =
-              "text-decoration-line: underline ; font-size: 18px;";
+            e.style = "text-decoration-line: underline ; font-size: 18px;";
           });
-         // console.log(this.state.selec.id);
+          // console.log(this.state.selec.id);
         }
         if (true) {
           let select = document.getElementsByName(this.state.mov - 1);
@@ -160,8 +151,7 @@ this.selectFirsElement()
             // console.log(e);
             this.state.selec = e;
 
-            e.style =
-              "text-decoration-line: underline ; font-size: 18px;";
+            e.style = "text-decoration-line: underline ; font-size: 18px;";
           });
 
           //console.log(document.getElementsByName(this.state.mov));
@@ -184,7 +174,7 @@ this.selectFirsElement()
   }
   //funcion para ocultar el las opciones desplegadas
   closeMenu() {
-   // console.log("close");
+    // console.log("close");
     if (this.state.ocultar === 0) this.setState({ visibleMenu: false });
     this.cambiar();
   }
@@ -421,15 +411,21 @@ this.selectFirsElement()
             value=""
             key={`lloc-${lf.id}`}
             key={`lloc-${lf.id}`}
-            
             className="linkBusqueda"
             ref={this.link}
             onClick={this.cambiar}
             to={`/localidad/${lf.id}`}
-            
             style={{ textDecoration: "none" }}
           >
-            <Link id={`/localidad/${lf.id}`} className="liLista" name={cont++} to={`/localidad/${lf.id}`}>{lf.nombre} </Link>
+            <Link
+              id={`/localidad/${lf.id}`}
+              className="liLista"
+              name={cont++}
+              to={`/localidad/${lf.id}`}
+              onClick={() => this.closeLista()}
+            >
+              {lf.nombre}{" "}
+            </Link>
           </li>
         );
       }
@@ -446,17 +442,14 @@ this.selectFirsElement()
           >
             <i className="fas fa-home" />
           </Link>
-          <div
-                className="logoGob2 animated bounceInDown delay-2s"
-                style={{}}
-              >
-                <Link to="/" className="link-menu  ">
-                  <img
-                    src={`https://i.ibb.co/7g7LDjz/logo-gob.png`}
-                    alt="San Luis"
-                  />
-                </Link>
-              </div>
+          <div className="logoGob2 animated bounceInDown delay-2s" style={{}}>
+            <Link to="/" className="link-menu  ">
+              <img
+                src={`https://i.ibb.co/7g7LDjz/logo-gob.png`}
+                alt="San Luis"
+              />
+            </Link>
+          </div>
           <button
             id="toggle"
             className="navbar-toggler navbar-light"
@@ -507,13 +500,11 @@ this.selectFirsElement()
                 </span>
               </li>
 
-
               <li className="nav-item">
                 <div className="containeres">
                   <input
                     onKeyDown={(e) => this.selectOption(e)}
                     onClick={(e) => this.closeMenu(e)}
-                    onBlur={() => this.closeLista()}
                     type="text"
                     holder="Buscar localidades..."
                     id="buscar"
@@ -522,7 +513,10 @@ this.selectFirsElement()
                     onChange={this.handleBusquedaChange}
                     autoComplete="off"
                   />
-                  <div className="search" onClick={() => this.closeLista()}></div>
+                  <div
+                    className="search"
+                    onClick={() => this.closeLista()}
+                  ></div>
                 </div>
                 {this.state.lista ? (
                   <ul className="listaBusqueda ">{filtro}</ul>
@@ -594,15 +588,15 @@ this.selectFirsElement()
         </nav>
         {this.state.visibleMenu ? (
           <div
-          id="toggle"
-          className="navbar-toggler navbar-light"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarText"
-          aria-controls="navbarText"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          onClick={() => this.closeMenu()}
+            id="toggle"
+            className="navbar-toggler navbar-light"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            onClick={() => this.closeMenu()}
             className="menu-visita-container animated fadeIn"
             onMouseLeave={(e) => this.closeMenu(e)}
           >
