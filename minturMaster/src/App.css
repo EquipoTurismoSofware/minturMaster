@@ -635,86 +635,6 @@ body {
     width: 0px;
     height: 0px;
   }
-  .containeres .search:hover {
-    cursor: pointer;
-  }
-  .containeres .search::before {
-    content: "";
-    position: absolute;
-    margin: auto;
-    top: 10px;
-    right: 0;
-    bottom: 0;
-    left: 10px;
-    width: 10px;
-    height: 2px;
-    background: white;
-    transform: rotate(45deg);
-    transition: all 0.5s;
-  }
-  .containeres .search::after {
-    content: "";
-    position: absolute;
-    margin: auto;
-    top: -5px;
-    right: 0;
-    bottom: 0;
-    left: -5px;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    border: 2px solid white;
-    transition: all 0.5s;
-  }
-  .containeres .input {
-    margin-top: 0px;
-    z-index: 5;
-    width: 40px;
-    outline: none;
-    border: none;
-    background: #722789;
-    color: white;
-    text-shadow: 0 0 10px #722789;
-    padding: 0 80px 0 20px;
-    border-radius: 30px;
-    box-shadow: 0 0 25px 0 #722789, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
-    transition: all 1s;
-    opacity: 0;
-    letter-spacing: 0.1em;
-  }
-  .containeres .input:hover {
-    cursor: pointer;
-  }
-  .containeres .input:focus {
-    width: 100px;
-    opacity: 1;
-    cursor: text;
-  }
-  .containeres .input:focus ~ .search {
-    left: 250px;
-    background: #151515;
-    z-index: 6;
-  }
-  .containeres .input:focus ~ .search::before {
-    top: 0;
-    left: 0;
-    width: 25px;
-  }
-  .containeres .input:focus ~ .search::after {
-    top: 0;
-    left: 0;
-    width: 25px;
-    height: 2px;
-    border: none;
-    background: white;
-    border-radius: 0%;
-    transform: rotate(-45deg);
-  }
-  .containeres .input::placeholder {
-    color: white;
-    opacity: 0.5;
-    font-weight: bolder;
-  }
 
   .menu-ul {
     height: 200px;
@@ -1833,18 +1753,6 @@ body {
     display: none;
   }
 }
-@media only screen and (max-width: 580px) {
-  .Recorridos .titulo-creer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-  }
-  .Recorridos .mancha-inf-izq {
-    height: 190px;
-  }
-}
 @media only screen and (max-width: 970px) {
   .Recorridos .reco-container-altcaminos #sierras {
     position: relative;
@@ -1927,7 +1835,7 @@ body {
     color: #cb6120;
     font-size: 1.2em;
     font-weight: 600;
-    width: 150px;
+    width: 100px;
   }
   .Recorridos .reco-container-altcaminos #sierras .cuadro-titulo p {
     margin-bottom: 0px;
@@ -1955,10 +1863,22 @@ body {
     color: #cb6120;
     font-size: 1.2em;
     font-weight: 600;
-    width: 150px;
+    width: 100px;
   }
   .Recorridos .reco-cont-down #sierras .cuadro-titulo p {
     margin-bottom: 0px;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .Recorridos .titulo-creer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+  }
+  .Recorridos .mancha-inf-izq {
+    height: 190px;
   }
 }
 /*

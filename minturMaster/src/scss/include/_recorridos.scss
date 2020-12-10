@@ -467,21 +467,6 @@
   }
 }
 
-@media only screen and (max-width: 580px) {
-  .Recorridos {
-    .titulo-creer {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 300px;
-    }
-    .mancha-inf-izq {
-      height: 190px;
-    }
-  }
-}
-
 @media only screen and (max-width: 970px) {
   .Recorridos {
     .reco-container-altcaminos {
@@ -536,7 +521,7 @@
           color: #cb6120;
           font-size: 1.2em;
           font-weight: 600;
-          width: 150px;
+          width: 100px;
           p {
             margin-bottom: 0px;
           }
@@ -554,12 +539,27 @@
           color: #cb6120;
           font-size: 1.2em;
           font-weight: 600;
-          width: 150px;
+          width: 100px;
           p {
             margin-bottom: 0px;
           }
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .Recorridos {
+    .titulo-creer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+    }
+    .mancha-inf-izq {
+      height: 190px;
     }
   }
 }

@@ -155,7 +155,8 @@ class PNovedad extends Component {
                           dangerouslySetInnerHTML={{
                             __html: this.state.data.descripcionHTML,
                           }}
-                        ></p>
+                        ></p>                                               
+                        <iframe src={`https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fturismo.sanluis.gov.ar%2F%23%2Fnovedad%2F${this.props.match.params.id}&layout=button_count&size=small&width=99&height=20&appId`} width="99" height="20" style={{border: "none", overflow: "hidden"}} scrolling="no" frameBorder="0" allowFullScreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                       </div>
                     ) : (
                       <div className="body">
