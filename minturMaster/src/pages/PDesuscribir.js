@@ -52,7 +52,6 @@ class PDesuscribir extends Component {
               self.setState({
                 newsletters: response.data.data.registros
             }, () => {
-                console.log(this.state.newsletters);
               let cant = self.state.newsletters.filter(x => x.email === self.state.email);
               if(cant.length !== 0){
                 self.setState({
@@ -84,7 +83,7 @@ class PDesuscribir extends Component {
     const token = this.context.token;
     axios({
         method: 'delete',
-        url: `${process.env.REACT_APP_API_HOST}/newsletter/${this.state.id}`,
+        url: `${process.env.REACT_APP_API}/newsletter/${this.state.id}`,
         headers: {
             "Authorization": token,
             "Content-Type": "application/json"
