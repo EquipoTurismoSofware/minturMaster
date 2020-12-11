@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
 import axios from "axios";
-//import MetaTags from "react-meta-tags";
-import {Helmet} from "react-helmet";
+import { FacebookShareButton, FacebookIcon, FacebookShareCount} from 'react-share';
 //import CompartirPost from "../compartirPost";
 //import GoogleMap from "../components/subcomponentes/GoogleMap";
+import {Helmet} from "react-helmet";
+//import { Helmet, HelmetProvider} from 'react-helmet-async'
 import MaxImage from "../../components/subcomponentes/MaxImage";
 import Loading from "../../utils/Loading";
 
@@ -79,23 +80,45 @@ class PNovedad extends Component {
 
   render() {
     let fecha = this.state.data.fecha.split("-");
-    const shareUrl = window.location.href;
+    const shareUrl = `http://turismo.sanluis.gov.ar/#/novedad/${this.props.match.params.id}`;
+    //const shareUrl = `https://turismoprueba2.000webhostapp.com/#/novedad/${this.props.match.params.id}`;
     const title = `${this.state.data.titulo}`;
     const descripcion = `${this.state.data.descripcion}`;
     const image = `${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_uno}`;
+    /*const metas = (
+      <Helmet>
+        <title>{this.state.data.titulo}</title>
+        <meta property="og:locale" content="es_ES"/>
+        <meta property="og:site_name" content="Secretaría de Turismo - San Luis - Argentina"/>
+        <meta property="article:published_time" content="2020-12-10T09:01:14-03:00"/>
+        <meta property="article:modified_time" content="2020-12-10T09:09:21-03:00" />
+        <meta property="og:updated_time" content="2020-12-10T09:09:21-03:00" />
+        <meta property="og:url" content={shareUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={descripcion} />
+        <meta property="og:image" content={image} />
+      </Helmet> )*/
+
     return (
       <React.Fragment>
         {this.state.loading ? (
           <div className="PFiltroAlojamiento mb-5">
             <div>
-              <Loading margins="96px" />
+              <Loading margins="96px" />            
             </div>
           </div>
         ) : (
           <React.Fragment>
             <div className="container PNovedad">
+              
               {/*<Helmet>
                 <title>{this.state.data.titulo}</title>
+                <meta property="og:locale" content="es_ES"/>
+                <meta property="og:site_name" content="Secretaría de Turismo - San Luis - Argentina"/>
+                <meta property="article:published_time" content={Date.now}/>
+                <meta property="article:modified_time" content={Date.now} />
+                <meta property="og:updated_time" content={Date.now} />
                 <meta property="og:url" content={shareUrl} />
                 <meta property="og:type" content="article" />
                 <meta property="og:title" content={title} />
@@ -156,13 +179,15 @@ class PNovedad extends Component {
                             __html: this.state.data.descripcionHTML,
                           }}
                         ></p>
-                        <iframe src={`https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fturismo.sanluis.gov.ar%2F%23%2Fnovedad%2F${this.props.match.params.id}&layout=button_count&size=small&width=99&height=20&appId`} width="99" height="20" style={{border: "none", overflow: "hidden"}} scrolling="no" frameBorder="0" allowFullScreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                        
+                        <FacebookShareButton url={shareUrl}><FacebookIcon size={32} round={true} /></FacebookShareButton>
 
                       </div>
                     ) : (
                       <div className="body">
                         <p className="text-dark mb-2">{descripcion}</p>
-                        <iframe src={`https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fturismo.sanluis.gov.ar%2F%23%2Fnovedad%2F${this.props.match.params.id}&layout=button_count&size=small&width=99&height=20&appId`} width="99" height="20" style={{border: "none", overflow: "hidden"}} scrolling="no" frameBorder="0" allowFullScreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                        
+                        <FacebookShareButton url={shareUrl}><FacebookIcon size={32} round={true} /></FacebookShareButton>
                       </div>
                     )}
                   </div>
