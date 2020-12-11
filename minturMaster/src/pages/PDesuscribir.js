@@ -81,6 +81,7 @@ class PDesuscribir extends Component {
 
   desuscribir(){
     const token = this.context.token;
+
     axios({
         method: 'delete',
         url: `${process.env.REACT_APP_API}/newsletter/${this.state.id}`,
@@ -118,7 +119,7 @@ class PDesuscribir extends Component {
         <React.Fragment>
         <div className="PDesuscribir container">
             <div className="DesHeader">
-                <h3 style={{color: `#722789`}}>Lamentamos mucho que quiera desuscribirse. Para completar la desuscripción ingrese su mail a continuación: </h3>
+                <h3 style={{color: `#722789`}}>Lamentamos mucho que quiera desuscribirse. Para completar la desuscripción ingrese su email a continuación: </h3>
             </div>
             <div className="DesMsg" style={{display: this.state.visible}}>
                 <h3>{this.state.msg}</h3>
