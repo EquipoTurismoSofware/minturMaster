@@ -20,6 +20,7 @@ import PListadoAtractivos from "./pages/atractivo/PListadoAtractivos";
 import PListadoGastronomia from "./pages/gastronomia/PListadoGastronomia";
 import PAlojamiento from "./pages/PAlojamiento";
 import PFiltroAlojamiento from "./pages/variosmenu/PFiltroAlojamiento";
+import PFiltroAlojamientoAdhiereCovid from "./pages/variosmenu/PFiltroAlojamientoAdhiereCovid"
 import PAgenciaViajes from "./pages/servicios/PAgenciaViajes";
 import PGuiaTurismo from "./pages/servicios/PGuiaTurismo";
 import PAeropuerto from "./pages/servicios/PAeropuerto";
@@ -93,6 +94,12 @@ class App extends Component {
                 exact
                 path="/filtroalojamiento"
                 component={PFiltroAlojamiento}
+              />
+
+               <Route
+                exact
+                path="/filtroalojamientoAdhiere"
+                component={PFiltroAlojamientoAdhiereCovid}
               />
               <Route exact path="/agenciaviajes" component={PAgenciaViajes} />
               <Route exact path="/guiaturismo" component={PGuiaTurismo} />

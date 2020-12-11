@@ -279,6 +279,17 @@ const ZonaMenuDos = (props) => {
 
             <li>
               <Link
+                to="/filtroalojamiento"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Alojamientos
+              </Link>
+            </li>
+
+
+            <li>
+              <Link
                 to="/Pcontacto"
                 className="link"
                 onClick={props.onZonaClick}
@@ -417,7 +428,7 @@ const ZonaMenuCinco = (props) => {
             </li>
             <li>
               <a
-                href="http://protocoloturismo.sanluis.gov.ar/alojamiento/"
+                href="#/filtroalojamientoAdhiere"
                 className="link"
                 onClick={props.onZonaClick}
               >
