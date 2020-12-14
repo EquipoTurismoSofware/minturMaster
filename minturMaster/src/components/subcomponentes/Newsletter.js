@@ -21,7 +21,27 @@ export default class Newsletter extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleNew = this.handleNew.bind(this);
+    this.handleSave = this.handleSave.bind(this);
   }
+
+  handleSave(id) {
+    axios({
+      method: 'patch',
+      url: `${process.env.REACT_APP_API}/newsletter/${id}`,
+      data: {
+        email: this.state.email,
+        activo: 1
+      }
+    }).then((response) => {
+          this.setState({
+            msg: "Mail registrado con exito"
+          }); 
+      })
+      .catch((error) => {
+          console.log(error);
+      });
+  }
+
 
   handleNew() {
     axios({
@@ -57,7 +77,7 @@ export default class Newsletter extends Component {
           headers: {
               "Authorization": token
           },
-          url: `${process.env.REACT_APP_API}/newsletters`,
+          url: `${process.env.REACT_APP_API}/newsletter/all`,
           responseType: 'json'
       })
       .then((response) => {
@@ -65,9 +85,13 @@ export default class Newsletter extends Component {
           newsletters: response.data.data.registros,
           loading: false
       }, () => {
-        let cant = self.state.newsletters.filter(x => x.email === self.state.email);
-        if(cant.length === 0){
-          self.handleNew();
+        let res1 = self.state.newsletters.filter(x => x.email === self.state.email && x.activo === "0");
+        let res2 = self.state.newsletters.filter(x => x.email === self.state.email && x.activo === "1");
+        if(res1.length === 1){
+          var id = res1["0"].id;
+          self.handleSave(id);
+        }else if(res1.length === 0 && res2.length === 0){
+          self.handleNew();    
         }else{
           this.setState({
             msg: "Ese email ya existe"

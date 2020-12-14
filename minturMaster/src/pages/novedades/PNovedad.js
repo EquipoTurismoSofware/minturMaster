@@ -85,46 +85,28 @@ class PNovedad extends Component {
     const title = `${this.state.data.titulo}`;
     const descripcion = `${this.state.data.descripcion}`;
     const image = `${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_uno}`;
-    /*const metas = (
-      <Helmet>
-        <title>{this.state.data.titulo}</title>
-        <meta property="og:locale" content="es_ES"/>
-        <meta property="og:site_name" content="Secretaría de Turismo - San Luis - Argentina"/>
-        <meta property="article:published_time" content="2020-12-10T09:01:14-03:00"/>
-        <meta property="article:modified_time" content="2020-12-10T09:09:21-03:00" />
-        <meta property="og:updated_time" content="2020-12-10T09:09:21-03:00" />
-        <meta property="og:url" content={shareUrl} />
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={descripcion} />
-        <meta property="og:image" content={image} />
-      </Helmet> )*/
 
     return (
       <React.Fragment>
         {this.state.loading ? (
           <div className="PFiltroAlojamiento mb-5">
             <div>
-              <Loading margins="96px" />            
+              <Loading margins="96px" />        
             </div>
           </div>
         ) : (
           <React.Fragment>
-            <div className="container PNovedad">
-              
-              {/*<Helmet>
+            {/*<Helmet>
                 <title>{this.state.data.titulo}</title>
                 <meta property="og:locale" content="es_ES"/>
                 <meta property="og:site_name" content="Secretaría de Turismo - San Luis - Argentina"/>
-                <meta property="article:published_time" content={Date.now}/>
-                <meta property="article:modified_time" content={Date.now} />
-                <meta property="og:updated_time" content={Date.now} />
                 <meta property="og:url" content={shareUrl} />
                 <meta property="og:type" content="article" />
                 <meta property="og:title" content={title} />
                 <meta property="og:description" content={descripcion} />
                 <meta property="og:image" content={image} />
               </Helmet>*/}
+            <div className="container PNovedad">
               <div className="n-titulo">
                 <span>
                   {`${fecha[2]}/${fecha[1]}`} - {this.state.data.localidad}

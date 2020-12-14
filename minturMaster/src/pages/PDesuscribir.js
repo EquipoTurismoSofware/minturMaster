@@ -45,7 +45,7 @@ class PDesuscribir extends Component {
                 headers: {
                     "Authorization": token
                 },
-                url: `${process.env.REACT_APP_API}/newsletters`,
+                url: `${process.env.REACT_APP_API}/newsletter/activos`,
                 responseType: 'json'
             })
             .then((response) => {
