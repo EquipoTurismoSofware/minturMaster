@@ -842,7 +842,7 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/PRIMAVERA3.jpg);
+  background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/FONDO%202-min.png);
   background-repeat: no-repeat;
 }
 
@@ -852,7 +852,7 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/PRIMAVERA2.jpg);
+  background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/FONDO%201-min.png);
   background-repeat: no-repeat;
   background-position: 0 0 50px 0;
   background-size: cover;
@@ -864,7 +864,7 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/PRIMAVERA1.jpg);
+  background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/FONDO%203-min.png);
   background-repeat: no-repeat;
   background-position: 0 0 50px 0;
   background-size: cover;
@@ -882,112 +882,28 @@ body {
   background-size: cover;
 }
 
-.img-slider-5 {
-  width: 100%;
-  height: 100vh;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/5.jpg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: cover;
-}
-
-.img-slider-6 {
-  width: 100%;
-  height: 100vh;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/6.jpg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: cover;
-}
-
-.img-slider-7 {
-  width: 100%;
-  height: 100vh;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/7.jpg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: cover;
-}
-
-.img-slider-8 {
-  width: 100%;
-  height: 100vh;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/8.jpg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: cover;
-}
-
-.img-slider-9 {
-  width: 100%;
-  height: 100vh;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/9.jpg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: cover;
-}
-
-.img-slider-10 {
-  width: 100%;
-  height: 100vh;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/10.jpg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: cover;
-}
-
-.img-slider-11 {
-  width: 100%;
-  height: 100vh;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/11.jpg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: cover;
-}
-
 .tituloCarrusel {
   position: absolute;
-  bottom: 10vh;
-  left: 5vw;
+  bottom: 7vh;
+  left: 4vw;
   width: 450px;
-  height: 190px;
+  height: 160px;
 }
 
 .tituloCarrusel2 {
   position: absolute;
-  bottom: 5vh;
-  left: 15vw;
-  width: 250px;
-  height: 35px;
+  bottom: 7vh;
+  left: 4vw;
+  width: 370px;
+  height: 155px;
 }
 
 .tituloCarrusel3 {
   position: absolute;
-  bottom: 5vh;
-  left: 12vw;
-  width: 300px;
-  height: 35px;
+  bottom: 7vh;
+  left: 4vw;
+  width: 395px;
+  height: 155px;
 }
 
 .tituloCarrusel4 {
@@ -1119,26 +1035,26 @@ body {
 
   .tituloCarrusel {
     position: absolute;
-    bottom: 15vh;
-    left: 15vw;
-    width: 230px;
-    height: 130px;
+    bottom: 10vh;
+    left: 6vw;
+    width: 337.5px;
+    height: 120px;
   }
 
   .tituloCarrusel2 {
     position: absolute;
-    bottom: 12vh;
-    left: 30vw;
-    width: 130px;
-    height: 20px;
+    bottom: 10vh;
+    left: 6vw;
+    width: 277.5px;
+    height: 110.25px;
   }
 
   .tituloCarrusel3 {
     position: absolute;
-    bottom: 9vh;
-    left: 5%;
-    width: 250px;
-    height: 16px;
+    bottom: 10vh;
+    left: 6vw;
+    width: 296.25px;
+    height: 110.25px;
   }
 
   .img-slider-1 {
@@ -1147,9 +1063,9 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/port_vulpiani.jpg);
+    background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/FONDO%202-min.png);
     background-repeat: no-repeat;
-    background-position: 0 0 50px 0;
+    background-position: -300px 0px;
     background-size: cover;
   }
 
@@ -1159,7 +1075,7 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/port_potrero.jpg);
+    background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/PRIMAVERA1.jpg);
     background-repeat: no-repeat;
     background-position: 0 0 50px 0;
     background-size: cover;
@@ -1171,9 +1087,9 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/port_estancia.jpg);
+    background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/FONDO%203-min.png);
     background-repeat: no-repeat;
-    background-position: 0 0 50px 0;
+    background-position: -600px 0px;
     background-size: cover;
   }
 
@@ -1879,6 +1795,7 @@ body {
   }
   .Recorridos .mancha-inf-izq {
     height: 190px;
+    width: 300px;
   }
 }
 /*

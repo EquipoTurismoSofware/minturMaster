@@ -4,7 +4,7 @@ import axios from "axios";
 import { FacebookShareButton, FacebookIcon, FacebookShareCount} from 'react-share';
 //import CompartirPost from "../compartirPost";
 //import GoogleMap from "../components/subcomponentes/GoogleMap";
-import {Helmet} from "react-helmet";
+//import {Helmet} from "react-helmet";
 //import { Helmet, HelmetProvider} from 'react-helmet-async'
 import MaxImage from "../../components/subcomponentes/MaxImage";
 import Loading from "../../utils/Loading";

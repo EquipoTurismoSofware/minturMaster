@@ -214,41 +214,44 @@ class Home extends Component {
                       <ReactWOW animation="fadeIn" data-wow-delay="10s">
                         <div className="carousel-item img-slider-2 active">
                           <img
-                            alt="colores"
-                            className=" tituloCarrusel  animated flipInX delay-2s"
-                            src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/colores.png"
+                            alt="disfruta"
+                            className=" tituloCarrusel2  animated flipInX delay-2s"
+                            
+                            src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/DISFRUTA-min.png"
                           />
-                          <img
+                          {/*<img
                             alt="enSanLuis"
                             className=" tituloCarrusel2  animated flipInX delay-2s"
                             src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/enSanLuis.png"
-                          />
+                          />*/}
                         </div>
                         <div className="carousel-item img-slider-3">
                           <img
-                            alt="serenidad"
-                            className="tituloCarrusel  animated flipInX delay-2s"
-                            src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/serenidad.png"
-                          />
+                            alt="descubri"
+                            className="tituloCarrusel3  animated flipInX delay-2s"
 
-                          <img
+                            src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/DESCUBRI-min.png "
+                          />
+                          {/*<img
                             alt="enSanLuis"
                             className="tituloCarrusel2  animated flipInX delay-2s"
                             src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/enSanLuis.png"
-                          />
+                          />*/}
+                          
                         </div>
 
                         <div className="carousel-item img-slider-1">
                           <img
-                            alt="calidez"
+                            alt="contempla"
                             className=" tituloCarrusel  animated flipInX delay-2s"
-                            src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/calidez.png"
+                            src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/CONTEMPLA-min.png"
                           />
-                          <img
+                          {/*<img
                             alt="enSanLuis"
                             className=" tituloCarrusel2  animated flipInX delay-2s"
                             src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/enSanLuis.png"
-                          />
+                          />*/}
+                          
                         </div>
                       </ReactWOW>
                     </div>
