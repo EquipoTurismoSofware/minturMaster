@@ -61,6 +61,8 @@ import PVallesEncantados from "./pages/moto_turismo/PVallesEncantados";
 import PSaludYVitalidad from "./pages/moto_turismo/PSaludYVitalidad";
 import RegistroAlojamientos from "./pages/covid/voucher/RegistroAlojamientos";
 
+import NotFound from "./components/NotFound";
+
 class App extends Component {
   render() {
     return (
@@ -205,6 +207,10 @@ class App extends Component {
                 path="/registro-alojamientos-covid"
                 component={RegistroAlojamientos}
               />
+
+           <Route path="*">
+            <NotFound />
+          </Route>
             </Switch>
             <ToTop showAt={400} />
 
