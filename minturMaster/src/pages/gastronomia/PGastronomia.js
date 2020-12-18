@@ -3,12 +3,15 @@ import { Consumer } from "../../context";
 import axios from "axios";
 import GoogleMap from "../../components/subcomponentes/GoogleMap";
 import MaxImage from "../../components/subcomponentes/MaxImage";
+import Loading from "../../utils/Loading";
+import NotFound from "../../components/NotFound"
 
 class PGastronomia extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loading: true,
+      isNotFound: true,
       id: 0,
       dataAtractivo: {
         color: "722789"
@@ -134,10 +137,15 @@ class PGastronomia extends Component {
                     });
                     self.setState({
                       carousel: carousel,
-                      fotos: fotos
+                      fotos: fotos,
+                      loading: false,
+                      isNotFound: false
                     });
                   } else {
                     //Error no se enocntró el id
+                    self.setState({
+                      loading: false
+                    });
                   }
                 })
                 .catch(error => {
@@ -147,12 +155,16 @@ class PGastronomia extends Component {
           );
         } else {
           //Error no se encontró el id
+          self.setState({
+            loading: false,
+            isNotFound: true
+          });
         }
       })
       .catch(error => {
         console.log(error);
       });
-    self.setState({ loading: false });
+    //self.setState({ loading: false });
   }
 
   componentDidMount() {
@@ -169,18 +181,28 @@ class PGastronomia extends Component {
   }
 
   render() {
+    const loading = this.state.loading;
+    const isNotFound = this.state.isNotFound;
     const fotos = this.state.fotos;
     return (
       <div className="Atractivo" style={{ paddingTop: "110px"}}>
-        {this.state.loading ? (
-          <div>Cargando...</div>
-        ) : (
+        {loading ? (
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
+        )
+        : isNotFound ? (
+          <NotFound />
+        )
+        :(
           <React.Fragment>
             <div
               className="ZonaLocalidad-titulo"
-              style={{ backgroundColor: `#${this.state.dataAtractivo.color}` }}
+              style={{ backgroundColor: `#722789` }}
             >
-              <h3 style={{ color: `#${this.state.dataAtractivo.color}` }}>
+              <h3 style={{ color: `#722789` }}>
                 {this.state.dataAtractivo.nombre}
               </h3>
             </div>

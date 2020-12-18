@@ -3,6 +3,7 @@ import { Consumer } from "../context";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Loading from "../utils/Loading";
+import NotFound from "../components/NotFound"
 
 //import atractivosData from '../data/atractivos';
 
@@ -11,6 +12,7 @@ class Zona extends Component {
     super(props);
     this.state = {
       loading: true,
+      isNotFound: true,
       dataZona: {},
       localidadesDataZona: [],
       carousel: [],
@@ -31,27 +33,21 @@ class Zona extends Component {
         Authorization: token,
       },
       url: `${process.env.REACT_APP_API}/zona/${this.props.match.params.id}`,
-      /*
-            auth: {
-                username: 'janedoe',
-                password: 's00pers3cret'
-            },
-            */
       responseType: "json",
     })
       .then((response) => {
         if (response.data.data.count > 0) {
           self.setState({
             dataZona: response.data.data.registros[0],
+            loading: false,
+            isNotFound: false
           });
         } else {
-          //Error no se enocntró el id
+          this.setState({ loading: false, isNotFound: true });
         }
-        this.setState({ loading: false });
       })
       .catch((error) => {
         console.log(error);
-        this.setState({ loading: false });
       });
     //Localidades de la Zona
     axios({
@@ -66,7 +62,7 @@ class Zona extends Component {
         if (response.data.data.count > 0) {
           self.setState(
             {
-              localidadesDataZona: response.data.data.registros,
+              localidadesDataZona: response.data.data.registros
             },
             () => {
               //Para armar el Carousel y los Links
@@ -146,26 +142,22 @@ class Zona extends Component {
                         </Link>
                       );
                     });
-                    self.setState({ links: links });
+                    self.setState({ links: links});
                   } else {
-                    console.log("Nada de nada!");
+
                   }
-                  this.setState({ loading: false });
                 })
                 .catch((error) => {
                   console.log(error);
-                  this.setState({ loading: false });
                 });
             }
           );
         } else {
           //Error no se enocntró el id
         }
-        this.setState({ loading: false });
       })
       .catch((error) => {
         console.log(error);
-        this.setState({ loading: false });
       });
   }
 
@@ -183,6 +175,8 @@ class Zona extends Component {
 
   render() {
     //console.log(atractivosData);
+    const loading = this.state.loading;
+    const isNotFound = this.state.isNotFound;
     const localidades = this.state.localidadesDataZona.map((localidad) => {
       return (
         <Link
@@ -197,13 +191,17 @@ class Zona extends Component {
     const carousel = this.state.carousel;
     return (
       <div className="ZonaSlider">
-        {this.state.loading ? (
+        {loading ? (
           <div className="PFiltroAlojamiento mb-5">
             <div>
               <Loading margins="96px" />
             </div>
           </div>
-        ) : (
+        )
+        : isNotFound ? (
+          <NotFound />
+        )
+        :(
           <React.Fragment>
             <div className="menu-y-slider">
               <div

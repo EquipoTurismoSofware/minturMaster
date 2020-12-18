@@ -5,6 +5,7 @@ import axios from "axios";
 import GoogleMap from "../components/subcomponentes/GoogleMap";
 import Alojamientos from "../components/subcomponentes/Alojamientos";
 import Loading from "../utils/Loading";
+import NotFound from "../components/NotFound"
 
 
 class PLocalidad extends Component {
@@ -12,6 +13,7 @@ class PLocalidad extends Component {
     super(props);
     this.state = {
       loading: true,
+      isNotFound: true,
       id: 0,
       tipos: [],
 
@@ -89,11 +91,12 @@ class PLocalidad extends Component {
                   );
                 }
               });
-              self.setState({ carousel: fotos });
+              self.setState({ carousel: fotos, isNotFound: false, loading: false});
             }
           );
         } else {
           //Error no se encontro el id
+          self.setState({isNotFound: true, loading: false});
         }
       })
       .catch((error) => {
@@ -154,15 +157,14 @@ class PLocalidad extends Component {
       .then((response) => {
         self.setState({
           alojamientos: response.data.data.registros,
-          filtro: response.data.data.registros,
-          loading: false,
+          filtro: response.data.data.registros
         });
       })
       .catch((error) => {
         console.log(error);
       });
 
-    self.setState({ loading: false });
+    //self.setState({ loading: false });
   }
 
   componentDidUpdate(prevProps) {
@@ -240,6 +242,7 @@ class PLocalidad extends Component {
 
   render() {
     const loading = this.state.loading;
+    const isNotFound = this.state.isNotFound;
     const imperdibles = this.state.imperdibles.map((i, index) => {
       return (
         <Link key={`imp-${i.idLocalidad}-${index}`} to={`/atractivo/${i.id}`}>
@@ -277,7 +280,11 @@ class PLocalidad extends Component {
               <Loading margins="96px" />
             </div>
           </div>
-        ) : (
+        )
+        : isNotFound ? (
+          <NotFound />
+        )
+        :(
           <React.Fragment>
             <div className="menu-y-slider">
               <div

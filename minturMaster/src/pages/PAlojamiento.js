@@ -3,7 +3,7 @@ import { Consumer } from "../context";
 import axios from "axios";
 import GoogleMap from "../components/subcomponentes/GoogleMap";
 import MaxImage from "../components/subcomponentes/MaxImageAlojamientos";
-
+import NotFound from "../components/NotFound"
 import Loading from "../utils/Loading";
 
 const Pild = (props) => (
@@ -15,6 +15,7 @@ class PAlojamiento extends Component {
     super(props);
     this.state = {
       loading: true,
+      isNotFound: true,
       id: 0,
       dataAlojamiento: {},
       fotos: [],
@@ -153,16 +154,17 @@ class PAlojamiento extends Component {
                 .catch((error) => {
                   console.log(error);
                 });
+                self.setState({loading: false, isNotFound: false});
             }
           );
         } else {
           //Error no se encontró el id
+          self.setState({isNotFound: true, loading: false});
         }
       })
       .catch((error) => {
         console.log(error);
       });
-    self.setState({ loading: false });
   }
 
   componentDidMount() {
@@ -179,6 +181,8 @@ class PAlojamiento extends Component {
   }
 
   render() {
+    const loading = this.state.loading;
+    const isNotFound = this.state.isNotFound;
     const fotos = this.state.fotos;
     const pilds = this.state.servicios.map((servicio) => {
       return (
@@ -201,7 +205,10 @@ class PAlojamiento extends Component {
         {this.state.loading ? (
           
           <div><Loading margins="150px" /></div>
-        ) : (
+        ) : isNotFound ? (
+          <NotFound />
+        )
+        :(
           <React.Fragment>
             <div
               className="ZonaLocalidad-titulo"

@@ -3,15 +3,18 @@ import { Consumer } from "../../context";
 import axios from "axios";
 import GoogleMap from "../../components/subcomponentes/GoogleMap";
 import MaxImage from "../../components/subcomponentes/MaxImage";
+import Loading from "../../utils/Loading";
+import NotFound from "../../components/NotFound"
 
 class PAtractivo extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loading: true,
+      isNotFound: true,
       id: 0,
       dataAtractivo: {
-        color: "722789",
+        color: "722789"
       },
       carousel: [],
       fotos: [],
@@ -126,27 +129,34 @@ class PAtractivo extends Component {
                         />
                       );
                     });
+
                     self.setState({
                       carousel: carousel,
                       fotos: fotos,
+                      isNotFound: false
                     });
-                  } else {
-                    //Error no se enocntró el id
-                  }
+                  } 
+                  self.setState({
+                    loading: false
+                  });
                 })
                 .catch((error) => {
                   console.log(error);
                 });
+
+             
+                //self.setState({ loading: false, isNotFound: false});
             }
           );
         } else {
           //Error no se encontró el id
+          self.setState({ loading: false, isNotFound: true});
         }
       })
       .catch((error) => {
         console.log(error);
       });
-    self.setState({ loading: false });
+
   }
 
   componentDidMount() {
@@ -163,13 +173,23 @@ class PAtractivo extends Component {
   }
 
   render() {
+    const loading = this.state.loading;
+    const isNotFound = this.state.isNotFound;
     const carousel = this.state.carousel;
     const fotos = this.state.fotos;
     return (
       <div className="Atractivo">
-        {this.state.loading ? (
-          <div>Cargando...</div>
-        ) : (
+        {loading ? (
+          <div className="PFiltroAlojamiento mb-5">
+            <div>
+              <Loading margins="96px" />
+            </div>
+          </div>
+        )
+        : isNotFound ? (
+          <NotFound />
+        )
+        :(
           <React.Fragment>
             <div className="menu-y-slider">
               <div
@@ -209,13 +229,12 @@ class PAtractivo extends Component {
             </div>
             <div
               className="ZonaLocalidad-titulo"
-              style={{ backgroundColor: `#${this.state.dataAtractivo.color}` }}
+              style={{ backgroundColor: `#722789` }}
             >
-              <h3 style={{ color: `#${this.state.dataAtractivo.color}` }}>
+              <h3 style={{ color: `#722789` }}>
                 {this.state.dataAtractivo.nombre}
               </h3>
             </div>
-
             <div className="container">
               <div className="row">
                 <div className="col">
