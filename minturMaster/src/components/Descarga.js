@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactWOW from "react-wow";
+import { Link } from "react-router-dom";
 
 class Descarga extends Component {
   constructor(props) {
@@ -17,7 +18,8 @@ class Descarga extends Component {
             src={`https://i.ibb.co/ft02QmL/SAN-LUIS-TURISMO-FULL-COLOR-TRANSP.png`}
             alt="Logo"
           />
-          <a href="#" style={{ textDecoration: "none" }}>
+          
+          <Link to="descargar-mapas" style={{ textDecoration: "none" }}>
             <div className="descarga-leyenda">
               <div className="descarga-titulos">
                 <span className="dt-1"> ¡Hacé click acá!</span>
@@ -30,7 +32,7 @@ class Descarga extends Component {
                 <i className="fas fa-arrow-down" />
               </div>
             </div>
-          </a>
+          </Link>
         </div>
       </ReactWOW>
     );

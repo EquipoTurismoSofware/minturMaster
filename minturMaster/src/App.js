@@ -62,6 +62,7 @@ import PSaludYVitalidad from "./pages/moto_turismo/PSaludYVitalidad";
 import RegistroAlojamientos from "./pages/covid/voucher/RegistroAlojamientos";
 
 import NotFound from "./components/NotFound";
+import PMapas from "./pages/PMapas";
 
 class App extends Component {
   render() {
@@ -201,6 +202,11 @@ class App extends Component {
                 exact
                 path="/turismo-interno"
                 component={BotonTurismoInterno}
+              />
+                <Route
+                exact
+                path="/descargar-mapas"
+                component={PMapas}
               />
               <Route
                 exact
