@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Consumer } from "../context";
 import CompendioDeMedidas from "../components/coronavirus/CompendioDeMedidas";
+
 //import { Link } from "react-router-dom";
 
 import axios from "axios";
 import Loading from "../utils/Loading";
+import { Container, Row, Col } from 'react-bootstrap'
 
 class PCoronavirus extends Component {
   constructor(props) {
@@ -74,6 +76,8 @@ class PCoronavirus extends Component {
       });
   }
 
+
+
   componentDidMount() {
     document.body.scrollTop = 0; // Safari
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
@@ -105,23 +109,97 @@ class PCoronavirus extends Component {
                 <div className="col">
                   <center>
                     <h2 style={{ color: `#722789`, fontWeight: "bold" }}>
-                      HAGA CLICK PARA DESCARGAR EL PROTOCOLO PARA ALOJAMIENTOS
-                      TURÍSTICOS
+                      HAGA CLICK PARA DESCARGAR EL PROTOCOLO 
                     </h2>
+                    <p>Hacé Click en el icono para descargar el Instructivo</p>
+                    <br/><br/>
+                   
+                   <div>
 
-                    <a
-                      href={`${process.env.REACT_APP_API_RECURSOS}/recursos/protocoloAlojamientos.pdf`}
+                  <Container>
+                    <Row>
+                      <Col sm>
+                        <div style={{ height:'20%', margin:10}}>
+                            <h2>
+                            Alojamiento
+                          </h2>
+                          </div>
+                            <a
+                              href={`${process.env.REACT_APP_API_RECURSOS}/recursos/protocoloAlojamientos.pdf`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <img
+                                style={{ height: `200px`, fontWeight: "bold" }}
+                                className="img-fluid"
+                                src={`http://turismo.sanluis.gov.ar/api-turismo/public/recursos/botonProtocolo/000.png`}
+                                alt="Img"
+                              />
+                            </a>
+                     </Col>
+                     <Col sm>
+                     <div >  
+                        <h2>
+                            Albergues trasitorios 
+                          </h2> </div>
+                     <a
+                          href={`https://www.sanluis.gov.ar/wp-content/uploads/PROTOCOLO-PARA-ALBERGUES-TRANSITORIOS.pdf`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <img
+                            style={{ height: `200px`, fontWeight: "bold" }}
+                            className="img-fluid"
+                            src={`http://turismo.sanluis.gov.ar/api-turismo/public/recursos/botonProtocolo/001.png`}
+                            alt="Img"
+                          />
+                        </a>
+                     </Col>
+                     <Col sm>
+                     <div style={{ height:'20%', margin:10}}>
+
+                     <h2>
+                             Camping
+                          </h2>
+                      </div>
+                     <a
+                        href={`https://www.sanluis.gov.ar/wp-content/uploads/PROTOCOLO-PARA-CAMPING.pdf`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          style={{ height: `200px`, fontWeight: "bold" }}
+                          className="img-fluid"
+                          src={`http://turismo.sanluis.gov.ar/api-turismo/public/recursos/botonProtocolo/002.png`}
+                          alt="Img"
+                        />
+                      </a>
+                     </Col>
+                     <Col sm>
+                     <div>
+                     <h2>
+                          Balnearios y Piscinas 
+                      </h2>
+                      </div>
+                     <a
+                      href={`https://www.sanluis.gov.ar/wp-content/uploads/PROTOCOLO-PARA-BALNEARIOS-Y-PISCINAS.pdf`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <img
                         style={{ height: `200px`, fontWeight: "bold" }}
                         className="img-fluid"
-                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/DNU.png`}
+                        src={`http://turismo.sanluis.gov.ar/api-turismo/public/recursos/botonProtocolo/003.png`}
                         alt="Img"
                       />
                     </a>
-                  </center>
+                     </Col>
+
+                    </Row>
+                    </Container>
+
+                    </div>
+                    </center><br/><br/>
                   <h2 style={{ color: `#722789`, fontWeight: "bold" }}>
                     ¿QUÉ ES?
                   </h2>
@@ -172,6 +250,9 @@ class PCoronavirus extends Component {
                   </h2>
                   <p>Hacé Click en el icono para descargar el Instructivo</p>
                   <center>
+                    <Container>
+                    <Row>
+                      <Col sm>
                     <a
                       href={`${process.env.REACT_APP_API_RECURSOS}/recursos/Agencia.pdf`}
                       target="_blank"
@@ -186,6 +267,8 @@ class PCoronavirus extends Component {
                     </a>
                     <br />
                     <h2>Agencias de viajes - Resolución 125</h2>
+                    </Col>
+                    <Col>
                     <a
                       href={`${process.env.REACT_APP_API_RECURSOS}/recursos/Hotelero.pdf`}
                       target="_blank"
@@ -199,7 +282,8 @@ class PCoronavirus extends Component {
                       />
                     </a>
                     <br />
-                    <h2>Hoteleros/Gastronómicos - Resolución 126</h2>
+                    <h2>Hoteleros/Gastronómicos - Resolución 126</h2></Col>
+                    <Col>
                     <a
                       href={`${process.env.REACT_APP_API_RECURSOS}/recursos/DNU.pdf`}
                       target="_blank"
@@ -216,7 +300,9 @@ class PCoronavirus extends Component {
                     <h2>
                       Decreto de Necesidad y Urgencia (DNU) - Emergencia
                       Sanitaria
-                    </h2>
+                    </h2></Col>
+                    </Row>
+                    </Container>
                   </center>
                   <br />
                   <h2 style={{ color: `#722789`, fontWeight: "bold" }}>
