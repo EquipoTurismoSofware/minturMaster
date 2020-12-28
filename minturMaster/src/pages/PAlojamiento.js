@@ -229,7 +229,9 @@ class PAlojamiento extends Component {
                     <div className="alojamiento-fotos">{fotos}</div>
                     <div className="alojamiento-ubicacion">
                       <span>
-                        <i className="fas fa-map-marker"></i> Ubicación {this.state.dataAlojamiento.ciudad}
+                        <i className="fas fa-map-marker"></i> Ubicación -
+                        {this.state.dataAlojamiento.nombreciudad} 
+                        {this.state.dataAlojamiento.ciudad}
                       </span>
                       <div id="mapa-atr" style={{ width: "100%" }}>
                         <GoogleMap
