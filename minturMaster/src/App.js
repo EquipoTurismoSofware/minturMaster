@@ -56,7 +56,7 @@ import RegistroGuiasTurismo from "./pages/variosmenu/RegistroGuiasTurismo";
 import ListadoGuiasCovid from "./pages/variosmenu/ListadoGuiasCovid";
 import ListadoAgenciasCovid from "./pages/variosmenu/ListadoAgenciasCovid";
 import BotonTurismoInterno from "./components/subcomponentes/BotonTurismoInterno";
-
+import TurismoDosep from "./components/subcomponentes/TurismoDosep";
 import Footer from "./components/Footer";
 import PVallesEncantados from "./pages/moto_turismo/PVallesEncantados";
 import PSaludYVitalidad from "./pages/moto_turismo/PSaludYVitalidad";
@@ -210,6 +210,11 @@ class App extends Component {
                 exact
                 path="/turismo-interno"
                 component={BotonTurismoInterno}
+              />
+              <Route
+                exact
+                path="/turismo-dosep"
+                component={TurismoDosep}
               />
                 <Route
                 exact

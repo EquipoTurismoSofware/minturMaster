@@ -157,6 +157,7 @@ class PAlojamiento extends Component {
                 self.setState({loading: false, isNotFound: false});
             }
           );
+          console.log(this.state.dataAlojamiento);
         } else {
           //Error no se encontró el id
           self.setState({isNotFound: true, loading: false});
@@ -228,7 +229,7 @@ class PAlojamiento extends Component {
                     <div className="alojamiento-fotos">{fotos}</div>
                     <div className="alojamiento-ubicacion">
                       <span>
-                        <i className="fas fa-map-marker"></i> Ubicación
+                        <i className="fas fa-map-marker"></i> Ubicación {this.state.dataAlojamiento.ciudad}
                       </span>
                       <div id="mapa-atr" style={{ width: "100%" }}>
                         <GoogleMap
