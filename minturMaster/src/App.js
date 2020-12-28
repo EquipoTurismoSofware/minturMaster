@@ -108,7 +108,7 @@ class App extends Component {
               />
               <Route
                 exact
-                path="/filtroalojamientoAdhiereDosep"
+                path="/turismoDosep"
                 component={PFiltroAlojamientoAdhiereDosep}
               />
              
