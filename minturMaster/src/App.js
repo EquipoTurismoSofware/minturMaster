@@ -20,7 +20,8 @@ import PListadoAtractivos from "./pages/atractivo/PListadoAtractivos";
 import PListadoGastronomia from "./pages/gastronomia/PListadoGastronomia";
 import PAlojamiento from "./pages/PAlojamiento";
 import PFiltroAlojamiento from "./pages/variosmenu/PFiltroAlojamiento";
-import PFiltroAlojamientoAdhiereCovid from "./pages/variosmenu/PFiltroAlojamientoAdhiereCovid"
+import PFiltroAlojamientoAdhiereCovid from "./pages/variosmenu/PFiltroAlojamientoAdhiereCovid";
+import PFiltroAlojamientoAdhiereDosep from "./pages/variosmenu/PFiltroAlojamientoAdhiereDosep";
 import PAgenciaViajes from "./pages/servicios/PAgenciaViajes";
 import PGuiaTurismo from "./pages/servicios/PGuiaTurismo";
 import PAeropuerto from "./pages/servicios/PAeropuerto";
@@ -64,6 +65,7 @@ import RegistroAlojamientos from "./pages/covid/voucher/RegistroAlojamientos";
 import NotFound from "./components/NotFound";
 import PMapas from "./pages/PMapas";
 
+
 class App extends Component {
   render() {
     return (
@@ -104,6 +106,12 @@ class App extends Component {
                 path="/filtroalojamientoAdhiere"
                 component={PFiltroAlojamientoAdhiereCovid}
               />
+              <Route
+                exact
+                path="/filtroalojamientoAdhiereDosep"
+                component={PFiltroAlojamientoAdhiereDosep}
+              />
+             
               <Route exact path="/agenciaviajes" component={PAgenciaViajes} />
               <Route exact path="/guiaturismo" component={PGuiaTurismo} />
               <Route exact path="/PAeropuerto" component={PAeropuerto} />
