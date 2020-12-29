@@ -349,7 +349,11 @@ class PLocalidad extends Component {
                       )}
                     </div>
                     <div id="texto">
-                      <p>{this.state.dataLocalidad.descripcion}</p>
+                      {this.state.dataLocalidad.descripcionHTML != "" ? (
+                        <p dangerouslySetInnerHTML={{ __html: this.state.dataLocalidad.descripcionHTML,}}></p>
+                      ) : (
+                          <p >{this.state.dataLocalidad.descripcion}</p>
+                      )}
                     </div>
                     <div id="atractivos">
                       <Link to={`/atractivos/${this.state.dataLocalidad.id}`}>

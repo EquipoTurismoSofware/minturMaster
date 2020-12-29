@@ -212,7 +212,12 @@ class PGastronomia extends Component {
                 <div className="col">
                   <div className="Atractivo-data">
                     <div className="atractivo-texto">
-                      {this.state.dataAtractivo.descripcion}
+                    {this.state.dataAtractivo.descripcionHTML != "" ? (
+                        <p dangerouslySetInnerHTML={{ __html: this.state.dataAtractivo.descripcionHTML,}}></p>
+                      ) : (
+                          <p >{this.state.dataAtractivo.descripcion}</p>
+                      )}
+                      {/*this.state.dataAtractivo.descripcion*/}
                     </div>
                     <div className="atractivo-fotos">{fotos}</div>
                     <div className="atractivo-ubicacion">

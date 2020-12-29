@@ -65,6 +65,7 @@ class PZonaGastronomica extends Component {
     })
       .then(response => {
         if (response.data.data.length > 0) {
+          
           self.setState({
             localidadesDataZona: response.data.data
           });
