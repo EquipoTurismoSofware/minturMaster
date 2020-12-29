@@ -55,6 +55,7 @@ import RegistroAgenciasdeViajes from "./pages/variosmenu/RegistroAgenciasdeViaje
 import RegistroGuiasTurismo from "./pages/variosmenu/RegistroGuiasTurismo";
 import ListadoGuiasCovid from "./pages/variosmenu/ListadoGuiasCovid";
 import ListadoAgenciasCovid from "./pages/variosmenu/ListadoAgenciasCovid";
+import ListadoAgenciasDosep from "./pages/variosmenu/ListadoAgenciasDosep";
 import BotonTurismoInterno from "./components/subcomponentes/BotonTurismoInterno";
 import TurismoDosep from "./components/subcomponentes/TurismoDosep";
 import Footer from "./components/Footer";
@@ -205,6 +206,11 @@ class App extends Component {
                 exact
                 path="/listado-agencias-covid"
                 component={ListadoAgenciasCovid}
+              />
+               <Route
+                exact
+                path="/agencias-turismo-dosep"
+                component={ListadoAgenciasDosep}
               />
               <Route
                 exact

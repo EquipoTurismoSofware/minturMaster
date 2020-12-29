@@ -10,6 +10,20 @@ export default class TurismoDosep extends Component {
           <div className="row mb-3" style={{ paddingTop: "150px" }}>
             <div className="pantallaGrande">
               <center>
+                <img
+                  style={{ height: 250, width: 350 }}
+                  className="img-fluid"
+                  src={`${process.env.REACT_APP_API_RECURSOS}/recursos/LogoDosep.png`}
+                  alt="Img"
+                />
+                <div className="ZonaDetalle-titulo">
+                  <h3 style={{ color: `#722789` }}>
+                    INFORMACIÓN PARA AFILIADOS:
+                  </h3>
+                </div>
+              </center>
+
+              <center>
                 <div className="row">
                   {/*  <div className="one-third column">
                     <Link to="/listado-guias-covid" className="link-menu">
@@ -22,7 +36,7 @@ export default class TurismoDosep extends Component {
                     </Link>
     </div>*/}
                   <div className="one-two column">
-                    <Link to="/listado-agencias-covid" className="link-menu">
+                    <Link to="/agencias-turismo-dosep" className="link-menu">
                       <img
                         style={{ height: 300, width: 550 }}
                         className="img-fluid"
@@ -32,8 +46,8 @@ export default class TurismoDosep extends Component {
                     </Link>
                   </div>
                   <div className="one-two  column">
-                    <a
-                      href="http://protocoloturismo.sanluis.gov.ar/alojamiento/"
+                    <Link
+                      to="/alojamientos-turismo-Dosep"
                       className="link-menu"
                     >
                       <img
@@ -42,7 +56,7 @@ export default class TurismoDosep extends Component {
                         src={`${process.env.REACT_APP_API_RECURSOS}/recursos/modal/TARJETAS_ALOJAMIENTO.jpg`}
                         alt="Img"
                       />
-                    </a>
+                    </Link>
                   </div>
                   <div className="row">
                     <div className="one column">
@@ -61,21 +75,24 @@ export default class TurismoDosep extends Component {
             </div>
           </div>
         </div>
-        <div className="row mb-3" style={{ paddingTop: "40px" }}>
+        <div className="row mb-3" style={{ paddingTop: "0px" }}>
           <div className="pantallaChica">
             <center>
-              <div className="one-third column">
-                <Link to="/listado-guias-covid" className="link-menu">
-                  <img
-                    style={{ height: 200, width: 350 }}
-                    className="img-fluid"
-                    src={`${process.env.REACT_APP_API_RECURSOS}/recursos/modal/TARJETA_EXCURSIONES.jpg`}
-                    alt="Img"
-                  />
-                </Link>
+              <img
+                style={{ height: 100, width: 150 }}
+                className="img-fluid"
+                src={`${process.env.REACT_APP_API_RECURSOS}/recursos/LogoDosep.png`}
+                alt="Img"
+              />
+              <div className="ZonaDetalle-titulo">
+                <h3 style={{ color: `#722789` }}>
+                  INFORMACIÓN PARA AFILIADOS:
+                </h3>
               </div>
+            </center>
+            <center>
               <div className="one-third column">
-                <Link to="/listado-agencias-covid" className="link-menu">
+                <Link to="/agencias-turismo-dosep" className="link-menu">
                   <img
                     style={{ height: 200, width: 400 }}
                     className="img-fluid"
@@ -85,17 +102,14 @@ export default class TurismoDosep extends Component {
                 </Link>
               </div>
               <div className="one-third column">
-                <a
-                  href="http://protocoloturismo.sanluis.gov.ar/alojamiento/"
-                  className="link-menu"
-                >
+                <Link to="/alojamientos-turismo-Dosep" className="link-menu">
                   <img
                     style={{ height: 200, width: 400 }}
                     className="img-fluid"
                     src={`${process.env.REACT_APP_API_RECURSOS}/recursos/modal/TARJETAS_ALOJAMIENTO.jpg`}
                     alt="Img"
                   />
-                </a>
+                </Link>
               </div>
               <div className="row">
                 <div className="one-third column">
@@ -107,6 +121,102 @@ export default class TurismoDosep extends Component {
                       alt="Img"
                     />
                   </Link>
+                </div>
+              </div>
+            </center>
+          </div>
+          <div className="pantallaGrande">
+            <div className="ZonaDetalle-titulo ">
+              <h3 style={{ color: `#722789` }}>
+                INFORMACIÓN PARA PRESTADORES DE SERVICIOS:
+              </h3>
+            </div>
+
+            <center>
+              <div className="row">
+                {/*  <div className="one-third column">
+                    <Link to="/listado-guias-covid" className="link-menu">
+                      <img
+                        style={{ height: 200, width: 350 }}
+                        className="img-fluid"
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/modal/TARJETA_EXCURSIONES.jpg`}
+                        alt="Img"
+                      />
+                    </Link>
+    </div>*/}
+                <div className="one-two column">
+                  <a
+                    href="http://turismo.sanluis.gov.ar/dosep-turismo/Bases_Condiciones.pdf"
+                    className="link-menu"
+                  >
+                    <img
+                      style={{ height: 300, width: 550 }}
+                      className="img-fluid"
+                      src={`${process.env.REACT_APP_API_RECURSOS}/recursos/BASESBOTON.jpg`}
+                      alt="Img"
+                    />
+                  </a>
+                </div>
+                <div className="one-two  column">
+                  <a
+                    href="https://forms.gle/wK9pGbWuNNTc2Z848"
+                    className="link-menu"
+                  >
+                    <img
+                      style={{ height: 300, width: 550 }}
+                      className="img-fluid"
+                      src={`${process.env.REACT_APP_API_RECURSOS}/recursos/ADHERITEBOTON.jpg`}
+                      alt="Img"
+                    />
+                  </a>
+                </div>
+              </div>
+            </center>
+          </div>
+          <div className="pantallaChica">
+            <div className="ZonaDetalle-titulo ">
+              <h3 style={{ color: `#722789` }}>
+                INFORMACIÓN PARA PRESTADORES DE SERVICIOS:
+              </h3>
+            </div>
+
+            <center>
+              <div className="row">
+                {/*  <div className="one-third column">
+                    <Link to="/listado-guias-covid" className="link-menu">
+                      <img
+                        style={{ height: 200, width: 350 }}
+                        className="img-fluid"
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/modal/TARJETA_EXCURSIONES.jpg`}
+                        alt="Img"
+                      />
+                    </Link>
+    </div>*/}
+                <div className="one-two column">
+                  <a
+                    href="http://turismo.sanluis.gov.ar/dosep-turismo/Bases_Condiciones.pdf"
+                    className="link-menu"
+                  >
+                    <img
+                      style={{ height: 200, width: 400 }}
+                      className="img-fluid"
+                      src={`${process.env.REACT_APP_API_RECURSOS}/recursos/BASESBOTON.jpg`}
+                      alt="Img"
+                    />
+                  </a>
+                </div>
+                <div className="one-two  column">
+                  <a
+                    href="https://forms.gle/wK9pGbWuNNTc2Z848"
+                    className="link-menu"
+                  >
+                    <img
+                      style={{ height: 200, width: 400 }}
+                      className="img-fluid"
+                      src={`${process.env.REACT_APP_API_RECURSOS}/recursos/ADHERITEBOTON.jpg`}
+                      alt="Img"
+                    />
+                  </a>
                 </div>
               </div>
             </center>

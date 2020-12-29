@@ -170,7 +170,7 @@ class PFiltroAlojamiento extends Component {
                     :
                     <React.Fragment>
                         <div className="ZonaLocalidad-titulo" style={{backgroundColor: '#722789'}}>
-                            <h3 style={{color: '#722789'}}>Alojamientos - Adhiere Dosep</h3> <h5>Adhiere Dosep</h5>
+                            <h3 style={{color: '#722789'}}>Alojamientos Adheridos - Dosep Turismo  2021</h3> 
                         </div>
                         <div className="container">
                             <div className="row">

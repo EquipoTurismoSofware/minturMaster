@@ -192,11 +192,11 @@ class Home extends Component {
                         <div className="pantallaGrande">
                           <Newsletter anchoMargen="400px" altoMargen="250px" />
                           <PantallaModal
-                            anchoMargen="850px"
+                            anchoMargen="1050px"
                             altoMargen="600px"
-                            anchoImg="800px"
+                            anchoImg="1000px"
                             altoImg="550px"
-                            picture="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/modalHorizontal.jpeg"
+                            picture="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/DOSEPmodal.jpg"
                           />
                         </div>
                       </center>
@@ -208,7 +208,7 @@ class Home extends Component {
                           anchoImg="250px"
                           altoImg="500px"
                           maginLeft="15px"
-                          picture="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/modalVertical.jpeg"
+                          picture="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/DOSEPmodalCEL.jpg"
                         />
                       </div>
                       <ReactWOW animation="fadeIn" data-wow-delay="10s">

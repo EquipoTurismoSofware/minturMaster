@@ -39,7 +39,7 @@ export default class PantallaModal extends Component {
           effect="fadeInUp"
           onClickAway={() => this.closeModal()}
         >
-          <Link to="/turismo-interno" className="link-menu">
+          <Link to="/turismo-dosep" className="link-menu">
             <img
               style={{
                 width: this.state.ancho,
