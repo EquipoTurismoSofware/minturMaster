@@ -57,8 +57,6 @@ import PTrazosHistoria from "./pages/moto_turismo/PTrazosHistoria";
 import PCoronavirus from "./pages/PCoronavirus";
 import RegistroAgenciasdeViajes from "./pages/variosmenu/RegistroAgenciasdeViajes";
 import RegistroGuiasTurismo from "./pages/variosmenu/RegistroGuiasTurismo";
-import ListadoGuiasCovid from "./pages/variosmenu/ListadoGuiasCovid";
-import ListadoAgenciasCovid from "./pages/variosmenu/ListadoAgenciasCovid";
 import ListadoAgenciasDosep from "./pages/variosmenu/ListadoAgenciasDosep";
 import BotonTurismoInterno from "./components/subcomponentes/BotonTurismoInterno";
 import TurismoDosep from "./components/subcomponentes/TurismoDosep";
@@ -214,21 +212,13 @@ class App extends Component {
                 path="/PPrincipalGastronomia"
                 component={PPrincipalGastronomia}
               />
-              <Route
-                exact
-                path="/listado-guias-covid"
-                component={ListadoGuiasCovid}
-              />
+              
               <Route
                 exact
                 path="/listado-guias-agencias-covid/:tipo"
                 component={ListadoGuiasAgenciasCovid}
               />
-              <Route
-                exact
-                path="/listado-agencias-covid"
-                component={ListadoAgenciasCovid}
-              />
+              
                <Route
                 exact
                 path="/agencias-turismo-dosep"

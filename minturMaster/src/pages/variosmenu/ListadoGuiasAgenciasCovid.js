@@ -3,6 +3,7 @@ import { Consumer } from "../../context";
 import axios from "axios";
 import Loading from "../../utils/Loading";
 import NotFound from "../../components/NotFound"
+import ItemGuiasAgencias from "../../components/ItemGuiasAgencias"
 
 class ListadoGuiasAgenciasCovid extends Component {
   constructor(props) {
@@ -61,6 +62,7 @@ class ListadoGuiasAgenciasCovid extends Component {
         self.setState({
             loading: false,
             isNotFound: false,
+            tipo: this.props.match.params.tipo
         });
         
       })
@@ -68,6 +70,7 @@ class ListadoGuiasAgenciasCovid extends Component {
         self.setState({
             loading: false,
             isNotFound: true,
+            tipo: this.props.match.params.tipo
         });
         console.log(error);
       });
@@ -81,380 +84,6 @@ class ListadoGuiasAgenciasCovid extends Component {
 
   render() {
     const isNotFound = this.state.isNotFound;
-    const sanluis = this.state.sanluis.map((nov) => {
-        if(this.props.match.params.tipo === "guiasturismo"){
-            return(<div key={`nov-f-${nov.nombre}`} className="row mb-5">
-            <div className="col">
-              <div className="titulo">
-                <h3>{nov.nombre}</h3>
-                <span className="pr-4">
-                  <i className="fas fa-user" />
-                  &nbsp; Categoría: {nov.categoria}
-                </span>
-                <br />
-                <span className="pr-4">
-                  <i class="fas fa-phone-volume" />
-                  &nbsp; Teléfono: {nov.telefono}
-                </span>
-                <br />
-                <span className="pr-4 ">
-                  <i className="fas fa-map-marker" />
-                  &nbsp; Ámbito Ejercicio: {nov.ambito}
-                </span>
-                <br />
-                <span>
-                  <i class="fas fa-envelope" /> &nbsp; {nov.correo}
-                </span>
-                <hr />
-              </div>
-            </div>
-          </div>);
-            
-        }else if(this.props.match.params.tipo === "agencias"){
-            return (
-                <div key={`nov-f-${nov.nombre}`} className="row mb-5">
-                  <div className="col">
-                    <div className="titulo">
-                      <h3>{nov.nombre}</h3>
-                      <span className="pr-4">
-                        <i className="fas fa-user" />
-                        &nbsp; Dirección: {nov.domicilio}
-                      </span>
-                      <br />
-                      <span className="pr-4">
-                        <i class="fas fa-phone-volume" />
-                        &nbsp; Teléfono: {nov.telefono}
-                      </span>
-                      <br />
-                      <span className="pr-4 ">
-                        <i class="fas fa-envelope" /> 
-                        &nbsp; {nov.mail}
-                      </span>
-                      <br />
-                      <span>
-                        <i className="fas fa-clock" />
-                        &nbsp; Representante: {nov.representante}
-                      </span>
-                      <hr />
-                    </div>
-                  </div>
-                </div>
-              );
-        }
-      
-    });
-    const juanakoslay = this.state.juanakoslay.map((nov) => {
-        if(this.props.match.params.tipo === "guiasturismo"){
-            return (
-                <div key={`nov-f-${nov.nombre}`} className="row mb-5">
-                <div className="col">
-                    <div className="titulo">
-                    <h3>{nov.nombre}</h3>
-                    <span className="pr-4">
-                        <i className="fas fa-user" />
-                        &nbsp; Categoría: {nov.categoria}
-                    </span>
-                    <br />
-                    <span className="pr-4">
-                        <i class="fas fa-phone-volume" />
-                        &nbsp; Teléfono: {nov.telefono}
-                    </span>
-                    <br />
-                    <span className="pr-4 ">
-                        <i className="fas fa-map-marker" />
-                        &nbsp; Ámbito Ejercicio: {nov.ambito}
-                    </span>
-                    <br />
-                    <span>
-                        <i class="fas fa-envelope" /> &nbsp; {nov.correo}
-                    </span>
-                    <hr />
-                    </div>
-                </div>
-                </div>
-            );
-        }else if(this.props.match.params.tipo === "agencias"){
-            return (
-                <div key={`nov-f-${nov.nombre}`} className="row mb-5">
-                  <div className="col">
-                    <div className="titulo">
-                      <h3>{nov.nombre}</h3>
-                      <span className="pr-4">
-                        <i className="fas fa-user" />
-                        &nbsp; Dirección: {nov.domicilio}
-                      </span>
-                      <br />
-                      <span className="pr-4">
-                        <i class="fas fa-phone-volume" />
-                        &nbsp; Teléfono: {nov.telefono}
-                      </span>
-                      <br />
-                      <span className="pr-4 ">
-                        <i class="fas fa-envelope" /> 
-                        &nbsp; {nov.mail}
-                      </span>
-                      <br />
-                      <span>
-                        <i className="fas fa-clock" />
-                        &nbsp; Representante: {nov.representante}
-                      </span>
-                      <hr />
-                    </div>
-                  </div>
-                </div>
-              );
-        }
-    });
-    const merlo = this.state.merlo.map((nov) => {
-        if(this.props.match.params.tipo === "guiasturismo"){
-            return (
-                <div key={`nov-f-${nov.nombre}`} className="row mb-5">
-                <div className="col">
-                    <div className="titulo">
-                    <h3>{nov.nombre}</h3>
-                    <span className="pr-4">
-                        <i className="fas fa-user" />
-                        &nbsp; Categoría: {nov.categoria}
-                    </span>
-                    <br />
-                    <span className="pr-4">
-                        <i class="fas fa-phone-volume" />
-                        &nbsp; Teléfono: {nov.telefono}
-                    </span>
-                    <br />
-                    <span className="pr-4 ">
-                        <i className="fas fa-map-marker" />
-                        &nbsp; Ámbito Ejercicio: {nov.ambito}
-                    </span>
-                    <br />
-                    <span>
-                        <i class="fas fa-envelope" /> &nbsp; {nov.correo}
-                    </span>
-                    <hr />
-                    </div>
-                </div>
-                </div>
-            );
-        }else if(this.props.match.params.tipo === "agencias"){
-            return (
-                <div key={`nov-f-${nov.nombre}`} className="row mb-5">
-                  <div className="col">
-                    <div className="titulo">
-                      <h3>{nov.nombre}</h3>
-                      <span className="pr-4">
-                        <i className="fas fa-user" />
-                        &nbsp; Dirección: {nov.domicilio}
-                      </span>
-                      <br />
-                      <span className="pr-4">
-                        <i class="fas fa-phone-volume" />
-                        &nbsp; Teléfono: {nov.telefono}
-                      </span>
-                      <br />
-                      <span className="pr-4 ">
-                        <i class="fas fa-envelope" /> 
-                        &nbsp; {nov.mail}
-                      </span>
-                      <br />
-                      <span>
-                        <i className="fas fa-clock" />
-                        &nbsp; Representante: {nov.representante}
-                      </span>
-                      <hr />
-                    </div>
-                  </div>
-                </div>
-              );
-        }
-    });
-    const punta = this.state.punta.map((nov) => {
-        if(this.props.match.params.tipo === "guiasturismo"){
-            return (
-                <div key={`nov-f-${nov.nombre}`} className="row mb-5">
-                <div className="col">
-                    <div className="titulo">
-                    <h3>{nov.nombre}</h3>
-                    <span className="pr-4">
-                        <i className="fas fa-user" />
-                        &nbsp; Categoría: {nov.categoria}
-                    </span>
-                    <br />
-                    <span className="pr-4">
-                        <i class="fas fa-phone-volume" />
-                        &nbsp; Teléfono: {nov.telefono}
-                    </span>
-                    <br />
-                    <span className="pr-4 ">
-                        <i className="fas fa-map-marker" />
-                        &nbsp; Ámbito Ejercicio: {nov.ambito}
-                    </span>
-                    <br />
-                    <span>
-                        <i class="fas fa-envelope" /> &nbsp; {nov.correo}
-                    </span>
-                    <hr />
-                    </div>
-                </div>
-                </div>
-            );
-        }else if(this.props.match.params.tipo === "agencias"){
-            return (
-                <div key={`nov-f-${nov.nombre}`} className="row mb-5">
-                  <div className="col">
-                    <div className="titulo">
-                      <h3>{nov.nombre}</h3>
-                      <span className="pr-4">
-                        <i className="fas fa-user" />
-                        &nbsp; Dirección: {nov.domicilio}
-                      </span>
-                      <br />
-                      <span className="pr-4">
-                        <i class="fas fa-phone-volume" />
-                        &nbsp; Teléfono: {nov.telefono}
-                      </span>
-                      <br />
-                      <span className="pr-4 ">
-                        <i class="fas fa-envelope" /> 
-                        &nbsp; {nov.mail}
-                      </span>
-                      <br />
-                      <span>
-                        <i className="fas fa-clock" />
-                        &nbsp; Representante: {nov.representante}
-                      </span>
-                      <hr />
-                    </div>
-                  </div>
-                </div>
-              );
-        }
-    });
-    const carpinteria = this.state.carpinteria.map((nov) => {
-        if(this.props.match.params.tipo === "guiasturismo"){
-            return (
-                <div key={`nov-f-${nov.nombre}`} className="row mb-5">
-                <div className="col">
-                    <div className="titulo">
-                    <h3>{nov.nombre}</h3>
-                    <span className="pr-4">
-                        <i className="fas fa-user" />
-                        &nbsp; Categoría: {nov.categoria}
-                    </span>
-                    <br />
-                    <span className="pr-4">
-                        <i class="fas fa-phone-volume" />
-                        &nbsp; Teléfono: {nov.telefono}
-                    </span>
-                    <br />
-                    <span className="pr-4 ">
-                        <i className="fas fa-map-marker" />
-                        &nbsp; Ámbito Ejercicio: {nov.ambito}
-                    </span>
-                    <br />
-                    <span>
-                        <i class="fas fa-envelope" /> &nbsp; {nov.correo}
-                    </span>
-                    <hr />
-                    </div>
-                </div>
-                </div>
-            );
-        }else if(this.props.match.params.tipo === "agencias"){
-            return (
-                <div key={`nov-f-${nov.nombre}`} className="row mb-5">
-                  <div className="col">
-                    <div className="titulo">
-                      <h3>{nov.nombre}</h3>
-                      <span className="pr-4">
-                        <i className="fas fa-user" />
-                        &nbsp; Dirección: {nov.domicilio}
-                      </span>
-                      <br />
-                      <span className="pr-4">
-                        <i class="fas fa-phone-volume" />
-                        &nbsp; Teléfono: {nov.telefono}
-                      </span>
-                      <br />
-                      <span className="pr-4 ">
-                        <i class="fas fa-envelope" /> 
-                        &nbsp; {nov.mail}
-                      </span>
-                      <br />
-                      <span>
-                        <i className="fas fa-clock" />
-                        &nbsp; Representante: {nov.representante}
-                      </span>
-                      <hr />
-                    </div>
-                  </div>
-                </div>
-              );
-        }
-    });
-
-    const laCarolina = this.state.laCarolina.map((nov) => {
-        if(this.props.match.params.tipo === "guiasturismo"){
-            return (
-                <div key={`nov-f-${nov.nombre}`} className="row mb-5">
-                <div className="col">
-                    <div className="titulo">
-                    <h3>{nov.nombre}</h3>
-                    <span className="pr-4">
-                        <i className="fas fa-user" />
-                        &nbsp; Categoría: {nov.categoria}
-                    </span>
-                    <br />
-                    <span className="pr-4">
-                        <i class="fas fa-phone-volume" />
-                        &nbsp; Teléfono: {nov.telefono}
-                    </span>
-                    <br />
-                    <span className="pr-4 ">
-                        <i className="fas fa-map-marker" />
-                        &nbsp; Ámbito Ejercicio: {nov.ambito}
-                    </span>
-                    <br />
-                    <span>
-                        <i class="fas fa-envelope" /> &nbsp; {nov.correo}
-                    </span>
-                    <hr />
-                    </div>
-                </div>
-                </div>
-            );
-        }else if(this.props.match.params.tipo === "agencias"){
-            return (
-                <div key={`nov-f-${nov.nombre}`} className="row mb-5">
-                  <div className="col">
-                    <div className="titulo">
-                      <h3>{nov.nombre}</h3>
-                      <span className="pr-4">
-                        <i className="fas fa-user" />
-                        &nbsp; Dirección: {nov.domicilio}
-                      </span>
-                      <br />
-                      <span className="pr-4">
-                        <i class="fas fa-phone-volume" />
-                        &nbsp; Teléfono: {nov.telefono}
-                      </span>
-                      <br />
-                      <span className="pr-4 ">
-                        <i class="fas fa-envelope" /> 
-                        &nbsp; {nov.mail}
-                      </span>
-                      <br />
-                      <span>
-                        <i className="fas fa-clock" />
-                        &nbsp; Representante: {nov.representante}
-                      </span>
-                      <hr />
-                    </div>
-                  </div>
-                </div>
-              );
-        }
-    });
-
     return (
       <div className="PEventos">
         {this.state.loading ? (
@@ -517,7 +146,9 @@ class ListadoGuiasAgenciasCovid extends Component {
                               style={{ color: "#cb6120" }}
                             >
                               <div className="form-group">
-                                <div className="atractivo-info">{sanluis}</div>
+                                <div className="atractivo-info">
+                                  <ItemGuiasAgencias data={this.state.sanluis} tipo={this.state.tipo}/>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -531,7 +162,7 @@ class ListadoGuiasAgenciasCovid extends Component {
                 }
                 
                 {
-                    merlo.length !== 0?
+                    this.state.merlo.length !== 0?
                     <div className="row mb-3">
                     <div className="col">
                       <img
@@ -569,7 +200,7 @@ class ListadoGuiasAgenciasCovid extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info" />
-                                {merlo}
+                                <ItemGuiasAgencias data={this.state.merlo} tipo={this.state.tipo}/>
                               </div>
                             </div>
                           </div>
@@ -583,7 +214,7 @@ class ListadoGuiasAgenciasCovid extends Component {
                 }
                 
                 {
-                    punta.length !== 0 ?
+                    this.state.punta.length !== 0 ?
                     <div className="row mb-3">
                     <div className="col">
                       <img
@@ -621,7 +252,7 @@ class ListadoGuiasAgenciasCovid extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info" />
-                                {punta}
+                                <ItemGuiasAgencias data={this.state.punta} tipo={this.state.tipo}/>
                               </div>
                             </div>
                           </div>
@@ -635,7 +266,7 @@ class ListadoGuiasAgenciasCovid extends Component {
                 }
                 
                 {
-                    laCarolina.length !== 0 ?
+                    this.state.laCarolina.length !== 0 ?
                     <div className="row mb-3">
                     <div className="col">
                       <img
@@ -673,7 +304,7 @@ class ListadoGuiasAgenciasCovid extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info" />
-                                {laCarolina}
+                                <ItemGuiasAgencias data={this.state.laCarolina} tipo={this.state.tipo}/>
                               </div>
                             </div>
                           </div>
@@ -687,7 +318,7 @@ class ListadoGuiasAgenciasCovid extends Component {
                 }
                 
                 {
-                    carpinteria.length !== 0 ?
+                    this.state.carpinteria.length !== 0 ?
                     <div className="row mb-3">
                     <div className="col">
                       <img
@@ -725,7 +356,7 @@ class ListadoGuiasAgenciasCovid extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info">
-                                  {carpinteria}
+                                <ItemGuiasAgencias data={this.state.carpinteria} tipo={this.state.tipo}/>
                                   <hr />
                                 </div>
                               </div>
@@ -741,7 +372,7 @@ class ListadoGuiasAgenciasCovid extends Component {
                 }
                 
                 {
-                    juanakoslay.length !== 0?
+                    this.state.juanakoslay.length !== 0?
                     <div className="row mb-3">
                     <div className="col">
                       <img
@@ -779,7 +410,7 @@ class ListadoGuiasAgenciasCovid extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info">
-                                  {juanakoslay}
+                                <ItemGuiasAgencias data={this.state.juanakoslay} tipo={this.state.tipo}/>
                                 </div>
                               </div>
                             </div>

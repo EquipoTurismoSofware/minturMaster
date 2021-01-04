@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
-//import axios from "axios";
+import axios from "axios";
 import Loading from "../../utils/Loading";
+import NotFound from "../../components/NotFound"
+import ItemGuiasAgencias from "../../components/ItemGuiasAgencias"
 
 class ListadoAgenciasDosep extends Component {
   constructor(props) {
@@ -10,18 +12,73 @@ class ListadoAgenciasDosep extends Component {
       loading: true,
       data: [],
       carousel: [],
+      sanluis: [],
+      juanakoslay: [],
+      carpinteria: [],
+      volcan: [],
+      potrero: [],
+      laCarolina: [],
+      merlo: [],
+      punta: [],
+      tipo: "agencias"
     };
+  }
+
+  getData() {
+    var token = this.context.token;
+    var self = this;
+    axios({
+      method: "get",
+      headers: {
+        Authorization: token,
+      },
+      url: `${process.env.REACT_APP_API}/agencias/adhiereDosep`,
+      responseType: "json",
+    })
+      .then((response) => {
+        var i = 0;
+        for (i = 0; i < response.data.data.registros.length; i++) {
+            if (response.data.data.registros[i].ciudad === "Ciudad de San Luis") {
+                this.state.sanluis.push(response.data.data.registros[i]);
+            } else if (response.data.data.registros[i].ciudad === "Juana Koslay")
+                this.state.juanakoslay.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "La Carolina")
+                this.state.laCarolina.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "Carpintería")
+                this.state.carpinteria.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "El Volcán")
+                this.state.volcan.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "Potrero de Los Funes")
+                this.state.potrero.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "Villa de Merlo")
+                this.state.merlo.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "La Punta")
+                this.state.punta.push(response.data.data.registros[i]);
+           
+        }
+        self.setState({
+            loading: false,
+            isNotFound: false
+        });
+        
+      })
+      .catch((error) => {
+        self.setState({
+            loading: false,
+            isNotFound: true
+        });
+        console.log(error);
+      });
   }
 
   componentDidMount() {
     document.body.scrollTop = 0; // Safari
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
-    this.setState({
-      loading: false,
-    });
+    this.getData();
   }
 
   render() {
+    const isNotFound = this.state.isNotFound;
     return (
       <div className="PEventos">
         {this.state.loading ? (
@@ -30,7 +87,10 @@ class ListadoAgenciasDosep extends Component {
               <Loading margins="96px" />
             </div>
           </div>
-        ) : (
+        ) : isNotFound ? (
+          <NotFound />
+        )
+        :(
           <React.Fragment>
             <div className="container mb-5" />
             <div className="container">
@@ -43,66 +103,62 @@ class ListadoAgenciasDosep extends Component {
                     Agencias de Viajes Adheridas - Turismo Dosep 2021
                   </h3>
                 </div>
-                <div className="col">
-                  <img
-                    alt="terrazas"
-                    style={{
-                      width: "100%",
-                      height: "300px",
-                      objectFit: "cover",
-                    }}
-                    src="http://agenciasanluis.com/wp-content/uploads/2017/09/terrazas.jpg"
-                  />
-                  <button
-                    className="btn btn-dark btn-block"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#nueva_zona"
-                    aria-expanded="false"
-                    aria-controls="nueva_zona"
-                    style={{
-                      backgroundColor: "#cb6120",
-                      height: "50px",
-                      fontSize: "1.2rem",
-                      lineHeight: "1.8rem",
-                      fontWeight: "700",
-                    }}
-                  >
-                    San Luis
-                  </button>
-                  <div className="collapse" id="nueva_zona">
-                    <div className="card card-body">
-                      <div className="row">
-                        <div className="col-md-10" style={{ color: "#cb6120" }}>
-                          <div className="form-group">
-                            <h4>DAIMAR TOUR E.V.T. – Legajo N° 13553</h4>
-                            <span className="pr-4 ">
-                              <i className="fas fa-map-marker" />
-                              &nbsp; Dirección: LAVALLE Nº 911 – 5700 – SAN LUIS
-                            </span>
-                            <br />
-                            <span className="pr-4">
-                              <i className="fas fa-user" />
-                              &nbsp; Tel./Cel.: 2664 742750
-                            </span>
-                            <br />
-                            <span>
-                              <i class="fas fa-envelope" /> &nbsp;
-                              administración@daimartour.com.ar
-                            </span>
-                            <br />
-                            <span>
-                              <i className="fas fa-clock" />
-                              &nbsp; Representante: PEDROZO, MARIA ANGELICA –
-                              Registro: 14134
-                            </span>
+                {
+                    this.state.sanluis.length !== 0 ?
+                    <div className="row mb-3">
+                    <div className="col">
+                      <img
+                        alt="terrazas"
+                        style={{
+                          width: "100%",
+                          height: "300px",
+                          objectFit: "cover",
+                        }}
+                        src="http://agenciasanluis.com/wp-content/uploads/2017/09/terrazas.jpg"
+                      />
+                      <button
+                        className="btn btn-dark btn-block"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#nueva_zona"
+                        aria-expanded="false"
+                        aria-controls="nueva_zona"
+                        style={{
+                          backgroundColor: "#cb6120",
+                          height: "50px",
+                          fontSize: "1.2rem",
+                          lineHeight: "1.8rem",
+                          fontWeight: "700",
+                        }}
+                      >
+                        San Luis
+                      </button>
+                      <div className="collapse" id="nueva_zona">
+                        <div className="card card-body">
+                          <div className="row">
+                            <div
+                              className="col-md-10"
+                              style={{ color: "#cb6120" }}
+                            >
+                              <div className="form-group">
+                                <div className="atractivo-info">
+                                  <ItemGuiasAgencias data={this.state.sanluis} tipo={this.state.tipo}/>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
+                    <br />
                   </div>
-                  <br />
-                  <div className="row mb-3">
+                  :
+                  ""
+                }
+                
+                {
+                    this.state.merlo.length !== 0?
+                    <div className="row mb-3">
                     <div className="col">
                       <img
                         alt="merlo"
@@ -138,31 +194,165 @@ class ListadoAgenciasDosep extends Component {
                               style={{ color: "#336535" }}
                             >
                               <div className="form-group">
+                                <div className="atractivo-info" />
+                                <ItemGuiasAgencias data={this.state.merlo} tipo={this.state.tipo}/>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+                  </div>
+                  :
+                  ""
+                }
+                
+                {
+                    this.state.punta.length !== 0 ?
+                    <div className="row mb-3">
+                    <div className="col">
+                      <img
+                        alt="merlo"
+                        style={{
+                          width: "100%",
+                          height: "300px",
+                          objectFit: "cover",
+                        }}
+                        src="https://cypnoticias.com.ar/wp-content/uploads/2018/01/parque-astron%C3%B3mico-la-punta-san-luis.jpg"
+                      />
+                      <button
+                        className="btn btn-dark btn-block"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#Punta"
+                        aria-expanded="false"
+                        aria-controls="Punta"
+                        style={{
+                          backgroundColor: "#A3BD31",
+                          height: "50px",
+                          fontSize: "1.2rem",
+                          lineHeight: "1.8rem",
+                          fontWeight: "700",
+                        }}
+                      >
+                        La Punta
+                      </button>
+                      <div className="collapse" id="Punta">
+                        <div className="card card-body">
+                          <div className="row">
+                            <div
+                              className="col-md-10"
+                              style={{ color: "#A3BD31" }}
+                            >
+                              <div className="form-group">
+                                <div className="atractivo-info" />
+                                <ItemGuiasAgencias data={this.state.punta} tipo={this.state.tipo}/>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+                  </div>
+                    :
+                    ""
+                }
+                
+                {
+                    this.state.laCarolina.length !== 0 ?
+                    <div className="row mb-3">
+                    <div className="col">
+                      <img
+                        alt="laCarolina"
+                        style={{
+                          width: "100%",
+                          height: "300px",
+                          objectFit: "cover",
+                        }}
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/LaCarolina.jpeg`}
+                      />
+                      <button
+                        className="btn btn-dark btn-block"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#laCarolina"
+                        aria-expanded="false"
+                        aria-controls="laCarolina"
+                        style={{
+                          backgroundColor: "#cb6120",
+                          height: "50px",
+                          fontSize: "1.2rem",
+                          lineHeight: "1.8rem",
+                          fontWeight: "700",
+                        }}
+                      >
+                        La Carolina
+                      </button>
+                      <div className="collapse" id="laCarolina">
+                        <div className="card card-body">
+                          <div className="row">
+                            <div
+                              className="col-md-10"
+                              style={{ color: "#cb6120" }}
+                            >
+                              <div className="form-group">
+                                <div className="atractivo-info" />
+                                <ItemGuiasAgencias data={this.state.laCarolina} tipo={this.state.tipo}/>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+                  </div>
+                  : 
+                  ""
+                }
+                
+                {
+                    this.state.carpinteria.length !== 0 ?
+                    <div className="row mb-3">
+                    <div className="col">
+                      <img
+                        alt="carpinteria"
+                        style={{
+                          width: "100%",
+                          height: "300px",
+                          objectFit: "cover",
+                        }}
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/carpinteria.jpeg`}
+                      />
+                      <button
+                        className="btn btn-dark btn-block"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#Carpintería"
+                        aria-expanded="false"
+                        aria-controls="Carpintería"
+                        style={{
+                          backgroundColor: "#336535",
+                          height: "50px",
+                          fontSize: "1.2rem",
+                          lineHeight: "1.8rem",
+                          fontWeight: "700",
+                        }}
+                      >
+                        Carpintería
+                      </button>
+                      <div className="collapse" id="Carpintería">
+                        <div className="card card-body">
+                          <div className="row">
+                            <div
+                              className="col-md-10"
+                              style={{ color: "#336535" }}
+                            >
+                              <div className="form-group">
                                 <div className="atractivo-info">
-                                  <h4>
-                                    EL PAJARO AZUL E.V.T. – Legajo N° 13385.
-                                  </h4>
-                                  <span className="pr-4 ">
-                                    <i className="fas fa-map-marker" />
-                                    &nbsp; Dirección: GÜEMES Nº 422 – 5881 –
-                                    MERLO
-                                  </span>
-                                  <br />
-                                  <span className="pr-4">
-                                    <i className="fas fa-user" />
-                                    &nbsp; Tel./Cel.: 02656 – 47-3319
-                                  </span>
-                                  <br />
-                                  <span>
-                                    <i class="fas fa-envelope" /> &nbsp;
-                                    martahbenavides@gmail.com
-                                  </span>
-                                  <br />
-                                  <span>
-                                    <i className="fas fa-clock" />
-                                    &nbsp; Representante: BENAVIDEZ, MARTA HEBE
-                                    – Registro: 8805
-                                  </span>
+                                <ItemGuiasAgencias data={this.state.carpinteria} tipo={this.state.tipo}/>
+                                  <hr />
                                 </div>
                               </div>
                             </div>
@@ -170,12 +360,18 @@ class ListadoAgenciasDosep extends Component {
                         </div>
                       </div>
                     </div>
+                    <br />
                   </div>
-                  <br></br>{" "}
-                  {/*<div className="row mb-3">
+                    :
+                    ""
+                }
+                
+                {
+                    this.state.juanakoslay.length !== 0?
+                    <div className="row mb-3">
                     <div className="col">
                       <img
-                        alt="mercedes"
+                        alt="terrazas"
                         style={{
                           width: "100%",
                           height: "300px",
@@ -187,9 +383,9 @@ class ListadoAgenciasDosep extends Component {
                         className="btn btn-dark btn-block"
                         type="button"
                         data-toggle="collapse"
-                        data-target="#JuanaKoslay"
+                        data-target="#juanakoslay"
                         aria-expanded="false"
-                        aria-controls="JuanaKoslay"
+                        aria-controls="juanakoslay"
                         style={{
                           backgroundColor: "#cb6120",
                           height: "50px",
@@ -200,7 +396,7 @@ class ListadoAgenciasDosep extends Component {
                       >
                         Juana Koslay
                       </button>
-                      <div className="collapse" id="JuanaKoslay">
+                      <div className="collapse" id="juanakoslay">
                         <div className="card card-body">
                           <div className="row">
                             <div
@@ -209,23 +405,7 @@ class ListadoAgenciasDosep extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info">
-                                  <h4>Nala viajes E.V.T– Legajo N° 14.895</h4>
-                                  <span className="pr-4 ">
-                                    <i className="fas fa-map-marker" />
-                                    &nbsp; Dirección: Piedra blanca 3170 – Juana
-                                    Koslay
-                                  </span>
-                                  <br />
-                                  <span className="pr-4">
-                                    <i className="fas fa-user" />
-                                    &nbsp; Tel./Cel.: 2664 020657
-                                  </span>
-                                  <br />
-                                  <span>
-                                    <i class="fas fa-envelope" /> &nbsp;
-                                    rodriguezbarrerapepe@hotmail.com
-                                  </span>
-                                  <hr />
+                                <ItemGuiasAgencias data={this.state.juanakoslay} tipo={this.state.tipo}/>
                                 </div>
                               </div>
                             </div>
@@ -233,96 +413,11 @@ class ListadoAgenciasDosep extends Component {
                         </div>
                       </div>
                     </div>
+                    <br />
                   </div>
-                  <br />
-                  <div className="row mb-3">
-                    <div className="col">
-                      <img
-                        alt="mercedes"
-                        style={{
-                          width: "100%",
-                          height: "300px",
-                          objectFit: "cover",
-                        }}
-                        src="https://www.caminosanluis.com.ar/wp-content/uploads/2014/03/Complejo-Molino-Fenix-1-VM.jpg"
-                      />
-                      <button
-                        className="btn btn-dark btn-block"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#VillaMercedes"
-                        aria-expanded="false"
-                        aria-controls="VillaMercedes"
-                        style={{
-                          backgroundColor: "#EAAB2D",
-                          height: "50px",
-                          fontSize: "1.2rem",
-                          lineHeight: "1.8rem",
-                          fontWeight: "700",
-                        }}
-                      >
-                        Villa Mercedes
-                      </button>
-                      <div className="collapse" id="VillaMercedes">
-                        <div className="card card-body">
-                          <div className="row">
-                            <div
-                              className="col-md-10"
-                              style={{ color: "#EAAB2D" }}
-                            >
-                              <div className="form-group">
-                                <div className="atractivo-info">
-                                  <h4>
-                                    SIRIUS, SERVICIOS TURISTICOS E.V.T– Legajo
-                                    N° 16.154
-                                  </h4>
-                                  <span className="pr-4 ">
-                                    <i className="fas fa-map-marker" />
-                                    &nbsp; Dirección: Curchot 414 – VILLA
-                                    MERCEDES
-                                  </span>
-                                  <br />
-                                  <span className="pr-4">
-                                    <i className="fas fa-user" />
-                                    &nbsp; Tel./Cel.: 2657 332210
-                                  </span>
-                                  <br />
-                                  <span>
-                                    <i class="fas fa-envelope" /> &nbsp;
-                                    arielviajes222@hotmail.com
-                                  </span>
-                                  <hr />
-                                  <h4>DAIMAR TOUR E.V.T. – Legajo N° 13553</h4>
-                                  <span className="pr-4 ">
-                                    <i className="fas fa-map-marker" />
-                                    &nbsp; Dirección: San Martín 391 – 5700 –
-                                  </span>
-                                  <br />
-                                  <span className="pr-4">
-                                    <i className="fas fa-user" />
-                                    &nbsp; Tel./Cel.: 2664 742750
-                                  </span>
-                                  <br />
-                                  <span>
-                                    <i class="fas fa-envelope" /> &nbsp;
-                                    administración@daimartour.com.ar
-                                  </span>
-                                  <br />
-                                  <span>
-                                    <i className="fas fa-clock" />
-                                    &nbsp; Representante: PEDROZO, MARIA
-                                    ANGELICA – Registro: 14134
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>*/}
-                  <br />
-                </div>
+                  :
+                  ""
+                }
               </div>
             </div>
           </React.Fragment>
