@@ -410,7 +410,7 @@ const ZonaMenuCinco = (props) => {
           <ul>
             <li>
               <Link
-                to="/listado-guias-covid"
+                to="/listado-guias-agencias-covid/guiasturismo"
                 className="link"
                 onClick={props.onZonaClick}
               >
@@ -419,7 +419,7 @@ const ZonaMenuCinco = (props) => {
             </li>
             <li>
               <Link
-                to="/listado-agencias-covid"
+                to="/listado-guias-agencias-covid/agencias"
                 className="link"
                 onClick={props.onZonaClick}
               >

@@ -216,13 +216,22 @@ class PAlojamiento extends Component {
               style={{ backgroundColor: `#722789` }}
             >
               <h3 style={{ color: `#722789` }}>
-                {this.state.dataAlojamiento.nombre}
+                {this.state.dataAlojamiento.nombre} 
               </h3>
+              {
+                this.state.dataAlojamiento.adhiereDosep === "1" ?
+                <div className="contImagenDosep">
+                  <img alt="dosep" src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/Dosep-Turismo-2021---Logo.png"></img>
+                </div>
+                :
+                ""
+              }
+
             </div>
             <div className="container">
               <div className="row">
                 <div className="col">
-                  <div className="Alojamiento-data">
+                  <div className="Alojamiento-data" style={this.state.dataAlojamiento.adhiereDosep === "1"? {marginTop: "80px"} : {}}>
                     <div className="alojamiento-texto">
                       {this.state.dataAlojamiento.descripcion}
                     </div>

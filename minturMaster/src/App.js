@@ -13,6 +13,7 @@ import PDesuscribir from "./pages/PDesuscribir";
 import PNovedades from "./pages/novedades/PNovedades";
 import PNovedad from "./pages/novedades/PNovedad";
 import PLocalidad from "./pages/PLocalidad";
+import ListadoGuiasAgenciasCovid from "./pages/variosmenu/ListadoGuiasAgenciasCovid";
 import PAtractivo from "./pages/atractivo/PAtractivo";
 import PEventos from "./pages/PEventos";
 import PEvento from "./pages/PEvento";
@@ -201,6 +202,11 @@ class App extends Component {
                 exact
                 path="/listado-guias-covid"
                 component={ListadoGuiasCovid}
+              />
+              <Route
+                exact
+                path="/listado-guias-agencias-covid/:tipo"
+                component={ListadoGuiasAgenciasCovid}
               />
               <Route
                 exact

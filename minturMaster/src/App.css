@@ -3629,6 +3629,18 @@ h3.bgc_4 {
 .Alojamiento .ZonaLocalidad-titulo h3 {
   color: #722789;
 }
+.Alojamiento .ZonaLocalidad-titulo .contImagenDosep {
+  position: absolute;
+  top: 17px;
+  right: 6%;
+  padding: 5px 10px 5px 10px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.Alojamiento .ZonaLocalidad-titulo .contImagenDosep img {
+  width: 75px;
+  height: 75px;
+}
 
 .Alojamiento-data {
   display: grid;
@@ -3693,8 +3705,14 @@ h3.bgc_4 {
   text-transform: uppercase;
 }
 
+@media only screen and (max-width: 1000px) {
+  .Alojamiento .ZonaLocalidad-titulo .contImagenDosep {
+    top: 100px;
+    right: 45%;
+  }
+}
 @media only screen and (max-width: 790px) {
-  .ZonaLocalidad-titulo h3 {
+  .Alojamiento .ZonaLocalidad-titulo h3 {
     font-size: 2rem;
   }
 
