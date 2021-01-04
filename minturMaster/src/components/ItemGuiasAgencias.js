@@ -18,7 +18,7 @@ class ItemGuiasAgencias extends Component {
 	componentDidUpdate(prevProps) {
         if(this.props.data !== prevProps.data || this.props.tipo !== prevProps.tipo) {
             this.setState({
-                loading: true,
+                loading: false,
 				data: this.props.data,
 				tipo: this.props.tipo
             });
@@ -28,7 +28,8 @@ class ItemGuiasAgencias extends Component {
 	componentDidMount() {
         this.setState({
 			data: this.props.data,
-			tipo: this.props.tipo
+            tipo: this.props.tipo,
+            loading: false
         });
     }
 

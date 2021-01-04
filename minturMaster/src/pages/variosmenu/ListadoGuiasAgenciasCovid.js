@@ -19,6 +19,7 @@ class ListadoGuiasAgenciasCovid extends Component {
       volcan: [],
       potrero: [],
       laCarolina: [],
+      villamercedes: [],
       merlo: [],
       punta: [],
       tipo: ""
@@ -57,6 +58,8 @@ class ListadoGuiasAgenciasCovid extends Component {
                 this.state.merlo.push(response.data.data.registros[i]);
             else if (response.data.data.registros[i].ciudad === "La Punta")
                 this.state.punta.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "Villa Mercedes")
+            this.state.villamercedes.push(response.data.data.registros[i]);
            
         }
         self.setState({
@@ -74,6 +77,17 @@ class ListadoGuiasAgenciasCovid extends Component {
         });
         console.log(error);
       });
+  }
+
+  componentDidUpdate(prevProps) {
+    if(this.props.match.params.tipo !== prevProps.match.params.tipo ) {
+      this.setState({
+          loading: true,
+          tipo: this.props.tipo
+      }, () => {
+        this.getData();
+      });
+  }
   }
 
   componentDidMount() {
@@ -428,7 +442,53 @@ class ListadoGuiasAgenciasCovid extends Component {
                   :
                   ""
                 }
-                
+               {
+                    this.state.villamercedes.length !== 0 ?
+              <div className="col">
+                <img
+                  alt="auto"
+                  style={{
+                    width: "100%",
+                    height: "300px",
+                    objectFit: "cover",
+                  }}
+                  src="https://www.welcomeargentina.com/paseos/citytour-villa-mercedes/villa-mercedes-4.jpg"
+                />
+                <button
+                  className="btn btn-dark btn-block"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#nueva_zona"
+                  aria-expanded="true"
+                  aria-controls="nueva_zona"
+                  style={{
+                    backgroundColor: "rgb(229, 180, 73)",
+                    height: "50px",
+                    fontSize: "1.2rem",
+                    lineHeight: "1.8rem",
+                    fontWeight: "700",
+                  }}
+                >
+                  Villa mercedes
+                </button>
+                <div className="" id="nueva_zona">
+                  <div className="card card-body">
+                    <div className="row">
+                      <div className="col-md-10" style={{ color: "#cb6120" }}>
+                        <div className="form-group">
+                          <div className="atractivo-info">
+                           <ItemGuiasAgencias data={this.state.villamercedes} tipo={this.state.tipo}/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br />
+              </div>
+            :
+            ""
+            }
               </div>
             </div>
           </React.Fragment>
