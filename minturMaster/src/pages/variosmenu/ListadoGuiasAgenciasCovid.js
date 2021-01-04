@@ -105,7 +105,12 @@ class ListadoGuiasAgenciasCovid extends Component {
                   style={{ paddingTop: "50px", backgroundColor: `#722789` }}
                 >
                   <h3 style={{ color: `#722789` }}>
-                    Guías de Turismo Adheridos - Covid 19
+                    {
+                      this.state.tipo === "guiasturismo" ?
+                    "Guías de Turismo Adheridos - Covid 19"
+                    :
+                    "Agencias de Viajes Adheridos - Covid 19"
+                  }
                   </h3>
                 </div>
                 {
