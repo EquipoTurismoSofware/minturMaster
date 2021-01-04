@@ -297,7 +297,7 @@ class PFiltroTemplateDosep extends Component {
         document.body.scrollTop = 0; // Safari
         document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
         this.state.categoria =  this.props.location.categoria;
-        console.log("categoria: "+this.state.categoria);
+       // console.log("categoria: "+this.state.categoria);
         if (this.state.categoria == "gastronomia")
         {this.getDataGastronomia(0);}
         if (this.state.categoria == "alojamientos")
@@ -322,7 +322,7 @@ class PFiltroTemplateDosep extends Component {
                     :
                     <React.Fragment>
                         <div className="ZonaLocalidad-titulo" style={{backgroundColor: '#722789'}}>
-                            <h3 style={{color: '#722789'}}>{this.state.categoria}</h3>
+                            <h3 style={{color: '#722789'}}>{this.state.categoria} ADHERIDOS - DOSEP TURISMO 2021</h3>
                         </div>
                         <div className="container">
                             <div className="row">
