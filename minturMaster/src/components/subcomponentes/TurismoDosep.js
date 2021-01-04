@@ -47,14 +47,36 @@ export default class TurismoDosep extends Component {
                   </div>
                   <div className="one-two  column">
                     <Link
-                      to="/alojamientos-turismo-Dosep"
+                     to={{
+                      pathname: "adheridos-turismo-Dosep", // en lugar de 1 sería tu variable
+                      categoria: "alojamientos",
+                   }}
                       className="link-menu"
+                     
                     >
                       <img
                         style={{ height: 300, width: 550 }}
                         className="img-fluid"
                         src={`${process.env.REACT_APP_API_RECURSOS}/recursos/modal/TARJETAS_ALOJAMIENTO.jpg`}
                         alt="Img"
+                      />
+                    </Link>
+                  </div>
+                  <div className="one-two  column">
+                    <Link
+                      to={{
+                        pathname: "adheridos-turismo-Dosep", // en lugar de 1 sería tu variable
+                        categoria: "gastronomia",
+                     }}
+                      className="link-menu"
+                      
+                    >
+                      <img
+                        style={{ height: 300, width: 550 }}
+                        className="img-fluid"
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/gastronomia.jpg`}
+                        alt="Img"
+                        
                       />
                     </Link>
                   </div>

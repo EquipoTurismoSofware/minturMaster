@@ -4,7 +4,7 @@ import axios from "axios";
 import GoogleMap from "../../components/subcomponentes/GoogleMap";
 import MaxImage from "../../components/subcomponentes/MaxImage";
 import Loading from "../../utils/Loading";
-import NotFound from "../../components/NotFound"
+import NotFound from "../../components/NotFound";
 
 class PGastronomia extends Component {
   constructor(props) {
@@ -14,14 +14,14 @@ class PGastronomia extends Component {
       isNotFound: true,
       id: 0,
       dataAtractivo: {
-        color: "722789"
+        color: "722789",
       },
       carousel: [],
       fotos: [],
       img: {
         src: "",
-        visible: false
-      }
+        visible: false,
+      },
     };
     this.getData = this.getData.bind(this);
     this.verImagen = this.verImagen.bind(this);
@@ -32,8 +32,8 @@ class PGastronomia extends Component {
     this.setState({
       img: {
         src: e.target.src,
-        visible: true
-      }
+        visible: true,
+      },
     });
   }
 
@@ -41,8 +41,8 @@ class PGastronomia extends Component {
     this.setState({
       img: {
         src: "",
-        visible: false
-      }
+        visible: false,
+      },
     });
   }
 
@@ -53,30 +53,28 @@ class PGastronomia extends Component {
     axios({
       method: "get",
       headers: {
-        Authorization: token
+        Authorization: token,
       },
       url: `${process.env.REACT_APP_API}/gastronomia/${self.state.id}`,
-      responseType: "json"
+      responseType: "json",
     })
-      .then(response => {
+      .then((response) => {
         if (response.data.data.count > 0) {
           self.setState(
             {
-              dataAtractivo: response.data.data.registros[0]
+              dataAtractivo: response.data.data.registros[0],
             },
             () => {
               //Imagenes del Atractivo
               axios({
                 method: "get",
                 headers: {
-                  Authorization: token
+                  Authorization: token,
                 },
-                url: `${process.env.REACT_APP_API}/gastronomia/${
-                  self.state.id
-                }/imagenes`,
-                responseType: "json"
+                url: `${process.env.REACT_APP_API}/gastronomia/${self.state.id}/imagenes`,
+                responseType: "json",
               })
-                .then(response => {
+                .then((response) => {
                   if (response.data.data.count > 0) {
                     let activo = false;
                     let carousel = response.data.data.registros.map(
@@ -85,12 +83,10 @@ class PGastronomia extends Component {
                           return null;
                         }
                         let estilo = {
-                          backgroundImage: `url(${
-                            process.env.REACT_APP_API_RECURSOS
-                          }/atractivos/${a.imagen})`,
+                          backgroundImage: `url(${process.env.REACT_APP_API_RECURSOS}/atractivos/${a.imagen})`,
                           backgroundSize: "cover",
                           backgroundPosition: "center",
-                          backgroundRepeat: "no-repeat"
+                          backgroundRepeat: "no-repeat",
                         };
                         if (!activo) {
                           activo = true;
@@ -125,11 +121,9 @@ class PGastronomia extends Component {
                         <img
                           key={`img-atr-${a.id}`}
                           className="img-fluid"
-                          src={`${
-                            process.env.REACT_APP_API_RECURSOS
-                          }/atractivos/${a.imagen}`}
+                          src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${a.imagen}`}
                           alt="Img"
-                          onClick={e => {
+                          onClick={(e) => {
                             this.verImagen(e);
                           }}
                         />
@@ -139,16 +133,16 @@ class PGastronomia extends Component {
                       carousel: carousel,
                       fotos: fotos,
                       loading: false,
-                      isNotFound: false
+                      isNotFound: false,
                     });
                   } else {
                     //Error no se enocntró el id
                     self.setState({
-                      loading: false
+                      loading: false,
                     });
                   }
                 })
-                .catch(error => {
+                .catch((error) => {
                   console.log(error);
                 });
             }
@@ -157,11 +151,11 @@ class PGastronomia extends Component {
           //Error no se encontró el id
           self.setState({
             loading: false,
-            isNotFound: true
+            isNotFound: true,
           });
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
     //self.setState({ loading: false });
@@ -172,7 +166,7 @@ class PGastronomia extends Component {
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
     this.setState(
       {
-        id: this.props.match.params.id
+        id: this.props.match.params.id,
       },
       () => {
         this.getData();
@@ -185,18 +179,16 @@ class PGastronomia extends Component {
     const isNotFound = this.state.isNotFound;
     const fotos = this.state.fotos;
     return (
-      <div className="Atractivo" style={{ paddingTop: "110px"}}>
+      <div className="Atractivo" style={{ paddingTop: "110px" }}>
         {loading ? (
           <div className="PFiltroAlojamiento mb-5">
             <div>
               <Loading margins="96px" />
             </div>
           </div>
-        )
-        : isNotFound ? (
+        ) : isNotFound ? (
           <NotFound />
-        )
-        :(
+        ) : (
           <React.Fragment>
             <div
               className="ZonaLocalidad-titulo"
@@ -243,34 +235,82 @@ class PGastronomia extends Component {
                         </span>
                       </div>
                     </div>
+
                     <div className="atractivo-info">
+
+                    {this.state.dataAtractivo.lunes !== "" ? (
                       <span>
-                        <i className="fas fa-clock" /> Horarios
+                        <i className="fas fa-clock" /> <strong> Horarios </strong>
                       </span>
+                      ) : ("")}
+
+
                       <ul>
-                        <li>Lunes: {this.state.dataAtractivo.lunes}</li>
-                        <li>Martes: {this.state.dataAtractivo.martes}</li>
-                        <li>Miércoles: {this.state.dataAtractivo.miercoles}</li>
-                        <li>Jueves: {this.state.dataAtractivo.jueves}</li>
-                        <li>Viernes: {this.state.dataAtractivo.viernes}</li>
-                        <li>Sábado: {this.state.dataAtractivo.sabado}</li>
-                        <li>Domingo: {this.state.dataAtractivo.domingo}</li>
+                        {this.state.dataAtractivo.lunes !== "" ? (
+                          <li> <strong>Lunes:</strong> {this.state.dataAtractivo.lunes}</li>
+                        ) : ("")}
+                        
+                        {this.state.dataAtractivo.martes !== "" ? (   
+                        <li><strong>Martes:</strong> {this.state.dataAtractivo.martes}</li>
+                        ): ("")}
+
+                        {this.state.dataAtractivo.miercoles !== "" ? (   
+                        <li><strong>Miércoles:</strong> {this.state.dataAtractivo.miercoles}</li>
+                        ): ("")}
+
+                        {this.state.dataAtractivo.jueves !== "" ? (   
+                        <li><strong>Jueves: </strong>{this.state.dataAtractivo.jueves}</li>
+                        ): ("")}
+
+                        {this.state.dataAtractivo.viernes !== "" ? (   
+                        <li><strong>Viernes: </strong>{this.state.dataAtractivo.viernes}</li>
+                        ): ("")} 
+
+                        {this.state.dataAtractivo.sabado !== "" ? (   
+                        <li><strong>Sábado:</strong> {this.state.dataAtractivo.sabado}</li>
+                        ): ("")} 
+
+                        {this.state.dataAtractivo.domingo !== "" ? (   
+                        <li><strong>Domingo:</strong> {this.state.dataAtractivo.domingo}</li>
+                        ): ("")} 
+                        
                       </ul>
+
                       <span>
-                        <i className="fas fa-user" /> Contacto
+                       <i className="fas fa-user" /> <strong>Contacto</strong>
                       </span>
-                      <span className="pr-4">
-                        Domicilio: {this.state.dataAtractivo.domicilio}
-                      </span>
-                      <span className="pr-4">
-                        Tel./Cel.: +54 9 {this.state.dataAtractivo.telefono}
-                      </span>
-                      <span className="pr-4">
-                        Email: {this.state.dataAtractivo.mail}
-                      </span>
-                      <span className="pr-4">
-                        Web: {this.state.dataAtractivo.web}
-                      </span>
+
+                      {this.state.dataAtractivo.domicilio !== "" ? (
+                        <span className="pr-4">
+                          <strong>Domicilio:</strong> {this.state.dataAtractivo.domicilio}
+                        </span>
+                      ) : (
+                        ""
+                      )}
+
+                      {this.state.dataAtractivo.telefono !== "" ? (
+                        <span className="pr-4">
+                         <strong> Tel./Cel.: </strong> +54 9 {this.state.dataAtractivo.telefono}
+                        </span>
+                      ) : (
+                        ""
+                      )}
+
+                      {this.state.dataAtractivo.mail !== "" ? (
+                        <span className="pr-4">
+                          <strong>Email:</strong> {this.state.dataAtractivo.mail}
+                        </span>
+                      ) : (
+                        ""
+                      )}
+
+                      {this.state.dataAtractivo.web !== "" ? (
+                        <span className="pr-4">
+                         <strong> Web:</strong> {this.state.dataAtractivo.web}
+                        </span>
+                      ) : (
+                        ""
+                      )}
                     </div>
                   </div>
                 </div>

@@ -23,6 +23,9 @@ import PAlojamiento from "./pages/PAlojamiento";
 import PFiltroAlojamiento from "./pages/variosmenu/PFiltroAlojamiento";
 import PFiltroAlojamientoAdhiereCovid from "./pages/variosmenu/PFiltroAlojamientoAdhiereCovid";
 import PFiltroAlojamientoAdhiereDosep from "./pages/variosmenu/PFiltroAlojamientoAdhiereDosep";
+import PFiltroTemplateDosep from "./pages/variosmenu/PFiltroTemplateDosep";
+import PGastronomiaDosep from "./pages/variosmenu/PGastronomiaDosep";
+
 import PAgenciaViajes from "./pages/servicios/PAgenciaViajes";
 import PGuiaTurismo from "./pages/servicios/PGuiaTurismo";
 import PAeropuerto from "./pages/servicios/PAeropuerto";
@@ -112,6 +115,19 @@ class App extends Component {
                 exact
                 path="/alojamientos-turismo-Dosep"
                 component={PFiltroAlojamientoAdhiereDosep}
+              />
+
+              
+                 <Route
+                exact
+                path="/adheridos-turismo-Dosep"
+                component={PFiltroTemplateDosep}
+              />
+
+               <Route
+                exact
+                path="/gastronomia-Dosep"
+                component={PGastronomiaDosep}
               />
              
               <Route exact path="/agenciaviajes" component={PAgenciaViajes} />

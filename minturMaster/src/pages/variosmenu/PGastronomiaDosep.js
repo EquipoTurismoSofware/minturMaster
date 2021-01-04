@@ -4,9 +4,9 @@ import axios from "axios";
 import GoogleMap from "../../components/subcomponentes/GoogleMap";
 import MaxImage from "../../components/subcomponentes/MaxImage";
 import Loading from "../../utils/Loading";
-import NotFound from "../../components/NotFound"
+import NotFound from "../../components/NotFound";
 
-class PAtractivo extends Component {
+class PGastronomia extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,7 +14,7 @@ class PAtractivo extends Component {
       isNotFound: true,
       id: 0,
       dataAtractivo: {
-        color: "722789"
+        color: "722789",
       },
       carousel: [],
       fotos: [],
@@ -55,7 +55,7 @@ class PAtractivo extends Component {
       headers: {
         Authorization: token,
       },
-      url: `${process.env.REACT_APP_API}/atractivo/${self.state.id}`,
+      url: `${process.env.REACT_APP_API}/gastronomia/${self.state.id}`,
       responseType: "json",
     })
       .then((response) => {
@@ -71,7 +71,7 @@ class PAtractivo extends Component {
                 headers: {
                   Authorization: token,
                 },
-                url: `${process.env.REACT_APP_API}/atractivo/${self.state.id}/imagenes`,
+                url: `${process.env.REACT_APP_API}/gastronomia/${self.state.id}/imagenes`,
                 responseType: "json",
               })
                 .then((response) => {
@@ -129,34 +129,36 @@ class PAtractivo extends Component {
                         />
                       );
                     });
-
                     self.setState({
                       carousel: carousel,
                       fotos: fotos,
-                      isNotFound: false
+                      loading: false,
+                      isNotFound: false,
                     });
-                  } 
-                  self.setState({
-                    loading: false
-                  });
+                  } else {
+                    //Error no se enocntró el id
+                    self.setState({
+                      loading: false,
+                    });
+                  }
                 })
                 .catch((error) => {
                   console.log(error);
                 });
-
-             
-                //self.setState({ loading: false, isNotFound: false});
             }
           );
         } else {
           //Error no se encontró el id
-          self.setState({ loading: false, isNotFound: true});
+          self.setState({
+            loading: false,
+            isNotFound: true,
+          });
         }
       })
       .catch((error) => {
         console.log(error);
       });
-
+    //self.setState({ loading: false });
   }
 
   componentDidMount() {
@@ -175,58 +177,19 @@ class PAtractivo extends Component {
   render() {
     const loading = this.state.loading;
     const isNotFound = this.state.isNotFound;
-    const carousel = this.state.carousel;
     const fotos = this.state.fotos;
     return (
-      <div className="Atractivo">
+      <div className="Atractivo" style={{ paddingTop: "110px" }}>
         {loading ? (
           <div className="PFiltroAlojamiento mb-5">
             <div>
               <Loading margins="96px" />
             </div>
           </div>
-        )
-        : isNotFound ? (
+        ) : isNotFound ? (
           <NotFound />
-        )
-        :(
+        ) : (
           <React.Fragment>
-            <div className="menu-y-slider">
-              <div
-                id="carouselExampleIndicators"
-                className="carousel slide"
-                data-ride="carousel"
-              >
-                <div className="carousel-inner">{carousel}</div>
-                <a
-                  className="carousel-control-prev"
-                  href="#carouselExampleIndicators"
-                  role="button"
-                  data-slide="prev"
-                >
-                  <span
-                    className="carousel-control-prev-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span className="sr-only">Previous</span>
-                </a>
-                <a
-                  className="carousel-control-next"
-                  href="#carouselExampleIndicators"
-                  role="button"
-                  data-slide="next"
-                >
-                  <span
-                    className="carousel-control-next-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span className="sr-only">Next</span>
-                </a>
-                <div className="slider-home-leyenda">
-                  <h1 className="mb-5">Atractivo Turístico</h1>
-                </div>
-              </div>
-            </div>
             <div
               className="ZonaLocalidad-titulo"
               style={{ backgroundColor: `#722789` }}
@@ -235,53 +198,49 @@ class PAtractivo extends Component {
                 {this.state.dataAtractivo.nombre}
               </h3>
             </div>
+
             <div className="container">
               <div className="row">
                 <div className="col">
                   <div className="Atractivo-data">
                     <div className="atractivo-texto">
-                    {this.state.dataAtractivo.descripcionHTML != "" ? (
-                        <p dangerouslySetInnerHTML={{ __html: this.state.dataAtractivo.descripcionHTML,}}></p>
-                      ) : (
-                          <p >{this.state.dataAtractivo.descripcion}</p>
-                      )}
+                      {this.state.dataAtractivo.descripcion}
                     </div>
                     <div className="atractivo-fotos">{fotos}</div>
-                    {this.state.dataAtractivo.latitud !== "0" ? (
-                      <div className="atractivo-ubicacion">
-                        <span>
-                          <i className="fas fa-map-marker"></i> Ubicación
-                        </span>
-                        <div id="mapa-atr" style={{ width: "100%" }}>
-                          <GoogleMap
-                            lat={this.state.dataAtractivo.latitud}
-                            lng={this.state.dataAtractivo.longitud}
-                            zoom="10"
-                            gwidth="100%"
-                            gheight="400px"
-                          />
-                        </div>
-                        <div
-                          className="d-flex justify-content-center p-2"
-                          style={{ width: "100%" }}
-                        >
-                          <span>
-                            {this.state.dataAtractivo.latitud}{" "}
-                            {this.state.dataAtractivo.longitud}
-                          </span>
-                        </div>
+                    <div className="atractivo-ubicacion">
+                      <span>
+                        <i className="fas fa-map-marker" /> Ubicación
+                      </span>
+                      <div id="mapa-atr" style={{ width: "100%" }}>
+                        <GoogleMap
+                          lat={this.state.dataAtractivo.latitud}
+                          lng={this.state.dataAtractivo.longitud}
+                          zoom="10"
+                          gwidth="100%"
+                          gheight="400px"
+                        />
                       </div>
-                    ) : (
-                      ""
-                    )}
+                      <div
+                        className="d-flex justify-content-center p-2"
+                        style={{ width: "100%" }}
+                      >
+                        <span>
+                          {this.state.dataAtractivo.latitud}{" "}
+                          {this.state.dataAtractivo.longitud}
+                        </span>
+                      </div>
+                    </div>
 
                     <div className="atractivo-info">
-                      {this.state.dataAtractivo.lunes !== "" ? (
-                        <div>
-                          <span>
-                            <i className="fas fa-clock"></i> Horarios
-                          </span>
-                          <ul>
+
+                    {this.state.dataAtractivo.lunes !== "" ? (
+                      <span>
+                        <i className="fas fa-clock" /> <strong> Horarios </strong>
+                      </span>
+                      ) : ("")}
+
+
+                      <ul>
                         {this.state.dataAtractivo.lunes !== "" ? (
                           <li> <strong>Lunes:</strong> {this.state.dataAtractivo.lunes}</li>
                         ) : ("")}
@@ -311,24 +270,11 @@ class PAtractivo extends Component {
                         ): ("")} 
                         
                       </ul>
-                        </div>
-                      ) : (
-                        ""
-                      )}
 
-                      {this.state.dataAtractivo.costo === 0 ? (
-                        <span>
-                          <i className="fas fa-dollar-sign"></i> Cósto: $
-                          {this.state.dataAtractivo.costo}
-                        </span>
-                      ) : (
-                        ""
-                      )}
-                      
                       <span>
                        <i className="fas fa-user" /> <strong>Contacto</strong>
                       </span>
-                      
+
                       {this.state.dataAtractivo.domicilio !== "" ? (
                         <span className="pr-4">
                           <strong>Domicilio:</strong> {this.state.dataAtractivo.domicilio}
@@ -337,8 +283,7 @@ class PAtractivo extends Component {
                         ""
                       )}
 
-
-                       {this.state.dataAtractivo.telefono !== "" ? (
+                      {this.state.dataAtractivo.telefono !== "" ? (
                         <span className="pr-4">
                          <strong> Tel./Cel.: </strong> +54 9 {this.state.dataAtractivo.telefono}
                         </span>
@@ -346,7 +291,7 @@ class PAtractivo extends Component {
                         ""
                       )}
 
-                       {this.state.dataAtractivo.mail !== "" ? (
+                      {this.state.dataAtractivo.mail !== "" ? (
                         <span className="pr-4">
                           <strong>Email:</strong> {this.state.dataAtractivo.mail}
                         </span>
@@ -354,7 +299,7 @@ class PAtractivo extends Component {
                         ""
                       )}
 
-                        {this.state.dataAtractivo.web !== "" ? (
+                      {this.state.dataAtractivo.web !== "" ? (
                         <span className="pr-4">
                          <strong> Web:</strong> {this.state.dataAtractivo.web}
                         </span>
@@ -378,6 +323,6 @@ class PAtractivo extends Component {
   }
 }
 
-PAtractivo.contextType = Consumer;
+PGastronomia.contextType = Consumer;
 
-export default PAtractivo;
+export default PGastronomia;
