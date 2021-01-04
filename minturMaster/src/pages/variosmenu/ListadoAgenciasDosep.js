@@ -197,6 +197,34 @@ class ListadoAgenciasDosep extends Component {
                                 <div className="atractivo-info" />
                                 <ItemGuiasAgencias data={this.state.merlo} tipo={this.state.tipo}/>
                               </div>
+                              <div
+                                className="col-md-10"
+                                style={{ color: "#336535" }}
+                              >
+                                <div className="form-group">
+                                  <h4>IXCHEL – Legajo N° 17510 </h4>
+                                  <span className="pr-4 ">
+                                    <i className="fas fa-map-marker" />
+                                    &nbsp; Dirección: PRINGLES Nº 457 – 5881 –
+                                    Villa de Merlo
+                                  </span>
+                                  <br />
+                                  <span className="pr-4">
+                                    <i className="fas fa-user" />
+                                    &nbsp; Tel./Cel.: 2664 542329
+                                  </span>
+                                  <br />
+                                  <span>
+                                    <i class="fas fa-envelope" /> &nbsp;
+                                    www.ixchel.tur.ar{" "}
+                                  </span>
+                                  <br />
+                                  <span>
+                                    <i className="fas fa-clock" />
+                                    &nbsp; Representante: Carlos Javier Ponti
+                                  </span>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>

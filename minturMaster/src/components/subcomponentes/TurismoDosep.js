@@ -35,7 +35,7 @@ export default class TurismoDosep extends Component {
                       />
                     </Link>
     </div>*/}
-                  <div className="one-two column">
+                  <div className="one-three column">
                     <Link to="/agencias-turismo-dosep" className="link-menu">
                       <img
                         style={{ height: 300, width: 550 }}
@@ -45,7 +45,10 @@ export default class TurismoDosep extends Component {
                       />
                     </Link>
                   </div>
-                  <div className="one-two  column">
+                  
+                 
+                  <center>
+                  <div className="one-three  column">
                     <Link
                      to={{
                       pathname: "adheridos-turismo-Dosep", // en lugar de 1 sería tu variable
@@ -80,6 +83,7 @@ export default class TurismoDosep extends Component {
                       />
                     </Link>
                   </div>
+                  </center>
                   <div className="row">
                     <div className="one column">
                       <Link to="/coronavirus" className="link-menu">
@@ -113,7 +117,7 @@ export default class TurismoDosep extends Component {
               </div>
             </center>
             <center>
-              <div className="one-third column">
+              <div className="one-three column">
                 <Link to="/agencias-turismo-dosep" className="link-menu">
                   <img
                     style={{ height: 200, width: 400 }}
@@ -123,7 +127,17 @@ export default class TurismoDosep extends Component {
                   />
                 </Link>
               </div>
-              <div className="one-third column">
+              <div className="one-three column">
+                    <Link to="/gastronomicos-turismo-Dosep" className="link-menu">
+                      <img
+                        style={{ height: 200, width: 400 }}
+                        className="img-fluid"
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/gastronomia.jpg`}
+                        alt="Img"
+                      />
+                    </Link>
+                  </div>
+              <div className="one-three column">
                 <Link to="/alojamientos-turismo-Dosep" className="link-menu">
                   <img
                     style={{ height: 200, width: 400 }}
@@ -166,7 +180,7 @@ export default class TurismoDosep extends Component {
                       />
                     </Link>
     </div>*/}
-                <div className="one-two column">
+                <div className="one-three column">
                   <a
                     href="http://turismo.sanluis.gov.ar/dosep-turismo/Bases_Condiciones.pdf"
                     className="link-menu"
@@ -179,7 +193,7 @@ export default class TurismoDosep extends Component {
                     />
                   </a>
                 </div>
-                <div className="one-two  column">
+                <div className="one-three  column">
                   <a
                     href="https://forms.gle/wK9pGbWuNNTc2Z848"
                     className="link-menu"

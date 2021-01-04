@@ -44,6 +44,8 @@ import PCreerGnral from "./pages/PCreerGnral";
 import PZonaCreer from "./pages/PZonaCreer";
 import Prueba from "./pages/variosmenu/Prueba";
 import PCerveceria from "./pages/gastronomia/PCerveceria";
+import PGastronomicosDosep from "./pages/gastronomia/GastronomiaDosep";
+
 import PZonaCerveceria from "./pages/gastronomia/PZonaCerveceria";
 import PGastronomia from "./pages/gastronomia/PGastronomia";
 import PPrincipalGastronomia from "./pages/gastronomia/PPrincipalGastronomia";
@@ -67,6 +69,7 @@ import RegistroAlojamientos from "./pages/covid/voucher/RegistroAlojamientos";
 
 import NotFound from "./components/NotFound";
 import PMapas from "./pages/PMapas";
+import GastronomiaDosep from "./pages/gastronomia/GastronomiaDosep";
 
 
 class App extends Component {
@@ -114,8 +117,6 @@ class App extends Component {
                 path="/alojamientos-turismo-Dosep"
                 component={PFiltroAlojamientoAdhiereDosep}
               />
-
-              
                  <Route
                 exact
                 path="/adheridos-turismo-Dosep"
@@ -126,8 +127,9 @@ class App extends Component {
                 exact
                 path="/gastronomia-Dosep"
                 component={PGastronomiaDosep}
+
+              
               />
-             
               <Route exact path="/agenciaviajes" component={PAgenciaViajes} />
               <Route exact path="/guiaturismo" component={PGuiaTurismo} />
               <Route exact path="/PAeropuerto" component={PAeropuerto} />
