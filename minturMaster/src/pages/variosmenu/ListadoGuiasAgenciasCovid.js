@@ -35,45 +35,52 @@ class ListadoGuiasAgenciasCovid extends Component {
       headers: {
         Authorization: token,
       },
-      url: `${process.env.REACT_APP_API}/${this.props.match.params.tipo}/adhiereCovid`,
+      url: `${process.env.REACT_APP_API}/${this.state.tipo}/adhiereCovid`,
       responseType: "json",
     })
       .then((response) => {
-       
+        var sanluis = [], juanakoslay = [], carpinteria = [], volcan = [], potrero = [],
+        laCarolina =  [], villamercedes=  [], merlo = [], punta = [];
         var i = 0;
         for (i = 0; i < response.data.data.registros.length; i++) {
             if (response.data.data.registros[i].ciudad === "Ciudad de San Luis") {
-                this.state.sanluis.push(response.data.data.registros[i]);
+                sanluis.push(response.data.data.registros[i]);
             } else if (response.data.data.registros[i].ciudad === "Juana Koslay")
-                this.state.juanakoslay.push(response.data.data.registros[i]);
+                juanakoslay.push(response.data.data.registros[i]);
             else if (response.data.data.registros[i].ciudad === "La Carolina")
-                this.state.laCarolina.push(response.data.data.registros[i]);
+                laCarolina.push(response.data.data.registros[i]);
             else if (response.data.data.registros[i].ciudad === "Carpintería")
-                this.state.carpinteria.push(response.data.data.registros[i]);
+                carpinteria.push(response.data.data.registros[i]);
             else if (response.data.data.registros[i].ciudad === "El Volcán")
-                this.state.volcan.push(response.data.data.registros[i]);
+                volcan.push(response.data.data.registros[i]);
             else if (response.data.data.registros[i].ciudad === "Potrero de Los Funes")
-                this.state.potrero.push(response.data.data.registros[i]);
+                potrero.push(response.data.data.registros[i]);
             else if (response.data.data.registros[i].ciudad === "Villa de Merlo")
-                this.state.merlo.push(response.data.data.registros[i]);
+                merlo.push(response.data.data.registros[i]);
             else if (response.data.data.registros[i].ciudad === "La Punta")
-                this.state.punta.push(response.data.data.registros[i]);
+                punta.push(response.data.data.registros[i]);
             else if (response.data.data.registros[i].ciudad === "Villa Mercedes")
-            this.state.villamercedes.push(response.data.data.registros[i]);
-           
+                villamercedes.push(response.data.data.registros[i]);         
         }
         self.setState({
             loading: false,
             isNotFound: false,
-            tipo: this.props.match.params.tipo
+            sanluis: sanluis,
+            juanakoslay: juanakoslay,
+            carpinteria: carpinteria,
+            volcan: volcan,
+            potrero: potrero,
+            laCarolina: laCarolina,
+            villamercedes: villamercedes,
+            merlo: merlo,
+            punta: punta
         });
         
       })
       .catch((error) => {
         self.setState({
             loading: false,
-            isNotFound: true,
-            tipo: this.props.match.params.tipo
+            isNotFound: true
         });
         console.log(error);
       });
@@ -83,7 +90,7 @@ class ListadoGuiasAgenciasCovid extends Component {
     if(this.props.match.params.tipo !== prevProps.match.params.tipo ) {
       this.setState({
           loading: true,
-          tipo: this.props.tipo
+          tipo: this.props.match.params.tipo
       }, () => {
         this.getData();
       });
@@ -93,7 +100,12 @@ class ListadoGuiasAgenciasCovid extends Component {
   componentDidMount() {
     document.body.scrollTop = 0; // Safari
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
-    this.getData();
+    this.setState({
+      loading: true,
+      tipo: this.props.match.params.tipo
+    }, () => {
+      this.getData();
+    });
   }
 
   render() {

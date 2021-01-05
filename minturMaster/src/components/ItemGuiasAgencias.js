@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Viewer from "../components/subcomponentes/Viewer"
-import { Link } from "react-router-dom";
 //import { Consumer } from "../context";
 //import axios from "axios";
 
@@ -18,9 +16,9 @@ class ItemGuiasAgencias extends Component {
 	componentDidUpdate(prevProps) {
         if(this.props.data !== prevProps.data || this.props.tipo !== prevProps.tipo) {
             this.setState({
-                loading: false,
-				data: this.props.data,
-				tipo: this.props.tipo
+              loading: false,
+              data: this.props.data,
+              tipo: this.props.tipo
             });
         }
     }
