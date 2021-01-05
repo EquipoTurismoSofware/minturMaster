@@ -4,6 +4,8 @@ import axios from "axios";
 import Loading from "../../utils/Loading";
 import Gastronomicos from "../../components/subcomponentes/Gastronomicos";
 import Alojamientos from "../../components/subcomponentes/Alojamientos";
+import { Link } from "react-router-dom";
+
 
 class PFiltroTemplateDosep extends Component {
     constructor(props) {
@@ -26,6 +28,7 @@ class PFiltroTemplateDosep extends Component {
         this.getDataGastronomia = this.getDataGastronomia.bind(this);
         this.getDataAlojamientos = this.getDataAlojamientos.bind(this);
         this.handleChange = this.handleChange.bind(this);
+       // this.volverAtras = this.volverAtras.bind(this);
         this.aplicarFiltroGastronomia = this.aplicarFiltroGastronomia.bind(this);
         this.aplicarFiltroAlojamiento = this.aplicarFiltroAlojamiento.bind(this);
      }
@@ -286,22 +289,62 @@ class PFiltroTemplateDosep extends Component {
         }
     }
 
-
-
-
-
-
+    /*volverAtras(categ){
+ 
+            
+            if (categ == "gastronomia")
+                {this.getDataGastronomia(0);}
+            if (categ == "alojamientos")
+            
+       
+                {alert(categ);
+                    this.getDataAlojamientos(0);}
     
+    }*/
+    componentDidUpdate(prevProps) {
+        if (
+          this.props.location.categoria !== prevProps.location.categoria
+        ) {
+          this.setState({
+            categoria: this.props.location.categoria
+        },
+        ()=> { 
+           
+            if (this.state.categoria === undefined)
+            {this.setState({
+                loading: false
+            })}
+            if (this.state.categoria == "gastronomia")
+                {
+                    this.getDataGastronomia(0);}
+            if (this.state.categoria == "alojamientos")
+                {this.getDataAlojamientos(0);}
+        }
+        )
+        }
+      }
+
     componentDidMount() {
         //this.state.categoria = "alojamientos";
         document.body.scrollTop = 0; // Safari
-        document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
-        this.state.categoria =  this.props.location.categoria;
+        document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera 
+        this.setState({
+            categoria: this.props.location.categoria
+        },
+        ()=> { 
+           
+            if (this.state.categoria === undefined)
+            {this.setState({
+                loading: false
+            })}
+            if (this.state.categoria == "gastronomia")
+                {this.getDataGastronomia(0);}
+            if (this.state.categoria == "alojamientos")
+                {this.getDataAlojamientos(0);}
+        }
+        )
        // console.log("categoria: "+this.state.categoria);
-        if (this.state.categoria == "gastronomia")
-        {this.getDataGastronomia(0);}
-        if (this.state.categoria == "alojamientos")
-        {this.getDataAlojamientos(0);}
+       
     }
 
     render() {
@@ -323,8 +366,10 @@ class PFiltroTemplateDosep extends Component {
                     <React.Fragment>
                         <div className="ZonaLocalidad-titulo" style={{backgroundColor: '#722789'}}>
                             <h3 style={{color: '#722789'}}>{this.state.categoria} ADHERIDOS - DOSEP TURISMO 2021</h3>
-                        </div>
-                        <div className="container">
+                        </div> 
+                           { 
+                           this.state.categoria !== undefined ?
+                           <div className="container">
                             <div className="row">
                                 <div className="col offset-md-1">
                                     <form /*onSubmit={this.aplicarFiltro}*/ className="mb-5">
@@ -360,14 +405,62 @@ class PFiltroTemplateDosep extends Component {
                                     </form>
                                 </div>
                             </div>
-                        </div>
+                        </div> : ""}
+                        
                         <div className="container">
                             <div className="row">
                                 <div className="col">
                                 { this.state.categoria == "gastronomia" ?   
                                     ( <Gastronomicos idLocalidad={0} data={this.state.filtro} /> ) 
-                                    : (
-                                    <Alojamientos idLocalidad={0} data={this.state.filtro} /> )
+                                    : this.state.categoria == "alojamientos" ? (
+                                    <Alojamientos idLocalidad={0} data={this.state.filtro}  /> ) 
+                                    :
+                                    <center>
+                            
+                                        <div className="one-three  column">
+                                            <a
+                                            href="javascript: void(0)"
+                                            onClick={()=>{
+                                                this.setState({
+                                                    categoria:"alojamientos"
+                                                }, () => {
+                                                    this.getDataAlojamientos(0);
+                                                })
+                                            }}
+                                            className="link-menu"
+                                            
+                                            >
+                                            <img
+                                                style={{ height: 300, width: 550 }}
+                                                className="img-fluid"
+                                                src={`${process.env.REACT_APP_API_RECURSOS}/recursos/modal/TARJETAS_ALOJAMIENTO.jpg`}
+                                                alt="Img"
+                                            />
+                                            </a>
+                                        </div>
+                                        <div className="one-two  column">
+                                            <a
+                                            href="javascript: void(0)"
+                                            onClick={()=>{
+                                                this.setState({
+                                                    categoria:"gastronomia"
+                                                }, () => {
+                                                    this.getDataGastronomia(0);
+                                                })
+                                            }}
+                                            className="link-menu"
+                                            
+                                            >
+                                            <img
+                                                style={{ height: 300, width: 550 }}
+                                                className="img-fluid"
+                                                src={`${process.env.REACT_APP_API_RECURSOS}/recursos/gastronomia.jpg`}
+                                                alt="Img"
+                                                
+                                            />
+                                            </a>
+                                        </div>
+                                        </center>
                                 }
                                 </div>
                             </div>
