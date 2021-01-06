@@ -287,7 +287,6 @@ const ZonaMenuDos = (props) => {
               </Link>
             </li>
 
-
             <li>
               <Link
                 to="/Pcontacto"
@@ -414,7 +413,7 @@ const ZonaMenuCinco = (props) => {
                 className="link"
                 onClick={props.onZonaClick}
               >
-                Listado guías adheridos
+                Guías - Adheridos al Protocolo
               </Link>
             </li>
             <li>
@@ -423,7 +422,7 @@ const ZonaMenuCinco = (props) => {
                 className="link"
                 onClick={props.onZonaClick}
               >
-                Listado agencias adheridos
+                Agencias - Adheridas al Protocolo
               </Link>
             </li>
             <li>
@@ -432,8 +431,28 @@ const ZonaMenuCinco = (props) => {
                 className="link"
                 onClick={props.onZonaClick}
               >
-                Listado de Alojamientos adheridos
+                Alojamientos - Adheridos al Protocolo
               </a>
+            </li>
+            <li>
+              <a
+                href="#/turismo-dosep"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                DOSEP "TURISMO 2021"
+              </a>
+              <span className="link-menu" onClick={(e) => this.setMenu(4, e)}>
+                <img
+                  alt="coronel3"
+                  style={{
+                    height: `20px`,
+                    marginLeft: "5px",
+                    marginTop: "-5px",
+                  }}
+                  src={`${process.env.REACT_APP_API_RECURSOS}/ATARDECER.png`}
+                />
+              </span>
             </li>
             <li>
               <Link

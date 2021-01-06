@@ -58,7 +58,13 @@ class ListadoAgenciasDosep extends Component {
             else if (response.data.data.registros[i].ciudad === "La Punta")
               punta.push(response.data.data.registros[i]);
             else if (response.data.data.registros[i].ciudad === "Villa Mercedes")
+<<<<<<< Updated upstream
               villamercedes.push(response.data.data.registros[i]);
+=======
+                this.state.villamercedes.push(response.data.data.registros[i]);
+        
+        console.log(response.data.data.registros[i].ciudad );
+>>>>>>> Stashed changes
         }
         self.setState({
             loading: false,
@@ -448,9 +454,9 @@ class ListadoAgenciasDosep extends Component {
                   className="btn btn-dark btn-block"
                   type="button"
                   data-toggle="collapse"
-                  data-target="#nueva_zona"
-                  aria-expanded="true"
-                  aria-controls="nueva_zona"
+                  data-target="#villamercedes"
+                  aria-expanded="false"
+                  aria-controls="villamercedes"
                   style={{
                     backgroundColor: "rgb(229, 180, 73)",
                     height: "50px",
@@ -461,7 +467,7 @@ class ListadoAgenciasDosep extends Component {
                 >
                   Villa mercedes
                 </button>
-                <div className="" id="nueva_zona">
+                <div className="" id="villamercedes">
                   <div className="card card-body">
                     <div className="row">
                       <div className="col-md-10" style={{ color: "#cb6120" }}>
