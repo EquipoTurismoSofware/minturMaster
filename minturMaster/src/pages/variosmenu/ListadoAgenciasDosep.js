@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Consumer } from "../../context";
 import axios from "axios";
 import Loading from "../../utils/Loading";
-import NotFound from "../../components/NotFound"
-import ItemGuiasAgencias from "../../components/ItemGuiasAgencias"
+import NotFound from "../../components/NotFound";
+import ItemGuiasAgencias from "../../components/ItemGuiasAgencias";
 
 class ListadoAgenciasDosep extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class ListadoAgenciasDosep extends Component {
       villamercedes: [],
       merlo: [],
       punta: [],
-      tipo: "agencias"
+      tipo: "agencias",
     };
   }
 
@@ -37,54 +37,56 @@ class ListadoAgenciasDosep extends Component {
       responseType: "json",
     })
       .then((response) => {
-        var sanluis = [], juanakoslay = [], carpinteria = [], volcan = [], potrero = [],
-        laCarolina =  [], villamercedes=  [], merlo = [], punta = [];
+        var sanluis = [],
+          juanakoslay = [],
+          carpinteria = [],
+          volcan = [],
+          potrero = [],
+          laCarolina = [],
+          villamercedes = [],
+          merlo = [],
+          punta = [];
         var i = 0;
         for (i = 0; i < response.data.data.registros.length; i++) {
-            if (response.data.data.registros[i].ciudad === "Ciudad de San Luis") {
-              sanluis.push(response.data.data.registros[i]);
-            } else if (response.data.data.registros[i].ciudad === "Juana Koslay")
-              juanakoslay.push(response.data.data.registros[i]);
-            else if (response.data.data.registros[i].ciudad === "La Carolina")
-              laCarolina.push(response.data.data.registros[i]);
-            else if (response.data.data.registros[i].ciudad === "Carpintería")
-              carpinteria.push(response.data.data.registros[i]);
-            else if (response.data.data.registros[i].ciudad === "El Volcán")
-              volcan.push(response.data.data.registros[i]);
-            else if (response.data.data.registros[i].ciudad === "Potrero de Los Funes")
-              potrero.push(response.data.data.registros[i]);
-            else if (response.data.data.registros[i].ciudad === "Villa de Merlo")
-              merlo.push(response.data.data.registros[i]);
-            else if (response.data.data.registros[i].ciudad === "La Punta")
-              punta.push(response.data.data.registros[i]);
-            else if (response.data.data.registros[i].ciudad === "Villa Mercedes")
-<<<<<<< Updated upstream
-              villamercedes.push(response.data.data.registros[i]);
-=======
-                this.state.villamercedes.push(response.data.data.registros[i]);
-        
-        console.log(response.data.data.registros[i].ciudad );
->>>>>>> Stashed changes
+          if (response.data.data.registros[i].ciudad === "Ciudad de San Luis") {
+            sanluis.push(response.data.data.registros[i]);
+          } else if (response.data.data.registros[i].ciudad === "Juana Koslay")
+            juanakoslay.push(response.data.data.registros[i]);
+          else if (response.data.data.registros[i].ciudad === "La Carolina")
+            laCarolina.push(response.data.data.registros[i]);
+          else if (response.data.data.registros[i].ciudad === "Carpintería")
+            carpinteria.push(response.data.data.registros[i]);
+          else if (response.data.data.registros[i].ciudad === "El Volcán")
+            volcan.push(response.data.data.registros[i]);
+          else if (
+            response.data.data.registros[i].ciudad === "Potrero de Los Funes"
+          )
+            potrero.push(response.data.data.registros[i]);
+          else if (response.data.data.registros[i].ciudad === "Villa de Merlo")
+            merlo.push(response.data.data.registros[i]);
+          else if (response.data.data.registros[i].ciudad === "La Punta")
+            punta.push(response.data.data.registros[i]);
+          else if (response.data.data.registros[i].ciudad === "Villa Mercedes")
+            villamercedes.push(response.data.data.registros[i]);
         }
         self.setState({
-            loading: false,
-            isNotFound: false,
-            sanluis: sanluis,
-            juanakoslay: juanakoslay,
-            carpinteria: carpinteria,
-            volcan: volcan,
-            potrero: potrero,
-            laCarolina: laCarolina,
-            villamercedes: villamercedes,
-            merlo: merlo,
-            punta: punta
+          loading: false,
+          isNotFound: false,
+          sanluis: sanluis,
+          juanakoslay: juanakoslay,
+          carpinteria: carpinteria,
+          volcan: volcan,
+          potrero: potrero,
+          laCarolina: laCarolina,
+          villamercedes: villamercedes,
+          merlo: merlo,
+          punta: punta,
         });
-        
       })
       .catch((error) => {
         self.setState({
-            loading: false,
-            isNotFound: true
+          loading: false,
+          isNotFound: true,
         });
         console.log(error);
       });
@@ -108,8 +110,7 @@ class ListadoAgenciasDosep extends Component {
           </div>
         ) : isNotFound ? (
           <NotFound />
-        )
-        :(
+        ) : (
           <React.Fragment>
             <div className="container mb-5" />
             <div className="container">
@@ -122,9 +123,8 @@ class ListadoAgenciasDosep extends Component {
                     Agencias de Viajes Adheridas - Turismo Dosep 2021
                   </h3>
                 </div>
-                {
-                    this.state.sanluis.length !== 0 ?
-                    <div className="row mb-3">
+                {this.state.sanluis.length !== 0 ? (
+                  <div className="row mb-3">
                     <div className="col">
                       <img
                         alt="terrazas"
@@ -161,7 +161,10 @@ class ListadoAgenciasDosep extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info">
-                                  <ItemGuiasAgencias data={this.state.sanluis} tipo={this.state.tipo}/>
+                                  <ItemGuiasAgencias
+                                    data={this.state.sanluis}
+                                    tipo={this.state.tipo}
+                                  />
                                 </div>
                               </div>
                             </div>
@@ -171,13 +174,12 @@ class ListadoAgenciasDosep extends Component {
                     </div>
                     <br />
                   </div>
-                  :
+                ) : (
                   ""
-                }
-                
-                {
-                    this.state.merlo.length !== 0?
-                    <div className="row mb-3">
+                )}
+
+                {this.state.merlo.length !== 0 ? (
+                  <div className="row mb-3">
                     <div className="col">
                       <img
                         alt="merlo"
@@ -214,9 +216,11 @@ class ListadoAgenciasDosep extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info" />
-                                <ItemGuiasAgencias data={this.state.merlo} tipo={this.state.tipo}/>
+                                <ItemGuiasAgencias
+                                  data={this.state.merlo}
+                                  tipo={this.state.tipo}
+                                />
                               </div>
-                              
                             </div>
                           </div>
                         </div>
@@ -224,13 +228,12 @@ class ListadoAgenciasDosep extends Component {
                     </div>
                     <br />
                   </div>
-                  :
+                ) : (
                   ""
-                }
-                
-                {
-                    this.state.punta.length !== 0 ?
-                    <div className="row mb-3">
+                )}
+
+                {this.state.punta.length !== 0 ? (
+                  <div className="row mb-3">
                     <div className="col">
                       <img
                         alt="merlo"
@@ -267,7 +270,10 @@ class ListadoAgenciasDosep extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info" />
-                                <ItemGuiasAgencias data={this.state.punta} tipo={this.state.tipo}/>
+                                <ItemGuiasAgencias
+                                  data={this.state.punta}
+                                  tipo={this.state.tipo}
+                                />
                               </div>
                             </div>
                           </div>
@@ -276,13 +282,12 @@ class ListadoAgenciasDosep extends Component {
                     </div>
                     <br />
                   </div>
-                    :
-                    ""
-                }
-                
-                {
-                    this.state.laCarolina.length !== 0 ?
-                    <div className="row mb-3">
+                ) : (
+                  ""
+                )}
+
+                {this.state.laCarolina.length !== 0 ? (
+                  <div className="row mb-3">
                     <div className="col">
                       <img
                         alt="laCarolina"
@@ -319,7 +324,10 @@ class ListadoAgenciasDosep extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info" />
-                                <ItemGuiasAgencias data={this.state.laCarolina} tipo={this.state.tipo}/>
+                                <ItemGuiasAgencias
+                                  data={this.state.laCarolina}
+                                  tipo={this.state.tipo}
+                                />
                               </div>
                             </div>
                           </div>
@@ -328,13 +336,12 @@ class ListadoAgenciasDosep extends Component {
                     </div>
                     <br />
                   </div>
-                  : 
+                ) : (
                   ""
-                }
-                
-                {
-                    this.state.carpinteria.length !== 0 ?
-                    <div className="row mb-3">
+                )}
+
+                {this.state.carpinteria.length !== 0 ? (
+                  <div className="row mb-3">
                     <div className="col">
                       <img
                         alt="carpinteria"
@@ -371,7 +378,10 @@ class ListadoAgenciasDosep extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info">
-                                <ItemGuiasAgencias data={this.state.carpinteria} tipo={this.state.tipo}/>
+                                  <ItemGuiasAgencias
+                                    data={this.state.carpinteria}
+                                    tipo={this.state.tipo}
+                                  />
                                   <hr />
                                 </div>
                               </div>
@@ -382,13 +392,12 @@ class ListadoAgenciasDosep extends Component {
                     </div>
                     <br />
                   </div>
-                    :
-                    ""
-                }
-                
-                {
-                    this.state.juanakoslay.length !== 0?
-                    <div className="row mb-3">
+                ) : (
+                  ""
+                )}
+
+                {this.state.juanakoslay.length !== 0 ? (
+                  <div className="row mb-3">
                     <div className="col">
                       <img
                         alt="terrazas"
@@ -425,7 +434,10 @@ class ListadoAgenciasDosep extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info">
-                                <ItemGuiasAgencias data={this.state.juanakoslay} tipo={this.state.tipo}/>
+                                  <ItemGuiasAgencias
+                                    data={this.state.juanakoslay}
+                                    tipo={this.state.tipo}
+                                  />
                                 </div>
                               </div>
                             </div>
@@ -435,57 +447,61 @@ class ListadoAgenciasDosep extends Component {
                     </div>
                     <br />
                   </div>
-                  :
+                ) : (
                   ""
-                }
-                 {
-                    this.state.villamercedes.length !== 0 ?
-              <div className="col">
-                <img
-                  alt="auto"
-                  style={{
-                    width: "100%",
-                    height: "300px",
-                    objectFit: "cover",
-                  }}
-                  src="https://www.welcomeargentina.com/paseos/citytour-villa-mercedes/villa-mercedes-4.jpg"
-                />
-                <button
-                  className="btn btn-dark btn-block"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#villamercedes"
-                  aria-expanded="false"
-                  aria-controls="villamercedes"
-                  style={{
-                    backgroundColor: "rgb(229, 180, 73)",
-                    height: "50px",
-                    fontSize: "1.2rem",
-                    lineHeight: "1.8rem",
-                    fontWeight: "700",
-                  }}
-                >
-                  Villa mercedes
-                </button>
-                <div className="" id="villamercedes">
-                  <div className="card card-body">
-                    <div className="row">
-                      <div className="col-md-10" style={{ color: "#cb6120" }}>
-                        <div className="form-group">
-                          <div className="atractivo-info">
-                            <ItemGuiasAgencias data={this.state.villamercedes} tipo={this.state.tipo}/>
+                )}
+                {this.state.villamercedes.length !== 0 ? (
+                  <div className="col">
+                    <img
+                      alt="auto"
+                      style={{
+                        width: "100%",
+                        height: "300px",
+                        objectFit: "cover",
+                      }}
+                      src="https://www.welcomeargentina.com/paseos/citytour-villa-mercedes/villa-mercedes-4.jpg"
+                    />
+                    <button
+                      className="btn btn-dark btn-block"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#villamercedes"
+                      aria-expanded="false"
+                      aria-controls="villamercedes"
+                      style={{
+                        backgroundColor: "rgb(229, 180, 73)",
+                        height: "50px",
+                        fontSize: "1.2rem",
+                        lineHeight: "1.8rem",
+                        fontWeight: "700",
+                      }}
+                    >
+                      Villa mercedes
+                    </button>
+                    <div className="" id="villamercedes">
+                      <div className="card card-body">
+                        <div className="row">
+                          <div
+                            className="col-md-10"
+                            style={{ color: "#cb6120" }}
+                          >
+                            <div className="form-group">
+                              <div className="atractivo-info">
+                                <ItemGuiasAgencias
+                                  data={this.state.villamercedes}
+                                  tipo={this.state.tipo}
+                                />
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
+                    <br />
                   </div>
-                </div>
-                <br />
-              </div>
-            :
-            ""
-            }
-
+                ) : (
+                  ""
+                )}
               </div>
             </div>
           </React.Fragment>
