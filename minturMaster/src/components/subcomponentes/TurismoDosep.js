@@ -40,7 +40,7 @@ export default class TurismoDosep extends Component {
                       <img
                         style={{ height: 300, width: 550 }}
                         className="img-fluid"
-                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/modal/TARJETAS_AGENCIAS.jpg`}
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/AGENCIASDOSEP.png`}
                         alt="Img"
                       />
                     </Link>
@@ -60,7 +60,7 @@ export default class TurismoDosep extends Component {
                       <img
                         style={{ height: 300, width: 550 }}
                         className="img-fluid"
-                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/modal/TARJETAS_ALOJAMIENTO.jpg`}
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/ALOJAMIENTODOSEP.png`}
                         alt="Img"
                       />
                     </Link>
@@ -77,7 +77,7 @@ export default class TurismoDosep extends Component {
                       <img
                         style={{ height: 300, width: 550 }}
                         className="img-fluid"
-                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/gastronomia.jpg`}
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/GASTRONOMIADOSEP.png`}
                         alt="Img"
                         
                       />
@@ -122,7 +122,7 @@ export default class TurismoDosep extends Component {
                   <img
                     style={{ height: 200, width: 400 }}
                     className="img-fluid"
-                    src={`${process.env.REACT_APP_API_RECURSOS}/recursos/modal/TARJETAS_AGENCIAS.jpg`}
+                    src={`${process.env.REACT_APP_API_RECURSOS}/recursos/AGENCIASDOSEP.png`}
                     alt="Img"
                   />
                 </Link>
@@ -132,7 +132,7 @@ export default class TurismoDosep extends Component {
                       <img
                         style={{ height: 200, width: 400 }}
                         className="img-fluid"
-                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/gastronomia.jpg`}
+                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/GASTRONOMIADOSEP.png`}
                         alt="Img"
                       />
                     </Link>
@@ -142,7 +142,7 @@ export default class TurismoDosep extends Component {
                   <img
                     style={{ height: 200, width: 400 }}
                     className="img-fluid"
-                    src={`${process.env.REACT_APP_API_RECURSOS}/recursos/modal/TARJETAS_ALOJAMIENTO.jpg`}
+                    src={`${process.env.REACT_APP_API_RECURSOS}/recursos/ALOJAMIENTODOSEP.png`}
                     alt="Img"
                   />
                 </Link>
@@ -188,7 +188,7 @@ export default class TurismoDosep extends Component {
                     <img
                       style={{ height: 300, width: 550 }}
                       className="img-fluid"
-                      src={`${process.env.REACT_APP_API_RECURSOS}/recursos/BASESBOTON.jpg`}
+                      src={`${process.env.REACT_APP_API_RECURSOS}/recursos/BASESYCONDICIONESDOSEP.png`}
                       alt="Img"
                     />
                   </a>
@@ -201,7 +201,7 @@ export default class TurismoDosep extends Component {
                     <img
                       style={{ height: 300, width: 550 }}
                       className="img-fluid"
-                      src={`${process.env.REACT_APP_API_RECURSOS}/recursos/ADHERITEBOTON.jpg`}
+                      src={`${process.env.REACT_APP_API_RECURSOS}/recursos/ADHERITEDOSEP.png`}
                       alt="Img"
                     />
                   </a>
@@ -236,7 +236,7 @@ export default class TurismoDosep extends Component {
                     <img
                       style={{ height: 200, width: 400 }}
                       className="img-fluid"
-                      src={`${process.env.REACT_APP_API_RECURSOS}/recursos/BASESBOTON.jpg`}
+                      src={`${process.env.REACT_APP_API_RECURSOS}/recursos/BASESYCONDICIONESDOSEP.png`}
                       alt="Img"
                     />
                   </a>
@@ -249,7 +249,7 @@ export default class TurismoDosep extends Component {
                     <img
                       style={{ height: 200, width: 400 }}
                       className="img-fluid"
-                      src={`${process.env.REACT_APP_API_RECURSOS}/recursos/ADHERITEBOTON.jpg`}
+                      src={`${process.env.REACT_APP_API_RECURSOS}/recursos/ADHERITEDOSEP.png`}
                       alt="Img"
                     />
                   </a>
