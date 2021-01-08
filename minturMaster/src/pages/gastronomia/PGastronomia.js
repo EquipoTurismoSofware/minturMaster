@@ -204,10 +204,14 @@ class PGastronomia extends Component {
                 <div className="col">
                   <div className="Atractivo-data">
                     <div className="atractivo-texto">
-                    {this.state.dataAtractivo.descripcionHTML != "" ? (
-                        <p dangerouslySetInnerHTML={{ __html: this.state.dataAtractivo.descripcionHTML,}}></p>
+                      {this.state.dataAtractivo.descripcionHTML != "" ? (
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: this.state.dataAtractivo.descripcionHTML,
+                          }}
+                        ></p>
                       ) : (
-                          <p >{this.state.dataAtractivo.descripcion}</p>
+                        <p>{this.state.dataAtractivo.descripcion}</p>
                       )}
                       {/*this.state.dataAtractivo.descripcion*/}
                     </div>
@@ -237,52 +241,103 @@ class PGastronomia extends Component {
                     </div>
 
                     <div className="atractivo-info">
-
-                    {this.state.dataAtractivo.lunes !== "" ? (
-                      <span>
-                        <i className="fas fa-clock" /> <strong> Horarios </strong>
-                      </span>
-                      ) : ("")}
-
+                      {this.state.dataAtractivo.lunes !== "" ||
+                      this.state.dataAtractivo.martes !== "" ||
+                      this.state.dataAtractivo.miercoles !== "" ||
+                      this.state.dataAtractivo.jueves !== "" ||
+                      this.state.dataAtractivo.viernes !== "" ||
+                      this.state.dataAtractivo.sabado !== "" ||
+                      this.state.dataAtractivo.domingo !== "" ? (
+                        <span>
+                          <i className="fas fa-clock"></i>
+                          <strong>Horarios </strong>
+                        </span>
+                      ) : (
+                        ""
+                      )}
 
                       <ul>
                         {this.state.dataAtractivo.lunes !== "" ? (
-                          <li> <strong>Lunes:</strong> {this.state.dataAtractivo.lunes}</li>
-                        ) : ("")}
-                        
-                        {this.state.dataAtractivo.martes !== "" ? (   
-                        <li><strong>Martes:</strong> {this.state.dataAtractivo.martes}</li>
-                        ): ("")}
+                          <li>
+                            {" "}
+                            <strong>Lunes:</strong>{" "}
+                            {this.state.dataAtractivo.lunes}
+                          </li>
+                        ) : (
+                          ""
+                        )}
 
-                        {this.state.dataAtractivo.miercoles !== "" ? (   
-                        <li><strong>Miércoles:</strong> {this.state.dataAtractivo.miercoles}</li>
-                        ): ("")}
+                        {this.state.dataAtractivo.martes !== "" ? (
+                          <li>
+                            <strong>Martes:</strong>{" "}
+                            {this.state.dataAtractivo.martes}
+                          </li>
+                        ) : (
+                          ""
+                        )}
 
-                        {this.state.dataAtractivo.jueves !== "" ? (   
-                        <li><strong>Jueves: </strong>{this.state.dataAtractivo.jueves}</li>
-                        ): ("")}
+                        {this.state.dataAtractivo.miercoles !== "" ? (
+                          <li>
+                            <strong>Miércoles:</strong>{" "}
+                            {this.state.dataAtractivo.miercoles}
+                          </li>
+                        ) : (
+                          ""
+                        )}
 
-                        {this.state.dataAtractivo.viernes !== "" ? (   
-                        <li><strong>Viernes: </strong>{this.state.dataAtractivo.viernes}</li>
-                        ): ("")} 
+                        {this.state.dataAtractivo.jueves !== "" ? (
+                          <li>
+                            <strong>Jueves: </strong>
+                            {this.state.dataAtractivo.jueves}
+                          </li>
+                        ) : (
+                          ""
+                        )}
 
-                        {this.state.dataAtractivo.sabado !== "" ? (   
-                        <li><strong>Sábado:</strong> {this.state.dataAtractivo.sabado}</li>
-                        ): ("")} 
+                        {this.state.dataAtractivo.viernes !== "" ? (
+                          <li>
+                            <strong>Viernes: </strong>
+                            {this.state.dataAtractivo.viernes}
+                          </li>
+                        ) : (
+                          ""
+                        )}
 
-                        {this.state.dataAtractivo.domingo !== "" ? (   
-                        <li><strong>Domingo:</strong> {this.state.dataAtractivo.domingo}</li>
-                        ): ("")} 
-                        
+                        {this.state.dataAtractivo.sabado !== "" ? (
+                          <li>
+                            <strong>Sábado:</strong>{" "}
+                            {this.state.dataAtractivo.sabado}
+                          </li>
+                        ) : (
+                          ""
+                        )}
+
+                        {this.state.dataAtractivo.domingo !== "" ? (
+                          <li>
+                            <strong>Domingo:</strong>{" "}
+                            {this.state.dataAtractivo.domingo}
+                          </li>
+                        ) : (
+                          ""
+                        )}
                       </ul>
 
-                      <span>
-                       <i className="fas fa-user" /> <strong>Contacto</strong>
-                      </span>
+                      {this.state.dataAtractivo.domicilio !== "" ||
+                      this.state.dataAtractivo.telefono !== "" ||
+                      this.state.dataAtractivo.mail !== "" ||
+                      this.state.dataAtractivo.web ? (
+                        <span>
+                          <i className="fas fa-user" />{" "}
+                          <strong>Contacto</strong>
+                        </span>
+                      ) : (
+                        ""
+                      )}
 
                       {this.state.dataAtractivo.domicilio !== "" ? (
                         <span className="pr-4">
-                          <strong>Domicilio:</strong> {this.state.dataAtractivo.domicilio}
+                          <strong>Domicilio:</strong>{" "}
+                          {this.state.dataAtractivo.domicilio}
                         </span>
                       ) : (
                         ""
@@ -290,15 +345,18 @@ class PGastronomia extends Component {
 
                       {this.state.dataAtractivo.telefono !== "" ? (
                         <span className="pr-4">
-                         <strong> Tel./Cel.: </strong> +54 9 {this.state.dataAtractivo.telefono}
+                          <strong> Tel./Cel.: </strong> +54 9{" "}
+                          {this.state.dataAtractivo.telefono}
                         </span>
                       ) : (
                         ""
-                      )}
+                      )}   
+
 
                       {this.state.dataAtractivo.mail !== "" ? (
                         <span className="pr-4">
-                          <strong>Email:</strong> {this.state.dataAtractivo.mail}
+                          <strong>Email:</strong>{" "}
+                          {this.state.dataAtractivo.mail}
                         </span>
                       ) : (
                         ""
@@ -306,7 +364,7 @@ class PGastronomia extends Component {
 
                       {this.state.dataAtractivo.web !== "" ? (
                         <span className="pr-4">
-                         <strong> Web:</strong> {this.state.dataAtractivo.web}
+                          <strong> Web:</strong> {this.state.dataAtractivo.web}
                         </span>
                       ) : (
                         ""

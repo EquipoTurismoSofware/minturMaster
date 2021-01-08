@@ -4,7 +4,7 @@ import axios from "axios";
 import GoogleMap from "../../components/subcomponentes/GoogleMap";
 import MaxImage from "../../components/subcomponentes/MaxImage";
 import Loading from "../../utils/Loading";
-import NotFound from "../../components/NotFound"
+import NotFound from "../../components/NotFound";
 
 class PAtractivo extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class PAtractivo extends Component {
       isNotFound: true,
       id: 0,
       dataAtractivo: {
-        color: "722789"
+        color: "722789",
       },
       carousel: [],
       fotos: [],
@@ -133,30 +133,28 @@ class PAtractivo extends Component {
                     self.setState({
                       carousel: carousel,
                       fotos: fotos,
-                      isNotFound: false
+                      isNotFound: false,
                     });
-                  } 
+                  }
                   self.setState({
-                    loading: false
+                    loading: false,
                   });
                 })
                 .catch((error) => {
                   console.log(error);
                 });
 
-             
-                //self.setState({ loading: false, isNotFound: false});
+              //self.setState({ loading: false, isNotFound: false});
             }
           );
         } else {
           //Error no se encontró el id
-          self.setState({ loading: false, isNotFound: true});
+          self.setState({ loading: false, isNotFound: true });
         }
       })
       .catch((error) => {
         console.log(error);
       });
-
   }
 
   componentDidMount() {
@@ -185,11 +183,9 @@ class PAtractivo extends Component {
               <Loading margins="96px" />
             </div>
           </div>
-        )
-        : isNotFound ? (
+        ) : isNotFound ? (
           <NotFound />
-        )
-        :(
+        ) : (
           <React.Fragment>
             <div className="menu-y-slider">
               <div
@@ -240,10 +236,14 @@ class PAtractivo extends Component {
                 <div className="col">
                   <div className="Atractivo-data">
                     <div className="atractivo-texto">
-                    {this.state.dataAtractivo.descripcionHTML != "" ? (
-                        <p dangerouslySetInnerHTML={{ __html: this.state.dataAtractivo.descripcionHTML,}}></p>
+                      {this.state.dataAtractivo.descripcionHTML != "" ? (
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: this.state.dataAtractivo.descripcionHTML,
+                          }}
+                        ></p>
                       ) : (
-                          <p >{this.state.dataAtractivo.descripcion}</p>
+                        <p>{this.state.dataAtractivo.descripcion}</p>
                       )}
                     </div>
                     <div className="atractivo-fotos">{fotos}</div>
@@ -276,46 +276,88 @@ class PAtractivo extends Component {
                     )}
 
                     <div className="atractivo-info">
-                      {this.state.dataAtractivo.lunes !== "" ? (
-                        <div>
+                      <div>
+                        {(this.state.dataAtractivo.lunes !== "" || 
+                        this.state.dataAtractivo.martes !== "" ||
+                        this.state.dataAtractivo.miercoles !== "" ||
+                        this.state.dataAtractivo.jueves !== "" ||
+                        this.state.dataAtractivo.viernes !== "" ||
+                        this.state.dataAtractivo.sabado !== "" ||
+                        this.state.dataAtractivo.domingo !== "" ) 
+                         ? (
                           <span>
-                            <i className="fas fa-clock"></i> Horarios
+                            <i className="fas fa-clock"></i>
+                            <strong>Horarios </strong>
                           </span>
-                          <ul>
-                        {this.state.dataAtractivo.lunes !== "" ? (
-                          <li> <strong>Lunes:</strong> {this.state.dataAtractivo.lunes}</li>
-                        ) : ("")}
-                        
-                        {this.state.dataAtractivo.martes !== "" ? (   
-                        <li><strong>Martes:</strong> {this.state.dataAtractivo.martes}</li>
-                        ): ("")}
+                        ) : ( "")}
 
-                        {this.state.dataAtractivo.miercoles !== "" ? (   
-                        <li><strong>Miércoles:</strong> {this.state.dataAtractivo.miercoles}</li>
-                        ): ("")}
+                        <ul>
+                          {this.state.dataAtractivo.lunes !== "" ? (
+                            <li>
+                              {" "}
+                              <strong>Lunes:</strong>{" "}
+                              {this.state.dataAtractivo.lunes}
+                            </li>
+                          ) : (
+                            ""
+                          )}
 
-                        {this.state.dataAtractivo.jueves !== "" ? (   
-                        <li><strong>Jueves: </strong>{this.state.dataAtractivo.jueves}</li>
-                        ): ("")}
+                          {this.state.dataAtractivo.martes !== "" ? (
+                            <li>
+                              <strong>Martes:</strong>{" "}
+                              {this.state.dataAtractivo.martes}
+                            </li>
+                          ) : (
+                            ""
+                          )}
 
-                        {this.state.dataAtractivo.viernes !== "" ? (   
-                        <li><strong>Viernes: </strong>{this.state.dataAtractivo.viernes}</li>
-                        ): ("")} 
+                          {this.state.dataAtractivo.miercoles !== "" ? (
+                            <li>
+                              <strong>Miércoles:</strong>{" "}
+                              {this.state.dataAtractivo.miercoles}
+                            </li>
+                          ) : (
+                            ""
+                          )}
 
-                        {this.state.dataAtractivo.sabado !== "" ? (   
-                        <li><strong>Sábado:</strong> {this.state.dataAtractivo.sabado}</li>
-                        ): ("")} 
+                          {this.state.dataAtractivo.jueves !== "" ? (
+                            <li>
+                              <strong>Jueves: </strong>
+                              {this.state.dataAtractivo.jueves}
+                            </li>
+                          ) : (
+                            ""
+                          )}
 
-                        {this.state.dataAtractivo.domingo !== "" ? (   
-                        <li><strong>Domingo:</strong> {this.state.dataAtractivo.domingo}</li>
-                        ): ("")} 
-                        
-                      </ul>
-                        </div>
-                      ) : (
-                        ""
-                      )}
+                          {this.state.dataAtractivo.viernes !== "" ? (
+                            <li>
+                              <strong>Viernes: </strong>
+                              {this.state.dataAtractivo.viernes}
+                            </li>
+                          ) : (
+                            ""
+                          )}
 
+                          {this.state.dataAtractivo.sabado !== "" ? (
+                            <li>
+                              <strong>Sábado:</strong>{" "}
+                              {this.state.dataAtractivo.sabado}
+                            </li>
+                          ) : (
+                            ""
+                          )}
+
+                          {this.state.dataAtractivo.domingo !== "" ? (
+                            <li>
+                              <strong>Domingo:</strong>{" "}
+                              {this.state.dataAtractivo.domingo}
+                            </li>
+                          ) : (
+                            ""
+                          )}
+                        </ul>
+                      </div>
+                      
                       {this.state.dataAtractivo.costo === 0 ? (
                         <span>
                           <i className="fas fa-dollar-sign"></i> Cósto: $
@@ -324,39 +366,47 @@ class PAtractivo extends Component {
                       ) : (
                         ""
                       )}
-                      
-                      <span>
-                       <i className="fas fa-user" /> <strong>Contacto</strong>
-                      </span>
-                      
+                    
+                    {this.state.dataAtractivo.domicilio !== "" ||
+                      this.state.dataAtractivo.telefono !== "" ||
+                      this.state.dataAtractivo.mail !== "" ||
+                      this.state.dataAtractivo.web ? (
+                        <span>
+                          <i className="fas fa-user" />{" "}
+                          <strong>Contacto</strong>
+                        </span>
+                      ) : (
+                        ""
+                      )}
+                    
+
                       {this.state.dataAtractivo.domicilio !== "" ? (
                         <span className="pr-4">
-                          <strong>Domicilio:</strong> {this.state.dataAtractivo.domicilio}
+                          <strong>Domicilio:</strong>{" "}
+                          {this.state.dataAtractivo.domicilio}
                         </span>
                       ) : (
                         ""
                       )}
-
-
-                       {this.state.dataAtractivo.telefono !== "" ? (
+                      {this.state.dataAtractivo.telefono !== "" ? (
                         <span className="pr-4">
-                         <strong> Tel./Cel.: </strong> +54 9 {this.state.dataAtractivo.telefono}
+                          <strong> Tel./Cel.: </strong> +54 9{" "}
+                          {this.state.dataAtractivo.telefono}
                         </span>
                       ) : (
                         ""
                       )}
-
-                       {this.state.dataAtractivo.mail !== "" ? (
+                      {this.state.dataAtractivo.mail !== "" ? (
                         <span className="pr-4">
-                          <strong>Email:</strong> {this.state.dataAtractivo.mail}
+                          <strong>Email:</strong>{" "}
+                          {this.state.dataAtractivo.mail}
                         </span>
                       ) : (
                         ""
                       )}
-
-                        {this.state.dataAtractivo.web !== "" ? (
+                      {this.state.dataAtractivo.web !== "" ? (
                         <span className="pr-4">
-                         <strong> Web:</strong> {this.state.dataAtractivo.web}
+                          <strong> Web:</strong> {this.state.dataAtractivo.web}
                         </span>
                       ) : (
                         ""

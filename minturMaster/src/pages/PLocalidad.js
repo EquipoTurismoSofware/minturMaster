@@ -5,8 +5,7 @@ import axios from "axios";
 import GoogleMap from "../components/subcomponentes/GoogleMap";
 import Alojamientos from "../components/subcomponentes/Alojamientos";
 import Loading from "../utils/Loading";
-import NotFound from "../components/NotFound"
-
+import NotFound from "../components/NotFound";
 
 class PLocalidad extends Component {
   constructor(props) {
@@ -29,6 +28,9 @@ class PLocalidad extends Component {
       },
       carousel: [],
       imperdibles: [],
+      cantImperdibles: 0,
+      cantAtractivos: 0,
+      cantGastronomia: 0,
     };
     this.getData = this.getData.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -91,12 +93,16 @@ class PLocalidad extends Component {
                   );
                 }
               });
-              self.setState({ carousel: fotos, isNotFound: false, loading: false});
+              self.setState({
+                carousel: fotos,
+                isNotFound: false,
+                loading: false,
+              });
             }
           );
         } else {
           //Error no se encontro el id
-          self.setState({isNotFound: true, loading: false});
+          self.setState({ isNotFound: true, loading: false });
         }
       })
       .catch((error) => {
@@ -115,13 +121,60 @@ class PLocalidad extends Component {
       .then((response) => {
         if (response.data.data.count > 0) {
           self.setState({ imperdibles: response.data.data.registros });
+          this.setState({ cantImperdibles: response.data.data.count });
         } else {
+          this.setState({ cantImperdibles: 0 });
           //Error no se enocntró el id
         }
       })
       .catch((error) => {
         console.log(error);
       });
+
+    //Atractivos de la Localidad
+    axios({
+      method: "get",
+      headers: {
+        Authorization: token,
+      },
+      url: `${process.env.REACT_APP_API}/ciudad/${self.state.id}/atractivos`,
+      responseType: "json",
+    })
+      .then((response) => {
+        if (response.data.data.count > 0) {
+          this.setState({ cantAtractivos: response.data.data.count });
+          // alert("cantidad de atractivos: " + this.state.cantAtractivos);
+        } else {
+          this.setState({ cantAtractivos: 0 });
+          //Error no se enocntró el id
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    //Gastronomia de la Localidad
+    axios({
+      method: "get",
+      headers: {
+        Authorization: token,
+      },
+      url: `${process.env.REACT_APP_API}/ciudad/${self.state.id}/gastronomia`,
+      responseType: "json",
+    })
+      .then((response) => {
+        if (response.data.data.count > 0) {
+          this.setState({ cantGastronomia: response.data.data.count });
+        } else {
+          this.setState({ cantGastronomia: 0 });
+          //Error no se enocntró el id
+        }
+        //alert("cantidad de gastronomia: " + this.state.cantGastronomia);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
     //Traigo todos los tipos
     axios({
       method: "get",
@@ -141,10 +194,14 @@ class PLocalidad extends Component {
             tipos: response.data.data.registros,
           });
         }
+
+        //console.log("todos los tipos: " + response.data.data.count);
+        //alert("todos los tipos: " + response.data.data.count)
       })
       .catch((error) => {
         console.log(error);
       });
+
     //Traigo los alojamientos de esas localidades
     axios({
       method: "get",
@@ -157,7 +214,7 @@ class PLocalidad extends Component {
       .then((response) => {
         self.setState({
           alojamientos: response.data.data.registros,
-          filtro: response.data.data.registros
+          filtro: response.data.data.registros,
         });
       })
       .catch((error) => {
@@ -270,6 +327,7 @@ class PLocalidad extends Component {
         className="img-fluid"
         src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${selecciono}`}
         alt="Img"
+        
       />
     );
     return (
@@ -280,11 +338,9 @@ class PLocalidad extends Component {
               <Loading margins="96px" />
             </div>
           </div>
-        )
-        : isNotFound ? (
+        ) : isNotFound ? (
           <NotFound />
-        )
-        :(
+        ) : (
           <React.Fragment>
             <div className="menu-y-slider">
               <div
@@ -322,6 +378,7 @@ class PLocalidad extends Component {
                 </div>
               </div>
             </div>
+            
             <div
               className="ZonaLocalidad-titulo"
               style={{ backgroundColor: `#${this.state.dataLocalidad.color}` }}
@@ -348,66 +405,98 @@ class PLocalidad extends Component {
                         />
                       )}
                     </div>
-                    <div id="texto">
-                      {this.state.dataLocalidad.descripcionHTML != "" ? (
-                        <p dangerouslySetInnerHTML={{ __html: this.state.dataLocalidad.descripcionHTML,}}></p>
-                      ) : (
-                          <p >{this.state.dataLocalidad.descripcion}</p>
-                      )}
-                    </div>
-                    <div id="atractivos">
-                      <Link to={`/atractivos/${this.state.dataLocalidad.id}`}>
-                        <div className="all-link">
-                          <div
-                            className="al-nombre"
-                            style={{
-                              color: `#${this.state.dataLocalidad.color}`,
+                 
+                   
+                 
+                        <div id="texto">
+                           {this.state.dataLocalidad.descripcionHTML != "" ? (
+                             <p
+                               dangerouslySetInnerHTML={{
+                               __html: this.state.dataLocalidad.descripcionHTML,
                             }}
-                          >
-                            {this.state.dataLocalidad.nombre} <br />
-                          </div>
+                             ></p>
+                             ) : (
+                             <p>{this.state.dataLocalidad.descripcion}</p>
+                                 )}
+                        </div>
+                   
+                 
+                
 
-                          <div
-                            className="al-texto"
-                            style={{
-                              color: `#${this.state.dataLocalidad.color}`,
-                            }}
-                          >
-                            ATRACTIVOS TURÍSTICOS <br />
+                    <div id="atractivos">
+                      {
+                        // <h5> cantidad de atractivos : {this.state.cantAtractivos}</h5>
+                      }
+
+                      {this.state.cantAtractivos > 0 ? (
+                        <Link to={`/atractivos/${this.state.dataLocalidad.id}`}>
+                          <div className="all-link">
+                            <div
+                              className="al-nombre"
+                              style={{
+                                color: `#${this.state.dataLocalidad.color}`,
+                              }}
+                            >
+                              {this.state.dataLocalidad.nombre} <br />
+                            </div>
+
+                            <div
+                              className="al-texto"
+                              style={{
+                                color: `#${this.state.dataLocalidad.color}`,
+                              }}
+                            >
+                              ATRACTIVOS TURÍSTICOS <br />
+                            </div>
+                            <div
+                              className="al-boton"
+                              style={{
+                                color: `#${this.state.dataLocalidad.color}`,
+                              }}
+                            >
+                              <i className="fas fa-arrow-alt-circle-right" />
+                            </div>
                           </div>
-                          <div
-                            className="al-boton"
-                            style={{
-                              color: `#${this.state.dataLocalidad.color}`,
-                            }}
-                          >
-                            <i className="fas fa-arrow-alt-circle-right" />
+                        </Link>
+                      ) : (
+                        ""
+                      )}
+
+                      {/*   {this.state.dataAtractivo.domicilio !== "" ? (
+                        <span className="pr-4">
+                            <strong>Domicilio:</strong>{""}
+                          {this.state.dataAtractivo.domicilio}
+                        </span>
+                      ) : (
+                        ""
+                      )} */}
+
+                      {this.state.cantGastronomia > 0 ? (
+                        <Link
+                          to={`/gastronomialistado/${this.state.dataLocalidad.id}`}
+                        >
+                          <div className="all-link">
+                            <div
+                              className="al-texto"
+                              style={{
+                                color: `#${this.state.dataLocalidad.color}`,
+                              }}
+                            >
+                              GASTRONOMÍA
+                            </div>
+                            <div
+                              className="al-boton"
+                              style={{
+                                color: `#${this.state.dataLocalidad.color}`,
+                              }}
+                            >
+                              <i className="fas fa-arrow-alt-circle-right" />
+                            </div>
                           </div>
-                        </div>
-                      </Link>
-                      <Link
-                        to={`/gastronomialistado/${this.state.dataLocalidad.id}`}
-                      >
-                        <div className="all-link">
-                          <div
-                            className="al-texto"
-                            style={{
-                              color: `#${this.state.dataLocalidad.color}`,
-                            }}
-                          >
-                            GASTRONOMÍA
-                          </div>
-                          <div
-                            className="al-boton"
-                            style={{
-                              color: `#${this.state.dataLocalidad.color}`,
-                            }}
-                          >
-                            <i className="fas fa-arrow-alt-circle-right" />
-                          </div>
-                        </div>
-                      </Link>
+                        </Link>
+                      ) : ("")}
                     </div>
+
                     <div id="mapa">
                       <GoogleMap
                         lat={this.state.dataLocalidad.latitud}
@@ -417,23 +506,56 @@ class PLocalidad extends Component {
                         gheight="400px"
                       />
                     </div>
-                    <div
-                      id="imperdibles"
-                      style={{
-                        backgroundColor: `#${this.state.dataLocalidad.color}`,
-                      }}
-                    >
-                      <div className="imp-titulo">
-                        <h3
-                          style={{
-                            color: `#${this.state.dataLocalidad.color}`,
+
+                    {
+                      //alert (this.state.cantImperdibles)
+                    }
+                   
+                   {this.state.dataLocalidad.descripcionHTML != "" || this.state.dataLocalidad.descripcion != "" ? (   
+                        
+                          this.state.cantImperdibles > 0 ? (
+                           <div
+                               id="imperdibles"
+                               style={{ backgroundColor: `#${this.state.dataLocalidad.color}`, 
+                                }}
+                             >
+                        
+                            <div className="imp-titulo">
+                          
+                             <h3
+                              style={{
+                              color: `#${this.state.dataLocalidad.color}`,
+                              }}
+                             >
+                                Imperdibles con descripcion
+                             </h3>
+                            </div>
+                               <div className="imp-body-wrap">{imperdibles}</div>
+                           </div>
+                    ) : ("")
+
+                  ) : (
+                      // no hay descripcion
+                      this.state.cantImperdibles > 0 ? (
+                        <div
+                          id="imperdibles"
+                          style={{ top:-350,  //marginTop: -450 , //position: "relative", // marginBottom: 40  , position: "relative"
+                            backgroundColor: `#${this.state.dataLocalidad.color}`,
                           }}
                         >
-                          Imperdibles
-                        </h3>
-                      </div>
-                      <div className="imp-body-wrap">{imperdibles}</div>
-                    </div>
+                          <div className="imp-titulo">
+                            <h3
+                              style={{
+                                color: `#${this.state.dataLocalidad.color}`,
+                              }}
+                            >
+                              Imperdibles sin decripción
+                            </h3>
+                          </div>
+                          <div className="imp-body-wrap">{imperdibles}</div>
+                        </div>
+                      ) : ("")
+                    )}
                   </div>
                 </div>
               </div>
