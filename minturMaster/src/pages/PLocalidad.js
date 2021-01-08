@@ -527,7 +527,7 @@ class PLocalidad extends Component {
                               color: `#${this.state.dataLocalidad.color}`,
                               }}
                              >
-                                Imperdibles con descripcion
+                                Imperdibles
                              </h3>
                             </div>
                                <div className="imp-body-wrap">{imperdibles}</div>
@@ -549,7 +549,7 @@ class PLocalidad extends Component {
                                 color: `#${this.state.dataLocalidad.color}`,
                               }}
                             >
-                              Imperdibles sin decripción
+                              Imperdibles
                             </h3>
                           </div>
                           <div className="imp-body-wrap">{imperdibles}</div>
