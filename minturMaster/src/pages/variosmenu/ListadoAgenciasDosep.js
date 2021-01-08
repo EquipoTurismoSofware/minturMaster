@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Consumer } from "../../context";
 import axios from "axios";
 import Loading from "../../utils/Loading";
-import NotFound from "../../components/NotFound";
-import ItemGuiasAgencias from "../../components/ItemGuiasAgencias";
+import NotFound from "../../components/NotFound"
+import ItemCardCiudades from "../../components/ItemCardCiudades"
 
 class ListadoAgenciasDosep extends Component {
   constructor(props) {
@@ -161,10 +161,7 @@ class ListadoAgenciasDosep extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info">
-                                  <ItemGuiasAgencias
-                                    data={this.state.sanluis}
-                                    tipo={this.state.tipo}
-                                  />
+                                  <ItemCardCiudades data={this.state.sanluis} tipo={this.state.tipo}/>
                                 </div>
                               </div>
                             </div>
@@ -216,10 +213,7 @@ class ListadoAgenciasDosep extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info" />
-                                <ItemGuiasAgencias
-                                  data={this.state.merlo}
-                                  tipo={this.state.tipo}
-                                />
+                                <ItemCardCiudades data={this.state.merlo} tipo={this.state.tipo}/>
                               </div>
                             </div>
                           </div>
@@ -270,10 +264,7 @@ class ListadoAgenciasDosep extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info" />
-                                <ItemGuiasAgencias
-                                  data={this.state.punta}
-                                  tipo={this.state.tipo}
-                                />
+                                <ItemCardCiudades data={this.state.punta} tipo={this.state.tipo}/>
                               </div>
                             </div>
                           </div>
@@ -324,10 +315,7 @@ class ListadoAgenciasDosep extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info" />
-                                <ItemGuiasAgencias
-                                  data={this.state.laCarolina}
-                                  tipo={this.state.tipo}
-                                />
+                                <ItemCardCiudades data={this.state.laCarolina} tipo={this.state.tipo}/>
                               </div>
                             </div>
                           </div>
@@ -378,10 +366,7 @@ class ListadoAgenciasDosep extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info">
-                                  <ItemGuiasAgencias
-                                    data={this.state.carpinteria}
-                                    tipo={this.state.tipo}
-                                  />
+                                <ItemCardCiudades data={this.state.carpinteria} tipo={this.state.tipo}/>
                                   <hr />
                                 </div>
                               </div>
@@ -434,10 +419,7 @@ class ListadoAgenciasDosep extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info">
-                                  <ItemGuiasAgencias
-                                    data={this.state.juanakoslay}
-                                    tipo={this.state.tipo}
-                                  />
+                                <ItemCardCiudades data={this.state.juanakoslay} tipo={this.state.tipo}/>
                                 </div>
                               </div>
                             </div>
@@ -450,59 +432,57 @@ class ListadoAgenciasDosep extends Component {
                 ) : (
                   ""
                 )}
-                {this.state.villamercedes.length !== 0 ? (
-                  <div className="col">
-                    <img
-                      alt="auto"
-                      style={{
-                        width: "100%",
-                        height: "300px",
-                        objectFit: "cover",
-                      }}
-                      src="https://www.welcomeargentina.com/paseos/citytour-villa-mercedes/villa-mercedes-4.jpg"
-                    />
-                    <button
-                      className="btn btn-dark btn-block"
-                      type="button"
-                      data-toggle="collapse"
-                      data-target="#villamercedes"
-                      aria-expanded="false"
-                      aria-controls="villamercedes"
-                      style={{
-                        backgroundColor: "rgb(229, 180, 73)",
-                        height: "50px",
-                        fontSize: "1.2rem",
-                        lineHeight: "1.8rem",
-                        fontWeight: "700",
-                      }}
-                    >
-                      Villa mercedes
-                    </button>
-                    <div className="" id="villamercedes">
-                      <div className="card card-body">
-                        <div className="row">
-                          <div
-                            className="col-md-10"
-                            style={{ color: "#cb6120" }}
-                          >
-                            <div className="form-group">
-                              <div className="atractivo-info">
-                                <ItemGuiasAgencias
-                                  data={this.state.villamercedes}
-                                  tipo={this.state.tipo}
-                                />
+                 {
+                    this.state.villamercedes.length !== 0 ? (
+                      <div className="row mb-3">
+                          <div className="col">
+                            <img
+                              alt="auto"
+                              style={{
+                                width: "100%",
+                                height: "300px",
+                                objectFit: "cover",
+                              }}
+                              src="https://www.welcomeargentina.com/paseos/citytour-villa-mercedes/villa-mercedes-4.jpg"
+                            />
+                            <button
+                              className="btn btn-dark btn-block"
+                              type="button"
+                              data-toggle="collapse"
+                              data-target="#nueva_zona"
+                              aria-expanded="true"
+                              aria-controls="nueva_zona"
+                              style={{
+                                backgroundColor: "rgb(229, 180, 73)",
+                                height: "50px",
+                                fontSize: "1.2rem",
+                                lineHeight: "1.8rem",
+                                fontWeight: "700",
+                              }}
+                            >
+                              Villa mercedes
+                            </button>
+                            <div className="" id="nueva_zona">
+                              <div className="card card-body">
+                                <div className="row">
+                                  <div className="col-md-10" style={{ color: "#cb6120" }}>
+                                    <div className="form-group">
+                                      <div className="atractivo-info">
+                                        <ItemCardCiudades data={this.state.villamercedes} tipo={this.state.tipo}/>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <br />
                               </div>
                             </div>
                           </div>
-                        </div>
                       </div>
-                    </div>
-                    <br />
-                  </div>
                 ) : (
                   ""
-                )}
-              </div>
+                ) 
+                }
+                </div>
             </div>
           </React.Fragment>
         )}

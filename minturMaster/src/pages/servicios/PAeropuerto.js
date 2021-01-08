@@ -1,27 +1,108 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
-//import axios from "axios";
+import axios from "axios";
 import Loading from "../../utils/Loading";
+import NotFound from "../../components/NotFound"
+import ItemCardCiudades from "../../components/ItemCardCiudades"
 
 class PAeropuerto extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loading: true,
+      isNotFound: true,
       data: [],
       carousel: [],
+      sanluis: [],
+      juanakoslay: [],
+      carpinteria: [],
+      volcan: [],
+      potrero: [],
+      laCarolina: [],
+      villamercedes: [],
+      santarosa: [],
+      merlo: [],
+      punta: [],
+      tipo: "aeropuertos"
     };
+    this.getData = this.getData.bind(this);
+  }
+
+  getData() {
+    var token = this.context.token;
+    var self = this;
+    axios({
+      method: "get",
+      headers: {
+        Authorization: token,
+      },
+      url: `${process.env.REACT_APP_API}/aeropuertos`,
+      responseType: "json",
+    })
+      .then((response) => {
+        var sanluis = [], juanakoslay = [], carpinteria = [], volcan = [], potrero = [],
+        laCarolina =  [], villamercedes=  [], merlo = [], punta = [], santarosa = [];
+        var i = 0;
+        for (i = 0; i < response.data.data.registros.length; i++) {
+            if (response.data.data.registros[i].ciudad === "Ciudad de San Luis") {
+                sanluis.push(response.data.data.registros[i]);
+            } else if (response.data.data.registros[i].ciudad === "Juana Koslay")
+                juanakoslay.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "La Carolina")
+                laCarolina.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "Carpintería")
+                carpinteria.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "El Volcán")
+                volcan.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "Potrero de Los Funes")
+                potrero.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "Villa de Merlo")
+                merlo.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "La Punta")
+                punta.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "Villa Mercedes")
+                villamercedes.push(response.data.data.registros[i]);         
+            else if (response.data.data.registros[i].ciudad === "Santa Rosa del Conlara")
+                santarosa.push(response.data.data.registros[i]);         
+        }
+        self.setState({
+            loading: false,
+            isNotFound: false,
+            sanluis: sanluis,
+            juanakoslay: juanakoslay,
+            carpinteria: carpinteria,
+            volcan: volcan,
+            potrero: potrero,
+            laCarolina: laCarolina,
+            villamercedes: villamercedes,
+            merlo: merlo,
+            santarosa: santarosa,
+            punta: punta
+        });
+        
+      })
+      .catch((error) => {
+        self.setState({
+            loading: false,
+            isNotFound: true
+        });
+        console.log(error);
+      });
   }
 
   componentDidMount() {
     document.body.scrollTop = 0; // Safari
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
     this.setState({
-      loading: false,
+      loading: true
+    }, () => {
+      this.getData();
     });
   }
 
+
   render() {
+    const isNotFound = this.state.isNotFound;
     return (
       <div className="PEventos">
         {this.state.loading ? (
@@ -30,7 +111,10 @@ class PAeropuerto extends Component {
               <Loading margins="96px" />
             </div>
           </div>
-        ) : (
+        ) : isNotFound ? (
+          <NotFound />
+        )
+        :(
           <React.Fragment>
             <div className="container mb-5" />
             <div className="container">
@@ -74,32 +158,8 @@ class PAeropuerto extends Component {
                         <div className="col-md-10" style={{ color: "#cb6120" }}>
                           <div className="form-group">
                             <div className="atractivo-info">
-                              <h4>
-                                Aeropuerto Brigadier Mayor Cesar Raúl Ojeda
-                              </h4>
-                              <span className="pr-4 ">
-                                <i className="fas fa-map-marker" />
-                                &nbsp; Dirección: Av. Fuerza Aérea 3095, D5700
-                                San Luis, Provincia de San Luis
-                              </span>
-                              <br />
-                              <span className="pr-4">
-                                <i className="fas fa-user" />
-                                &nbsp; Tel./Cel.: +54 2664 422 427 / 0266
-                                442-2457
-                              </span>
-                              <br />
-                              <span>
-                                <i class="fas fa-globe-americas" />
-                                &nbsp; aa2000.com.ar
-                              </span>
-                              <br />
-                              <span>
-                                <i class="fas fa-plane-departure" /> &nbsp;
-                                Código: LUQ
-                              </span>
+                              <ItemCardCiudades data={this.state.sanluis} tipo={this.state.tipo}/>
                             </div>
-                            <hr />
                           </div>
                         </div>
                       </div>
@@ -143,24 +203,7 @@ class PAeropuerto extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info">
-                                  <h4>
-                                    Aeropuerto Internacional Valle del Conlara
-                                  </h4>
-                                  <span className="pr-4 ">
-                                    <i className="fas fa-map-marker" />
-                                    &nbsp; Dirección: Santa Rosa de Conlara a 18
-                                    km al sudoeste de Merlo.
-                                  </span>
-                                  <br />
-                                  <span className="pr-4">
-                                    <i className="fas fa-user" />
-                                    &nbsp; Tel./Cel.: 0266 445-2000 ext. 4147
-                                  </span>
-                                  <br />
-                                  <span>
-                                    <i class="fas fa-plane-departure" /> &nbsp;
-                                    Código: RLO
-                                  </span>
+                                  <ItemCardCiudades data={this.state.santarosa} tipo={this.state.tipo}/>
                                 </div>
                               </div>
                             </div>

@@ -1,27 +1,107 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
-//import axios from "axios";
+import axios from "axios";
 import Loading from "../../utils/Loading";
+import NotFound from "../../components/NotFound"
+import ItemCardCiudades from "../../components/ItemCardCiudades"
 
-class PAeropuerto extends Component {
+class PAlquileresAuto extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loading: true,
+      isNotFound: true,
       data: [],
       carousel: [],
+      sanluis: [],
+      juanakoslay: [],
+      carpinteria: [],
+      volcan: [],
+      potrero: [],
+      laCarolina: [],
+      villamercedes: [],
+      santarosa: [],
+      merlo: [],
+      punta: [],
+      tipo: "alquileresautos"
     };
+    this.getData = this.getData.bind(this);
+  }
+
+  getData() {
+    var token = this.context.token;
+    var self = this;
+    axios({
+      method: "get",
+      headers: {
+        Authorization: token,
+      },
+      url: `${process.env.REACT_APP_API}/alquileresauto/ciudades`,
+      responseType: "json",
+    })
+      .then((response) => {
+        var sanluis = [], juanakoslay = [], carpinteria = [], volcan = [], potrero = [],
+        laCarolina =  [], villamercedes=  [], merlo = [], punta = [], santarosa = [];
+        var i = 0;
+        for (i = 0; i < response.data.data.registros.length; i++) {
+            if (response.data.data.registros[i].ciudad === "Ciudad de San Luis") {
+                sanluis.push(response.data.data.registros[i]);
+            } else if (response.data.data.registros[i].ciudad === "Juana Koslay")
+                juanakoslay.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "La Carolina")
+                laCarolina.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "Carpintería")
+                carpinteria.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "El Volcán")
+                volcan.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "Potrero de Los Funes")
+                potrero.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "Villa de Merlo")
+                merlo.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "La Punta")
+                punta.push(response.data.data.registros[i]);
+            else if (response.data.data.registros[i].ciudad === "Villa Mercedes")
+                villamercedes.push(response.data.data.registros[i]);         
+            else if (response.data.data.registros[i].ciudad === "Santa Rosa del Conlara")
+                santarosa.push(response.data.data.registros[i]);         
+        }
+        self.setState({
+            loading: false,
+            isNotFound: false,
+            sanluis: sanluis,
+            juanakoslay: juanakoslay,
+            carpinteria: carpinteria,
+            volcan: volcan,
+            potrero: potrero,
+            laCarolina: laCarolina,
+            villamercedes: villamercedes,
+            merlo: merlo,
+            santarosa: santarosa,
+            punta: punta
+        });
+        
+      })
+      .catch((error) => {
+        self.setState({
+            loading: false,
+            isNotFound: true
+        });
+        console.log(error);
+      });
   }
 
   componentDidMount() {
     document.body.scrollTop = 0; // Safari
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
     this.setState({
-      loading: false,
+      loading: true
+    }, () => {
+      this.getData();
     });
   }
 
   render() {
+    const isNotFound = this.state.isNotFound;
     return (
       <div className="PEventos">
         {this.state.loading ? (
@@ -30,7 +110,10 @@ class PAeropuerto extends Component {
               <Loading margins="96px" />
             </div>
           </div>
-        ) : (
+        ) : isNotFound ? (
+          <NotFound />
+        )
+        :(
           <React.Fragment>
             <div className="container mb-5" />
             <div className="container">
@@ -74,52 +157,8 @@ class PAeropuerto extends Component {
                         <div className="col-md-10" style={{ color: "#cb6120" }}>
                           <div className="form-group">
                             <div className="atractivo-info">
-                              <h4>Avis </h4>
-                              <span className="pr-4 ">
-                                <i className="fas fa-map-marker" />
-                                &nbsp; Dirección: Av Pte Illia 470.
-                              </span>
-                              <br />
-                              <span className="pr-4">
-                                <i className="fas fa-user" />
-                                &nbsp; Tel./Cel.: +54 266-444-3280 / 266
-                                154540388/390
-                              </span>
-                              <br />
-                              <span>
-                                <i class="fas fa-globe-americas" />
-                                &nbsp;https://www.avis.com.ar/ -
-                                sanluis@avis.com.ar
-                              </span>
-                              <br />
-                              <span>
-                                <i class="fas fa-clock" /> &nbsp; Horario: 9 hrs
-                                a 12 hrs / 17 hrs a 21 hrs
-                              </span>
-                              <hr />
-                              <h4>Hertz </h4>
-                              <span className="pr-4 ">
-                                <i className="fas fa-map-marker" />
-                                &nbsp; Dirección: Av. Fuerza Aérea 3095.
-                              </span>
-                              <br />
-                              <span className="pr-4">
-                                <i className="fas fa-user" />
-                                &nbsp; Tel./Cel.: +54 0266 442-2427
-                              </span>
-                              <br />
-                              <span>
-                                <i class="fas fa-globe-americas" />
-                                &nbsp;https://www.hertz.com.ar/ -
-                                hertzsanluis@hotmail.com
-                              </span>
-                              <br />
-                              <span>
-                                <i class="fas fa-clock" /> &nbsp; Horario: 9 hrs
-                                a 12 hrs / 17 hrs a 21 hrs
-                              </span>
+                              <ItemCardCiudades data={this.state.sanluis} tipo={this.state.tipo}/>
                             </div>
-                            <hr />
                           </div>
                         </div>
                       </div>
@@ -161,30 +200,8 @@ class PAeropuerto extends Component {
                       <div className="col-md-10" style={{ color: "#cb6120" }}>
                         <div className="form-group">
                           <div className="atractivo-info">
-                            <h4>Move Car </h4>
-                            <span className="pr-4 ">
-                              <i className="fas fa-map-marker" />
-                              &nbsp; Dirección: Intendente leyes 92.
-                            </span>
-                            <br />
-                            <span className="pr-4">
-                              <i className="fas fa-user" />
-                              &nbsp; Tel./Cel.: +54 02657 22-4773 / +54
-                              2657-678041
-                            </span>
-                            <br />
-                            <span>
-                              <i class="fas fa-globe-americas" />
-                              &nbsp;www.movecar.com.ar - admin@movecar.com.ar
-                            </span>
-                            <br />
-                            <span>
-                              <i class="fas fa-clock" /> &nbsp; Horario: 9:30
-                              hrs a 12:00 hrs / 18:30 hrs a 20:30 hrs
-                            </span>
-                            <hr />
+                            <ItemCardCiudades data={this.state.villamercedes} tipo={this.state.tipo}/>
                           </div>
-                          <hr />
                         </div>
                       </div>
                     </div>
@@ -200,6 +217,6 @@ class PAeropuerto extends Component {
   }
 }
 
-PAeropuerto.contextType = Consumer;
+PAlquileresAuto.contextType = Consumer;
 
-export default PAeropuerto;
+export default PAlquileresAuto;

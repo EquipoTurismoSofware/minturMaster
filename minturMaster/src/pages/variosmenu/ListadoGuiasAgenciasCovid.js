@@ -3,7 +3,7 @@ import { Consumer } from "../../context";
 import axios from "axios";
 import Loading from "../../utils/Loading";
 import NotFound from "../../components/NotFound"
-import ItemGuiasAgencias from "../../components/ItemGuiasAgencias"
+import ItemCardCiudades from "../../components/ItemCardCiudades"
 
 class ListadoGuiasAgenciasCovid extends Component {
   constructor(props) {
@@ -178,7 +178,7 @@ class ListadoGuiasAgenciasCovid extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info">
-                                  <ItemGuiasAgencias data={this.state.sanluis} tipo={this.state.tipo}/>
+                                  <ItemCardCiudades data={this.state.sanluis} tipo={this.state.tipo}/>
                                 </div>
                               </div>
                             </div>
@@ -231,7 +231,7 @@ class ListadoGuiasAgenciasCovid extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info" />
-                                <ItemGuiasAgencias data={this.state.merlo} tipo={this.state.tipo}/>
+                                <ItemCardCiudades data={this.state.merlo} tipo={this.state.tipo}/>
                               </div>
                             </div>
                           </div>
@@ -283,7 +283,7 @@ class ListadoGuiasAgenciasCovid extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info" />
-                                <ItemGuiasAgencias data={this.state.punta} tipo={this.state.tipo}/>
+                                <ItemCardCiudades data={this.state.punta} tipo={this.state.tipo}/>
                               </div>
                             </div>
                           </div>
@@ -335,7 +335,7 @@ class ListadoGuiasAgenciasCovid extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info" />
-                                <ItemGuiasAgencias data={this.state.laCarolina} tipo={this.state.tipo}/>
+                                <ItemCardCiudades data={this.state.laCarolina} tipo={this.state.tipo}/>
                               </div>
                             </div>
                           </div>
@@ -387,7 +387,7 @@ class ListadoGuiasAgenciasCovid extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info">
-                                <ItemGuiasAgencias data={this.state.carpinteria} tipo={this.state.tipo}/>
+                                <ItemCardCiudades data={this.state.carpinteria} tipo={this.state.tipo}/>
                                   <hr />
                                 </div>
                               </div>
@@ -441,7 +441,7 @@ class ListadoGuiasAgenciasCovid extends Component {
                             >
                               <div className="form-group">
                                 <div className="atractivo-info">
-                                <ItemGuiasAgencias data={this.state.juanakoslay} tipo={this.state.tipo}/>
+                                <ItemCardCiudades data={this.state.juanakoslay} tipo={this.state.tipo}/>
                                 </div>
                               </div>
                             </div>
@@ -489,7 +489,7 @@ class ListadoGuiasAgenciasCovid extends Component {
                       <div className="col-md-10" style={{ color: "#cb6120" }}>
                         <div className="form-group">
                           <div className="atractivo-info">
-                           <ItemGuiasAgencias data={this.state.villamercedes} tipo={this.state.tipo}/>
+                           <ItemCardCiudades data={this.state.villamercedes} tipo={this.state.tipo}/>
                           </div>
                         </div>
                       </div>

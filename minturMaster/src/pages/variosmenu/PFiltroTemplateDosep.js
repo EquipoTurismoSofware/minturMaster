@@ -417,7 +417,7 @@ class PFiltroTemplateDosep extends Component {
                                     :
                                     <center>
                             
-                                        <div className="one-three  column">
+                                        <div className="one-two  column">
                                             <a
                                             href="javascript: void(0)"
                                             onClick={()=>{
@@ -431,7 +431,7 @@ class PFiltroTemplateDosep extends Component {
                                             
                                             >
                                             <img
-                                                style={{ height: 300, width: 550 }}
+                                                style={{height: 280, width: 500}}
                                                 className="img-fluid"
                                                 src={`${process.env.REACT_APP_API_RECURSOS}/recursos/modal/TARJETAS_ALOJAMIENTO.jpg`}
                                                 alt="Img"
@@ -452,7 +452,7 @@ class PFiltroTemplateDosep extends Component {
                                             
                                             >
                                             <img
-                                                style={{ height: 300, width: 550 }}
+                                                style={{height: 280, width: 500}}
                                                 className="img-fluid"
                                                 src={`${process.env.REACT_APP_API_RECURSOS}/recursos/gastronomia.jpg`}
                                                 alt="Img"
