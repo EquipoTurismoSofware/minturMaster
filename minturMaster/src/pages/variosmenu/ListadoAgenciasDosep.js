@@ -114,7 +114,6 @@ class ListadoAgenciasDosep extends Component {
           <React.Fragment>
             <div className="container mb-5" />
             <div className="container">
-              <div className="row mb-3">
                 <div
                   className="ZonaDetalle-titulo"
                   style={{ paddingTop: "50px", backgroundColor: `#722789` }}
@@ -435,55 +434,57 @@ class ListadoAgenciasDosep extends Component {
                  {
                     this.state.villamercedes.length !== 0 ? (
                       <div className="row mb-3">
-                          <div className="col">
-                            <img
-                              alt="auto"
-                              style={{
-                                width: "100%",
-                                height: "300px",
-                                objectFit: "cover",
-                              }}
-                              src="https://www.welcomeargentina.com/paseos/citytour-villa-mercedes/villa-mercedes-4.jpg"
-                            />
-                            <button
-                              className="btn btn-dark btn-block"
-                              type="button"
-                              data-toggle="collapse"
-                              data-target="#nueva_zona"
-                              aria-expanded="true"
-                              aria-controls="nueva_zona"
-                              style={{
-                                backgroundColor: "rgb(229, 180, 73)",
-                                height: "50px",
-                                fontSize: "1.2rem",
-                                lineHeight: "1.8rem",
-                                fontWeight: "700",
-                              }}
-                            >
-                              Villa mercedes
-                            </button>
-                            <div className="" id="nueva_zona">
-                              <div className="card card-body">
-                                <div className="row">
-                                  <div className="col-md-10" style={{ color: "#cb6120" }}>
-                                    <div className="form-group">
-                                      <div className="atractivo-info">
-                                        <ItemCardCiudades data={this.state.villamercedes} tipo={this.state.tipo}/>
-                                      </div>
+                        <div className="col">
+                          <img
+                            alt="villamercedes"
+                            style={{
+                              width: "100%",
+                              height: "300px",
+                              objectFit: "cover",
+                            }}
+                            src="https://www.welcomeargentina.com/paseos/citytour-villa-mercedes/villa-mercedes-4.jpg"
+
+                          />
+                          <button
+                            className="btn btn-dark btn-block"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#villa_mercedes"
+                            aria-expanded="false"
+                            aria-controls="villa_mercedes"
+                            style={{ 
+                              backgroundColor: "#e5b449",
+                              height: "50px",
+                              fontSize: "1.2rem",
+                              lineHeight: "1.8rem",
+                              fontWeight: "700"}}
+                          >
+                            Villa Mercedes
+                          </button>
+                          <div className="collapse" id="villa_mercedes">
+                            <div className="card card-body">
+                              <div className="row">
+                                <div
+                                  className="col-md-10"
+                                  style={{color: "#e5b449"}}
+                                >
+                                  <div className="form-group">
+                                    <div className="atractivo-info">
+                                      <ItemCardCiudades data={this.state.villamercedes} tipo={this.state.tipo}/>
                                     </div>
                                   </div>
                                 </div>
-                                <br />
                               </div>
                             </div>
                           </div>
+                        </div>
+                        <br />
                       </div>
                 ) : (
                   ""
                 ) 
                 }
-                </div>
-            </div>
+              </div>
           </React.Fragment>
         )}
       </div>

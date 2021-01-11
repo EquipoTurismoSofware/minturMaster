@@ -85,8 +85,23 @@ class ListadoGuiasAgenciasCovid extends Component {
           <React.Fragment>
             <div className="container mb-5" />
             <div className="container">
-              <CardCiudades data={this.state.data} tipo={this.state.tipo} />
-            </div>
+              <div
+                className="ZonaDetalle-titulo"
+                style={{ paddingTop: "50px", backgroundColor: `#722789` }}
+              >
+                <h3 style={{ color: `#722789` }}>
+                  {
+                    this.state.tipo === "guiasturismo" ?
+                    "GUÍAS DE TURISMO ADHERIDOS - COVID 19"
+                    :
+                    "AGENCIAS DE VIAJES ADHERIDOS - COVID 19"
+                  }
+                  
+                </h3>
+              </div>
+                <CardCiudades data={this.state.data} tipo={this.state.tipo} />
+           </div>
+
           </React.Fragment>
         )}
       </div>

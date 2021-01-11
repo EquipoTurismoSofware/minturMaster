@@ -73,8 +73,15 @@ class PAlquileresAuto extends Component {
           <React.Fragment>
             <div className="container mb-5" />
               <div className="container">
-                <CardCiudades data={this.state.data} tipo={this.state.tipo} />
+              <div
+                className="ZonaDetalle-titulo"
+                style={{ paddingTop: "50px", backgroundColor: `#722789` }}
+              >
+                <h3 style={{ color: `#722789` }}>Alquiler de Autos</h3>
               </div>
+                <CardCiudades data={this.state.data} tipo={this.state.tipo} />
+            </div>
+
           </React.Fragment>
         )}
       </div>

@@ -65,10 +65,8 @@ class CardCiudades extends Component {
     }
 
 	render() {
-      let x = 0;
       const listadoElementos = this.state.ciudades.map(nov => {
         let alqxcities = this.state.data.filter(x => x.ciudad === nov.ciudad)
-        x++;
           return(<div className="row mb-3">
           <div className="col">
             <img
