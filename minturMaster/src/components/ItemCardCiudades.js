@@ -25,9 +25,9 @@ class ItemCardCiudades extends Component {
 
 	componentDidMount() {
         this.setState({
-			data: this.props.data,
-            tipo: this.props.tipo,
-            loading: false
+			    data: this.props.data,
+          tipo: this.props.tipo,
+          loading: false
         });
     }
 
@@ -126,7 +126,7 @@ class ItemCardCiudades extends Component {
                   <hr />
                 </div>
              )             
-            }else if(this.state.tipo === "alquileresautos"){
+            }else if(this.state.tipo === "alquileresauto"){
               return(<div>
                 <h4>{nov.nombre} </h4>
                 <span className="pr-4 ">
@@ -151,7 +151,7 @@ class ItemCardCiudades extends Component {
                 <hr />
               </div>)
               
-            } else if(this.state.tipo === "casasdecambio"){
+            } else if(this.state.tipo === "casascambio"){
               return(
                 <div>
                   <h4>{nov.nombre}</h4>
@@ -186,7 +186,7 @@ class ItemCardCiudades extends Component {
 		
 		return(
 			<React.Fragment>{
-                listadoGuiasAgencias
+          listadoGuiasAgencias
 			}</React.Fragment>
 		);
 	}
