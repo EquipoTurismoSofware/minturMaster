@@ -132,7 +132,7 @@ class PFiltroAlojamiento extends Component {
                 responseType: "json"
             })
             .then((response) => {
-                if(response.data.data.count > 0) {
+                if(response.data.data.registros.length > 0) {
                     self.setState({
                         alojamientos: response.data.data.registros,
                         filtro: response.data.data.registros,
