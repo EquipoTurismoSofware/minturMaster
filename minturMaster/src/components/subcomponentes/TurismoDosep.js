@@ -45,44 +45,40 @@ export default class TurismoDosep extends Component {
                       />
                     </Link>
                   </div>
-                  
-                 
+
                   <center>
-                  <div className="one-three  column">
-                    <Link
-                     to={{
-                      pathname: "adheridos-turismo-Dosep", // en lugar de 1 sería tu variable
-                      categoria: "alojamientos",
-                   }}
-                      className="link-menu"
-                     
-                    >
-                      <img
-                        style={{ height: 300, width: 550 }}
-                        className="img-fluid"
-                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/ALOJAMIENTODOSEP.png`}
-                        alt="Img"
-                      />
-                    </Link>
-                  </div>
-                  <div className="one-two  column">
-                    <Link
-                      to={{
-                        pathname: "adheridos-turismo-Dosep", // en lugar de 1 sería tu variable
-                        categoria: "gastronomia",
-                     }}
-                      className="link-menu"
-                      
-                    >
-                      <img
-                        style={{ height: 300, width: 550 }}
-                        className="img-fluid"
-                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/GASTRONOMIADOSEP.png`}
-                        alt="Img"
-                        
-                      />
-                    </Link>
-                  </div>
+                    <div className="one-three  column">
+                      <Link
+                        to={{
+                          pathname: "adheridos-turismo-Dosep", // en lugar de 1 sería tu variable
+                          categoria: "alojamientos",
+                        }}
+                        className="link-menu"
+                      >
+                        <img
+                          style={{ height: 300, width: 550 }}
+                          className="img-fluid"
+                          src={`${process.env.REACT_APP_API_RECURSOS}/recursos/ALOJAMIENTODOSEP.png`}
+                          alt="Img"
+                        />
+                      </Link>
+                    </div>
+                    <div className="one-two  column">
+                      <Link
+                        to={{
+                          pathname: "adheridos-turismo-Dosep", // en lugar de 1 sería tu variable
+                          categoria: "gastronomia",
+                        }}
+                        className="link-menu"
+                      >
+                        <img
+                          style={{ height: 300, width: 550 }}
+                          className="img-fluid"
+                          src={`${process.env.REACT_APP_API_RECURSOS}/recursos/GASTRONOMIADOSEP.png`}
+                          alt="Img"
+                        />
+                      </Link>
+                    </div>
                   </center>
                   <div className="row">
                     <div className="one column">
@@ -128,17 +124,29 @@ export default class TurismoDosep extends Component {
                 </Link>
               </div>
               <div className="one-three column">
-                    <Link to="/gastronomicos-turismo-Dosep" className="link-menu">
-                      <img
-                        style={{ height: 200, width: 400 }}
-                        className="img-fluid"
-                        src={`${process.env.REACT_APP_API_RECURSOS}/recursos/GASTRONOMIADOSEP.png`}
-                        alt="Img"
-                      />
-                    </Link>
-                  </div>
+                <Link
+                  to={{
+                    pathname: "adheridos-turismo-Dosep", // en lugar de 1 sería tu variable
+                    categoria: "gastronomia",
+                  }}
+                  className="link-menu"
+                >
+                  <img
+                    style={{ height: 200, width: 400 }}
+                    className="img-fluid"
+                    src={`${process.env.REACT_APP_API_RECURSOS}/recursos/GASTRONOMIADOSEP.png`}
+                    alt="Img"
+                  />
+                </Link>
+              </div>
               <div className="one-three column">
-                <Link to="/alojamientos-turismo-Dosep" className="link-menu">
+                <Link
+                  to={{
+                    pathname: "adheridos-turismo-Dosep", // en lugar de 1 sería tu variable
+                    categoria: "alojamientos",
+                  }}
+                  className="link-menu"
+                >
                   <img
                     style={{ height: 200, width: 400 }}
                     className="img-fluid"

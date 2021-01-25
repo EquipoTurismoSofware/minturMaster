@@ -11,6 +11,7 @@
     "draft-js-import-html": "^1.4.1",
     "gymnast": "^18.0.1",
     "mdbreact": "^4.9.0",
+    "node-sass": "^5.0.0",
     "react": "^16.13.1",
     "react-awesome-modal": "^2.0.5",
     "react-bootstrap": "^1.4.0",
@@ -27,6 +28,7 @@
     "reactstrap": "^8.5.1",
     "rsuite": "^4.8.4",
     "slick-carousel": "^1.8.1",
+    "swiper": "^6.4.6",
     "wow.js": "^1.2.2"
   },
   "scripts": {
