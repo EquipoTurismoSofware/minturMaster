@@ -125,7 +125,7 @@ class Alojamientos extends Component {
                             <ul className="detalles">
                                 <li><i class="fas fa-thumbtack"></i><span>  {alo.ciudad}</span></li>
                                 <li><i class="fas fa-hotel"></i><span>  {alo.tipo}</span></li>
-                                <li><i className="fas fa-user" /><a href={`tel:+549${alo.caracteristica}${alo.telefono}`}>+54 9 {alo.caracteristica} - {alo.telefono}</a></li>
+                                <li><i className="fas fa-user" /><a href={`tel:+549${alo.caracteristica}${alo.telefono}`}> +54 9 {alo.caracteristica} - {alo.telefono}</a></li>
 
                             </ul>
                             <div className="vermas">
