@@ -97,12 +97,19 @@ class Alojamientos extends Component {
     componentWillUnmount() {
         window.removeEventListener("resize", this.calculoVisibles);
     }
-
+/*let foto = "default.jpg";
+            if(alo.imagen !== "") {
+                foto = alo.imagen
+            }*/ 
     render() {
         const alojamientos = this.state.alojamientos.map((alo) => {
-            let foto = "default.jpg";
+            /*let foto = "default.jpg";
             if(alo.fotos.length > 0) {
                 foto = alo.fotos[0].imagen;
+            }*/
+            let foto = "default.jpg";
+            if(alo.imagen !== "") {
+                foto = alo.imagen
             }
             return(
                 <div key={`alo-card-${alo.id}`} className="alo-card m-3">
@@ -116,13 +123,13 @@ class Alojamientos extends Component {
                         <div className="content">
                             <div className="nombre">{alo.nombre}</div>
                             <ul className="detalles">
-                                <li>{alo.tipo}</li>
-                                <li><p><a href={`mailto:${alo.mail}?Subject=Consulta`}>{alo.mail}</a></p></li>
-                                <li><p><a href={`tel:+549${alo.caracteristica}${alo.telefono}`}>+54 9 {alo.caracteristica} - {alo.telefono}</a></p></li>
-                                <li><p><a href={`http://${alo.web}`} target="_blank" rel="noopener noreferrer">{alo.web}</a></p></li>
+                                <li><i class="fas fa-thumbtack"></i><span>  {alo.ciudad}</span></li>
+                                <li><i class="fas fa-hotel"></i><span>  {alo.tipo}</span></li>
+                                <li><i className="fas fa-user" /><a href={`tel:+549${alo.caracteristica}${alo.telefono}`}>+54 9 {alo.caracteristica} - {alo.telefono}</a></li>
+
                             </ul>
                             <div className="vermas">
-                                <Link to={`/alojamiento/${alo.id}`}><i className="fas fa-book-open"></i></Link>
+                                <Link to={`/alojamiento/${alo.id}`}><i className="fas fa-angle-double-down"></i></Link>
                             </div>
                         </div>
                     </div>

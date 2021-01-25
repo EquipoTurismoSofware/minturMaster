@@ -128,7 +128,7 @@ class PFiltroAlojamiento extends Component {
                 headers: {
                     "Authorization": token
                 },
-                url: `${process.env.REACT_APP_API}/guias/full`,
+                url: `${process.env.REACT_APP_API}/guias/list`,
                 responseType: "json"
             })
             .then((response) => {

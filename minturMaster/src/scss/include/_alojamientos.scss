@@ -83,7 +83,7 @@ $card-height: 300px;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #262626;
+            background-color:rgb(219, 14, 96);
             transform-origin: top;
             transition: .5s;
             box-sizing: border-box;
@@ -98,28 +98,35 @@ $card-height: 300px;
                     li {
                         list-style-type: none;
                         color: #fff;
-                        text-align: center;
-                        p {
-                            white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            margin-bottom: 4px;
-                            a {
-                                text-decoration: none;
-                                color: #fff;
-                            }
+                        text-align: left;
+                        margin-top: 6px;
+                        i {
+                            margin-left: 6px;
                         }
+
+                        span {
+                            color: #fff;
+                        }
+                        
+                        a {
+                            text-decoration: none;
+                            color: #fff
+                        }
+                        
                     }
                 }
                 .vermas {
                     position: absolute;
                     bottom: 4px;
                     left: 50%;
-                    transform: translateX(-50%);
                     color: #fff;
+                    transform: translateX(-50%);                    
                     font-size: 1.4rem;
                     cursor: pointer;
                     text-align: center;
+                    i {
+                        color: #fff
+                    }
                 }
             }
         }

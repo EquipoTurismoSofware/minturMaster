@@ -271,17 +271,24 @@ class Gastronomicos extends Component {
     componentWillUnmount() {
         window.removeEventListener("resize", this.calculoVisibles);
     }
-
+/*let foto = "default.jpg";
+          if(alo.imagen !== "") {
+              foto = alo.imagen
+          } */
     render() {
         const loading = this.state.loading;
         const isNotFound = this.state.isNotFound;
         const fotos = this.state.fotos;
         console.log("gastronomicos" + this.state.gastronomicos);
         const gastronomicos = this.state.gastronomicos.map((alo) => {
-            let foto = "default.jpg";
+            /*let foto = "default.jpg";
             if(alo.imagenes.length > 0) {
                 foto = alo.imagenes[0].imagen;
-            }
+            }*/
+            let foto = "default.jpg";
+          if(alo.imagen !== "") {
+              foto = alo.imagen
+          }
             return(
                 <div key={`alo-card-${alo.id}`} className="alo-card m-3">
                     <div className="img-box">
@@ -298,13 +305,12 @@ class Gastronomicos extends Component {
                         <div className="content">
                             <div className="nombre">{alo.nombre}</div>
                             <ul className="detalles">
-                                <li>{alo.tipo}</li>
-                                <li><p><a href={`mailto:${alo.mail}?Subject=Consulta`}>{alo.mail}</a></p></li>
-                                <li><p><a href={`tel:+549${alo.caracteristica}${alo.telefono}`}>+54 9 {alo.caracteristica} - {alo.telefono}</a></p></li>
-                                <li><p><a href={`http://${alo.web}`} target="_blank" rel="noopener noreferrer">{alo.web}</a></p></li>
+                            <li><i class="fas fa-thumbtack"></i><span>  {alo.ciudad}</span></li>
+                                <li><i class="fas fa-hotel"></i><span>  {alo.tipo}</span></li>
+                                <li><i className="fas fa-user" /><a href={`tel:+549${alo.caracteristica}${alo.telefono}`}>+54 9 {alo.caracteristica} - {alo.telefono}</a></li>
                             </ul>
                             <div className="vermas">
-                                <Link to={`/gastronomia/${alo.id}`}><i className="fas fa-book-open"></i></Link>
+                                <Link to={`/gastronomia/${alo.id}`}><i className="fas fa-angle-double-down" /></Link>
                             </div>
                         </div>
                     </div>

@@ -3815,7 +3815,7 @@ h3.bgc_4 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #262626;
+  background-color: #db0e60;
   transform-origin: top;
   transition: 0.5s;
   box-sizing: border-box;
@@ -3847,15 +3847,16 @@ h3.bgc_4 {
 .alo-card .details .content .detalles li {
   list-style-type: none;
   color: #fff;
-  text-align: center;
+  text-align: left;
+  margin-top: 6px;
 }
-.alo-card .details .content .detalles li p {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 4px;
+.alo-card .details .content .detalles li i {
+  margin-left: 6px;
 }
-.alo-card .details .content .detalles li p a {
+.alo-card .details .content .detalles li span {
+  color: #fff;
+}
+.alo-card .details .content .detalles li a {
   text-decoration: none;
   color: #fff;
 }
@@ -3863,11 +3864,14 @@ h3.bgc_4 {
   position: absolute;
   bottom: 4px;
   left: 50%;
-  transform: translateX(-50%);
   color: #fff;
+  transform: translateX(-50%);
   font-size: 1.4rem;
   cursor: pointer;
   text-align: center;
+}
+.alo-card .details .content .vermas i {
+  color: #fff;
 }
 
 /*
