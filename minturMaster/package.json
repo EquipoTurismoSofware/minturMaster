@@ -9,6 +9,7 @@
     "bootstrap": "^4.5.3",
     "draft-js-export-html": "^1.4.1",
     "draft-js-import-html": "^1.4.1",
+    "gsap": "^3.6.0",
     "gymnast": "^18.0.1",
     "mdbreact": "^4.9.0",
     "node-sass": "^5.0.0",

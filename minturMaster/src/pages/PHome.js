@@ -5,6 +5,7 @@ import Descarga from "../components/Descarga";
 import Novedades from "../components/Novedades";
 import { Link } from "react-router-dom";
 import ReactWOW from "react-wow";
+import Slider from "../components/Slider"
 import PantallaModal from "../components/subcomponentes/Modal";
 import Newsletter from "../components/subcomponentes/Newsletter";
 import Loading from "../utils/Loading";
@@ -139,157 +140,9 @@ class Home extends Component {
           </div>
         ) : (
           <React.Fragment>
+            
             <div className="menu-y-slider">
-              <div
-                id="carouselExampleIndicators"
-                className="carousel slide"
-                data-ride="carousel"
-              >
-                <div>
-                  <div>
-                    {/*
-                <center>
-                  <ReactWOW animation="fadeIn" data-wow-delay="10s">
-                    <div className="contenedorContador">
-                      <iframe
-                        width="100%"
-                        height="100%"
-                        src="https://www.youtube.com/embed/uNNc3DCvpko?rel=0&amp;autoplay=1&loop=1&playlist=8WO8rnRnZGg&mute=1&showinfo=0&controls=0"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                      />
-                      <div style={{display:"nones"}} className="contador">
-                        <span className="titulo">
-                          Esperando el Eclipse Solar
-                        </span>
-                        <br />
-                        <span className="tiempo">
-                          <div className="horas">{this.state.time.h1}</div>
-                          <div className="horas2">{this.state.time.h2}</div>
-                          <div className="separador">:</div>
-                          <div className="minutos">{this.state.time.m1}</div>
-                          <div className="minutos2">{this.state.time.m2}</div>
-                          <div className="separador">:</div>
-                          <div className="segundos">{this.state.time.s1}</div>
-                          <div className="segundos2">{this.state.time.s2}</div>
-                          <br />
-                          <br />
-                        </span>
-                        <div className="textoTiempo">
-                          <div className="horas">Horas </div>
-                          <div className="minutos">Minutos </div>
-                          <div className="segundos">Segundos </div>
-                        </div>
-                      </div>
-                    </div>
-                  </ReactWOW>
-                </center>
-*/}
-
-                    <div className="carousel-inner">
-                      <center>
-                        <div className="pantallaGrande">
-                          <Newsletter anchoMargen="400px" altoMargen="250px" />
-                          <PantallaModal
-                            anchoMargen="1050px"
-                            altoMargen="600px"
-                            anchoImg="1000px"
-                            altoImg="550px"
-                            picture="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/DOSEPmodal.jpg"
-                          />
-                        </div>
-                      </center>
-
-                      <div className="pantallaChica">
-                        <PantallaModal
-                          anchoMargen="280px"
-                          altoMargen="550px"
-                          anchoImg="250px"
-                          altoImg="500px"
-                          maginLeft="15px"
-                          picture="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/DOSEPmodalCEL.jpg"
-                        />
-                      </div>
-                      <ReactWOW animation="fadeIn" data-wow-delay="10s">
-                        <div className="carousel-item img-slider-2 active">
-                          <img
-                            alt="disfruta"
-                            className=" tituloCarrusel2  animated flipInX delay-2s"
-                            
-                            src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/DISFRUTA-min.png"
-                          />
-                          {/*<img
-                            alt="enSanLuis"
-                            className=" tituloCarrusel2  animated flipInX delay-2s"
-                            src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/enSanLuis.png"
-                          />*/}
-                        </div>
-                        <div className="carousel-item img-slider-3">
-                          <img
-                            alt="descubri"
-                            className="tituloCarrusel3  animated flipInX delay-2s"
-
-                            src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/DESCUBRI-min.png "
-                          />
-                          {/*<img
-                            alt="enSanLuis"
-                            className="tituloCarrusel2  animated flipInX delay-2s"
-                            src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/enSanLuis.png"
-                          />*/}
-                          
-                        </div>
-
-                        <div className="carousel-item img-slider-1">
-                          <img
-                            alt="contempla"
-                            className=" tituloCarrusel  animated flipInX delay-2s"
-                            src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/CONTEMPLA-min.png"
-                          />
-                          {/*<img
-                            alt="enSanLuis"
-                            className=" tituloCarrusel2  animated flipInX delay-2s"
-                            src=" http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/enSanLuis.png"
-                          />*/}
-                          
-                        </div>
-                      </ReactWOW>
-                    </div>
-                  </div>
-
-                  <a
-                    className="carousel-control-prev"
-                    href="#carouselExampleIndicators"
-                    role="button"
-                    data-slide="prev"
-                  >
-                    <span
-                      className="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    />
-                    <span className="sr-only">Previous</span>
-                  </a>
-                  <a
-                    className="carousel-control-next"
-                    href="#carouselExampleIndicators"
-                    role="button"
-                    data-slide="next"
-                  >
-                    <span
-                      className="carousel-control-next-icon"
-                      aria-hidden="true"
-                    />
-                    <span className="sr-only">Next</span>
-                  </a>
-                  {/* <div className="imagenHome animated flipInX delay-2s">
-                    <img src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/logo_carrusel.png" />
-                    </div>*/}
-                  <div className="slider-home-leyenda animated flipInX delay-2s">
-                    <h1>En San Luis</h1>
-                    <span>Viví experiencias únicas</span>
-                  </div>
-                </div>
-              </div>
+            <Slider></Slider>
             </div>
             <Recorridos />
             {/* 
