@@ -122,18 +122,17 @@ class Slider extends Component {
 
 		this.setState({
 			isAnimating: true
+		}, () => {
+			TweenMax.to(this.state.partMove, 1, {
+				val: 0,
+				ease: Power1.easeInOut,
+				onUpdate: this.drawImages(),
+				onComplete: function() {
+					self.state.partMove.val = 1;			
+					self.state.isAnimating = false;
+				}
+			});
 		})
-
-		TweenMax.to(this.state.partMove, 1, {
-			val: 0,
-			ease: Power1.easeInOut,
-			onUpdate: this.drawImages(),
-			onComplete: function() {
-				self.state.partMove.val = 1;			
-				self.state.isAnimating = false;
-			}
-		});
-
 	}
 
 	onBtnsClick(event) {
@@ -261,8 +260,7 @@ class Slider extends Component {
 	}
 
 	preloadImages () {
-		let {imagesList} = this.state
-		imagesList.forEach((img) => {
+		this.state.imagesList.forEach((img) => {
 			console.log("QUESESTO? ", img.complete)
 			if (img.complete) {
 				console.log("Entre aca")
@@ -276,15 +274,14 @@ class Slider extends Component {
 	}
 
 	handleImageComplete() {
-		let {loadTxt, imagesList} = this.state;
 		var x = this.state.imagesloaded++;
 		var y = x + 1;
 		this.setState({
 			imagesloaded: y
 		}, () => {
-			console.log(this.state.imagesloaded + " - " + imagesList.length)
-			if (this.state.imagesloaded === imagesList.length) {
-				loadTxt.current.classList.add('is-hidden');
+			console.log(this.state.imagesloaded + " - " + this.state.imagesList.length)
+			if (this.state.imagesloaded === this.state.imagesList.length) {
+				this.state.loadTxt.current.classList.add('is-hidden');
 				this.addEL();
 				this.init();
 			}else{
@@ -305,11 +302,10 @@ class Slider extends Component {
 	}
 
 	preInit(){
-		let {linkList1, linklist, imagesList} = this.state
-		var alist = linklist.current.querySelectorAll('a');
+		var alist = this.state.linklist.current.querySelectorAll('a');
 		var img;
-		var x = linkList1;
-		var y = imagesList;
+		var x = this.state.linkList1;
+		var y = this.state.imagesList;
 		for (var i = 0; i < alist.length; i++) {
 			x.push(alist[i]);
 			img = new Image();
@@ -342,13 +338,12 @@ class Slider extends Component {
 	}
 
 	componentDidMount() {
-		let {partList, canvas0, canvas1, canvas3, canvas2} = this.state
-		var x = partList;
+		var x = this.state.partList;
 		this.setState({
-			ctx0: canvas0.current.getContext('2d'),
-			ctx1: canvas1.current.getContext('2d'),
-			ctx2: canvas2.current.getContext('2d'),
-			ctx3: canvas3.current.getContext('2d')
+			ctx0: this.state.canvas0.current.getContext('2d'),
+			ctx1: this.state.canvas1.current.getContext('2d'),
+			ctx2: this.state.canvas2.current.getContext('2d'),
+			ctx3: this.state.canvas3.current.getContext('2d')
 		}, () => {
 			x[0].context = this.state.ctx0;
 			x[1].context = this.state.ctx1;
