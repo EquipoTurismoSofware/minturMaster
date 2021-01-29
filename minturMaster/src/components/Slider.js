@@ -114,6 +114,7 @@ class Slider extends Component {
 	}
 
 	changeImage () {
+		console.log("CHANGEIMAGE")
 		var self = this;
 		// Do not interupt previous movement
 		if (this.state.isAnimating) {
@@ -126,7 +127,7 @@ class Slider extends Component {
 			TweenMax.to(this.state.partMove, 1, {
 				val: 0,
 				ease: Power1.easeInOut,
-				onUpdate: this.drawImages(),
+				onUpdate: this.drawImages,
 				onComplete: function() {
 					self.state.partMove.val = 1;			
 					self.state.isAnimating = false;
@@ -181,6 +182,7 @@ class Slider extends Component {
 	}
 
 	selectLink () {
+		console.log("SELECTLINK")
 		let {IS_ACTIVE} = this.state
 		if (this.state.currentLink !== "") {
 			this.state.currentLink.classList.remove(IS_ACTIVE);
@@ -196,23 +198,20 @@ class Slider extends Component {
 		var vw = window.innerWidth;
 		var vh = window.innerHeight;
 		var res = vw / vh;
-		console.log("RESULT: ", res)
+		var list = this.state.partList
 		
-		this.state.canvas0.current.width = this.state.canvas1.current.width = this.state.canvas2.current.width = this.state.canvas3.current.width = this.state.VW;
-		this.state.canvas0.current.height = this.state.canvas1.current.height = this.state.canvas2.current.height = this.state.canvas3.current.height = this.state.VH;
-		
-		this.state.partList[0].radius = vw * 0.4;
-		this.state.partList[1].radius = vw * 0.25;
-		this.state.partList[2].radius = vw * 0.08;
+		this.state.canvas0.current.width = this.state.canvas1.current.width = this.state.canvas2.current.width = this.state.canvas3.current.width = vw;
+		this.state.canvas0.current.height = this.state.canvas1.current.height = this.state.canvas2.current.height = this.state.canvas3.current.height = vh;
+
+		list[0].radius = vw * 0.4;
+		list[1].radius = vw * 0.25;
+		list[2].radius = vw * 0.08;
 
 		this.setState({
 			VW: vw,
 			VH: vh,
 			AR: res,
-			partList: this.state.partList
-		}, () => {
-			this.resizeBg();
-			console.log("AR ", this.state.AR)
+			partList: list
 		});
 		
 	}
@@ -239,6 +238,7 @@ class Slider extends Component {
 	}
 
 	slideshowChange (){
+		console.log("SLIDESHOWCHANGE")
 		this.state.prevImage = this.state.currentImage;
 		(this.state.currentImage + 1 >= this.state.imagesList.length) ? this.state.currentImage = 0: this.state.currentImage++;
 		this.changeImage();
@@ -246,6 +246,7 @@ class Slider extends Component {
 	}
 
 	addEL(){
+		console.log("ADDEL")
 		let self = this;
 		var debounceResize = this.debounce(function() {
 			self.calculateScreen();
@@ -268,7 +269,7 @@ class Slider extends Component {
 				
 			} else {
 				console.log("O aca?")
-				img.onload = this.handleImageComplete();
+				img.onload = this.handleImageComplete;
 			}
 		});
 	}
@@ -292,12 +293,27 @@ class Slider extends Component {
 	}
 
 	init (){	
-		this.calculateScreen();
-		this.resizeBg();
-		this.selectLink();
-		this.changeImage();
-		this.setState({
-			slideshowInterval: setInterval(this.slideshowChange(),3000)
+		console.log("INIT")
+		const calculatePromise = new Promise((resolve) => {
+			resolve(this.calculateScreen());
+		  });
+
+		const selectLinkPromise = new Promise((resolve) => {
+			resolve(this.selectLink());
+		  });
+
+		const resizeBgPromise = new Promise((resolve) => {
+			resolve(this.resizeBg());
+		});
+		calculatePromise.then((response1) => {
+			resizeBgPromise.then((response2) => {
+				selectLinkPromise.then((response3) => {
+					this.changeImage()
+					this.setState({
+						slideshowInterval: setInterval(this.slideshowChange,3000)
+					})
+				  });
+			});
 		})
 	}
 
@@ -317,7 +333,12 @@ class Slider extends Component {
 			})
 		}
 		
-		this.preloadImages();
+		const calculateScreenPromise = new Promise((resolve) => {
+			resolve(this.calculateScreen());
+		});
+		calculateScreenPromise.then((response) => {
+			this.preloadImages();
+		});
 		
 	}
 
@@ -353,6 +374,7 @@ class Slider extends Component {
 			}, () => {
 				console.log("PRIMERO LO PRIMERO: ", this.state.partList)
 				this.preInit();
+				
 			})
 		})
 		
@@ -361,10 +383,10 @@ class Slider extends Component {
 	render(){
 		return (
 			<React.Fragment>
-				<canvas id="canvas0" width="800" height="480" ref={this.state.canvas0}></canvas>
-				<canvas id="canvas1" width="800" height="480" ref={this.state.canvas1}></canvas>
-				<canvas id="canvas2" width="800" height="480" ref={this.state.canvas2}></canvas>
-				<canvas id="canvas3" width="800" height="480" ref={this.state.canvas3}></canvas>
+				<canvas id="canvas0" className={"thecanvas"} width="800" height="480" ref={this.state.canvas0}></canvas>
+				<canvas id="canvas1" className={"thecanvas"} width="800" height="480" ref={this.state.canvas1}></canvas>
+				<canvas id="canvas2" className={"thecanvas"} width="800" height="480" ref={this.state.canvas2}></canvas>
+				<canvas id="canvas3" className={"thecanvas"} width="800" height="480" ref={this.state.canvas3}></canvas>
 				<nav class="link-list" ref={this.state.linklist}>
 					<ul>
 						<li><a href="" data-order="0" data-imagesrc="http://localhost/api-turismo-master/api-turismo-master/public/recursos/carousel/FONDO%201-min.png"></a></li>
