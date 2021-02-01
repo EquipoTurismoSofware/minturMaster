@@ -70,7 +70,6 @@ class Slider extends Component {
 	drawImages() {
 		var imgPrev = this.state.imagesList[this.state.prevImage];
 		var imgNext = this.state.imagesList[this.state.currentImage];
-		console.log("imgW ", this.state.imgW, " imgH ", this.state.imgH);
 		// This is Next
 		this.state.ctx0.globalAlpha = 1;
 		this.state.ctx0.drawImage(imgNext, 0, 0, this.state.imgW, this.state.imgH);
@@ -81,6 +80,7 @@ class Slider extends Component {
 
 		var obj, ctx, xPrev, xNext;
 		for (var i = 0; i < this.state.partList.length; i++) {
+			
 			obj = this.state.partList[i];
 			ctx = obj.context;
 			xPrev = -obj.xpos * (1 - this.state.partMove.val);
@@ -90,6 +90,7 @@ class Slider extends Component {
 			ctx.beginPath();
 			ctx.arc(this.state.VW / 2, this.state.VH / 2, obj.radius, 0, 2 * Math.PI, false);
 			ctx.fill();
+			
 
 			// This is Next
 			ctx.globalAlpha = 1;
@@ -100,7 +101,6 @@ class Slider extends Component {
 			ctx.globalAlpha = this.state.partMove.val;
 			ctx.globalCompositeOperation = 'source-atop';
 			ctx.drawImage(imgPrev, xPrev, 0, this.state.imgW, this.state.imgH);
-
 
 			ctx.globalCompositeOperation = 'source-over';
 			ctx.globalAlpha = 1;
@@ -114,7 +114,6 @@ class Slider extends Component {
 	}
 
 	changeImage () {
-		console.log("CHANGEIMAGE")
 		var self = this;
 		// Do not interupt previous movement
 		if (this.state.isAnimating) {
@@ -182,7 +181,6 @@ class Slider extends Component {
 	}
 
 	selectLink () {
-		console.log("SELECTLINK")
 		let {IS_ACTIVE} = this.state
 		if (this.state.currentLink !== "") {
 			this.state.currentLink.classList.remove(IS_ACTIVE);
@@ -219,16 +217,13 @@ class Slider extends Component {
 	resizeBg() {
 		var image1 = this.state.imagesList[0];
 		var iar = image1.width / image1.height;
-		console.log("AR DE NUEVO: ", this.state.AR, iar)
 		if (iar < this.state.AR) {
-			console.log("FIRST")
 			this.setState({
 				IAR: iar,
 				imgW: this.state.VW,
 				imgH: this.state.VW / iar
 			});
 		} else {
-			console.log("LAST", this.state.VH, iar)
 			this.setState({
 				IAR: iar,
 				imgW: this.state.VH * iar,
@@ -238,7 +233,6 @@ class Slider extends Component {
 	}
 
 	slideshowChange (){
-		console.log("SLIDESHOWCHANGE")
 		this.state.prevImage = this.state.currentImage;
 		(this.state.currentImage + 1 >= this.state.imagesList.length) ? this.state.currentImage = 0: this.state.currentImage++;
 		this.changeImage();
@@ -246,7 +240,6 @@ class Slider extends Component {
 	}
 
 	addEL(){
-		console.log("ADDEL")
 		let self = this;
 		var debounceResize = this.debounce(function() {
 			self.calculateScreen();
@@ -262,13 +255,10 @@ class Slider extends Component {
 
 	preloadImages () {
 		this.state.imagesList.forEach((img) => {
-			console.log("QUESESTO? ", img.complete)
 			if (img.complete) {
-				console.log("Entre aca")
 				this.handleImageComplete();
 				
 			} else {
-				console.log("O aca?")
 				img.onload = this.handleImageComplete;
 			}
 		});
@@ -280,20 +270,16 @@ class Slider extends Component {
 		this.setState({
 			imagesloaded: y
 		}, () => {
-			console.log(this.state.imagesloaded + " - " + this.state.imagesList.length)
 			if (this.state.imagesloaded === this.state.imagesList.length) {
 				this.state.loadTxt.current.classList.add('is-hidden');
 				this.addEL();
 				this.init();
-			}else{
-				console.log("Falle")
 			}
 		})
 		
 	}
 
 	init (){	
-		console.log("INIT")
 		const calculatePromise = new Promise((resolve) => {
 			resolve(this.calculateScreen());
 		  });
@@ -366,13 +352,12 @@ class Slider extends Component {
 			ctx2: this.state.canvas2.current.getContext('2d'),
 			ctx3: this.state.canvas3.current.getContext('2d')
 		}, () => {
-			x[0].context = this.state.ctx0;
-			x[1].context = this.state.ctx1;
-			x[2].context = this.state.ctx2;
+			x[0].context = this.state.ctx1;
+			x[1].context = this.state.ctx2;
+			x[2].context = this.state.ctx3;
 			this.setState({
 				partList: x
 			}, () => {
-				console.log("PRIMERO LO PRIMERO: ", this.state.partList)
 				this.preInit();
 				
 			})
@@ -397,8 +382,8 @@ class Slider extends Component {
 					</ul>
 				</nav>
 				<nav class="btns" ref={this.state.btns}>
-					<button class="show-prev"><span>PREV</span></button>
-					<button class="show-next" ref={this.state.nextBtn}><span>NEXT</span></button>
+					<button class="show-prev"><span><i className="chevron-left"></i></span></button>
+					<button class="show-next" ref={this.state.nextBtn}><span><i className="chevron-right"></i></span></button>
 				</nav>
 				<p class="loading-txt" ref={this.state.loadTxt}>Loading images...</p>
 	

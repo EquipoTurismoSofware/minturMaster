@@ -2062,7 +2062,7 @@ nav.link-list a {
   transition: background-color 0.5s ease;
 }
 nav.link-list a.is-active {
-  background-color: #C8A36C;
+  background-color: #cc0e5a;
 }
 
 nav.btns {
@@ -2096,7 +2096,7 @@ nav.btns button:before {
   height: 44px;
   top: 0;
   left: 0;
-  border: 2px solid #C8A36C;
+  border: 2px solid #cc0e5a;
   border-radius: 50%;
   opacity: 0;
   transition: all 0.5s ease;
@@ -2106,7 +2106,7 @@ nav.btns button span {
   transition: opacity 0.2s ease;
 }
 nav.btns button:hover {
-  background-color: #C8A36C;
+  background-color: #cc0e5a;
   width: 64px;
   height: 64px;
   transform: translateY(-10px);

@@ -1,5 +1,6 @@
 //ESTILO SLIDER
-$maincolor: #C8A36C;
+
+$maincolor:rgb(204, 14, 90) ;
 
 .thecanvas{
     position: absolute;
@@ -28,6 +29,7 @@ nav.link-list{
         transition: background-color 0.5s ease;
 
         &.is-active{
+			
         	 background-color: $maincolor;
         }
     }
@@ -41,18 +43,15 @@ nav.btns{
 	button{
 		position: absolute;
 	    display:inline-block;
-
 		width: 44px;
 		height: 44px;
-
 		text-align: center;
 		line-height: 44px;
 		font-weight: bold;
 		font-size: 10px;
 	    font-family: serif;
-
 	    border-radius:50%;
-	    background-color: #fff;
+		background-color: #fff;
 	    cursor: pointer;
 	    border: 0;
 	    transition: all 0.5s ease;
@@ -60,9 +59,7 @@ nav.btns{
 	    &:focus{
 		    outline: 0;
 		}
-	   
-
-
+	
 	    &:before{
 				content: '';
 				position: absolute;
@@ -78,11 +75,11 @@ nav.btns{
 
 		span{
 	    	opacity: 0;
-	    	transition: opacity 0.2s ease;
-	    }
-
+			transition: opacity 0.2s ease;
+		}
+		
 		&:hover {
-			background-color: $maincolor;
+			background-color: $maincolor;		
 			width: 64px;
 			height: 64px;
 			transform: translateY(-10px);
@@ -93,10 +90,11 @@ nav.btns{
 				height: 104px;
 				top: -22px;
 				left: -22px;
+				
 			}
 
 			 span{
-		    	opacity: 1;
+				opacity: 1;
 		    }
 		}
 
