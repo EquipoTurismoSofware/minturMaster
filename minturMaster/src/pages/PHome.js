@@ -10,6 +10,7 @@ import PantallaModal from "../components/subcomponentes/Modal";
 import Newsletter from "../components/subcomponentes/Newsletter";
 import Loading from "../utils/Loading";
 import TabSlider from "../components/subcomponentes/TabSlider";
+import CardImperdibles from "../components/CardImperdibles";
 
 class Home extends Component {
   constructor(props) {
@@ -293,6 +294,7 @@ class Home extends Component {
              
             </div>
             <TabSlider />
+            <CardImperdibles />
             {/*   <Recorridos />
             <ReactWOW animation="fadeIn" data-wow-delay="10s">
               <EventoForm />

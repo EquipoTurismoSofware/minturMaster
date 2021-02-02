@@ -1,5 +1,4 @@
 //sass --watch src/scss/App.scss:src/App.css
-
 @import "include/config";
 @import "include/colors";
 @import "include/mixins";
@@ -9,6 +8,7 @@
 //Class Viewer
 @import "include/viewer";
 
+@import "include/cardimperdibles";
 //Componente Menu.js
 @import "include/menu";
 
@@ -49,6 +49,8 @@
 @import "include/alojamiento";
 //Componente PContacto
 @import "include/contacto";
+
+@import "include/tabslider";
 
 @import "include/home";
 
