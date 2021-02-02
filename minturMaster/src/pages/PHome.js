@@ -142,7 +142,7 @@ class Home extends Component {
           </div>
         ) : (
           <React.Fragment>
-            <div className="menu-y-slider">
+            <div className="menu-y-slider ">
               <Slider></Slider>
               {/* <div
                 id="carouselExampleIndicators"
@@ -291,7 +291,6 @@ class Home extends Component {
                 </div>
               </div>
             </div>*/}
-             
             </div>
             <TabSlider />
             <CardImperdibles />

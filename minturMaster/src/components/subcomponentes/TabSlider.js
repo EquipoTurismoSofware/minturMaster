@@ -16,6 +16,12 @@ export default class PantallaModal extends Component {
       visible: true,
     });
   }
+ 
+  closeModal() {
+    this.setState({
+      visible: false,
+    });
+  }
 
   render() {
     return (
