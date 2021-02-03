@@ -33,6 +33,8 @@ class Menu extends Component {
       verLista: false,
       MsgVisible: false,
       MsgBody: "",
+      clase: "Menu",
+      showAt: 45
     };
 
     this.link = React.createRef();
@@ -375,11 +377,27 @@ class Menu extends Component {
               {
                 localidades: {
                   data: setX,
-                  selected: setX[0].id,
+                  selected: setX[0].id
                 },
               },
               () => {
                 this.handleFiltroClick(this.state.localidades.selected);
+                window.onscroll = () => {
+                  var menu = document.getElementById('nav');
+                  if(document.body.scrollTop > this.state.showAt || document.documentElement.scrollTop > this.state.showAt) {
+                      if(menu) {
+                        this.setState({
+                          clase: "sticky"
+                        })
+                      }
+                  } else {
+                      if(menu) {
+                        this.setState({
+                          clase: "Menu"
+                        })
+                      }
+                  }
+              };
               }
             );
           } else {
@@ -397,7 +415,9 @@ class Menu extends Component {
           });
         }
       );
+     
   }
+
   render() {
     var cont = 0;
 
@@ -432,7 +452,8 @@ class Menu extends Component {
     });
     return (
       <React.Fragment>
-        <nav className="navbar navbar-expand-lg  Menu" id="nav">
+        
+        <nav className={`navbar navbar-expand-lg ${this.state.clase}`} id="nav">
           <Link
             to="/"
             data-toggle="tooltip"
@@ -597,7 +618,8 @@ class Menu extends Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
             onClick={() => this.closeMenu()}
-            className="menu-visita-container animated fadeIn"
+            className={`menu-visita-container animated fadeIn`}
+            style={this.state.clase === "sticky" ? {top: "45px", position: "fixed"}: {top: "94px", position: "absolute"}} 
             onMouseLeave={(e) => this.closeMenu(e)}
           >
             <div className="menu-visita">

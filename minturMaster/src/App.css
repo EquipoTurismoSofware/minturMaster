@@ -618,10 +618,10 @@ body {
 .redes:hover {
   font-size: 1.4rem;
   /*
-            color: $color-uno;
-            font-weight: 600;
-            text-shadow: 1px 1px 1px #FFFFFF;
-            */
+  color: $color-uno;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px #FFFFFF;
+  */
 }
 
 .Menu {
@@ -662,6 +662,45 @@ body {
   white-space: nowrap;
 }
 
+.sticky {
+  background: #722789;
+  background: -moz-linear-gradient(left, #722789 0%, #ed0f68 100%);
+  background: -webkit-linear-gradient(left, #722789 0%, #ed0f68 100%);
+  background: linear-gradient(to right, #722789 0%, #ed0f68 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 30;
+  display: flex;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 5rem;
+  color: #fff;
+}
+.sticky .linkHome {
+  display: inline;
+}
+.sticky .logoGob2 {
+  display: none;
+}
+.sticky ul {
+  color: #fff;
+}
+.sticky li {
+  margin-top: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+.sticky span {
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
 .liLista:hover {
   text-decoration-line: underline;
   font-size: 18px;
@@ -685,6 +724,26 @@ body {
     display: inline;
   }
   .Menu .logoGob {
+    display: none;
+  }
+
+  .sticky {
+    background: #722789;
+    background: -moz-linear-gradient(left, #722789 0%, #ed0f68 100%);
+    background: -webkit-linear-gradient(left, #722789 0%, #ed0f68 100%);
+    background: linear-gradient(to right, #722789 0%, #ed0f68 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
+    position: fixed;
+    z-index: 30;
+    color: #fff;
+    width: 100%;
+    height: auto;
+    margin-top: 0px;
+  }
+  .sticky .linkHome {
+    display: inline;
+  }
+  .sticky .logoGob {
     display: none;
   }
 }
@@ -731,6 +790,48 @@ body {
     white-space: nowrap;
   }
 
+  .sticky {
+    background: #722789;
+    background: -moz-linear-gradient(left, #722789 0%, #ed0f68 100%);
+    background: -webkit-linear-gradient(left, #722789 0%, #ed0f68 100%);
+    background: linear-gradient(to right, #722789 0%, #ed0f68 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
+    position: fixed;
+    z-index: 30;
+    color: #fff;
+    width: 100%;
+    height: auto;
+    margin-top: 0px;
+  }
+  .sticky .linkHome {
+    display: none;
+  }
+  .sticky .logoGob2 {
+    display: inline;
+    margin-left: -60px;
+  }
+  .sticky .logoGob2 img {
+    height: 35px;
+    width: 200px;
+    opacity: 1 !important;
+  }
+  .sticky ul {
+    color: #fff;
+  }
+  .sticky li {
+    margin-top: 4px;
+    color: #fff;
+    cursor: pointer;
+  }
+  .sticky span {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
   .menu-visita-container {
     position: absolute;
     margin-top: 250px;
@@ -764,10 +865,10 @@ body {
 .link-menu:hover {
   font-size: 1.1rem;
   /*
-            color: $color-uno;
-            font-weight: 600;
-            text-shadow: 1px 1px 1px #FFFFFF;
-            */
+    color: $color-uno;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px #FFFFFF;
+    */
 }
 
 .containeres {
@@ -859,10 +960,10 @@ body {
 .menu-ul ul li .link-menu:hover {
   font-size: 1.1rem;
   /*
-            color: $color-uno;
-            font-weight: 600;
-            text-shadow: 1px 1px 1px #FFFFFF;
-            */
+    color: $color-uno;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px #FFFFFF;
+    */
 }
 
 .logo {
@@ -3680,18 +3781,18 @@ h3.bgc_4 {
 }
 @media only screen and (max-width: 990px) {
   /*
-      .Novedadesfull {
-          .nf-body {
-              .nf-novedad {
-                  flex-direction: column;
-                  .nf-novedad-left {
-                      position: fixed;
-                  }
+  .Novedadesfull {
+      .nf-body {
+          .nf-novedad {
+              flex-direction: column;
+              .nf-novedad-left {
+                  position: fixed;
               }
-  
           }
+
       }
-      */
+  }
+  */
   .novedad-full-item {
     grid-template-areas: "titulo" "imagen" "body" "pie";
     grid-template-columns: 1fr;
@@ -4104,18 +4205,18 @@ h3.bgc_4 {
 
 @media only screen and (max-width: 990px) {
   /*
-      .Novedadesfull {
-          .nf-body {
-              .nf-novedad {
-                  flex-direction: column;
-                  .nf-novedad-left {
-                      position: fixed;
-                  }
-              }
-  
-          }
-      }
-      */
+    .Novedadesfull {
+        .nf-body {
+            .nf-novedad {
+                flex-direction: column;
+                .nf-novedad-left {
+                    position: fixed;
+                }
+            }
+
+        }
+    }
+    */
   .atractivo-full-item .imagen img {
     height: 250px;
     width: 700px;
