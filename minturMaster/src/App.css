@@ -190,12 +190,10 @@ body {
 
 .cuerpoimperdible {
   width: 100%;
-  height: 100vh;
+  height: 120vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.787);
-  overflow: hidden;
 }
 
 .cardList__btn {
@@ -218,10 +216,11 @@ body {
 }
 .app__bg {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 70%;
+  height: 70%;
+  top: 5%;
   z-index: -5;
-  filter: blur(8px);
+  filter: blur(3px);
   pointer-events: none;
   user-select: none;
   overflow: hidden;
@@ -235,7 +234,7 @@ body {
   height: 100%;
   background: #000;
   z-index: 1;
-  opacity: 0.8;
+  opacity: 0;
 }
 .app__bg__image {
   position: absolute;
@@ -302,10 +301,10 @@ body {
 }
 
 .card {
-  --card-translateY-offset: 100vh;
+  --card-translateY-offset: 0vh;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 0px;
   transform: translate(-50%, -50%) translateX(var(--card-translateX-offset)) translateY(var(--card-translateY-offset)) rotateY(var(--card-rotation-offset)) scale(var(--card-scale-offset));
   display: inline-block;
   width: var(--card-width);
@@ -444,11 +443,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #000;
+  background: white;
   z-index: 200;
 }
 .loading__wrapper .loader--text {
-  color: #fff;
+  color: grey;
   font-family: "Montserrat";
   font-weight: 500;
   margin-bottom: 1.4rem;
@@ -3781,18 +3780,18 @@ h3.bgc_4 {
 }
 @media only screen and (max-width: 990px) {
   /*
-  .Novedadesfull {
-      .nf-body {
-          .nf-novedad {
-              flex-direction: column;
-              .nf-novedad-left {
-                  position: fixed;
+      .Novedadesfull {
+          .nf-body {
+              .nf-novedad {
+                  flex-direction: column;
+                  .nf-novedad-left {
+                      position: fixed;
+                  }
               }
+  
           }
-
       }
-  }
-  */
+      */
   .novedad-full-item {
     grid-template-areas: "titulo" "imagen" "body" "pie";
     grid-template-columns: 1fr;
@@ -4205,18 +4204,18 @@ h3.bgc_4 {
 
 @media only screen and (max-width: 990px) {
   /*
-    .Novedadesfull {
-        .nf-body {
-            .nf-novedad {
-                flex-direction: column;
-                .nf-novedad-left {
-                    position: fixed;
-                }
-            }
-
-        }
-    }
-    */
+      .Novedadesfull {
+          .nf-body {
+              .nf-novedad {
+                  flex-direction: column;
+                  .nf-novedad-left {
+                      position: fixed;
+                  }
+              }
+  
+          }
+      }
+      */
   .atractivo-full-item .imagen img {
     height: 250px;
     width: 700px;
