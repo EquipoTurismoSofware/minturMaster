@@ -547,7 +547,7 @@ class Menu extends Component {
               </li>
             </ul>
 
-            <ul>
+            {/*<ul>
               <div className="logo mt-3">
                 <a
                   className="alink link-menu"
@@ -591,7 +591,7 @@ class Menu extends Component {
                   />
                 </Link>
               </div>
-            </ul>
+            </ul>*/}
             <span className="navbar-text mr-5">
               <div
                 className="logoGob animated bounceInDown delay-2s"

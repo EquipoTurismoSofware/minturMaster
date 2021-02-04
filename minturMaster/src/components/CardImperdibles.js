@@ -320,7 +320,7 @@ class CardImperdibles extends Component {
                 onClick={() => this.swapCards("left")}
               >
                 <div class="icon">
-                  <i class="fas fa-arrow-left" id="arrow-left"></i>
+                  <i class="fas fa-arrow-left" style={{color: "white"}}  id="arrow-left"></i>
                 </div>
               </button>
               <div class="cards__wrapper" ref={this.state.cardsContainerEl}>
@@ -346,10 +346,8 @@ class CardImperdibles extends Component {
                 ref={this.state.buttons.next}
                 onClick={() => this.swapCards("right")}
               >
-                <div class="icon">
-                  <svg>
-                    <i class="fas fa-arrow-right" id="arrow-right"></i>
-                  </svg>
+                <div class="icon">                
+                    <i class="fas fa-arrow-right" style={{color: "white"}} id="arrow-right"></i>          
                 </div>
               </button>
             </div>
