@@ -11,6 +11,7 @@ import Newsletter from "../components/subcomponentes/Newsletter";
 import Loading from "../utils/Loading";
 import TabSlider from "../components/subcomponentes/TabSlider";
 import CardImperdibles from "../components/CardImperdibles";
+import SocialWidget from "../components/SocialWidget";
 
 class Home extends Component {
   constructor(props) {
@@ -144,6 +145,8 @@ class Home extends Component {
           <React.Fragment>
             <div className="menu-y-slider ">
               <Slider></Slider>
+              <Newsletter />
+              <SocialWidget />
               {/* <div
                 id="carouselExampleIndicators"
                 className="carousel slide"

@@ -2,18 +2,21 @@
     width: 250px;
     z-index: 99;
     position: fixed; /* Fixed/sticky position */
-    bottom: 0px; /* Place the button at the bottom of the page */
-    right: 20px;
+    bottom: 15px; /* Place the button at the bottom of the page */
+    left: 10px;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 5px 20px ;
+    box-shadow:
+          0 16px 10px -8px rgba(black, 0.3),
+          0 4px 10px 0 rgba(black, 0.2);
 
     .newsHeader{
         padding-top: 5px;
     }
 
     .newsEmail{
-        border-radius: 5px;
+        border-radius: 15px;
         border: solid lightgray;
         width: 90%;
         height: 40px;        
@@ -39,7 +42,7 @@
     .newsFooterButton {
         width: 90%; 
         height: 40px; 
-        border-radius: 5px;
+        border-radius: 15px;
         border: none;
         background-color: rgba(114,39,137, 1);
         color: white;

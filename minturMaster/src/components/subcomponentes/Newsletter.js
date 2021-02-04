@@ -12,8 +12,6 @@ export default class Newsletter extends Component {
 
     this.state = {
       loading: true,
-      ancho: this.props.anchoImg,
-      alto: this.props.altoImg,
       visible: "none",
       email: "",
       newsletters: [],
