@@ -4,12 +4,9 @@
   --card-width: 200px;
   --card-height: 300px;
 
-  --card-transition-duration: 800ms;
+  --card-transition-duration: 300ms;
   --card-transition-easing: ease;
 }
-
-$card-transition-duration: 800ms;
-$card-transition-easing: ease;
 
 .cuerpoimperdible {
   width: 100%;
@@ -133,19 +130,21 @@ $card-transition-easing: ease;
 }
 
 .card {
-  --card-translateY-offset: 0vh;
-  position: absolute;
-  left: 50%;
-  top: 0px;
-  transform: translate(-50%, -50%) translateX(var(--card-translateX-offset))
-    translateY(var(--card-translateY-offset))
-    rotateY(var(--card-rotation-offset)) scale(var(--card-scale-offset));
-  display: inline-block;
-  width: var(--card-width);
   height: var(--card-height);
+  width: var(--card-width);
   transition: transform var(--card-transition-duration)
     var(--card-transition-easing);
+  --card-translateY-offset: 100vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateX(var(--card-translateX-offset))
+    translateY(var(--card-translateY-offset))
+    rotateY(var(--card-rotation-offset)) scale(var(--card-scale-offset))
+    translateZ(2rem);
+  display: inline-block;
   user-select: none;
+
   &::before {
     content: "";
     position: absolute;
@@ -175,8 +174,8 @@ $card-transition-easing: ease;
   }
 
   &.current--card {
-    --current-card-rotation-offset: 0;
-    --card-translateX-offset: 0;
+    --current-card-rotation-offset: 0px;
+    --card-translateX-offset: 0px;
     --card-rotation-offset: var(--current-card-rotation-offset);
     --card-scale-offset: 1.2;
     --opacity: 0.8;
