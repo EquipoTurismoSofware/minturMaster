@@ -134,7 +134,7 @@
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	transform: translate(-50%, -180%) translateX(var(--card-translateX-offset))
+	transform: translate(-50%, -250%) translateX(var(--card-translateX-offset))
 		translateY(var(--card-translateY-offset)) rotateY(var(--card-rotation-offset))
 		scale(var(--card-scale-offset));
 	display: inline-block;
