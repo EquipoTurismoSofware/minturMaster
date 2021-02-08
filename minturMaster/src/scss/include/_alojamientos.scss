@@ -24,6 +24,7 @@ $card-height: 300px;
     text-shadow: 1px 1px 1px #000;
 }
 
+//ESTE BLOQUE NO VA -->
 /*
 .alojamientos-container {
     padding-top: 1rem;
@@ -36,7 +37,6 @@ $card-height: 300px;
     justify-content: center;
     grid-gap: 20px;
 */
-    
     .alo-card {
         width: $card-width;
         height: $card-height;
@@ -131,6 +131,3 @@ $card-height: 300px;
             }
         }
     }
-/*
-}
-*/

@@ -9,8 +9,10 @@ export default class PantallaModal extends Component {
       alto: this.props.altoImg,
       maginLeft: this.props.maginLeft,
       visible: false,
+      bandera: 1
     };
   }
+
   componentDidMount() {
     this.setState({
       visible: true,
@@ -25,11 +27,28 @@ export default class PantallaModal extends Component {
 
   render() {
     return (
-      <div className="tabs">   
-        <input type="radio" id="tab1" name="tab-control" checked />
-        <input type="radio" id="tab2" name="tab-control" />
-        <input type="radio" id="tab3" name="tab-control" />  
-        <input type="radio" id="tab4" name="tab-control" />
+      <React.Fragment>
+        <div className="tabs">   
+        <input type="radio" id="tab1" name="tab-control" checked={this.state.bandera == 1 ? true : false} onClick={() => {
+          this.setState({
+            bandera: 1
+          })
+        }} />
+        <input type="radio" id="tab2" name="tab-control"  onClick={() => {
+          this.setState({
+            bandera: 2
+          })
+        }} />
+        <input type="radio" id="tab3" name="tab-control"  onClick={() => {
+          this.setState({
+            bandera: 2
+          })
+        }}/>  
+        <input type="radio" id="tab4" name="tab-control" onClick={() => {
+          this.setState({
+            bandera: 2
+          })
+        }} />
         <ul className="listatabslider">
           <li title="Features">
             <label for="tab1" role="button">
@@ -88,6 +107,8 @@ export default class PantallaModal extends Component {
           </section>
         </div>
       </div>
+      </React.Fragment>
+      
 
     );
   }
