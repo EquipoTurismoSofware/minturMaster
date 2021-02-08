@@ -320,9 +320,30 @@ class CardImperdibles extends Component {
                 onClick={() => this.swapCards("left")}
               >
                 <div class="icon">
-                  <i class="fas fa-arrow-left" style={{color: "white"}}  id="arrow-left"></i>
+                  <i
+                    class="fas fa-arrow-left"
+                    style={{ color: "white" }}
+                    id="arrow-left"
+                  ></i>
                 </div>
               </button>
+
+              <button
+                class="cardList__btn btn btn--right"
+                ref={this.state.buttons.next}
+                onClick={() => this.swapCards("right")}
+              >
+                <div class="icon">
+                  <i
+                    class="fas fa-arrow-right"
+                    style={{ color: "white" }}
+                    id="arrow-right"
+                  ></i>
+                </div>
+              </button>
+            </div>
+
+            <div class="infoList">
               <div class="cards__wrapper" ref={this.state.cardsContainerEl}>
                 <div class="card current--card">
                   <div class="card__image">
@@ -340,19 +361,6 @@ class CardImperdibles extends Component {
                   </div>
                 </div>
               </div>
-
-              <button
-                class="cardList__btn btn btn--right"
-                ref={this.state.buttons.next}
-                onClick={() => this.swapCards("right")}
-              >
-                <div class="icon">                
-                    <i class="fas fa-arrow-right" style={{color: "white"}} id="arrow-right"></i>          
-                </div>
-              </button>
-            </div>
-
-            <div class="infoList">
               <div class="info__wrapper" ref={this.state.cardInfosContainerEl}>
                 <div class="info current--info">
                   <h1 class="text name">Highlands</h1>
