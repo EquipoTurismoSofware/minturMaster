@@ -2,21 +2,14 @@ import React, { Component } from "react";
 import { Consumer } from "../context";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Swiper from "swiper";
+import SwiperCore, {Pagination} from 'swiper';
+import { Swiper, SwiperSlide} from 'swiper/react';
 
-const swiper = new Swiper(".blog-slider", {
-  spaceBetween: 30,
-  effect: "fade",
-  loop: true,
-  wheel: {
-    invert: false,
-  },
-  // autoHeight: true,
-  pagination: {
-    el: ".blog-slider__pagination",
-    clickable: true,
-  },
-});
+import 'swiper/swiper.scss';
+import 'swiper/components/pagination/pagination.scss';
+
+// install Swiper modules
+SwiperCore.use([Pagination]);
 class Novedades extends Component {
   constructor(props) {
     super(props);
@@ -60,23 +53,7 @@ class Novedades extends Component {
   }
 
   componentDidMount() {
-    //A los datos del Fetch hay que agregar la propiedad display: "none"
-
-    const swiper = new Swiper(".blog-slider", {
-      spaceBetween: 30,
-      effect: "fade",
-      direction: "vertical",
-      loop: true,
-      mousewheel: {
-        invert: false,
-      },
-       autoHeight: true,
-      pagination: {
-        el: ".blog-slider__pagination",
-        clickable: true,
-      },
-    });
-
+    //A los datos del Fetch hay que agregar la propiedad display: "none
     var token = this.context.token;
     var self = this;
     axios({
@@ -88,10 +65,7 @@ class Novedades extends Component {
       responseType: "json",
     })
       .then((response) => {
-        let data = response.data.data.registros.map((novedad) => {
-          novedad.display = "none";
-          return novedad;
-        });
+        let data = response.data.data.registros
         self.setState(
           {
             data: data,
@@ -125,17 +99,13 @@ class Novedades extends Component {
     const items = this.state.data.map((item) => {
       let descripcion = item.descripcion.substr(0, 150) + "...";
       let fecha = item.fecha.split("-");
-      //<div key={`ci-${item.id}`} className="animated fadeInRight delay-2s" style={{display: item.display, width: "100%"}}></div>
       return (
-        <div
+        <SwiperSlide
           key={`ci-${item.id}`}
-          className=""
-          style={{ display: item.display, width: "100%" }}
+          className="blog-slider__item"
         >
-          <div className="blog-slider__item swiper-slide">
             <div className="blog-slider__img">
               <img
-               
                 style={{ height: "300px" }}
                 src={`${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${item.foto_uno}`}
                 alt="Foto"
@@ -163,20 +133,10 @@ class Novedades extends Component {
                       <a href={`/novedad/${item.id}`} class="blog-slider__button">
                           Leer más
                       </a>
-             {/*}   <div className="d-flex justify-content-end">
-                  <i className="fas fa-book-open" />
-                </div> */}
-
-                
-
               </Link>
             </div>
           </div>
-          </div>
-          {
-            // Nuevos-Items
-          }
-        </div>
+        </SwiperSlide>
       );
     });
 
@@ -186,29 +146,27 @@ class Novedades extends Component {
           <div className="col">
             <div className="Novedades">
               <Link to="/novedades" className="novedades-leyenda">
-              {//  <div className="background-bar" />
-              }
                 <div className="texto">
                   <ul>
-                    <li>NoVeDaDes                    
-                     {// <i className="fas fa-arrow-right" />
-                  }   
+                    <li>NOVEDADES
                     </li>
                   </ul>
                 </div>
               </Link>
+              <Swiper
+                 spaceBetween={30}
+                 effect={"fade"}
+                 direction={"vertical"}
+                 loop={true}
+                 pagination={{el: '.blog-slider__pagination',
+                 clickable: true,
+                 dynamicBullets: true}}
+                 className="blog-slider"
+              >
+                  {items}
+              <div className="blog-slider__pagination"></div>
+              </Swiper>
               
-              <div className="blog-slider">
-                <div class="blog-slider__wrp swiper-wrapper">
-                  <div class="blog-slider__item swiper-slide">{items}</div>
-                </div>
-                <div className="blog-slider__pagination">
-                  <div className="swiper-pagination-bullet-active"></div>
-                  <div className="swiper-pagination-bullet"></div>
-                  <div className="swiper-pagination-bullet"></div>
-                </div>
-        
-              </div>
             </div>
           </div>
         </div>
