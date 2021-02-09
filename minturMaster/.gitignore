@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/disenio
+/src/App.css
 /asdad
 
 # testing
