@@ -16,9 +16,19 @@
   align-items: center;
 }
 
-.cardList__btn { 
+.tituloImperdibles {
+  color: #722789;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 800;
+  margin-top: 80px;
+}
+
+.cardList__btn {
   border: none;
-  background: none; 
+  background: none;
   cursor: pointer;
   &:focus {
     outline: none;

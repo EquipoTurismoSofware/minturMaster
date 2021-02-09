@@ -14,11 +14,18 @@ class Descarga extends Component {
     return (
       <ReactWOW animation="fadeIn">
         <div className="Descarga">
-          <img
-            src={`https://i.ibb.co/ft02QmL/SAN-LUIS-TURISMO-FULL-COLOR-TRANSP.png`}
-            alt="Logo"
-          />
-          
+          <div className="contenedorAnimacion">
+            <div className="container container_1">
+              <div className="piece"></div>
+              <div className="piece"></div>
+              <div className="piece"></div>
+              <div className="piece"></div>
+              <div className="text2"></div>
+            </div>
+            <div className="container_2 map-marker"></div>
+
+          </div>
+
           <Link to="descargar-mapas" style={{ textDecoration: "none" }}>
             <div className="descarga-leyenda">
               <div className="descarga-titulos">

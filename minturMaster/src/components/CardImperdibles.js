@@ -312,6 +312,7 @@ class CardImperdibles extends Component {
     return (
       <React.Fragment>
         <div class="cuerpoimperdible">
+          <p className="tituloImperdibles">Recomendaciones del mes</p>
           <div class="app" ref={this.state.app}>
             <div class="cardList">
               <button
@@ -394,14 +395,12 @@ class CardImperdibles extends Component {
               </div>
             </div>
           </div>
-
           <div class="loading__wrapper">
             <div class="loader--text">Cargando...</div>
             <div class="loader">
               <span></span>
             </div>
           </div>
-
           <svg class="icons" style={{ display: "none" }}>
             <symbol
               id="arrow-left"
