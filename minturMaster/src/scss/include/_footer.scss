@@ -12,13 +12,11 @@
   display: flex;
   background-image: linear-gradient(-20deg, #ff2846 0%, #6944ff 100%);
 
-  display: flex;
-  background-image: linear-gradient(-20deg, #ff2846 0%, #6944ff 100%);
-
   @media screen and (max-width: 768px) {
     height: auto;
     min-height: 100vh;
-    padding-top: 100px;
+    align-items: none;
+    align-content: none;
   }
 
 }
@@ -39,6 +37,26 @@
   justify-items: center;
   align-items: center;
 
+  @media screen and (max-width: 1083px){
+    grid-template-areas: "profile-card__ctn profile-card__institucional";
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 768px){
+      width: 100%;
+      min-height: 460px;
+      margin: auto;
+      box-shadow: 0px 8px 60px -10px rgba(13,28,39,0.6);
+      background: #fff;
+      border-radius: 12px;
+      max-width: 700px;
+      position: relative;
+      display: inline;
+      grid-template-areas: none;
+      grid-template-columns: none;
+      grid-template-rows: none;
+  }
+
   &__img {
     width: 150px;
     height: 150px;
@@ -50,6 +68,12 @@
     z-index: 4;
     box-shadow: 0px 5px 50px 0px rgb(108, 68, 252), 0px 0px 0px 7px rgba(107, 74, 255, 0.5);
 
+
+    @media screen and (max-width: 768px) {
+      margin: 0 auto 0 auto;
+      position: relative;
+    }
+    
     @media screen and (max-width: 576px) {
       width: 120px;
       height: 120px;
@@ -71,6 +95,14 @@
     text-align: center;
     align-content: center;
     transition: all .3s;
+
+    @media screen and (max-width: 768px) {
+      grid-area: none;
+      margin-top: -35px;
+      margin-left: 0;
+      padding: 0 20px;
+      padding-bottom: 40px;
+    }
   }
 
   &__name {
@@ -114,6 +146,20 @@
     display: flex;
     align-items: center;
     position: relative;
+    
+    @media screen and (max-width: 1083px){
+      display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      display: flex;
+      grid-area: none;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
     &__item {
       display: flex;
@@ -132,6 +178,9 @@
         width: 50px;
         height: 50px;
         margin: 10px;
+        display: inline-flex;
+        box-shadow: 0px 7px 30px rgba(43,98,169,0.5);
+        flex-shrink: 0;
       }
 
       @media screen and (min-width: 768px){
@@ -174,6 +223,10 @@
 
   &__institucional {
     grid-area: profile-card__institucional;
+     @media screen and (max-width: 768px) {
+        grid-area: none;
+        margin: 0px 10px 0px 10px
+     }
   }
 }
 

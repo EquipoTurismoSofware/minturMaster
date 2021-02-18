@@ -364,20 +364,20 @@ class CardImperdibles extends Component {
               </div>
               <div class="info__wrapper" ref={this.state.cardInfosContainerEl}>
                 <div class="info current--info">
-                  <h1 class="text name">Highlands</h1>
-                  <h4 class="text location">Scotland</h4>
+                  <h1 class="text name">Villa de Merlo</h1>
+                  <h4 class="text location">San Luis</h4>
                   <p class="text description">The mountains are calling</p>
                 </div>
 
                 <div class="info next--info">
-                  <h1 class="text name">Machu Pichu</h1>
-                  <h4 class="text location">Peru</h4>
+                  <h1 class="text name">Potrero de los Funes</h1>
+                  <h4 class="text location">San Luis</h4>
                   <p class="text description">Adventure is never far away</p>
                 </div>
 
                 <div class="info previous--info">
-                  <h1 class="text name">Chamonix</h1>
-                  <h4 class="text location">France</h4>
+                  <h1 class="text name">El Trapiche</h1>
+                  <h4 class="text location">San Luis</h4>
                   <p class="text description">Let your dreams come true</p>
                 </div>
               </div>

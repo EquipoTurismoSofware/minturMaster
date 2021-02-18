@@ -55,6 +55,7 @@
     width: 300px;
   }
   .descarga-leyenda {
+    padding-left: 6%;
     display: flex;
     align-items: center;
     color: #fff;
@@ -161,6 +162,10 @@
         margin: 30px 0px 0px 0px;
       }
     }
+    
+    .contenedorAnimacion {
+      margin: -5% 0 6% 0;
+    }
   }
 }
 
@@ -234,13 +239,18 @@
         }
       }
     }
+    .contenedorAnimacion {
+      transform: scale(1.5);
+      margin: -8% 0 6% 0;
+    }
   }
 }
 
-/*EFECTO GOOGLE MAPS*/
+/*-------------------------------EFECTO GOOGLE MAPS-------------------------------------*/
 
 .contenedorAnimacion {
-  transform: scale(2);
+  transform: scale(1.9);
+  margin-left: 4%;
 }
 
 .container_1 {

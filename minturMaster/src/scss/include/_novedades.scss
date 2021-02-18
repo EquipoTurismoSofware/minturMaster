@@ -147,8 +147,8 @@ font-family: 'Fira Sans', sans-serif;
   
   @media screen and (max-width: 768px) {
     min-height: 750px auto;
-    height: auto;
-    margin: 180px auto;
+    height: 750px;
+    margin: 60px 0 20px 0;
   }
   
   @media screen and (max-height: 500px) and (min-width: 992px) {
@@ -162,6 +162,7 @@ font-family: 'Fira Sans', sans-serif;
     
     @media screen and (max-width: 768px) {
       flex-direction: column;
+      padding: 200px 0 0 0;
     }
     
     &.swiper-slide-active {
@@ -225,11 +226,13 @@ font-family: 'Fira Sans', sans-serif;
     }
        
     @media screen and (max-width: 992px) {
-      // width: 45%;
+       width: 45%;
+       height: 62%;
     }
     @media screen and (max-width: 768px) {
     transform: translateY(-50%);
-      width: 90%;
+      width: 55%;
+      height: 54%;
     }
     @media screen and (max-width: 576px) {
       width: 95%;
@@ -243,7 +246,7 @@ font-family: 'Fira Sans', sans-serif;
     // width: 60%;
     padding-right: 25px;
     @media screen and (max-width: 992px) {
-      // width: 55%;
+       width: 100%;
     }
     @media screen and (max-width: 768px) {
           margin-top: -80px;
@@ -318,7 +321,7 @@ font-family: 'Fira Sans', sans-serif;
     bottom: auto!important;
     transform: translateY(-50%);
 
-    @media screen and (max-width: 768px) {
+    /*@media screen and (max-width: 768px) {
       transform: translateX(-50%);
       left: 50%!important;
       top: 205px;
@@ -326,13 +329,13 @@ font-family: 'Fira Sans', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-    }
+    }*/
 
     &.swiper-pagination-bullets .swiper-pagination-bullet {
       margin: 8px 0;
-      @media screen and (max-width: 768px) {
+      /*@media screen and (max-width: 768px) {
         margin: 0 5px;
-      }
+      }*/
     }
 
     .swiper-pagination-bullet {
@@ -350,10 +353,10 @@ font-family: 'Fira Sans', sans-serif;
         height: 30px;
         box-shadow: 0px 0px 20px rgba(252, 56, 56, 0.3);
         
-        @media screen and (max-width: 768px) {
+        /*@media screen and (max-width: 768px) {
           height: 11px;
           width: 30px;
-        }
+        }*/
       }
     }    
   } 

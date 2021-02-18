@@ -23,10 +23,9 @@ class Descarga extends Component {
               <div className="text2"></div>
             </div>
             <div className="container_2 map-marker"></div>
-
           </div>
 
-          <Link to="descargar-mapas" style={{ textDecoration: "none" }}>
+          <Link to="descargar-mapas" style={{ textDecoration: "none" }} className="descarga-container-main">
             <div className="descarga-leyenda">
               <div className="descarga-titulos">
                 <span className="dt-1"> ¡Hacé click acá!</span>

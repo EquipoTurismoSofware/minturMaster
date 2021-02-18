@@ -113,7 +113,7 @@ class Novedades extends Component {
             </div>
 
             <div class="blog-slider__content">
-            <div className="col-sm-9">
+            <div className="col-sm-11">
               <Link
                 to={`/novedad/${item.id}`}
                 className="link"
@@ -130,9 +130,9 @@ class Novedades extends Component {
                       <div class="blog-slider__text">
                         {descripcion}
                       </div>
-                      <a href={`/novedad/${item.id}`} class="blog-slider__button">
+                      <div class="blog-slider__button">
                           Leer más
-                      </a>
+                      </div>
               </Link>
             </div>
           </div>
