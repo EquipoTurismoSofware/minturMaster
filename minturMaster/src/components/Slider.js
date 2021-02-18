@@ -69,7 +69,6 @@ class Slider extends Component {
     this.handleImageComplete = this.handleImageComplete.bind(this);
     this.init = this.init.bind(this);
     this.preInit = this.preInit.bind(this);
-    this.debounce = this.debounce.bind(this);
     this.show = this.show.bind(this);
   }
   //SIMILAR AL COMPONENT DID MOUNT
@@ -266,13 +265,23 @@ class Slider extends Component {
 
   addEL() {
     let self = this;
-    var debounceResize = this.debounce(function() {
-      self.calculateScreen();
-      self.resizeBg();
-      self.changeImage();
-    }, 200);
-
-    window.addEventListener("resize", debounceResize);
+    
+    window.addEventListener("resize", () => {
+      if(this.state.canvas0.current != null){
+        const calculateScreenPromise = new Promise((resolve) => {
+          resolve(self.calculateScreen());
+        })
+        const resizeBgPromise = new Promise((resolve) => {
+          resolve(self.resizeBg());
+        });
+        
+        calculateScreenPromise.then((response1) => {
+          resizeBgPromise.then((response2) => {
+            self.changeImage();        
+          });
+        });
+      }
+    });
     this.state.btns.current.addEventListener("click", this.onBtnsClick);
     this.state.linklist.current.addEventListener("click", this.onListClick);
   }
@@ -350,22 +359,6 @@ class Slider extends Component {
     calculateScreenPromise.then((response) => {
       this.preloadImages();
     });
-  }
-
-  debounce(func, wait, immediate) {
-    var timeout;
-    return function() {
-      var context = this,
-        args = arguments;
-      var later = function() {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
   }
 
   componentDidMount() {

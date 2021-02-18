@@ -145,8 +145,30 @@ class Home extends Component {
           <React.Fragment>
             <div className="menu-y-slider ">
               <Slider></Slider>
-              <Newsletter />
-              <SocialWidget />
+              <center>
+                <div className="pantallaGrande">
+                  <Newsletter />
+                  <PantallaModal
+                    anchoMargen="1050px"
+                    altoMargen="600px"
+                    anchoImg="1000px"
+                    altoImg="550px"
+                    picture="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/DOSEPmodal.jpg"
+                  />
+                  <SocialWidget />
+                </div>
+              </center>
+              <div className="pantallaChica">
+                <PantallaModal
+                  anchoMargen="280px"
+                  altoMargen="550px"
+                  anchoImg="250px"
+                  altoImg="500px"
+                  maginLeft="15px"
+                  picture="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/DOSEPmodalCEL.jpg"
+                />
+                </div>
+
               {/* <div
                 id="carouselExampleIndicators"
                 className="carousel slide"
