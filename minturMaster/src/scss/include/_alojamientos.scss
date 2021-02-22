@@ -2,8 +2,8 @@
     Componente Alojamientos.js
 */
 
-$card-width: 200px;
-$card-height: 300px;
+$card-width: 270px;
+$card-height: 370px;
 
 @mixin nombre {
     position: absolute;
@@ -131,3 +131,271 @@ $card-height: 300px;
             }
         }
     }
+
+
+.fa-spin-fast {
+    -webkit-animation: fa-spin-fast .2s infinite linear;
+    animation: fa-spin-fast .2s infinite linear;
+}
+
+@-webkit-keyframes fa-spin-fast {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes fa-spin-fast {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+@mixin opacity($opacity){
+    opacity: $opacity;
+    $opacity-ie: ($opacity * 100);
+    filter: #{"alpha(opacity=${opacity-ie})"};
+}
+
+@mixin mc-transtition($duration: .3s){
+    -webkit-transition: all $duration;
+    -moz-transition: all $duration;
+    -ms-transition: all $duration;
+    -o-transition: all $duration;
+    transition: all $duration;
+}
+
+.material-card {
+    position: relative;
+    height: $card-height;
+    width: $card-width;
+    margin-right: 5px;
+    h2 {
+        background-color: rgb(219, 14, 96);
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        padding: 10px 16px;
+        color: #fff;
+        font-size: 1.4em;
+        margin: 0;
+        line-height: 1.6em;
+        z-index: 10;
+        @include mc-transtition();
+        span {
+            display: block;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow:hidden;
+        }
+        strong {
+            display: block;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow:hidden;
+            i{
+                margin-right: 5px;
+            }
+        }
+        &:before,
+        &:after {
+            content: ' ';
+            position: absolute;
+            left: 0;
+            top: -16px;
+            width: 0;
+            border-left: 16px solid transparent;
+            border-bottom: 16px solid rgb(160, 11, 70);
+            @include mc-transtition();
+        }
+        &:after {
+            top: auto;
+            bottom: 0;
+            border-bottom: 16px solid transparent;
+        }
+    }
+    &.mc-active {
+        @media screen and (max-width: 767px) {
+            padding-bottom: 0;
+            height: auto;
+            
+        }
+        h2 {
+            height: 90px;
+            top: 0;
+            padding: 10px 16px 10px 90px;
+            &:before,
+            &:after {
+                content: ' ';
+                position: absolute;
+                left: 0;
+                top: 0px;
+                width: 0;
+                border-left: 16px solid transparent;
+                border-bottom: 16px solid transparent;
+                @include mc-transtition();
+            }
+            &:after {
+                top: 100%;
+                bottom: 0;
+                border-top: 16px solid rgb(160, 11, 70);
+            }
+        }
+        
+    }
+    .mc-content {
+        background-color: rgb(255, 182, 214);
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 16px;
+        left: 16px;
+        @include mc-transtition();
+    }
+    .mc-btn-action {
+        position: absolute;
+        right: 16px;
+        top: 15px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        border: 5px solid;
+        width: 54px;
+        height: 54px;
+        line-height: 44px;
+        text-align: center;
+        border-color: #fff;
+        background-color: rgb(219, 14, 96);
+        cursor: pointer;
+        z-index: 20;
+        @include mc-transtition();
+        i{
+            color:#fff
+        }
+    }
+    &.mc-active .mc-btn-action {
+        top: 62px;
+    }
+    .mc-description {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 20px;
+        left: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @include opacity(0);
+        @include mc-transtition(1.2s);
+    }
+    .mc-footer {
+        display: none;
+        height: 0;
+        overflow: hidden;
+        @include mc-transtition();
+        h4 {
+            position: absolute;
+            top: 200px;
+            left: 30px;
+            padding: 0;
+            margin: 0;
+            font-size: 16px;
+            font-weight: 700;
+            @include mc-transtition(1.4s);
+        }
+        
+    }
+    .img-container {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        
+        z-index: 3;
+        img{
+            top: 0;
+            left: 0;
+            width: $card-width;
+            height: $card-height;
+            object-fit: cover;
+        }
+    }
+    &.mc-active {
+        .img-container {
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            left: 0;
+            top: 12px;
+            width: 60px;
+            height: 60px;
+            z-index: 20;
+            img{
+                top: 0;
+                left: 0;
+                width: $card-width;
+                height: $card-height;
+                object-fit: cover;
+            }
+        }
+        .mc-content {
+            padding-top: 5.6em;
+            @media screen and (max-width: 767px) {
+                position: relative;
+                margin-right: 16px;
+            }
+        }
+        .mc-description {
+            display: inline;
+            top: 30px;
+            padding-top: 5.6em;
+            @include opacity(1);
+            @media screen and (max-width: 767px) {
+                position: relative;
+                top: auto;
+                right: auto;
+                left: auto;
+                padding: 50px 30px 70px 30px;
+                bottom: 0;
+            }
+            
+            li {
+                list-style-type: none;
+                text-align: left;
+                margin-top: 6px;   
+                a {
+                    text-decoration: none;
+                    color: #000
+                }
+                
+            }
+        }
+        .mc-footer {
+            display: inline;
+            overflow: visible;
+            position: absolute;
+            top: 100%;
+            left: 16px;
+            right: 0;
+            height: 82px;
+            padding-top: 15px;
+            padding-left: 25px;
+            a {
+                top: 0;
+            }
+            h4 {
+                top: -32px;
+            }
+        }
+    }
+}
+

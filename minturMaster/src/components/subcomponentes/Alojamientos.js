@@ -17,18 +17,22 @@ class Alojamientos extends Component {
             data: [],
             alojamientos: [],
             visibles: 4,
-            clase: "alojamiento"
+            clase: "alojamiento",
+            card: React.createRef(),
+            icon: React.createRef()
+            
         };
         this.setData = this.setData.bind(this);
         this.calculoVisibles = this.calculoVisibles.bind(this);
+        this.animationMaterialCard = this.animationMaterialCard.bind(this);
     }
 
     calculoVisibles() {
         var w = window.innerWidth;
         //console.log(w);
-        if(w > 1200) {
+        /*if(w > 1200) {
             this.setState({visibles: 4});
-        } else if(w <= 1200 && w >= 1024) {
+        } else*/ if(w > 1200) {
             this.setState({visibles: 3});
         } else if(w <= 1024 && w >= 768) {
             this.setState({visibles: 2});
@@ -83,6 +87,32 @@ class Alojamientos extends Component {
         }
     }
 
+
+    animationMaterialCard(id){
+        var card = document.getElementById(`alo-card-${id}`);
+        var icon = card.getElementsByTagName("i");
+        icon[4].className += " fa-spin-fast"
+        if (card.className.includes('mc-active')) {
+            card.className = card.className.replace('mc-active', '');
+            window.setTimeout(() =>{
+                icon[4].className = icon[4].className.replace('fa-arrow-left', '')
+                icon[4].className = icon[4].className.replace('fa-spin-fast', '');
+                icon[4].className += " fa-bars";
+
+            }, 200);
+        } else {
+            card.className += ' mc-active';
+
+            window.setTimeout(function() {
+                icon[4].className = icon[4].className.replace('fa-bars', '');
+                icon[4].className = icon[4].className.replace('fa-spin-fast', '');
+                icon[4].className += " fa-arrow-left";
+
+            }, 200);
+        }
+    }
+        
+
     componentDidMount() {
         this.setState({
             idLocalidad: this.props.idLocalidad,
@@ -112,6 +142,36 @@ class Alojamientos extends Component {
                 foto = alo.imagen
             }
             return(
+                <article key={`alo-card-${alo.id}`} id={`alo-card-${alo.id}`} className={`material-card`} ref={this.state.card}>
+                    <h2>
+                        <span>{alo.nombre}</span>
+                        <strong>
+                            <i className={`fas fa-hotel`}></i>
+                            {alo.tipo}
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src={`${process.env.REACT_APP_API}/imagenes/${foto}`} alt="Img" />
+                        </div>
+                        <div class="mc-description">
+                            <li><i class="fas fa-thumbtack"></i><span>  {alo.ciudad}</span></li>
+                            <li><i class="fas fa-hotel"></i><span>  {alo.tipo}</span></li>
+                            <li><i className="fas fa-user" /><a href={`tel:+549${alo.caracteristica}${alo.telefono}`}> +54 9 {alo.caracteristica} - {alo.telefono}</a></li>
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action" onClick={()=>{this.animationMaterialCard(alo.id)}}>
+                        <i className={`fa fa-bars`} ref={this.state.icon}></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                    </div>
+                </article>
+
+                /*
                 <div key={`alo-card-${alo.id}`} className="alo-card m-3">
                     <div className="img-box">
                         <div className="img-content">
@@ -133,7 +193,7 @@ class Alojamientos extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>*/
             );
         });
         return(
@@ -142,6 +202,16 @@ class Alojamientos extends Component {
                     /*loading ?
                     <div>Cargando...</div>
                     :*/
+                    <section class="container">
+                        <div class="row">
+                            <div class="col">
+                                <Viewer visibles={this.state.visibles} clase={this.state.clase}>
+                                    {alojamientos}
+                                </Viewer>
+                            </div>
+                        </div>
+                    </section>
+                    /*
                     <div className="container">
                         <div className="row">
                             <div className="col">
@@ -151,9 +221,8 @@ class Alojamientos extends Component {
                             </div>
                         </div>
                     </div>
+                    */
                 }
-                <style jsx="true">{`
-                `}</style>
             </React.Fragment>
         );
     }

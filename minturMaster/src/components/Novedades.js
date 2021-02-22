@@ -157,7 +157,7 @@ class Novedades extends Component {
                  spaceBetween={30}
                  effect={"fade"}
                  direction={"vertical"}
-                 loop={true}
+                 loop={false}
                  pagination={{el: '.blog-slider__pagination',
                  clickable: true,
                  dynamicBullets: true}}
