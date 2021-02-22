@@ -16,13 +16,18 @@
 }
 
 .tituloImperdibles {
-  color: #722789;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 2rem;
-  line-height: 2rem;
-  font-weight: 800;
-  margin-top: 80px;
+    margin: 20px 0 20px 0 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .imp-t-sub2 {
+      font-size: 2em;
+      padding: 2px 15px;
+      background-color: $color-uno;
+      color: #fff;
+      text-transform: uppercase;
+    }
 }
 
 .cardList__btn {

@@ -165,9 +165,7 @@ class Alojamientos extends Component {
                         <i className={`fa fa-bars`} ref={this.state.icon}></i>
                     </a>
                     <div class="mc-footer">
-                        <h4>
-                            Social
-                        </h4>
+                        <Link to={`/alojamiento/${alo.id}`}><i className="fas fa-angle-double-down"></i></Link>
                     </div>
                 </article>
 

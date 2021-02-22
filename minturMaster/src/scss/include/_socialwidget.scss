@@ -96,7 +96,7 @@ $theme-color: #00c7b1;
       left: 0;
       z-index: -1;
       border-radius: 50%;
-      animation: pulse 2s ease-in-out 5;  
+      animation: pulse 2s ease-in-out infinite;  
     }
     &::after {
       animation-delay: 0.5s;

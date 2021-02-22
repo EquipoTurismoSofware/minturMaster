@@ -23,6 +23,8 @@ class Gastronomicos extends Component {
               src: "",
               visible: false,
             },
+            card: React.createRef(),
+            icon: React.createRef(),
           
         //---- Propiedades de PGastronomia---
             isNotFound: true,
@@ -48,7 +50,7 @@ class Gastronomicos extends Component {
         this.setData = this.setData.bind(this);
         this.calculoVisibles = this.calculoVisibles.bind(this);
         this.getData = this.getData.bind(this);
-        
+        this.animationMaterialCard = this.animationMaterialCard.bind(this);
     }
 
 
@@ -62,6 +64,29 @@ class Gastronomicos extends Component {
     });
   }
 
+    animationMaterialCard(id){
+      var card = document.getElementById(`alo-card-${id}`);
+      var icon = card.getElementsByTagName("i");
+      icon[4].className += " fa-spin-fast"
+      if (card.className.includes('mc-active')) {
+          card.className = card.className.replace('mc-active', '');
+          window.setTimeout(() =>{
+              icon[4].className = icon[4].className.replace('fa-arrow-left', '')
+              icon[4].className = icon[4].className.replace('fa-spin-fast', '');
+              icon[4].className += " fa-bars";
+
+          }, 200);
+      } else {
+          card.className += ' mc-active';
+
+          window.setTimeout(function() {
+              icon[4].className = icon[4].className.replace('fa-bars', '');
+              icon[4].className = icon[4].className.replace('fa-spin-fast', '');
+              icon[4].className += " fa-arrow-left";
+
+          }, 200);
+      }
+  }
   closeImg() {
     this.setState({
       img: {
@@ -290,6 +315,33 @@ class Gastronomicos extends Component {
               foto = alo.imagen
           }
             return(
+              <article key={`alo-card-${alo.id}`} id={`alo-card-${alo.id}`} className={`material-card`} ref={this.state.card}>
+                    <h2>
+                        <span>{alo.nombre}</span>
+                        <strong>
+                            <i className={`fas fa-hotel`}></i>
+                            {alo.tipo}
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src={`${process.env.REACT_APP_API}/atractivos/${foto}`} alt="Img" />
+                        </div>
+                        <div class="mc-description">
+                            <li><i class="fas fa-thumbtack"></i><span>  {alo.ciudad}</span></li>
+                            <li><i class="fas fa-hotel"></i><span>  {alo.tipo}</span></li>
+                            <li><i className="fas fa-user" /><a href={`tel:+549${alo.caracteristica}${alo.telefono}`}> +54 9 {alo.caracteristica} - {alo.telefono}</a></li>
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action" onClick={()=>{this.animationMaterialCard(alo.id)}}>
+                        <i className={`fa fa-bars`} ref={this.state.icon}></i>
+                    </a>
+                    <div class="mc-footer">
+                      <Link to={`/gastronomia/${alo.id}`}><i className="fas fa-angle-double-down" /></Link>
+                    </div>
+                </article>
+              /*
                 <div key={`alo-card-${alo.id}`} className="alo-card m-3">
                     <div className="img-box">
                         <div className="img-content">
@@ -315,6 +367,7 @@ class Gastronomicos extends Component {
                         </div>
                     </div>
                 </div>
+                */
             );
         });
         return(

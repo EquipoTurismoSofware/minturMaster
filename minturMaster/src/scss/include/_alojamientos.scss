@@ -225,15 +225,10 @@ $card-height: 370px;
         }
     }
     &.mc-active {
-        @media screen and (max-width: 767px) {
-            padding-bottom: 0;
-            height: auto;
-            
-        }
         h2 {
-            height: 90px;
+            height: 94px;
             top: 0;
-            padding: 10px 16px 10px 90px;
+            padding: 4px 16px 10px 90px;
             &:before,
             &:after {
                 content: ' ';
@@ -284,7 +279,7 @@ $card-height: 370px;
         }
     }
     &.mc-active .mc-btn-action {
-        top: 62px;
+        top: 70px;
     }
     .mc-description {
         display: none;
@@ -349,24 +344,12 @@ $card-height: 370px;
         }
         .mc-content {
             padding-top: 5.6em;
-            @media screen and (max-width: 767px) {
-                position: relative;
-                margin-right: 16px;
-            }
         }
         .mc-description {
             display: inline;
             top: 30px;
             padding-top: 5.6em;
             @include opacity(1);
-            @media screen and (max-width: 767px) {
-                position: relative;
-                top: auto;
-                right: auto;
-                left: auto;
-                padding: 50px 30px 70px 30px;
-                bottom: 0;
-            }
             
             li {
                 list-style-type: none;
@@ -381,20 +364,19 @@ $card-height: 370px;
         }
         .mc-footer {
             display: inline;
-            overflow: visible;
             position: absolute;
-            top: 100%;
-            left: 16px;
-            right: 0;
+            transform: translateX(-50%);                    
+            font-size: 1.4rem;
+            cursor: pointer;
+            text-align: center;
+            top: 80%;
+            left: 55%;
             height: 82px;
-            padding-top: 15px;
-            padding-left: 25px;
-            a {
-                top: 0;
+            i {
+                color: #000
             }
-            h4 {
-                top: -32px;
-            }
+           
+            
         }
     }
 }

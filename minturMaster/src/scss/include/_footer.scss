@@ -10,7 +10,7 @@
   align-items: center;
   align-content: center;
   display: flex;
-  background-image: linear-gradient(-20deg, #ff2846 0%, #6944ff 100%);
+  @include degrado(1, 1);
 
   @media screen and (max-width: 768px) {
     height: auto;
@@ -108,7 +108,7 @@
   &__name {
     font-weight: 700;
     font-size: 24px;
-    color: #6944ff;
+    color: rgba(114, 39, 137, 1);
     margin-bottom: 15px;
   }
 

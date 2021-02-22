@@ -212,38 +212,39 @@ class CardImperdibles extends Component {
 
   init() {
     let tl = gsap.timeline();
-
-    tl.to(this.state.cardsContainerEl.current.children, {
-      delay: 0.15,
-      duration: 0.5,
-      stagger: {
-        ease: "power4.inOut",
-        from: "right",
-        amount: 0.1,
-      },
-      "--card-translateY-offset": "0%",
-    })
-      .to(
-        this.state.cardInfosContainerEl.current
-          .querySelector(".current--info")
-          .querySelectorAll(".text"),
-        {
-          delay: 0.5,
-          duration: 0.4,
-          stagger: 0.1,
-          opacity: 1,
-          translateY: 0,
-        }
-      )
-      .to(
-        [this.state.buttons.prev.current, this.state.buttons.next.current],
-        {
-          duration: 0.4,
-          opacity: 1,
-          pointerEvents: "all",
+    if(this.state.cardsContainerEl.current != null){
+      tl.to(this.state.cardsContainerEl.current.children, {
+        delay: 0.15,
+        duration: 0.5,
+        stagger: {
+          ease: "power4.inOut",
+          from: "right",
+          amount: 0.1,
         },
-        "-=0.4"
-      );
+        "--card-translateY-offset": "0%",
+      })
+        .to(
+          this.state.cardInfosContainerEl.current
+            .querySelector(".current--info")
+            .querySelectorAll(".text"),
+          {
+            delay: 0.5,
+            duration: 0.4,
+            stagger: 0.1,
+            opacity: 1,
+            translateY: 0,
+          }
+        )
+        .to(
+          [this.state.buttons.prev.current, this.state.buttons.next.current],
+          {
+            duration: 0.4,
+            opacity: 1,
+            pointerEvents: "all",
+          },
+          "-=0.4"
+        );  
+    }
   }
 
   waitForImages() {
@@ -312,7 +313,9 @@ class CardImperdibles extends Component {
     return (
       <React.Fragment>
         <div class="cuerpoimperdible">
-          <p className="tituloImperdibles">Recomendaciones del mes</p>
+          <div className="tituloImperdibles">
+            <span className="imp-t-sub2">Recomendaciones del mes</span>
+          </div>
           <div class="app" ref={this.state.app}>
             <div class="cardList">
               <button
@@ -328,23 +331,6 @@ class CardImperdibles extends Component {
                   ></i>
                 </div>
               </button>
-
-              <button
-                class="cardList__btn btn btn--right"
-                ref={this.state.buttons.next}
-                onClick={() => this.swapCards("right")}
-              >
-                <div class="icon">
-                  <i
-                    class="fas fa-arrow-right"
-                    style={{ color: "white" }}
-                    id="arrow-right"
-                  ></i>
-                </div>
-              </button>
-            </div>
-
-            <div class="infoList">
               <div class="cards__wrapper" ref={this.state.cardsContainerEl}>
                 <div class="card current--card">
                   <div class="card__image">
@@ -362,6 +348,22 @@ class CardImperdibles extends Component {
                   </div>
                 </div>
               </div>
+              <button
+                class="cardList__btn btn btn--right"
+                ref={this.state.buttons.next}
+                onClick={() => this.swapCards("right")}
+              >
+                <div class="icon">
+                  <i
+                    class="fas fa-arrow-right"
+                    style={{ color: "white" }}
+                    id="arrow-right"
+                  ></i>
+                </div>
+              </button>
+            </div>
+
+            <div class="infoList">          
               <div class="info__wrapper" ref={this.state.cardInfosContainerEl}>
                 <div class="info current--info">
                   <h1 class="text name">Villa de Merlo</h1>

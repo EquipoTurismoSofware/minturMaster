@@ -141,18 +141,11 @@ class Novedades extends Component {
     });
 
     return (
-      <div className="container mb-3">
-        <div className="row">
-          <div className="col">
-            <div className="Novedades">
-              <Link to="/novedades" className="novedades-leyenda">
-                <div className="texto">
-                  <ul>
-                    <li>NOVEDADES
-                    </li>
-                  </ul>
-                </div>
-              </Link>
+      <div className="container mb-3 Novedades">
+          <Link to="/novedades" className="novedades-leyenda">
+            <span>NOVEDADES</span>
+          </Link>
+            
               <Swiper
                  spaceBetween={30}
                  effect={"fade"}
@@ -166,10 +159,6 @@ class Novedades extends Component {
                   {items}
               <div className="blog-slider__pagination"></div>
               </Swiper>
-              
-            </div>
-          </div>
-        </div>
 
         {/*    <div className="blog-slider">
           <div class="blog-slider__wrp swiper-wrapper">{items}</div>
