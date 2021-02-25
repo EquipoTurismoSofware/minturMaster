@@ -265,19 +265,19 @@ class Slider extends Component {
 
   addEL() {
     let self = this;
-    
+
     window.addEventListener("resize", () => {
-      if(this.state.canvas0.current != null){
+      if (this.state.canvas0.current != null) {
         const calculateScreenPromise = new Promise((resolve) => {
           resolve(self.calculateScreen());
-        })
+        });
         const resizeBgPromise = new Promise((resolve) => {
           resolve(self.resizeBg());
         });
-        
+
         calculateScreenPromise.then((response1) => {
           resizeBgPromise.then((response2) => {
-            self.changeImage();        
+            self.changeImage();
           });
         });
       }
@@ -388,110 +388,112 @@ class Slider extends Component {
 
   render() {
     return (
-      <React.Fragment >
-          <canvas
-            id="canvas0"
-            className={"thecanvas"}
-            width="800"
-            height="480"
-            ref={this.state.canvas0}
-          ></canvas>
-          <canvas
-            id="canvas1"
-            className={"thecanvas"}
-            width="800"
-            height="480"
-            ref={this.state.canvas1}
-          ></canvas>
-          <canvas
-            id="canvas2"
-            className={"thecanvas"}
-            width="800"
-            height="480"
-            ref={this.state.canvas2}
-          ></canvas>
-          <canvas
-            id="canvas3"
-            className={"thecanvas"}
-            width="800"
-            height="480"
-            ref={this.state.canvas3}
-          ></canvas>
-          <nav class="link-list" ref={this.state.linklist}>
-            <ul>
-              <li>
-                <a
-                  href=""
-                  data-order="0"
-                  data-imagesrc="https://mir-s3-cdn-cf.behance.net/project_modules/1400/c9a2a063821461.5ac1239819171.jpg"
-                ></a>
-              </li>
-              <li>
-                <a
-                  href=""
-                  data-order="1"
-                  data-imagesrc="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/04de5959138189.5a168738850c3.jpg"
-                ></a>
-              </li>
-              <li>
-                <a
-                  href=""
-                  data-order="2"
-                  data-imagesrc="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d00a5e59138189.5a16873887bdd.jpg"
-                ></a>
-              </li>
-              <li>
-                <a
-                  href=""
-                  data-order="3"
-                  data-imagesrc="https://mir-s3-cdn-cf.behance.net/project_modules/1400/c9a2a063821461.5ac1239819171.jpg"
-                ></a>
-              </li>
-              <li>
-                <a
-                  href=""
-                  data-order="4"
-                  data-imagesrc="https://mir-s3-cdn-cf.behance.net/project_modules/1400/dad4f463821461.5ac1076d90b2c.jpg"
-                ></a>
-              </li>
-            </ul>
-          </nav>
-          <nav class="btns" ref={this.state.btns}>
-            <button
-              class="show-prev iconSlider"
-              onMouseOver={() => {
-                this.show("isShowLeft", this.state.isShowLeft);
-              }}
-              onMouseLeave={() => {
-                this.show("isShowLeft", this.state.isShowLeft);
-              }}
-            >
-              {this.state.isShowLeft ? (
-                <i class="fas fa-chevron-circle-left "></i>
-              ) : (
-                <i class="fas fa-chevron-left "></i>
-              )}
-            </button>
-            <button
-              class="show-next iconSlider"
-              ref={this.state.nextBtn}
-              onMouseOver={() => {
-                this.show("isShowRight", this.state.isShowRight);
-              }}
-              onMouseLeave={() => {
-                this.show("isShowRight", this.state.isShowRight);
-              }}
-            >
-              {this.state.isShowRight ? (
-                <i class="fas fa-chevron-circle-right"></i>
-              ) : (
-                <i class="fas fa-chevron-right "></i>
-              )}
-            </button>
-          </nav>
-          <p class="loading-txt" ref={this.state.loadTxt}>
-            Loading images...
-          </p>
+      <React.Fragment>
+        <canvas
+          id="canvas0"
+          className={"thecanvas"}
+          width="800"
+          height="480"
+          ref={this.state.canvas0}
+        ></canvas>
+        <canvas
+          id="canvas1"
+          className={"thecanvas"}
+          width="800"
+          height="480"
+          ref={this.state.canvas1}
+        ></canvas>
+        <canvas
+          id="canvas2"
+          className={"thecanvas"}
+          width="800"
+          height="480"
+          ref={this.state.canvas2}
+        ></canvas>
+        <canvas
+          id="canvas3"
+          className={"thecanvas"}
+          width="800"
+          height="480"
+          ref={this.state.canvas3}
+        ></canvas>
+        <nav class="link-list" ref={this.state.linklist}>
+          <ul>
+            <li>
+              <a
+                href=""
+                data-order="0"
+                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada1.jpg"
+                
+              ></a>
+            </li>
+            <li>
+              <a
+                href=""
+                data-order="1"
+                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada2.jpg"
+              ></a>
+            </li>
+            <li>
+              <a
+                href=""
+                data-order="2"
+                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada3.jpg"
+              ></a>
+            </li>
+            <li>
+              <a
+                href=""
+                data-order="3"
+                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada4.jpg"
+              ></a>
+            </li>
+            <li>
+              <a
+                href=""
+                data-order="4"
+                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada5.jpg"
+              ></a>
+            </li>
+          </ul>
+          
+        </nav>
+        <nav class="btns" ref={this.state.btns}>
+          <button
+            class="show-prev iconSlider"
+            onMouseOver={() => {
+              this.show("isShowLeft", this.state.isShowLeft);
+            }}
+            onMouseLeave={() => {
+              this.show("isShowLeft", this.state.isShowLeft);
+            }}
+          >
+            {this.state.isShowLeft ? (
+              <i class="fas fa-chevron-circle-left "></i>
+            ) : (
+              <i class="fas fa-chevron-left "></i>
+            )}
+          </button>
+          <button
+            class="show-next iconSlider"
+            ref={this.state.nextBtn}
+            onMouseOver={() => {
+              this.show("isShowRight", this.state.isShowRight);
+            }}
+            onMouseLeave={() => {
+              this.show("isShowRight", this.state.isShowRight);
+            }}
+          >
+            {this.state.isShowRight ? (
+              <i class="fas fa-chevron-circle-right"></i>
+            ) : (
+              <i class="fas fa-chevron-right "></i>
+            )}
+          </button>
+        </nav>
+        <p class="loading-txt" ref={this.state.loadTxt}>
+          Loading images...
+        </p>
       </React.Fragment>
     );
   }

@@ -9,7 +9,7 @@ export default class PantallaModal extends Component {
       alto: this.props.altoImg,
       maginLeft: this.props.maginLeft,
       visible: false,
-      bandera: 1
+      bandera: 1,
     };
   }
 
@@ -18,7 +18,7 @@ export default class PantallaModal extends Component {
       visible: true,
     });
   }
- 
+
   closeModal() {
     this.setState({
       visible: false,
@@ -28,88 +28,216 @@ export default class PantallaModal extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="tabs">   
-        <input type="radio" id="tab1" name="tab-control" checked={this.state.bandera == 1 ? true : false} onClick={() => {
-          this.setState({
-            bandera: 1
-          })
-        }} />
-        <input type="radio" id="tab2" name="tab-control"  onClick={() => {
-          this.setState({
-            bandera: 2
-          })
-        }} />
-        <input type="radio" id="tab3" name="tab-control"  onClick={() => {
-          this.setState({
-            bandera: 2
-          })
-        }}/>  
-        <input type="radio" id="tab4" name="tab-control" onClick={() => {
-          this.setState({
-            bandera: 2
-          })
-        }} />
-        <ul className="listatabslider">
-          <li title="Features">
-            <label for="tab1" role="button">
-              <svg viewBox="0 0 24 24">
-                <path d="M14,2A8,8 0 0,0 6,10A8,8 0 0,0 14,18A8,8 0 0,0 22,10H20C20,13.32 17.32,16 14,16A6,6 0 0,1 8,10A6,6 0 0,1 14,4C14.43,4 14.86,4.05 15.27,4.14L16.88,2.54C15.96,2.18 15,2 14,2M20.59,3.58L14,10.17L11.62,7.79L10.21,9.21L14,13L22,5M4.93,5.82C3.08,7.34 2,9.61 2,12A8,8 0 0,0 10,20C10.64,20 11.27,19.92 11.88,19.77C10.12,19.38 8.5,18.5 7.17,17.29C5.22,16.25 4,14.21 4,12C4,11.7 4.03,11.41 4.07,11.11C4.03,10.74 4,10.37 4,10C4,8.56 4.32,7.13 4.93,5.82Z"/>
-              </svg>
-              <br />
-              <span>Features</span>
-            </label>
-          </li>
-          <li title="Delivery Contents">
-            <label for="tab2" role="button">
-              <svg viewBox="0 0 24 24">
-                <path d="M2,10.96C1.5,10.68 1.35,10.07 1.63,9.59L3.13,7C3.24,6.8 3.41,6.66 3.6,6.58L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.66,6.72 20.82,6.88 20.91,7.08L22.36,9.6C22.64,10.08 22.47,10.69 22,10.96L21,11.54V16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V10.96C2.7,11.13 2.32,11.14 2,10.96M12,4.15V4.15L12,10.85V10.85L17.96,7.5L12,4.15M5,15.91L11,19.29V12.58L5,9.21V15.91M19,15.91V12.69L14,15.59C13.67,15.77 13.3,15.76 13,15.6V19.29L19,15.91M13.85,13.36L20.13,9.73L19.55,8.72L13.27,12.35L13.85,13.36Z" />
-              </svg>
-              <br />
-              <span>Delivery Contents</span>
-            </label>
-          </li>
-          <li title="Shipping">
-            <label for="tab3" role="button">
-              <svg viewBox="0 0 24 24">
-                <path d="M3,4A2,2 0 0,0 1,6V17H3A3,3 0 0,0 6,20A3,3 0 0,0 9,17H15A3,3 0 0,0 18,20A3,3 0 0,0 21,17H23V12L20,8H17V4M10,6L14,10L10,14V11H4V9H10M17,9.5H19.5L21.47,12H17M6,15.5A1.5,1.5 0 0,1 7.5,17A1.5,1.5 0 0,1 6,18.5A1.5,1.5 0 0,1 4.5,17A1.5,1.5 0 0,1 6,15.5M18,15.5A1.5,1.5 0 0,1 19.5,17A1.5,1.5 0 0,1 18,18.5A1.5,1.5 0 0,1 16.5,17A1.5,1.5 0 0,1 18,15.5Z" />
-              </svg>
-              <br />
-              <span>Shipping</span>
-            </label>
-          </li>    
-          <li title="Returns">
-            <label for="tab4" role="button">
-              <svg viewBox="0 0 24 24">
-                <path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
-              </svg>
-              <br />
-              <span>Returns</span>
-            </label>
-          </li>
-        </ul>
-        <div class="slider">
-          <div class="indicator">
+        <div className="tabs">
+          <input
+            type="radio"
+            id="tab1"
+            name="tab-control"
+            checked={this.state.bandera == 1 ? true : false}
+            onClick={() => {
+              this.setState({
+                bandera: 1,
+              });
+            }}
+          />
+          <input
+            type="radio"
+            id="tab2"
+            name="tab-control"
+            onClick={() => {
+              this.setState({
+                bandera: 2,
+              });
+            }}
+          />
+          <input
+            type="radio"
+            id="tab3"
+            name="tab-control"
+            onClick={() => {
+              this.setState({
+                bandera: 2,
+              });
+            }}
+          />
+          <input
+            type="radio"
+            id="tab4"
+            name="tab-control"
+            onClick={() => {
+              this.setState({
+                bandera: 2,
+              });
+            }}
+          />
+          <ul className="listatabslider">
+            <li title="Ingreso">
+              <label for="tab1" role="button">
+                <i
+                  class="fas fa-suitcase-rolling"
+                  style={{ paddingRight: "5px" }}
+                ></i>
+                <br />
+                <span>Ingresá</span>
+              </label>
+            </li>
+            <li title="Delivery Contents">
+              <label for="tab2" role="button">
+                <i class="fas fa-hotel" style={{ paddingRight: "5px" }}></i>
+                <br />
+                <span>Alojate</span>
+              </label>
+            </li>
+            {/*  <li title="Shipping">
+              <label for="tab3" role="button">
+                <i class="fas fa-utensils" style={{ paddingRight: "5px" }}></i>
+                <br />
+                <span>Restaurantes</span>
+              </label>
+            </li>
+
+*/}
+            <li title="Returns">
+              <label for="tab3" role="button">
+                <i
+                  class="fas fa-map-marked-alt"
+                  style={{ paddingRight: "5px" }}
+                ></i>
+
+                <br />
+                <span>Conocé</span>
+              </label>
+            </li>
+          </ul>
+          <div class="slider">
+            <div class="indicator"></div>
+          </div>
+          <div class="content">
+            <section>
+              <h2>Ingreso</h2>
+              {/*<svg
+                class="svg-calLoader"
+                xmlns="http://www.w3.org/2000/svg"
+                width="230"
+                height="230"
+              >
+                <path
+                  class="cal-loader__path"
+                  d="M86.429 40c63.616-20.04 101.511 25.08 107.265 61.93 6.487 41.54-18.593 76.99-50.6 87.643-59.46 19.791-101.262-23.577-107.142-62.616C29.398 83.441 59.945 48.343 86.43 40z"
+                  fill="none"
+                  stroke="#0099cc"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-dasharray="10 10 10 10 10 10 10 432"
+                  stroke-dashoffset="77"
+                />
+                <path
+                  class="cal-loader__plane"
+                  d="M141.493 37.93c-1.087-.927-2.942-2.002-4.32-2.501-2.259-.824-3.252-.955-9.293-1.172-4.017-.146-5.197-.23-5.47-.37-.766-.407-1.526-1.448-7.114-9.773-4.8-7.145-5.344-7.914-6.327-8.976-1.214-1.306-1.396-1.378-3.79-1.473-1.036-.04-2-.043-2.153-.002-.353.1-.87.586-1 .952-.139.399-.076.71.431 2.22.241.72 1.029 3.386 1.742 5.918 1.644 5.844 2.378 8.343 2.863 9.705.206.601.33 1.1.275 1.125-.24.097-10.56 1.066-11.014 1.032a3.532 3.532 0 0 1-1.002-.276l-.487-.246-2.044-2.613c-2.234-2.87-2.228-2.864-3.35-3.309-.717-.287-2.82-.386-3.276-.163-.457.237-.727.644-.737 1.152-.018.39.167.805 1.916 4.373 1.06 2.166 1.964 4.083 1.998 4.27.04.179.004.521-.076.75-.093.228-1.109 2.064-2.269 4.088-1.921 3.34-2.11 3.711-2.123 4.107-.008.25.061.557.168.725.328.512.72.644 1.966.676 1.32.029 2.352-.236 3.05-.762.222-.171 1.275-1.313 2.412-2.611 1.918-2.185 2.048-2.32 2.45-2.505.241-.111.601-.232.82-.271.267-.058 2.213.201 5.912.8 3.036.48 5.525.894 5.518.914 0 .026-.121.306-.27.638-.54 1.198-1.515 3.842-3.35 9.021-1.029 2.913-2.107 5.897-2.4 6.62-.703 1.748-.725 1.833-.594 2.286.137.46.45.833.872 1.012.41.177 3.823.24 4.37.085.852-.25 1.44-.688 2.312-1.724 1.166-1.39 3.169-3.948 6.771-8.661 5.8-7.583 6.561-8.49 7.387-8.702.233-.065 2.828-.056 5.784.011 5.827.138 6.64.09 8.62-.5 2.24-.67 4.035-1.65 5.517-3.016 1.136-1.054 1.135-1.014.207-1.962-.357-.38-.767-.777-.902-.893z"
+                  class="cal-loader__plane"
+                  fill="#000033"
+                />
+              </svg>*/}
+              <i
+                class="fas fa-arrow-alt-circle-right"
+                style={{ color: "rgba(237,15,104, 1)" }}
+              ></i>{" "}
+              Hoy, a nuestra provincia podes ingresar tranquilamente a disfrutar
+              de unas maravillosas vacaciones, solo debes tener el permiso
+              nacional{" "}
+              <a
+                alt="Obtené tu permiso"
+                href="https://www.argentina.gob.ar/verano"
+              >
+                "Cuidar"{" "}
+              </a>
+              que se te otorga en minutos.
+              <button className="btnavion">
+                <span>Ingreso en Avión</span>
+
+                <img
+                  className="material-icons"
+                  src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/icons/ATERRIZAJE.png"
+                  style={{ height: "25px" }}
+                ></img>
+              </button>
+            </section>
+
+            <section>
+              <h2>Alojate</h2>
+              <i
+                class="fas fa-arrow-alt-circle-right"
+                style={{ color: "rgba(237,15,104, 1)" }}
+              ></i>{" "}
+              La provincia elaboró distintos protocolos para que puedas
+              disfrutar de tus vacaciones de manera segura. Te mostramos el
+              listado de todos los alojamientos que cumplen con los requisitos.
+              <button
+                className="btnavion"
+                style={{ backgroundColor: "rgba(114,39,137, 1)" }}
+              >
+                <span>donde alojarte</span>
+                <img
+                  className="material-icons"
+                  src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/icons/ALOJAMIENTO.png"
+                  style={{ height: "25px", color: "rgba(114,39,137, 1)" }}
+                ></img>
+              </button>
+            </section>
+            <section>
+              <h2>Shipping</h2>
+              <i
+                class="fas fa-arrow-alt-circle-right"
+                style={{ color: "rgba(237,15,104, 1)" }}
+              ></i>{" "}
+              Tenemos un sin fin de opciones para que puedas disfrutar y
+              recorrer nuestra provincia. ¿Qué estas esperando para venir?
+              <div>
+                <button
+                  className="btnavion"
+                  style={{
+                    backgroundColor: "rgba(114,39,137, 1)",
+                    left: "45%",
+                    top: "50px",
+                  }}
+                >
+                  <span>donde alojarte</span>
+                  <img
+                    className="material-icons"
+                    src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/icons/ATERRIZAJE.png"
+                    style={{ height: "25px", color: "rgba(114,39,137, 1)" }}
+                  ></img>
+                </button>
+                <button
+                  className="btnavion"
+                  style={{
+                    backgroundColor: "rgba(237,15,104, 1)",
+                    left: "10%",
+                  }}
+                >
+                  <span>donde alojarte</span>
+                  <img
+                    className="material-icons"
+                    src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/icons/ATERRIZAJE.png"
+                    style={{
+                      height: "25px",
+                      color: "rgba(237,15,104, 1)",
+                    }}
+                  ></img>
+                </button>
+              </div>
+            </section>
+            <section>
+              <h2>Returns</h2>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa
+              dicta vero rerum? Eaque repudiandae architecto libero
+              reprehenderit aliquam magnam ratione quidem? Nobis doloribus
+              molestiae enim deserunt necessitatibus eaque quidem incidunt.
+            </section>
           </div>
         </div>
-        <div class="content">
-          <section>
-            <h2>Features</h2>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?</section>
-              <section>
-                <h2>Delivery Contents</h2>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quas adipisci a accusantium eius ut voluptatibus ad impedit nulla, ipsa qui. Quasi temporibus eos commodi aliquid impedit amet, similique nulla.</section>
-              <section>
-                <h2>Shipping</h2>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nemo ducimus eius, magnam error quisquam sunt voluptate labore, excepturi numquam! Alias libero optio sed harum debitis! Veniam, quia in eum.</section>
-          <section>
-                <h2>Returns</h2>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa dicta vero rerum? Eaque repudiandae architecto libero reprehenderit aliquam magnam ratione quidem? Nobis doloribus molestiae enim deserunt necessitatibus eaque quidem incidunt.
-          </section>
-        </div>
-      </div>
       </React.Fragment>
-      
-
     );
   }
 }
