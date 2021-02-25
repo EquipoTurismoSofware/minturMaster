@@ -332,18 +332,18 @@ class CardImperdibles extends Component {
                 </div>
               </button>
               <div class="cards__wrapper" ref={this.state.cardsContainerEl}>
-                <div class="card current--card">
-                  <div class="card__image">
+                <div class="cardImp current--card">
+                  <div class="cardImp__image">
                     <img src="https://source.unsplash.com/Z8dtTatMVMw" alt="" />
                   </div>
                 </div>
-                <div class="card next--card">
-                  <div class="card__image">
+                <div class="cardImp next--card">
+                  <div class="cardImp__image">
                     <img src="https://source.unsplash.com/9dmycbFE7mQ" alt="" />
                   </div>
                 </div>
-                <div class="card previous--card">
-                  <div class="card__image">
+                <div class="cardImp previous--card">
+                  <div class="cardImp__image">
                     <img src="https://source.unsplash.com/m7K4KzL5aQ8" alt="" />
                   </div>
                 </div>
