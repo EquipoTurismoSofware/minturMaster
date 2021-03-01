@@ -8,12 +8,13 @@ class Graficos extends React.Component {
     }
   
     componentDidUpdate() {
-      this.myChart.data.labels = this.props.data.map(d => d.label);
-      this.myChart.data.datasets[0].data = this.props.data.map(d => d.value);
+      this.myChart.data.labels = this.props.data.map(d => d.etiqueta);
+      this.myChart.data.datasets[0].data = this.props.data.map(d => d.valor);
       this.myChart.update();
     }
   
     componentDidMount() {
+
       this.myChart = new Chart(this.canvasRef.current, {
         type: this.props.tipo == "bar-withouty" ? "bar" : this.props.tipo,
         options: {
@@ -49,10 +50,10 @@ class Graficos extends React.Component {
           ""
         },
         data: {
-          labels: this.props.data.map(d => d.label),
+          labels: this.props.data.map(d => d.etiqueta),
             datasets: [{
               label: this.props.title,
-              data: this.props.data.map(d => d.value),
+              data: this.props.data.map(d => d.valor),
               backgroundColor: this.props.color,
             }]
         }

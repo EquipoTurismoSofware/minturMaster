@@ -143,17 +143,18 @@ export default class TabSlider extends Component {
               disfrutar de tus vacaciones de manera segura. Te mostramos el
               listado de todos los alojamientos que cumplen con los requisitos.
               <div className="container-btnsavion">
-                <button
-                  className="btnavion"
+              <Link
+                to="/filtroalojamientoAdhiere"
+                className="btnavion"
                   style={{ backgroundColor: "rgba(114,39,137, 1)" }}
-                >
-                  <span>donde alojarte</span>
+              >
+                <span>donde alojarte</span>
                   <img
                     className="material-icons"
                     src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/icons/ALOJAMIENTO.png"
                     style={{ height: "25px", color: "rgba(114,39,137, 1)" }}
                   ></img>
-                </button>
+              </Link>
               </div>
             </section>
             <section>

@@ -8,8 +8,11 @@
   margin-top: 20px;
   .novedades-leyenda {
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     span {
-      margin: 10px 0 10px 0;
+      margin: 10px 0 1px 0;
       font-size: 2em;
       padding: 2px 15px;
       background-color: $color-uno;

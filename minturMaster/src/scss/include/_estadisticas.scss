@@ -1,5 +1,6 @@
     .main-chart-wrapper {
     padding-top: 130px;
+    padding-bottom: 130px;
      .estadisticas-leyenda{
       span {
         margin: 10px 0 10px 20px;
@@ -15,8 +16,27 @@
   .sub-chart-wrapper {
     padding: 2%;
     display: inline-block;
-    width: 35%;
+    width: 50%;
     height: 300px;
+    margin-bottom: 40px;
+    text-align: center;
+    .sub-chart-wrapper-titulo
+    {     
+      font-size: 1.3em;
+      padding: 2px 15px;
+      background-color: $color-dos;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    .sub-chart-wrapper-subtitulo
+    {
+      font-size: 1.3em;
+      padding: 2px 15px;
+      margin-bottom: 15px;
+      background-color: $color-dos;
+      color: #fff;
+      text-transform: uppercase;
+    }
   }
   
   /* Simple responsivenss example */
