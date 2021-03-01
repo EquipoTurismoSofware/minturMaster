@@ -334,17 +334,17 @@ class CardImperdibles extends Component {
               <div class="cards__wrapper" ref={this.state.cardsContainerEl}>
                 <div class="cardImp current--card">
                   <div class="cardImp__image">
-                    <img src="https://source.unsplash.com/Z8dtTatMVMw" alt="" />
+                    <img src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/imperdiblesHome/piscuyaco.jpg" alt="" />
                   </div>
                 </div>
                 <div class="cardImp next--card">
                   <div class="cardImp__image">
-                    <img src="https://source.unsplash.com/9dmycbFE7mQ" alt="" />
+                    <img src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/imperdiblesHome/potrero.jpg" alt="" />
                   </div>
                 </div>
                 <div class="cardImp previous--card">
                   <div class="cardImp__image">
-                    <img src="https://source.unsplash.com/m7K4KzL5aQ8" alt="" />
+                    <img src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/imperdiblesHome/rutaNogoliCarolina.jpg" alt="" />
                   </div>
                 </div>
               </div>
@@ -366,14 +366,14 @@ class CardImperdibles extends Component {
             <div class="infoList">          
               <div class="info__wrapper" ref={this.state.cardInfosContainerEl}>
                 <div class="info current--info">
-                  <h1 class="text name">Villa de Merlo</h1>
-                  <h4 class="text location">San Luis</h4>
-                  <p class="text description">The mountains are calling</p>
+                  <h1 class="text name">Dique Piscu Yaco</h1>
+                  <h4 class="text location">Papagayos</h4>
+                  <p class="text description">Hermoso embalse de playas blancas a la orilla de las sierras.</p>
                 </div>
 
                 <div class="info next--info">
-                  <h1 class="text name">Potrero de los Funes</h1>
-                  <h4 class="text location">San Luis</h4>
+                  <h1 class="text name">Embalse</h1>
+                  <h4 class="text location">Potrero de los Funes</h4>
                   <p class="text description">Adventure is never far away</p>
                 </div>
 
@@ -387,13 +387,13 @@ class CardImperdibles extends Component {
 
             <div class="app__bg" ref={this.state.appBgContainerEl}>
               <div class="app__bg__image current--image">
-                <img src="https://source.unsplash.com/Z8dtTatMVMw" alt="" />
+                <img src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/imperdiblesHome/piscuyaco.jpg" alt="" />
               </div>
               <div class="app__bg__image next--image">
-                <img src="https://source.unsplash.com/9dmycbFE7mQ" alt="" />
+                <img src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/imperdiblesHome/potrero.jpg" alt="" />
               </div>
               <div class="app__bg__image previous--image">
-                <img src="https://source.unsplash.com/m7K4KzL5aQ8" alt="" />
+                <img src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/imperdiblesHome/rutaNogoliCarolina.jpg" alt="" />
               </div>
             </div>
           </div>
