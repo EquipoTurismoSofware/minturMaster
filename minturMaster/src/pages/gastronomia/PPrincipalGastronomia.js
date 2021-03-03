@@ -73,10 +73,7 @@ class PPrincipalGastronomia extends Component {
                 de expresiones gastronómicas, patrimonio de nuestros pueblos, de
                 nuestra cultura y su gente.
               </h4>
-              <br />
             </div>
-            <br />
-            <br />
             {/*<div className="container">{ListadoAtractivofull}</div>*/}
             <center>
               <div className="Recorridos">

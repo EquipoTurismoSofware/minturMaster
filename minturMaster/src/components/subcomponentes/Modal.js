@@ -9,9 +9,9 @@ export default class PantallaModal extends Component {
     }
     this.closeModal = this.closeModal.bind(this);
   }
+
   componentDidUpdate(prevProps) {
     if(this.props.picture !== prevProps.picture){
-      console.log("Entro?")
       this.setState({
         foto: this.props.picture
       }, () => {
@@ -22,12 +22,21 @@ export default class PantallaModal extends Component {
   }
 
   componentDidMount() {
-    this.setState({
-      foto: this.props.picture
-    },() => {
-      var mContainer = document.getElementById(`modalMain-container`);
-      mContainer.className += " modalIn";
-    })
+    if(window.screen.width <= 510){
+      this.setState({
+        foto: "http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/DOSEPmodalCEL.jpg"
+      },() => {
+        var mContainer = document.getElementById(`modalMain-container`);
+        mContainer.className += " modalIn";
+      })
+    }else{
+      this.setState({
+        foto: "http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/DOSEPmodal.jpg"
+      },() => {
+        var mContainer = document.getElementById(`modalMain-container`);
+        mContainer.className += " modalIn";
+      })
+    }
   }
 
   closeModal() {

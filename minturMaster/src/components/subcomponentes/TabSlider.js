@@ -116,6 +116,7 @@ export default class TabSlider extends Component {
               <a
                 alt="Obtené tu permiso"
                 href="https://www.argentina.gob.ar/verano"
+                target="_blank"
               >
                 "Cuidar"{" "}
               </a>

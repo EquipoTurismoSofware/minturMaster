@@ -147,20 +147,17 @@ class Home extends Component {
               <Slider></Slider>
               <center>
                 <div className="pantallaGrande">
-                  <Newsletter />
-                  <PantallaModal
-                    picture="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/DOSEPmodal.jpg"
-                  />
+                  <span className="newsHome"><Newsletter /></span>
+                  <PantallaModal/>
                   <SocialWidget />
                 </div>
               </center>
-              <div className="pantallaChica">
-                <PantallaModal
-                  picture="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/DOSEPmodalCEL.jpg"
-                />
-              </div>
+              {/*  <div className="pantallaChica">
+                <PantallaModal/>
+                </div>
+              </center>
 
-              {/* <div
+               <div
                 id="carouselExampleIndicators"
                 className="carousel slide"
                 data-ride="carousel"

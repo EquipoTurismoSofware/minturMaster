@@ -146,45 +146,37 @@ class PVallesEncantados extends Component {
                 cristalinos ríos que descienden de la sierra.
               </h4>
               <br></br>
-
-              <br />
-              <div style={{ float: "left" }} className="Recorridos">
+              <div style={{paddingTop: "10px"}} className="Recorridos">
                 <div className="reco-titulo" style={{ width: "200px" }}>
                   <span className="reco-t-sub2">Imperdibles:</span>
                 </div>
               </div>
-              <br />
             </div>
-            <br />
             <br />
             <div className="container">{ListadoAtractivofull}</div>
             <center>
-              {" "}
-              <div className="Recorridos">
+              <div style={{paddingTop: "20px"}} className="Recorridos">
                 <Link to="/Tips_Moto" key="Tips">
                   <div className="reco-titulo" style={{ width: "300px" }}>
                     <span className="reco-t-sub2">Tips y Consejos</span>
                   </div>
                 </Link>
               </div>
-              <br></br>
               <Link to="/Telefonos_Utiles" key="Tips">
-                <div className="Recorridos">
+                <div style={{paddingTop: "20px"}} className="Recorridos">
                   <div className="reco-titulo" style={{ width: "300px" }}>
                     <span className="reco-t-sub2">Teléfonos Útiles</span>
                   </div>
                 </div>
               </Link>
-              <br></br>
-              <div className="Recorridos">
+              <div style={{paddingTop: "20px"}} className="Recorridos">
                 <a href="https://goo.gl/maps/g17bhPZsY9sh7Q3b9" key="Tips">
                   <div className="reco-titulo" style={{ width: "300px" }}>
                     <span className="reco-t-sub2">Ver Mapa</span>
                   </div>
                 </a>
               </div>
-              <br></br>
-              <div className="Recorridos">
+              <div style={{paddingTop: "20px"}} className="Recorridos">
                 <a
                   href="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/RUTAS%20DEL%20VALLE-VALLE%20ENCANTADO%20-%2015-10-19..pdf"
                   key="Tips"
@@ -194,8 +186,6 @@ class PVallesEncantados extends Component {
                   </div>
                 </a>
               </div>
-              <br></br>
-              <br></br>
               <br></br>
             </center>
           </React.Fragment>

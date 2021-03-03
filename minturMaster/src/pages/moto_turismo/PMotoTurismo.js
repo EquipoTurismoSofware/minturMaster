@@ -60,52 +60,6 @@ class PMotoTurismo extends Component {
   }
 
   render() {
-    /*const loading = this.state.loading;
-    var ListadoAtractivofull = null;
-    if (this.state.data.length > 0) {
-      ListadoAtractivofull = this.state.data.map(atrac => {
-        let descripcion = "";
-        if (atrac.descripcion.length > 395) {
-          descripcion = atrac.descripcion.substr(0, 395) + "...";
-        } else {
-          descripcion = atrac.descripcion;
-        }
-        let indice = Math.floor(Math.random() * atrac.imagenes.length);
-        return (
-          <Link to={`/atractivo/${atrac.id}`} key={`atractivo-${atrac.id}`}>
-            <div className="row mb-5">
-              <div className="col">
-                <div className="atractivo-full-item">
-                  <div className="imagen">
-                    <span style={{ backgroundColor: `#${atrac.color}` }}>
-                      {atrac.localidad}
-                    </span>
-                    <img
-                      className="img-fluid"
-                      src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${atrac.imagenes[indice].imagen}`}
-                      alt="Img"
-                    />
-                  </div>
-                  <div
-                    className="titulo"
-                    style={{ backgroundColor: `#${atrac.color}` }}
-                  >
-                    <h3>{atrac.nombre}</h3>
-                  </div>
-                  <div className="body">
-                    <p className="text-dark mb-2">{descripcion}</p>
-                    <span className="btn-novedades">
-                      Leer <i className="fas fa-arrow-right" />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </Link>
-        );
-      });
-    }*/
-
     return (
       <React.Fragment>
         <React.Fragment>
@@ -143,13 +97,11 @@ class PMotoTurismo extends Component {
                 ></iframe>
               </center>
             </div>
-            <div style={{ float: "left" }} className="Recorridos">
+            <div style={{ paddingTop: "10px"}} className="Recorridos">
               <div className="reco-titulo" style={{ width: "200px" }}>
                 <span className="reco-t-sub2">Introducción</span>
               </div>
             </div>
-            <br></br>
-            <br></br>
             <br></br>
             <h4 className="" style={{ color: `#808080` }}>
               &nbsp; &nbsp;Recorrer San Luis en moto, es sorprenderte con su
@@ -166,31 +118,25 @@ class PMotoTurismo extends Component {
               Luis en moto es una experiencia de paseo cautivante.
             </h4>
             <br />
-            <br />
             <center>
-              <div className="Recorridos">
+              <div style={{paddingTop: "20px"}} className="Recorridos">
                 <Link to="/Tips_Moto" key="Tips">
                   <div className="reco-titulo" style={{ width: "300px" }}>
                     <span className="reco-t-sub2">Tips y Consejos</span>
                   </div>
                 </Link>
               </div>
-              <br></br>
               <Link to="/Telefonos_Utiles" key="Tips">
-                <div className="Recorridos">
+                <div  style={{paddingTop: "20px"}} className="Recorridos">
                   <div className="reco-titulo" style={{ width: "300px" }}>
                     <span className="reco-t-sub2">Teléfonos Útiles</span>
                   </div>
                 </div>
               </Link>
             </center>
-            <br />
           </div>
-          <br />
-          <br />
-          {/*<div className="container">{ListadoAtractivofull}</div>*/}
           <center>
-            <div className="Recorridos">
+            <div style={{paddingTop: "60px"}} className="Recorridos">
               <div>
                 <div className="titulo-creer">
                   <span className="reco-t-sub2">Vení a conocer:</span>

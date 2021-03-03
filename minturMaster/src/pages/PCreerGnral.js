@@ -132,14 +132,12 @@ class PCreerGnral extends Component {
                 nuestros paisajes; la energía de nuestra gente y las expresiones
                 de la fe en cada punto de nuestra geografía. ¡Bienvenidos!
               </h4>
-              <div style={{ float: "left" }} className="Recorridos">
+              <div style={{paddingTop: "10px"}} className="Recorridos">
                 <div className="reco-titulo" style={{ width: "200px" }}>
                   <span className="reco-t-sub2">Imperdibles</span>
                 </div>
               </div>
-              <br />
             </div>
-            <br />
             <br />
             <div className="container">{ListadoAtractivofull}</div>
             <center>

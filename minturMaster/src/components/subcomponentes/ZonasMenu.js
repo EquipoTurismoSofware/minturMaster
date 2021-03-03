@@ -267,7 +267,7 @@ const ZonaMenuDos = (props) => {
           </li>*/}
           </ul>
         </div>
-        <div className="ZonaMenu-Lista mr-3">
+        <div className="ZonaMenu-Lista mr-3" style={{borderLeft: "1px solid", paddingLeft: "10px"}}>
         <ul>
         <li>
               <Link
@@ -298,7 +298,7 @@ const ZonaMenuDos = (props) => {
             </li>
         </ul>
         </div>
-        <div className="ZonaMenu-Lista mr-3">
+        <div className="ZonaMenu-Lista mr-3" style={{borderLeft: "1px solid", paddingLeft: "10px"}}>
           <ul>
             {/*<li>
               <a

@@ -63,51 +63,7 @@ class PTelefonosUtiles extends Component {
 
   render() {
     const loading = this.state.loading;
-    /*var ListadoAtractivofull = null;
-    if (this.state.data.length > 0) {
-      ListadoAtractivofull = this.state.data.map((atrac) => {
-        let descripcion = "";
-        if (atrac.descripcion.length > 395) {
-          descripcion = atrac.descripcion.substr(0, 395) + "...";
-        } else {
-          descripcion = atrac.descripcion;
-        }
-        let indice = Math.floor(Math.random() * atrac.imagenes.length);
-        return (
-          <Link to={`/atractivo/${atrac.id}`} key={`atractivo-${atrac.id}`}>
-            <div className="row mb-5">
-              <div className="col">
-                <div className="atractivo-full-item">
-                  <div className="imagen">
-                    <span style={{ backgroundColor: `#${atrac.color}` }}>
-                      {atrac.localidad}
-                    </span>
-                    <img
-                      className="img-fluid"
-                      src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${atrac.imagenes[indice].imagen}`}
-                      alt="Img"
-                    />
-                  </div>
-                  <div
-                    className="titulo"
-                    style={{ backgroundColor: `#${atrac.color}` }}
-                  >
-                    <h3>{atrac.nombre}</h3>
-                  </div>
-                  <div className="body">
-                    <p className="text-dark mb-2">{descripcion}</p>
-                    <span className="btn-novedades">
-                      Leer <i className="fas fa-arrow-right" />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Link>
-        );
-      });
-    }*/
-
+   
     return (
       <React.Fragment>
         {loading ? (
@@ -125,13 +81,11 @@ class PTelefonosUtiles extends Component {
               >
                 <h3 style={{ color: `#722789` }}>TELÉFONOS </h3>
               </div>
-              <div style={{ float: "left" }} className="Recorridos">
+              <div style={{paddingTop: "10px"}} className="Recorridos">
                 <div className="reco-titulo" style={{ width: "300px" }}>
                   <span className="reco-t-sub2">TELÉFONOS Gratis:</span>
                 </div>
               </div>
-              <br />
-              <br />
               <br />
 
               <h4 className="" style={{ color: `#808080` }}>
@@ -144,13 +98,11 @@ class PTelefonosUtiles extends Component {
                 <li>EMERGENCIA AMBIENTAL Juvennat 105</li>
                 <li> HOSPITAL 107-118</li>
               </h4>
-              <div style={{ float: "left" }} className="Recorridos">
+              <div style={{paddingTop: "10px"}} className="Recorridos">
                 <div className="reco-titulo" style={{ width: "350px" }}>
                   <span className="reco-t-sub2">TELÉFONOS DE INTERÉS:</span>
                 </div>
               </div>
-              <br />
-              <br />
               <br />
 
               <h4 className="" style={{ color: `#808080` }}>
@@ -162,7 +114,7 @@ class PTelefonosUtiles extends Component {
                 <li>Policía Federal (0266) 4426777 / 4424205</li>
                 <li>Cruz Roja (0266) 4431911</li>
               </h4>
-              <div className="Recorridos">
+              <div style={{paddingTop: "10px"}} className="Recorridos">
                 <div className="reco-titulo" style={{ width: "350px" }}>
                   <span className="reco-t-sub2">OFICINAS DE INFORMES:</span>
                 </div>
@@ -184,7 +136,7 @@ class PTelefonosUtiles extends Component {
               </h4>
               <br />
 
-              <div className="Recorridos">
+              <div style={{paddingTop: "10px"}} className="Recorridos">
                 <div className="reco-titulo" style={{ width: "360px" }}>
                   <span className="reco-t-sub2">BOMBEROS VOLUNTARIOS:</span>
                 </div>
@@ -202,8 +154,6 @@ class PTelefonosUtiles extends Component {
               </h4>
               <br />
             </div>
-            <br />
-            <br />
           </React.Fragment>
         )}
       </React.Fragment>

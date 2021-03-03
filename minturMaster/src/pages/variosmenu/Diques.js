@@ -132,18 +132,15 @@ class PDiques extends Component {
                 tentadoras opciones recreativas que podés disfrutar en los
                 hermosos espejos de agua sanluiseños.
               </h4>
-              <div style={{ float: "right" }} className="Recorridos">
+              <div  style={{paddingTop: "10px"}} className="Recorridos">
                 <div className="reco-titulo">
                   <Link to="/PPermisoPesca" className="link">
                     <span className="reco-t-sub2">Ver Permisos</span>
                   </Link>
                 </div>
               </div>
-              <br />
             </div>
-            <br />
-            <br />
-
+            <br></br>
             <div className="container">{ListadoAtractivofull}</div>
           </React.Fragment>
         )}

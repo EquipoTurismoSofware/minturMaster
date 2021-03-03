@@ -137,7 +137,9 @@
 }
 @media only screen and (max-width: 510px) {
   .pantallaGrande {
-    display: none;
+    .newsHome {
+      display: none;
+    }
   }
   .pantallaChica {
     display: inline;

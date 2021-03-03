@@ -59,7 +59,7 @@ export default class Mapas extends Component {
   render() {
     return (
       <ReactWOW animation="fadeIn" data-wow-delay="10s">
-        <div style={{paddingTop: "100px"}} >
+        <div>
           <div className="Recorridos">
             <div className="mancha-sup-izq" />
             <div className="mancha-sup-der" />

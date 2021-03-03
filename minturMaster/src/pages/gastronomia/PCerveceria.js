@@ -36,19 +36,6 @@ class PCerveceria extends Component {
 
   render() {
     const loading = this.state.loading;
-    /*var ListadoAtractivofull = null;
-    if (this.state.data.length > 0) {
-      ListadoAtractivofull = this.state.data.map(atrac => {
-        let descripcion = "";
-        if (atrac.descripcion.length > 395) {
-          descripcion = atrac.descripcion.substr(0, 395) + "...";
-        } else {
-          descripcion = atrac.descripcion;
-        }
-        let indice = Math.floor(Math.random() * atrac.imagenes.length);
-      });
-    }*/
-
     return (
       <React.Fragment>
         {loading ? (
@@ -75,100 +62,7 @@ class PCerveceria extends Component {
                 los deliciosos platos típicos, siempre con el marco natural
                 sorprendente que ofrece nuestra provincia.
               </h4>
-              <br />
             </div>
-            <br />
-            <br />
-            {/*CAMBIAR IMPERDIBLES DE LA CERVEZA*/}
-            <div className="container" style={{ marginTop: "" }}>
-              {/**<Link to={`/gastronomia/14`}>
-                <div className="row mb-5">
-                  <div className="col">
-                    <div className="atractivo-full-item">
-                      <div className="imagen">
-                        <span style={{ backgroundColor: `#722789` }}>
-                          San Francisco
-                        </span>
-                        <img
-                          className="img-fluid"
-                          src={`http://www.turismo.sanluis.gov.ar/api-turismo/public/atractivos/0_14_20190614223405.jpg`}
-                          alt="Img"
-                        />
-                      </div>
-                      <div
-                        className="titulo"
-                        style={{ backgroundColor: `#722789` }}
-                      >
-                        <h3>GÓMEZ CERVEZA ARTESANAL DE LAS SIERRAS</h3>
-                      </div>
-                      <div className="body">
-                        <p
-                          className="text-dark mb-2"
-                          style={{ height: "200px" }}
-                        >
-                          Produce y vende cerveza elaborada con agua pura de las
-                          sierras centrales, sin aditivos ni productos químicos
-                          en su proceso. Los estilos de la cervecería son: roja,
-                          rubia y negra, con gran variedad de sabores.
-                          &nbsp;&nbsp;<span
-                            className="btn-novedades"
-                            style={{ backgroundColor: `#722789` }}
-                          >
-                            Ir <i className="fas fa-arrow-right" />
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-              <Link to={`/gastronomia/17`}>
-                <div className="row mb-5">
-                  <div className="col">
-                    <div className="atractivo-full-item">
-                      <div className="imagen">
-                        <span style={{ backgroundColor: `#722789` }}>
-                          Villa de Merlo
-                        </span>
-                        <img
-                          className="img-fluid"
-                          src={`http://www.turismo.sanluis.gov.ar/api-turismo/public/atractivos/0_17_20190614121700.jpg`}
-                          alt="Img"
-                        />
-                      </div>
-                      <div
-                        className="titulo"
-                        style={{ backgroundColor: `#722789` }}
-                      >
-                        <h3>SIERRA DE LA QUIJADAS</h3>
-                      </div>
-                      <div className="body">
-                        <p
-                          className="text-dark mb-2"
-                          style={{ height: "200px" }}
-                        >
-                          Se especializa en la producción de cerveza artesanal
-                          de cebada, trigo, lúpulo, levadura libre de OGM
-                          (organismos genéticamente modificados) y agua de
-                          vertiente, ajíes picantes, algarroba y hongo de bosque
-                          serrano. Es un emprendimiento joven interesado en los
-                          productos de elaboración artesanal como cervezas y
-                          otros, producciones regionales, trueque, soberanía
-                          alimentaria y responsabilidad ambiental.
-                          &nbsp;&nbsp;<span
-                            className="btn-novedades"
-                            style={{ backgroundColor: `#722789` }}
-                          >
-                            Ir <i className="fas fa-arrow-right" />
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Link>**/}
-            </div>
-            {/*<div className="container">{ListadoAtractivofull}</div>*/}
             <center>
               <div className="Recorridos">
                 <div>

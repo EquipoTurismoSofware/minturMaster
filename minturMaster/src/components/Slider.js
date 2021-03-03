@@ -492,7 +492,7 @@ class Slider extends Component {
           </button>
         </nav>
         <p class="loading-txt" ref={this.state.loadTxt}>
-          Loading images...
+            <Loading margins="150px" />
         </p>
       </React.Fragment>
     );

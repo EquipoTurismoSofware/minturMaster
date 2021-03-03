@@ -146,46 +146,38 @@ class PTrazosHistoria extends Component {
                 estos lugares en donde su gente, alegre, amable y acogedora, te
                 esperan para hacer de tu viaje, una experiencia inolvidable.
               </h4>
-              <br></br>
-
               <br />
-              <div style={{ float: "left" }} className="Recorridos">
+              <div style={{paddingTop: "10px"}} className="Recorridos">
                 <div className="reco-titulo" style={{ width: "200px" }}>
                   <span className="reco-t-sub2">Imperdibles:</span>
                 </div>
               </div>
-              <br />
             </div>
-            <br />
             <br />
             <div className="container">{ListadoAtractivofull}</div>
             <center>
-              {" "}
-              <div className="Recorridos">
+              <div style={{paddingTop: "20px"}} className="Recorridos">
                 <Link to="/Tips_Moto" key="Tips">
                   <div className="reco-titulo" style={{ width: "300px" }}>
                     <span className="reco-t-sub2">Tips y Consejos</span>
                   </div>
                 </Link>
               </div>
-              <br></br>
               <Link to="/Telefonos_Utiles" key="Tips">
-                <div className="Recorridos">
+                <div style={{paddingTop: "20px"}} className="Recorridos">
                   <div className="reco-titulo" style={{ width: "300px" }}>
                     <span className="reco-t-sub2">Teléfonos Útiles</span>
                   </div>
                 </div>
               </Link>
-              <br></br>
-              <div className="Recorridos">
+              <div style={{paddingTop: "20px"}} className="Recorridos">
                 <a href="https://goo.gl/maps/9c7fnddrDJNZiL247" key="Tips">
                   <div className="reco-titulo" style={{ width: "300px" }}>
                     <span className="reco-t-sub2">Ver Mapa</span>
                   </div>
                 </a>
               </div>
-              <br></br>
-              <div className="Recorridos">
+              <div style={{paddingTop: "20px"}} className="Recorridos">
                 <a
                   href="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/MATICES%20NORTENOS-TRAZOS%20DE%20HISTORIA-INFO%2015-10-19.pdf"
                   key="Tips"
@@ -195,8 +187,6 @@ class PTrazosHistoria extends Component {
                   </div>
                 </a>
               </div>
-              <br></br>
-              <br></br>
               <br></br>
             </center>
           </React.Fragment>
