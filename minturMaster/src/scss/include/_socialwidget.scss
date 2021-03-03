@@ -9,7 +9,7 @@ $theme-color: #00c7b1;
   position: fixed;
   right: 2rem;
   bottom: 2rem;
-  z-index: 8000; 
+  z-index: 100; 
 
   &--button-second {
     display: flex;
@@ -114,4 +114,9 @@ $theme-color: #00c7b1;
 
 }
 
+@media only screen and (max-width: 510px) {
+  .chat-widget{
+    display: none;
+  }
+}
 

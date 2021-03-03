@@ -16,7 +16,7 @@ const ZonaMenuUno = (props) => {
   return (
     <React.Fragment>
       <div className="ZonaMenu-Zonas">
-        <h4>Zonas Turísticas</h4>
+        <h4>Caminos Turísticos</h4>
         <div className="ZonaMenu-Data">{dzonas}</div>
       </div>
       <div className="ZonaMenu-Lista">
@@ -183,13 +183,50 @@ const ZonaMenuDos = (props) => {
       <div className="d-flex">
         <div className="ZonaMenu-Lista mr-3">
           <ul>
-            <li>
+          <li>
               <Link
-                to="/PAeropuerto"
+                to="/PParquesList"
                 className="link"
                 onClick={props.onZonaClick}
               >
-                Aeropuertos
+                Parques Provinciales
+              </Link>
+            </li>
+            <li>
+              <Link to="/Diques" className="link" onClick={props.onZonaClick}>
+                Diques Y Embalses
+              </Link>
+            </li>
+            <li>
+              <Link to="/riosysaltos" className="link" onClick={props.onZonaClick}>
+                Ríos y Saltos
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/PPrincipalGastronomia"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Ruta Gastronómica
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/PCerveceria"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Caminos Cerveceros
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/PCreerGnral"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Creer en San Luis
               </Link>
             </li>
             {/* <li>
@@ -201,17 +238,6 @@ const ZonaMenuDos = (props) => {
                 Agencias de Viaje
               </Link>
             </li>
-*/}
-            <li>
-              <Link
-                to="/PAlquileresAuto"
-                className="link"
-                onClick={props.onZonaClick}
-              >
-                Alquileres de autos
-              </Link>
-            </li>
-
             <li>
               <a
                 href="http://entedecontrolderutas.com/contacto/"
@@ -221,23 +247,13 @@ const ZonaMenuDos = (props) => {
                 Estados de ruta
               </a>
             </li>
-            {/* <li>
+            <li>
               <Link
                 to="/guiaturismo"
                 className="link"
                 onClick={props.onZonaClick}
               >
                 Guías de Turismo
-              </Link>
-            </li>*/}
-
-            <li>
-              <Link
-                to="/PCasasCambio"
-                className="link"
-                onClick={props.onZonaClick}
-              >
-                Casa de cambio
               </Link>
             </li>
             <li>
@@ -248,12 +264,43 @@ const ZonaMenuDos = (props) => {
               >
                 Clima
               </a>
-            </li>
+          </li>*/}
           </ul>
         </div>
         <div className="ZonaMenu-Lista mr-3">
-          <ul>
+        <ul>
+        <li>
+              <Link
+                to="/listado-guias-agencias-covid/guiasturismo"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Guías - Adheridos al Protocolo
+              </Link>
+            </li>
             <li>
+              <Link
+                to="/listado-guias-agencias-covid/agencias"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Agencias - Adheridas al Protocolo
+              </Link>
+            </li>
+            <li>
+              <a
+                href="#/filtroalojamientoAdhiere"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Alojamientos - Adheridos al Protocolo
+              </a>
+            </li>
+        </ul>
+        </div>
+        <div className="ZonaMenu-Lista mr-3">
+          <ul>
+            {/*<li>
               <a
                 href="http://www.salud.sanluis.gov.ar/mapa/"
                 className="link"
@@ -275,8 +322,34 @@ const ZonaMenuDos = (props) => {
               >
                 Prensa turística
               </Link>
+            </li>*/}
+            <li>
+              <Link
+                to="/PAeropuerto"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Aeropuertos
+              </Link>
             </li>
-
+            <li>
+              <Link
+                to="/PAlquileresAuto"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Alquileres de autos
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/PCasasCambio"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Casa de cambio
+              </Link>
+            </li>
             <li>
               <Link
                 to="/filtroalojamiento"
@@ -287,6 +360,7 @@ const ZonaMenuDos = (props) => {
               </Link>
             </li>
 
+            {/*
             <li>
               <Link
                 to="/Pcontacto"
@@ -295,7 +369,7 @@ const ZonaMenuDos = (props) => {
               >
                 Contacto
               </Link>
-            </li>
+            </li>*/}
           </ul>
         </div>
       </div>
@@ -359,6 +433,11 @@ const ZonaMenuCuatro = (props) => {
                 Diques Y Embalses
               </Link>
             </li>
+            <li>
+              <Link to="/riosysaltos" className="link" onClick={props.onZonaClick}>
+                Ríos y Saltos
+              </Link>
+            </li>
             {/* <li>
               <Link
                 to="/filtroalojamiento"
@@ -407,33 +486,6 @@ const ZonaMenuCinco = (props) => {
       <div className="d-flex">
         <div className="ZonaMenu-Lista mr-3">
           <ul>
-            <li>
-              <Link
-                to="/listado-guias-agencias-covid/guiasturismo"
-                className="link"
-                onClick={props.onZonaClick}
-              >
-                Guías - Adheridos al Protocolo
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/listado-guias-agencias-covid/agencias"
-                className="link"
-                onClick={props.onZonaClick}
-              >
-                Agencias - Adheridas al Protocolo
-              </Link>
-            </li>
-            <li>
-              <a
-                href="#/filtroalojamientoAdhiere"
-                className="link"
-                onClick={props.onZonaClick}
-              >
-                Alojamientos - Adheridos al Protocolo
-              </a>
-            </li>
             <li>
               <a
                 href="#/turismo-dosep"
@@ -500,6 +552,24 @@ const ZonaMenuCinco = (props) => {
               >
                 Registro para alojamientos
               </a>
+            </li>
+            <li>
+              <Link
+                to="/novedades"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Prensa turística
+              </Link>
+          </li>
+          <li>
+              <Link
+                to="/Pcontacto"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Contacto
+              </Link>
             </li>
           </ul>
         </div>

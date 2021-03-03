@@ -25,7 +25,7 @@ import PFiltroAlojamientoAdhiereCovid from "./pages/variosmenu/PFiltroAlojamient
 import PFiltroAlojamientoAdhiereDosep from "./pages/variosmenu/PFiltroAlojamientoAdhiereDosep";
 import PFiltroTemplateDosep from "./pages/variosmenu/PFiltroTemplateDosep";
 import PGastronomiaDosep from "./pages/variosmenu/PGastronomiaDosep";
-
+import PRiosYSaltos from "./pages/variosmenu/RiosYSaltos";
 import PAgenciaViajes from "./pages/servicios/PAgenciaViajes";
 import PGuiaTurismo from "./pages/servicios/PGuiaTurismo";
 import PAeropuerto from "./pages/servicios/PAeropuerto";
@@ -131,6 +131,7 @@ class App extends Component {
 
               
               />
+              <Route exact path="/riosysaltos" component={PRiosYSaltos} />
               <Route exact path="/agenciaviajes" component={PAgenciaViajes} />
               <Route exact path="/guiaturismo" component={PGuiaTurismo} />
               <Route exact path="/PAeropuerto" component={PAeropuerto} />

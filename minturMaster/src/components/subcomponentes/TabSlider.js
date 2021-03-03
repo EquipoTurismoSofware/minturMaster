@@ -120,15 +120,15 @@ export default class TabSlider extends Component {
                 "Cuidar"{" "}
               </a>
               que se te otorga en minutos.
-              <div className="container-btnsavion">
-                <button className="btnavion">
+              <div>
+                <a className="btnavion" href="http://sanluismidestino.com/vuelos-especiales/" target="_blank">
                   <span>Ingreso en Avión</span>
                   <img
                     className="material-icons"
                     src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/icons/ATERRIZAJE.png"
                     style={{ height: "25px" }}
                   ></img>
-                </button>
+                </a>
               </div>
               
             </section>
@@ -142,7 +142,7 @@ export default class TabSlider extends Component {
               La provincia elaboró distintos protocolos para que puedas
               disfrutar de tus vacaciones de manera segura. Te mostramos el
               listado de todos los alojamientos que cumplen con los requisitos.
-              <div className="container-btnsavion">
+              <div>
               <Link
                 to="/filtroalojamientoAdhiere"
                 className="btnavion"
@@ -190,11 +190,11 @@ export default class TabSlider extends Component {
                   ></img>
               </Link>
               <Link
-                to="/PCerveceria"
+                to="/Recorridos"
                 className="btnavion-conoce"
                 style={{backgroundColor: "rgb(156, 54, 187)"}}
               >
-                <span>Caminos cerveceros</span>
+                <span>Caminos alternativos</span>
                   <img
                     className="material-icons"
                     src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/icons/ATERRIZAJE.png"

@@ -492,6 +492,7 @@ class Menu extends Component {
               >
                 <span className="nav-link">¿QUÉ VISITAMOS?</span>
               </li>
+              {/*
               <li className="nav-item link-menu">
                 <span
                   className="nav-link"
@@ -499,7 +500,7 @@ class Menu extends Component {
                 >
                   ¿QUÉ HACEMOS?
                 </span>
-              </li>
+              </li>*/}
               <li className="nav-item link-menu">
                 <span
                   className="nav-link"
@@ -513,11 +514,7 @@ class Menu extends Component {
                   className="nav-link"
                   onMouseOver={(e) => this.setMenu(5, e)}
                 >
-                  TURISMO INTERNO
-                  <img
-                    style={{ height: `20px`, marginBottom: "5px" }}
-                    src={`${process.env.REACT_APP_API_RECURSOS}/recursos/coronel3.png`}
-                  />
+                  INSTITUCIONAL
                 </span>
               </li>
 

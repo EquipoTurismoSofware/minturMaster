@@ -134,7 +134,7 @@ export default class Newsletter extends Component {
       <React.Fragment>
         <Container className="newsletter" style={{display: this.state.visible}}>
           <Row className="newsHeader">
-            <Col md={10}><h5>Sumate al Newsletter:</h5></Col>
+            <Col md={10}><span className="newsTitle"><i class="far fa-newspaper"></i> Sumate al Newsletter <i class="far fa-newspaper"></i></span></Col>
             <Col md={2}><button style={{right: 0, border: "none", background: "none"}} onClick={() => this.closeModal()}><i className="fas fa-times"></i></button> </Col>
           </Row>
           <Row className="newsBody">

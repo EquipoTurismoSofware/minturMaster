@@ -1,5 +1,5 @@
 .newsletter {
-    width: 250px;
+    width: 295px;
     z-index: 99;
     position: fixed; /* Fixed/sticky position */
     bottom: 15px; /* Place the button at the bottom of the page */
@@ -11,6 +11,10 @@
 
     .newsHeader{
         padding-top: 5px;
+        .newsTitle{
+            color:rgba(114,39,137, 1);
+            font-size: 1.20em;
+        }
     }
 
     .newsEmail{

@@ -1,36 +1,73 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
-/* eslint-disable no-script-url */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from "react";
-import Modal from "react-awesome-modal";
 import { Link } from "react-router-dom";
 
 export default class PantallaModal extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      ancho: this.props.anchoImg,
-      alto: this.props.altoImg,
-      maginLeft: this.props.maginLeft,
-      visible: false,
-    };
+      foto: ""
+    }
+    this.closeModal = this.closeModal.bind(this);
   }
+  componentDidUpdate(prevProps) {
+    if(this.props.picture !== prevProps.picture){
+      console.log("Entro?")
+      this.setState({
+        foto: this.props.picture
+      }, () => {
+        var mContainer = document.getElementById(`modalMain-container`);
+        mContainer.className += " modalIn";    
+      });
+    }
+  }
+
   componentDidMount() {
     this.setState({
-      visible: true,
-    });
+      foto: this.props.picture
+    },() => {
+      var mContainer = document.getElementById(`modalMain-container`);
+      mContainer.className += " modalIn";
+    })
   }
 
   closeModal() {
-    this.setState({
-      visible: false,
-    });
+    var mContainer = document.getElementById(`modalMain-container`);
+    mContainer.className += mContainer.className.replace("modalIn", "modalOut");
   }
 
   render() {
     return (
+      <React.Fragment id="modalMainBody">
+        <div id="modalMain-container" onClick={() => this.closeModal()}>
+        <div class="modalMain-background">
+          <div class="modalMain">
+          <a
+            className="closeModal"
+            onClick={() => this.closeModal()}
+          >
+            <i class="far fa-times-circle"></i>          
+          </a>
+          
+          <Link to="/turismo-dosep" className="link-menu">
+            <img
+              src={this.state.foto}
+            />
+          </Link>
+            <svg class="modalMain-svg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+              <rect fill="none" height="100%" width="100%"></rect>
+            </svg>
+          </div>
+        </div>
+      </div>
+      {/*<div class="content">
+        <h1>Modal Animations</h1>
+        <div class="buttons">
+          <div id="six" class="button">Sketch</div>
+        </div>
+    </div>*/}
+      </React.Fragment>
+
+      /*
       <section>
         <Modal
           visible={this.state.visible}
@@ -57,7 +94,7 @@ export default class PantallaModal extends Component {
             onClick={() => this.closeModal()}
           />
         </Modal>
-      </section>
+            </section>*/
     );
   }
 }

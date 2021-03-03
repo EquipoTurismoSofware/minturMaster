@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Consumer } from "../context";
+import { Link } from "react-router-dom";
 import { gsap } from "gsap/all";
 import axios from "axios";
 
@@ -332,21 +333,21 @@ class CardImperdibles extends Component {
                 </div>
               </button>
               <div class="cards__wrapper" ref={this.state.cardsContainerEl}>
-                <div class="cardImp current--card">
+                <Link to={`/atractivo/27`} class="cardImp current--card">
                   <div class="cardImp__image">
                     <img src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/imperdiblesHome/piscuyaco.jpg" alt="" />
                   </div>
-                </div>
-                <div class="cardImp next--card">
+                </Link>
+                <Link to={`/atractivo/109`} class="cardImp next--card">
                   <div class="cardImp__image">
                     <img src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/imperdiblesHome/potrero.jpg" alt="" />
                   </div>
-                </div>
-                <div class="cardImp previous--card">
+                </Link>
+                <Link to={`/atractivo/144`} class="cardImp previous--card">
                   <div class="cardImp__image">
                     <img src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/imperdiblesHome/rutaNogoliCarolina.jpg" alt="" />
                   </div>
-                </div>
+                </Link>
               </div>
               <button
                 class="cardList__btn btn btn--right"
@@ -367,20 +368,20 @@ class CardImperdibles extends Component {
               <div class="info__wrapper" ref={this.state.cardInfosContainerEl}>
                 <div class="info current--info">
                   <h1 class="text name">Dique Piscu Yaco</h1>
-                  <h4 class="text location">Papagayos</h4>
+                  <h4 class="text location">Cortaderas</h4>
                   <p class="text description">Hermoso embalse de playas blancas a la orilla de las sierras.</p>
                 </div>
 
                 <div class="info next--info">
                   <h1 class="text name">Embalse</h1>
-                  <h4 class="text location">Potrero de los Funes</h4>
-                  <p class="text description">Adventure is never far away</p>
+                  <h4 class="text location">Nogolí</h4>
+                  <p class="text description">Rodeado en un marco natural ideal, con varias islas que lo hacen único en nuestra provincia.</p>
                 </div>
 
                 <div class="info previous--info">
-                  <h1 class="text name">El Trapiche</h1>
-                  <h4 class="text location">San Luis</h4>
-                  <p class="text description">Let your dreams come true</p>
+                  <h1 class="text name">Salto Escondido</h1>
+                  <h4 class="text location">San Francisco</h4>
+                  <p class="text description">En plena Sierras de San Luis y con 70mtrs de altura te espera para una aventura única.</p>
                 </div>
               </div>
             </div>
