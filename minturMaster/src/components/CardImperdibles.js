@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Consumer } from "../context";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap/all";
+import Loading from "../utils/Loading";
 import axios from "axios";
 
 class CardImperdibles extends Component {
@@ -385,7 +386,12 @@ class CardImperdibles extends Component {
                 </div>
               </div>
             </div>
-
+            <div class="loading__wrapper">
+                <div class="loader--text"></div>
+                <div class="loader">
+                  <span><Loading margins="150px" /></span>
+                </div>
+             </div>
             <div class="app__bg" ref={this.state.appBgContainerEl}>
               <div class="app__bg__image current--image">
                 <img src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/imperdiblesHome/piscuyaco.jpg" alt="" />
@@ -396,12 +402,6 @@ class CardImperdibles extends Component {
               <div class="app__bg__image previous--image">
                 <img src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/imperdiblesHome/rutaNogoliCarolina.jpg" alt="" />
               </div>
-            </div>
-          </div>
-          <div class="loading__wrapper">
-            <div class="loader--text">Cargando...</div>
-            <div class="loader">
-              <span></span>
             </div>
           </div>
           <svg class="icons" style={{ display: "none" }}>
