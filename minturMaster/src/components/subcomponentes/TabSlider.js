@@ -174,7 +174,7 @@ export default class TabSlider extends Component {
                 <span>Parques provinciales</span>
                   <img
                     className="material-icons"
-                    src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/icons/ATERRIZAJE.png"
+                    src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/icons/ICONO PARQUE.png"
                     style={{ height: "25px", color: "rgba(114,39,137, 1)" }}
                   ></img>
               </Link>
@@ -183,7 +183,7 @@ export default class TabSlider extends Component {
                   <span>Diques y embalses</span>
                   <img
                     className="material-icons"
-                    src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/icons/ATERRIZAJE.png"
+                    src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/icons/ICONO AGUA.png"
                     style={{
                       height: "25px",
                       color: "rgba(237,15,104, 1)",
@@ -198,7 +198,7 @@ export default class TabSlider extends Component {
                 <span>Caminos alternativos</span>
                   <img
                     className="material-icons"
-                    src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/icons/ATERRIZAJE.png"
+                    src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/icons/ICONO TREKKING.png"
                     style={{
                       height: "25px",
                       color: "rgba(237,15,104, 1)",
@@ -213,7 +213,7 @@ export default class TabSlider extends Component {
                 <span>Creer en San Luis</span>
                   <img
                     className="material-icons"
-                    src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/icons/ATERRIZAJE.png"
+                    src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/icons/ICONO INFORME.png"
                     style={{
                       height: "25px",
                       color: "rgba(237,15,104, 1)",
