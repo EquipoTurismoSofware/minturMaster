@@ -615,8 +615,8 @@ class Menu extends Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
             onClick={() => this.closeMenu()}
-            className={`menu-visita-container animated fadeIn`}
-            style={this.state.clase === "sticky" ? {top: "45px", position: "fixed"}: {top: "94px", position: "absolute"}} 
+            className={this.state.clase == "sticky" ? `menu-visita-containerSticky animated fadeIn` : `menu-visita-container animated fadeIn`}
+            //style={this.state.clase === "sticky" ? {top: "45px", position: "fixed"}: {top: "94px", position: "absolute"}} 
             onMouseLeave={(e) => this.closeMenu(e)}
           >
             <div className="menu-visita">

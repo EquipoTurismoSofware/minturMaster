@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap");
 
 :root {
-  --card-width: 200px;
-	--card-height: 300px;
+  --card-width: 250px;
+	--card-height: 400px;
 
 	--card-transition-duration: 800ms;
 	--card-transition-easing: ease;
@@ -117,23 +117,24 @@
   width: calc(3 * var(--card-width));
   height: 100%;
   &__btn {
-    --btn-size: 35px;
+    --btn-size: 45px;
     width: var(--btn-size);
     height: var(--btn-size);
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     &.btn--left {
-      left: -8%;
+      left: -15%;
     }
     &.btn--right {
-      right: -8%;
+      right: -15%;
     }
 
     .icon {
       width: 100%;
       height: 100%;
-      svg {
+      i {
+        font-size: calc(var(--card-width) * var(--text-size-offset, 0.1));
         width: 100%;
         height: 100%;
       }
@@ -301,19 +302,14 @@
   }
 }
 
-@media only screen and (min-width: 870px) {
+@media only screen and (max-width: 978px) {
 	:root {
-		--card-width: 250px;
-		--card-height: 400px;
+		--card-width: 200px;
+		--card-height: 350px;
 	}
 }
 
-@media only screen and (max-width: 696px) {
-  :root {
-		--card-width: 160px;
-		--card-height: 250px;
-	}
-
+@media only screen and (max-width: 780px) {
   .cardList {
     &__btn {
       z-index: 95;
@@ -327,43 +323,71 @@
   }
 }
 
-@media only screen and (max-width: 547px) {
+@media only screen and (max-width: 690px) {
   :root {
-		--card-width: 130px;
-		--card-height: 210px;
-	}
-}
-
-@media only screen and (max-width: 438px) {
-  :root {
-		--card-width: 120px;
-		--card-height: 190px;
+		--card-width: 240px;
+		--card-height: 400px;
 	}
   .cardList {
+    width: 100%;
     &__btn {
+      z-index: 95;
       &.btn--left {
-        left: -4%;
+        left: 2%;
       }
       &.btn--right {
-        right: -4%;
+        right: 2%;
       }
+    }
+  }
+
+  .cardImp {
+    &.previous--card {
+      display: none;
+    }
+  
+    &.next--card {
+      display: none;
+    }
+  }
+
+  .infoList {
+    width: 85%;
+  }
+  .info {
+    margin-left: calc(var(--card-width) / 2.5);
+    .text {
+      font-size: calc(var(--card-width) * var(--text-size-offset, 0.2));
     }
   }
 }
 
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 547px) {
+  .info {
+    margin-left: calc(var(--card-width) / 4);
+  }
+}
+
+@media only screen and (max-width: 438px) {
   :root {
-		--card-width: 110px;
-		--card-height: 180px;
+		--card-width: 220px;
 	}
+
   .cardList {
     &__btn {
       &.btn--left {
-        left: -3%;
+        left: 0.5%;
       }
       &.btn--right {
-        right: -3%;
+        right: 0.5%;
       }
+    }
+  }
+
+  .info {
+    margin-left: calc(var(--card-width) / 10);
+    .text {
+      font-size: calc(var(--card-width) * var(--text-size-offset, 0.18));
     }
   }
 }

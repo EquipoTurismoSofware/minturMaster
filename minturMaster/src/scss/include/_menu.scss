@@ -337,7 +337,26 @@ margin-top: 5px;
   }
   .menu-visita-container {
     position: absolute;
-    margin-top: 250px;
+    margin-top: 190px;
+    left: 0px;
+    //height: 400px;
+    padding-bottom: 20px;
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @include degrado(0.95, 0.8);
+    z-index: 30;
+    padding-top: 10px;
+    .menu-visita {
+      width: 100%;
+      color: #fff;
+      padding-top: 30px;
+    }
+  }
+  .menu-visita-containerSticky {
+    position: fixed;
+    margin-top: 190px;
     left: 0px;
     //height: 400px;
     padding-bottom: 20px;
@@ -491,6 +510,26 @@ right: 370px;
 .menu-visita-container {
   position: absolute;
   top: 94px;
+  left: 0px;
+  //height: 400px;
+  padding-bottom: 20px;
+  display: block;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  @include degrado(0.95, 0.8);
+  z-index: 96;
+  padding-top: 10px;
+  .menu-visita {
+    width: 100%;
+    color: #fff;
+    padding-top: 30px;
+  }
+}
+
+.menu-visita-containerSticky {
+  position: fixed;
+  top: 45px;
   left: 0px;
   //height: 400px;
   padding-bottom: 20px;

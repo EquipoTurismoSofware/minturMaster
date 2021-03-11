@@ -180,8 +180,8 @@ const DataZona = (props) => {
 const ZonaMenuDos = (props) => {
   return (
     <React.Fragment>
-      <div className="d-flex">
-        <div className="ZonaMenu-Lista mr-3">
+      <div className="d-sm-flex">
+        <div className="ZonaMenu-Lista2 mr-3">
           <ul>
           <li>
               <Link
@@ -267,7 +267,7 @@ const ZonaMenuDos = (props) => {
           </li>*/}
           </ul>
         </div>
-        <div className="ZonaMenu-Lista mr-3" style={{borderLeft: "1px solid", paddingLeft: "10px"}}>
+        <div className="ZonaMenu-Lista2 mr-3" style={window.screen.width >= 575 ? {borderLeft: "1px solid", paddingLeft: "10px"} : {borderTop: "1px solid", paddingTop: "10px"}}>
         <ul>
         <li>
               <Link
@@ -298,7 +298,7 @@ const ZonaMenuDos = (props) => {
             </li>
         </ul>
         </div>
-        <div className="ZonaMenu-Lista mr-3" style={{borderLeft: "1px solid", paddingLeft: "10px"}}>
+        <div className="ZonaMenu-Lista2 mr-3" style={window.screen.width >= 575 ? {borderLeft: "1px solid", paddingLeft: "10px"} : {borderTop: "1px solid", paddingTop: "10px"}}>
           <ul>
             {/*<li>
               <a
