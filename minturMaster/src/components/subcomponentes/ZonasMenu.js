@@ -296,7 +296,7 @@ const ZonaMenuDos = (props) => {
                 Alojamientos - Adheridos al Protocolo
               </a>
             </li>
-        </ul>
+           </ul>
         </div>
         <div className="ZonaMenu-Lista2 mr-3" style={window.screen.width >= 575 ? {borderLeft: "1px solid", paddingLeft: "10px"} : {borderTop: "1px solid", paddingTop: "10px"}}>
           <ul>
@@ -323,6 +323,15 @@ const ZonaMenuDos = (props) => {
                 Prensa turística
               </Link>
             </li>*/}
+             <li>
+              <a
+                href="#/oficinasturismo"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Oficianas de Turismo
+              </a>
+            </li>
             <li>
               <Link
                 to="/PAeropuerto"

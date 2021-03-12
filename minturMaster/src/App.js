@@ -28,6 +28,7 @@ import PGastronomiaDosep from "./pages/variosmenu/PGastronomiaDosep";
 import PRiosYSaltos from "./pages/variosmenu/RiosYSaltos";
 import PAgenciaViajes from "./pages/servicios/PAgenciaViajes";
 import PGuiaTurismo from "./pages/servicios/PGuiaTurismo";
+import OficinasTurismo from "./pages/OficinasTurismo"
 import PAeropuerto from "./pages/servicios/PAeropuerto";
 import PAlquileresAuto from "./pages/servicios/PAlquileresAuto";
 import PCasasCambio from "./pages/servicios/PCasasCambio";
@@ -134,6 +135,7 @@ class App extends Component {
               <Route exact path="/riosysaltos" component={PRiosYSaltos} />
               <Route exact path="/agenciaviajes" component={PAgenciaViajes} />
               <Route exact path="/guiaturismo" component={PGuiaTurismo} />
+              <Route exact path="/oficinasturismo" component={OficinasTurismo}/>
               <Route exact path="/PAeropuerto" component={PAeropuerto} />
               <Route exact path="/coronavirus" component={PCoronavirus} />
               <Route
