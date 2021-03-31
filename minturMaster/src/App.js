@@ -16,6 +16,7 @@ import PLocalidad from "./pages/PLocalidad";
 import ListadoGuiasAgenciasCovid from "./pages/variosmenu/ListadoGuiasAgenciasCovid";
 import PAtractivo from "./pages/atractivo/PAtractivo";
 import PEventos from "./pages/PEventos";
+import PTurismoSemanaSanta from "./pages/PTurismoSemanaSanta";
 import PEvento from "./pages/PEvento";
 import PListadoAtractivos from "./pages/atractivo/PListadoAtractivos";
 import PListadoGastronomia from "./pages/gastronomia/PListadoGastronomia";
@@ -28,7 +29,7 @@ import PGastronomiaDosep from "./pages/variosmenu/PGastronomiaDosep";
 import PRiosYSaltos from "./pages/variosmenu/RiosYSaltos";
 import PAgenciaViajes from "./pages/servicios/PAgenciaViajes";
 import PGuiaTurismo from "./pages/servicios/PGuiaTurismo";
-import OficinasTurismo from "./pages/OficinasTurismo"
+import OficinasTurismo from "./pages/OficinasTurismo";
 import PAeropuerto from "./pages/servicios/PAeropuerto";
 import PAlquileresAuto from "./pages/servicios/PAlquileresAuto";
 import PCasasCambio from "./pages/servicios/PCasasCambio";
@@ -72,7 +73,6 @@ import NotFound from "./components/NotFound";
 import PMapas from "./pages/PMapas";
 import GastronomiaDosep from "./pages/gastronomia/GastronomiaDosep";
 
-
 class App extends Component {
   render() {
     return (
@@ -109,7 +109,7 @@ class App extends Component {
                 component={PFiltroAlojamiento}
               />
 
-               <Route
+              <Route
                 exact
                 path="/filtroalojamientoAdhiere"
                 component={PFiltroAlojamientoAdhiereCovid}
@@ -119,23 +119,30 @@ class App extends Component {
                 path="/alojamientos-turismo-Dosep"
                 component={PFiltroAlojamientoAdhiereDosep}
               />
-                 <Route
+              <Route
                 exact
                 path="/adheridos-turismo-Dosep"
                 component={PFiltroTemplateDosep}
               />
 
-               <Route
+              <Route
                 exact
                 path="/gastronomia-Dosep"
                 component={PGastronomiaDosep}
-
-              
               />
               <Route exact path="/riosysaltos" component={PRiosYSaltos} />
+              <Route
+                exact
+                path="/turismo-semana-santa"
+                component={PTurismoSemanaSanta}
+              />
               <Route exact path="/agenciaviajes" component={PAgenciaViajes} />
               <Route exact path="/guiaturismo" component={PGuiaTurismo} />
-              <Route exact path="/oficinasturismo" component={OficinasTurismo}/>
+              <Route
+                exact
+                path="/oficinasturismo"
+                component={OficinasTurismo}
+              />
               <Route exact path="/PAeropuerto" component={PAeropuerto} />
               <Route exact path="/coronavirus" component={PCoronavirus} />
               <Route
@@ -218,14 +225,14 @@ class App extends Component {
                 path="/PPrincipalGastronomia"
                 component={PPrincipalGastronomia}
               />
-              
+
               <Route
                 exact
                 path="/listado-guias-agencias-covid/:tipo"
                 component={ListadoGuiasAgenciasCovid}
               />
-              
-               <Route
+
+              <Route
                 exact
                 path="/agencias-turismo-dosep"
                 component={ListadoAgenciasDosep}
@@ -235,25 +242,17 @@ class App extends Component {
                 path="/turismo-interno"
                 component={BotonTurismoInterno}
               />
-              <Route
-                exact
-                path="/turismo-dosep"
-                component={TurismoDosep}
-              />
-                <Route
-                exact
-                path="/descargar-mapas"
-                component={PMapas}
-              />
+              <Route exact path="/turismo-dosep" component={TurismoDosep} />
+              <Route exact path="/descargar-mapas" component={PMapas} />
               <Route
                 exact
                 path="/registro-alojamientos-covid"
                 component={RegistroAlojamientos}
               />
 
-           <Route path="*">
-            <NotFound />
-          </Route>
+              <Route path="*">
+                <NotFound />
+              </Route>
             </Switch>
             <ToTop showAt={400} />
 

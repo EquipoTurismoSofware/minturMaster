@@ -5,37 +5,48 @@ export default class PantallaModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      foto: ""
-    }
+      foto: "",
+    };
     this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidUpdate(prevProps) {
-    if(this.props.picture !== prevProps.picture){
-      this.setState({
-        foto: this.props.picture
-      }, () => {
-        var mContainer = document.getElementById(`modalMain-container`);
-        mContainer.className += " modalIn";    
-      });
+    if (this.props.picture !== prevProps.picture) {
+      this.setState(
+        {
+          foto: this.props.picture,
+        },
+        () => {
+          var mContainer = document.getElementById(`modalMain-container`);
+          mContainer.className += " modalIn";
+        }
+      );
     }
   }
 
   componentDidMount() {
-    if(window.screen.width <= 510){
-      this.setState({
-        foto: "http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/DOSEPmodalCEL.jpg"
-      },() => {
-        var mContainer = document.getElementById(`modalMain-container`);
-        mContainer.className += " modalIn";
-      })
-    }else{
-      this.setState({
-        foto: "http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/DOSEPmodal.jpg"
-      },() => {
-        var mContainer = document.getElementById(`modalMain-container`);
-        mContainer.className += " modalIn";
-      })
+    if (window.screen.width <= 510) {
+      this.setState(
+        {
+          foto:
+            "http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/AVISO PAGINA V.jpg",
+        },
+        () => {
+          var mContainer = document.getElementById(`modalMain-container`);
+          mContainer.className += " modalIn";
+        }
+      );
+    } else {
+      this.setState(
+        {
+          foto:
+            "http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/AVISO PAGINA.jpg",
+        },
+        () => {
+          var mContainer = document.getElementById(`modalMain-container`);
+          mContainer.className += " modalIn";
+        }
+      );
     }
   }
 
@@ -48,27 +59,26 @@ export default class PantallaModal extends Component {
     return (
       <React.Fragment id="modalMainBody">
         <div id="modalMain-container" onClick={() => this.closeModal()}>
-        <div class="modalMain-background">
-          <div class="modalMain">
-          <a
-            className="closeModal"
-            onClick={() => this.closeModal()}
-          >
-            <i class="far fa-times-circle"></i>          
-          </a>
-          
-          <Link to="/turismo-dosep" className="link-menu">
-            <img
-              src={this.state.foto}
-            />
-          </Link>
-            <svg class="modalMain-svg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-              <rect fill="none" height="100%" width="100%"></rect>
-            </svg>
+          <div class="modalMain-background">
+            <div class="modalMain">
+              <a className="closeModal" onClick={() => this.closeModal()}>
+                <i class="far fa-times-circle"></i>
+              </a>
+
+              <Link to="/turismo-semana-santa" className="link-menu">
+                <img src={this.state.foto} />
+              </Link>
+              <svg
+                class="modalMain-svg"
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="none"
+              >
+                <rect fill="none" height="100%" width="100%"></rect>
+              </svg>
+            </div>
           </div>
         </div>
-      </div>
-      {/*<div class="content">
+        {/*<div class="content">
         <h1>Modal Animations</h1>
         <div class="buttons">
           <div id="six" class="button">Sketch</div>
