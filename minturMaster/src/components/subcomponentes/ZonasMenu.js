@@ -183,7 +183,7 @@ const ZonaMenuDos = (props) => {
       <div className="d-sm-flex">
         <div className="ZonaMenu-Lista2 mr-3">
           <ul>
-          <li>
+            <li>
               <Link
                 to="/PParquesList"
                 className="link"
@@ -198,7 +198,11 @@ const ZonaMenuDos = (props) => {
               </Link>
             </li>
             <li>
-              <Link to="/riosysaltos" className="link" onClick={props.onZonaClick}>
+              <Link
+                to="/riosysaltos"
+                className="link"
+                onClick={props.onZonaClick}
+              >
                 Ríos y Saltos
               </Link>
             </li>
@@ -267,9 +271,16 @@ const ZonaMenuDos = (props) => {
           </li>*/}
           </ul>
         </div>
-        <div className="ZonaMenu-Lista2 mr-3" style={window.screen.width >= 575 ? {borderLeft: "1px solid", paddingLeft: "10px"} : {borderTop: "1px solid", paddingTop: "10px"}}>
-        <ul>
-        <li>
+        <div
+          className="ZonaMenu-Lista2 mr-3"
+          style={
+            window.screen.width >= 575
+              ? { borderLeft: "1px solid", paddingLeft: "10px" }
+              : { borderTop: "1px solid", paddingTop: "10px" }
+          }
+        >
+          <ul>
+            <li>
               <Link
                 to="/listado-guias-agencias-covid/guiasturismo"
                 className="link"
@@ -296,9 +307,16 @@ const ZonaMenuDos = (props) => {
                 Alojamientos - Adheridos al Protocolo
               </a>
             </li>
-           </ul>
+          </ul>
         </div>
-        <div className="ZonaMenu-Lista2 mr-3" style={window.screen.width >= 575 ? {borderLeft: "1px solid", paddingLeft: "10px"} : {borderTop: "1px solid", paddingTop: "10px"}}>
+        <div
+          className="ZonaMenu-Lista2 mr-3"
+          style={
+            window.screen.width >= 575
+              ? { borderLeft: "1px solid", paddingLeft: "10px" }
+              : { borderTop: "1px solid", paddingTop: "10px" }
+          }
+        >
           <ul>
             {/*<li>
               <a
@@ -323,7 +341,7 @@ const ZonaMenuDos = (props) => {
                 Prensa turística
               </Link>
             </li>*/}
-             <li>
+            {/*<li>
               <a
                 href="#/oficinasturismo"
                 className="link"
@@ -331,7 +349,7 @@ const ZonaMenuDos = (props) => {
               >
                 Oficianas de Turismo
               </a>
-            </li>
+             </li>*/}
             <li>
               <Link
                 to="/PAeropuerto"
@@ -443,7 +461,11 @@ const ZonaMenuCuatro = (props) => {
               </Link>
             </li>
             <li>
-              <Link to="/riosysaltos" className="link" onClick={props.onZonaClick}>
+              <Link
+                to="/riosysaltos"
+                className="link"
+                onClick={props.onZonaClick}
+              >
                 Ríos y Saltos
               </Link>
             </li>
@@ -570,8 +592,8 @@ const ZonaMenuCinco = (props) => {
               >
                 Prensa turística
               </Link>
-          </li>
-          <li>
+            </li>
+            <li>
               <Link
                 to="/Pcontacto"
                 className="link"
