@@ -181,7 +181,7 @@ const ZonaMenuDos = (props) => {
   return (
     <React.Fragment>
       <div className="d-sm-flex">
-        <div className="ZonaMenu-Lista2 mr-3">
+        <div className="ZonaMenu-Lista mr-3">
           <ul>
             <li>
               <Link
@@ -233,54 +233,11 @@ const ZonaMenuDos = (props) => {
                 Creer en San Luis
               </Link>
             </li>
-            {/* <li>
-              <Link
-                to="/agenciaviajes"
-                className="link"
-                onClick={props.onZonaClick}
-              >
-                Agencias de Viaje
-              </Link>
-            </li>
-            <li>
-              <a
-                href="http://entedecontrolderutas.com/contacto/"
-                className="link"
-                onClick={props.onZonaClick}
-              >
-                Estados de ruta
-              </a>
-            </li>
-            <li>
-              <Link
-                to="/guiaturismo"
-                className="link"
-                onClick={props.onZonaClick}
-              >
-                Guías de Turismo
-              </Link>
-            </li>
-            <li>
-              <a
-                href="http://www.clima.edu.ar/"
-                className="link"
-                onClick={props.onZonaClick}
-              >
-                Clima
-              </a>
-          </li>*/}
           </ul>
         </div>
-        <div
-          className="ZonaMenu-Lista2 mr-3"
-          style={
-            window.screen.width >= 575
-              ? { borderLeft: "1px solid", paddingLeft: "10px" }
-              : { borderTop: "1px solid", paddingTop: "10px" }
-          }
-        >
-          <ul>
-            <li>
+        <div className="ZonaMenu-Lista mr-3" style={window.screen.width >= 575 ? {borderLeft: "1px solid", paddingLeft: "10px"} : {borderTop: "1px solid", paddingTop: "10px"}}>
+        <ul>
+        <li>
               <Link
                 to="/listado-guias-agencias-covid/guiasturismo"
                 className="link"
@@ -309,14 +266,7 @@ const ZonaMenuDos = (props) => {
             </li>
           </ul>
         </div>
-        <div
-          className="ZonaMenu-Lista2 mr-3"
-          style={
-            window.screen.width >= 575
-              ? { borderLeft: "1px solid", paddingLeft: "10px" }
-              : { borderTop: "1px solid", paddingTop: "10px" }
-          }
-        >
+        <div className="ZonaMenu-Lista mr-3" style={window.screen.width >= 575 ? {borderLeft: "1px solid", paddingLeft: "10px"} : {borderTop: "1px solid", paddingTop: "10px"}}>
           <ul>
             {/*<li>
               <a
@@ -386,17 +336,6 @@ const ZonaMenuDos = (props) => {
                 Alojamientos
               </Link>
             </li>
-
-            {/*
-            <li>
-              <Link
-                to="/Pcontacto"
-                className="link"
-                onClick={props.onZonaClick}
-              >
-                Contacto
-              </Link>
-            </li>*/}
           </ul>
         </div>
       </div>
@@ -628,6 +567,8 @@ class ZonasMenu extends Component {
   }
 
   componentDidMount() {
+    document.body.scrollTop = 0; // Safari
+    document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
     this.setState({
       idMenu: this.props.idMenu,
     });

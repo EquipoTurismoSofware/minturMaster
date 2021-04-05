@@ -148,7 +148,7 @@ class Home extends Component {
               <center>
                 <div className="pantallaGrande">
                   <span className="newsHome"><Newsletter /></span>
-                  <PantallaModal/>
+                  {/*<PantallaModal/>*/}
                   <SocialWidget />
                 </div>
               </center>

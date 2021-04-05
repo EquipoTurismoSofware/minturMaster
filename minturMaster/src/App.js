@@ -16,7 +16,6 @@ import PLocalidad from "./pages/PLocalidad";
 import ListadoGuiasAgenciasCovid from "./pages/variosmenu/ListadoGuiasAgenciasCovid";
 import PAtractivo from "./pages/atractivo/PAtractivo";
 import PEventos from "./pages/PEventos";
-import PTurismoSemanaSanta from "./pages/PTurismoSemanaSanta";
 import PEvento from "./pages/PEvento";
 import PListadoAtractivos from "./pages/atractivo/PListadoAtractivos";
 import PListadoGastronomia from "./pages/gastronomia/PListadoGastronomia";
@@ -131,11 +130,6 @@ class App extends Component {
                 component={PGastronomiaDosep}
               />
               <Route exact path="/riosysaltos" component={PRiosYSaltos} />
-              <Route
-                exact
-                path="/turismo-semana-santa"
-                component={PTurismoSemanaSanta}
-              />
               <Route exact path="/agenciaviajes" component={PAgenciaViajes} />
               <Route exact path="/guiaturismo" component={PGuiaTurismo} />
               <Route

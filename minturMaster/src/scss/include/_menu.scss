@@ -217,6 +217,46 @@ margin-top: 5px;
   }
 }
 
+.menu-visita-container {
+  position: absolute;
+  top: 94px;
+  left: 0px;
+  //height: 400px;
+  padding-bottom: 20px;
+  display: block;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  @include degrado(0.95, 0.8);
+  z-index: 96;
+  padding-top: 10px;
+  .menu-visita {
+    width: 100%;
+    color: #fff;
+    padding-top: 30px;
+  }
+}
+
+.menu-visita-containerSticky {
+  position: fixed;
+  top: 45px;
+  left: 0px;
+  //height: 400px;
+  padding-bottom: 20px;
+  display: block;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  @include degrado(0.95, 0.8);
+  z-index: 96;
+  padding-top: 10px;
+  .menu-visita {
+    width: 100%;
+    color: #fff;
+    padding-top: 30px;
+  }
+}
+
 .liLista{
   &:hover{
     text-decoration-line: underline ; 
@@ -339,38 +379,42 @@ margin-top: 5px;
     position: absolute;
     margin-top: 190px;
     left: 0px;
-    //height: 400px;
+    height: 270px;
+    overflow-y:scroll;
+    overflow-x:hidden;
     padding-bottom: 20px;
     display: block;
     width: 100%;
     display: flex;
     justify-content: center;
     @include degrado(0.95, 0.8);
-    z-index: 30;
+    z-index: 96;
     padding-top: 10px;
     .menu-visita {
       width: 100%;
       color: #fff;
-      padding-top: 30px;
+      padding-top: 10px;
     }
   }
   .menu-visita-containerSticky {
     position: fixed;
+    overflow-y:scroll;
+    overflow-x:hidden;
     margin-top: 190px;
     left: 0px;
-    //height: 400px;
+    height: 270px;
     padding-bottom: 20px;
     display: block;
     width: 100%;
     display: flex;
     justify-content: center;
     @include degrado(0.95, 0.8);
-    z-index: 30;
+    z-index: 96;
     padding-top: 10px;
     .menu-visita {
       width: 100%;
       color: #fff;
-      padding-top: 30px;
+      padding-top: 10px;
     }
   }
 }
@@ -504,46 +548,6 @@ right: 370px;
     height: 40px;
     width: 250px;
     opacity: 1 !important;
-  }
-}
-
-.menu-visita-container {
-  position: absolute;
-  top: 94px;
-  left: 0px;
-  //height: 400px;
-  padding-bottom: 20px;
-  display: block;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  @include degrado(0.95, 0.8);
-  z-index: 96;
-  padding-top: 10px;
-  .menu-visita {
-    width: 100%;
-    color: #fff;
-    padding-top: 30px;
-  }
-}
-
-.menu-visita-containerSticky {
-  position: fixed;
-  top: 45px;
-  left: 0px;
-  //height: 400px;
-  padding-bottom: 20px;
-  display: block;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  @include degrado(0.95, 0.8);
-  z-index: 96;
-  padding-top: 10px;
-  .menu-visita {
-    width: 100%;
-    color: #fff;
-    padding-top: 30px;
   }
 }
 
