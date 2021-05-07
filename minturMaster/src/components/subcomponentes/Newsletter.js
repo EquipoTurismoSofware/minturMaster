@@ -129,13 +129,16 @@ export default class Newsletter extends Component {
 
     return (
       <React.Fragment>
-        <div className="container newsletter" style={{display: this.state.visible}}>
-          <div className="newsletterFullBody">
-            <div className="row newsHeader">
-              <div className="col-10"><span className="newsTitle"><i class="far fa-newspaper"></i> Sumate al Newsletter <i class="far fa-newspaper"></i></span></div>
-              <div className="col-2"><button style={{right: 0, border: "none", background: "none", cursor: "pointer"}} onClick={() => this.closeModal()}><i className="fas fa-times"></i></button> </div>
+        {//<div className="container newsletter" >
+         } 
+        <div className="container newsletter" style={{display: this.state.visible}} >
+         
+         <div className="newsletterFullBody">
+            <div className="newsHeader"> {/*row */}
+            <div className="buttonX"><button  style={{right: 0, border: "none", background: "none", cursor: "pointer"}} onClick={() => this.closeModal()}><i className="fas fa-times buttonX"></i></button> </div>
+              <div className="col-10"><span className="newsTitle"><i class="far fa-newspaper"></i> Sumates al Newsletter <i class="far fa-newspaper"></i></span></div>
             </div>
-            <div className="row newsBody">
+            <div className="newsBody">
               <div className="col">{
                   this.state.msg === "" ?
                   <input type="hidden" disabled className="newsMsg form-control" id="msg" name="text" value={this.state.msg}/>              
@@ -145,13 +148,13 @@ export default class Newsletter extends Component {
               </div>
             </div>
             <br></br>
-            <div className="row">
+            <div className="">
               <div className="col">
                 <input type="email" className="newsEmail form-control" placeholder="* Email" id="email" name="email" value={this.state.email} onChange={this.handleChange}/>
               </div>
             </div>
             <br></br>
-            <div className="row newsFooter">
+            <div className=" newsFooter">
               <div className="col"><button className="newsFooterButton" onClick={() => this.verificar()}>Enviar</button></div>
             </div>
           </div>

@@ -934,6 +934,11 @@ body {
   padding-top: 10px;
 }
 .menu-visita-containersticky .menu-visita {
+  background: #722789;
+  background: -moz-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: -webkit-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
   width: 100%;
   color: #fff;
   padding-top: 30px;
@@ -1328,6 +1333,11 @@ body {
     Sub componente de Menu (ZonasMenu)
 */
 .ZonasMenu {
+  background: #722789;
+  background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
+  background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
+  background: linear-gradient(to right, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -1336,11 +1346,21 @@ body {
 }
 .ZonasMenu .ZonaMenu-Zonas {
   min-width: 730px;
+  background: #722789;
+  background: -moz-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: -webkit-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
 }
 .ZonasMenu .ZonaMenu-Zonas h4 {
   padding-left: 30px;
 }
 .ZonasMenu .ZonaMenu-Zonas .ZonaMenu-Data {
+  background: #722789;
+  background: -moz-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: -webkit-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(330px, 330px));
   grid-column-gap: 15px;
@@ -4314,18 +4334,18 @@ h3.bgc_4 {
 }
 @media only screen and (max-width: 990px) {
   /*
-  .Novedadesfull {
-      .nf-body {
-          .nf-novedad {
-              flex-direction: column;
-              .nf-novedad-left {
-                  position: fixed;
+      .Novedadesfull {
+          .nf-body {
+              .nf-novedad {
+                  flex-direction: column;
+                  .nf-novedad-left {
+                      position: fixed;
+                  }
               }
+  
           }
-
       }
-  }
-  */
+      */
   .novedad-full-item {
     grid-template-areas: "titulo" "imagen" "body" "pie";
     grid-template-columns: 1fr;
@@ -4740,18 +4760,18 @@ h3.bgc_4 {
 
 @media only screen and (max-width: 990px) {
   /*
-    .Novedadesfull {
-        .nf-body {
-            .nf-novedad {
-                flex-direction: column;
-                .nf-novedad-left {
-                    position: fixed;
-                }
-            }
-
-        }
-    }
-    */
+      .Novedadesfull {
+          .nf-body {
+              .nf-novedad {
+                  flex-direction: column;
+                  .nf-novedad-left {
+                      position: fixed;
+                  }
+              }
+  
+          }
+      }
+      */
   .atractivo-full-item .imagen img {
     height: 250px;
     width: 700px;
@@ -6248,9 +6268,14 @@ a:hover {
 .newsletter .newsletterFullBody .newsHeader {
   padding-top: 5px;
 }
+.newsletter .newsletterFullBody .newsHeader .buttonX {
+  position: absolute;
+  right: 5px;
+  top: 4px;
+}
 .newsletter .newsletterFullBody .newsHeader .newsTitle {
   color: #722789;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 .newsletter .newsletterFullBody .newsEmail {
   border-radius: 15px;

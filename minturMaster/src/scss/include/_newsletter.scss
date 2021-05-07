@@ -1,3 +1,4 @@
+
 .newsletter {
     width: 295px;
     z-index: 99;
@@ -11,15 +12,22 @@
     border-radius: 9px;
     padding: 5px 20px ;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-
-    .newsletterFullBody{
+    
+    .newsletterFullBody{    
         margin:0px auto;
+       
         .newsHeader{
             padding-top: 5px;
+            .buttonX{
+                position: absolute;  
+                right: 5px;
+                top:    4px;   
+                 }
             .newsTitle{
                 color:rgba(114,39,137, 1);
-                font-size: 1.20em;
+                font-size: 1.0em;
             }
+           
         }
     
         .newsEmail{

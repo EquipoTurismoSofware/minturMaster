@@ -3,6 +3,7 @@
 */
 
 .input{
+
   z-index: 5;
   width: 0px;
  
@@ -81,12 +82,14 @@
 
 
 .linkBusqueda{
+
 list-style: none;
 color: white;
-a {
+a {    
+
   color: white;
   li {
-    
+
     color: white;
     &:hover{
       font-size: 0%;
@@ -97,6 +100,7 @@ a {
 }
 
 .listaBusqueda {
+
   background-color: $color-uno;
   width: 200px;
   max-height: auto;
@@ -166,19 +170,23 @@ margin-top: 5px;
   }
 
   ul{
+
     color: #fff;
   }
   li{  
+
     margin-top: 4px;
     color: #fff;  
     cursor: pointer;
 
   }
   span{
+
     color: #fff;
     font-weight: 500;
     white-space: nowrap
   }
+
 }
 
 .sticky { 
@@ -254,6 +262,7 @@ margin-top: 5px;
   z-index: 96;
   padding-top: 10px;
   .menu-visita {
+    @include degrado(1, 0.8);
     width: 100%;
     color: #fff;
     padding-top: 30px;
@@ -261,6 +270,7 @@ margin-top: 5px;
 }
 
 .liLista{
+  
   &:hover{
     text-decoration-line: underline ; 
     font-size: 18px;
@@ -486,6 +496,7 @@ margin-top: 5px;
 }
 
 .menu-ul {
+
   z-index: 30;
   position: absolute;
   top: 0;
