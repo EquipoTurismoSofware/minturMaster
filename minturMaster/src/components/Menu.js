@@ -177,16 +177,24 @@ class Menu extends Component {
   //funcion para ocultar el las opciones desplegadas
   closeMenu() {
     // console.log("close");
-    if (this.state.ocultar === 0) this.setState({ visibleMenu: false });
-    this.cambiar();
+    if (this.state.ocultar === 0) this.setState({ 
+      visibleMenu: false 
+    }, () => {
+      this.cambiar();
+    });
+    
   }
 
   setMenu(id) {
     this.closeLista();
-
+    
     if (this.state.visibleMenu === false || id !== this.state.idSubMenu) {
-      this.setState({ visibleMenu: true });
-      this.cambiar();
+      this.setState({ 
+        visibleMenu: true 
+      }, () => {    
+        this.cambiar();
+      });
+      
     }
     this.state.idSubMenu = id;
   }
@@ -607,7 +615,7 @@ class Menu extends Component {
         {this.state.visibleMenu ? (
           <div
             id="toggle"
-            className="navbar-toggler navbar-light"
+            className="navbar-toggler"
             type="button"
             data-toggle="collapse"
             data-target="#navbarText"
@@ -615,10 +623,9 @@ class Menu extends Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
             onClick={() => this.closeMenu()}
-            className={this.state.clase == "sticky" ? `menu-visita-containerSticky animated fadeIn` : `menu-visita-container animated fadeIn`}
-            //style={this.state.clase === "sticky" ? {top: "45px", position: "fixed"}: {top: "94px", position: "absolute"}} 
+            className={`menu-visita-container${this.state.clase} animated fadeIn`} 
             onMouseLeave={(e) => this.closeMenu(e)}
-          >
+            >
             <div className="menu-visita">
               <ZonasMenu
                 idMenu={this.state.idSubMenu}

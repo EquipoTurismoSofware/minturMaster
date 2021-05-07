@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 //import Alert from 'react-bootstrap/Alert'
 //import { Consumer } from "../../context";
 
@@ -60,7 +57,7 @@ export default class Newsletter extends Component {
 
   componentDidMount() {
     this.setState({
-      visible: "inline"
+      visible: "block"
     });
   }
 
@@ -132,31 +129,33 @@ export default class Newsletter extends Component {
 
     return (
       <React.Fragment>
-        <Container className="newsletter" style={{display: this.state.visible}}>
-          <Row className="newsHeader">
-            <Col md={10}><span className="newsTitle"><i class="far fa-newspaper"></i> Sumate al Newsletter <i class="far fa-newspaper"></i></span></Col>
-            <Col md={2}><button style={{right: 0, border: "none", background: "none", cursor: "pointer"}} onClick={() => this.closeModal()}><i className="fas fa-times"></i></button> </Col>
-          </Row>
-          <Row className="newsBody">
-            <Col>{
-                 this.state.msg === "" ?
-                 <input type="hidden" disabled className="newsMsg form-control" id="msg" name="text" value={this.state.msg}/>              
-              :
-                <input type="text"  disabled className="newsMsg form-control" id="msg" name="text" value={this.state.msg}/>
-            }  
-            </Col>
-          </Row>
-          <br></br>
-          <Row>
-            <Col>
-              <input type="email" className="newsEmail form-control" placeholder="* Email" id="email" name="email" value={this.state.email} onChange={this.handleChange}/>
-            </Col>
-          </Row>
-          <br></br>
-          <Row className="newsFooter">
-            <Col><button className="newsFooterButton" onClick={() => this.verificar()}>Enviar</button></Col>
-          </Row>
-        </Container>
+        <div className="container newsletter" style={{display: this.state.visible}}>
+          <div className="newsletterFullBody">
+            <div className="row newsHeader">
+              <div className="col-10"><span className="newsTitle"><i class="far fa-newspaper"></i> Sumate al Newsletter <i class="far fa-newspaper"></i></span></div>
+              <div className="col-2"><button style={{right: 0, border: "none", background: "none", cursor: "pointer"}} onClick={() => this.closeModal()}><i className="fas fa-times"></i></button> </div>
+            </div>
+            <div className="row newsBody">
+              <div className="col">{
+                  this.state.msg === "" ?
+                  <input type="hidden" disabled className="newsMsg form-control" id="msg" name="text" value={this.state.msg}/>              
+                :
+                  <input type="text"  disabled className="newsMsg form-control" id="msg" name="text" value={this.state.msg}/>
+              }  
+              </div>
+            </div>
+            <br></br>
+            <div className="row">
+              <div className="col">
+                <input type="email" className="newsEmail form-control" placeholder="* Email" id="email" name="email" value={this.state.email} onChange={this.handleChange}/>
+              </div>
+            </div>
+            <br></br>
+            <div className="row newsFooter">
+              <div className="col"><button className="newsFooterButton" onClick={() => this.verificar()}>Enviar</button></div>
+            </div>
+          </div>
+        </div>
       </React.Fragment>
     );
   }

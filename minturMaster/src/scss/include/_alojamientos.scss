@@ -163,7 +163,7 @@ $card-height: 370px;
 @mixin opacity($opacity){
     opacity: $opacity;
     $opacity-ie: ($opacity * 100);
-    filter: #{"alpha(opacity=${opacity-ie})"};
+    //filter: #{"alpha(opacity=${opacity-ie})"};
 }
 
 @mixin mc-transtition($duration: .3s){
