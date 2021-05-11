@@ -3,7 +3,6 @@
 */
 
 .input{
-
   z-index: 5;
   width: 0px;
  
@@ -82,14 +81,12 @@
 
 
 .linkBusqueda{
-
 list-style: none;
 color: white;
-a {    
-
+a {
   color: white;
   li {
-
+    
     color: white;
     &:hover{
       font-size: 0%;
@@ -100,7 +97,6 @@ a {
 }
 
 .listaBusqueda {
-
   background-color: $color-uno;
   width: 200px;
   max-height: auto;
@@ -170,23 +166,39 @@ margin-top: 5px;
   }
 
   ul{
-
     color: #fff;
   }
   li{  
-
     margin-top: 4px;
     color: #fff;  
     cursor: pointer;
 
   }
   span{
-
     color: #fff;
     font-weight: 500;
     white-space: nowrap
   }
-
+  .menu-visita-containerMenu {
+    @include degrado(0.9, 0.8);
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    height: auto;
+    padding-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 96;
+    padding-top: 10px;
+    .menu-visita {
+     // @include degrado(1, 0.8);
+      width: 100%;
+      color: #fff;
+      padding-top: 30px;
+    }
+    
+  }
 }
 
 .sticky { 
@@ -224,53 +236,31 @@ margin-top: 5px;
     font-weight: 500;
     white-space: nowrap
   }
-}
-
-.menu-visita-containerMenu {
-  @include degrado(1, 0.8);
-  position: absolute;
-  top: 94px;
-  left: 0px;
-  height: auto;
-  padding-bottom: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 96;
-  padding-top: 10px;
-  .menu-visita {
+  .menu-visita-containersticky {
+    @include degrado(0.9, 0.8);
+    position: fixed;
+    -webkit-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    top: 45px;
+    left: 0px;
+    height: auto;
+    padding-bottom: 20px;
     width: 100%;
-    color: #fff;
-    padding-top: 30px;
-  }
-  
-}
-
-.menu-visita-containersticky {
-  @include degrado(1, 0.8);
-  position: fixed;
-  -webkit-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  top: 45px;
-  left: 0px;
-  height: auto;
-  padding-bottom: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 96;
-  padding-top: 10px;
-  .menu-visita {
-    @include degrado(1, 0.8);
-    width: 100%;
-    color: #fff;
-    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    z-index: 96;
+    padding-top: 10px;
+    .menu-visita {
+      //@include degrado(1, 0.8);
+      width: 100%;
+      color: #fff;
+      padding-top: 30px;
+    }
   }
 }
 
 .liLista{
-  
   &:hover{
     text-decoration-line: underline ; 
     font-size: 18px;
@@ -291,6 +281,9 @@ margin-top: 5px;
     }
     .logoGob{
      display: none;
+    }
+    .menu-visita-containerMenu {
+      top: 45px;
     }
   }
 
@@ -349,6 +342,27 @@ margin-top: 5px;
       cursor: pointer;
       white-space: nowrap
     }
+    .menu-visita-containerMenu {
+      @include degrado(0.9, 0.8);
+      position: absolute;
+      top: 50px;
+      margin-top: 189px;
+      left: 0px;
+      height: 270px;
+      overflow-y:scroll;
+      overflow-x:hidden;
+      padding-bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      z-index: 96;
+      padding-top: 10px;
+      .menu-visita {
+        width: 100%;
+        color: #fff;
+        padding-top: 10px;
+      }
+    }
   }
   .sticky{
     //@include degrado(1, 1);
@@ -387,45 +401,25 @@ margin-top: 5px;
       cursor: pointer;
       white-space: nowrap
     }
-  }
-  .menu-visita-containerMenu {
-    @include degrado(1, 0.8);
-    position: absolute;
-    margin-top: 190px;
-    left: 0px;
-    height: 270px;
-    overflow-y:scroll;
-    overflow-x:hidden;
-    padding-bottom: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    z-index: 96;
-    padding-top: 10px;
-    .menu-visita {
+    .menu-visita-containersticky {
+      @include degrado(0.9, 0.8);
+      position: fixed;
+      overflow-y:scroll;
+      overflow-x:hidden;
+      margin-top: 190px;
+      left: 0px;
+      height: 270px;
+      padding-bottom: 20px;
       width: 100%;
-      color: #fff;
+      display: flex;
+      justify-content: center;
+      z-index: 96;
       padding-top: 10px;
-    }
-  }
-  .menu-visita-containersticky {
-    @include degrado(1, 0.8);
-    position: fixed;
-    overflow-y:scroll;
-    overflow-x:hidden;
-    margin-top: 190px;
-    left: 0px;
-    height: 270px;
-    padding-bottom: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    z-index: 96;
-    padding-top: 10px;
-    .menu-visita {
-      width: 100%;
-      color: #fff;
-      padding-top: 10px;
+      .menu-visita {
+        width: 100%;
+        color: #fff;
+        padding-top: 10px;
+      }
     }
   }
 }
@@ -496,7 +490,6 @@ margin-top: 5px;
 }
 
 .menu-ul {
-
   z-index: 30;
   position: absolute;
   top: 0;

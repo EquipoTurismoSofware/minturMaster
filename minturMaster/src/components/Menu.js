@@ -611,8 +611,7 @@ class Menu extends Component {
               </div>
             </span>
           </div>
-        </nav>
-        {this.state.visibleMenu ? (
+           {this.state.visibleMenu ? (
           <div
             id="toggle"
             className="navbar-toggler"
@@ -625,7 +624,11 @@ class Menu extends Component {
             onClick={() => this.closeMenu()}
             className={`menu-visita-container${this.state.clase} animated fadeIn`} 
             onMouseLeave={(e) => this.closeMenu(e)}
-            >
+            /*style={{background: "rgb(114,39,137)",
+            background: "-moz-linear-gradient(left, rgba(114,39,137,1) 0%, rgba(237,15,104,0.8) 100%)",
+            background: "-webkit-linear-gradient(left, rgba(114,39,137,1) 0%,rgba(237,15,104,0.8) 100%)",
+            background: "linear-gradient(to right, rgba(114,39,137,1) 0%,rgba(237,15,104,0.8) 100%)"}}
+            */>
             <div className="menu-visita">
               <ZonasMenu
                 idMenu={this.state.idSubMenu}
@@ -636,6 +639,8 @@ class Menu extends Component {
         ) : (
           ""
         )}
+        </nav>
+       
       </React.Fragment>
     );
   }

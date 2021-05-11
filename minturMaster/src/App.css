@@ -848,6 +848,28 @@ body {
   font-weight: 500;
   white-space: nowrap;
 }
+.Menu .menu-visita-containerMenu {
+  background: #722789;
+  background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: linear-gradient(to right, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  height: auto;
+  padding-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 96;
+  padding-top: 10px;
+}
+.Menu .menu-visita-containerMenu .menu-visita {
+  width: 100%;
+  color: #fff;
+  padding-top: 30px;
+}
 
 .sticky {
   background: #722789;
@@ -889,35 +911,11 @@ body {
   font-weight: 500;
   white-space: nowrap;
 }
-
-.menu-visita-containerMenu {
+.sticky .menu-visita-containersticky {
   background: #722789;
-  background: -moz-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: -webkit-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
-  position: absolute;
-  top: 94px;
-  left: 0px;
-  height: auto;
-  padding-bottom: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 96;
-  padding-top: 10px;
-}
-.menu-visita-containerMenu .menu-visita {
-  width: 100%;
-  color: #fff;
-  padding-top: 30px;
-}
-
-.menu-visita-containersticky {
-  background: #722789;
-  background: -moz-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: -webkit-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: linear-gradient(to right, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
   position: fixed;
   -webkit-transform: translate3d(0, 0, 0);
@@ -933,12 +931,7 @@ body {
   z-index: 96;
   padding-top: 10px;
 }
-.menu-visita-containersticky .menu-visita {
-  background: #722789;
-  background: -moz-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: -webkit-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
+.sticky .menu-visita-containersticky .menu-visita {
   width: 100%;
   color: #fff;
   padding-top: 30px;
@@ -968,6 +961,9 @@ body {
   }
   .Menu .logoGob {
     display: none;
+  }
+  .Menu .menu-visita-containerMenu {
+    top: 45px;
   }
 
   .sticky {
@@ -1032,6 +1028,31 @@ body {
     cursor: pointer;
     white-space: nowrap;
   }
+  .Menu .menu-visita-containerMenu {
+    background: #722789;
+    background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
+    background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
+    background: linear-gradient(to right, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
+    position: absolute;
+    top: 50px;
+    margin-top: 189px;
+    left: 0px;
+    height: 270px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 96;
+    padding-top: 10px;
+  }
+  .Menu .menu-visita-containerMenu .menu-visita {
+    width: 100%;
+    color: #fff;
+    padding-top: 10px;
+  }
 
   .sticky {
     background: #722789;
@@ -1074,37 +1095,11 @@ body {
     cursor: pointer;
     white-space: nowrap;
   }
-
-  .menu-visita-containerMenu {
+  .sticky .menu-visita-containersticky {
     background: #722789;
-    background: -moz-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-    background: -webkit-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-    background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
-    position: absolute;
-    margin-top: 190px;
-    left: 0px;
-    height: 270px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    padding-bottom: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    z-index: 96;
-    padding-top: 10px;
-  }
-  .menu-visita-containerMenu .menu-visita {
-    width: 100%;
-    color: #fff;
-    padding-top: 10px;
-  }
-
-  .menu-visita-containersticky {
-    background: #722789;
-    background: -moz-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-    background: -webkit-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-    background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+    background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
+    background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
+    background: linear-gradient(to right, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
     position: fixed;
     overflow-y: scroll;
@@ -1119,7 +1114,7 @@ body {
     z-index: 96;
     padding-top: 10px;
   }
-  .menu-visita-containersticky .menu-visita {
+  .sticky .menu-visita-containersticky .menu-visita {
     width: 100%;
     color: #fff;
     padding-top: 10px;
@@ -1333,11 +1328,6 @@ body {
     Sub componente de Menu (ZonasMenu)
 */
 .ZonasMenu {
-  background: #722789;
-  background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
-  background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
-  background: linear-gradient(to right, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -1346,21 +1336,11 @@ body {
 }
 .ZonasMenu .ZonaMenu-Zonas {
   min-width: 730px;
-  background: #722789;
-  background: -moz-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: -webkit-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
 }
 .ZonasMenu .ZonaMenu-Zonas h4 {
   padding-left: 30px;
 }
 .ZonasMenu .ZonaMenu-Zonas .ZonaMenu-Data {
-  background: #722789;
-  background: -moz-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: -webkit-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(330px, 330px));
   grid-column-gap: 15px;
@@ -4334,18 +4314,18 @@ h3.bgc_4 {
 }
 @media only screen and (max-width: 990px) {
   /*
-      .Novedadesfull {
-          .nf-body {
-              .nf-novedad {
-                  flex-direction: column;
-                  .nf-novedad-left {
-                      position: fixed;
-                  }
+  .Novedadesfull {
+      .nf-body {
+          .nf-novedad {
+              flex-direction: column;
+              .nf-novedad-left {
+                  position: fixed;
               }
-  
           }
+
       }
-      */
+  }
+  */
   .novedad-full-item {
     grid-template-areas: "titulo" "imagen" "body" "pie";
     grid-template-columns: 1fr;
@@ -4760,18 +4740,18 @@ h3.bgc_4 {
 
 @media only screen and (max-width: 990px) {
   /*
-      .Novedadesfull {
-          .nf-body {
-              .nf-novedad {
-                  flex-direction: column;
-                  .nf-novedad-left {
-                      position: fixed;
-                  }
-              }
-  
-          }
-      }
-      */
+    .Novedadesfull {
+        .nf-body {
+            .nf-novedad {
+                flex-direction: column;
+                .nf-novedad-left {
+                    position: fixed;
+                }
+            }
+
+        }
+    }
+    */
   .atractivo-full-item .imagen img {
     height: 250px;
     width: 700px;
@@ -6247,6 +6227,10 @@ a:hover {
   }
 }
 .newsletter {
+  display: -webkit-flex;
+  display: -ms-flex;
+  align-items: center;
+  justify-content: center;
   width: 295px;
   z-index: 99;
   position: fixed;
@@ -6264,6 +6248,7 @@ a:hover {
 }
 .newsletter .newsletterFullBody {
   margin: 0px auto;
+  width: 100%;
 }
 .newsletter .newsletterFullBody .newsHeader {
   padding-top: 5px;

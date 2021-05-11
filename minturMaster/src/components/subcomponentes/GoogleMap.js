@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+/*import React, { Component } from "react";
 
 /*
     Ej de uso: <GoogleMap lat="-33.6576955" lng="-65.4579169" zoom="10" gwidth="100%" gheight="400px" />
-*/
+
 
 class GoogleMap extends Component {
     constructor(props) {
@@ -93,9 +93,9 @@ class GoogleMap extends Component {
 }
 
 export default GoogleMap;
+*/
 
 
-/*
     import React, { Component } from "react";
     
 class GoogleMap extends Component {
@@ -126,32 +126,45 @@ class GoogleMap extends Component {
             gwidth: this.props.gwidth,
             gheight: this.props.gheight
         }, () => {
-            let {lat, lng, zoom} = this.state;
-
+            let {lat, zoom} = this.state;
             let x = -1;
             let locations = []
 
-            lat.forEach(element => {
+            lat.forEach(lat1 => {
                 x++;
-                var lgn = lng[x]
-                locations.push({element, lgn}) 
+                var lng = parseFloat(this.state.lng[x], 10)
+                var lat = parseFloat(lat1, 10)
+                locations.push({lat, lng}) 
             });
-
+            
+            var latNew = locations[0].lat;
+            var lngNew = locations[0].lng;
+            
             const map = new window.google.maps.Map(document.getElementById(this.state.id), {
-                zoom: 3,
                 zoom: zoom,
                 mapTypeId: "roadmap",
-                center: { lat: -28.024, lng: 140.887 },
+                center: { lat: latNew, lng: lngNew },
             });
-            
-            const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            
-            const markers = locations.map((location, i) => {
-                return new window.google.maps.Marker({
-                    map: map,
-                    position: location,
-                    label: labels[i % labels.length],
+
+            map.addListener("zoom_changed", () => {
+                this.setState({
+                    zoom: map.getZoom(),
                 });
+            });
+
+            map.addListener("maptypeid_changed", () => {
+                this.setState({
+                    maptype: map.getMapTypeId(),
+                });
+            });
+
+            const markers = locations.map((location, i) => {
+                return new window.google.maps.Marker({ map: map, position:  { lat: location.lat, lng: location.lng }});
+
+            });
+
+            this.setState({
+                marker: markers
             });
         })
         
@@ -200,7 +213,11 @@ class GoogleMap extends Component {
 
     componentDidUpdate(prevProps) {
         if(this.props.lat !== prevProps.lat || this.props.lng !== prevProps.lng) {
-            this.setMap();
+            if(Object.prototype.toString.call(this.props.lat) === '[object Array]'){
+                this.initMap(this.state.id); 
+            }else{
+                this.setMap(this.state.id);
+            }        
         }
     }
 
@@ -209,8 +226,11 @@ class GoogleMap extends Component {
             id: "map-" + Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5)
         }, () => {
             if(Object.prototype.toString.call(this.props.lat) === '[object Array]'){
-                console.log("entre aca")
-                this.initMap(this.state.id); 
+                if(this.props.lat.length != 0){
+                    this.initMap(this.state.id);
+                }else{
+                }
+                 
             }else{
                 this.setMap(this.state.id);
             }
@@ -235,4 +255,3 @@ class GoogleMap extends Component {
 }
 
 export default GoogleMap;
-*/ 

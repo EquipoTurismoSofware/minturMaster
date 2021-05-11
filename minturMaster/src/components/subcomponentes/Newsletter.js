@@ -57,7 +57,7 @@ export default class Newsletter extends Component {
 
   componentDidMount() {
     this.setState({
-      visible: "block"
+      visible: "flex"
     });
   }
 
@@ -132,11 +132,10 @@ export default class Newsletter extends Component {
         {//<div className="container newsletter" >
          } 
         <div className="container newsletter" style={{display: this.state.visible}} >
-         
          <div className="newsletterFullBody">
             <div className="newsHeader"> {/*row */}
             <div className="buttonX"><button  style={{right: 0, border: "none", background: "none", cursor: "pointer"}} onClick={() => this.closeModal()}><i className="fas fa-times buttonX"></i></button> </div>
-              <div className="col-10"><span className="newsTitle"><i class="far fa-newspaper"></i> Sumates al Newsletter <i class="far fa-newspaper"></i></span></div>
+              <div className="col-10"><span className="newsTitle"><i class="far fa-newspaper"></i> Sumate al Newsletter <i class="far fa-newspaper"></i></span></div>
             </div>
             <div className="newsBody">
               <div className="col">{

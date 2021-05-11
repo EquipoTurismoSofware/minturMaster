@@ -1,5 +1,9 @@
 
 .newsletter {
+    display:-webkit-flex;
+    display:-ms-flex;
+    align-items: center;
+    justify-content: center;
     width: 295px;
     z-index: 99;
     position: fixed; /* Fixed/sticky position */
@@ -15,7 +19,7 @@
     
     .newsletterFullBody{    
         margin:0px auto;
-       
+        width: 100%;
         .newsHeader{
             padding-top: 5px;
             .buttonX{
