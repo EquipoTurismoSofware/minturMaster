@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
 import axios from "axios";
-import { FacebookShareButton, FacebookIcon, FacebookShareCount} from 'react-share';
+import { FacebookShareButton, FacebookIcon, FacebookShareCount } from 'react-share';
 //import CompartirPost from "../compartirPost";
 //import GoogleMap from "../components/subcomponentes/GoogleMap";
 //import {Helmet} from "react-helmet";
 //import { Helmet, HelmetProvider} from 'react-helmet-async'
 import MaxImage from "../../components/subcomponentes/MaxImage";
 import Loading from "../../utils/Loading";
+import NovedadesMetaDatos from "../../components/subcomponentes/NovedadMetaDatos"
 
 class PNovedad extends Component {
   constructor(props) {
@@ -91,11 +92,12 @@ class PNovedad extends Component {
         {this.state.loading ? (
           <div className="PFiltroAlojamiento mb-5">
             <div>
-              <Loading margins="96px" />        
+              <Loading margins="96px" />
             </div>
           </div>
         ) : (
           <React.Fragment>
+            <NovedadesMetaDatos datos={this.state.data} />
             {/*<Helmet>
                 <title>{this.state.data.titulo}</title>
                 <meta property="og:locale" content="es_ES"/>
@@ -161,14 +163,14 @@ class PNovedad extends Component {
                             __html: this.state.data.descripcionHTML,
                           }}
                         ></p>
-                        
+
                         <FacebookShareButton url={shareUrl}><FacebookIcon size={32} round={true} /></FacebookShareButton>
 
                       </div>
                     ) : (
                       <div className="body">
                         <p className="text-dark mb-2">{descripcion}</p>
-                        
+
                         <FacebookShareButton url={shareUrl}><FacebookIcon size={32} round={true} /></FacebookShareButton>
                       </div>
                     )}
