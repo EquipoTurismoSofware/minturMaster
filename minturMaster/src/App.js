@@ -3,10 +3,11 @@ import React, { Component } from "react";
 import { Provider } from "./context";
 import "./App.css";
 //import { BrowserRouter as Router, Route } from "react-router-dom";
+import PMapasRecorridos from "./pages/mapas/PMapasRecorridos"
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Menu from "./components/Menu";
 import ToTop from "./components/ToTop";
-
+import PListadoMapas from "./pages/mapas/PListadoMapas";
 import PHome from "./pages/PHome";
 import PZona from "./pages/PZona";
 import PDesuscribir from "./pages/PDesuscribir";
@@ -89,6 +90,7 @@ class App extends Component {
               <Route exact path="/gastronomia/:id" component={PGastronomia} />
               <Route exact path="/desuscripcion" component={PDesuscribir} />
               <Route exact path="/estadisticas" component={PEstadisticas} />
+              <Route exact path="/mapasxzona/:id" component={PMapasRecorridos} />
               <Route
                 exact
                 path="/atractivos/:id"
@@ -107,7 +109,11 @@ class App extends Component {
                 path="/filtroalojamiento"
                 component={PFiltroAlojamiento}
               />
-
+              <Route
+                exact 
+                path="/listadoMapas" 
+                component={PListadoMapas}
+              />
               <Route
                 exact
                 path="/filtroalojamientoAdhiere"
