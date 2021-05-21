@@ -305,6 +305,7 @@ class Zona extends Component {
                       alt="Mapa"
                     />*/}
                     <GoogleMap
+                      data={this.state.localidadesDataZona} 
                       lat={this.state.latitudes}
                       lng={this.state.longitudes}
                       zoom="9"
