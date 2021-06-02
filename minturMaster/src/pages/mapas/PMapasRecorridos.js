@@ -22,8 +22,37 @@ class PMapasRecorridos extends Component {
 
   getData() {
     var token = this.context.token;
+    if(this.props.match.params.id == 0){
+      //Localidades de la Zona
+      axios({
+        method: "get",
+        headers: {
+          Authorization: token,
+        },
+        url: `${process.env.REACT_APP_API}/zonas/ciudades`,
+        responseType: "json",
+      })
+      .then((response) => {
+      if (response.data.data.count > 0) {
+          let lat = []
+          let lon = []
 
-    //Localidades de la Zona
+          response.data.data.registros.forEach(element => {
+          lat.push(element.latitud)
+          lon.push(element.longitud)
+          });
+
+          this.setState(
+          {
+              data: response.data.data.registros,
+              longitudes: lon,
+              latitudes: lat,
+              loading: false,
+              isNotFound: false
+          });
+      }})
+    }else{
+      //Localidades de la Zona
     axios({
       method: "get",
       headers: {
@@ -50,7 +79,9 @@ class PMapasRecorridos extends Component {
             loading: false,
             isNotFound: false
         });
-    }})  
+    }})
+    }
+      
   }
 
   componentDidUpdate(prevProps) {
@@ -83,14 +114,14 @@ class PMapasRecorridos extends Component {
         )
         :(
           <React.Fragment>
-            <div id="mapa" style={{paddingTop: "95px"}}>
+            <div id="mapa">
                 <GoogleMap
                     data={this.state.data}
                     lat={this.state.latitudes}
                     lng={this.state.longitudes}
                     zoom="8"
                     gwidth="100%"
-                    gheight="500px"
+                    gheight="600px"
                 />
             </div>
           </React.Fragment>

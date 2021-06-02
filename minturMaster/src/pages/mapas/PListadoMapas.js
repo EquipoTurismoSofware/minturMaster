@@ -3,6 +3,7 @@ import { Consumer } from "../../context";
 import Loading from "../../utils/Loading";
 import Listados from "../../components/Listados"
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class PListadoMapas extends Component {
 	constructor(props) {
@@ -92,11 +93,15 @@ class PListadoMapas extends Component {
 				:
 				<React.Fragment>
 					<div className="container ListadoAtractivofull">
-						<div className="nf-titulo">
+						<div className="nf-titulo" >
 							<span>MAPAS DE ZONAS</span>
 						</div>
-						<div className="form-row">
-							<div className="form-group col-md-4">                        
+						<Link to={`/mapasxzona/${0}`} key={`map-${0}`} style={{width:"auto"}}>	
+							<span className="reco-t-sub2" style={{fontSize: "2em", padding: "2px 15px", backgroundColor: "rgba(114,39,137, 1)", color: "#fff", textTransform: "uppercase"}}>Todas las zonas</span>
+						</Link>
+						<div className="form-row" style={{marginTop: "15px"}}>
+							<div className="form-group col-md-4">
+								                
 								<label htmlFor="nombreAtractivo">Nombre</label>
 								<input type="text" id="nombreAtractivo" name="nombreAtractivo" className="form-control" value={this.state.nombreAtractivo} onChange={this.handleChange} />
 							</div>

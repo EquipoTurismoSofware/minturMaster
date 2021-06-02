@@ -8,6 +8,7 @@ class PEstadisticas extends React.Component {
       super(props);
       this.state = {
         data: [],
+        id: 0 ,
         dataFinal: [{
           title: "",
           data: []
@@ -37,7 +38,7 @@ class PEstadisticas extends React.Component {
             headers: {
                 "Authorization": token
             },
-            url: `${process.env.REACT_APP_API}/graficos`,
+            url: `${process.env.REACT_APP_API}/graficos/${this.state.id}`,
             responseType: "json"
         })
         .then((response) => {
@@ -63,13 +64,31 @@ class PEstadisticas extends React.Component {
             console.log(error);
         });
       }
-
-    componentDidMount() {
-      document.body.scrollTop = 0; // Safari
-      document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
-      this.getData(0)
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.id !== prevProps.match.params.id) {
+      this.setState(
+        {
+          id: this.props.match.params.id,
+        },
+        () => {
+          this.getData(0);
+        }
+      );
     }
+  }
     
+  componentDidMount() {
+    document.body.scrollTop = 0; // Safari
+    document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
+    this.setState(
+      {
+        id: this.props.match.params.id,
+      },
+      () => {
+        this.getData(0);
+      }
+    );
+  }
     render() {
       var pos = -1;
       const graph = this.state.data.map((element) => {
@@ -100,7 +119,7 @@ class PEstadisticas extends React.Component {
               tipo={element.tipoGrafico}
               data={this.state.dataFinal[pos].data}
               title={this.state.dataFinal[pos].title}
-              color={["#F7464A", "#46BFBD", "#FDB45C", '#3e517a', '#b08ea2', '#BBB6DF']}
+              color={["#F7464A", "#46BFBD", "#FDB45C", '#3e517a', '#b08ea2', '#BBB6DF', '#20E000', '#8032BF', '#FF8B09', '#D5FF42', '#F77373', '#66FFEE', '#F0F57D']}
             />
           </div>
           );

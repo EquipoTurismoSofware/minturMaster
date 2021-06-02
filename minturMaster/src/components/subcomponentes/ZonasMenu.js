@@ -336,6 +336,15 @@ const ZonaMenuDos = (props) => {
                 Alojamientos
               </Link>
             </li>
+            <li>
+              <Link
+                to="/listadoMapas"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Mapas de recorridos
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

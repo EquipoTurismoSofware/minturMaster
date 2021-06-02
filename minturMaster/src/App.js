@@ -47,7 +47,8 @@ import PZonaCreer from "./pages/PZonaCreer";
 import Prueba from "./pages/variosmenu/Prueba";
 import PCerveceria from "./pages/gastronomia/PCerveceria";
 import PGastronomicosDosep from "./pages/gastronomia/GastronomiaDosep";
-import PEstadisticas from "./pages/variosmenu/PEstadisticas";
+import PEstadisticas from "./pages/Estadisticas/PEstadisticas";
+import PListadoEstadisticas from "./pages/Estadisticas/PListadoEstadisticas"
 import PZonaCerveceria from "./pages/gastronomia/PZonaCerveceria";
 import PGastronomia from "./pages/gastronomia/PGastronomia";
 import PPrincipalGastronomia from "./pages/gastronomia/PPrincipalGastronomia";
@@ -89,7 +90,8 @@ class App extends Component {
               <Route exact path="/atractivo/:id" component={PAtractivo} />
               <Route exact path="/gastronomia/:id" component={PGastronomia} />
               <Route exact path="/desuscripcion" component={PDesuscribir} />
-              <Route exact path="/estadisticas" component={PEstadisticas} />
+              <Route exact path="/estadisticas/:id" component={PEstadisticas} />
+              <Route exact path="/listadoEstadisticas" component={PListadoEstadisticas} />
               <Route exact path="/mapasxzona/:id" component={PMapasRecorridos} />
               <Route
                 exact
