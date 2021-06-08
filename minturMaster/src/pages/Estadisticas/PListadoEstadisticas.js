@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import { Consumer } from "../../context";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Estadistica from "../../components/Estadistica";
 
 class PListadoEstadisticas extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        data: []
+        data: [],
+        flag: false
       };
       this.getData = this.getData.bind(this);
     }
@@ -43,28 +45,48 @@ class PListadoEstadisticas extends React.Component {
     }
     
     render() {
-      var pos = -1;
       const graph = this.state.data.map((element) => {
+        //var colours = ["#bf3276", "#cb6120", "#a2bd31", "#326534", "#e5b449", "#a01127", "#618dc5", "#5ea099"]
+        var color = "#bf3276"
         return(
             <div>
-                <br />
-                <Link to={`/estadisticas/${element.id}`} key={`map-${element.id}`} style={{width:"auto"}}>	
-                    <span className="reco-t-sub2" style={{fontSize: "2em", padding: "2px 15px", backgroundColor: "rgba(114,39,137, 1)", color: "#fff", textTransform: "uppercase", marginLeft:"40px"}}>{element.nombre}</span>
-                </Link>
+                 <div className="card" style={{borderColor:"#fff"}}>
+                    <div className="card-header" id={`est-${element.id}`} style={{backgroundColor:"#fff"}} >
+                        <h5 className="mb-0 d-flex justify-content-between">
+                            <button className="btn" style={{width: "100%", height: "50px", fontSize: "1.2rem", lineHeight: "1.8rem", fontWeight: "700", backgroundColor: color, color:"#fff"}} type="button" data-toggle="collapse" data-target={`#collapse-activo-${element.id}`} aria-expanded="true" aria-controls={`collapse-activo-${element.id}`} onClick={() => { this.setState({flag: element.id})}}>
+                                {element.nombre}
+                            </button>
+                            {/*<button className="btn btn-danger" type="button" onClick={(e) => { this.msgDelAtractivo(this.state.atractivo.id, this.state.atractivo.nombre, e) }}>
+                                <i className="fas fa-trash"></i>
+                               </button>*/}
+                        </h5>
+                    </div>
+                    <div id={`collapse-activo-${element.id}`} className="collapse" aria-labelledby={`atractivo-${element.id}`} data-parent="#accordionAtractivos">
+                        <div className="card-body">
+                          <Estadistica id={element.id} updateOnOpen={this.state.flag}></Estadistica>
+                        </div>
+                    </div>
+                </div>
+             
             </div>      
         )
     });
       return (
           <React.Fragment>
             <div className="est-main" >
-              <div className="est-titulo" >
-                <h3>
-                  Listado de estadisticas
+            <div
+                className="ZonaDetalle-titulo"
+                style={{ paddingTop: "50px", backgroundColor: `#722789` }}
+              >
+                <h3 style={{ color: `#722789` }}>
+                  LISTADO DE ESTADÍSTICAS
                 </h3>
               </div>
             </div>
-            <div className="container" style={{marginBottom: "20px"}}>
+            <div style={{margin:"0 20px 20px 20px"}}>
+              <div className="accordion" id="accordionAtractivos">
                 {graph}
+              </div>
             </div>
           </React.Fragment>                    
 

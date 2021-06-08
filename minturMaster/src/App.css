@@ -639,10 +639,6 @@ body {
     font-size: calc(var(--card-width) * var(--text-size-offset, 0.18));
   }
 }
-.main-chart-wrapper {
-  padding-top: 130px;
-  padding-bottom: 130px;
-}
 .main-chart-wrapper .estadisticas-leyenda span {
   margin: 10px 0 10px 20px;
   font-size: 2em;
@@ -652,12 +648,36 @@ body {
   text-transform: uppercase;
 }
 
+.est-main {
+  padding-top: 100px;
+  margin: 0 20px 0 20px;
+}
+.est-main .est-titulo {
+  background-color: #722789;
+  display: block;
+  width: 100%;
+  top: 10px;
+  height: 50px;
+  position: relative;
+  margin-bottom: 60px;
+}
+.est-main .est-titulo h3 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #fff;
+  text-transform: uppercase;
+  padding: 8px;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
 .sub-chart-wrapper {
   padding: 2%;
   display: inline-block;
   width: 50%;
   height: 300px;
-  margin-bottom: 40px;
+  margin-bottom: 100px;
   text-align: center;
 }
 .sub-chart-wrapper .sub-chart-wrapper-titulo {
