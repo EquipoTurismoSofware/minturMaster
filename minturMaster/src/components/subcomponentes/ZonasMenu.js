@@ -336,7 +336,7 @@ const ZonaMenuDos = (props) => {
                 Alojamientos
               </Link>
             </li>
-            <li>
+            {/*<li>
               <Link
                 to="/listadoMapas"
                 className="link"
@@ -344,7 +344,7 @@ const ZonaMenuDos = (props) => {
               >
                 Mapas de recorridos
               </Link>
-            </li>
+            </li>*/}
           </ul>
         </div>
       </div>
@@ -548,6 +548,15 @@ const ZonaMenuCinco = (props) => {
                 onClick={props.onZonaClick}
               >
                 Contacto
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/listadoEstadisticas"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Estadísticas
               </Link>
             </li>
           </ul>

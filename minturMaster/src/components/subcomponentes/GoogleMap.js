@@ -31,73 +31,73 @@ class GoogleMap extends Component {
             gheight: this.props.gheight,
             data: this.props.data
         }, () => {
-
             let {lat, zoom, data} = this.state;
-            let x = -1;
-            let locations = []
-
-            lat.forEach(lat1 => {
-                x++;
-                var lng = parseFloat(this.state.lng[x], 10)
-                var lat = parseFloat(lat1, 10)
-                locations.push({lat, lng}) 
-            });
-            
-            var latNew = locations[0].lat;
-            var lngNew = locations[0].lng;
-            
-            const map = new window.google.maps.Map(document.getElementById(this.state.id), {
-                zoom: zoom,
-                mapTypeId: "roadmap",
-                center: { lat: latNew, lng: lngNew },
-            });
-
-            map.addListener("zoom_changed", () => {
+            if(data.length !== 0){
+                let x = -1;
+                let locations = []
+                lat.forEach(lat1 => {
+                    x++;
+                    var lng = parseFloat(this.state.lng[x], 10)
+                    var lat = parseFloat(lat1, 10)
+                    locations.push({lat, lng}) 
+                });
+                
+                var latNew = locations[0].lat;
+                var lngNew = locations[0].lng;
+                
+                const map = new window.google.maps.Map(document.getElementById(this.state.id), {
+                    zoom: zoom,
+                    mapTypeId: "roadmap",
+                    center: { lat: latNew, lng: lngNew },
+                });
+    
+                map.addListener("zoom_changed", () => {
+                    this.setState({
+                        zoom: map.getZoom(),
+                    });
+                });
+    
+                map.addListener("maptypeid_changed", () => {
+                    this.setState({
+                        maptype: map.getMapTypeId(),
+                    });
+                });
+                
+                const markers = locations.map((location, i) => {
+                    var descripcion = "";
+                    if(data[i].descripcion.length > 395) {
+                        descripcion = data[i].descripcion.substr(0, 395) + "...";
+                    } else {
+                        descripcion = data[i].descripcion;
+                    }
+    
+                    const contentString =
+                    '<div id="content">' +
+                    '<div id="siteNotice">' +
+                    "</div>" +
+                    `<h3 id="firstHeading" class="firstHeading">${data[i].nombre}</h3>` +
+                    '<div id="bodyContent">' +
+                    `<p>${descripcion} </p>` +
+                    `<a href='#/localidad/${data[i].idciudad}'>
+                        Clickea aca si queres saber mas de la localidad !!
+                    </a>` +
+                    "</div>" +
+                    "</div>";
+    
+                    const infowindow = new window.google.maps.InfoWindow({
+                        content: contentString,
+                    });
+    
+                    var marker = new window.google.maps.Marker({ map: map, position:  { lat: location.lat, lng: location.lng }});
+                    marker.addListener("click", () => {
+                        infowindow.open(map, marker);
+                      });
+                });
+               
                 this.setState({
-                    zoom: map.getZoom(),
-                });
-            });
-
-            map.addListener("maptypeid_changed", () => {
-                this.setState({
-                    maptype: map.getMapTypeId(),
-                });
-            });
-            
-            const markers = locations.map((location, i) => {
-                var descripcion = "";
-				if(data[i].descripcion.length > 395) {
-					descripcion = data[i].descripcion.substr(0, 395) + "...";
-				} else {
-					descripcion = data[i].descripcion;
-				}
-
-                const contentString =
-                '<div id="content">' +
-                '<div id="siteNotice">' +
-                "</div>" +
-                `<h3 id="firstHeading" class="firstHeading">${data[i].ciudad}</h3>` +
-                '<div id="bodyContent">' +
-                `<p>${descripcion} </p>` +
-                `<a href='#/localidad/${data[i].idciudad}'>
-                    Clickea aca si queres saber mas de la localidad !!
-                </a>` +
-                "</div>" +
-                "</div>";
-
-                const infowindow = new window.google.maps.InfoWindow({
-                    content: contentString,
-                });
-
-                var marker = new window.google.maps.Marker({ map: map, position:  { lat: location.lat, lng: location.lng }});
-                marker.addListener("click", () => {
-                    infowindow.open(map, marker);
-                  });
-            });
-           
-            this.setState({
-                marker: markers
-            });
+                    marker: markers
+                });  
+            }
         })
         
     }

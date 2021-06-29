@@ -299,21 +299,22 @@ class Zona extends Component {
                     </div>
                   </div>
                   <div id="mapa">
-                     {/*
+                     
                     <img
                       className="img-fluid"
                       src={`${process.env.REACT_APP_API_RECURSOS}/mapas/${this.state.dataZona.mapa}`}
                       alt="Mapa"
                     />
-                     */}
-                    <GoogleMap
+                     
+                     
+                    {/*<GoogleMap
                       data={this.state.localidadesDataZona} 
                       lat={this.state.latitudes}
                       lng={this.state.longitudes}
                       zoom="9"
                       gwidth="100%"
                       gheight="400px"
-                    />
+                    />*/}
                   </div>
                   <div id="imagenes">{links}</div>
                 </div>
