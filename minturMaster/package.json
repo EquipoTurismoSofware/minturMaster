@@ -50,6 +50,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "create-react-class": "^15.7.0"
+    "create-react-class": "^15.7.0",
+    "terser-brunch": "^4.0.0"
   }
 }

@@ -14,13 +14,14 @@ class NovedadesMetaDatos extends React.Component {
         return (
             <div className="application">
                 <Helmet>
+
                     <meta property="og:title" content={`${this.state.datos.titulo}. ${this.state.datos.subtitulo}`} />
                     <meta property="og:image" content={`${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.datos.foto_uno}`} />
                     <meta property="og:description" content={this.state.datos.descripcion} />
 
 
                 </Helmet>
-            ...
+                ...
             </div>
         );
     }
