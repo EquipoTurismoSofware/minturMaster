@@ -24,6 +24,7 @@ class PParques extends Component {
   getData() {
     var token = this.context.token;
     var self = this;
+    // url: `${process.env.REACT_APP_API}/atractivoTipo/2`,
     axios({
       method: "get",
       headers: {

@@ -16,13 +16,23 @@ class PMapasRecorridos extends Component {
       filtro: [],
       tipos: [
         {id: 0,
-        nombre: "Ciudad"},
+        nombre: "Ciudades"},
         {id: 1,
         nombre: "Diques"},
         {id: 2,
         nombre: "Ríos y saltos de agua"},
         {id: 3,
-        nombre: "Lagunas"}],
+        nombre: "Lagunas"},
+        {id: 4,
+        nombre: "Parques"},
+        {id: 5,
+        nombre: "Balnearios"},
+        {id: 6,
+        nombre: "Museos"},
+        {id: 7,
+        nombre: "Cerros"},
+        {id: 8,
+        nombre: "Caminos Pintorescos"}],
       localidades: [{
         id: 0,
         idciudad: 0,
@@ -125,7 +135,7 @@ class PMapasRecorridos extends Component {
 
             fil.push({ "id": element.id,
               "idciudad": element.idciudad,
-              "tipo": "Ciudad",
+              "tipo": "Ciudades",
               "nombre": element.ciudad,
               "descripcion": element.descripcion,
               "foto": element.foto,
@@ -135,7 +145,7 @@ class PMapasRecorridos extends Component {
 
             dat.unshift({ "id": element.id,
               "idciudad": element.idciudad,
-              "tipo": "Ciudad",
+              "tipo": "Ciudades",
               "nombre": element.ciudad,
               "descripcion": element.descripcion,
               "foto": element.foto,
@@ -168,7 +178,7 @@ class PMapasRecorridos extends Component {
 
             dat.unshift({ "id": element2.id,
               "idciudad": element2.idlocalidad,
-              "tipo": element2.tipo,
+              "tipo": element2.tipoAtractivo,
               "nombre": element2.nombre,
               "descripcion": element2.descripcion,
               "foto": element2.imagenes[0].imagen,
@@ -222,9 +232,6 @@ class PMapasRecorridos extends Component {
                  <div className="container">
                     <div className="row">
                         <div className="col" style={{backgroundColor: "whitesmoke"}}>
-                            {/*<div className="titulo-mapas" >
-                              <span>MAPAS</span>
-                            </div>*/}
                             <form className="mb-3 formulario-mapas">
                                 <div className="form-row">
                                     <div className="form-group col-md-4">

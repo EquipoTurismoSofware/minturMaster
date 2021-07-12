@@ -66,6 +66,7 @@ import ListadoAgenciasDosep from "./pages/variosmenu/ListadoAgenciasDosep";
 import BotonTurismoInterno from "./components/subcomponentes/BotonTurismoInterno";
 import TurismoDosep from "./components/subcomponentes/TurismoDosep";
 import Footer from "./components/Footer";
+import PGridImages from "./pages/PGridImages"
 import PVallesEncantados from "./pages/moto_turismo/PVallesEncantados";
 import PSaludYVitalidad from "./pages/moto_turismo/PSaludYVitalidad";
 import RegistroAlojamientos from "./pages/covid/voucher/RegistroAlojamientos";
@@ -93,6 +94,7 @@ class App extends Component {
               <Route exact path="/estadisticas/:id" component={PEstadisticas} />
               <Route exact path="/listadoEstadisticas" component={PListadoEstadisticas} />
               <Route exact path="/mapascompletos" component={PMapasRecorridos} />
+              <Route exact path="/turismo-vacaciones-invierno" component={PGridImages} />
               <Route
                 exact
                 path="/atractivos/:id"

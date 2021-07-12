@@ -148,15 +148,14 @@ class Home extends Component {
               <center>
                 <div className="pantallaGrande">
                   <span className="newsHome"><Newsletter /></span>
-                  {/*<PantallaModal/>*/}
+                  <PantallaModal/>
                   <SocialWidget />
                 </div>
-              </center>
-              {/*  <div className="pantallaChica">
-                <PantallaModal/>
+                <div className="pantallaChica">
+                  <PantallaModal/>
                 </div>
               </center>
-
+              {/*
                <div
                 id="carouselExampleIndicators"
                 className="carousel slide"

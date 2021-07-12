@@ -29,7 +29,7 @@ export default class PantallaModal extends Component {
       this.setState(
         {
           foto:
-            "http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/AVISO PAGINA V.jpg",
+            "http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/ModalInvierno2021Mobile.jpeg",
         },
         () => {
           var mContainer = document.getElementById(`modalMain-container`);
@@ -40,7 +40,7 @@ export default class PantallaModal extends Component {
       this.setState(
         {
           foto:
-            "http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/AVISO PAGINA.jpg",
+            "http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/ModalInvierno2021.jpeg",
         },
         () => {
           var mContainer = document.getElementById(`modalMain-container`);
@@ -65,7 +65,7 @@ export default class PantallaModal extends Component {
                 <i class="far fa-times-circle"></i>
               </a>
 
-              <Link to="/turismo-semana-santa" className="link-menu">
+              <Link to="/turismo-vacaciones-invierno" className="link-menu">
                 <img src={this.state.foto} />
               </Link>
               <svg

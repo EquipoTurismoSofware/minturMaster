@@ -260,16 +260,12 @@ class PAtractivo extends Component {
                             gwidth="100%"
                             gheight="400px"
                           />
+                          <a class="redirectMapBox" href={`https://www.google.com/maps?q=${this.state.dataAtractivo.latitud},${this.state.dataAtractivo.longitud}`} target='_blank'>
+                            <h1 class="redirectMapMessage">Ver en google maps</h1>
+                          </a>
                         </div>
-                        <div
-                          className="d-flex justify-content-center p-2"
-                          style={{ width: "100%" }}
-                        >
-                          <span>
-                            {this.state.dataAtractivo.latitud}{" "}
-                            {this.state.dataAtractivo.longitud}
-                          </span>
-                        </div>
+                       
+                         
                       </div>
                     ) : (
                       ""

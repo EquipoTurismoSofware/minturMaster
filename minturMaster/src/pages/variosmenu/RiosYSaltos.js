@@ -21,6 +21,7 @@ class PRiosYSaltos extends Component {
     this.getData = this.getData.bind(this);
   }
 
+  //url: `${process.env.REACT_APP_API}/atractivoTipo/7`,
   getData() {
     var token = this.context.token;
     var self = this;

@@ -23,6 +23,7 @@ class PDiques extends Component {
   getData() {
     var token = this.context.token;
     var self = this;
+    //url: `${process.env.REACT_APP_API}/atractivoTipo/1`,
     axios({
       method: "get",
       headers: {

@@ -505,8 +505,11 @@ class PLocalidad extends Component {
                         gwidth="100%"
                         gheight="400px"
                       />
+                      <a class="redirectMapBox"  href={`https://www.google.com.ar/maps/place/${this.state.dataLocalidad.nombre}, San Luis`} target='_blank'>
+                        <h1 class="redirectMapMessage">Ver en google maps</h1>
+                      </a>
                     </div>
-
+                   
                     {
                       //alert (this.state.cantImperdibles)
                     }

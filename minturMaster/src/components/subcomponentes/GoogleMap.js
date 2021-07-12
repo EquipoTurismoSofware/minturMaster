@@ -35,6 +35,7 @@ class GoogleMap extends Component {
             if(data.length !== 0){
                 let x = -1;
                 let locations = []
+
                 lat.forEach(lat1 => {
                     x++;
                     var lng = parseFloat(this.state.lng[x], 10)
@@ -62,6 +63,15 @@ class GoogleMap extends Component {
                         maptype: map.getMapTypeId(),
                     });
                 });
+
+                //Lineas flotantes
+                /*const flightPath = new window.google.maps.Polyline({
+                    path: locations,
+                    strokeColor: "#FF0000",
+                    strokeOpacity: 1.0,
+                    strokeWeight: 2
+                });
+                flightPath.setMap(map);*/
                 
                 const markers = locations.map((location, i) => {
                     var descripcion = "";
@@ -70,19 +80,68 @@ class GoogleMap extends Component {
                     } else {
                         descripcion = data[i].descripcion;
                     }
-    
-                    const contentString =
-                    '<div id="content">' +
-                    '<div id="siteNotice">' +
-                    "</div>" +
-                    `<h3 id="firstHeading" class="firstHeading">${data[i].nombre}</h3>` +
-                    '<div id="bodyContent">' +
-                    `<p>${descripcion} </p>` +
-                    `<a href='#/localidad/${data[i].idciudad}'>
-                        Clickea aca si queres saber mas de la localidad !!
-                    </a>` +
-                    "</div>" +
-                    "</div>";
+                    
+                    var contentString
+                    if(data[i].tipo === "Ciudad"){
+                        
+                    contentString = 
+                    '<div id="containerBoxMap">' +
+                        '<div id="success-box">'+
+                            '<div class="radar"></div>'+
+                        '</div>'+
+                            '<div class="shadow scale"></div>'+
+                            `<div class="messageBoxMap"><h1 class="alertBoxMap">${data[i].nombre}</h1></div>`+
+                            `<a class="button-boxMap" href='#/localidad/${data[i].idciudad}' ><h1 class="green alertBoxButtonMap">Conocer mas</h1></a>`+
+                        '</div>'+
+                    '</div>'
+
+                     /*contentString =
+                        '<div id="content">' +
+                        '<div id="siteNotice">' +
+                        "</div>" +
+                        `<h3 id="firstHeading" class="firstHeading">${data[i].nombre}</h3>` +
+                        '<div id="bodyContent">' +
+                        `<p>${descripcion} </p>` +
+                        `<a href='#/localidad/${data[i].idciudad}'>
+                            Clickea aca si queres saber mas de la localidad !!
+                        </a>` +
+                        `<br/>`+
+                        `<a href='http://maps.google.co.uk/maps?q=${location.lat},${location.lng}' target='_blank'>
+                            Ver en google maps
+                        </a>` +
+                        "</div>" +
+                        "</div>";*/
+                    }else{
+
+                    contentString = 
+                        '<div id="containerBoxMap">' +
+                            '<div id="info-box">'+
+                                '<div class="radar"></div>'+
+                            '</div>'+
+                                '<div class="shadow scale"></div>'+
+                                `<div class="messageBoxMap"><h1 class="alertBoxMap">${data[i].nombre}</h1></div>`+
+                                `<a class="button-boxMap" href='#/atractivo/${data[i].id}' ><h1 class="blue alertBoxButtonMap">Conocer mas</h1></a>`+
+                            '</div>'+
+                        '</div>'
+                        /*contentString =
+                        '<div id="content">' +
+                        '<div id="siteNotice">' +
+                        "</div>" +
+                        `<h3 id="firstHeading" class="firstHeading">${data[i].nombre}</h3>` +
+                        '<div id="bodyContent">' +
+                        `<p>${descripcion} </p>` +
+                        `<a href='#/atractivo/${data[i].id}'>
+                            Clickea aca si queres saber mas del atractivo!!
+                        </a>` +
+                        `<br/>`+
+                        `<a href='http://maps.google.co.uk/maps?q=${location.lat},${location.lng}' target='_blank'>
+                            Ver en google maps
+                        </a>` +
+                        "</div>" +
+                        "</div>";*/
+                    }
+                    
+                    
     
                     const infowindow = new window.google.maps.InfoWindow({
                         content: contentString,

@@ -1,6 +1,6 @@
 
-$modal-width-gnrl: 85%;
-$modal-height-gnrl: 90%;
+$modal-width-gnrl: 45%;
+$modal-height-gnrl: 95%;
 
   #modalMain-container {
     position:fixed;
@@ -15,6 +15,7 @@ $modal-height-gnrl: 90%;
     &.modalIn {
       transform:scale(1);
       .modalMain-background {
+        width: 100%;
         background:rgba(0,0,0,.0);
         animation: fadeInModal .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
         .modalMain {
@@ -75,7 +76,7 @@ $modal-height-gnrl: 90%;
         display:inline-block;
         border-radius:20px;
         position:relative;
-        top: 5%;
+        top: 2%;
         .closeModal{
           z-index: 2;
           position: absolute;
