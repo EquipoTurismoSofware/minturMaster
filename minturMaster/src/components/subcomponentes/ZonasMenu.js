@@ -185,6 +185,15 @@ const ZonaMenuDos = (props) => {
           <ul>
             <li>
               <Link
+                to="/turismo-vacaciones-invierno"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Actividades de Invierno 2021
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/PParquesList"
                 className="link"
                 onClick={props.onZonaClick}
@@ -235,9 +244,16 @@ const ZonaMenuDos = (props) => {
             </li>
           </ul>
         </div>
-        <div className="ZonaMenu-Lista mr-3" style={window.screen.width >= 575 ? {borderLeft: "1px solid", paddingLeft: "10px"} : {borderTop: "1px solid", paddingTop: "10px"}}>
-        <ul>
-        <li>
+        <div
+          className="ZonaMenu-Lista mr-3"
+          style={
+            window.screen.width >= 575
+              ? { borderLeft: "1px solid", paddingLeft: "10px" }
+              : { borderTop: "1px solid", paddingTop: "10px" }
+          }
+        >
+          <ul>
+            <li>
               <Link
                 to="/listado-guias-agencias-covid/guiasturismo"
                 className="link"
@@ -266,7 +282,14 @@ const ZonaMenuDos = (props) => {
             </li>
           </ul>
         </div>
-        <div className="ZonaMenu-Lista mr-3" style={window.screen.width >= 575 ? {borderLeft: "1px solid", paddingLeft: "10px"} : {borderTop: "1px solid", paddingTop: "10px"}}>
+        <div
+          className="ZonaMenu-Lista mr-3"
+          style={
+            window.screen.width >= 575
+              ? { borderLeft: "1px solid", paddingLeft: "10px" }
+              : { borderTop: "1px solid", paddingTop: "10px" }
+          }
+        >
           <ul>
             {/*<li>
               <a
@@ -404,6 +427,15 @@ const ZonaMenuCuatro = (props) => {
               </Link>
             </li>
             <li>
+              <Link
+                to="/turismo-vacaciones-invierno"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Actividades de Invierno 2021
+              </Link>
+            </li>
+            <li>
               <Link to="/Diques" className="link" onClick={props.onZonaClick}>
                 Diques Y Embalses
               </Link>
@@ -465,7 +497,7 @@ const ZonaMenuCinco = (props) => {
       <div className="d-flex">
         <div className="ZonaMenu-Lista mr-3">
           <ul>
-            <li>
+            {/*<li>
               <a
                 href="#/turismo-dosep"
                 className="link"
@@ -473,7 +505,7 @@ const ZonaMenuCinco = (props) => {
               >
                 DOSEP "TURISMO 2021"
               </a>
-              <span className="link-menu" onClick={(e) => this.setMenu(4, e)}>
+              <span className="link-menu" onClick=s{(e) => this.setMenu(4, e)}>
                 <img
                   alt="coronel3"
                   style={{
@@ -484,7 +516,7 @@ const ZonaMenuCinco = (props) => {
                   src={`${process.env.REACT_APP_API_RECURSOS}/ATARDECER.png`}
                 />
               </span>
-            </li>
+                </li>*/}
             <li>
               <Link
                 to="/coronavirus"

@@ -25,7 +25,7 @@ export default class PantallaModal extends Component {
   }
 
   componentDidMount() {
-    if (window.screen.width <= 510) {
+    if (window.screen.width <= 410) {
       this.setState(
         {
           foto:

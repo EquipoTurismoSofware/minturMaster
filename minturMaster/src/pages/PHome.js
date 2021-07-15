@@ -145,14 +145,17 @@ class Home extends Component {
           <React.Fragment>
             <div className="menu-y-slider ">
               <Slider></Slider>
+
               <center>
                 <div className="pantallaGrande">
-                  <span className="newsHome"><Newsletter /></span>
-                  <PantallaModal/>
+                  <span className="newsHome">
+                    <Newsletter />
+                  </span>
+                  <PantallaModal />
                   <SocialWidget />
                 </div>
-                <div className="pantallaChica">
-                  <PantallaModal/>
+                <div className="pantallaChica2">
+                  <PantallaModal />
                 </div>
               </center>
               {/*
@@ -304,7 +307,27 @@ class Home extends Component {
               </div>
             </div>*/}
             </div>
+
             <TabSlider />
+            <center>
+              <div className="pantallaGrande">
+                <span className="newsHome">
+                  <a
+                    href="http://turismo.sanluis.gov.ar/#/turismo-vacaciones-invierno"
+                    className="link-menu"
+                  >
+                    <img
+                      style={{ height: 300, width: "80%" }}
+                      className="img-fluid"
+                      src={
+                        "http://turismo.sanluis.gov.ar/recursos/cabecera.jpg"
+                      }
+                      alt="Img"
+                    />
+                  </a>
+                </span>
+              </div>
+            </center>
             <CardImperdibles />
             {/*   <Recorridos />
             <ReactWOW animation="fadeIn" data-wow-delay="10s">
