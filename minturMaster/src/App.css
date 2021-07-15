@@ -282,6 +282,23 @@ body {
   outline: none;
 }
 
+.pantallaGrandeGrid {
+  display: inline;
+}
+
+.pantallaChicaGrid {
+  display: none;
+}
+
+@media only screen and (max-width: 510px) {
+  .pantallaGrandeGrid {
+    display: none;
+  }
+
+  .pantallaChicaGrid {
+    display: inline;
+  }
+}
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(0, 199, 177, 0.4);
@@ -4872,18 +4889,18 @@ h3.bgc_4 {
 }
 @media only screen and (max-width: 990px) {
   /*
-      .Novedadesfull {
-          .nf-body {
-              .nf-novedad {
-                  flex-direction: column;
-                  .nf-novedad-left {
-                      position: fixed;
-                  }
+  .Novedadesfull {
+      .nf-body {
+          .nf-novedad {
+              flex-direction: column;
+              .nf-novedad-left {
+                  position: fixed;
               }
-  
           }
+
       }
-      */
+  }
+  */
   .novedad-full-item {
     grid-template-areas: "titulo" "imagen" "body" "pie";
     grid-template-columns: 1fr;
@@ -5298,18 +5315,18 @@ h3.bgc_4 {
 
 @media only screen and (max-width: 990px) {
   /*
-      .Novedadesfull {
-          .nf-body {
-              .nf-novedad {
-                  flex-direction: column;
-                  .nf-novedad-left {
-                      position: fixed;
-                  }
-              }
-  
-          }
-      }
-      */
+    .Novedadesfull {
+        .nf-body {
+            .nf-novedad {
+                flex-direction: column;
+                .nf-novedad-left {
+                    position: fixed;
+                }
+            }
+
+        }
+    }
+    */
   .atractivo-full-item .imagen img {
     height: 250px;
     width: 700px;

@@ -5,7 +5,7 @@
   "dependencies": {
     "@mobiscroll/react": "https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-4.5.1.tgz",
     "animate.css": "^3.7.0",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "bootstrap": "^4.5.3",
     "chart.js": "^2.9.4",
     "draft-js-export-html": "^1.4.1",

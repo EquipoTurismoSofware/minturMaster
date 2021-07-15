@@ -8,7 +8,7 @@ export default class TurismoDosep extends Component {
       <div className="container mb-5">
         <div className="container">
           <div className="row mb-3" style={{ paddingTop: "150px" }}>
-            <div className="pantallaGrande">
+            <div className="pantallaGrandeGrid">
               <center>
                 <img
                   style={{ height: 250, width: 350 }}
@@ -41,30 +41,29 @@ export default class TurismoDosep extends Component {
                     </Link>
                   </div>*/}{" "}
                   <div className="one-two  column">
-                    <a
-                      href="https://forms.gle/K6gdKDXjoPx7FAaQ8"
-                      className="link-menu"
-                    >
+                     <a
+                        href="https://forms.gle/LquZiaxMnF56A6hr9"
+                        className="link-menu"
+                     >
                       <img
                         style={{ height: 300, width: 550 }}
                         className="img-fluid"
-                        src="http://turismo.sanluis.gov.ar/recursos/moneda.jpg"
+                        src="http://turismo.sanluis.gov.ar/recursos/caminatas.jpg"
                         alt="Img"
                       />
                     </a>
+                    
                   </div>
                   <div className="one-two  column">
-                    <a
-                      href="https://forms.gle/kQui56yJXDwFuDD29"
-                      className="link-menu"
-                    >
+                  <a href="https://wa.link/9fvbpk" className="link-menu">
                       <img
                         style={{ height: 300, width: 550 }}
                         className="img-fluid"
-                        src="http://turismo.sanluis.gov.ar/recursos/anturuca.jpg"
+                        src="http://turismo.sanluis.gov.ar/recursos/city.jpg"
                         alt="Img"
                       />
                     </a>
+                   
                   </div>
                   <div className="one-three column">
                     <a
@@ -106,14 +105,14 @@ export default class TurismoDosep extends Component {
                     </a>
                   </div>
                   <div className="one-two  column">
-                    <a
-                      href="https://forms.gle/LquZiaxMnF56A6hr9"
+                  <a
+                      href="https://forms.gle/K6gdKDXjoPx7FAaQ8"
                       className="link-menu"
                     >
                       <img
                         style={{ height: 300, width: 550 }}
                         className="img-fluid"
-                        src="http://turismo.sanluis.gov.ar/recursos/caminatas.jpg"
+                        src="http://turismo.sanluis.gov.ar/recursos/moneda.jpg"
                         alt="Img"
                       />
                     </a>
@@ -132,11 +131,14 @@ export default class TurismoDosep extends Component {
                     </a>
                   </div>
                   <div className="one-two  column">
-                    <a href="https://wa.link/9fvbpk" className="link-menu">
+                     <a
+                        href="https://forms.gle/kQui56yJXDwFuDD29"
+                        className="link-menu"
+                     >
                       <img
                         style={{ height: 300, width: 550 }}
                         className="img-fluid"
-                        src="http://turismo.sanluis.gov.ar/recursos/city.jpg"
+                        src="http://turismo.sanluis.gov.ar/recursos/anturuca.jpg"
                         alt="Img"
                       />
                     </a>
@@ -147,7 +149,7 @@ export default class TurismoDosep extends Component {
           </div>
         </div>
         <div className="row mb-3" style={{ paddingTop: "0px" }}>
-          <div className="pantallaChica">
+          <div className="pantallaChicaGrid">
             <center>
               <img
                 style={{ height: 150, width: 200 }}
@@ -163,17 +165,15 @@ export default class TurismoDosep extends Component {
             </center>
             <center>
               <div className="one-three column">
-                <a
-                  href="https://forms.gle/NyAVNHqRsRrZDBs7A"
-                  className="link-menu"
-                >
+              <a href="https://wa.link/9fvbpk" className="link-menu">
                   <img
                     style={{ height: 200, width: 400 }}
                     className="img-fluid"
-                    src={"http://turismo.sanluis.gov.ar//recursos/astro.jpg"}
+                    src="http://turismo.sanluis.gov.ar/recursos/city.jpg"
                     alt="Img"
                   />
                 </a>
+                
               </div>
               <div className="one-three column">
                 <a
@@ -256,11 +256,14 @@ export default class TurismoDosep extends Component {
                 </a>
               </div>
               <div className="one-two  column">
-                <a href="https://wa.link/9fvbpk" className="link-menu">
+               <a
+                     href="https://forms.gle/NyAVNHqRsRrZDBs7A"
+                     className="link-menu"
+                  >
                   <img
                     style={{ height: 200, width: 400 }}
                     className="img-fluid"
-                    src="http://turismo.sanluis.gov.ar/recursos/city.jpg"
+                    src={"http://turismo.sanluis.gov.ar//recursos/astro.jpg"}
                     alt="Img"
                   />
                 </a>

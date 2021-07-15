@@ -108,3 +108,20 @@ $yellow : #feeb97;
     outline: none;
   }
 }
+
+.pantallaGrandeGrid {
+  display: inline;
+}
+.pantallaChicaGrid {
+  display: none;
+}
+
+@media only screen and (max-width: 510px) {
+  
+.pantallaGrandeGrid {
+  display: none;
+}
+.pantallaChicaGrid {
+  display: inline;
+}
+}
