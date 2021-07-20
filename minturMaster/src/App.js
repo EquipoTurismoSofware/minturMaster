@@ -72,6 +72,8 @@ import PSaludYVitalidad from "./pages/moto_turismo/PSaludYVitalidad";
 import RegistroAlojamientos from "./pages/covid/voucher/RegistroAlojamientos";
 
 import NotFound from "./components/NotFound";
+import EnConstruccion from "./components/PaginaEnConstruccion";
+
 import PMapas from "./pages/PMapas";
 import GastronomiaDosep from "./pages/gastronomia/GastronomiaDosep";
 
@@ -253,7 +255,46 @@ class App extends Component {
                 path="/registro-alojamientos-covid"
                 component={RegistroAlojamientos}
               />
-
+ <Route
+                exact
+                path="/merlo-comechingones"
+                component={EnConstruccion}
+              />
+              <Route
+                exact
+                path="/diques-rios-saltos"
+                component={EnConstruccion}
+              />
+               <Route
+                exact
+                path="/potrero-sierrascentrales"
+                component={EnConstruccion}
+              />
+                  <Route
+                exact
+                path="/termas-salinas"
+                component={EnConstruccion}
+              />
+                  <Route
+                exact
+                path="/turismo-religioso"
+                component={EnConstruccion}
+              />
+                  <Route
+                exact
+                path="/mercedes-morro"
+                component={EnConstruccion}
+              />
+                 <Route
+                exact
+                path="/parques-naturales"
+                component={EnConstruccion}
+              />
+                 <Route
+                exact
+                path="/caminos-pintorescos"
+                component={EnConstruccion}
+              />
               <Route path="*">
                 <NotFound />
               </Route>
