@@ -76,6 +76,7 @@ import EnConstruccion from "./components/PaginaEnConstruccion";
 
 import PMapas from "./pages/PMapas";
 import GastronomiaDosep from "./pages/gastronomia/GastronomiaDosep";
+import ListadoCensistas from "./pages/Censo/ListadoCensistas";
 
 class App extends Component {
   render() {
@@ -97,6 +98,7 @@ class App extends Component {
               <Route exact path="/listadoEstadisticas" component={PListadoEstadisticas} />
               <Route exact path="/mapascompletos" component={PMapasRecorridos} />
               <Route exact path="/turismo-vacaciones-invierno" component={PGridImages} />
+              <Route exact path="/listadoCensistas" component={ListadoCensistas} />
               <Route
                 exact
                 path="/atractivos/:id"

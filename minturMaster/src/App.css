@@ -5971,6 +5971,85 @@ h3.bgc_4 {
     padding-left: 0px;
   }
 }
+.containerCensistas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  margin: 0 10px 0 10px;
+  align-items: center;
+  height: 350px;
+}
+.containerCensistas .boxCensistas {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.containerCensistas .boxCensistas .topCensistas {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.containerCensistas .boxCensistas .topCensistas .profileCensistas, .containerCensistas .boxCensistas .topCensistas .titleCensistas, .containerCensistas .boxCensistas .topCensistas .jobCensistas {
+  margin: 5px;
+}
+.containerCensistas .boxCensistas .topCensistas .profileCensistas, .containerCensistas .boxCensistas .topCensistas .imageCensistas {
+  width: 80px;
+  height: 80px;
+  border: 4px solid white;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 45%;
+  z-index: 2;
+}
+.containerCensistas .boxCensistas .topCensistas .titleCensistas {
+  font-size: 18px;
+  font-weight: 700;
+}
+.containerCensistas .boxCensistas .topCensistas .jobCensistas {
+  font-size: 14px;
+  font-weight: 400;
+}
+.containerCensistas .boxCensistas .bottomCensistas {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: 50%;
+  background-color: #F5F5F5;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.containerCensistas .boxCensistas .bottomCensistas .linksCensistas {
+  text-align: center;
+}
+.containerCensistas .boxCensistas .bottomCensistas .linksCensistas .listaCensistas {
+  list-style-type: none;
+  padding: 0;
+  /* Remove padding */
+  margin: 0;
+  /* Remove margins */
+}
+.containerCensistas .boxCensistas .bottomCensistas .linksCensistas .listaCensistas li {
+  padding: 5px;
+}
+.containerCensistas .boxCensistas .bottomCensistas .linksCensistas .listaCensistas a {
+  color: #626262;
+  font-size: 15px;
+  text-decoration: none;
+}
+.containerCensistas .boxCensistas .bottomCensistas .linksCensistas .listaCensistas a:hover {
+  text-decoration: underline;
+}
+
 /* COMIENZA ESTILO DE TABS SLIDER*/
 /* colors */
 /* tab setting */
