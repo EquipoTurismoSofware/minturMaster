@@ -70,6 +70,7 @@ import PGridImages from "./pages/PGridImages"
 import PVallesEncantados from "./pages/moto_turismo/PVallesEncantados";
 import PSaludYVitalidad from "./pages/moto_turismo/PSaludYVitalidad";
 import RegistroAlojamientos from "./pages/covid/voucher/RegistroAlojamientos";
+import PCaminosPintorescos from "./pages/variosmenu/CaminosPintorescos"
 
 import NotFound from "./components/NotFound";
 import EnConstruccion from "./components/PaginaEnConstruccion";
@@ -257,7 +258,7 @@ class App extends Component {
                 path="/registro-alojamientos-covid"
                 component={RegistroAlojamientos}
               />
- <Route
+             <Route
                 exact
                 path="/merlo-comechingones"
                 component={EnConstruccion}
@@ -295,7 +296,7 @@ class App extends Component {
                  <Route
                 exact
                 path="/caminos-pintorescos"
-                component={EnConstruccion}
+                component={PCaminosPintorescos}
               />
               <Route path="*">
                 <NotFound />
