@@ -151,11 +151,11 @@ class Home extends Component {
                   <span className="newsHome">
                     <Newsletter />
                   </span>
-                  <PantallaModal />
+                  {/*<PantallaModal />*/}
                   <SocialWidget />
                 </div>
                 <div className="pantallaChica2">
-                  <PantallaModal />
+                  {/*<PantallaModal />*/}
                 </div>
               </center>
               {/*
@@ -309,7 +309,7 @@ class Home extends Component {
             </div>
 
             <TabSlider />
-            <center>
+            {/*<center>
               <div className="pantallaGrande">
                 <span className="newsHome">
                   <a
@@ -327,7 +327,7 @@ class Home extends Component {
                   </a>
                 </span>
               </div>
-            </center>
+            </center>*/}
             <CardImperdibles />
             {/*   <Recorridos />
             <ReactWOW animation="fadeIn" data-wow-delay="10s">

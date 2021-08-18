@@ -82,7 +82,7 @@ class GoogleMap extends Component {
                     }
                     
                     var contentString
-                    if(data[i].tipo === "Ciudad"){
+                    if(data[i].tipo === "Ciudades"){
                         
                     contentString = 
                     '<div id="containerBoxMap">' +

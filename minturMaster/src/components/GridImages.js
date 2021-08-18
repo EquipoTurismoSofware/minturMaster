@@ -41,18 +41,17 @@ export default class TurismoDosep extends Component {
                     </Link>
                   </div>*/}{" "}
                   <div className="one-two  column">
-                     <a
-                        href="https://forms.gle/LquZiaxMnF56A6hr9"
+                    <a
+                        href="https://forms.gle/kQui56yJXDwFuDD29"
                         className="link-menu"
                      >
                       <img
                         style={{ height: 300, width: 550 }}
                         className="img-fluid"
-                        src="http://turismo.sanluis.gov.ar/recursos/caminatas.jpg"
+                        src="http://turismo.sanluis.gov.ar/recursos/anturuca.jpg"
                         alt="Img"
                       />
-                    </a>
-                    
+                    </a>        
                   </div>
                   <div className="one-two  column">
                   <a href="https://wa.link/9fvbpk" className="link-menu">
@@ -131,14 +130,14 @@ export default class TurismoDosep extends Component {
                     </a>
                   </div>
                   <div className="one-two  column">
-                     <a
-                        href="https://forms.gle/kQui56yJXDwFuDD29"
+                    <a
+                        href="https://forms.gle/LquZiaxMnF56A6hr9"
                         className="link-menu"
                      >
                       <img
                         style={{ height: 300, width: 550 }}
                         className="img-fluid"
-                        src="http://turismo.sanluis.gov.ar/recursos/anturuca.jpg"
+                        src="http://turismo.sanluis.gov.ar/recursos/caminatas.jpg"
                         alt="Img"
                       />
                     </a>
@@ -177,16 +176,17 @@ export default class TurismoDosep extends Component {
               </div>
               <div className="one-three column">
                 <a
-                  href="https://forms.gle/LquZiaxMnF56A6hr9"
+                  href="https://forms.gle/kQui56yJXDwFuDD29"
                   className="link-menu"
                 >
                   <img
                     style={{ height: 200, width: 400 }}
                     className="img-fluid"
-                    src="http://turismo.sanluis.gov.ar/recursos/caminatas.jpg"
+                    src="http://turismo.sanluis.gov.ar/recursos/anturuca.jpg"
                     alt="Img"
                   />
                 </a>
+                
               </div>
               <div className="one-three column">
                 <a
@@ -230,14 +230,14 @@ export default class TurismoDosep extends Component {
                 </a>
               </div>
               <div className="one-three  column">
-                <a
-                  href="https://forms.gle/kQui56yJXDwFuDD29"
+               <a
+                  href="https://forms.gle/LquZiaxMnF56A6hr9"
                   className="link-menu"
                 >
                   <img
                     style={{ height: 200, width: 400 }}
                     className="img-fluid"
-                    src="http://turismo.sanluis.gov.ar/recursos/anturuca.jpg"
+                    src="http://turismo.sanluis.gov.ar/recursos/caminatas.jpg"
                     alt="Img"
                   />
                 </a>

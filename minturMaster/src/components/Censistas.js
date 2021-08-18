@@ -5,7 +5,7 @@ import Viewer from "./subcomponentes/Viewer"
 const Censistas = (props) => {
     const {dataProp} = props 
     const [data, setData] = useState(dataProp)
-    const [visibles, setVisibles] = useState(4)
+    const [visibles, setVisibles] = useState(3)
     const [clase, setClase] = useState("alojamiento")
     const [prevProps, setPrevProps] = useState({data: dataProp})
 
@@ -41,7 +41,7 @@ const Censistas = (props) => {
             <div class="containerCensistas">
                     <div class="boxCensistas">
                         <div class="topCensistas">
-                            <div class="profileCensistas"><img src={element.foto} className="imageCensistas" ></img></div>
+                            <div class="profileCensistas"><img src={`${process.env.REACT_APP_API_RECURSOS}/recursos/censistas/${element.foto}`} className="imageCensistas" ></img></div>
                             <h1 class="titleCensistas">{element.nombre}</h1>
                             <h3 class="jobCensistas">{element.apellido}</h3>
                         </div>
@@ -49,8 +49,8 @@ const Censistas = (props) => {
                             <div class="linksCensistas">
                                 <ul class="listaCensistas">
                                     <li><i class="fas fa-id-card"  style={{marginRight:"10px"}}></i>{element.dni}</li>
-                                    <li><i class="fas fa-at" style={{marginRight:"10px"}}></i>{element.email}</li>
-                                    <li><i class="fas fa-phone" style={{marginRight:"10px"}}></i>{element.telefono}</li>
+                                    {element.email !== "" ? <li><i class="fas fa-at" style={{marginRight:"10px"}}></i>{element.email}</li> : ""}
+                                    {element.telefono !== "" ? <li><i class="fas fa-phone" style={{marginRight:"10px"}}></i>{element.telefono}</li> : ""}
                                 </ul>
                             </div>
                         </div>

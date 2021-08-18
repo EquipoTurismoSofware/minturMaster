@@ -14,7 +14,7 @@ class PMapasRecorridos extends Component {
     this.state = {
       data: [],
       filtro: [],
-      tipos: [
+      /*tipos: [
         {id: 0,
         nombre: "Ciudades"},
         {id: 1,
@@ -32,7 +32,7 @@ class PMapasRecorridos extends Component {
         {id: 7,
         nombre: "Cerros"},
         {id: 8,
-        nombre: "Caminos Pintorescos"}],
+        nombre: "Caminos Pintorescos"}],*/
       localidades: [{
         id: 0,
         idciudad: 0,
@@ -46,6 +46,7 @@ class PMapasRecorridos extends Component {
       isNotFound: true,
       idciudad: 0,
       idtipo: 0,
+      tipos: [],
       nombreSearch: "",
       latitudesFiltro: [],
       longitudesFiltro: []
@@ -61,7 +62,7 @@ class PMapasRecorridos extends Component {
       let latFilter = []
       idciudad = parseInt(idciudad, 10);
       idtipo = parseInt(idtipo, 10);
-      console.log(idciudad, idtipo)
+
       let filtrado = this.state.data.filter((value) => {
           let respuesta = true;
 
@@ -115,6 +116,25 @@ class PMapasRecorridos extends Component {
 
     var token = this.context.token;
 
+    await axios({
+      method: "get",
+      headers: {
+        Authorization: token,
+      },
+      url: `${process.env.REACT_APP_API}/clasificacion/all`,
+      responseType: "json",
+    })
+    .then((response) => {
+    if (response.data.data.count > 0) {
+        response.data.data.registros.unshift({
+          id: 0,
+          nombre: "Ciudades"
+        });
+        this.setState(
+        {
+            tipos: response.data.data.registros
+        });
+    }})
       //Localidades de la Zona
       await axios({
         method: "get",

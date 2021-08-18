@@ -183,7 +183,7 @@ const ZonaMenuDos = (props) => {
       <div className="d-sm-flex">
         <div className="ZonaMenu-Lista mr-3">
           <ul>
-            <li>
+            {/*<li>
               <Link
                 to="/turismo-vacaciones-invierno"
                 className="link"
@@ -191,7 +191,7 @@ const ZonaMenuDos = (props) => {
               >
                 Actividades de Invierno 2021
               </Link>
-            </li>
+            </li>*/}
             <li>
               <Link
                 to="/PParquesList"
@@ -426,7 +426,7 @@ const ZonaMenuCuatro = (props) => {
                 Parques Provinciales
               </Link>
             </li>
-            <li>
+            {/*<li>
               <Link
                 to="/turismo-vacaciones-invierno"
                 className="link"
@@ -434,7 +434,7 @@ const ZonaMenuCuatro = (props) => {
               >
                 Actividades de Invierno 2021
               </Link>
-            </li>
+            </li>*/}
             <li>
               <Link to="/Diques" className="link" onClick={props.onZonaClick}>
                 Diques Y Embalses

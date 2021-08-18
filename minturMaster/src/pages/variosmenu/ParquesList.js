@@ -30,7 +30,7 @@ class PParques extends Component {
       headers: {
         Authorization: token
       },
-      url: `${process.env.REACT_APP_API}/atractivo/'parques'`,
+      url: `${process.env.REACT_APP_API}/atractivoTipo/2`,
       responseType: "json"
     })
       .then(response => {
@@ -80,7 +80,7 @@ class PParques extends Component {
                 <div className="atractivo-full-item">
                   <div className="imagen">
                     <span style={{ backgroundColor: `#${atrac.color}` }}>
-                      {atrac.localidad} - {atrac.tipo}
+                      {atrac.localidad} - {atrac.tipoNombre}
                     </span>
                     <img
                       className="img-fluid"

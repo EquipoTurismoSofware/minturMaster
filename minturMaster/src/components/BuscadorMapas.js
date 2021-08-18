@@ -41,7 +41,7 @@ class BuscadorMapas extends Component {
         var ListadoAtractivofull = null;
         ListadoAtractivofull = this.state.data.map((atrac) => {
             if(atrac.id != 0){
-                if(atrac.tipo === "Ciudad"){
+                if(atrac.tipo === "Ciudades"){
                     let descripcion = "";
                     if (atrac.descripcion.length > 150) {
                     descripcion = atrac.descripcion.substr(0, 150) + "...";

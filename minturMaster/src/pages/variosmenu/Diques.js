@@ -29,7 +29,7 @@ class PDiques extends Component {
       headers: {
         Authorization: token,
       },
-      url: `${process.env.REACT_APP_API}/atractivo/'diques'`,
+      url: `${process.env.REACT_APP_API}/atractivoTipo/1`,
       responseType: "json",
     })
       .then((response) => {
@@ -79,7 +79,7 @@ class PDiques extends Component {
                 <div className="atractivo-full-item">
                   <div className="imagen">
                     <span style={{ backgroundColor: `#${atrac.color}` }}>
-                      {atrac.localidad} - {atrac.tipo}
+                      {atrac.localidad} - {atrac.tipoNombre}
                     </span>
                     <img
                       className="img-fluid"
