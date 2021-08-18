@@ -202,6 +202,11 @@ const ZonaMenuDos = (props) => {
               </Link>
             </li>
             <li>
+              <Link to="/caminos-pintorescos" className="link" onClick={props.onZonaClick}>
+                Caminos Pintorescos
+              </Link>
+            </li>
+            <li>
               <Link to="/Diques" className="link" onClick={props.onZonaClick}>
                 Diques Y Embalses
               </Link>
@@ -424,6 +429,11 @@ const ZonaMenuCuatro = (props) => {
                 onClick={props.onZonaClick}
               >
                 Parques Provinciales
+              </Link>
+            </li>
+            <li>
+              <Link to="/caminos-pintorescos" className="link" onClick={props.onZonaClick}>
+                Caminos Pintorescos
               </Link>
             </li>
             {/*<li>
