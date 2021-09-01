@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Consumer } from "../context";
+import axios from "axios";
 import Loading from "../utils/Loading";
 import { TweenMax, Power1 } from "gsap/all";
 
@@ -28,6 +29,7 @@ class Slider extends Component {
       slideshowInterval: "",
       imagesList: [],
       linkList1: [],
+      galeria: [],
       imgW: "",
       imgH: "",
       IAR: "",
@@ -362,31 +364,70 @@ class Slider extends Component {
   }
 
   componentDidMount() {
-    var x = this.state.partList;
-    this.setState(
-      {
-        ctx0: this.state.canvas0.current.getContext("2d"),
-        ctx1: this.state.canvas1.current.getContext("2d"),
-        ctx2: this.state.canvas2.current.getContext("2d"),
-        ctx3: this.state.canvas3.current.getContext("2d"),
+    const token = this.context.token;
+    var self = this;
+    axios({
+      method: "get",
+      headers: {
+        Authorization: token,
       },
-      () => {
-        x[0].context = this.state.ctx1;
-        x[1].context = this.state.ctx2;
-        x[2].context = this.state.ctx3;
-        this.setState(
-          {
-            partList: x,
-          },
-          () => {
-            this.preInit();
-          }
-        );
-      }
-    );
+      url: `${process.env.REACT_APP_API}/carrusel/galeria/4`,
+      responseType: "json",
+    })
+      .then((response) => {
+        if (response.data.data.count > 0) {
+          self.setState({
+            galeria: response.data.data.registros,
+          },()=>{
+            var x = this.state.partList;
+            this.setState(
+              {
+                ctx0: this.state.canvas0.current.getContext("2d"),
+                ctx1: this.state.canvas1.current.getContext("2d"),
+                ctx2: this.state.canvas2.current.getContext("2d"),
+                ctx3: this.state.canvas3.current.getContext("2d"),
+              },
+              () => {
+                x[0].context = this.state.ctx1;
+                x[1].context = this.state.ctx2;
+                x[2].context = this.state.ctx3;
+                this.setState(
+                  {
+                    partList: x,
+                  },
+                  () => {
+                    this.preInit();
+                  }
+                );
+              }
+            );
+          });
+        } else {
+          //Error no se enocntró el id
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   render() {
+    var x = -1;
+    const gal = this.state.galeria.map((g) => {
+      x++
+      if(g.activo == 1){
+        return (
+          <li>
+            <a
+              href={`${process.env.REACT_APP_API_RECURSOS}/carrusel/${g.image}`}
+              data-order={`${x}`}
+              data-imagesrc={`${process.env.REACT_APP_API_RECURSOS}/carrusel/${g.image}`}
+            ></a>
+          </li>
+        )
+      }
+    })
+
     return (
       <React.Fragment>
         <canvas
@@ -419,42 +460,7 @@ class Slider extends Component {
         ></canvas>
         <nav class="link-list" ref={this.state.linklist}>
           <ul>
-            <li>
-              <a
-                href=""
-                data-order="0"
-                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada1.jpg"
-                
-              ></a>
-            </li>
-            <li>
-              <a
-                href=""
-                data-order="1"
-                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada2.jpg"
-              ></a>
-            </li>
-            <li>
-              <a
-                href=""
-                data-order="2"
-                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada3.jpg"
-              ></a>
-            </li>
-            <li>
-              <a
-                href=""
-                data-order="3"
-                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada4.jpg"
-              ></a>
-            </li>
-            <li>
-              <a
-                href=""
-                data-order="4"
-                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada5.jpg"
-              ></a>
-            </li>
+            {gal}
           </ul>
           
         </nav>
