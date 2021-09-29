@@ -48,11 +48,13 @@ class PMapasRecorridos extends Component {
       idtipo: 0,
       tipos: [],
       nombreSearch: "",
+      puntoInicio: "",
       latitudesFiltro: [],
       longitudesFiltro: []
     };
     this.getData = this.getData.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleChangePunto = this.handleChangePunto.bind(this);
     this.aplicarFiltro = this.aplicarFiltro.bind(this);
   }
 
@@ -66,7 +68,7 @@ class PMapasRecorridos extends Component {
       let filtrado = this.state.data.filter((value) => {
           let respuesta = true;
 
-          if(idciudad !== 0) {
+          {/*if(idciudad !== 0) {
               if(parseInt(value.idciudad, 10) !== idciudad) {
                   respuesta = false;
               }
@@ -76,7 +78,7 @@ class PMapasRecorridos extends Component {
               if(value.tipo.search(this.state.tipos[idtipo].nombre) === -1) {
                   respuesta = false;
               }
-          //}
+          //}*/}
           //Validar Nombre
           if(nombreSearch.length) {
               if(value.nombre.toLowerCase().search(nombreSearch.toLowerCase()) === -1) {
@@ -111,6 +113,15 @@ class PMapasRecorridos extends Component {
     });
   }
 
+  handleChangePunto(event){
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+    this.setState({
+        [name]: value
+    });
+  }
+
   async getData() {
     var dat = []
 
@@ -136,6 +147,7 @@ class PMapasRecorridos extends Component {
         });
     }})
       //Localidades de la Zona
+      {/*
       await axios({
         method: "get",
         headers: {
@@ -182,7 +194,7 @@ class PMapasRecorridos extends Component {
               localidades: this.state.localidades.concat(response.data.data.registros)
           });
       }})
-
+    */}
       await axios({
         method: "get",
         headers: {
@@ -193,8 +205,23 @@ class PMapasRecorridos extends Component {
       })
       .then((response2) => {
       if (response2.data.data.count > 0) {
+        let x = []
+        let y = []
+        let fil = []
+        response2.data.data.registros.forEach(element2 => {
+          if(element2.tipoAtractivo == "Circuito Dark"){
+            x.push(element2.latitud)
+            y.push(element2.longitud)
 
-          response2.data.data.registros.forEach(element2 => {
+            fil.push({ "id": element2.id,
+              "idciudad": element2.idlocalidad,
+              "tipo": element2.tipoAtractivo,
+              "nombre": element2.nombre,
+              "descripcion": element2.descripcion,
+              "foto": element2.imagenes[0].imagen,
+              "latitud": element2.latitud,
+              "longitud": element2.longitud
+            })
 
             dat.unshift({ "id": element2.id,
               "idciudad": element2.idlocalidad,
@@ -205,13 +232,19 @@ class PMapasRecorridos extends Component {
               "latitud": element2.latitud,
               "longitud": element2.longitud
             })
-          });
+
+          }
           
-          this.setState(
-          {   data: dat,
-              loading: false,
-              isNotFound: false
-          });
+        });
+          
+        this.setState(
+        {   data: dat,
+            filtro: fil,
+            latitudesFiltro:  x,
+            longitudesFiltro: y,
+            loading: false,
+            isNotFound: false
+        });
       }})
   }
 
@@ -254,7 +287,7 @@ class PMapasRecorridos extends Component {
                         <div className="col" style={{backgroundColor: "whitesmoke"}}>
                             <form className="mb-3 formulario-mapas">
                                 <div className="form-row">
-                                    <div className="form-group col-md-4">
+                                    {/*<div className="form-group col-md-4">
                                         <div className="container"> 
                                             <label htmlFor="idciudad">Localidad</label>
                                             <select id="idciudad" name="idciudad" className="form-control" value={this.state.idciudad} onChange={this.handleChange}>
@@ -270,6 +303,7 @@ class PMapasRecorridos extends Component {
                                             </select>
                                         </div>
                                     </div>
+                                    */}
                                     <div className="form-group col-md-4">
                                         <div className="container">
                                           <label htmlFor="nombreSearch">Nombre</label>
@@ -298,6 +332,22 @@ class PMapasRecorridos extends Component {
                     gwidth="100%"
                     gheight="600px"
                   />
+                  <div style={{marginTop: "10px", textAlign:"center"}}>
+                      <b>¿Cómo llegar desde tu punto de partida?</b>
+                      <input className="form-control" style={{width: "60%", marginLeft:"20%"}} type="text" name="puntoInicio" id="puntoInicio" /*value={this.state.puntoInicio} onChange={this.handleChangePunto}*//>
+                      <button style={{borderRadius:"10px", backgroundColor: "#ffff", color:"#27AE60", borderColor:"#27AE60", marginTop:"10px"}} 
+                        onClick={()=>{
+                          var x = document.getElementById("puntoInicio").value;
+                          this.setState({
+                            puntoInicio: this.state.puntoInicio.concat("/"+x) 
+                          })
+                        }}>
+                        <i class="fas fa-plus-circle"></i> Agregar punto 
+                      </button>
+                      <a class="redirectMapBox" style={{width: "60%", marginLeft:"20%"}}  target="_blank" href={`https://www.google.com/maps/dir${this.state.puntoInicio}/${this.state.latitudesFiltro[0]},${this.state.longitudesFiltro[0]}`}>
+                        <h1 class="redirectMapMessage">Obtener ruta</h1>
+                      </a>
+                  </div>
               </div>
             </div>
             

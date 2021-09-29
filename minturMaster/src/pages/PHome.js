@@ -12,6 +12,7 @@ import Loading from "../utils/Loading";
 import TabSlider from "../components/subcomponentes/TabSlider";
 import CardImperdibles from "../components/CardImperdibles";
 import SocialWidget from "../components/SocialWidget";
+import WeatherCard from "../components/WeatherCard";
 
 class Home extends Component {
   constructor(props) {

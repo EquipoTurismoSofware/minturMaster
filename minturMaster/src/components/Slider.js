@@ -364,6 +364,7 @@ class Slider extends Component {
   }
 
   componentDidMount() {
+    /*
     const token = this.context.token;
     var self = this;
     axios({
@@ -403,16 +404,36 @@ class Slider extends Component {
             );
           });
         } else {
-          //Error no se enocntró el id
         }
       })
       .catch((error) => {
         console.log(error);
-      });
+      });*/
+    var x = this.state.partList;
+    this.setState(
+      {
+        ctx0: this.state.canvas0.current.getContext("2d"),
+        ctx1: this.state.canvas1.current.getContext("2d"),
+        ctx2: this.state.canvas2.current.getContext("2d"),
+        ctx3: this.state.canvas3.current.getContext("2d"),  },
+        () => {
+          x[0].context = this.state.ctx1;
+          x[1].context = this.state.ctx2;
+          x[2].context = this.state.ctx3;
+          this.setState(
+            {
+              partList: x,
+            },
+            () => {
+              this.preInit();
+            }
+          );
+        }
+      );
   }
 
   render() {
-    var x = -1;
+    /*var x = -1;
     const gal = this.state.galeria.map((g) => {
       x++
       if(g.activo == 1){
@@ -426,7 +447,7 @@ class Slider extends Component {
           </li>
         )
       }
-    })
+    })*/
 
     return (
       <React.Fragment>
@@ -460,7 +481,43 @@ class Slider extends Component {
         ></canvas>
         <nav class="link-list" ref={this.state.linklist}>
           <ul>
-            {gal}
+            <li>
+              <a
+                href=""
+                data-order="0"
+                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada1.jpg"
+                
+              ></a>
+            </li>
+            <li>
+              <a
+                href=""
+                data-order="1"
+                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada2.jpg"
+              ></a>
+            </li>
+            <li>
+              <a
+                href=""
+                data-order="2"
+                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada3.jpg"
+              ></a>
+            </li>
+            <li>
+              <a
+                href=""
+                data-order="3"
+                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada4.jpg"
+              ></a>
+            </li>
+            <li>
+              <a
+                href=""
+                data-order="4"
+                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada5.jpg"
+              ></a>
+            </li>
+            {/*gal*/}
           </ul>
           
         </nav>

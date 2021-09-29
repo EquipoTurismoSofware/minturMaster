@@ -563,54 +563,58 @@ class PLocalidad extends Component {
                 </div>
               </div>
             </div>
-            <div className="container">
-              <h4>Alojamientos</h4>
-              <div className="row">
-                <div className="col offset-md-1">
-                  <form /*onSubmit={this.aplicarFiltro}*/ className="mb-5">
-                    <div className="form-row">
-                      <div className="form-group col-md-4">
-                        <div className="container">
-                          <label htmlFor="idtipo">Tipo</label>
-                          <select
-                            id="idtipo"
-                            name="idtipo"
-                            className="form-control"
-                            value={this.state.idtipo}
-                            onChange={this.handleChange}
-                          >
-                            {tipos}
-                          </select>
+            {this.state.alojamientos.length != 0?
+            <div>
+              <div className="container">
+                <h4>Alojamientos</h4>
+                <div className="row">
+                  <div className="col offset-md-1">
+                    <form /*onSubmit={this.aplicarFiltro}*/ className="mb-5">
+                      <div className="form-row">
+                        <div className="form-group col-md-4">
+                          <div className="container">
+                            <label htmlFor="idtipo">Tipo</label>
+                            <select
+                              id="idtipo"
+                              name="idtipo"
+                              className="form-control"
+                              value={this.state.idtipo}
+                              onChange={this.handleChange}
+                            >
+                              {tipos}
+                            </select>
+                          </div>
                         </div>
-                      </div>
-                      <div className="form-group col-md-4">
-                        <div className="container">
-                          <label htmlFor="nombreAloja">Nombre</label>
-                          <input
-                            type="text"
-                            id="nombreAloja"
-                            name="nombreAloja"
-                            className="form-control"
-                            value={this.state.nombreAloja}
-                            onChange={this.handleChange}
-                          />
+                        <div className="form-group col-md-4">
+                          <div className="container">
+                            <label htmlFor="nombreAloja">Nombre</label>
+                            <input
+                              type="text"
+                              id="nombreAloja"
+                              name="nombreAloja"
+                              className="form-control"
+                              value={this.state.nombreAloja}
+                              onChange={this.handleChange}
+                            />
+                          </div>
                         </div>
+                        {/*<div className="form-group col-md-3 d-flex align-items-end justify-content-end">
+                              <button type="submit" className="btn btn-primary">Buscar</button>
+                          </div>*/}
                       </div>
-                      {/*<div className="form-group col-md-3 d-flex align-items-end justify-content-end">
-                            <button type="submit" className="btn btn-primary">Buscar</button>
-                        </div>*/}
-                    </div>
-                  </form>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div className="container">
+                <div className="row">
+                  <div className="col">
+                    <Alojamientos idLocalidad={0} data={this.state.filtro} />
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="container">
-              <div className="row">
-                <div className="col">
-                  <Alojamientos idLocalidad={0} data={this.state.filtro} />
-                </div>
-              </div>
-            </div>
+          : ""}
           </React.Fragment>
         )}
       </div>

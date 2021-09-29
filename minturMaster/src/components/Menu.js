@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ZonasMenu from "./subcomponentes/ZonasMenu";
+import WeatherCard from "./WeatherCard";
 //import Phome from "../pages/PHome";
 //import { Fragment } from "react";
 //import { SelectPicker } from "rsuite";
@@ -34,7 +35,8 @@ class Menu extends Component {
       MsgVisible: false,
       MsgBody: "",
       clase: "Menu",
-      showAt: 45
+      showAt: 45,
+      climaShow: false
     };
 
     this.link = React.createRef();
@@ -550,6 +552,17 @@ class Menu extends Component {
                   ""
                 )}
               </li>
+              {/*<li className="nav-item">
+                <div className="containeres">
+                  <button onClick={() => {this.setState({climaShow: !this.state.climaShow})}}>Clima</button>
+                </div>
+              </li>
+              {
+                this.state.climaShow?
+                  <WeatherCard />
+                :""
+              }
+            */}
             </ul>
 
             {/*<ul>

@@ -97,7 +97,7 @@ class App extends Component {
               <Route exact path="/desuscripcion" component={PDesuscribir} />
               <Route exact path="/estadisticas/:id" component={PEstadisticas} />
               <Route exact path="/listadoEstadisticas" component={PListadoEstadisticas} />
-              <Route exact path="/mapascompletos" component={PMapasRecorridos} />
+              <Route exact path="/circuitoDark" component={PMapasRecorridos} />
               <Route exact path="/turismo-vacaciones-invierno" component={PGridImages} />
               <Route exact path="/listado-Censistas" component={ListadoCensistas} />
               <Route
