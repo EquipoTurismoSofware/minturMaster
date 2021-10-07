@@ -14,25 +14,6 @@ class PMapasRecorridos extends Component {
     this.state = {
       data: [],
       filtro: [],
-      /*tipos: [
-        {id: 0,
-        nombre: "Ciudades"},
-        {id: 1,
-        nombre: "Diques"},
-        {id: 2,
-        nombre: "Ríos y saltos de agua"},
-        {id: 3,
-        nombre: "Lagunas"},
-        {id: 4,
-        nombre: "Parques"},
-        {id: 5,
-        nombre: "Balnearios"},
-        {id: 6,
-        nombre: "Museos"},
-        {id: 7,
-        nombre: "Cerros"},
-        {id: 8,
-        nombre: "Caminos Pintorescos"}],*/
       localidades: [{
         id: 0,
         idciudad: 0,
@@ -48,11 +29,17 @@ class PMapasRecorridos extends Component {
       idtipo: 0,
       tipos: [],
       nombreSearch: "",
+      url: "",
       puntoInicio: "",
       latitudesFiltro: [],
-      longitudesFiltro: []
+      longitudesFiltro: [],
+      msg: {
+        visible: false,
+        body: ""
+      },
     };
     this.getData = this.getData.bind(this);
+    this.lat_long = this.lat_long.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleChangePunto = this.handleChangePunto.bind(this);
     this.aplicarFiltro = this.aplicarFiltro.bind(this);
@@ -98,6 +85,8 @@ class PMapasRecorridos extends Component {
           filtro: filtrado,
           latitudesFiltro: latFilter,
           longitudesFiltro: lonFilter
+      },()=>{
+        this.lat_long();
       });
   }
 
@@ -127,7 +116,7 @@ class PMapasRecorridos extends Component {
 
     var token = this.context.token;
 
-    await axios({
+    /*await axios({
       method: "get",
       headers: {
         Authorization: token,
@@ -145,7 +134,7 @@ class PMapasRecorridos extends Component {
         {
             tipos: response.data.data.registros
         });
-    }})
+    }})*/
       //Localidades de la Zona
       {/*
       await axios({
@@ -200,7 +189,7 @@ class PMapasRecorridos extends Component {
         headers: {
           Authorization: token,
         },
-        url: `${process.env.REACT_APP_API}/atractivos/algunosTipos`,
+        url: `${process.env.REACT_APP_API}/atractivoTipo/32`,
         responseType: "json",
       })
       .then((response2) => {
@@ -209,7 +198,6 @@ class PMapasRecorridos extends Component {
         let y = []
         let fil = []
         response2.data.data.registros.forEach(element2 => {
-          if(element2.tipoAtractivo == "Circuito Dark"){
             x.push(element2.latitud)
             y.push(element2.longitud)
 
@@ -231,10 +219,7 @@ class PMapasRecorridos extends Component {
               "foto": element2.imagenes[0].imagen,
               "latitud": element2.latitud,
               "longitud": element2.longitud
-            })
-
-          }
-          
+            })             
         });
           
         this.setState(
@@ -244,9 +229,24 @@ class PMapasRecorridos extends Component {
             longitudesFiltro: y,
             loading: false,
             isNotFound: false
+        },()=>{
+          this.lat_long();
         });
       }})
   }
+
+  lat_long(){      
+    var x;
+    var str = "";
+    
+    for(x = 0; x < this.state.latitudesFiltro.length; x++){
+      str += this.state.latitudesFiltro[x] + "," + this.state.longitudesFiltro[x] + "/";
+    }
+
+    this.setState({
+      url: str
+    })
+  };
 
   componentDidMount() {
     document.body.scrollTop = 0; // Safari
@@ -255,16 +255,19 @@ class PMapasRecorridos extends Component {
   }
 
   render() {
-    //console.log(atractivosData);
+    const pntIni = this.state.puntoInicio.split("/").map((el)=>{
+      if(el != ""){
+        return (<div><i class="far fa-check-circle"></i> {el}</div>)
+      }
+    });
     const loading = this.state.loading;
     const isNotFound = this.state.isNotFound;
-    
-    const localidades = this.state.localidades.map((localidad) => {
+    /*const localidades = this.state.localidades.map((localidad) => {
       return(<option key={`localidad-${localidad.idciudad}`} value={localidad.idciudad}>{localidad.ciudad}</option>);
     });
     const tipos = this.state.tipos.map((tipo) => {
         return(<option key={`tipo-${tipo.id}`} value={tipo.id}>{tipo.nombre}</option>);
-    });
+    });*/
 
     return (
       <div className="ZonaSlider">
@@ -281,7 +284,7 @@ class PMapasRecorridos extends Component {
         :(
           <React.Fragment>
             <div className="row" style={{marginRight: 0, marginBottom: "15px"}}>
-              <div className="col-6" >
+              <div className="col-md-6" >
                  <div className="container">
                     <div className="row">
                         <div className="col" style={{backgroundColor: "whitesmoke"}}>
@@ -304,7 +307,7 @@ class PMapasRecorridos extends Component {
                                         </div>
                                     </div>
                                     */}
-                                    <div className="form-group col-md-4">
+                                    <div className="form-group col-md-8">
                                         <div className="container">
                                           <label htmlFor="nombreSearch">Nombre</label>
                                             <input type="text" id="nombreSearch" name="nombreSearch" className="form-control" value={this.state.nombreSearch} onChange={this.handleChange} />
@@ -322,8 +325,14 @@ class PMapasRecorridos extends Component {
                         </div>
                     </div>
                 </div>
+    
+                <a class="redirectMapBox" style={{width: "60%", marginLeft:"20%"}}  target="_blank" 
+                  href={`https://www.google.com/maps/dir/${this.state.url}`}>
+                  <h1 class="redirectMapMessage">Unir rutas</h1>
+                </a>
               </div>
-              <div id="mapa" className="col-6" style={{backgroundColor: "whitesmoke", paddingTop: "110px", paddingRight:"0px"}}>
+              <div id="mapa" className="col-md-6" style={{backgroundColor: "whitesmoke", paddingTop: "110px", paddingRight:"0px"}}>
+                  <span className="tituloGoogleMap">MAPA</span>
                   <GoogleMap
                     data={this.state.filtro}
                     lat={this.state.latitudesFiltro}
@@ -344,6 +353,9 @@ class PMapasRecorridos extends Component {
                         }}>
                         <i class="fas fa-plus-circle"></i> Agregar punto 
                       </button>
+                      <br />
+                      Puntos de partida agregados:
+                      {pntIni}
                       <a class="redirectMapBox" style={{width: "60%", marginLeft:"20%"}}  target="_blank" href={`https://www.google.com/maps/dir${this.state.puntoInicio}/${this.state.latitudesFiltro[0]},${this.state.longitudesFiltro[0]}`}>
                         <h1 class="redirectMapMessage">Obtener ruta</h1>
                       </a>

@@ -100,7 +100,7 @@ class BuscadorMapas extends Component {
                                         />
                                     </div>
                                     <div className="body">
-                                        <p className="text-dark mb-2">{descripcion}</p>
+                                      <p className="text-dark mb-2">{descripcion}</p>
                                     </div>
                                 </div>
                             </div>

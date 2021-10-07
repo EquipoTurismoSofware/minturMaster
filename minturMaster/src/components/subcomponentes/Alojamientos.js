@@ -143,13 +143,15 @@ class Alojamientos extends Component {
             }
             return(
                 <article key={`alo-card-${alo.id}`} id={`alo-card-${alo.id}`} className={`material-card`} ref={this.state.card}>
-                    <h2>
-                        <span>{alo.nombre}</span>
-                        <strong>
-                            <i className={`fas fa-hotel`}></i>
-                            {alo.tipo}
-                        </strong>
-                    </h2>
+                    <Link to={`/alojamiento/${alo.id}`}>
+                        <h2>
+                            <span>{alo.nombre}</span>
+                            <strong>
+                                <i className={`fas fa-hotel`}></i>
+                                {alo.tipo}
+                            </strong>
+                        </h2>
+                    </Link>
                     <div class="mc-content">
                         <div class="img-container">
                             <img class="img-responsive" src={`${process.env.REACT_APP_API}/imagenes/${foto}`} alt="Img" />

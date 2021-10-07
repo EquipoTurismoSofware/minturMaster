@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
 import axios from "axios";
+import Audios from "../../components/Audio";
 import GoogleMap from "../../components/subcomponentes/GoogleMap";
 import MaxImage from "../../components/subcomponentes/MaxImage";
 import Loading from "../../utils/Loading";
@@ -374,8 +375,15 @@ class PAtractivo extends Component {
                       ) : (
                         ""
                       )}
-                    
 
+                      {this.state.dataAtractivo.audio != ""? (
+                        
+                        <Audios url={`${process.env.REACT_APP_API_RECURSOS}/recursos/audiosAtractivos/${this.state.dataAtractivo.audio}`}></Audios>
+                        
+                      ) : (
+                        ""
+                      )}
+                      
                       {this.state.dataAtractivo.domicilio !== "" ? (
                         <span className="pr-4">
                           <strong>Domicilio:</strong>{" "}

@@ -70,13 +70,13 @@ class PFiltroAlojamiento extends Component {
         });
     }
 
-    async getData() {
-        await this.setState({loading: true});
+    getData() {
+       this.setState({loading: true});
         try {
             let token = this.context.token;
             let self = this;
             //Todas las Localidades
-            await axios({
+            axios({
                 method: "get",
                 headers: {
                     "Authorization": token
@@ -100,7 +100,7 @@ class PFiltroAlojamiento extends Component {
                 console.log(error);
             });
             //Todos los Tipos de Alojamiento
-            await axios({
+            axios({
                 method: "get",
                 headers: {
                     "Authorization": token
@@ -123,7 +123,7 @@ class PFiltroAlojamiento extends Component {
                 console.log(error);
             });
             //Todos los Alojamientos
-            await axios({
+            axios({
                 method: "get",
                 headers: {
                     "Authorization": token
@@ -153,7 +153,7 @@ class PFiltroAlojamiento extends Component {
     componentDidMount() {
         document.body.scrollTop = 0; // Safari
         document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
-        this.getData(0);
+        this.getData();
     }
 
     render() {

@@ -28,6 +28,7 @@ background-color: rgb(114,39,137);
 */
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker|Rock+Salt");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
 @import "https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,400";
@@ -45,6 +46,117 @@ body {
   position: relative;
   width: 100%;
   height: 90vh;
+}
+
+.player {
+  width: 100%;
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  background-color: #212527;
+}
+.player .song {
+  user-select: none;
+  margin: 0 20px;
+}
+.player .song .song__title {
+  text-align: left;
+  margin: 0;
+  color: white;
+  font-family: "Permanent Marker", cursive;
+  font-weight: normal;
+  font-size: 3.5em;
+}
+.player .song .song__title:hover {
+  color: greenyellow;
+}
+.player .song .song__artist {
+  margin: 0;
+  color: white;
+  font-family: "Rock Salt", cursive;
+  font-weight: normal;
+  font-size: 1em;
+}
+.player .song .song__artist:hover {
+  color: greenyellow;
+}
+.player .controls {
+  flex-grow: 1;
+  margin: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.player .player__button {
+  width: fit-content;
+  margin-bottom: 15px;
+  background-color: transparent;
+  border: none;
+}
+.player .player__button:focus {
+  outline: none;
+}
+.player .player__button:hover {
+  cursor: pointer;
+}
+.player .player__button:hover i {
+  color: greenyellow;
+}
+.player .player__button i {
+  font-size: 3.5em;
+  color: white;
+}
+.player .bar {
+  user-select: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.player .bar .bar__time {
+  color: white;
+  font-size: 16px;
+}
+.player .bar .bar__progress {
+  flex: 1;
+  border-radius: 5px;
+  margin: 0 20px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.player .bar .bar__progress .bar__progress__knob {
+  position: relative;
+  height: 16px;
+  width: 16px;
+  bottom: -3px;
+  border: 1.5px solid white;
+  border-radius: 50%;
+  background-color: orange;
+}
+@media screen and (max-width: 992px) {
+  .player {
+    flex-direction: column;
+  }
+  .player .controls {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .player .bar {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .player .song .song__title {
+    font-size: 2.5em;
+  }
+  .player .song .song__artist {
+    font-size: 0.8em;
+  }
 }
 
 /*
@@ -2410,6 +2522,10 @@ body {
   margin-top: 110px;
 }
 
+.tituloGoogleMap {
+  display: none;
+}
+
 .titulo-mapas {
   margin-top: 110px;
   background-color: #722789;
@@ -2478,6 +2594,19 @@ body {
   margin-bottom: 0px;
 }
 
+@media only screen and (max-width: 770px) {
+  .tituloGoogleMap {
+    display: inline;
+    position: relative;
+    font-size: 2em;
+    bottom: 40px;
+    padding: 2px 40px;
+    background-color: #722789;
+    color: #fff;
+    text-transform: uppercase;
+    margin-left: 40%;
+  }
+}
 #containerBoxMap {
   position: relative;
   width: 260px;

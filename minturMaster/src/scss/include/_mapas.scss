@@ -1,6 +1,11 @@
 .formulario-mapas{
   margin-top: 110px;
 }
+
+.tituloGoogleMap{
+  display: none;
+}
+
 .titulo-mapas{
     margin-top: 110px;
     background-color: $color-uno;
@@ -71,6 +76,21 @@ $map-imagen-width: 200px;
     }
   }
 }
+
+@media only screen and (max-width: 770px) {
+  .tituloGoogleMap{
+    display: inline;
+    position: relative;
+    font-size: 2em;
+    bottom: 40px;
+    padding: 2px 40px;
+    background-color: $color-uno;
+    color: #fff;
+    text-transform: uppercase;
+    margin-left: 40%;
+  }
+}
+
 
 $white: #FCFCFC;
 $gray: #CBCDD3;
