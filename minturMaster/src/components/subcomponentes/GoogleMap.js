@@ -238,6 +238,7 @@ class GoogleMap extends Component {
                     .gmapa {
                         width: ${this.state.gwidth};
                         height: ${this.state.gheight};
+                        border-radius: 20px;
                     }
                 `}</style>
             </React.Fragment>

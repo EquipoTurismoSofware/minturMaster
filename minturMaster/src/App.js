@@ -71,7 +71,7 @@ import PVallesEncantados from "./pages/moto_turismo/PVallesEncantados";
 import PSaludYVitalidad from "./pages/moto_turismo/PSaludYVitalidad";
 import RegistroAlojamientos from "./pages/covid/voucher/RegistroAlojamientos";
 import PCaminosPintorescos from "./pages/variosmenu/CaminosPintorescos"
-
+import PHalloweenMain from "./pages/Halloween/PHalloweenMain";
 import NotFound from "./components/NotFound";
 import EnConstruccion from "./components/PaginaEnConstruccion";
 
@@ -95,6 +95,7 @@ class App extends Component {
               <Route exact path="/atractivo/:id" component={PAtractivo} />
               <Route exact path="/gastronomia/:id" component={PGastronomia} />
               <Route exact path="/desuscripcion" component={PDesuscribir} />
+              <Route exact path="/turismoDark" component={PHalloweenMain} />
               <Route exact path="/estadisticas/:id" component={PEstadisticas} />
               <Route exact path="/listadoEstadisticas" component={PListadoEstadisticas} />
               <Route exact path="/circuitoDark" component={PMapasRecorridos} />

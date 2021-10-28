@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Consumer } from "../../context";
+//import { Consumer } from "../../context";
 import axios from "axios";
 import Viewer from "./Viewer";
 
@@ -29,10 +29,7 @@ class Alojamientos extends Component {
 
     calculoVisibles() {
         var w = window.innerWidth;
-        //console.log(w);
-        /*if(w > 1200) {
-            this.setState({visibles: 4});
-        } else*/ if(w > 1200) {
+        if(w > 1200) {
             this.setState({visibles: 3});
         } else if(w <= 1024 && w >= 768) {
             this.setState({visibles: 2});
@@ -127,16 +124,9 @@ class Alojamientos extends Component {
     componentWillUnmount() {
         window.removeEventListener("resize", this.calculoVisibles);
     }
-/*let foto = "default.jpg";
-            if(alo.imagen !== "") {
-                foto = alo.imagen
-            }*/ 
+
     render() {
         const alojamientos = this.state.alojamientos.map((alo) => {
-            /*let foto = "default.jpg";
-            if(alo.fotos.length > 0) {
-                foto = alo.fotos[0].imagen;
-            }*/
             let foto = "default.jpg";
             if(alo.imagen !== "") {
                 foto = alo.imagen
@@ -170,38 +160,11 @@ class Alojamientos extends Component {
                         <Link to={`/alojamiento/${alo.id}`}><i className="fas fa-angle-double-down"></i></Link>
                     </div>
                 </article>
-
-                /*
-                <div key={`alo-card-${alo.id}`} className="alo-card m-3">
-                    <div className="img-box">
-                        <div className="img-content">
-                            <div className="nombre">{alo.nombre}</div>
-                            <img className="" src={`${process.env.REACT_APP_API}/imagenes/${foto}`} alt="Img" />
-                        </div>
-                    </div>
-                    <div className="details">
-                        <div className="content">
-                            <div className="nombre">{alo.nombre}</div>
-                            <ul className="detalles">
-                                <li><i class="fas fa-thumbtack"></i><span>  {alo.ciudad}</span></li>
-                                <li><i class="fas fa-hotel"></i><span>  {alo.tipo}</span></li>
-                                <li><i className="fas fa-user" /><a href={`tel:+549${alo.caracteristica}${alo.telefono}`}> +54 9 {alo.caracteristica} - {alo.telefono}</a></li>
-
-                            </ul>
-                            <div className="vermas">
-                                <Link to={`/alojamiento/${alo.id}`}><i className="fas fa-angle-double-down"></i></Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>*/
             );
         });
         return(
             <React.Fragment>
                 {
-                    /*loading ?
-                    <div>Cargando...</div>
-                    :*/
                     <section class="container">
                         <div class="row">
                             <div class="col">
@@ -211,23 +174,13 @@ class Alojamientos extends Component {
                             </div>
                         </div>
                     </section>
-                    /*
-                    <div className="container">
-                        <div className="row">
-                            <div className="col">
-                                <Viewer visibles={this.state.visibles} clase={this.state.clase}>
-                                    {alojamientos}
-                                </Viewer>
-                            </div>
-                        </div>
-                    </div>
-                    */
+                   
                 }
             </React.Fragment>
         );
     }
 }
 
-Alojamientos.contextType = Consumer;
+//Alojamientos.contextType = Consumer;
 
 export default Alojamientos;

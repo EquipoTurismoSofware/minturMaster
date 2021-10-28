@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Consumer } from "../../context";
+//import { Consumer } from "../../context";
 import axios from "axios";
 import Loading from "../../utils/Loading";
 import Alojamientos from "../../components/subcomponentes/Alojamientos";
@@ -151,8 +151,8 @@ class PFiltroAlojamiento extends Component {
     }
     
     componentDidMount() {
-        document.body.scrollTop = 0; // Safari
-        document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
+       document.body.scrollTop = 0; // Safari
+       document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
         this.getData();
     }
 
@@ -223,6 +223,6 @@ class PFiltroAlojamiento extends Component {
     }
 }
 
-PFiltroAlojamiento.contextType = Consumer;
+//PFiltroAlojamiento.contextType = Consumer;
 
 export default PFiltroAlojamiento;
