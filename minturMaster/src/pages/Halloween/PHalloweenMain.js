@@ -100,7 +100,7 @@ class PHalloweenMain extends Component {
         )
         :(
           <React.Fragment >
-            <div style={{backgroundColor: "rgb(10, 10, 10)"}}>
+            <div style={{backgroundColor: "rgb(25, 25, 25)"}}>
             <div className="row" style={{paddingTop: "120px"}}>
               <CardHalloween data={this.state.data} />
             </div>

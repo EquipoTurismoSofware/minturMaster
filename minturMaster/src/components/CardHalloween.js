@@ -10,11 +10,8 @@ class CardHalloween extends Component {
             loading: true,
             data: [],
             atractivos: [],
-            visibles: 4,
-            linklist: React.createRef(),
-            clase: "alojamiento",
-            card: React.createRef(),
-            icon: React.createRef()
+            clase: "halloween",
+            card: React.createRef()
             
         };
         this.calculoVisibles = this.calculoVisibles.bind(this);
@@ -145,7 +142,7 @@ class CardHalloween extends Component {
                                 <div class="col">
                                 {<Viewer visibles={this.state.visibles} clase={this.state.clase}>
                                     {atractivos}
-                                    </Viewer>}
+                                </Viewer>}
                                     </div>
                             {/*<nav class="link-list" ref={this.state.linklist}>
                                 <ul>{bullets}</ul>

@@ -189,8 +189,7 @@ class Viewer extends Component {
 
 	componentDidMount() {
 		this.calcular();
-		window.addEventListener("resize", this.calcular);
-
+		//window.addEventListener("resize", this.calcular);
 	}
 
 	render() {
@@ -234,7 +233,7 @@ class Viewer extends Component {
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
 					</div>
 					<div className="pages" >
-						<div className="btn-left" onClick={this.moveFirstPage}>
+						<div className="btn-left"  onClick={this.moveFirstPage}>
 							<i className="fas fa-backward"></i>					
 						</div>
 						<ul style={{textAlign: 'center'}}>
@@ -243,6 +242,29 @@ class Viewer extends Component {
 						<div className="btn-right" onClick={this.moveLastPage}>
 							<i className="fas fa-forward"></i>
 						</div>
+					</div>	
+				</div>
+				: this.props.clase === "halloween" ? 
+				<div className="Viewer">
+					<div className="btn-left"  onClick={this.movePageBack}>
+						<svg fill="white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path  d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+					</div>
+					<div className="items">
+						{childrens}
+					</div>
+					<div className="btn-right" style={{color: "white"}} onClick={this.movePageFoward}>
+						<svg  fill="white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+					</div>
+					<div className="pages" >
+						{/*<div className="btn-left" onClick={this.moveFirstPage}>
+							<i className="fas fa-backward" style={{color: "white"}}></i>					
+						</div>*/}
+						<ul style={{textAlign: 'center'}}>
+							{paginas}
+						</ul>
+						{/*<div className="btn-right" onClick={this.moveLastPage}>
+							<i className="fas fa-forward" style={{color: "white"}}></i>
+						</div>*/}
 					</div>	
 				</div>
 				:
