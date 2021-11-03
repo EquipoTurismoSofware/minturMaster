@@ -2,7 +2,7 @@
     Componente PAtractivo.js
 */
 
-.Atractivo-data {
+.Atractivo-data-halloween {
     display: grid;
     grid-template-areas: "atractivo-texto atractivo-fotos" "atractivo-ubicacion atractivo-info";
     grid-template-columns: repeat(2, 1fr);
@@ -10,6 +10,8 @@
     grid-gap: 20px;
     .atractivo-texto {
         grid-area: atractivo-texto;
+        color: blanchedalmond;
+       
     }
     .atractivo-fotos {
         grid-area: atractivo-fotos;
@@ -17,7 +19,7 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        background-color: $color-uno;
+        background-color:black;
         padding: 20px 20px;
         img {
             width: 200px;
@@ -33,6 +35,8 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
+        color:blanchedalmond;
+        
         span {
             text-transform: uppercase;
             margin-bottom: 8px;
@@ -48,6 +52,8 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
+        background-color:black;
+
         span {
             text-transform: uppercase;
             margin-bottom: 8px;
@@ -68,7 +74,8 @@
     .ZonaLocalidad-titulo {
         h3 {
             font-size: 2rem;
-            }
+            
+        }
     }
     .Atractivo-data {
         grid-template-areas: "atractivo-fotos" "atractivo-texto" "atractivo-ubicacion" "atractivo-info";

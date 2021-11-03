@@ -23,6 +23,7 @@ class PAtractivo extends Component {
         src: "",
         visible: false,
       },
+ 
     };
     this.getData = this.getData.bind(this);
     this.verImagen = this.verImagen.bind(this);
@@ -164,8 +165,11 @@ class PAtractivo extends Component {
     this.setState(
       {
         id: this.props.match.params.id,
+        
       },
+      
       () => {
+       
         this.getData();
       }
     );
@@ -176,9 +180,12 @@ class PAtractivo extends Component {
     const isNotFound = this.state.isNotFound;
     const carousel = this.state.carousel;
     const fotos = this.state.fotos;
+    const idTipo = this.state.dataAtractivo.idTipo;
+
+    
     return (
       <div className="Atractivo">
-        {loading ? (
+        {loading ?(
           <div className="PFiltroAlojamiento mb-5">
             <div>
               <Loading margins="96px" />
@@ -187,244 +194,269 @@ class PAtractivo extends Component {
         ) : isNotFound ? (
           <NotFound />
         ) : (
-          <React.Fragment>
-            <div className="menu-y-slider">
-              <div
-                id="carouselExampleIndicators"
-                className="carousel slide"
-                data-ride="carousel"
-              >
-                <div className="carousel-inner">{carousel}</div>
-                <a
-                  className="carousel-control-prev"
-                  href="#carouselExampleIndicators"
-                  role="button"
-                  data-slide="prev"
+          <React.Fragment >
+            <div style={this.state.dataAtractivo.idTipo == 32? {backgroundColor: "black"}: {}}>
+              <div className="menu-y-slider" >
+                <div
+                  id="carouselExampleIndicators"
+                  className="carousel slide"
+                  data-ride="carousel"
                 >
-                  <span
-                    className="carousel-control-prev-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span className="sr-only">Previous</span>
-                </a>
-                <a
-                  className="carousel-control-next"
-                  href="#carouselExampleIndicators"
-                  role="button"
-                  data-slide="next"
-                >
-                  <span
-                    className="carousel-control-next-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span className="sr-only">Next</span>
-                </a>
-                <div className="slider-home-leyenda">
-                  <h1 className="mb-5">Atractivo Turístico</h1>
+                  <div className="carousel-inner">{carousel}</div>
+                  <a
+                    className="carousel-control-prev"
+                    href="#carouselExampleIndicators"
+                    role="button"
+                    data-slide="prev"
+                  >
+                    <span
+                      className="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span className="sr-only">Previous</span>
+                  </a>
+                  <a
+                    className="carousel-control-next"
+                    href="#carouselExampleIndicators"
+                    role="button"
+                    data-slide="next"
+                  >
+                    <span
+                      className="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span className="sr-only">Next</span>
+                  </a>
+
+                  
+                  <div className="slider-home-leyenda">
+                    <h1 className="mb-5">Atractivo Turístico</h1>
+                    
+                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              className="ZonaLocalidad-titulo"
-              style={{ backgroundColor: `#722789` }}
-            >
-              <h3 style={{ color: `#722789` }}>
-                {this.state.dataAtractivo.nombre}
-              </h3>
-            </div>
-            <div className="container">
-              <div className="row">
-                <div className="col">
-                  <div className="Atractivo-data">
-                    <div className="atractivo-texto">
-                      {this.state.dataAtractivo.descripcionHTML != "" ? (
-                        <p
-                          dangerouslySetInnerHTML={{
-                            __html: this.state.dataAtractivo.descripcionHTML,
-                          }}
-                        ></p>
-                      ) : (
-                        <p>{this.state.dataAtractivo.descripcion}</p>
-                      )}
-                    </div>
-                    <div className="atractivo-fotos">{fotos}</div>
-                    {this.state.dataAtractivo.latitud !== "0" ? (
-                      <div className="atractivo-ubicacion">
-                        <span>
-                          <i className="fas fa-map-marker"></i> Ubicación
-                        </span>
-                        <div id="mapa-atr" style={{ width: "100%" }}>
-                          <GoogleMap
-                            lat={this.state.dataAtractivo.latitud}
-                            lng={this.state.dataAtractivo.longitud}
-                            zoom="10"
-                            gwidth="100%"
-                            gheight="400px"
-                          />
-                          <a class="redirectMapBox" href={`https://www.google.com/maps?q=${this.state.dataAtractivo.latitud},${this.state.dataAtractivo.longitud}`} target='_blank'>
-                            <h1 class="redirectMapMessage">Ver en google maps</h1>
-                          </a>
-                        </div>
-                       
-                         
+              <div
+                className="ZonaLocalidad-titulo"
+              style={this.state.dataAtractivo.idTipo == 32?{backgroundColor:`rgb(28, 228, 45)`}:{backgroundColor:"#722789"}}
+                
+              >
+                <h3 style={this.state.dataAtractivo.idTipo == 32? {fontFamily:"You Can Make Your Own Font font", backgroundColor:`#050505`, color: "rgb(28, 228, 45)"}: {color: `#722789`}}
+                >
+                  {this.state.dataAtractivo.nombre}
+                </h3>
+            
+              </div>
+              <div className="container" >
+                <div className="row">
+                  <div className="col">
+                  
+                    <div className={this.state.dataAtractivo.idTipo == 32? `Atractivo-data-halloween`: `Atractivo-data`}>
+                  
+                      <div className="atractivo-texto">
+                        {this.state.dataAtractivo.descripcionHTML != "" ? (
+                          <p
+                            dangerouslySetInnerHTML={{
+                              __html: this.state.dataAtractivo.descripcionHTML,
+                            }}
+                          ></p>
+                        ) : (
+                          <p>{this.state.dataAtractivo.descripcion} </p>
+                        )}
+                
+
                       </div>
-                    ) : (
-                      ""
-                    )}
-
-                    <div className="atractivo-info">
-                      <div>
-                        {(this.state.dataAtractivo.lunes !== "" || 
-                        this.state.dataAtractivo.martes !== "" ||
-                        this.state.dataAtractivo.miercoles !== "" ||
-                        this.state.dataAtractivo.jueves !== "" ||
-                        this.state.dataAtractivo.viernes !== "" ||
-                        this.state.dataAtractivo.sabado !== "" ||
-                        this.state.dataAtractivo.domingo !== "" ) 
-                         ? (
-                          <span>
-                            <i className="fas fa-clock"></i>
-                            <strong>Horarios </strong>
-                          </span>
-                        ) : ( "")}
-
-                        <ul>
-                          {this.state.dataAtractivo.lunes !== "" ? (
-                            <li>
-                              {" "}
-                              <strong>Lunes:</strong>{" "}
-                              {this.state.dataAtractivo.lunes}
-                            </li>
-                          ) : (
-                            ""
-                          )}
-
-                          {this.state.dataAtractivo.martes !== "" ? (
-                            <li>
-                              <strong>Martes:</strong>{" "}
-                              {this.state.dataAtractivo.martes}
-                            </li>
-                          ) : (
-                            ""
-                          )}
-
-                          {this.state.dataAtractivo.miercoles !== "" ? (
-                            <li>
-                              <strong>Miércoles:</strong>{" "}
-                              {this.state.dataAtractivo.miercoles}
-                            </li>
-                          ) : (
-                            ""
-                          )}
-
-                          {this.state.dataAtractivo.jueves !== "" ? (
-                            <li>
-                              <strong>Jueves: </strong>
-                              {this.state.dataAtractivo.jueves}
-                            </li>
-                          ) : (
-                            ""
-                          )}
-
-                          {this.state.dataAtractivo.viernes !== "" ? (
-                            <li>
-                              <strong>Viernes: </strong>
-                              {this.state.dataAtractivo.viernes}
-                            </li>
-                          ) : (
-                            ""
-                          )}
-
-                          {this.state.dataAtractivo.sabado !== "" ? (
-                            <li>
-                              <strong>Sábado:</strong>{" "}
-                              {this.state.dataAtractivo.sabado}
-                            </li>
-                          ) : (
-                            ""
-                          )}
-
-                          {this.state.dataAtractivo.domingo !== "" ? (
-                            <li>
-                              <strong>Domingo:</strong>{" "}
-                              {this.state.dataAtractivo.domingo}
-                            </li>
-                          ) : (
-                            ""
-                          )}
-                        </ul>
-                      </div>
-                      
-                      {this.state.dataAtractivo.costo === 0 ? (
-                        <span>
-                          <i className="fas fa-dollar-sign"></i> Cósto: $
-                          {this.state.dataAtractivo.costo}
-                        </span>
-                      ) : (
-                        ""
-                      )}
                     
-                    {this.state.dataAtractivo.domicilio !== "" ||
-                      this.state.dataAtractivo.telefono !== "" ||
-                      this.state.dataAtractivo.mail !== "" ||
-                      this.state.dataAtractivo.web ? (
-                        <span>
-                          <i className="fas fa-user" />{" "}
-                          <strong>Contacto</strong>
-                        </span>
+                      <div className="atractivo-fotos">     
+                      {this.state.dataAtractivo.audio != ""? (
+                          
+                          <Audios url={`${process.env.REACT_APP_API_RECURSOS}/recursos/audiosAtractivos/${this.state.dataAtractivo.audio}`}></Audios>
+                          
+                        ) : (
+                          ""
+                        )}              
+                        {fotos}</div>
+                      {this.state.dataAtractivo.latitud !== "0" ? (
+                        <div className="atractivo-ubicacion">
+                          <span>
+                            <i className="fas fa-map-marker"></i> Ubicación
+                          </span>
+                        
+                          <div id="mapa-atr" style={{ width: "100%" }}>
+                            
+                    
+                            <GoogleMap
+                              lat={this.state.dataAtractivo.latitud}
+                              lng={this.state.dataAtractivo.longitud}
+                              zoom="10"
+                              gwidth="100%"
+                              gheight="400px"
+                            />
+                            <a class="redirectMapBox" href={`https://www.google.com/maps?q=${this.state.dataAtractivo.latitud},${this.state.dataAtractivo.longitud}`} target='_blank'>
+                              <h1 class="redirectMapMessage">Ver en google maps</h1>
+                            </a>
+                          </div>
+                        
+                          
+                        </div>
                       ) : (
                         ""
                       )}
 
-                      {this.state.dataAtractivo.audio != ""? (
+                      <div className="atractivo-info">
+                        <div>
+                          {(this.state.dataAtractivo.lunes !== "" || 
+                          this.state.dataAtractivo.martes !== "" ||
+                          this.state.dataAtractivo.miercoles !== "" ||
+                          this.state.dataAtractivo.jueves !== "" ||
+                          this.state.dataAtractivo.viernes !== "" ||
+                          this.state.dataAtractivo.sabado !== "" ||
+                          this.state.dataAtractivo.domingo !== "" ) 
+                          ? (
+                            <span>
+                              <i className="fas fa-clock"></i>
+                              <strong>Horarios </strong>
+                            </span>
+                          ) : ( "")}
+
+                          <ul>
+                            {this.state.dataAtractivo.lunes !== "" ? (
+                              <li>
+                                {" "}
+                                <strong>Lunes:</strong>{" "}
+                                {this.state.dataAtractivo.lunes}
+                              </li>
+                            ) : (
+                              ""
+                            )}
+
+                            {this.state.dataAtractivo.martes !== "" ? (
+                              <li>
+                                <strong>Martes:</strong>{" "}
+                                {this.state.dataAtractivo.martes}
+                              </li>
+                            ) : (
+                              ""
+                            )}
+
+                            {this.state.dataAtractivo.miercoles !== "" ? (
+                              <li>
+                                <strong>Miércoles:</strong>{" "}
+                                {this.state.dataAtractivo.miercoles}
+                              </li>
+                            ) : (
+                              ""
+                            )}
+
+                            {this.state.dataAtractivo.jueves !== "" ? (
+                              <li>
+                                <strong>Jueves: </strong>
+                                {this.state.dataAtractivo.jueves}
+                              </li>
+                            ) : (
+                              ""
+                            )}
+
+                            {this.state.dataAtractivo.viernes !== "" ? (
+                              <li>
+                                <strong>Viernes: </strong>
+                                {this.state.dataAtractivo.viernes}
+                              </li>
+                            ) : (
+                              ""
+                            )}
+
+                            {this.state.dataAtractivo.sabado !== "" ? (
+                              <li>
+                                <strong>Sábado:</strong>{" "}
+                                {this.state.dataAtractivo.sabado}
+                              </li>
+                            ) : (
+                              ""
+                            )}
+
+                            {this.state.dataAtractivo.domingo !== "" ? (
+                              <li>
+                                <strong>Domingo:</strong>{" "}
+                                {this.state.dataAtractivo.domingo}
+                              </li>
+                            ) : (
+                              ""
+                            )}
+                          </ul>
+                        </div>
                         
-                        <Audios url={`${process.env.REACT_APP_API_RECURSOS}/recursos/audiosAtractivos/${this.state.dataAtractivo.audio}`}></Audios>
-                        
-                      ) : (
-                        ""
-                      )}
+                        {this.state.dataAtractivo.costo === 0 ? (
+                          <span>
+                            <i className="fas fa-dollar-sign"></i> Cósto: $
+                            {this.state.dataAtractivo.costo}
+                          </span>
+                        ) : (
+                          ""
+                        )}
                       
-                      {this.state.dataAtractivo.domicilio !== "" ? (
-                        <span className="pr-4">
-                          <strong>Domicilio:</strong>{" "}
-                          {this.state.dataAtractivo.domicilio}
-                        </span>
-                      ) : (
-                        ""
-                      )}
-                      {this.state.dataAtractivo.telefono !== "" ? (
-                        <span className="pr-4">
-                          <strong> Tel./Cel.: </strong> +54 9{" "}
-                          {this.state.dataAtractivo.telefono}
-                        </span>
-                      ) : (
-                        ""
-                      )}
-                      {this.state.dataAtractivo.mail !== "" ? (
-                        <span className="pr-4">
-                          <strong>Email:</strong>{" "}
-                          {this.state.dataAtractivo.mail}
-                        </span>
-                      ) : (
-                        ""
-                      )}
-                      {this.state.dataAtractivo.web !== "" ? (
-                        <span className="pr-4">
-                          <strong> Web:</strong> {this.state.dataAtractivo.web}
-                        </span>
-                      ) : (
-                        ""
-                      )}
+                      {this.state.dataAtractivo.domicilio !== "" ||
+                        this.state.dataAtractivo.telefono !== "" ||
+                        this.state.dataAtractivo.mail !== "" ||
+                        this.state.dataAtractivo.web ? (
+                          <span>
+                            <i className="fas fa-user" />{" "}
+                            <strong>Contacto</strong>
+                          </span>
+                        ) : (
+                          ""
+                        )}
+
+                        {/*this.state.dataAtractivo.audio != ""? (
+                          
+                          <Audios url={`${process.env.REACT_APP_API_RECURSOS}/recursos/audiosAtractivos/${this.state.dataAtractivo.audio}`}></Audios>
+                          
+                        ) : (
+                          ""
+                        )*/}
+                        
+                        {this.state.dataAtractivo.domicilio !== "" ? (
+                          <span className="pr-4">
+                            <strong>Domicilio:</strong>{" "}
+                            {this.state.dataAtractivo.domicilio}
+                          </span>
+                        ) : (
+                          ""
+                        )}
+                        {this.state.dataAtractivo.telefono !== "" ? (
+                          <span className="pr-4">
+                            <strong> Tel./Cel.: </strong> +54 9{" "}
+                            {this.state.dataAtractivo.telefono}
+                          </span>
+                        ) : (
+                          ""
+                        )}
+                        {this.state.dataAtractivo.mail !== "" ? (
+                          <span className="pr-4">
+                            <strong>Email:</strong>{" "}
+                            {this.state.dataAtractivo.mail}
+                          </span>
+                        ) : (
+                          ""
+                        )}
+                        {this.state.dataAtractivo.web !== "" ? (
+                          <span className="pr-4">
+                            <strong> Web:</strong> {this.state.dataAtractivo.web}
+                          </span>
+                        ) : (
+                          ""
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <MaxImage
+                src={this.state.img.src}
+                visible={this.state.img.visible}
+                onClose={this.closeImg}
+              />
             </div>
-            <MaxImage
-              src={this.state.img.src}
-              visible={this.state.img.visible}
-              onClose={this.closeImg}
-            />
+           
           </React.Fragment>
         )}
       </div>

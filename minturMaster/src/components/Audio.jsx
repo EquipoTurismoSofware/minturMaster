@@ -48,12 +48,18 @@ function Audio(props) {
         <source src={`${url}`} />
         Your browser does not support the <code>audio</code> element.
       </audio>
-      <div className="song">
+     {/* <div className="song">
         <h1 className="song__title">Audio</h1>
         <h2 className="song__artist">Iglesia Navarro</h2>
-      </div>
+      </div>*/}
+      
+
       <div className="controls">
+      <div className="song">
+        <h1 className="song__title">Audio</h1>
+      </div>
         {playing ? 
+        
           <button className="player__button" onClick={() => setPlaying(false)}>
             <i class="fas fa-pause-circle"></i>
           </button> :
@@ -66,14 +72,14 @@ function Audio(props) {
           <div
             className="bar__progress"
             style={{
-              background: `linear-gradient(to right, orange ${curPercentage}%, white 0)`
+              background: `linear-gradient(to right, black ${curPercentage}%, white 0)`
             }}
             onMouseDown={e => handleTimeDrag(e)}
           >
-            <span
+            {/* <span
               className="bar__progress__knob"
               style={{ left: `${curPercentage - 2}%` }}
-            />
+            /> */}
           </div>
           <span className="bar__time">{formatDuration(duration)}</span>
         </div>
