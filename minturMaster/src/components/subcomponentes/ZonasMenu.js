@@ -264,7 +264,7 @@ const ZonaMenuDos = (props) => {
                 className="link"
                 onClick={props.onZonaClick}
               >
-                Guías - Adheridos al Protocolo
+                Guías de turismo
               </Link>
             </li>
             <li>
@@ -273,10 +273,19 @@ const ZonaMenuDos = (props) => {
                 className="link"
                 onClick={props.onZonaClick}
               >
-                Agencias - Adheridas al Protocolo
+                Agencias de turismo
               </Link>
             </li>
             <li>
+              <Link
+                to="/filtroalojamiento"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Alojamientos
+              </Link>
+            </li>
+            {/*<li>
               <a
                 href="#/filtroalojamientoAdhiere"
                 className="link"
@@ -284,7 +293,7 @@ const ZonaMenuDos = (props) => {
               >
                 Alojamientos - Adheridos al Protocolo
               </a>
-            </li>
+            </li>*/}
           </ul>
         </div>
         <div
@@ -355,15 +364,7 @@ const ZonaMenuDos = (props) => {
                 Casa de cambio
               </Link>
             </li>
-            <li>
-              <Link
-                to="/filtroalojamiento"
-                className="link"
-                onClick={props.onZonaClick}
-              >
-                Alojamientos
-              </Link>
-            </li>
+            
             {/*<li>
               <Link
                 to="/listadoMapas"

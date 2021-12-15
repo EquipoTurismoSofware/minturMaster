@@ -121,6 +121,7 @@ export default class TabSlider extends Component {
                 "Cuidar"{" "}
               </a>
               que se te otorga en minutos.
+              
               <div>
                 <a className="btnavion" href="http://sanluismidestino.com/vuelos-especiales/" target="_blank">
                   <span>Ingreso en Avión</span>

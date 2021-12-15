@@ -35,6 +35,40 @@ $btn-active-fore-color: white;
   .btn-right {
     grid-area: btn-right;
   }
+  .pagesBullets {
+    grid-area: pages;
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      padding-inline-start: 0;
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.2em;
+        padding: 2px;
+        min-width: 30px;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        background-color: $btn-bg-color;
+        color: $btn-fore-color;
+        cursor: pointer;
+        transition: all 1.5s;
+
+        &.selected {
+          background-color: $btn-active-bg-color;
+          color: $btn-active-fore-color;
+        }
+      }
+    }
+  }
   .pages {
     grid-area: pages;
     ul {

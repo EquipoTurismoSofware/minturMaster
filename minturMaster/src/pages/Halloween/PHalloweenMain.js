@@ -101,6 +101,15 @@ class PHalloweenMain extends Component {
         :(
           <React.Fragment >
             <div style={{backgroundColor: "rgb(25, 25, 25)"}}>
+            <div className="row" style={{marginTop: "180px"}}>
+              <div className="col-md-6 Titulo-Halloween" >
+                Turismo
+                paranormal
+              </div>    
+              <div className="col-md-6 Container-img-Halloween" >
+                <img class="img-Halloween" src={`${process.env.REACT_APP_API}/recursos/SAN LUIS.png`} alt="Img" />
+              </div>
+            </div>
             <div className="row" style={{paddingTop: "120px"}}>
               <CardHalloween data={this.state.data} />
             </div>
@@ -114,6 +123,15 @@ class PHalloweenMain extends Component {
                     gwidth="100%"
                     gheight="400px"
                   />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-6 Titulo-Halloween" >
+                Turismo
+                paranormal
+              </div>    
+              <div className="col-md-6 Container-img-Halloween" >
+                <img class="img-Halloween" src={`${process.env.REACT_APP_API}/recursos/SAN LUIS.png`} alt="Img" />
               </div>
             </div>
             </div>

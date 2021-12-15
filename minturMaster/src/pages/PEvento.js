@@ -12,6 +12,13 @@ class PEvento extends Component {
     this.state = {
       loading: true,
       evento: {
+        titulo: "",
+        localidad: "",
+        lugar: "",
+        direccion: "",
+        costo: 0,
+        invita: "",
+        organiza: "",
         color: "722789",
         dfecha: "0000-00-00",
         hfecha: "0000-00-00",

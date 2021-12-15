@@ -26,7 +26,7 @@ class ListadoGuiasAgenciasCovid extends Component {
       headers: {
         Authorization: token,
       },
-      url: `${process.env.REACT_APP_API}/${this.state.tipo}/adhiereCovid`,
+      url: `${process.env.REACT_APP_API}/${this.state.tipo}${this.state.tipo == "agencias"? "/viaje": ""}`,
       responseType: "json",
     })
       .then((response) => {
@@ -34,8 +34,7 @@ class ListadoGuiasAgenciasCovid extends Component {
           loading: false,
           isNotFound: false,
           data: response.data.data.registros
-        });
-        
+        });        
       })
       .catch((error) => {
         self.setState({
@@ -92,9 +91,9 @@ class ListadoGuiasAgenciasCovid extends Component {
                 <h3 style={{ color: `#722789` }}>
                   {
                     this.state.tipo === "guiasturismo" ?
-                    "GUÍAS DE TURISMO ADHERIDOS - COVID 19"
+                    "GUÍAS DE TURISMO"
                     :
-                    "AGENCIAS DE VIAJES ADHERIDOS - COVID 19"
+                    "AGENCIAS DE VIAJES"
                   }
                   
                 </h3>

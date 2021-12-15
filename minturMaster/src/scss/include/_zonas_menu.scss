@@ -17,9 +17,7 @@
         }
         
         .ZonaMenu-Data {
-
             //max-width: 800px;
-            //padding: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(330px, 330px));
             grid-column-gap: 15px;
@@ -29,19 +27,23 @@
                 text-decoration: none;
             }
             .ZonaMenu-Item {
-
-                //width: 330px;
+                
+                width: 100%;
                 height: 70px;
+
                 img {
                     height: 80px;
                     width: 80px;
                     float: left;
                 }
+                
                 span {
                     display: block;
-                    text-align: right;
+                    white-space: normal;
+                    word-wrap: break-word; 
+                    text-align: center;
                     width: 100%;
-                    padding-top: 40px;
+                    padding-top: 10px;
                     font-size: 1.2rem;
                     color: #fff;
                     padding-right: 5px;
@@ -63,7 +65,6 @@
             margin-bottom: 0px;
             li {
                 .link {
-                    
                     color: #fff;
                     text-transform: uppercase;
                     text-decoration: none;

@@ -10,21 +10,7 @@ class Estadistica extends React.Component {
         data: [],
         id: 0 ,
         flag: false,
-        dataFinal: [{
-          title: "",
-          data: []
-          }, {
-            title: "",
-            data: []
-          },
-          {
-          title: "",
-              data: []
-          },
-          {
-            title: "",
-            data: []
-        }]
+        dataFinal: []
       };
       this.getData = this.getData.bind(this);
     }
@@ -43,23 +29,24 @@ class Estadistica extends React.Component {
             responseType: "json"
         })
         .then((response) => {
-            if(response.data.data.registros.length > 0) {
-                self.setState({
-                    data: response.data.data.registros
-                },() => {
-                  this.state.data.forEach(element => {
-                    data1.push({
-                      title: element.tipoNombre,
-                      data: element.valores
-                    });  
-                  });
-                
-                  this.setState({
-                      dataFinal: data1
-                  })
-                });
+          response.data.data.registros.forEach(element => {
+            if(element.valores.length != 0){
+              data1.push({
+                title: element.tipoNombre,
+                data: element.valores
+              });  
             }else{
+              data1.push({
+                title: element.tipoNombre,
+                data: [{etiqueta: "", valor: "0"}]
+              });
             }
+          });
+        
+          this.setState({
+            data: response.data.data.registros,
+            dataFinal: data1
+          })
         })
         .catch((error) => {
             console.log(error);

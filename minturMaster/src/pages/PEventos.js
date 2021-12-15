@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Consumer } from "../context";
 import axios from "axios";
+import Loading from "../utils/Loading";
 
 class PEventos extends Component {
   constructor(props) {
@@ -119,57 +120,29 @@ class PEventos extends Component {
       );
     });
     return (
-      <div className="PEventos">
-        {this.state.loading ? (
-          <div>Cargando...</div>
+      <React.Fragment>
+          {this.state.loading ? (
+          <div className="PFiltroAlojamiento mb-5">
+            <div><Loading margins="96px" /></div>
+          </div>
         ) : (
           <React.Fragment>
-            <div className="menu-y-slider">
-              <div
-                id="carouselExampleIndicators"
-                className="carousel slide"
-                data-ride="carousel"
-              >
-                <div className="carousel-inner">{carousel}</div>
-                <a
-                  className="carousel-control-prev"
-                  href="#carouselExampleIndicators"
-                  role="button"
-                  data-slide="prev"
-                >
-                  <span
-                    className="carousel-control-prev-icon"
-                    aria-hidden="true"
-                  />
-                  <span className="sr-only">Previous</span>
-                </a>
-                <a
-                  className="carousel-control-next"
-                  href="#carouselExampleIndicators"
-                  role="button"
-                  data-slide="next"
-                >
-                  <span
-                    className="carousel-control-next-icon"
-                    aria-hidden="true"
-                  />
-                  <span className="sr-only">Next</span>
-                </a>
-
+            <div style={{paddingTop: "100px"}}>
                 <div
                   className="ZonaDetalle-titulo"
-                  style={{ marginTop: "-50px", backgroundColor: `#722789` }}
+                  style={{backgroundColor: `#722789` }}
                 >
                   <h3 style={{ color: `#722789` }}>Calendario de Eventos</h3>
                 </div>
-              </div>
             </div>
-            <div className="container mb-5">
-              <div className="row">{items}</div>
+            <div className="container mb-5" style={{marginTop: "20px"}}>
+              <div className="row" >
+                {items}
+              </div>
             </div>
           </React.Fragment>
         )}
-      </div>
+      </React.Fragment>
     );
   }
 }

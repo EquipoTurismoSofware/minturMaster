@@ -10,12 +10,10 @@ class CardHalloween extends Component {
             loading: true,
             data: [],
             atractivos: [],
-            clase: "halloween",
-            card: React.createRef()
+            clase: "halloween"
             
         };
         this.calculoVisibles = this.calculoVisibles.bind(this);
-        this.animationMaterialCard = this.animationMaterialCard.bind(this);
     }
 
     calculoVisibles() {
@@ -37,31 +35,6 @@ class CardHalloween extends Component {
             }, () => {
                 this.setData();
             });
-        }
-    }
-
-
-    animationMaterialCard(id){
-        var card = document.getElementById(`atrac-card-${id}`);
-        var icon = card.getElementsByTagName("i");
-        icon[0].className += " fa-spin-fast"
-        if (card.className.includes('mc-active')) {
-            card.className = card.className.replace('mc-active', '');
-            window.setTimeout(() =>{
-                icon[0].className = icon[0].className.replace('fa-arrow-left', '')
-                icon[0].className = icon[0].className.replace('fa-spin-fast', '');
-                icon[0].className += " fa-bars";
-
-            }, 200);
-        } else {
-            card.className += ' mc-active';
-
-            window.setTimeout(function() {
-                icon[0].className = icon[0].className.replace('fa-bars', '');
-                icon[0].className = icon[0].className.replace('fa-spin-fast', '');
-                icon[0].className += " fa-arrow-left";
-
-            }, 200);
         }
     }
     
@@ -87,52 +60,25 @@ class CardHalloween extends Component {
             descripcion = atrac.descripcion;
             }
             return(
-                <article key={`atrac-card-${atrac.id}`} id={`atrac-card-${atrac.id}`} className={`material-card-hallo`}  ref={this.state.card}>
-                    <Link to={`/atractivo/${atrac.id}`}>
-                        <h2>
-                            <span>{atrac.nombre}</span>
-                            {/*<strong>
-                                <i className={`fas fa-hotel`}></i>
-                                {atrac.tipo}
-                            </strong>*/}
-                        </h2>
-                    </Link>
-                    <div class="mc-content">
-                        <div class="img-container">
+                <article key={`hallo-atrac-card-${atrac.id}`} className={`material-card-hallo`}>
+                    <div class="hallo-mc-content">
+                        <div className="hallo-mc-title">
+                            <li><span>{atrac.nombre}</span></li>
+                        </div>
+                        <div class="hallo-img-container">
                             <img class="img-responsive" src={`${process.env.REACT_APP_API}/atractivos/${atrac.foto}`} alt="Img" />
                         </div>
-                        <div class="mc-description">
+                        <div class="hallo-mc-description">
                             <li><span>{descripcion}</span></li>
-                           {/* <li><i class="fas fa-thumbtack"></i><span>  {atrac.ciudad}</span></li>
-                            <li><i class="fas fa-hotel"></i><span>  {atrac.tipo}</span></li>
-                            <li><i className="fas fa-phone" /><a href={`tel:+549${atrac.telefono}`}> +54 9 {alo.telefono}</a></li>
-                            */}
                         </div>
                     </div>
-                    <a class="mc-btn-action" onClick={()=>{this.animationMaterialCard(atrac.id)}}>
-                        <i className={`fa fa-bars`} ref={this.state.icon}></i>
-                    </a>
-                    <div class="mc-footer">
-                        <Link to={`/atractivo/${atrac.id}`}><i className="fas fa-angle-double-down"></i></Link>
+                    <div class="hallo-mc-footer">
+                        <Link to={`/atractivo/${atrac.id}`}>VER MÁS</Link>
                     </div>
                 </article>
             );
         });
-        let x = -1;
-        const bullets = this.state.atractivos.map((atrac) => {
-            x++;
-            return(
-                <li>
-                    <a
-                        href=""
-                        data-order={`${x}`}
-                        data-id={`${atrac.id}`}
-                        
-                    ></a>
-                </li>
-            );
-        });
-        /* */ 
+
         return(
             <React.Fragment>
                 {

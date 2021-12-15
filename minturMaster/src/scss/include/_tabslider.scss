@@ -1,5 +1,6 @@
 /* COMIENZA ESTILO DE TABS SLIDER*/
 @import "https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,400";
+
 $thin: 100;
 $light: 300;
 $regular: 400;
@@ -81,6 +82,17 @@ $content-selector: "~ .content > section";
         display: block;
       }
     }
+  }
+}
+
+@keyframes ripples {
+  0% {
+    box-shadow: 0 0 0 0 rgba($white, 0.1), 0 0 0 20px rgba($white, 0.1),
+      0 0 0 40px rgba($white, 0.1), 0 0 0 60px rgba($white, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba($white, 0.1), 0 0 0 40px rgba($white, 0.1),
+      0 0 0 60px rgba($white, 0.1), 0 0 0 80px rgba($white, 0);
   }
 }
 
@@ -247,7 +259,7 @@ $content-selector: "~ .content > section";
           margin-left: 15px;
           font-size: 25px;
           border-radius: 100%;
-          animation: ripple 0.6s linear infinite;
+          animation: ripples 0.6s linear infinite;
         }
       }
       .container-btnsavion{
@@ -288,7 +300,7 @@ $content-selector: "~ .content > section";
             margin-left: 15px;
             font-size: 25px;
             border-radius: 100%;
-            animation: ripple 0.6s linear infinite;
+            animation: ripples 0.6s linear infinite;
           }
         }
       }
@@ -396,16 +408,7 @@ $content-selector: "~ .content > section";
 
 /* Body */
 
-@keyframes ripple {
-  0% {
-    box-shadow: 0 0 0 0 rgba($white, 0.1), 0 0 0 20px rgba($white, 0.1),
-      0 0 0 40px rgba($white, 0.1), 0 0 0 60px rgba($white, 0.1);
-  }
-  100% {
-    box-shadow: 0 0 0 20px rgba($white, 0.1), 0 0 0 40px rgba($white, 0.1),
-      0 0 0 60px rgba($white, 0.1), 0 0 0 80px rgba($white, 0);
-  }
-}
+
 
 //PRUEBA AVION*/}
 
