@@ -100,17 +100,35 @@ class PHalloweenMain extends Component {
         )
         :(
           <React.Fragment >
-            <div style={{backgroundColor: "rgb(25, 25, 25)"}}>
-            <div className="row" style={{marginTop: "180px"}}>
-              <div className="col-md-6 Titulo-Halloween" >
-                Turismo
-                paranormal
+            <div className="Main-Halloween">
+            <div className="row" style={{paddingTop: "30px"}}>
+              <div className="col-md-6" >
+                <div className="Telarania-Halloween">
+                  <img style={{width: "380px", height:"360px"}} src={`${process.env.REACT_APP_API}/recursos/halloween/telarania.png`} alt="Img" />
+                </div>
+                <div className="Titulo-Halloween">
+                  Circuito <br/>
+                  paranormal
+                </div>
+                <div className="Subtitulo-Halloween">
+                El Turismo Paranormal se relaciona con fenómenos paranormales o sobrenaturales en los que se combinan elementos de nuestro folklore y psíquicos que permiten el disfrute de experiencias que no tiene una explicación lógica o científica.<br/><br/> Bienvenidos al circuito paranormal de San Luis
+                </div>
               </div>    
-              <div className="col-md-6 Container-img-Halloween" >
-                <img class="img-Halloween" src={`${process.env.REACT_APP_API}/recursos/SAN LUIS.png`} alt="Img" />
+              <div className="col-md-6" >
+                <div className="Luna-Halloween">
+                  <img style={{width: "380px", height:"160px"}} src={`${process.env.REACT_APP_API}/recursos/halloween/luna.png`} alt="Img" />
+                </div>
+                <div className="Mitos-Halloween">
+                  <img style={{width: "150px", height: "30px"}} src={`${process.env.REACT_APP_API}/recursos/halloween/iconos arriba.png`} alt="Img" />
+                  <div style={{color:"white", marginTop:"10px", fontSize:"1.5rem"}}>
+                    MITOS E HISTORIAS <br/>
+                    PARANORMALES<br/>
+                    DE SAN LUIS
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="row" style={{paddingTop: "120px"}}>
+            <div className="row">
               <CardHalloween data={this.state.data} />
             </div>
             <div className="row">
@@ -126,12 +144,11 @@ class PHalloweenMain extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="col-md-6 Titulo-Halloween" >
-                Turismo
-                paranormal
-              </div>    
-              <div className="col-md-6 Container-img-Halloween" >
-                <img class="img-Halloween" src={`${process.env.REACT_APP_API}/recursos/SAN LUIS.png`} alt="Img" />
+              <div className="col-md-6 Container-Logo1-Halloween" >
+                <img id="Logo1-Halloween" src={`${process.env.REACT_APP_API}/recursos/SAN LUIS.png`} alt="Img" />
+              </div>
+              <div className="col-md-6 Container-Logo2-Halloween">
+                <img id="Logo2-Halloween" src={`${process.env.REACT_APP_API}/recursos/LOGO BLANCO.png`} alt="Img" />
               </div>
             </div>
             </div>

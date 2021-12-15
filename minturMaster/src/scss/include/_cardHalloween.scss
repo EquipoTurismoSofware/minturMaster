@@ -8,7 +8,6 @@ $card-height: 500px;
     height: $card-height;
     width: $card-width;
     margin-right: 5px;
-    
 
     .hallo-mc-content {
         background-color: black;
@@ -32,10 +31,9 @@ $card-height: 500px;
             font-family: "Jolly Lodger";
             li {
                 list-style-type: none;
-                color: rgb(114,39,137);
-                color: -moz-linear-gradient(left, rgba(114,39,137,0.6) 0%, rgba(237,15,104,0.7) 100%);
-                color: -webkit-linear-gradient(left, rgba(114,39,137,0.6) 0%,rgba(237,15,104,0.7) 100%);
-                color: linear-gradient(to right, rgba(114,39,137,0.6) 0%,rgba(237,15,104,0.7) 100%);
+                background: linear-gradient(to right, rgb(73, 0, 95) 10%,rgb(255, 0, 13) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
         }
 
@@ -82,9 +80,18 @@ $card-height: 500px;
     }
 }
 
+
+
+//MAIN HALLOWEEN
+
+.Main-Halloween {
+    background-image: url($server_path+"recursos/halloween/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .Titulo-Halloween {
     position: relative;
-    margin-top: 30px;
+    top: -25%;
     width: 100%;
     text-align: left;
     left: 10%;
@@ -94,8 +101,15 @@ $card-height: 500px;
     color: rgb(28, 228, 45);
 
 }
-
-.Container-img-Halloween {
+.Subtitulo-Halloween {
+    position: relative;
+    top: -15%;
+    width: 100%;
+    text-align: left;
+    left: 10%;
+    color: white;
+}
+.Container-Logo1-Halloween {
     position: relative;
     margin-top: 30px;
     width: 100%;
@@ -103,9 +117,52 @@ $card-height: 500px;
     left: 10%;
 }
 
-.img-Halloween{
+.Container-Logo2-Halloween{
+    position: relative;
+    margin-top: 80px; 
+}
+
+.Telarania-Halloween {
+    position: relative;
+    left: -10%;
+}
+
+.Luna-Halloween{
+    position: relative;
+    padding-top: 100px;
+    text-align: left;
+    margin-left: 10%;
+}
+
+.Mitos-Halloween{
+    position: relative;
+    padding-top: 50px;
+    margin-left: 28%;
+}
+
+#Logo1-Halloween{
     margin-top: 10%;
     margin-bottom: 10%;
-    width: 45%;
+    width: 300px;
     height: 100px;
+}
+
+#Logo2-Halloween{
+    margin-top: 10%;
+    margin-left: 150px;
+    width: 200px;
+    height: 50px;
+}
+
+@media screen and (max-width: 900px) {
+    .Luna-Halloween{
+        text-align: left;
+        margin-left: 10%;
+    }
+    
+    .Mitos-Halloween{
+        position: relative;
+        padding-top: 50px;
+        margin-left: 28%;
+    }
 }

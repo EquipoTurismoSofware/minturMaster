@@ -56,8 +56,8 @@ function Audio(props) {
 
       <div className="controls">
       <div className="song">
-        <h1 className="song__title">Audio</h1>
-      </div>
+        <h1 className="#">reproducir</h1>
+      
         {playing ? 
         
           <button className="player__button" onClick={() => setPlaying(false)}>
@@ -80,6 +80,7 @@ function Audio(props) {
               className="bar__progress__knob"
               style={{ left: `${curPercentage - 2}%` }}
             /> */}
+          </div>
           </div>
           <span className="bar__time">{formatDuration(duration)}</span>
         </div>

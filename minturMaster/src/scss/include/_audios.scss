@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Permanent+Marker|Rock+Salt");
 
 .player {
-  width: 200px;
-  height: 150px; 
+ // width: 200px;
+ // height: 150px; 
+  width: 270px;
+  height: 50px;
+  border-radius: 100px;
   flex-basis: 20%;
   display: flex;
   flex-direction:row-reverse;
@@ -11,16 +14,17 @@
   padding: 15px 5px 0;
   background-color: rgb(28, 228, 45);
   margin: 8px;
+  //border-radius: 50%; 
   .song {
     user-select: none;
-    margin: 0 20px;
+    margin: 0 10px;
     .song__title {
       text-align: left;
       margin: 0;
       color: rgb(22, 20, 20);
       font-family: "Permanent Marker", cursive;
       font-weight: normal;
-      font-size: 2.5em;
+      font-size: 1.5em;
 
       &:hover {
         color: rgb(231, 238, 222);
@@ -50,10 +54,13 @@
   }
 
   .player__button {
-    width: fit-content;
-    margin-bottom: 10px;
+    width:min-content;
+    margin-bottom: 30px;
     background-color: transparent;
     border: none;
+    padding: 0px;
+    size: 10px;
+    
 
     &:focus {
       outline: none;
@@ -66,7 +73,7 @@
     }
 
     i {
-      font-size: 3.5em;
+      font-size: 3.0em;
       color: rgb(3, 3, 3);
     }
   }

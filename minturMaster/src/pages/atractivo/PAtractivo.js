@@ -267,7 +267,7 @@ class PAtractivo extends Component {
                       </div>
                     
                       <div className="atractivo-fotos">     
-                      {this.state.dataAtractivo.audio != ""? (
+                      {this.state.dataAtractivo.audio != ""? (  
                           
                           <Audios url={`${process.env.REACT_APP_API_RECURSOS}/recursos/audiosAtractivos/${this.state.dataAtractivo.audio}`}></Audios>
                           
