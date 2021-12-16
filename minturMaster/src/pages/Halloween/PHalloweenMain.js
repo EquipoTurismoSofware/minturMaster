@@ -101,56 +101,56 @@ class PHalloweenMain extends Component {
         :(
           <React.Fragment >
             <div className="Main-Halloween">
-            <div className="row" style={{paddingTop: "30px"}}>
-              <div className="col-md-6" >
-                <div className="Telarania-Halloween">
-                  <img style={{width: "380px", height:"360px"}} src={`${process.env.REACT_APP_API}/recursos/halloween/telarania.png`} alt="Img" />
-                </div>
-                <div className="Titulo-Halloween">
-                  Circuito <br/>
-                  paranormal
-                </div>
-                <div className="Subtitulo-Halloween">
-                El Turismo Paranormal se relaciona con fenómenos paranormales o sobrenaturales en los que se combinan elementos de nuestro folklore y psíquicos que permiten el disfrute de experiencias que no tiene una explicación lógica o científica.<br/><br/> Bienvenidos al circuito paranormal de San Luis
-                </div>
-              </div>    
-              <div className="col-md-6" >
-                <div className="Luna-Halloween">
-                  <img src={`${process.env.REACT_APP_API}/recursos/halloween/luna.png`} alt="Img" />
-                </div>
-                <div className="Mitos-Halloween">
-                  <img src={`${process.env.REACT_APP_API}/recursos/halloween/iconos arriba.png`} alt="Img" />
-                  <div className="Mitos-Halloween-Texto">
-                    MITOS E HISTORIAS <br/>
-                    PARANORMALES<br/>
-                    DE SAN LUIS
+              <div className="row" style={{paddingTop: "30px"}}>
+                <div className="col-md-6" >
+                  <div className="Telarania-Halloween">
+                    <img style={{width: "380px", height:"360px"}} src={`${process.env.REACT_APP_API}/recursos/halloween/telarania.png`} alt="Img" />
+                  </div>
+                  <div className="Titulo-Halloween">
+                    Circuito <br/>
+                    paranormal
+                  </div>
+                  <div className="Subtitulo-Halloween">
+                  El Turismo Paranormal se relaciona con fenómenos paranormales o sobrenaturales en los que se combinan elementos de nuestro folklore y psíquicos que permiten el disfrute de experiencias que no tiene una explicación lógica o científica.<br/><br/> Bienvenidos al circuito paranormal de San Luis
+                  </div>
+                </div>    
+                <div className="col-md-6" >
+                  <div className="Luna-Halloween">
+                    <img src={`${process.env.REACT_APP_API}/recursos/halloween/luna.png`} alt="Img" />
+                  </div>
+                  <div className="Mitos-Halloween">
+                    <img src={`${process.env.REACT_APP_API}/recursos/halloween/iconos arriba.png`} alt="Img" />
+                    <div className="Mitos-Halloween-Texto">
+                      MITOS E HISTORIAS <br/>
+                      PARANORMALES<br/>
+                      DE SAN LUIS
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <CardHalloween data={this.state.data} />
-            </div>
-            <div className="row">
-              <div id="mapa" style={{width: "80%", marginLeft: "10%", marginTop: "20px", marginBottom: "20px"}}>
-                  <GoogleMap
-                    data={this.state.data}
-                    lat={this.state.latitudesFiltro}
-                    lng={this.state.longitudesFiltro}
-                    zoom="8"
-                    gwidth="100%"
-                    gheight="400px"
-                  />
+              <div className="row">
+                <CardHalloween data={this.state.data} />
               </div>
-            </div>
-            <div className="row">
-              <div className="col-md-6 Container-Logo1-Halloween" >
-                <img id="Logo1-Halloween" src={`${process.env.REACT_APP_API}/recursos/SAN LUIS.png`} alt="Img" />
+              <div className="row">
+                <div id="mapa" style={{width: "80%", marginLeft: "10%", marginTop: "20px", marginBottom: "20px"}}>
+                    <GoogleMap
+                      data={this.state.data}
+                      lat={this.state.latitudesFiltro}
+                      lng={this.state.longitudesFiltro}
+                      zoom="8"
+                      gwidth="100%"
+                      gheight="400px"
+                    />
+                </div>
               </div>
-              <div className="col-md-6 Container-Logo2-Halloween">
-                <img id="Logo2-Halloween" src={`${process.env.REACT_APP_API}/recursos/LOGO BLANCO.png`} alt="Img" />
+              <div className="row">
+                <div className="col-md-6 Container-Logo1-Halloween" >
+                  <img id="Logo1-Halloween" src={`${process.env.REACT_APP_API}/recursos/SAN LUIS.png`} alt="Img" />
+                </div>
+                <div className="col-md-6 Container-Logo2-Halloween">
+                  <img id="Logo2-Halloween" src={`${process.env.REACT_APP_API}/recursos/LOGO BLANCO.png`} alt="Img" />
+                </div>
               </div>
-            </div>
             </div>
           </React.Fragment>
         )}

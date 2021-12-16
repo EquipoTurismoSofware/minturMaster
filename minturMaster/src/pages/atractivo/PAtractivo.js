@@ -195,7 +195,7 @@ class PAtractivo extends Component {
           <NotFound />
         ) : (
           <React.Fragment >
-            <div style={this.state.dataAtractivo.idTipo == 32? {backgroundColor: "black"}: {}}>
+            <div className={this.state.dataAtractivo.idTipo == 32? "Atractivo-main-halloween": ""}>
               <div className="menu-y-slider" >
                 <div
                   id="carouselExampleIndicators"
@@ -236,11 +236,11 @@ class PAtractivo extends Component {
                 </div>
               </div>
               <div
-                className="ZonaLocalidad-titulo"
-              style={this.state.dataAtractivo.idTipo == 32?{backgroundColor:`rgb(28, 228, 45)`}:{backgroundColor:"#722789"}}
+                className={this.state.dataAtractivo.idTipo == 32?"ZonaLocalidad-titulo-Halloween":"ZonaLocalidad-titulo"}
+                style={this.state.dataAtractivo.idTipo == 32?{backgroundColor:`transparent`}:{backgroundColor:"#722789"}}
                 
               >
-                <h3 style={this.state.dataAtractivo.idTipo == 32? {fontFamily:"You Can Make Your Own Font font", backgroundColor:`#050505`, color: "rgb(28, 228, 45)"}: {color: `#722789`}}
+                <h3 style={this.state.dataAtractivo.idTipo == 32? {fontFamily:"Jolly Lodger", backgroundColor:`transparent`, color: "rgb(28, 228, 45)"}: {color: `#722789`}}
                 >
                   {this.state.dataAtractivo.nombre}
                 </h3>
@@ -269,7 +269,7 @@ class PAtractivo extends Component {
                       <div className="atractivo-fotos">     
                       {this.state.dataAtractivo.audio != ""? (  
                           
-                          <Audios url={`${process.env.REACT_APP_API_RECURSOS}/recursos/audiosAtractivos/${this.state.dataAtractivo.audio}`}></Audios>
+                          <Audios nombre={this.state.dataAtractivo.nombre} url={`${process.env.REACT_APP_API_RECURSOS}/recursos/audiosAtractivos/${this.state.dataAtractivo.audio}`}></Audios>
                           
                         ) : (
                           ""
@@ -455,6 +455,21 @@ class PAtractivo extends Component {
                 visible={this.state.img.visible}
                 onClose={this.closeImg}
               />
+
+              {this.state.dataAtractivo.idTipo == 32? 
+                <div className="row">
+                <div className="col-md-6 Titulo-Halloween" >
+                  Circuito <br/>
+                  paranormal             
+                </div>
+                <div className="col-md-6 Container-Logo-Halloween">
+                  <img id="Logo-Halloween" src={`${process.env.REACT_APP_API}/recursos/SAN LUIS.png`} alt="Img" />
+                </div>
+              </div>
+                :
+                ""
+              }
+              
             </div>
            
           </React.Fragment>

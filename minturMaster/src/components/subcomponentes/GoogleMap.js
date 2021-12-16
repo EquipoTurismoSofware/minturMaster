@@ -115,12 +115,12 @@ class GoogleMap extends Component {
 
                     contentString = 
                         '<div id="containerBoxMap">' +
-                            '<div id="info-box">'+
+                            '<div id="success-box">'+
                                 '<div class="radar"></div>'+
                             '</div>'+
                                 '<div class="shadow scale"></div>'+
                                 `<div class="messageBoxMap"><h1 class="alertBoxMap">${data[i].nombre}</h1></div>`+
-                                `<a class="button-boxMap" href='#/atractivo/${data[i].id}' ><h1 class="blue alertBoxButtonMap">Conocer mas</h1></a>`+
+                                `<a class="button-boxMap" href='#/atractivo/${data[i].id}' ><h1 class="green alertBoxButtonMap">Conocer mas</h1></a>`+
                             '</div>'+
                         '</div>'
                         /*contentString =

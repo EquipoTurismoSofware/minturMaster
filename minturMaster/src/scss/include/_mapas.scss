@@ -102,7 +102,7 @@ $info: #009FFD;
 $info-secondary: #73CBFF;
 
 
-$radarColour: #DA0000;
+$radarColour: black;
 $spreadStartColour: rgba($radarColour, 0.5);
 $spreadEndColour: rgba($radarColour, 0);
 $size: 20px;
@@ -110,7 +110,7 @@ $size: 20px;
 #containerBoxMap {
   position: relative;
   width: 260px;
-  height: 270px;
+  height: 190px;
 }
 
 .alertBoxMap {
@@ -168,7 +168,7 @@ $size: 20px;
   border-radius: 600px;
   background-color: $radarColour;
   left: 50%;
-  top: 25%;
+  top: 15%;
   z-index: 2;
   margin-top: -($size/2);
   margin-left: -($size/2);
@@ -219,17 +219,17 @@ $size: 20px;
   position: absolute;
   width: 100%;
   text-align: center;
-  height: 40%;
-  top: 47%;
+  height: fit-content;
+  top: 30%;
 }
 
 .button-boxMap {
   position: absolute;
   background: $white;
   width: 50%;
-  height: 15%;
+  height: 20%;
   border-radius: 20px;
-  top: 73%;
+  top: 70%;
   left: 25%;
   outline: 0;
   text-align: center;

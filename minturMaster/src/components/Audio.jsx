@@ -6,7 +6,7 @@ import momentDurationFormatSetup from 'moment-duration-format';
 momentDurationFormatSetup(moment);
 
 function Audio(props) {
-  const {url} = props;
+  const {url, nombre} = props;
   const { curTime, duration, playing, setPlaying, setClickedTime } = useAudioPlayer();
   const curPercentage = (curTime / duration) * 100;
   
@@ -44,48 +44,40 @@ function Audio(props) {
 
   return (
     <div className="player">
-      <audio id="audio">
-        <source src={`${url}`} />
-        Your browser does not support the <code>audio</code> element.
-      </audio>
-     {/* <div className="song">
-        <h1 className="song__title">Audio</h1>
-        <h2 className="song__artist">Iglesia Navarro</h2>
-      </div>*/}
-      
-
-      <div className="controls">
-      <div className="song">
-        <h1 className="#">reproducir</h1>
-      
-        {playing ? 
-        
-          <button className="player__button" onClick={() => setPlaying(false)}>
-            <i class="fas fa-pause-circle"></i>
-          </button> :
-          <button className="player__button" onClick={() => setPlaying(true)}>
-            <i class="fas fa-play-circle"></i>
-          </button>
-        }
-         <div className="bar">
-          <span className="bar__time">{formatDuration(curTime)}</span>
-          <div
-            className="bar__progress"
-            style={{
-              background: `linear-gradient(to right, black ${curPercentage}%, white 0)`
-            }}
-            onMouseDown={e => handleTimeDrag(e)}
-          >
-            {/* <span
-              className="bar__progress__knob"
-              style={{ left: `${curPercentage - 2}%` }}
-            /> */}
-          </div>
-          </div>
-          <span className="bar__time">{formatDuration(duration)}</span>
+    <audio id="audio">
+      <source src={`${url}`} />
+      Your browser does not support the <code>audio</code> element.
+    </audio>
+    <div className="song">
+      <h1 className="song__title">Audio</h1>
+    </div>
+    <div className="controls">
+      {playing ? 
+        <button className="player__button" onClick={() => setPlaying(false)}>
+          <i class="fas fa-pause-circle"></i>
+        </button> :
+        <button className="player__button" onClick={() => setPlaying(true)}>
+          <i class="fas fa-play-circle"></i>
+        </button>
+      }
+       <div className="bar">
+        <span className="bar__time">{formatDuration(curTime)}</span>
+        <div
+          className="bar__progress"
+          style={{
+            background: `linear-gradient(to right, rgb(28, 228, 45) ${curPercentage}%, white 0)`
+          }}
+          onMouseDown={e => handleTimeDrag(e)}
+        >
+          <span
+            className="bar__progress__knob"
+            style={{ left: `${curPercentage - 2}%` }}
+          />
         </div>
+        <span className="bar__time">{formatDuration(duration)}</span>
       </div>
     </div>
+  </div>
   );
 }
 
