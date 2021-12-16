@@ -116,11 +116,11 @@ class PHalloweenMain extends Component {
               </div>    
               <div className="col-md-6" >
                 <div className="Luna-Halloween">
-                  <img style={{width: "380px", height:"160px"}} src={`${process.env.REACT_APP_API}/recursos/halloween/luna.png`} alt="Img" />
+                  <img src={`${process.env.REACT_APP_API}/recursos/halloween/luna.png`} alt="Img" />
                 </div>
                 <div className="Mitos-Halloween">
-                  <img style={{width: "150px", height: "30px"}} src={`${process.env.REACT_APP_API}/recursos/halloween/iconos arriba.png`} alt="Img" />
-                  <div style={{color:"white", marginTop:"10px", fontSize:"1.5rem"}}>
+                  <img src={`${process.env.REACT_APP_API}/recursos/halloween/iconos arriba.png`} alt="Img" />
+                  <div className="Mitos-Halloween-Texto">
                     MITOS E HISTORIAS <br/>
                     PARANORMALES<br/>
                     DE SAN LUIS
