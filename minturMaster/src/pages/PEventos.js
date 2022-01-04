@@ -21,12 +21,12 @@ class PEventos extends Component {
     axios({
       method: "get",
       headers: {
-        Authorization: token
+        Authorization: token,
       },
-      url: `${process.env.REACT_APP_API}/eventos/200`,
-      responseType: "json"
+      url: `${process.env.REACT_APP_API}/eventos`,
+      responseType: "json",
     })
-      .then(response => {
+      .then((response) => {
         if (response.data.data.count > 0) {
           let activo = false;
           let carousel = response.data.data.registros.map((a, index) => {
@@ -95,7 +95,7 @@ class PEventos extends Component {
       let hfecha = e.hfecha.split("-");
       dfecha = `${dfecha[2]}/${dfecha[1]}`;
       hfecha = `${hfecha[2]}/${hfecha[1]}`;
-      //let numero = Math.floor(Math.random() * (4 - 1 + 1)) + 1; //Color random
+      let numero = Math.floor(Math.random() * (4 - 1 + 1)) + 1; //Color random
       return (
         <div key={`evento-${e.id}`} className="col-lg-4 col-md-6">
           <div className="single-card">
@@ -103,10 +103,10 @@ class PEventos extends Component {
               <div className="card-bg" style={estilo} />
               <div className="card-content">
                 <h2>{e.titulo}</h2>
-                {/* <h3 className={`bgc_${numero}`}>{dfecha} al {hfecha} - {e.localidad}</h3> */}
+                { /* <h3 className={`bgc_${numero}`}>{dfecha} al {hfecha} - {e.localidad}</h3> */
                 <h3 style={{ background: "#" + e.color }}>
                   {dfecha} al {hfecha} - {e.localidad}
-                </h3>
+                </h3>}
               </div>
             </Link>
             {/*<div className="overlay" style={{background: "#" + e.color}}>
