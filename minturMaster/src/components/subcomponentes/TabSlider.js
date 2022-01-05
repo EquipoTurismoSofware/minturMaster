@@ -111,16 +111,7 @@ export default class TabSlider extends Component {
                 style={{ color: "rgba(237,15,104, 1)" }}
               ></i>{" "}
               Hoy, a nuestra provincia podes ingresar tranquilamente a disfrutar
-              de unas maravillosas vacaciones, solo debes tener el permiso
-              nacional{" "}
-              <a
-                alt="Obtené tu permiso"
-                href="https://www.argentina.gob.ar/verano"
-                target="_blank"
-              >
-                "Cuidar"{" "}
-              </a>
-              que se te otorga en minutos.
+              de unas maravillosas vacaciones, <b>no debes solicitar ningún permiso</b>.
               
               <div>
                 <a className="btnavion" href="http://sanluismidestino.com/vuelos-especiales/" target="_blank">

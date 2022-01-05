@@ -29,6 +29,7 @@ background-color: rgb(114,39,137);
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 @import url("https://fonts.googleapis.com/css?family=Permanent+Marker|Rock+Salt");
+@import url("https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
 @import "https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,400";
@@ -49,16 +50,13 @@ body {
 }
 
 .player {
-  width: 200px;
-  height: 150px;
-  flex-basis: 20%;
+  width: 100%;
+  flex-basis: 50%;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 5px 0;
-  background-color: #1ce42d;
-  margin: 8px;
+  padding: 20px 0;
 }
 .player .song {
   user-select: none;
@@ -67,13 +65,13 @@ body {
 .player .song .song__title {
   text-align: left;
   margin: 0;
-  color: #161414;
-  font-family: "Permanent Marker", cursive;
+  color: #1ce42d;
+  font-family: "Jolly Lodger";
   font-weight: normal;
-  font-size: 2.5em;
+  font-size: 4em;
 }
 .player .song .song__title:hover {
-  color: #e7eede;
+  color: white;
 }
 .player .song .song__artist {
   margin: 0;
@@ -83,11 +81,11 @@ body {
   font-size: 1em;
 }
 .player .song .song__artist:hover {
-  color: #1ce42d;
+  color: greenyellow;
 }
 .player .controls {
   flex-grow: 1;
-  margin: 5px 5px;
+  margin: 15px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -95,7 +93,7 @@ body {
 }
 .player .player__button {
   width: fit-content;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   background-color: transparent;
   border: none;
 }
@@ -106,11 +104,11 @@ body {
   cursor: pointer;
 }
 .player .player__button:hover i {
-  color: #f4f7f4;
+  color: white;
 }
 .player .player__button i {
   font-size: 3.5em;
-  color: #030303;
+  color: #1ce42d;
 }
 .player .bar {
   user-select: none;
@@ -119,9 +117,8 @@ body {
   align-items: center;
 }
 .player .bar .bar__time {
-  color: #020202;
-  font-size: 12px;
-  font-style: initial;
+  color: white;
+  font-size: 16px;
 }
 .player .bar .bar__progress {
   flex: 1;
@@ -136,10 +133,10 @@ body {
   position: relative;
   height: 16px;
   width: 16px;
-  bottom: -3px;
+  bottom: 0px;
   border: 1.5px solid white;
   border-radius: 50%;
-  background-color: #0c0c0c;
+  background-color: #16ac22;
 }
 @media screen and (max-width: 992px) {
   .player {
@@ -162,255 +159,211 @@ body {
   }
 }
 
-.fa-spin-fast {
-  -webkit-animation: fa-spin-fast 0.2s infinite linear;
-  animation: fa-spin-fast 0.2s infinite linear;
-}
-
-@-webkit-keyframes fa-spin-fast {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
-@keyframes fa-spin-fast {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
 .material-card-hallo {
   position: relative;
-  height: 370px;
+  height: 500px;
   width: 270px;
   margin-right: 5px;
 }
-.material-card-hallo h2 {
-  background-color: #1ce42d;
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  width: 100%;
-  padding: 10px 16px;
-  color: #fff;
-  font-size: 1.4em;
-  margin: 0;
-  line-height: 1.6em;
-  z-index: 10;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.material-card-hallo h2 span {
-  display: block;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-.material-card-hallo h2 strong {
-  display: block;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-.material-card-hallo h2 strong i {
-  margin-right: 5px;
-}
-.material-card-hallo h2:before, .material-card-hallo h2:after {
-  content: " ";
-  position: absolute;
-  left: 0;
-  top: -16px;
-  width: 0;
-  border-left: 16px solid transparent;
-  border-bottom: 16px solid #11831a;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.material-card-hallo h2:after {
-  top: auto;
-  bottom: 0;
-  border-bottom: 16px solid transparent;
-}
-.material-card-hallo.mc-active h2 {
-  height: 94px;
-  top: 0;
-  padding: 4px 16px 10px 90px;
-}
-.material-card-hallo.mc-active h2:before, .material-card-hallo.mc-active h2:after {
-  content: " ";
-  position: absolute;
-  left: 0;
-  top: 0px;
-  width: 0;
-  border-left: 16px solid transparent;
-  border-bottom: 16px solid transparent;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.material-card-hallo.mc-active h2:after {
-  top: 100%;
-  bottom: 0;
-  border-top: 16px solid #11831a;
-}
-.material-card-hallo .mc-content {
-  background-color: white;
+.material-card-hallo .hallo-mc-content {
+  background-color: black;
   position: absolute;
   right: 0;
+  border-radius: 20px;
+  padding-top: 5.6em;
   top: 0;
   bottom: 16px;
   left: 16px;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
 }
-.material-card-hallo .mc-btn-action {
+.material-card-hallo .hallo-mc-content .hallo-mc-title {
   position: absolute;
-  right: 16px;
-  top: 15px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  border: 5px solid;
-  width: 54px;
-  height: 54px;
-  line-height: 44px;
+  height: fit-content;
+  width: 100%;
+  top: 0px;
   text-align: center;
-  border-color: #fff;
-  background-color: #1ce42d;
-  cursor: pointer;
-  z-index: 20;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.material-card-hallo .mc-btn-action i {
-  color: #fff;
-}
-.material-card-hallo.mc-active .mc-btn-action {
-  top: 70px;
-}
-.material-card-hallo .mc-description {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 20px;
-  left: 20px;
   overflow: hidden;
   text-overflow: ellipsis;
-  opacity: 0;
-  -webkit-transition: all 1.2s;
-  -moz-transition: all 1.2s;
-  -ms-transition: all 1.2s;
-  -o-transition: all 1.2s;
-  transition: all 1.2s;
+  font-size: 2.3rem;
+  font-family: "Jolly Lodger";
 }
-.material-card-hallo .mc-footer {
-  display: none;
-  height: 0;
-  overflow: hidden;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+.material-card-hallo .hallo-mc-content .hallo-mc-title li {
+  list-style-type: none;
+  background: linear-gradient(to right, #49005f 10%, #ff000d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.material-card-hallo .mc-footer h4 {
-  position: absolute;
-  top: 200px;
-  left: 30px;
-  padding: 0;
-  margin: 0;
-  font-size: 16px;
-  font-weight: 700;
-  -webkit-transition: all 1.4s;
-  -moz-transition: all 1.4s;
-  -ms-transition: all 1.4s;
-  -o-transition: all 1.4s;
-  transition: all 1.4s;
-}
-.material-card-hallo .img-container {
+.material-card-hallo .hallo-mc-content .hallo-img-container {
   overflow: hidden;
   position: absolute;
   width: 100%;
-  height: 100%;
-  z-index: 3;
+  height: 40%;
+  top: 50px;
 }
-.material-card-hallo .img-container img {
-  top: 0;
-  left: 0;
+.material-card-hallo .hallo-mc-content .hallo-img-container img {
   width: 270px;
-  height: 370px;
+  height: 200px;
   object-fit: cover;
 }
-.material-card-hallo.mc-active .img-container {
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  left: 0;
-  top: 12px;
-  width: 60px;
-  height: 60px;
-  z-index: 20;
-}
-.material-card-hallo.mc-active .img-container img {
-  top: 0;
-  left: 0;
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-}
-.material-card-hallo.mc-active .mc-content {
+.material-card-hallo .hallo-mc-content .hallo-mc-description {
+  position: absolute;
+  right: 20px;
+  left: 20px;
+  top: 35%;
   padding-top: 5.6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
 }
-.material-card-hallo.mc-active .mc-description {
-  display: inline;
-  top: 30px;
-  padding-top: 5.6em;
-  opacity: 1;
-}
-.material-card-hallo.mc-active .mc-description li {
+.material-card-hallo .hallo-mc-content .hallo-mc-description li {
   list-style-type: none;
   text-align: left;
   margin-top: 6px;
 }
-.material-card-hallo.mc-active .mc-description li a {
-  text-decoration: none;
-  color: #000;
-}
-.material-card-hallo.mc-active .mc-footer {
-  display: inline;
+.material-card-hallo .hallo-mc-footer {
   position: absolute;
-  transform: translateX(-50%);
-  font-size: 1.4rem;
   cursor: pointer;
   text-align: center;
-  top: 80%;
-  left: 55%;
-  height: 82px;
+  top: 89%;
+  left: 13%;
 }
-.material-card-hallo.mc-active .mc-footer i {
-  color: #000;
+.material-card-hallo .hallo-mc-footer a {
+  color: white;
+}
+
+.Main-Halloween {
+  background-image: url("http://turismo.sanluis.gov.ar/api-turismo/public/recursos/halloween/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Main-Halloween .row {
+  margin-right: 0;
+}
+.Main-Halloween .Titulo-Halloween {
+  position: relative;
+  top: -25%;
+  text-align: left;
+  left: 5%;
+  width: fit-content;
+  font-size: 7rem;
+  line-height: 80px;
+  font-family: "Jolly Lodger";
+  color: #1ce42d;
+}
+.Main-Halloween .Subtitulo-Halloween {
+  position: relative;
+  top: -15%;
+  width: 100%;
+  text-align: left;
+  left: 10%;
+  color: white;
+}
+.Main-Halloween .Container-Logo1-Halloween {
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  text-align: left;
+  left: 10%;
+}
+.Main-Halloween .Container-Logo1-Halloween img {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  width: 300px;
+  height: 100px;
+}
+.Main-Halloween .Container-Logo2-Halloween {
+  position: relative;
+  margin-top: 80px;
+}
+.Main-Halloween .Container-Logo2-Halloween img {
+  margin-top: 10%;
+  margin-left: 150px;
+  width: 200px;
+  height: 50px;
+}
+.Main-Halloween .Telarania-Halloween {
+  position: relative;
+  left: -10%;
+}
+.Main-Halloween .Luna-Halloween {
+  position: relative;
+  padding-top: 100px;
+  text-align: left;
+  margin-left: 10%;
+}
+.Main-Halloween .Luna-Halloween img {
+  width: 380px;
+  height: 160px;
+}
+.Main-Halloween .Mitos-Halloween {
+  position: relative;
+  padding-top: 50px;
+  margin-left: 28%;
+}
+.Main-Halloween .Mitos-Halloween img {
+  width: 150px;
+  height: 30px;
+}
+.Main-Halloween .Mitos-Halloween .Mitos-Halloween-Texto {
+  color: white;
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 900px) {
+  .Main-Halloween .Titulo-Halloween {
+    font-size: 6.5rem;
+  }
+  .Main-Halloween .Luna-Halloween img {
+    width: 300px;
+    height: 130px;
+  }
+  .Main-Halloween .Mitos-Halloween img {
+    width: 130px;
+    height: 25px;
+  }
+  .Main-Halloween .Mitos-Halloween .Mitos-Halloween-Texto {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .Main-Halloween .Subtitulo-Halloween {
+    text-align: left;
+    left: 0;
+    padding-left: 10%;
+  }
+  .Main-Halloween .Luna-Halloween {
+    padding-top: 0px;
+    text-align: center;
+    margin-left: 20px;
+  }
+  .Main-Halloween .Luna-Halloween img {
+    width: 300px;
+    height: 130px;
+  }
+  .Main-Halloween .Mitos-Halloween {
+    text-align: center;
+    margin-left: 0;
+    margin-bottom: 10%;
+  }
+  .Main-Halloween .Mitos-Halloween img {
+    width: 130px;
+    height: 25px;
+  }
+  .Main-Halloween .Mitos-Halloween .Mitos-Halloween-Texto {
+    font-size: 1.3rem;
+  }
+  .Main-Halloween .Container-Logo1-Halloween {
+    width: 100%;
+    left: 0;
+    text-align: center;
+  }
+  .Main-Halloween .Container-Logo2-Halloween {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 50px 0;
+  }
+  .Main-Halloween .Container-Logo2-Halloween img {
+    margin: 0 0 0 0;
+  }
 }
 
 /*
@@ -435,6 +388,39 @@ body {
 }
 .Viewer .btn-right {
   grid-area: btn-right;
+}
+.Viewer .pagesBullets {
+  grid-area: pages;
+}
+.Viewer .pagesBullets ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+.Viewer .pagesBullets ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2em;
+  padding: 2px;
+  min-width: 30px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-color: rgba(237, 15, 104, 0.7);
+  color: white;
+  cursor: pointer;
+  transition: all 1.5s;
+}
+.Viewer .pagesBullets ul li.selected {
+  background-color: #8d0a3e;
+  color: white;
 }
 .Viewer .pages {
   grid-area: pages;
@@ -1972,6 +1958,7 @@ body {
   text-decoration: none;
 }
 .ZonasMenu .ZonaMenu-Zonas .ZonaMenu-Data .ZonaMenu-Item {
+  width: 100%;
   height: 70px;
 }
 .ZonasMenu .ZonaMenu-Zonas .ZonaMenu-Data .ZonaMenu-Item img {
@@ -1981,9 +1968,11 @@ body {
 }
 .ZonasMenu .ZonaMenu-Zonas .ZonaMenu-Data .ZonaMenu-Item span {
   display: block;
-  text-align: right;
+  white-space: normal;
+  word-wrap: break-word;
+  text-align: center;
   width: 100%;
-  padding-top: 40px;
+  padding-top: 10px;
   font-size: 1.2rem;
   color: #fff;
   padding-right: 5px;
@@ -2864,7 +2853,7 @@ body {
 #containerBoxMap {
   position: relative;
   width: 260px;
-  height: 270px;
+  height: 190px;
 }
 
 .alertBoxMap {
@@ -2920,13 +2909,13 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 600px;
-  background-color: #DA0000;
+  background-color: black;
   left: 50%;
-  top: 25%;
+  top: 15%;
   z-index: 2;
   margin-top: -10px;
   margin-left: -10px;
-  border-bottom: 2px solid #410000;
+  border-bottom: 2px solid black;
 }
 .radar:before, .radar:after {
   content: " ";
@@ -2944,44 +2933,44 @@ body {
 
 @-webkit-keyframes pulseMapas {
   0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(218, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
   }
   70% {
-    -webkit-box-shadow: 0 0 0 100px rgba(218, 0, 0, 0);
+    -webkit-box-shadow: 0 0 0 100px rgba(0, 0, 0, 0);
   }
   100% {
-    -webkit-box-shadow: 0 0 0 0 rgba(218, 0, 0, 0);
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
 }
 @keyframes pulseMapas {
   0% {
-    -moz-box-shadow: 0 0 0 0 rgba(218, 0, 0, 0.5);
-    box-shadow: 0 0 0 0 rgba(218, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
   }
   70% {
-    -moz-box-shadow: 0 0 0 100px rgba(218, 0, 0, 0);
-    box-shadow: 0 0 0 100px rgba(218, 0, 0, 0);
+    -moz-box-shadow: 0 0 0 100px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 100px rgba(0, 0, 0, 0);
   }
   100% {
-    -moz-box-shadow: 0 0 0 0 rgba(218, 0, 0, 0);
-    box-shadow: 0 0 0 0 rgba(218, 0, 0, 0);
+    -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
 }
 .messageBoxMap {
   position: absolute;
   width: 100%;
   text-align: center;
-  height: 40%;
-  top: 47%;
+  height: fit-content;
+  top: 30%;
 }
 
 .button-boxMap {
   position: absolute;
   background: #FCFCFC;
   width: 50%;
-  height: 15%;
+  height: 20%;
   border-radius: 20px;
-  top: 73%;
+  top: 70%;
   left: 25%;
   outline: 0;
   text-align: center;
@@ -5392,18 +5381,18 @@ h3.bgc_4 {
 }
 @media only screen and (max-width: 990px) {
   /*
-  .Novedadesfull {
-      .nf-body {
-          .nf-novedad {
-              flex-direction: column;
-              .nf-novedad-left {
-                  position: fixed;
+      .Novedadesfull {
+          .nf-body {
+              .nf-novedad {
+                  flex-direction: column;
+                  .nf-novedad-left {
+                      position: fixed;
+                  }
               }
+  
           }
-
       }
-  }
-  */
+      */
   .novedad-full-item {
     grid-template-areas: "titulo" "imagen" "body" "pie";
     grid-template-columns: 1fr;
@@ -5712,6 +5701,59 @@ h3.bgc_4 {
 /*
     Componente PAtractivo.js
 */
+.Atractivo-main-halloween {
+  background-image: url("http://turismo.sanluis.gov.ar/api-turismo/public/recursos/halloween/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Atractivo-main-halloween .row {
+  margin-right: 0;
+}
+.Atractivo-main-halloween .Titulo-Halloween {
+  position: relative;
+  margin: 50px 0 50px 0;
+  text-align: left;
+  left: 10%;
+  width: fit-content;
+  font-size: 7rem;
+  line-height: 80px;
+  font-family: "Jolly Lodger";
+  color: #1ce42d;
+}
+.Atractivo-main-halloween .Container-Logo-Halloween {
+  margin-top: 30px;
+  width: 100%;
+  text-align: left;
+  padding-left: 10%;
+}
+.Atractivo-main-halloween .Container-Logo-Halloween img {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  width: 300px;
+  height: 100px;
+}
+.Atractivo-main-halloween a {
+  color: white;
+}
+.Atractivo-main-halloween .ZonaLocalidad-titulo-Halloween {
+  display: block;
+  width: 100%;
+  top: 50px;
+  height: 50px;
+  position: relative;
+  margin-bottom: 90px;
+}
+.Atractivo-main-halloween .ZonaLocalidad-titulo-Halloween h3 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #fff;
+  text-transform: uppercase;
+  padding: 8px;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
 .Atractivo-data-halloween {
   display: grid;
   grid-template-areas: "atractivo-texto atractivo-fotos" "atractivo-ubicacion atractivo-info";
@@ -5729,14 +5771,13 @@ h3.bgc_4 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: black;
   padding: 20px 20px;
 }
 .Atractivo-data-halloween .atractivo-fotos img {
-  width: 200px;
-  height: 150px;
+  width: 400px;
+  height: 250px;
   object-fit: cover;
-  margin: 8px;
+  margin: 0 8px 0 8px;
   border: 1px solid #fff;
 }
 .Atractivo-data-halloween .atractivo-ubicacion {
@@ -5753,7 +5794,7 @@ h3.bgc_4 {
 }
 .Atractivo-data-halloween .atractivo-ubicacion span i {
   margin-right: 8px;
-  color: #722789;
+  color: blanchedalmond;
 }
 .Atractivo-data-halloween .atractivo-info {
   grid-area: atractivo-info;
@@ -5761,7 +5802,8 @@ h3.bgc_4 {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: black;
+  color: blanchedalmond;
+  padding-left: 20px;
 }
 .Atractivo-data-halloween .atractivo-info span {
   text-transform: uppercase;
@@ -5769,28 +5811,46 @@ h3.bgc_4 {
 }
 .Atractivo-data-halloween .atractivo-info span i {
   margin-right: 8px;
-  color: #722789;
+  color: blanchedalmond;
 }
 .Atractivo-data-halloween .atractivo-info ul li {
   text-transform: uppercase;
 }
 
 @media only screen and (max-width: 790px) {
-  .ZonaLocalidad-titulo h3 {
-    font-size: 2rem;
+  .ZonaLocalidad-titulo-Halloween h3 {
+    font-size: 1rem;
   }
 
-  .Atractivo-data {
+  .Atractivo-data-halloween {
     grid-template-areas: "atractivo-fotos" "atractivo-texto" "atractivo-ubicacion" "atractivo-info";
     grid-template-columns: 1fr;
     padding: 8px 2px;
   }
-  .Atractivo-data .atractivo-fotos {
+  .Atractivo-data-halloween .atractivo-fotos {
     padding: 8px;
   }
-  .Atractivo-data .atractivo-fotos img {
+  .Atractivo-data-halloween .atractivo-fotos img {
     width: 100%;
     height: auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .Atractivo-main-halloween .Titulo-Halloween {
+    text-align: center;
+    margin-left: 15%;
+    font-size: 5rem;
+  }
+  .Atractivo-main-halloween .Container-Logo-Halloween {
+    width: 100%;
+    left: 0;
+    text-align: center;
+  }
+  .Atractivo-main-halloween .Container-Logo-Halloween img {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 200px;
+    height: 80px;
   }
 }
 /*
@@ -5902,18 +5962,18 @@ h3.bgc_4 {
 
 @media only screen and (max-width: 990px) {
   /*
-    .Novedadesfull {
-        .nf-body {
-            .nf-novedad {
-                flex-direction: column;
-                .nf-novedad-left {
-                    position: fixed;
-                }
-            }
-
-        }
-    }
-    */
+      .Novedadesfull {
+          .nf-body {
+              .nf-novedad {
+                  flex-direction: column;
+                  .nf-novedad-left {
+                      position: fixed;
+                  }
+              }
+  
+          }
+      }
+      */
   .atractivo-full-item .imagen img {
     height: 250px;
     width: 700px;
@@ -6642,6 +6702,14 @@ h3.bgc_4 {
 /* tab setting */
 /* breakpoints */
 /* selectors relative to radio inputs */
+@keyframes ripples {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+  }
+}
 .tabs {
   font-family: "Raleway";
   left: 50%;
@@ -6799,7 +6867,7 @@ h3.bgc_4 {
   margin-left: 15px;
   font-size: 25px;
   border-radius: 100%;
-  animation: ripple 0.6s linear infinite;
+  animation: ripples 0.6s linear infinite;
 }
 .tabs .content section .container-btnsavion {
   text-align: center;
@@ -6836,7 +6904,7 @@ h3.bgc_4 {
   margin-left: 15px;
   font-size: 25px;
   border-radius: 100%;
-  animation: ripple 0.6s linear infinite;
+  animation: ripples 0.6s linear infinite;
 }
 .tabs .content section h2 {
   color: #ed0f68;
@@ -6947,14 +7015,6 @@ h3.bgc_4 {
 }
 
 /* Body */
-@keyframes ripple {
-  0% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
-  }
-  100% {
-    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
-  }
-}
 .avion {
   box-shadow: 0 0 10rem 0 #000000 inset;
 }
