@@ -11,7 +11,7 @@ export default class TurismoDosep extends Component {
             <div className="pantallaGrandeGrid">
               <center>
                 <img
-                  style={{ height: 250, width: 550 }}
+                  style={{ height: 200, width: 550 }}
                   className="img-fluid"
                   src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/EneroRecurso.png"
                   alt="Img"
@@ -42,7 +42,7 @@ export default class TurismoDosep extends Component {
                   </div>*/}{" "}
                   <div className="one-two  column">
                     <a
-                      href=" https://forms.gle/rnmySeqgrb5Yf8cE8"
+                      href="https://forms.gle/MDiQFRXmG5Y6ezsh8"
                       className="link-menu"
                     >
                       <img
@@ -54,7 +54,7 @@ export default class TurismoDosep extends Component {
                     </a>
                   </div>
                   <div className="one-two  column">
-                    <a href="https://forms.gle/pj4piEkgErTHXjad8" className="link-menu">
+                    <a href="https://forms.gle/nFodCKiPWviowkJk7" className="link-menu">
                       <img
                         style={{ height: 300, width: 550 }}
                         className="img-fluid"
@@ -65,7 +65,7 @@ export default class TurismoDosep extends Component {
                   </div>
                   <div className="one-three column">
                     <a
-                      href="https://forms.gle/t8stwFxVUq6KyFXZ7"
+                      href="https://forms.gle/YKuLQfWSAXdCbevr8"
                       className="link-menu"
                     >
                       <img
@@ -80,7 +80,7 @@ export default class TurismoDosep extends Component {
                   </div>
                   <div className="one-three column">
                     <a
-                      href="https://forms.gle/VgpWh5jxkTJVVdo57"
+                      href="https://forms.gle/Ar3A9PfrEiuqoXo36"
                       className="link-menu"
                     >
                       <img
@@ -114,7 +114,7 @@ export default class TurismoDosep extends Component {
             <br></br> <br></br> <br></br>
             <center>
               <div className="one-three column">
-                <a href=" https://forms.gle/rnmySeqgrb5Yf8cE8" className="link-menu">
+                <a href="https://forms.gle/MDiQFRXmG5Y6ezsh8" className="link-menu">
                   <img
                     style={{ height: 200, width: 400 }}
                     className="img-fluid"
@@ -125,7 +125,7 @@ export default class TurismoDosep extends Component {
               </div>
               <div className="one-three column">
                 <a
-                  href=" https://forms.gle/pj4piEkgErTHXjad8"
+                  href="https://forms.gle/nFodCKiPWviowkJk7"
                   className="link-menu"
                 >
                   <img
@@ -138,7 +138,7 @@ export default class TurismoDosep extends Component {
               </div>
               <div className="one-three column">
                 <a
-                  href="https://forms.gle/t8stwFxVUq6KyFXZ7"
+                  href="https://forms.gle/YKuLQfWSAXdCbevr8"
                   className="link-menu"
                 >
                   <img
@@ -152,7 +152,7 @@ export default class TurismoDosep extends Component {
               <div className="row">
                 <div className="one-third column">
                   <a
-                    href="https://forms.gle/VgpWh5jxkTJVVdo57"
+                    href="https://forms.gle/Ar3A9PfrEiuqoXo36"
                     className="link-menu"
                   >
                     <img

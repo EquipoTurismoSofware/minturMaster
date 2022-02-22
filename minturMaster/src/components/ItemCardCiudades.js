@@ -46,11 +46,6 @@ class ItemCardCiudades extends Component {
                       <i class="fas fa-phone-volume" />
                       &nbsp; Teléfono: {nov.telefono}
                     </span>
-                    <br />
-                    <span className="pr-4 ">
-                      <i className="fas fa-map-marker" />
-                      &nbsp; Ámbito Ejercicio: {nov.ambito}
-                    </span>
                     {
                       nov.correo !== ""?
                       <span>
@@ -174,10 +169,6 @@ class ItemCardCiudades extends Component {
                     </span>
                     :""
                   }
-                  <span>
-                    <i class="fas fa-clock" /> &nbsp; Horario de
-                    cierre: {nov.horarioCierre}
-                  </span>
                   <hr />
                 </div>
               )

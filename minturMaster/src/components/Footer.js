@@ -8,7 +8,7 @@ class Footer extends Component {
          <div class="wrapper">
       <div class="profile-card js-profile-card">
         <div class="profile-card__img">
-          <img src="https://i.ibb.co/ft02QmL/SAN-LUIS-TURISMO-FULL-COLOR-TRANSP.png" alt="profile card" />
+          <img   src={`${process.env.REACT_APP_API}/recursos/logoNuevo.png`} alt="profile card" />
         </div>
 
         <div class="profile-card__cnt js-profile-cnt">

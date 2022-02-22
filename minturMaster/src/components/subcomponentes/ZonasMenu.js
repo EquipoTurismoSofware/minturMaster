@@ -192,6 +192,15 @@ const ZonaMenuDos = (props) => {
                 Actividades de Invierno 2021
               </Link>
             </li>*/}
+             <li>
+              <Link
+                to="/TurismoDark"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Circuito paranormal
+              </Link>
+            </li>
             <li>
               <Link
                 to="/PParquesList"
@@ -202,7 +211,11 @@ const ZonaMenuDos = (props) => {
               </Link>
             </li>
             <li>
-              <Link to="/caminos-pintorescos" className="link" onClick={props.onZonaClick}>
+              <Link
+                to="/caminos-pintorescos"
+                className="link"
+                onClick={props.onZonaClick}
+              >
                 Caminos Pintorescos
               </Link>
             </li>
@@ -355,7 +368,7 @@ const ZonaMenuDos = (props) => {
                 Alquileres de autos
               </Link>
             </li>
-            <li>
+            {/*<li>
               <Link
                 to="/PCasasCambio"
                 className="link"
@@ -365,7 +378,7 @@ const ZonaMenuDos = (props) => {
               </Link>
             </li>
             
-            {/*<li>
+           <li>
               <Link
                 to="/listadoMapas"
                 className="link"
@@ -433,7 +446,11 @@ const ZonaMenuCuatro = (props) => {
               </Link>
             </li>
             <li>
-              <Link to="/caminos-pintorescos" className="link" onClick={props.onZonaClick}>
+              <Link
+                to="/caminos-pintorescos"
+                className="link"
+                onClick={props.onZonaClick}
+              >
                 Caminos Pintorescos
               </Link>
             </li>

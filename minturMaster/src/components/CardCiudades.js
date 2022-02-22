@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import ItemCardCiudades from "../components/ItemCardCiudades"
+import ItemCardCiudades from "../components/ItemCardCiudades";
 import { Consumer } from "../context";
 import axios from "axios";
 
 class CardCiudades extends Component {
   constructor(props) {
-		super(props);
+    super(props);
 
-		this.state = {
+    this.state = {
       loading: true,
-			data: [],
+      data: [],
       tipo: "",
-      ciudades: []
+      ciudades: [],
     };
     this.getData = this.getData.bind(this);
   }
@@ -29,45 +29,51 @@ class CardCiudades extends Component {
     })
       .then((response) => {
         self.setState({
-            loading: false,
-            isNotFound: false,
-            ciudades: response.data.data.registros
+          loading: false,
+          isNotFound: false,
+          ciudades: response.data.data.registros,
         });
-        
       })
       .catch((error) => {
         self.setState({
-            loading: false,
-            isNotFound: true
+          loading: false,
+          isNotFound: true,
         });
         console.log(error);
       });
   }
 
   componentDidUpdate(prevProps) {
-    if(this.props.data !== prevProps.data || this.props.tipo !== prevProps.tipo) {
-        this.setState({
-          loading: false,
-          data: this.props.data,
-          tipo: this.props.tipo
-        });
+    if (
+      this.props.data !== prevProps.data ||
+      this.props.tipo !== prevProps.tipo
+    ) {
+      this.setState({
+        loading: false,
+        data: this.props.data,
+        tipo: this.props.tipo,
+      });
     }
   }
 
-	componentDidMount() {
-        this.setState({
-          data: this.props.data,
-          tipo: this.props.tipo,
-          loading: false
-        }, () => {
-          this.getData()
-        });
-    }
+  componentDidMount() {
+    this.setState(
+      {
+        data: this.props.data,
+        tipo: this.props.tipo,
+        loading: false,
+      },
+      () => {
+        this.getData();
+      }
+    );
+  }
 
-	render() {
-      const listadoElementos = this.state.ciudades.map(nov => {
-        let alqxcities = this.state.data.filter(x => x.ciudad === nov.ciudad)
-          return(<div className="row mb-3">
+  render() {
+    const listadoElementos = this.state.ciudades.map((nov) => {
+      let alqxcities = this.state.data.filter((x) => x.ciudad === nov.ciudad);
+      return (
+        <div className="row mb-3">
           <div className="col">
             <img
               alt="fotoCiudad"
@@ -85,57 +91,73 @@ class CardCiudades extends Component {
               data-target={`#nueva_zona${nov.id}`}
               aria-expanded="false"
               aria-controls={`nueva_zona${nov.id}`}
-              style={ nov.ZonaId === "1" ?{
-                backgroundColor: "#bf3276",
-                height: "50px",
-                fontSize: "1.2rem",
-                lineHeight: "1.8rem",
-                fontWeight: "700",
-              }: nov.ZonaId === "4" ?{
-                backgroundColor: "#cb6120",
-                height: "50px",
-                fontSize: "1.2rem",
-                lineHeight: "1.8rem",
-                fontWeight: "700",
-              }: nov.ZonaId === "5" ?{
-                backgroundColor: "#a2bd31",
-                height: "50px",
-                fontSize: "1.2rem",
-                lineHeight: "1.8rem",
-                fontWeight: "700",
-              }: nov.ZonaId === "8" ?{
-                backgroundColor: "#326534",
-                height: "50px",
-                fontSize: "1.2rem",
-                lineHeight: "1.8rem",
-                fontWeight: "700",
-              }: nov.ZonaId === "9" ?{
-                backgroundColor: "#e5b449",
-                height: "50px",
-                fontSize: "1.2rem",
-                lineHeight: "1.8rem",
-                fontWeight: "700",
-              }: nov.ZonaId === "10" ?{
-                backgroundColor: "#a01127",
-                height: "50px",
-                fontSize: "1.2rem",
-                lineHeight: "1.8rem",
-                fontWeight: "700",
-              }: nov.ZonaId === "11" ?{
-                backgroundColor: "#618dc5",
-                height: "50px",
-                fontSize: "1.2rem",
-                lineHeight: "1.8rem",
-                fontWeight: "700",
-              }: nov.ZonaId === "12" ?
-              {
-                backgroundColor: "#5ea099",
-                height: "50px",
-                fontSize: "1.2rem",
-                lineHeight: "1.8rem",
-                fontWeight: "700",
-              }:
-            ""}
+              style={
+                nov.ZonaId === "1"
+                  ? {
+                      backgroundColor: "#bf3276",
+                      height: "50px",
+                      fontSize: "1.2rem",
+                      lineHeight: "1.8rem",
+                      fontWeight: "700",
+                    }
+                  : nov.ZonaId === "4"
+                  ? {
+                      backgroundColor: "#cb6120",
+                      height: "50px",
+                      fontSize: "1.2rem",
+                      lineHeight: "1.8rem",
+                      fontWeight: "700",
+                    }
+                  : nov.ZonaId === "5"
+                  ? {
+                      backgroundColor: "#a2bd31",
+                      height: "50px",
+                      fontSize: "1.2rem",
+                      lineHeight: "1.8rem",
+                      fontWeight: "700",
+                    }
+                  : nov.ZonaId === "8"
+                  ? {
+                      backgroundColor: "#326534",
+                      height: "50px",
+                      fontSize: "1.2rem",
+                      lineHeight: "1.8rem",
+                      fontWeight: "700",
+                    }
+                  : nov.ZonaId === "9"
+                  ? {
+                      backgroundColor: "#e5b449",
+                      height: "50px",
+                      fontSize: "1.2rem",
+                      lineHeight: "1.8rem",
+                      fontWeight: "700",
+                    }
+                  : nov.ZonaId === "10"
+                  ? {
+                      backgroundColor: "#a01127",
+                      height: "50px",
+                      fontSize: "1.2rem",
+                      lineHeight: "1.8rem",
+                      fontWeight: "700",
+                    }
+                  : nov.ZonaId === "11"
+                  ? {
+                      backgroundColor: "#618dc5",
+                      height: "50px",
+                      fontSize: "1.2rem",
+                      lineHeight: "1.8rem",
+                      fontWeight: "700",
+                    }
+                  : nov.ZonaId === "12"
+                  ? {
+                      backgroundColor: "#5ea099",
+                      height: "50px",
+                      fontSize: "1.2rem",
+                      lineHeight: "1.8rem",
+                      fontWeight: "700",
+                    }
+                  : ""
+              }
             >
               {nov.ciudad}
             </button>
@@ -144,28 +166,48 @@ class CardCiudades extends Component {
                 <div className="row">
                   <div
                     className="col-md-10"
-                    style={ nov.ZonaId === "1" ?{
-                      color: "#bf3276"
-                    }: nov.ZonaId === "4" ?{
-                      color: "#cb6120"
-                    }: nov.ZonaId === "5" ?{
-                      color: "#a2bd31"
-                    }: nov.ZonaId === "8" ?{
-                      color: "#326534"
-                    }: nov.ZonaId === "9" ?{
-                      color: "#e5b449"
-                    }: nov.ZonaId === "10" ?{
-                      color: "#a01127"
-                    }: nov.ZonaId === "11" ?{
-                      color: "#618dc5"
-                    }: nov.ZonaId === "12" ?{
-                      color: "#5ea099"
-                    }:
-                  ""}
+                    style={
+                      nov.ZonaId === "1"
+                        ? {
+                            color: "#bf3276",
+                          }
+                        : nov.ZonaId === "4"
+                        ? {
+                            color: "#cb6120",
+                          }
+                        : nov.ZonaId === "5"
+                        ? {
+                            color: "#a2bd31",
+                          }
+                        : nov.ZonaId === "8"
+                        ? {
+                            color: "#326534",
+                          }
+                        : nov.ZonaId === "9"
+                        ? {
+                            color: "#e5b449",
+                          }
+                        : nov.ZonaId === "10"
+                        ? {
+                            color: "#a01127",
+                          }
+                        : nov.ZonaId === "11"
+                        ? {
+                            color: "#618dc5",
+                          }
+                        : nov.ZonaId === "12"
+                        ? {
+                            color: "#5ea099",
+                          }
+                        : ""
+                    }
                   >
                     <div className="form-group">
                       <div className="atractivo-info">
-                        <ItemCardCiudades data={alqxcities} tipo={this.state.tipo}/>
+                        <ItemCardCiudades
+                          data={alqxcities}
+                          tipo={this.state.tipo}
+                        />
                       </div>
                     </div>
                   </div>
@@ -174,17 +216,12 @@ class CardCiudades extends Component {
             </div>
           </div>
           <br />
-        </div>)
-                
-        })
-		return(
-			<React.Fragment>{
-        listadoElementos
-			}</React.Fragment>
-		);
-	}
+        </div>
+      );
+    });
+    return <React.Fragment>{listadoElementos}</React.Fragment>;
+  }
 }
-
 
 CardCiudades.contextType = Consumer;
 

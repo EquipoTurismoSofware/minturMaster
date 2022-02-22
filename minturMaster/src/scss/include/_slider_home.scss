@@ -59,7 +59,7 @@
 
 .img-slider-1 {
   @include img-slider;
-  background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/FONDO%202-min.png);
+  background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/1-min.jpg);
   background-repeat: no-repeat;
   //background-position: 0 0 50px 0;
   //background-size: cover;
@@ -70,7 +70,7 @@
   background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/FONDO%201-min.png);
   background-repeat: no-repeat;
   background-position: 0 0 50px 0;
-  background-size: cover;
+  background-size: cover; 
 }
 
 .img-slider-3 {
@@ -257,7 +257,7 @@
   }
   .img-slider-1 {
     @include img-slider;
-    background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/FONDO%202-min.png);
+    background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/1-min.jpg);
     background-repeat: no-repeat;
     background-position: -300px 0px;
     background-size: cover;

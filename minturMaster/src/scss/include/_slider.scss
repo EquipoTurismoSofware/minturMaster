@@ -147,3 +147,16 @@ footer {
     display: none;
   }
 }
+
+
+.parentTirolesa {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  }
+  
+  .div1Tirolesa { grid-area: 1 / 1 / 2 / 4; }
+  .div2Tirolesa { grid-area: 1 / 4 / 2 / 6; }
+  .div3Tirolesa { grid-area: 2 / 4 / 2 / 1; }

@@ -74,6 +74,8 @@ import PCaminosPintorescos from "./pages/variosmenu/CaminosPintorescos"
 import PHalloweenMain from "./pages/Halloween/PHalloweenMain";
 import NotFound from "./components/NotFound";
 import EnConstruccion from "./components/PaginaEnConstruccion";
+import Tirolesas from "./pages/Tirolesas";
+
 
 import PMapas from "./pages/PMapas";
 import GastronomiaDosep from "./pages/gastronomia/GastronomiaDosep";
@@ -177,6 +179,7 @@ class App extends Component {
               <Route exact path="/PPermisoPesca" component={PPermisoPesca} />
               <Route exact path="/PCreerGnral" component={PCreerGnral} />
               <Route exact path="/Prueba" component={Prueba} />
+              <Route exact path="/Tirolesas" component={Tirolesas} />
               <Route exact path="/Moto_Turismo" component={PMotoTurismo} />
               <Route
                 exact

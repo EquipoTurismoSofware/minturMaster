@@ -485,7 +485,7 @@ class Slider extends Component {
               <a
                 href=""
                 data-order="0"
-                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada1.jpg"
+                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/1-min.jpg"
                 
               ></a>
             </li>
@@ -493,28 +493,28 @@ class Slider extends Component {
               <a
                 href=""
                 data-order="1"
-                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada2.jpg"
+                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/2-min.jpg"
               ></a>
             </li>
             <li>
               <a
                 href=""
                 data-order="2"
-                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada3.jpg"
+                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/3-min.jpg"
               ></a>
             </li>
             <li>
               <a
                 href=""
                 data-order="3"
-                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada4.jpg"
+                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/4-min.jpg"
               ></a>
             </li>
             <li>
               <a
                 href=""
                 data-order="4"
-                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/portada5.jpg"
+                data-imagesrc="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/5-min.jpg"
               ></a>
             </li>
             {/*gal*/}

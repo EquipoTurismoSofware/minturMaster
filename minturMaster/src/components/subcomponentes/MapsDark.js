@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-class GoogleMap extends Component {
+class MapsDark extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,7 +14,9 @@ class GoogleMap extends Component {
       gheight: "100%",
       marker: null,
       maptype: "roadmap",
-      data: [],
+      data: [
+
+      ],
     };
     this.setMap = this.setMap.bind(this);
     this.initMap = this.initMap.bind(this);
@@ -38,14 +40,17 @@ class GoogleMap extends Component {
         if (data.length !== 0) {
           let x = 0;
           let locations = [];
-          lat.forEach((lat1) => {
+          data.forEach((data1) => {
             console.log();
             var lng = parseFloat(this.state.lng[x], 10);
-            var lat = parseFloat(lat1, 10);
-            var nombre = data[x].tipo;
+            var lat = parseFloat(this.state.lat[x], 10);
+            var nombre = data1.nombre;
             locations.push({ lat, lng, nombre });
             x++;
           });
+        
+          
+
           console.log(this.state.data);
 
           var latNew = locations[0].lat;
@@ -100,7 +105,7 @@ class GoogleMap extends Component {
                 '<div class="radar"></div>' +
                 "</div>" +
                 '<div class="shadow scale"></div>' +
-                `<div class="messageBoxMap"><h1 class="alertBoxMap">${data[i].nombre}</h1></div>` +
+                `<div class="messageBoxMap"><h1 class="alertBoxMap">${data[i].tipo}</h1></div>` +
                 `<a class="button-boxMap" href='#/localidad/${data[i].idciudad}' target='_blank'><h1 class="green alertBoxButtonMap">Conossscer mas</h1></a>` +
                 "</div>" +
                 "</div>";
@@ -131,11 +136,11 @@ class GoogleMap extends Component {
                 "</div>" +
                 '<div class="shadow scale"></div>' +
                 `<div class="messageBoxMap"><h1 class="alertBoxMap">${location.nombre} </h1></div>` +
+
                 `<a class="button-boxMap" href='http://maps.google.co.uk/maps?q=${location.lat},${location.lng}' target='_blank'><h1 class="green alertBoxButtonMap">Ver Ubicación</h1></a>` +
                 "</div>" +
                 "</div>";
-                
-                
+
               /*contentString =
                         '<div id="content">' +
                         '<div id="siteNotice">' +
@@ -273,4 +278,4 @@ class GoogleMap extends Component {
   }
 }
 
-export default GoogleMap;
+export default MapsDark;
