@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import ItemCardCiudades from "../components/ItemCardCiudades";
+import ItemCardCiudades from "./ItemCardCiudades";
 import { Consumer } from "../context";
 import axios from "axios";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import ListSubheader from "@mui/material/ListSubheader";
+
+
 
 class CardCiudades extends Component {
   constructor(props) {
@@ -79,37 +77,7 @@ class CardCiudades extends Component {
       return (
         <div className="row mb-3">
           <div className="col">
-            <List
-              sx={{
-                width: "100%",
-                bgcolor: "background.paper",
-                position: "relative",
-                overflow: "auto",
-                "& ul": { padding: 0 },
-              }}
-              subheader={<li />}
-            >
-              <li key={`nueva_zona${nov.id}`}>
-                <ul>
-                  <ListSubheader>
-                    <h4 style={{ color: `#722789` }}>{`${nov.ciudad}`}</h4>
-                  </ListSubheader>
-                  <ListItem key={`item-nueva_zona${nov.id}`}>
-                    <li
-                      key={`nueva_zona${nov.id}`}
-                      style={{ listStyleType: "none" }}
-                    >
-                      <ItemCardCiudades
-                        data={alqxcities}
-                        tipo={this.state.tipo}
-                      />
-                    </li>
-                  </ListItem>
-                </ul>
-              </li>
-              <hr></hr>
-            </List>
-            {/* <img
+            <img
               alt="fotoCiudad"
               style={{
                 width: "100%",
@@ -118,7 +86,7 @@ class CardCiudades extends Component {
               }}
               src={`${process.env.REACT_APP_API}/recursos/ciudadesFotos/${nov.foto}`}
             />
-          <button
+            <button
               className="btn btn-dark btn-block"
               type="button"
               data-toggle="collapse"
@@ -247,7 +215,7 @@ class CardCiudades extends Component {
                   </div>
                 </div>
               </div>
-            </div>*/}
+            </div>
           </div>
           <br />
         </div>

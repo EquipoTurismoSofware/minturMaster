@@ -95,8 +95,12 @@ class Tirolesas extends Component {
                 <div className="div2Tirolesa">
                   <img src="https://cinytec.org.ar/wp-content/uploads/2019/01/logo2019-150x105.png"></img>
                 </div>
-                <div className="div3Tirolesa"> <h5>Hace click en la localidad que desees visitar:</h5> </div>
+                <div className="div3Tirolesa">
+                  {" "}
+                  <h5>Hace click para acceder a Google Maps:</h5>{" "}
+                </div>
               </div>
+              <br></br>       
               <CardCiudades data={this.state.data} tipo={this.state.tipo} />
             </div>
           </React.Fragment>
