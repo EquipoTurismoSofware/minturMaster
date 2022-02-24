@@ -29,7 +29,7 @@ export default class PantallaModal extends Component {
       this.setState(
         {
           foto:
-            "http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/verano2022mobile.jpg",
+            "http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/verano2022mobile.jpeg",
         },
         () => {
           var mContainer = document.getElementById(`modalMain-container`);
@@ -37,10 +37,12 @@ export default class PantallaModal extends Component {
         }
       );
     } else {
+      console.log(window.screen.width);
+
       this.setState(
         {
           foto:
-            "http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/verano2022.jpg",
+            "http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/verano2022.jpeg",
         },
         () => {
           var mContainer = document.getElementById(`modalMain-container`);
@@ -65,7 +67,7 @@ export default class PantallaModal extends Component {
                 <i style={{color:"white"}} class="far fa-times-circle"></i>
               </a>
 
-              <Link to="/turismo-vacaciones" className="link-menu">
+              <Link to="/actividades" className="link-menu">
                 <img src={this.state.foto} />
               </Link>
               <svg

@@ -249,11 +249,15 @@ $modal-height-gnrl-mobile: 90%;
         width: 100%;
         background: rgba(0, 0, 0, 0);
         animation: fadeInModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        
         .modalMain {
           background-color: transparent;
           animation: modalFadeInModal 0.5s 0.8s
             cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+ 
           img {
+            height: 100%;
+            width: 100%;
             opacity: 0;
             position: relative;
             animation: modalContentFadeInModal 0.5s 1s
@@ -278,9 +282,12 @@ $modal-height-gnrl-mobile: 90%;
       &.modalOut {
         animation: quickScaleDownModal 0s 0.5s linear forwards;
         .modalMain-background {
+
           animation: fadeOutModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)
             forwards;
           .modalMain {
+            height: 90%; 
+
             animation: modalFadeOutModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)
               forwards;
             img {

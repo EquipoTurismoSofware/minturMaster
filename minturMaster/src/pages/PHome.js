@@ -52,7 +52,7 @@ class Home extends Component {
           <React.Fragment>
             <div className="menu-y-slider ">
               <Slider></Slider>
-              {/*<center>
+              <center>
                 <div className="pantallaGrande">
                   <span className="newsHome">
                     <Newsletter />
@@ -61,7 +61,7 @@ class Home extends Component {
                   <SocialWidget />
                 </div>
                 <div className="pantallaChica2">{<PantallaModal />}</div>
-              </center>*/}
+              </center>
             </div>
             <TabSlider />
             <CardImperdibles />

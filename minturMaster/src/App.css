@@ -537,6 +537,10 @@ body {
   color: #fff;
 }
 
+.imgActividades {
+  width: 50%;
+}
+
 .GridImageMain {
   padding-top: 100px;
   background-color: #eeeeee;
@@ -645,11 +649,20 @@ body {
 
 @media only screen and (max-width: 510px) {
   .pantallaGrandeGrid {
-    display: none;
+    display: inline;
+    padding-left: 10px;
+  }
+
+  .pantallaGrandeGrid h5 {
+    padding-top: 70px;
+  }
+
+  .imgActividades {
+    width: 70%;
   }
 
   .pantallaChicaGrid {
-    display: inline;
+    display: none;
   }
 }
 .boxWeather {
@@ -2275,6 +2288,8 @@ body {
     animation: modalFadeInModal 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   }
   #modalMain-container.modalIn .modalMain-background .modalMain img {
+    height: 100%;
+    width: 100%;
     opacity: 0;
     position: relative;
     animation: modalContentFadeInModal 0.5s 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
@@ -2294,6 +2309,7 @@ body {
     animation: fadeOutModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   }
   #modalMain-container.modalIn.modalOut .modalMain-background .modalMain {
+    height: 90%;
     animation: modalFadeOutModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   }
   #modalMain-container.modalIn.modalOut .modalMain-background .modalMain img {
