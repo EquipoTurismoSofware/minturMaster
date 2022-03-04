@@ -192,13 +192,22 @@ const ZonaMenuDos = (props) => {
                 Actividades de Invierno 2021
               </Link>
             </li>*/}
-             <li>
+            <li>
               <Link
                 to="/TurismoDark"
                 className="link"
                 onClick={props.onZonaClick}
               >
                 Circuito paranormal
+              </Link>
+            </li>{" "}
+            <li>
+              <Link
+                to="/tirolesas"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Tirolesas
               </Link>
             </li>
             <li>

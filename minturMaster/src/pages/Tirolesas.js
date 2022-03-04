@@ -84,12 +84,11 @@ class Tirolesas extends Component {
                   <span>
                     En función de la Res. N° 07-SGG-ST-2021 se acordó con el
                     Colegio de Ingenieros de San Luis la realización de una
-                    revisión técnica de todas las tirolesas de la provincia a
-                    fin de cumplir con lo establecido en la resolución
-                    mencionada. Dicha revisión incluyó los aspectos
-                    estructurales, de seguridad e higiene, habilitación
-                    comercial, seguro vigente y recomendaciones a futuro, si las
-                    hubiera, resultando aprobadas las siguientes:
+                    revisión técnica de las tirolesas de la provincia a fin de
+                    cumplir con lo establecido en la resolución mencionada.
+                    Dicha revisión incluyó los aspectos estructurales, de
+                    seguridad e higiene, habilitación comercial y seguro vigente
+                    resultando aprobadas las siguientes:
                   </span>
                 </div>
                 <div className="div2Tirolesa">
@@ -100,7 +99,7 @@ class Tirolesas extends Component {
                   <h5>Hace click para acceder a Google Maps:</h5>{" "}
                 </div>
               </div>
-              <br></br>       
+              <br></br>
               <CardCiudades data={this.state.data} tipo={this.state.tipo} />
             </div>
           </React.Fragment>

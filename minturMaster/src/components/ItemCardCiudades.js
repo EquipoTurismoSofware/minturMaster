@@ -160,19 +160,45 @@ class ItemCardCiudades extends Component {
                 {nov.nombre}
               </h4>
               <span className="pr-4 " style={{ textTransform: `capitalize` }}>
-                <i className="fas fa-map-marker"  style={{ color: `#722789` }} />
+                <i className="fas fa-map-marker" style={{ color: `#722789` }} />
                 &nbsp; Dirección: {nov.direccion}
               </span>
               <br />
               <span className="pr-4">
-                <i className="fas fa-user"  style={{ color: `#722789` }} />
+                <i className="fas fa-phone" style={{ color: `#722789` }} />
                 &nbsp; Tel./Cel.: {nov.telefono}
               </span>
               <br />
               {nov.web !== "" ? (
                 <span>
-                  <i class="fas fa-globe-americas"  style={{ color: `#722789` }} />
+                  <i
+                    class="fas fa-globe-americas"
+                    style={{ color: `#722789` }}
+                  />
                   &nbsp; {nov.web}
+                  <br />
+                </span>
+              ) : (
+                ""
+              )}
+              {nov.vencimiento !== "" ? (
+                <span>
+                  <i
+                    class="fas fa-solid fa-calendar-check"
+                    style={{ color: `#722789` }}
+                  />
+                  &nbsp; {nov.vencimiento}
+                  <br />
+                </span>
+              ) : (
+                ""
+              )} {nov.titular !== "" ? (
+                <span>
+                  <i
+                    class="fas fa-solid fa-user-check"
+                    style={{ color: `#722789` }}
+                  />
+                  &nbsp; {nov.titular}
                   <br />
                 </span>
               ) : (

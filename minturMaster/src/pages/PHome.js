@@ -57,10 +57,10 @@ class Home extends Component {
                   <span className="newsHome">
                     <Newsletter />
                   </span>
-                  {<PantallaModal />}
+                  {/*{<PantallaModal />}*/}
                   <SocialWidget />
                 </div>
-                <div className="pantallaChica2">{<PantallaModal />}</div>
+                {/*{ <div className="pantallaChica2">{<PantallaModal />}</div>*/}
               </center>
             </div>
             <TabSlider />
