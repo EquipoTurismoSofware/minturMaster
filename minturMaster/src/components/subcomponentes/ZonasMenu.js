@@ -212,7 +212,7 @@ const ZonaMenuDos = (props) => {
             </li>
             <li>
               <Link
-                to="/PParquesList"
+                to="/parques-provinciales"
                 className="link"
                 onClick={props.onZonaClick}
               >

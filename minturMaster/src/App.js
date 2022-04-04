@@ -175,7 +175,7 @@ class App extends Component {
               <Route exact path="/Recorridos" component={Recorridos} />
               <Route exact path="/PComer" component={PComer} />
               <Route exact path="/PServicios" component={PServicios} />
-              <Route exact path="/PParquesList" component={PParquesList} />
+              <Route exact path="/parques-provinciales" component={PParquesList} />
               <Route exact path="/PPermisoPesca" component={PPermisoPesca} />
               <Route exact path="/PCreerGnral" component={PCreerGnral} />
               <Route exact path="/Prueba" component={Prueba} />

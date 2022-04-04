@@ -1,3 +1,6 @@
+.logoParques {
+  width: 200px;
+}
 @mixin flexcenter {
   display: flex;
   justify-content: center;
@@ -119,8 +122,11 @@ $yellow: #feeb97;
   display: none;
 }
 
-@media only screen and (max-width: 510px) {
-  .pantallaGrandeGrid {
+@media only screen and (max-width: 510px) { 
+  .logoParques {
+    width: 350px;
+  }
+  .pantallaGrandeGrid {  
     display: inline;
     padding-left: 10px;
   }
