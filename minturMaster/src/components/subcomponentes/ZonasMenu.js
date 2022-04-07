@@ -212,7 +212,7 @@ const ZonaMenuDos = (props) => {
             </li>
             <li>
               <Link
-                to="/parques-provinciales"
+                to="/PParquesList"
                 className="link"
                 onClick={props.onZonaClick}
               >
@@ -418,15 +418,6 @@ const ZonaMenuTres = (props) => {
                 ACTIVIDAD PROFESIONAL GUÍAS DE TURISMO
               </Link>
             </li>
-            <li>
-              <Link
-                to="/RegistroAgenciasdeViajes"
-                className="link"
-                onClick={props.onZonaClick}
-              >
-                EXCURSIONES Y TOURS DE AGENCIAS DE VIAJES{" "}
-              </Link>
-            </li>
           </ul>
         </div>
       </div>
@@ -575,23 +566,16 @@ const ZonaMenuCinco = (props) => {
               </span>
             </li>
             <li>
-              <Link
-                to="/RegistroGuiasTurismo"
+              <a
+                type="_blank"
+                href="https://forms.gle/rQqFrLxpkZ4mZDYq5"
                 className="link"
                 onClick={props.onZonaClick}
               >
                 Registro ACTIVIDAD PROFESIONAL GUÍAS DE TURISMO
-              </Link>
+              </a>
             </li>
-            <li>
-              <Link
-                to="/RegistroAgenciasdeViajes"
-                className="link"
-                onClick={props.onZonaClick}
-              >
-                Registro EXCURSIONES Y TOURS DE AGENCIAS DE VIAJES
-              </Link>
-            </li>
+
             <li>
               <a
                 href="http://protocoloturismo.sanluis.gov.ar/"
