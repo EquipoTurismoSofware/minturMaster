@@ -748,7 +748,8 @@ font-weight: bold;
 .dropdown:hover .dropbtn {
 color: #000;
 }
-/* cambio de estilo del Navbar al scrollear*/
+
+/* cambio de estilo del Navbar al scrollear
 .scroll {
 position: fixed;
 min-height: 137px;
@@ -756,7 +757,8 @@ background-image: url("./utils/images/scrollNavbar.png");
 background-repeat: no-repeat;
 background-size: cover;
 background-position: center center;
-}
+}*/
+
 /*Logo class*/
 .img-brand{
 position: absolute;
@@ -772,26 +774,26 @@ opacity: 90%;
 
 /*Responsive navbar at 1280px*/
 @media screen and ( max-width:1280px){
-.bg-navbar{
-  position: fixed;
-  min-height: 137px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("./utils/images/scrollNavbar.png"); 
-  background-position: center center;
+   .bg-navbar{
+    position: fixed;
+    min-height: 137px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("./utils/images/scrollNavbar.png"); 
+    background-position: bottom;
+  }
+  .img-brand{
+    display: inline-block;
+    margin-top: -3%;
+    width: 160px;
+    margin-left: 4%;
+  }
 }
-.img-brand{
-  display: inline-block;
-  margin-top: -3%;
-  width: 160px;
-  margin-left: 4%;
-}
-}
-/* Altura dellos items del navbar*/
+/* Altura de los items del navbar*/
 .nav-container{
 margin-top: -2%;
 }
-
+/*Lista dinamica de localidades*/
 .ul-busqueda {
   background-color: #c42a59;
   width: 250px;

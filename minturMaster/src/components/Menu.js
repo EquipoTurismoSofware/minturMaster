@@ -4,6 +4,8 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Logo from "../utils/images/logo-san-luis.png"; //  src/images
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
 
 class Menu extends Component {
   constructor(props) {
@@ -39,6 +41,7 @@ class Menu extends Component {
   
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
+    
     //Lista de localodades
     fetch(`${process.env.REACT_APP_API}/ciudades`, {
       method: "GET",
@@ -107,21 +110,46 @@ class Menu extends Component {
     this.setState({lista:false,});
     
   }
+  
+  smallNavbar(){
+      document.getElementById("nav").style.position = "fixed";
+      document.getElementById("nav").style.minHeight = "137px";
+      document.getElementById("nav").style.backgroundImage = "url(" + "require(../utils/images/scrollNavbar.png)" + ")";
+      document.getElementById("nav").style.backgroundRepeat = "no-repeat";
+      document.getElementById("nav").style.backgroundSize = "cover";
+      document.getElementById("nav").style.backgroundPosition = "bottom";
 
-  handleScroll = () => {
-    if (window.scrollY > 50) {//Small Navbar 
-      document.querySelector(".bg-navbar").className = "navbar navbar-expand navbar-dark bg-navbar sticky-top scroll";
+      
       document.getElementById("logoscroll").style.display = "inline-block";
       document.getElementById("logoscroll").style.marginTop = "-3%";
       document.getElementById("logoscroll").style.width = "160px";
       document.getElementById("logoscroll").style.marginLeft = "4%";
+  }
 
-    } else {//Big Navbar
-      document.querySelector(".bg-navbar").className = "navbar navbar-expand navbar-dark bg-navbar sticky-top";
+  bigNavbar(){
+    document.getElementById("nav").style.backgroundImage = "url(" + "require(../utils/images/menu-img.png)" + ")";
+      document.getElementById("nav").style.minHeight = "198px";
+      document.getElementById("nav").style.position = "absolute";
+      document.getElementById("nav").style.top = "0";
+      document.getElementById("nav").style.width = "100%";
+
+
       document.getElementById("logoscroll").style.width = "367px";
       document.getElementById("logoscroll").style.marginTop = "0%";
       document.getElementById("logoscroll").style.marginLeft = "10%";
       document.getElementById("logoscroll").style.display = "inline-block";
+  }
+  handleScroll = () => {
+    if (window.scrollY > 50) {//Small Navbar 
+     this.smallNavbar();      
+    } 
+    else{//Big Navbar
+      if(window.innerWidth > 1280){
+        this.bigNavbar();
+      }
+      else{
+        this.smallNavbar();
+      }
     }
   };
 
@@ -261,6 +289,7 @@ class Menu extends Component {
   }
   
   render() {
+
     var cont = 0;
     var  localidad = "";
     const filtro = this.state.localidades.data.map((lf) => {
@@ -293,11 +322,10 @@ class Menu extends Component {
     return (
       <React.Fragment>     
         <Navbar
-          sticky="top"
           bg="navbar"
           variant="dark"
           id="nav"
-          collapseOnSelect
+          expand="lg"
         >
           <Navbar.Brand href="/" >
             <img
@@ -307,7 +335,7 @@ class Menu extends Component {
               className="img-brand"
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" data-bs-target="#responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav" className = "justify-content-end">
             <Nav className="ml-auto nav-container">
               <Nav.Link href="#sanluis">Acerca de San Luis</Nav.Link>
