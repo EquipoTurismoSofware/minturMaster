@@ -440,6 +440,7 @@ class Menu extends Component {
           <li
             value=""
             key={`lloc-${lf.id}`}
+            key={`lloc-${lf.id}`}
             className="linkBusqueda"
             ref={this.link}
             onClick={this.cambiar}
@@ -577,7 +578,6 @@ class Menu extends Component {
                     style={{ right: "50px" }}
                   />
                 </a>
-
                 <a
                   className="alink link-menu"
                   href="https://twitter.com/TurismoSanLuis_"
@@ -597,7 +597,6 @@ class Menu extends Component {
                 >
                   <i className="redes fab fa-instagram animated bounceInDown delay-2s" />
                 </a>
-
                 <Link
                   to="/"
                   className="link-menu  animated bounceInDown delay-2s"
@@ -634,6 +633,7 @@ class Menu extends Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
             onClick={() => this.closeMenu()}
+            className={`menu-visita-container${this.state.clase} animated fadeIn`} 
             onMouseLeave={(e) => this.closeMenu(e)}
             /*style={{background: "rgb(114,39,137)",
             background: "-moz-linear-gradient(left, rgba(114,39,137,1) 0%, rgba(237,15,104,0.8) 100%)",
