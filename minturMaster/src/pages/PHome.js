@@ -5,7 +5,8 @@ import Descarga from "../components/Descarga";
 import Novedades from "../components/Novedades";
 import { Link } from "react-router-dom";
 import ReactWOW from "react-wow";
-import Slider from "../components/SliderClean";
+import SliderActividades from "../components/SliderActividades";
+import Slider from "../components/Slider";
 import PantallaModal from "../components/subcomponentes/Modal";
 import Newsletter from "../components/subcomponentes/Newsletter";
 import Loading from "../utils/Loading";
@@ -69,6 +70,7 @@ class Home extends Component {
             <CardImperdibles />
             {/*<Recorridos />
              <EventoForm />*/}
+            <SliderActividades></SliderActividades>
             <Novedades time="10000" />
             <Descarga />
             <div className="Recorridos">

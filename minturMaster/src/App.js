@@ -5,10 +5,10 @@ import "./App.css";
 //import { BrowserRouter as Router, Route } from "react-router-dom";
 import PMapasRecorridos from "./pages/mapas/PMapasRecorridos";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
-import Menu from "./components/MenuOld";
+import Menu from "./components/Menu"; // MenuOld
 import ToTop from "./components/ToTop";
 import PListadoMapas from "./pages/mapas/PListadoMapas";
-import PHome from "./pages/PHome copy";
+import PHome from "./pages/PHome"; //PHome copy
 import PZona from "./pages/PZona";
 import PDesuscribir from "./pages/PDesuscribir";
 import PNovedades from "./pages/novedades/PNovedades";

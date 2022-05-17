@@ -23,6 +23,8 @@
 @import "include/modal";
 //Slider Home
 @import "include/slider_home";
+//Slider Actividades
+@import "include/sliderActividades";
 //Mapas
 @import "include/mapas";
 //Componente Recorridos.js
@@ -69,6 +71,7 @@
 
 //Componente Footer.js
 @import "include/footer";
+
 
 a:hover {
   color: inherit;
