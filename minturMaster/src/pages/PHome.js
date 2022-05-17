@@ -14,6 +14,7 @@ import TabSlider from "../components/subcomponentes/TabSlider";
 import CardImperdibles from "../components/CardImperdibles";
 import SocialWidget from "../components/SocialWidget";
 import WeatherCard from "../components/WeatherCard";
+import Producto from "../components/Producto";
 
 class Home extends Component {
   constructor(props) {
@@ -64,6 +65,15 @@ class Home extends Component {
                 {/*{ <div className="pantallaChica2">{<PantallaModal />}</div>*/}
               </center>
             </div>{" "}
+            <br />
+            <br />
+            <Producto />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             <br />
             <br />
             <TabSlider />

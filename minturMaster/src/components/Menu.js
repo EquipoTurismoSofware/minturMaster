@@ -27,9 +27,8 @@ class Menu extends Component {
         ],
         selected: 0,
       },
-     
     };
-    
+
     this.link = React.createRef();
     this.cambiar = this.cambiar.bind(this);
     this.handleBusquedaChange = this.handleBusquedaChange.bind(this);
@@ -38,10 +37,10 @@ class Menu extends Component {
     this.cancelBusqueda = this.cancelBusqueda.bind(this);
     this.closeLista = this.closeLista.bind(this);
   }
-  
+
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
-    
+
     //Lista de localodades
     fetch(`${process.env.REACT_APP_API}/ciudades`, {
       method: "GET",
@@ -63,27 +62,30 @@ class Menu extends Component {
               {
                 localidades: {
                   data: setX,
-                  selected: setX[0].id
+                  selected: setX[0].id,
                 },
               },
               () => {
                 this.handleFiltroClick(this.state.localidades.selected);
                 window.onscroll = () => {
-                  var menu = document.getElementById('nav');
-                  if(document.body.scrollTop > this.state.showAt || document.documentElement.scrollTop > this.state.showAt) {
-                      if(menu) {
-                        this.setState({
-                          clase: "sticky"
-                        })
-                      }
+                  var menu = document.getElementById("nav");
+                  if (
+                    document.body.scrollTop > this.state.showAt ||
+                    document.documentElement.scrollTop > this.state.showAt
+                  ) {
+                    if (menu) {
+                      this.setState({
+                        clase: "sticky",
+                      });
+                    }
                   } else {
-                      if(menu) {
-                        this.setState({
-                          clase: "Menu"
-                        })
-                      }
+                    if (menu) {
+                      this.setState({
+                        clase: "Menu",
+                      });
+                    }
                   }
-              };
+                };
               }
             );
           } else {
@@ -106,48 +108,49 @@ class Menu extends Component {
     window.removeEventListener("scroll", this.handleScroll);
   }
 
-  cancelBusqueda(){
-    this.setState({lista:false,});
-    
-  }
-  
-  smallNavbar(){
-      document.getElementById("nav").style.position = "fixed";
-      document.getElementById("nav").style.minHeight = "137px";
-      document.getElementById("nav").style.backgroundImage = "url(" + "require(../utils/images/scrollNavbar.png)" + ")";
-      document.getElementById("nav").style.backgroundRepeat = "no-repeat";
-      document.getElementById("nav").style.backgroundSize = "cover";
-      document.getElementById("nav").style.backgroundPosition = "bottom";
-
-      
-      document.getElementById("logoscroll").style.display = "inline-block";
-      document.getElementById("logoscroll").style.marginTop = "-3%";
-      document.getElementById("logoscroll").style.width = "160px";
-      document.getElementById("logoscroll").style.marginLeft = "4%";
+  cancelBusqueda() {
+    this.setState({ lista: false });
   }
 
-  bigNavbar(){
-    document.getElementById("nav").style.backgroundImage = "url(" + "require(../utils/images/menu-img.png)" + ")";
-      document.getElementById("nav").style.minHeight = "198px";
-      document.getElementById("nav").style.position = "absolute";
-      document.getElementById("nav").style.top = "0";
-      document.getElementById("nav").style.width = "100%";
+  smallNavbar() {
+    document.getElementById("nav").style.position = "fixed";
+    document.getElementById("nav").style.minHeight = "90px";
+    document.getElementById("nav").style.backgroundImage =
+      "url(" + "require(../utils/images/scrollNavbar.png)" + ")";
+    document.getElementById("nav").style.backgroundRepeat = "no-repeat";
+    document.getElementById("nav").style.backgroundSize = "cover";
+    document.getElementById("nav").style.backgroundPosition = "bottom";
+    document.getElementById("nav").style.top = "0px";
 
 
-      document.getElementById("logoscroll").style.width = "367px";
-      document.getElementById("logoscroll").style.marginTop = "0%";
-      document.getElementById("logoscroll").style.marginLeft = "10%";
-      document.getElementById("logoscroll").style.display = "inline-block";
+    document.getElementById("logoscroll").style.display = "inline-block";
+    document.getElementById("logoscroll").style.marginTop = "-2%";
+    document.getElementById("logoscroll").style.width = "190px";
+    document.getElementById("logoscroll").style.marginLeft = "4%";
+  }
+
+  bigNavbar() {
+    document.getElementById("nav").style.backgroundImage =
+      "url(" + "require(../utils/images/menu-img.png)" + ")";
+    document.getElementById("nav").style.minHeight = "108px";
+    document.getElementById("nav").style.position = "absolute";
+    document.getElementById("nav").style.top = "40px";
+    document.getElementById("nav").style.width = "100%";
+
+    document.getElementById("logoscroll").style.width = "267px";
+    document.getElementById("logoscroll").style.marginTop = "0%";
+    document.getElementById("logoscroll").style.marginLeft = "10%";
+    document.getElementById("logoscroll").style.display = "inline-block";
   }
   handleScroll = () => {
-    if (window.scrollY > 50) {//Small Navbar 
-     this.smallNavbar();      
-    } 
-    else{//Big Navbar
-      if(window.innerWidth > 1280){
+    if (window.scrollY > 50) {
+      //Small Navbar
+      this.smallNavbar();
+    } else {
+      //Big Navbar
+      if (window.innerWidth > 1280) {
         this.bigNavbar();
-      }
-      else{
+      } else {
         this.smallNavbar();
       }
     }
@@ -233,7 +236,6 @@ class Menu extends Component {
 
             e.style = "text-decoration-line: underline ; font-size: 18px;";
           });
-
         }
         if (true) {
           let select = document.getElementsByName(this.state.mov + 1);
@@ -246,18 +248,18 @@ class Menu extends Component {
     }
   }
 
-    setValueInput() {
+  setValueInput() {
     let text = document.getElementById("buscar");
 
     text.value = "";
   }
 
-  cambiar(){
-    this.setState({mostrar: "none"});
+  cambiar() {
+    this.setState({ mostrar: "none" });
     this.setValueInput();
   }
 
-  closeLista(){
+  closeLista() {
     this.setState({
       lista: false,
     });
@@ -287,14 +289,13 @@ class Menu extends Component {
       });
     });
   }
-  
-  render() {
 
+  render() {
     var cont = 0;
-    var  localidad = "";
+    var localidad = "";
     const filtro = this.state.localidades.data.map((lf) => {
       this.selectFirstElement();
-      if(lf.visible === true){
+      if (lf.visible === true) {
         return (
           <li
             value=""
@@ -318,16 +319,11 @@ class Menu extends Component {
         );
       }
     });
-    
+
     return (
-      <React.Fragment>     
-        <Navbar
-          bg="navbar"
-          variant="dark"
-          id="nav"
-          expand="lg"
-        >
-          <Navbar.Brand href="/" >
+      <React.Fragment>
+        <Navbar bg="navbar" variant="dark" id="nav" expand="lg">
+          <Navbar.Brand href="/">
             <img
               id="logoscroll"
               src={Logo}
@@ -335,11 +331,21 @@ class Menu extends Component {
               className="img-brand"
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" data-bs-target="#responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav" className = "justify-content-end">
+          <Navbar.Toggle
+            aria-controls="responsive-navbar-nav"
+            data-bs-target="#responsive-navbar-nav"
+          />
+          <Navbar.Collapse
+            id="responsive-navbar-nav"
+            className="justify-content-end"
+          >
             <Nav className="ml-auto nav-container">
               <Nav.Link href="#sanluis">Acerca de San Luis</Nav.Link>
-              <NavDropdown renderMenuOnMount={true} title="Tu mejor viaje" id="collasible-nav-dropdown">
+              <NavDropdown
+                renderMenuOnMount={true}
+                title="Tu mejor viaje"
+                id="collasible-nav-dropdown"
+              >
                 <NavDropdown.Item href="#action/3.1">
                   Top 3 destinos
                 </NavDropdown.Item>
@@ -358,18 +364,18 @@ class Menu extends Component {
               </NavDropdown>
               <Nav.Link href="#contacto">Contacto</Nav.Link>
               <div>
-              <input
-                onKeyDown={(e) => this.selectOption(e)}
-                id="buscar"
-                type="text"
-                placeholder="Buscá tu destino             &#9660;"
-                autoComplete="off"
-                className="buscador-destino buscador-icon"
-                value={this.state.filtro}
-                onChange={this.handleBusquedaChange}
-                onBlur={this.cancelBusqueda}
-              />
-              {this.state.lista ? (
+                <input
+                  onKeyDown={(e) => this.selectOption(e)}
+                  id="buscar"
+                  type="text"
+                  placeholder="Buscá tu destino             &#9660;"
+                  autoComplete="off"
+                  className="buscador-destino buscador-icon"
+                  value={this.state.filtro}
+                  onChange={this.handleBusquedaChange}
+                  onBlur={this.cancelBusqueda}
+                />
+                {this.state.lista ? (
                   <ul className="ul-busqueda ">{filtro}</ul>
                 ) : (
                   ""

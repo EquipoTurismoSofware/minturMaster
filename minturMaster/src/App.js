@@ -75,10 +75,11 @@ import PHalloweenMain from "./pages/Halloween/PHalloweenMain";
 import NotFound from "./components/NotFound";
 import EnConstruccion from "./components/PaginaEnConstruccion";
 import Tirolesas from "./pages/Tirolesas";
-
+import producto from "./components/Producto";
 import PMapas from "./pages/PMapas";
 import GastronomiaDosep from "./pages/gastronomia/GastronomiaDosep";
 import ListadoCensistas from "./pages/Censo/ListadoCensistas";
+import TopBar from "./components/Topbar";
 
 class App extends Component {
   render() {
@@ -86,6 +87,7 @@ class App extends Component {
       <Provider>
         <Router history={Router.hashHistory}>
           <React.Fragment>
+            <TopBar />
             <Menu />
             <Switch>
               <Route exact path="/" component={PHome} />

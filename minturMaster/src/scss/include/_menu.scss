@@ -2,10 +2,10 @@
     Componente Menu.js
 */
 
-.input{
+.input {
   z-index: 5;
   width: 0px;
- 
+
   outline: none;
   border: none;
   // border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -14,18 +14,17 @@
   text-shadow: 0 0 10px rgba(114, 39, 137, 1);
   padding: 0 80px 0 20px;
   border-radius: 40px;
-  box-shadow: 0 0 25px 0 rgba(114, 39, 137, 1),
-    0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px 0 rgba(114, 39, 137, 1), 0 20px 25px 0 rgba(0, 0, 0, 0.2);
   // box-shadow: inset 0 0 25px 0 rgba(0, 0, 0, 0.5);
   transition: all 1s;
-  
+
   font-weight: 500;
   letter-spacing: 0.1em;
   &:hover {
     cursor: pointer;
   }
   &:focus {
-    .listaBusqueda{
+    .listaBusqueda {
       background-color: $color-uno;
       width: 200px;
       max-height: auto;
@@ -41,19 +40,13 @@
       a {
         list-style: none;
         padding-left: 10px;
-    
       }
-
     }
     opacity: 1;
     cursor: text;
   }
 
-  
   &:focus ~ .search {
-    
- 
-
     background: #151515;
     z-index: 6;
     &::before {
@@ -79,21 +72,18 @@
   }
 }
 
-
-.linkBusqueda{
-list-style: none;
-color: white;
-a {
+.linkBusqueda {
+  list-style: none;
   color: white;
-  li {
-    
+  a {
     color: white;
-    &:hover{
-      font-size: 0%;
+    li {
+      color: white;
+      &:hover {
+        font-size: 0%;
+      }
     }
   }
-}
-
 }
 
 .listaBusqueda {
@@ -110,27 +100,25 @@ a {
   color: white;
   font-weight: 500;
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
-  li{
+  li {
     width: auto;
-    
-  padding-right: 5px;
+
+    padding-right: 5px;
   }
   a {
     list-style: none;
     display: inline-block;
-    
-
   }
 }
 .buscador {
-background-color: transparent;
-width: 160px;
-height: 30px;
-margin-top: 5px;
+  background-color: transparent;
+  width: 160px;
+  height: 30px;
+  margin-top: 5px;
 }
 .redes {
   margin-top: -10px;
-  clear:inherit;
+  clear: inherit;
   display: inline;
   margin-left: 8%;
   margin-right: 5%;
@@ -146,7 +134,7 @@ margin-top: 5px;
   }
 }
 
-.Menu{
+.Menu {
   @include degrado(0.6, 0.7);
   position: absolute;
   z-index: 99;
@@ -158,26 +146,25 @@ margin-top: 5px;
   height: 50px;
   padding: 0 5rem;
   color: #fff;
-  .linkHome{
+  .linkHome {
     display: inline;
   }
   .logoGob2 {
     display: none;
   }
 
-  ul{
+  ul {
     color: #fff;
   }
-  li{  
+  li {
     margin-top: 4px;
-    color: #fff;  
+    color: #fff;
     cursor: pointer;
-
   }
-  span{
+  span {
     color: #fff;
     font-weight: 500;
-    white-space: nowrap
+    white-space: nowrap;
   }
   .menu-visita-containerMenu {
     @include degrado(0.9, 0.8);
@@ -192,16 +179,15 @@ margin-top: 5px;
     z-index: 96;
     padding-top: 10px;
     .menu-visita {
-     // @include degrado(1, 0.8);
+      // @include degrado(1, 0.8);
       width: 100%;
       color: #fff;
       padding-top: 30px;
     }
-    
   }
 }
 
-.sticky { 
+.sticky {
   @include degrado(1, 1);
   width: 100%;
   top: 0;
@@ -217,24 +203,24 @@ margin-top: 5px;
   height: 50px;
   padding: 0 5rem;
   color: #fff;
-  .linkHome{
+  .linkHome {
     display: inline;
   }
   .logoGob2 {
     display: none;
   }
-  ul{
+  ul {
     color: #fff;
   }
-  li{
+  li {
     margin-top: 4px;
     color: #fff;
     cursor: pointer;
   }
-  span{
+  span {
     color: #fff;
     font-weight: 500;
-    white-space: nowrap
+    white-space: nowrap;
   }
   .menu-visita-containersticky {
     @include degrado(0.9, 0.8);
@@ -260,15 +246,15 @@ margin-top: 5px;
   }
 }
 
-.liLista{
-  &:hover{
-    text-decoration-line: underline ; 
+.liLista {
+  &:hover {
+    text-decoration-line: underline;
     font-size: 18px;
   }
 }
 
 @media only screen and (max-width: 1185px) {
-  .Menu{
+  .Menu {
     @include degrado(0.6, 0.7);
     position: absolute;
     z-index: 30;
@@ -276,18 +262,18 @@ margin-top: 5px;
     width: 100%;
     height: auto;
     margin-top: 45px;
-    .linkHome{
+    .linkHome {
       display: inline;
     }
-    .logoGob{
-     display: none;
+    .logoGob {
+      display: none;
     }
     .menu-visita-containerMenu {
       top: 45px;
     }
   }
 
-  .sticky{
+  .sticky {
     @include degrado(1, 1);
     position: fixed;
     z-index: 99;
@@ -295,17 +281,17 @@ margin-top: 5px;
     width: 100%;
     height: auto;
     margin-top: 0px;
-    .linkHome{
+    .linkHome {
       display: inline;
     }
-    .logoGob{
-     display: none;
+    .logoGob {
+      display: none;
     }
   }
 }
 
 @media only screen and (max-width: 992px) {
-  .Menu{
+  .Menu {
     //@include degrado(1, 1);
     @include degrado(0.6, 0.7);
     position: absolute;
@@ -314,33 +300,33 @@ margin-top: 5px;
     width: 100%;
     height: auto;
     margin-top: 45px;
-    .linkHome{
+    .linkHome {
       display: none;
     }
     .logoGob2 {
       display: inline;
-      margin-left: -60px ;
+      margin-left: -60px;
       img {
         height: 35px;
         width: 200px;
         opacity: 1 !important;
       }
     }
-    ul{
+    ul {
       color: #fff;
     }
-    li{
+    li {
       margin-top: 4px;
-      color: #fff;     
+      color: #fff;
       cursor: pointer;
     }
-    span{
+    span {
       text-decoration: none;
       color: #fff;
       font-weight: 500;
       text-transform: uppercase;
       cursor: pointer;
-      white-space: nowrap
+      white-space: nowrap;
     }
     .menu-visita-containerMenu {
       @include degrado(0.9, 0.8);
@@ -349,8 +335,8 @@ margin-top: 5px;
       margin-top: 189px;
       left: 0px;
       height: 270px;
-      overflow-y:scroll;
-      overflow-x:hidden;
+      overflow-y: scroll;
+      overflow-x: hidden;
       padding-bottom: 20px;
       width: 100%;
       display: flex;
@@ -364,7 +350,7 @@ margin-top: 5px;
       }
     }
   }
-  .sticky{
+  .sticky {
     //@include degrado(1, 1);
     @include degrado(1, 1);
     position: fixed;
@@ -373,39 +359,39 @@ margin-top: 5px;
     width: 100%;
     height: auto;
     margin-top: 0px;
-    .linkHome{
+    .linkHome {
       display: none;
     }
     .logoGob2 {
       display: inline;
-      margin-left: -60px ;
+      margin-left: -60px;
       img {
         height: 35px;
         width: 200px;
         opacity: 1 !important;
       }
     }
-    ul{
+    ul {
       color: #fff;
     }
-    li{
+    li {
       margin-top: 4px;
-      color: #fff;     
+      color: #fff;
       cursor: pointer;
     }
-    span{
+    span {
       text-decoration: none;
       color: #fff;
       font-weight: 500;
       text-transform: uppercase;
       cursor: pointer;
-      white-space: nowrap
+      white-space: nowrap;
     }
     .menu-visita-containersticky {
       @include degrado(0.9, 0.8);
       position: fixed;
-      overflow-y:scroll;
-      overflow-x:hidden;
+      overflow-y: scroll;
+      overflow-x: hidden;
       margin-top: 190px;
       left: 0px;
       height: 270px;
@@ -432,7 +418,7 @@ margin-top: 5px;
   cursor: pointer;
   &:hover {
     font-size: 1.1rem;
-  /*
+    /*
     color: $color-uno;
     font-weight: 600;
     text-shadow: 1px 1px 1px #FFFFFF;
@@ -440,7 +426,6 @@ margin-top: 5px;
   }
 }
 .containeres {
-
   display: inline;
   .search {
     position: relative;
@@ -453,10 +438,9 @@ margin-top: 5px;
     transition: all 1s;
     z-index: 4;
     box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
-  // box-shadow: 0 0 25px 0 crimson;
+    // box-shadow: 0 0 25px 0 crimson;
     &:hover {
       cursor: pointer;
-  
     }
     &::before {
       content: "";
@@ -515,7 +499,6 @@ margin-top: 5px;
     padding-inline-start: 0px;
     li {
       .link-menu {
-        
         display: flex;
         margin-bottom: -3%;
         margin-right: 20px;
@@ -538,8 +521,8 @@ margin-top: 5px;
 }
 
 .logo {
-top: 5px;
-right: 370px;
+  top: 5px;
+  right: 370px;
   img {
     width: 130px;
     opacity: 1 !important;
@@ -556,8 +539,8 @@ right: 370px;
   }
 }
 
-.home{
-  margin-top:1%;
+.home {
+  margin-top: 1%;
 }
 
 .redesMobile {
@@ -579,8 +562,8 @@ right: 370px;
   }
   .logo {
     right: 100px;
-      top: 50px;
-      
+    top: 50px;
+
     position: absolute;
 
     img {
@@ -633,12 +616,20 @@ right: 370px;
 }
 
 /*-------------Menu nueva estetica para probar ------------*/
+
+.topBar {
+  position: absolute;
+  top: 0;
+  z-index: 99;
+}
+
 /*Prueba css navbar*/
 
 .bg-navbar {
   background-position: center center;
   background-image: url("./utils/images/menu-img.png");
-  min-height: 198px;
+  min-height: 108px;
+  //max-height: 18px;
 
   /* Center and scale the image nicely */
   background-repeat: no-repeat;
@@ -646,20 +637,20 @@ right: 370px;
 
   /* Needed to position the navbar */
   position: absolute;
-  top: 0;
-  width:100%;
-  z-index:900;
-  
+  top: 40px;
+  width: 100%;
+  z-index: 90;
+
   /*Cambiar fuente desde el body*/
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
   text-align: center;
   font-size: 17px;
   font-weight: bold;
-
 }
 
-.nav-ul{
+.nav-ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -671,7 +662,7 @@ right: 370px;
   width: 100%;
 }
 
-.buscador-destino{
+.buscador-destino {
   background-color: transparent;
   width: 250px;
   height: 35px;
@@ -679,74 +670,74 @@ right: 370px;
   float: right;
   border-radius: 18px;
   font-size: 16px;
-  color:white;
+  color: white;
   font-weight: bold;
 }
 
-.buscador-icon{
-    padding-left: 35px;
-    background: url("./utils/images/search.png") no-repeat 5%;
-    background-size: 20px;
-  }
+.buscador-icon {
+  padding-left: 35px;
+  background: url("./utils/images/search.png") no-repeat 5%;
+  background-size: 20px;
+}
 
-.buscador-destino::placeholder { 
-  color: rgba(255,255,255,.5);
+.buscador-destino::placeholder {
+  color: rgba(255, 255, 255, 0.5);
   font-weight: bold;
 }
 
-  /* The container <div> - needed to position the dropdown content */
+/* The container <div> - needed to position the dropdown content */
 .dropdown {
-position: relative;
-float: right;
+  position: relative;
+  float: right;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-display: none;
-position: absolute;
-background-color: white;
-min-width: 160px;
-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-margin-top: 45px;
-border-radius: 10px;
-font-weight: normal;
-opacity: 0.75;
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  margin-top: 45px;
+  border-radius: 10px;
+  font-weight: normal;
+  opacity: 0.75;
 }
 
 .dropdown-content a {
-color: #a10d59;
-padding: 12px 16px;
-text-decoration: none;
-display: block;
-text-align: center;
-width: 100%;
+  color: #a10d59;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  width: 100%;
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-background-color: #f1f1f1;
-border-radius: 10px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
 }
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
-display: block;
+  display: block;
 }
 
 /* Style The Dropdown Button */
 .dropbtn {
-background-color: transparent;
-font-size: 17px;
-color: white;
-padding: 16px;
-border: none;
-cursor: pointer;
-font-weight: bold;
+  background-color: transparent;
+  font-size: 17px;
+  color: white;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-color: #000;
+  color: #000;
 }
 
 /* cambio de estilo del Navbar al scrollear
@@ -760,38 +751,38 @@ background-position: center center;
 }*/
 
 /*Logo class*/
-.img-brand{
-position: absolute;
-margin-top: 0%;
-margin-left: 10%;
+.img-brand {
+  position: absolute;
+  margin-top: 0%;
+  margin-left: 10%;
 }
 
 /* shows dropdown menu options from navbar */
 .nav-item.dropdown:hover .dropdown-menu {
-display: block;
-opacity: 90%;
+  display: block;
+  opacity: 90%;
 }
 
 /*Responsive navbar at 1280px*/
-@media screen and ( max-width:1280px){
-   .bg-navbar{
+@media screen and (max-width: 1280px) {
+  .bg-navbar {
     position: fixed;
     min-height: 137px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("./utils/images/scrollNavbar.png"); 
+    background-image: url("./utils/images/scrollNavbar.png");
     background-position: bottom;
   }
-  .img-brand{
+  .img-brand {
     display: inline-block;
     margin-top: -3%;
-    width: 160px;
+    width: 100px;
     margin-left: 4%;
   }
 }
 /* Altura de los items del navbar*/
-.nav-container{
-margin-top: -2%;
+.nav-container {
+  margin-top: -2%;
 }
 /*Lista dinamica de localidades*/
 .ul-busqueda {
