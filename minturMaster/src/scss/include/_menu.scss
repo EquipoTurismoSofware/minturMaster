@@ -616,6 +616,13 @@
 }
 
 /*-------------Menu nueva estetica para probar ------------*/
+
+.topBar {
+  position: absolute;
+  top: 0;
+  z-index: 99;
+}
+
 /*Prueba css navbar*/
 
 .bg-navbar {
@@ -630,9 +637,9 @@
 
   /* Needed to position the navbar */
   position: absolute;
-  top: 0;
+  top: 40px;
   width: 100%;
-  z-index: 900;
+  z-index: 90;
 
   /*Cambiar fuente desde el body*/
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,

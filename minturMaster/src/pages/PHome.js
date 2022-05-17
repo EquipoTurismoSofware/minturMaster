@@ -14,7 +14,6 @@ import CardImperdibles from "../components/CardImperdibles";
 import SocialWidget from "../components/SocialWidget";
 import WeatherCard from "../components/WeatherCard";
 import Producto from "../components/Producto";
-import Producto2 from "../components/Producto copy";
 
 class Home extends Component {
   constructor(props) {
@@ -72,7 +71,6 @@ class Home extends Component {
             <br />
             <br />
             <br />
-            <Producto2 />
             <br />
             <br />
             <br />

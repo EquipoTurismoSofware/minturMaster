@@ -120,9 +120,11 @@ class Menu extends Component {
     document.getElementById("nav").style.backgroundRepeat = "no-repeat";
     document.getElementById("nav").style.backgroundSize = "cover";
     document.getElementById("nav").style.backgroundPosition = "bottom";
+    document.getElementById("nav").style.top = "0px";
+
 
     document.getElementById("logoscroll").style.display = "inline-block";
-    document.getElementById("logoscroll").style.marginTop = "-3%";
+    document.getElementById("logoscroll").style.marginTop = "-2%";
     document.getElementById("logoscroll").style.width = "190px";
     document.getElementById("logoscroll").style.marginLeft = "4%";
   }
@@ -132,7 +134,7 @@ class Menu extends Component {
       "url(" + "require(../utils/images/menu-img.png)" + ")";
     document.getElementById("nav").style.minHeight = "108px";
     document.getElementById("nav").style.position = "absolute";
-    document.getElementById("nav").style.top = "0";
+    document.getElementById("nav").style.top = "40px";
     document.getElementById("nav").style.width = "100%";
 
     document.getElementById("logoscroll").style.width = "267px";
