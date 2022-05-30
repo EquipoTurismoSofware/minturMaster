@@ -126,20 +126,20 @@ class Menu extends Component {
     document.getElementById("logoscroll").style.display = "inline-block";
     document.getElementById("logoscroll").style.marginTop = "-2%";
     document.getElementById("logoscroll").style.width = "190px";
-    document.getElementById("logoscroll").style.marginLeft = "4%";
+    //document.getElementById("logoscroll").style.marginLeft = "20%";
   }
 
   bigNavbar() {
     document.getElementById("nav").style.backgroundImage =
       "url(" + "require(../utils/images/menu-img.png)" + ")";
-    document.getElementById("nav").style.minHeight = "108px";
+    document.getElementById("nav").style.minHeight = "140px";
     document.getElementById("nav").style.position = "absolute";
     document.getElementById("nav").style.top = "40px";
     document.getElementById("nav").style.width = "100%";
 
-    document.getElementById("logoscroll").style.width = "267px";
-    document.getElementById("logoscroll").style.marginTop = "0%";
-    document.getElementById("logoscroll").style.marginLeft = "10%";
+    document.getElementById("logoscroll").style.width = "240px";
+    document.getElementById("logoscroll").style.marginTop = "-2%";
+    //document.getElementById("logoscroll").style.marginLeft = "20%";
     document.getElementById("logoscroll").style.display = "inline-block";
   }
   handleScroll = () => {
@@ -148,7 +148,7 @@ class Menu extends Component {
       this.smallNavbar();
     } else {
       //Big Navbar
-      if (window.innerWidth > 1280) {
+      if (window.innerWidth > 350) {
         this.bigNavbar();
       } else {
         this.smallNavbar();
@@ -339,8 +339,9 @@ class Menu extends Component {
             id="responsive-navbar-nav"
             className="justify-content-end"
           >
-            <Nav className="ml-auto nav-container">
-              <Nav.Link href="#sanluis">Acerca de San Luis</Nav.Link>
+            <Nav className="nav-container navbar-center">
+              <Nav.Link href="#sanluis">Vení a San Luis</Nav.Link>
+              <div className="nav-space"></div>
               <NavDropdown
                 renderMenuOnMount={true}
                 title="Tu mejor viaje"
@@ -362,7 +363,9 @@ class Menu extends Component {
                   Gastronomía
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="#contacto">Contacto</Nav.Link>
+              <div className="nav-space"></div>
+              <Nav.Link href="#institucional">Institucional</Nav.Link>
+              <div className="nav-space"></div>
               <div>
                 <input
                   onKeyDown={(e) => this.selectOption(e)}

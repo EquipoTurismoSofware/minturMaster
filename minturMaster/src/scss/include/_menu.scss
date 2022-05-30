@@ -626,11 +626,11 @@
 /*Prueba css navbar*/
 
 .bg-navbar {
-  background-position: center center;
+  //background-position: center center;
+  background-position: bottom;
   background-image: url("./utils/images/menu-img.png");
-  min-height: 108px;
+  min-height: 140px;
   //max-height: 18px;
-
   /* Center and scale the image nicely */
   background-repeat: no-repeat;
   background-size: cover;
@@ -650,6 +650,17 @@
   font-weight: bold;
 }
 
+.navbar-center {
+  position: absolute;
+  left: 55%;
+  transform: translatex(-50%);
+}
+
+.nav-space{
+  width: 20px;
+  height: 1px;
+}
+
 .nav-ul {
   list-style-type: none;
   margin: 0;
@@ -663,15 +674,17 @@
 }
 
 .buscador-destino {
-  background-color: transparent;
-  width: 250px;
-  height: 35px;
-  margin: 5px;
+  width: 240px;
+  height: 40px;
   float: right;
   border-radius: 18px;
   font-size: 16px;
   color: white;
   font-weight: bold;
+}
+
+#buscar{
+  background-color: rgba(0,0,0,0.1);
 }
 
 .buscador-icon {
@@ -681,7 +694,7 @@
 }
 
 .buscador-destino::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: bold;
 }
 
@@ -753,8 +766,12 @@ background-position: center center;
 /*Logo class*/
 .img-brand {
   position: absolute;
-  margin-top: 0%;
-  margin-left: 10%;
+  margin-top: -2%;
+  //margin-left: 20%;
+  width: 240px;
+
+  left: 30%;
+  transform: translatex(-50%);
 }
 
 /* shows dropdown menu options from navbar */
@@ -762,27 +779,51 @@ background-position: center center;
   display: block;
   opacity: 90%;
 }
-
-/*Responsive navbar at 1280px*/
-@media screen and (max-width: 1280px) {
-  .bg-navbar {
-    position: fixed;
-    min-height: 137px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("./utils/images/scrollNavbar.png");
-    background-position: bottom;
+@media screen and (max-width: 990px){
+  #logoscroll{
+    left: 50%;
+    transform: translatex(-50%);
   }
+}
+/*Responsive navbar at 1280px*/
+@media screen and (max-width: 1300px) {
+  
   .img-brand {
     display: inline-block;
-    margin-top: -3%;
-    width: 100px;
-    margin-left: 4%;
+    width: 160px;
+    //margin-left: 4%;
+  }
+
+  .navbar-center {
+    left: 20%;
+    transform: translatex(-50%);
+  }
+
+
+}
+
+@media screen and (max-width: 1700px){
+  .img-brand {
+    left: 30%;
+   transform: translatex(-50%);
+  }
+
+  .navbar-center {
+    left: 60%;
+    transform: translatex(-50%);
+  }
+}
+
+@media screen and (max-width: 1600px){
+  .img-brand{
+    left: 20%;
+    transform: translatex(-50%);
+    transition: 0.3s;
   }
 }
 /* Altura de los items del navbar*/
 .nav-container {
-  margin-top: -2%;
+  white-space: nowrap;
 }
 /*Lista dinamica de localidades*/
 .ul-busqueda {
@@ -801,3 +842,4 @@ background-position: center center;
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
   opacity: 90%;
 }
+
