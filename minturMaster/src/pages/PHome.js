@@ -15,6 +15,7 @@ import CardImperdibles from "../components/CardImperdibles";
 import SocialWidget from "../components/SocialWidget";
 import WeatherCard from "../components/WeatherCard";
 import Producto from "../components/Producto";
+import SpeedDial from "../components/SpeedDial";
 
 class Home extends Component {
   constructor(props) {
@@ -59,8 +60,10 @@ class Home extends Component {
                   <span className="newsHome">
                     <Newsletter />
                   </span>
-                  {/*{<PantallaModal />}*/}
+                  {/*{<PantallaModal />}
                   <SocialWidget />
+                  */}
+                  <SpeedDial />
                 </div>
                 {/*{ <div className="pantallaChica2">{<PantallaModal />}</div>*/}
               </center>
