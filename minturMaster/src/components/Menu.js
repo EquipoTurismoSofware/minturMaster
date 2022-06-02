@@ -112,36 +112,40 @@ class Menu extends Component {
     this.setState({ lista: false });
   }
 
-  smallNavbar() {
-    document.getElementById("nav").style.position = "fixed";
+  smallNavbar() {//When user scrolls 
+    //if(window.width > 990){// When is a expanded menu
+      document.getElementById("nav").style.position = "fixed";
     document.getElementById("nav").style.minHeight = "90px";
     document.getElementById("nav").style.backgroundImage =
       "url(" + "require(../utils/images/scrollNavbar.png)" + ")";
     document.getElementById("nav").style.backgroundRepeat = "no-repeat";
     document.getElementById("nav").style.backgroundSize = "cover";
-    document.getElementById("nav").style.backgroundPosition = "bottom";
+    //document.getElementById("nav").style.backgroundPosition = "bottom";
     document.getElementById("nav").style.top = "0px";
-
 
     document.getElementById("logoscroll").style.display = "inline-block";
     document.getElementById("logoscroll").style.marginTop = "-2%";
     document.getElementById("logoscroll").style.width = "190px";
-    //document.getElementById("logoscroll").style.marginLeft = "20%";
+    // }
+    // else{//When is a burger menu
+
+    // }
   }
 
-  bigNavbar() {
+  bigNavbar() {// When user is on the top
+
+    document.getElementById("nav").style.position = "absolute";
+    document.getElementById("nav").style.minHeight = "140px";
     document.getElementById("nav").style.backgroundImage =
       "url(" + "require(../utils/images/menu-img.png)" + ")";
-    document.getElementById("nav").style.minHeight = "140px";
-    document.getElementById("nav").style.position = "absolute";
     document.getElementById("nav").style.top = "40px";
     document.getElementById("nav").style.width = "100%";
-
+    
     document.getElementById("logoscroll").style.width = "240px";
     document.getElementById("logoscroll").style.marginTop = "-2%";
-    //document.getElementById("logoscroll").style.marginLeft = "20%";
     document.getElementById("logoscroll").style.display = "inline-block";
   }
+
   handleScroll = () => {
     if (window.scrollY > 50) {
       //Small Navbar
@@ -337,7 +341,6 @@ class Menu extends Component {
           />
           <Navbar.Collapse
             id="responsive-navbar-nav"
-            className="justify-content-end"
           >
             <Nav className="nav-container navbar-center">
               <Nav.Link href="#sanluis">Vení a San Luis</Nav.Link>
@@ -366,7 +369,7 @@ class Menu extends Component {
               <div className="nav-space"></div>
               <Nav.Link href="#institucional">Institucional</Nav.Link>
               <div className="nav-space"></div>
-              <div>
+              <div className="buscador-container">
                 <input
                   onKeyDown={(e) => this.selectOption(e)}
                   id="buscar"

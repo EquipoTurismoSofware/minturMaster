@@ -73,6 +73,8 @@
 }
 
 .linkBusqueda {
+  overflow-x: hidden;
+  margin: 0;
   list-style: none;
   color: white;
   a {
@@ -620,17 +622,13 @@
 .topBar {
   position: absolute;
   top: 0;
-  z-index: 99;
+  z-index: 100;
 }
 
-/*Prueba css navbar*/
-
 .bg-navbar {
-  //background-position: center center;
   background-position: bottom;
   background-image: url("./utils/images/menu-img.png");
   min-height: 140px;
-  //max-height: 18px;
   /* Center and scale the image nicely */
   background-repeat: no-repeat;
   background-size: cover;
@@ -639,7 +637,7 @@
   position: absolute;
   top: 40px;
   width: 100%;
-  z-index: 90;
+  z-index: 99;
 
   /*Cambiar fuente desde el body*/
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -767,7 +765,6 @@ background-position: center center;
 .img-brand {
   position: absolute;
   margin-top: -2%;
-  //margin-left: 20%;
   width: 240px;
 
   left: 30%;
@@ -779,51 +776,12 @@ background-position: center center;
   display: block;
   opacity: 90%;
 }
-@media screen and (max-width: 990px){
-  #logoscroll{
-    left: 50%;
-    transform: translatex(-50%);
-  }
-}
-/*Responsive navbar at 1280px*/
-@media screen and (max-width: 1300px) {
-  
-  .img-brand {
-    display: inline-block;
-    width: 160px;
-    //margin-left: 4%;
-  }
 
-  .navbar-center {
-    left: 20%;
-    transform: translatex(-50%);
-  }
-
-
-}
-
-@media screen and (max-width: 1700px){
-  .img-brand {
-    left: 30%;
-   transform: translatex(-50%);
-  }
-
-  .navbar-center {
-    left: 60%;
-    transform: translatex(-50%);
-  }
-}
-
-@media screen and (max-width: 1600px){
-  .img-brand{
-    left: 20%;
-    transform: translatex(-50%);
-    transition: 0.3s;
-  }
-}
 /* Altura de los items del navbar*/
 .nav-container {
   white-space: nowrap;
+  margin: 3% 0;
+  float: right;
 }
 /*Lista dinamica de localidades*/
 .ul-busqueda {
@@ -842,4 +800,49 @@ background-position: center center;
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
   opacity: 90%;
 }
+
+/* Responsive querys */
+@media screen and (max-width: 991px){
+  #logoscroll{
+    left: 50%;
+    transform: translatex(-50%);
+    margin-top: -2%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .img-brand {
+    display: inline-block;
+    width: 160px;
+    //margin-left: 4%;
+  }
+
+  .navbar-center {
+    left: 20%;
+    transform: translatex(-50%);
+  }
+}
+
+@media screen and (max-width: 1600px){
+  .img-brand{
+    left: 20%;
+    transform: translatex(-50%);
+    transition: 0.3s;
+  }
+}
+
+@media screen and (max-width: 1700px){
+  .img-brand {
+    left: 30%;
+   transform: translatex(-50%);
+  }
+
+  .navbar-center {
+    left: 60%;
+    transform: translatex(-50%);
+  }
+}
+
+
+
 
