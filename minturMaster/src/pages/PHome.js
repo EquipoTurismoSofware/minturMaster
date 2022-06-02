@@ -6,16 +6,16 @@ import Novedades from "../components/Novedades";
 import { Link } from "react-router-dom";
 import ReactWOW from "react-wow";
 import SliderActividades from "../components/SliderActividades";
-import Slider from "../components/Slider";
+import Slider from "../components/SliderClean";
 import PantallaModal from "../components/subcomponentes/Modal";
 import Newsletter from "../components/subcomponentes/Newsletter";
 import Loading from "../utils/Loading";
 import TabSlider from "../components/subcomponentes/TabSlider";
 import CardImperdibles from "../components/CardImperdibles";
-import SocialWidget from "../components/SocialWidget";
+import SpeedDial from "../components/SocialWidget";
 import WeatherCard from "../components/WeatherCard";
 import Producto from "../components/Producto";
-import SpeedDial from "../components/SpeedDial";
+import SpeedDial2 from "../components/SpeedDial";
 
 class Home extends Component {
   constructor(props) {

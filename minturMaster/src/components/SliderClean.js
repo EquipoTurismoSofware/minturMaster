@@ -15,7 +15,7 @@ class Slider extends Component {
         <div>
           <div className="cuerpoSlider">
             <div className="mancha"></div>
-            <div className="slider2">
+            <div className="sliderHome">
               <input
                 name="input-slider"
                 id="input-slide-0"
