@@ -24,6 +24,9 @@ class PNovedad extends Component {
         descripcionHTML: "",
         foto_uno: "default.jpg",
         foto_dos: "default.jpg",
+        foto_tres:"default.jpg",
+        foto_cuatro:"default.jpg",
+        foto_cinco:"default.jpg"
       },
       img: {
         visible: false,
@@ -140,6 +143,51 @@ class PNovedad extends Component {
                             this.clickImg(
                               true,
                               `${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_dos}`
+                            )
+                          }
+                        />
+                      ) : (
+                        ""
+                      )}
+                      {this.state.data.foto_tres !== "default.jpg" ? (
+                        <img
+                          className="img-fluid"
+                          src={`${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_tres}`}
+                          alt="Img"
+                          onClick={(e) =>
+                            this.clickImg(
+                              true,
+                              `${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_tres}`
+                            )
+                          }
+                        />
+                      ) : (
+                        ""
+                      )}
+                       {this.state.data.foto_cuatro !== "default.jpg" ? (
+                        <img
+                          className="img-fluid"
+                          src={`${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_cuatro}`}
+                          alt="Img"
+                          onClick={(e) =>
+                            this.clickImg(
+                              true,
+                              `${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_cuatro}`
+                            )
+                          }
+                        />
+                      ) : (
+                        ""
+                      )}
+                       {this.state.data.foto_cinco !== "default.jpg" ? (
+                        <img
+                          className="img-fluid"
+                          src={`${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_cinco}`}
+                          alt="Img"
+                          onClick={(e) =>
+                            this.clickImg(
+                              true,
+                              `${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_cinco}`
                             )
                           }
                         />
