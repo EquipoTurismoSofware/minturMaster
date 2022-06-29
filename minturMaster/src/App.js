@@ -12,6 +12,8 @@ import PHome from "./pages/PHome"; //PHome copy
 import PZona from "./pages/PZona";
 import PDesuscribir from "./pages/PDesuscribir";
 import PNovedades from "./pages/novedades/PNovedades";
+import PArboles from "./pages/arboles/PArboles";
+import PArbol from "./pages/arboles/PArbol";
 import PNovedad from "./pages/novedades/PNovedad";
 import PLocalidad from "./pages/PLocalidad";
 import ListadoGuiasAgenciasCovid from "./pages/variosmenu/ListadoGuiasAgenciasCovid";
@@ -93,6 +95,8 @@ class App extends Component {
               <Route exact path="/" component={PHome} />
               <Route exact path="/novedades" component={PNovedades} />
               <Route exact path="/novedad/:id" component={PNovedad} />
+              <Route exact path="/arboles" component={PArboles} />
+              <Route exact path="/arbol/:id" component={PArbol} />
               <Route exact path="/zona/:id" component={PZona} />
               <Route exact path="/localidad/:id" component={PLocalidad} />
               <Route exact path="/atractivo/:id" component={PAtractivo} />
