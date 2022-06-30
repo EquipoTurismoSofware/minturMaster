@@ -65,7 +65,7 @@ const Arbolesfull = () => {
         <React.Fragment>
             {
                 <div>
-                    <div className="container Novedadesfull">
+                    <div className="container Arbolesfull">
                         <div className="nf-titulo">
                             <span>ARBOLES</span>
                         </div>
@@ -78,18 +78,18 @@ const Arbolesfull = () => {
                                 return(
                                     <div key={`nov-f-${arb.id}`} className="row mb-5">
                                         <div className="col">
-                                            <div className="novedad-full-item">
+                                            <div className="arbol-full-item">
                                                 <div className="imagen">
                                                     <span style={{background: "linear-gradient(to right, #722789 0%, #ed0f68 100%);"}}> {arb.nombre_popular}</span>
                                                     <img className="img-fluid" src={`${process.env.REACT_APP_API_RECURSOS}/recursos/arboles/${arb.foto_uno}`} alt="Img" />
                                                 </div>
                                                 <div className="titulo" style={{background: "linear-gradient(to right, #722789 0%, #ed0f68 100%);"}}>
-                                                    <h3>{arb.nombre_cientifico}</h3>
-                                                    <h3>{arb.nombre_popular}</h3>
+                                                    <h3 id="nombre-cientifico">{arb.nombre_cientifico}</h3>
+                                                    <h3 className='nombre-popular'>{arb.nombre_popular}</h3>
                                                 </div>
                                                 <div className="body">
                                                     <p className="text-dark mb-2">{descripcion}</p>
-                                                    <Link to={`/arbol/${arb.id}`}><span className="btn-novedades">Leer <i className="fas fa-arrow-right"></i></span></Link>
+                                                    <Link to={`/arbol/${arb.id}`}><span className="btn-arboles">Leer <i className="fas fa-arrow-right"></i></span></Link>
                                                 </div>
                                             </div>
                                         </div>

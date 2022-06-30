@@ -107,17 +107,17 @@ class PArbol extends Component {
                 <meta property="og:description" content={descripcion} />
                 <meta property="og:image" content={image} />
               </Helmet>*/}
-            <div className="container PNovedad">
+            <div className="container PArbol">
               <div className="n-titulo">
                 <span>
-                  {this.state.data.nombre_popular} - {this.state.data.nombre_cientifico}
+                  {this.state.data.nombre_popular} - <i>{this.state.data.nombre_cientifico}</i>
                 </span>
               </div>
             </div>
             <div className="container">
               <div className="row mb-5">
                 <div className="col">
-                  <div className="novedad-item">
+                  <div className="arbol-item">
                     <div className="imagen">
                       <img
                         className="img-fluid"
@@ -152,7 +152,7 @@ class PArbol extends Component {
                     >
                       <h3>{this.state.data.nombre_popular}</h3>
 
-                      <h3>{this.state.data.nombre_cientifico}</h3>
+                      <h3><i>{this.state.data.nombre_cientifico}</i></h3>
                     </div>
                     {this.state.data.descripcionHTML != "" ? (
                       <div className="body">
