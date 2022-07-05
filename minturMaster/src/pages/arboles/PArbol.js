@@ -145,6 +145,36 @@ class PArbol extends Component {
                       ) : (
                         ""
                       )}
+                       {this.state.data.foto_tres !== "default.jpg" ? (
+                        <img
+                          className="img-fluid"
+                          src={`${process.env.REACT_APP_API_RECURSOS}/recursos/arboles/${this.state.data.foto_tres}`}
+                          alt="Img"
+                          onClick={(e) =>
+                            this.clickImg(
+                              true,
+                              `${process.env.REACT_APP_API_RECURSOS}/recursos/arboles/${this.state.data.foto_tres}`
+                            )
+                          }
+                        />
+                      ) : (
+                        ""
+                      )}
+                       {this.state.data.foto_cuatro !== "default.jpg" ? (
+                        <img
+                          className="img-fluid"
+                          src={`${process.env.REACT_APP_API_RECURSOS}/recursos/arboles/${this.state.data.foto_cuatro}`}
+                          alt="Img"
+                          onClick={(e) =>
+                            this.clickImg(
+                              true,
+                              `${process.env.REACT_APP_API_RECURSOS}/recursos/arboles/${this.state.data.foto_cuatro}`
+                            )
+                          }
+                        />
+                      ) : (
+                        ""
+                      )}
                     </div>
                     <div
                       className="titulo"
