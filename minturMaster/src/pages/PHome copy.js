@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Recorridos from "../components/Recorridos";
-//import EventoForm from "../components/EventoForm";
+import EventoForm from "../components/EventoForm";
 import Descarga from "../components/Descarga";
 import Novedades from "../components/Novedades";
 import { Link } from "react-router-dom";
@@ -147,7 +147,7 @@ class Home extends Component {
             <div className="menu-y-slider ">
               <Slider></Slider>
 
-              <center>
+              {/* <center>
                 <div className="pantallaGrande">
                   <span className="newsHome">
                     <Newsletter />
@@ -157,7 +157,7 @@ class Home extends Component {
                 </div>
                 <div className="pantallaChica2">{<PantallaModal />}</div>
               </center>
-              {/*
+           
                <div
                 id="carouselExampleIndicators"
                 className="carousel slide"

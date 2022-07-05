@@ -66,7 +66,7 @@ body {
 .player .song .song__title {
   text-align: left;
   margin: 0;
-  color: #1ce42d;
+  color: rgb(28, 228, 45);
   font-family: "Jolly Lodger";
   font-weight: normal;
   font-size: 4em;
@@ -109,7 +109,7 @@ body {
 }
 .player .player__button i {
   font-size: 3.5em;
-  color: #1ce42d;
+  color: rgb(28, 228, 45);
 }
 .player .bar {
   user-select: none;
@@ -137,7 +137,7 @@ body {
   bottom: 0px;
   border: 1.5px solid white;
   border-radius: 50%;
-  background-color: #16ac22;
+  background-color: rgb(22, 172, 34);
 }
 @media screen and (max-width: 992px) {
   .player {
@@ -189,7 +189,7 @@ body {
 }
 .material-card-hallo .hallo-mc-content .hallo-mc-title li {
   list-style-type: none;
-  background: linear-gradient(to right, #49005f 10%, #ff000d 100%);
+  background: linear-gradient(to right, rgb(73, 0, 95) 10%, rgb(255, 0, 13) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -248,7 +248,7 @@ body {
   font-size: 7rem;
   line-height: 80px;
   font-family: "Jolly Lodger";
-  color: #1ce42d;
+  color: rgb(28, 228, 45);
 }
 .Main-Halloween .Subtitulo-Halloween {
   position: relative;
@@ -420,7 +420,7 @@ body {
   transition: all 1.5s;
 }
 .Viewer .pagesBullets ul li.selected {
-  background-color: #8d0a3e;
+  background-color: rgb(141, 10, 62);
   color: white;
 }
 .Viewer .pages {
@@ -447,13 +447,13 @@ body {
   min-width: 30px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  background-color: #ed0f68;
+  background-color: rgb(237, 15, 104);
   color: white;
   cursor: pointer;
   transition: all 1.5s;
 }
 .Viewer .pages ul li.selected {
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   color: white;
 }
 .Viewer .btn-left,
@@ -500,13 +500,13 @@ body {
   min-width: 30px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  background-color: #ed0f68;
+  background-color: rgb(237, 15, 104);
   color: white;
   cursor: pointer;
   transition: all 1.5s;
 }
 .ViewerListados .pages ul li.selected {
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   color: white;
 }
 .ViewerListados .btn-left,
@@ -911,7 +911,7 @@ body {
 .tituloImperdibles .imp-t-sub2 {
   font-size: 2em;
   padding: 2px 15px;
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   color: #fff;
   text-transform: uppercase;
 }
@@ -1244,7 +1244,7 @@ body {
   margin: 10px 0 10px 20px;
   font-size: 2em;
   padding: 2px 15px;
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   color: #fff;
   text-transform: uppercase;
 }
@@ -1254,7 +1254,7 @@ body {
   margin: 0 20px 0 20px;
 }
 .est-main .est-titulo {
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   display: block;
   width: 100%;
   top: 10px;
@@ -1284,7 +1284,7 @@ body {
 .sub-chart-wrapper .sub-chart-wrapper-titulo {
   font-size: 1.3em;
   padding: 2px 15px;
-  background-color: #ed0f68;
+  background-color: rgb(237, 15, 104);
   color: #fff;
   text-transform: uppercase;
 }
@@ -1292,7 +1292,7 @@ body {
   font-size: 1.3em;
   padding: 2px 15px;
   margin-bottom: 15px;
-  background-color: #ed0f68;
+  background-color: rgb(237, 15, 104);
   color: #fff;
   text-transform: uppercase;
 }
@@ -1311,12 +1311,12 @@ body {
   width: 0px;
   outline: none;
   border: none;
-  background: #722789;
+  background: rgb(114, 39, 137);
   color: white;
-  text-shadow: 0 0 10px #722789;
+  text-shadow: 0 0 10px rgb(114, 39, 137);
   padding: 0 80px 0 20px;
   border-radius: 40px;
-  box-shadow: 0 0 25px 0 #722789, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px 0 rgb(114, 39, 137), 0 20px 25px 0 rgba(0, 0, 0, 0.2);
   transition: all 1s;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -1329,7 +1329,7 @@ body {
   cursor: text;
 }
 .input:focus .listaBusqueda {
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   width: 200px;
   max-height: auto;
   overflow: auto;
@@ -1386,7 +1386,7 @@ body {
 }
 
 .listaBusqueda {
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   width: 200px;
   max-height: auto;
   overflow: auto;
@@ -1434,7 +1434,7 @@ body {
 }
 
 .Menu {
-  background: #722789;
+  background: rgb(114, 39, 137);
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
@@ -1470,7 +1470,7 @@ body {
   white-space: nowrap;
 }
 .Menu .menu-visita-containerMenu {
-  background: #722789;
+  background: rgb(114, 39, 137);
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -1493,10 +1493,10 @@ body {
 }
 
 .sticky {
-  background: #722789;
-  background: -moz-linear-gradient(left, #722789 0%, #ed0f68 100%);
-  background: -webkit-linear-gradient(left, #722789 0%, #ed0f68 100%);
-  background: linear-gradient(to right, #722789 0%, #ed0f68 100%);
+  background: rgb(114, 39, 137);
+  background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+  background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+  background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
   width: 100%;
   top: 0;
@@ -1533,7 +1533,7 @@ body {
   white-space: nowrap;
 }
 .sticky .menu-visita-containersticky {
-  background: #722789;
+  background: rgb(114, 39, 137);
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -1565,7 +1565,7 @@ body {
 
 @media only screen and (max-width: 1185px) {
   .Menu {
-    background: #722789;
+    background: rgb(114, 39, 137);
     background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
     background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
     background: linear-gradient(to right, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
@@ -1588,10 +1588,10 @@ body {
   }
 
   .sticky {
-    background: #722789;
-    background: -moz-linear-gradient(left, #722789 0%, #ed0f68 100%);
-    background: -webkit-linear-gradient(left, #722789 0%, #ed0f68 100%);
-    background: linear-gradient(to right, #722789 0%, #ed0f68 100%);
+    background: rgb(114, 39, 137);
+    background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+    background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+    background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
     position: fixed;
     z-index: 99;
@@ -1609,7 +1609,7 @@ body {
 }
 @media only screen and (max-width: 992px) {
   .Menu {
-    background: #722789;
+    background: rgb(114, 39, 137);
     background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
     background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
     background: linear-gradient(to right, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
@@ -1650,7 +1650,7 @@ body {
     white-space: nowrap;
   }
   .Menu .menu-visita-containerMenu {
-    background: #722789;
+    background: rgb(114, 39, 137);
     background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
     background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
     background: linear-gradient(to right, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -1676,10 +1676,10 @@ body {
   }
 
   .sticky {
-    background: #722789;
-    background: -moz-linear-gradient(left, #722789 0%, #ed0f68 100%);
-    background: -webkit-linear-gradient(left, #722789 0%, #ed0f68 100%);
-    background: linear-gradient(to right, #722789 0%, #ed0f68 100%);
+    background: rgb(114, 39, 137);
+    background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+    background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+    background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
     position: fixed;
     z-index: 99;
@@ -1717,7 +1717,7 @@ body {
     white-space: nowrap;
   }
   .sticky .menu-visita-containersticky {
-    background: #722789;
+    background: rgb(114, 39, 137);
     background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
     background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
     background: linear-gradient(to right, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -1766,7 +1766,7 @@ body {
   margin-left: 135px;
   width: 33px;
   height: 33px;
-  background: #ed0f68;
+  background: rgb(237, 15, 104);
   border-radius: 50%;
   transition: all 1s;
   z-index: 4;
@@ -1811,7 +1811,7 @@ body {
   left: 0;
   width: 100%;
   height: 50px;
-  background: #722789;
+  background: rgb(114, 39, 137);
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
@@ -2132,7 +2132,7 @@ body {
   position: absolute;
   top: 10px;
   right: 10px;
-  color: #ed0f68;
+  color: rgb(237, 15, 104);
   cursor: pointer;
 }
 #modalMain-container .modalMain-background .modalMain .closeModal i {
@@ -2340,7 +2340,7 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
-    color: #ed0f68;
+    color: rgb(237, 15, 104);
     cursor: pointer;
   }
   #modalMain-container .modalMain-background .modalMain .closeModal i {
@@ -2788,7 +2788,7 @@ body {
 
 .titulo-mapas {
   margin-top: 110px;
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   height: 50px;
   position: relative;
   margin-bottom: 50px;
@@ -2799,7 +2799,7 @@ body {
   top: 10px;
   left: 25px;
   background-color: #fff;
-  color: #722789;
+  color: rgb(114, 39, 137);
   font-size: 3rem;
   line-height: 3rem;
   font-weight: 800;
@@ -2861,7 +2861,7 @@ body {
     font-size: 2em;
     bottom: 40px;
     padding: 2px 40px;
-    background-color: #722789;
+    background-color: rgb(114, 39, 137);
     color: #fff;
     text-transform: uppercase;
     margin-left: 40%;
@@ -3023,7 +3023,7 @@ body {
   font-weight: 700;
   letter-spacing: 5px;
   padding-top: 10px;
-  color: #ed0f68;
+  color: rgb(237, 15, 104);
   padding-bottom: 5px;
   text-transform: uppercase;
 }
@@ -3044,14 +3044,14 @@ body {
 }
 .Recorridos .titulo-creer .reco-t-sub1 {
   font-size: 3em;
-  color: #722789;
+  color: rgb(114, 39, 137);
   text-transform: capitalize;
   font-weight: 600;
 }
 .Recorridos .titulo-creer .reco-t-sub2 {
   font-size: 2em;
   padding: 2px 15px;
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   color: #fff;
   text-transform: uppercase;
 }
@@ -3097,14 +3097,14 @@ body {
 }
 .Recorridos .reco-titulo .reco-t-sub1 {
   font-size: 3em;
-  color: #722789;
+  color: rgb(114, 39, 137);
   text-transform: capitalize;
   font-weight: 600;
 }
 .Recorridos .reco-titulo .reco-t-sub2 {
   font-size: 2em;
   padding: 2px 15px;
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   color: #fff;
   text-transform: uppercase;
 }
@@ -3730,8 +3730,8 @@ body {
 }
 
 .archivosApp {
-  background-color: #ed0f68;
-  background: #f5b719;
+  background-color: rgb(237, 15, 104);
+  background: rgb(245, 183, 25);
   background: -moz-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: linear-gradient(to right, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
@@ -3770,8 +3770,8 @@ body {
 }
 
 .Descarga {
-  background-color: #ed0f68;
-  background: #f5b719;
+  background-color: rgb(237, 15, 104);
+  background: rgb(245, 183, 25);
   background: -moz-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: linear-gradient(to right, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
@@ -4151,7 +4151,7 @@ body {
 .iconSlider i {
   margin-top: 7px;
   font-size: 30px;
-  color: #cc0e5a;
+  color: rgb(204, 14, 90);
 }
 .iconSlider:hover i {
   margin-top: 15px;
@@ -4181,7 +4181,7 @@ nav.link-list a {
   transition: background-color 0.5s ease;
 }
 nav.link-list a.is-active {
-  background-color: #cc0e5a;
+  background-color: rgb(204, 14, 90);
 }
 
 nav.btns {
@@ -4215,7 +4215,7 @@ nav.btns button:before {
   height: 44px;
   top: 0;
   left: 0;
-  border: 2px solid #cc0e5a;
+  border: 2px solid rgb(204, 14, 90);
   border-radius: 50%;
   opacity: 0;
   transition: all 0.5s ease;
@@ -4225,7 +4225,7 @@ nav.btns button span {
   transition: opacity 0.2s ease;
 }
 nav.btns button:hover {
-  background-color: #cc0e5a;
+  background-color: rgb(204, 14, 90);
   width: 64px;
   height: 64px;
   transform: translateY(-10px);
@@ -4350,7 +4350,7 @@ footer a {
   left: 0px;
   width: 100%;
   display: block;
-  background: #722789;
+  background: rgb(114, 39, 137);
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -4369,7 +4369,7 @@ footer a {
   left: 0x;
   width: 100%;
   display: block;
-  background: #722789;
+  background: rgb(114, 39, 137);
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -4388,7 +4388,7 @@ footer a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   transform-origin: top;
   transition: 0.5s;
   box-sizing: border-box;
@@ -4400,7 +4400,7 @@ footer a {
   left: 0px;
   width: 100%;
   display: block;
-  background: #722789;
+  background: rgb(114, 39, 137);
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -4449,9 +4449,9 @@ footer a {
 .EventoForm {
   height: 900px;
   width: 100%;
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   position: relative;
-  background: #f5b719;
+  background: rgb(245, 183, 25);
   background: -moz-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: linear-gradient(to right, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
@@ -4499,7 +4499,7 @@ footer a {
   margin-bottom: 10px;
   cursor: pointer;
   text-decoration: none;
-  color: #722789;
+  color: rgb(114, 39, 137);
   align-content: center;
   text-align: center;
   width: 100;
@@ -4559,7 +4559,7 @@ footer a {
   margin-bottom: 100px;
   cursor: pointer;
   text-decoration: none;
-  color: #722789;
+  color: rgb(114, 39, 137);
   align-content: center;
   text-align: center;
   width: 100px;
@@ -4668,7 +4668,7 @@ footer a {
     width: 90%;
     cursor: pointer;
     text-decoration: none;
-    color: #722789;
+    color: rgb(114, 39, 137);
   }
   .EventoForm .body-left .bl-button span {
     font-size: 1.7rem;
@@ -4678,7 +4678,7 @@ footer a {
     margin-top: 30px;
   }
   .EventoForm .body-left .bl-button svg .icon {
-    fill: #722789;
+    fill: rgb(114, 39, 137);
   }
   .EventoForm .body-left .bl-img {
     width: 250px;
@@ -4880,7 +4880,7 @@ h3.bgc_4 {
   margin-bottom: 5px;
 }
 .evento-data li i {
-  color: #722789;
+  color: rgb(114, 39, 137);
 }
 
 /*
@@ -4890,7 +4890,7 @@ h3.bgc_4 {
   padding-top: 110px;
 }
 .PNovedad .n-titulo {
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   height: 50px;
   position: relative;
   margin-bottom: 50px;
@@ -4900,7 +4900,7 @@ h3.bgc_4 {
   top: 15px;
   left: 10px;
   background-color: #fff;
-  color: #722789;
+  color: rgb(114, 39, 137);
   font-size: 2rem;
   line-height: 2rem;
   font-weight: 400;
@@ -4976,7 +4976,7 @@ h3.bgc_4 {
   width: 32px;
 }
 .novedad-item .body .btn-novedades {
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   padding: 0 8px;
   color: #fff;
   /*
@@ -5023,7 +5023,7 @@ h3.bgc_4 {
   margin: 10px 0 1px 0;
   font-size: 2em;
   padding: 2px 15px;
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   color: #fff;
   text-transform: uppercase;
 }
@@ -5131,10 +5131,10 @@ h3.bgc_4 {
   width: 300px;
   flex-shrink: 0;
   height: 300px;
-  background: #722789;
-  background: -moz-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: -webkit-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: rgb(114, 39, 137);
+  background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgba(237, 15, 104, 0.8) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   border-radius: 20px;
@@ -5228,10 +5228,10 @@ h3.bgc_4 {
   line-height: 1.5em;
 }
 .blog-slider__button {
-  background: #722789;
-  background: -moz-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: -webkit-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: rgb(114, 39, 137);
+  background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgba(237, 15, 104, 0.8) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
   display: inline-flex;
   padding: 15px 35px;
@@ -5290,10 +5290,10 @@ h3.bgc_4 {
   transition: all 0.3s;
 }
 .blog-slider__pagination .swiper-pagination-bullet-active {
-  background: #722789;
-  background: -moz-linear-gradient(left, #722789 0%, #ed0f68 100%);
-  background: -webkit-linear-gradient(left, #722789 0%, #ed0f68 100%);
-  background: linear-gradient(to right, #722789 0%, #ed0f68 100%);
+  background: rgb(114, 39, 137);
+  background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+  background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+  background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
   border-radius: 10px;
   opacity: 1;
@@ -5312,7 +5312,7 @@ h3.bgc_4 {
   padding-top: 110px;
 }
 .Novedadesfull .nf-titulo {
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   height: 50px;
   position: relative;
   margin-bottom: 50px;
@@ -5323,7 +5323,7 @@ h3.bgc_4 {
   top: 10px;
   left: 10px;
   background-color: #fff;
-  color: #722789;
+  color: rgb(114, 39, 137);
   font-size: 3rem;
   line-height: 3rem;
   font-weight: 800;
@@ -5395,7 +5395,7 @@ h3.bgc_4 {
   margin-bottom: 0px;
 }
 .novedad-full-item .body .btn-novedades {
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   padding: 0 8px;
   color: #fff;
   /*
@@ -5418,18 +5418,18 @@ h3.bgc_4 {
 }
 @media only screen and (max-width: 990px) {
   /*
-      .Novedadesfull {
-          .nf-body {
-              .nf-novedad {
-                  flex-direction: column;
-                  .nf-novedad-left {
-                      position: fixed;
-                  }
+  .Novedadesfull {
+      .nf-body {
+          .nf-novedad {
+              flex-direction: column;
+              .nf-novedad-left {
+                  position: fixed;
               }
-  
           }
+
       }
-      */
+  }
+  */
   .novedad-full-item {
     grid-template-areas: "titulo" "imagen" "body" "pie";
     grid-template-columns: 1fr;
@@ -5673,7 +5673,7 @@ h3.bgc_4 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   padding: 20px 20px;
 }
 .Atractivo-data .atractivo-fotos img {
@@ -5696,7 +5696,7 @@ h3.bgc_4 {
 }
 .Atractivo-data .atractivo-ubicacion span i {
   margin-right: 8px;
-  color: #722789;
+  color: rgb(114, 39, 137);
 }
 .Atractivo-data .atractivo-info {
   grid-area: atractivo-info;
@@ -5711,7 +5711,7 @@ h3.bgc_4 {
 }
 .Atractivo-data .atractivo-info span i {
   margin-right: 8px;
-  color: #722789;
+  color: rgb(114, 39, 137);
 }
 .Atractivo-data .atractivo-info ul li {
   text-transform: uppercase;
@@ -5755,7 +5755,7 @@ h3.bgc_4 {
   font-size: 7rem;
   line-height: 80px;
   font-family: "Jolly Lodger";
-  color: #1ce42d;
+  color: rgb(28, 228, 45);
 }
 .Atractivo-main-halloween .Container-Logo-Halloween {
   margin-top: 30px;
@@ -5901,7 +5901,7 @@ h3.bgc_4 {
   padding-top: 110px;
 }
 .ListadoAtractivofull .nf-titulo {
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   height: 50px;
   position: relative;
   margin-bottom: 50px;
@@ -5912,7 +5912,7 @@ h3.bgc_4 {
   top: 10px;
   left: 25px;
   background-color: #fff;
-  color: #722789;
+  color: rgb(114, 39, 137);
   font-size: 3rem;
   line-height: 3rem;
   font-weight: 800;
@@ -5988,7 +5988,7 @@ h3.bgc_4 {
   margin-bottom: 0px;
 }
 .atractivo-full-item .body .btn-novedades {
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   padding: 0 8px;
   color: #fff;
   /*
@@ -5999,18 +5999,18 @@ h3.bgc_4 {
 
 @media only screen and (max-width: 990px) {
   /*
-      .Novedadesfull {
-          .nf-body {
-              .nf-novedad {
-                  flex-direction: column;
-                  .nf-novedad-left {
-                      position: fixed;
-                  }
-              }
-  
-          }
-      }
-      */
+    .Novedadesfull {
+        .nf-body {
+            .nf-novedad {
+                flex-direction: column;
+                .nf-novedad-left {
+                    position: fixed;
+                }
+            }
+
+        }
+    }
+    */
   .atractivo-full-item .imagen img {
     height: 250px;
     width: 700px;
@@ -6038,7 +6038,7 @@ h3.bgc_4 {
     left: 25px;
     top: 10px;
     background-color: #fff;
-    color: #722789;
+    color: rgb(114, 39, 137);
     font-size: 2.5rem;
     line-height: 3rem;
     font-weight: 700;
@@ -6062,7 +6062,7 @@ h3.bgc_4 {
     top: 10px;
     left: 25px;
     background-color: #fff;
-    color: #722789;
+    color: rgb(114, 39, 137);
     font-size: 2rem;
     line-height: 2.5rem;
     font-weight: 700;
@@ -6135,7 +6135,7 @@ h3.bgc_4 {
   left: 0px;
   width: 100%;
   display: block;
-  background: #722789;
+  background: rgb(114, 39, 137);
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -6154,7 +6154,7 @@ h3.bgc_4 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #db0e60;
+  background-color: rgb(219, 14, 96);
   transform-origin: top;
   transition: 0.5s;
   box-sizing: border-box;
@@ -6166,7 +6166,7 @@ h3.bgc_4 {
   left: 0px;
   width: 100%;
   display: block;
-  background: #722789;
+  background: rgb(114, 39, 137);
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -6245,7 +6245,7 @@ h3.bgc_4 {
   margin-right: 5px;
 }
 .material-card h2 {
-  background-color: #db0e60;
+  background-color: rgb(219, 14, 96);
   position: absolute;
   bottom: 5px;
   left: 0;
@@ -6284,7 +6284,7 @@ h3.bgc_4 {
   top: -16px;
   width: 0;
   border-left: 16px solid transparent;
-  border-bottom: 16px solid #a00b46;
+  border-bottom: 16px solid rgb(160, 11, 70);
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
@@ -6318,10 +6318,10 @@ h3.bgc_4 {
 .material-card.mc-active h2:after {
   top: 100%;
   bottom: 0;
-  border-top: 16px solid #a00b46;
+  border-top: 16px solid rgb(160, 11, 70);
 }
 .material-card .mc-content {
-  background-color: #ffb6d6;
+  background-color: rgb(255, 182, 214);
   position: absolute;
   right: 0;
   top: 0;
@@ -6346,7 +6346,7 @@ h3.bgc_4 {
   line-height: 44px;
   text-align: center;
   border-color: #fff;
-  background-color: #db0e60;
+  background-color: rgb(219, 14, 96);
   cursor: pointer;
   z-index: 20;
   -webkit-transition: all 0.3s;
@@ -6512,7 +6512,7 @@ h3.bgc_4 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   padding: 20px 20px;
 }
 .Alojamiento-data .alojamiento-fotos img {
@@ -6535,7 +6535,7 @@ h3.bgc_4 {
 }
 .Alojamiento-data .alojamiento-ubicacion span i {
   margin-right: 8px;
-  color: #722789;
+  color: rgb(114, 39, 137);
 }
 .Alojamiento-data .alojamiento-info {
   grid-area: alojamiento-info;
@@ -6550,7 +6550,7 @@ h3.bgc_4 {
 }
 .Alojamiento-data .alojamiento-info span i {
   margin-right: 8px;
-  color: #722789;
+  color: rgb(114, 39, 137);
 }
 .Alojamiento-data .alojamiento-info ul li {
   text-transform: uppercase;
@@ -6769,7 +6769,7 @@ h3.bgc_4 {
   font-family: "Montserrat";
   font-weight: bold;
   font-size: 18px;
-  color: #ed0f68;
+  color: rgb(237, 15, 104);
 }
 .tabs .listatabslider {
   list-style-type: none;
@@ -6829,7 +6829,7 @@ h3.bgc_4 {
   max-width: 100%;
   margin: 0 auto;
   height: 4px;
-  background: #ed0f68;
+  background: rgb(237, 15, 104);
   border-radius: 1px;
 }
 .tabs .content {
@@ -6852,7 +6852,7 @@ h3.bgc_4 {
   width: 215px;
   display: inline-flex;
   align-items: center;
-  background: #ed0f68;
+  background: rgb(237, 15, 104);
   min-width: 160px;
   height: 50px;
   margin: 10px 0 0 0;
@@ -6917,7 +6917,7 @@ h3.bgc_4 {
   width: 190px;
   display: inline-flex;
   align-items: center;
-  background: #ed0f68;
+  background: rgb(237, 15, 104);
   height: 50px;
   border: 0;
   border-radius: 40px;
@@ -6944,7 +6944,7 @@ h3.bgc_4 {
   animation: ripples 0.6s linear infinite;
 }
 .tabs .content section h2 {
-  color: #ed0f68;
+  color: rgb(237, 15, 104);
   display: none;
 }
 .tabs .content section h2::after {
@@ -6953,16 +6953,16 @@ h3.bgc_4 {
   display: block;
   width: 30px;
   height: 3px;
-  background: #ed0f68;
+  background: rgb(237, 15, 104);
   margin-top: 5px;
   left: 1px;
 }
 .tabs input[name=tab-control]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label {
   cursor: default;
-  color: #ed0f68;
+  color: rgb(237, 15, 104);
 }
 .tabs input[name=tab-control]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label svg {
-  fill: #ed0f68;
+  fill: rgb(237, 15, 104);
 }
 @media (max-width: 450px) {
   .tabs input[name=tab-control]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label {
@@ -6977,10 +6977,10 @@ h3.bgc_4 {
 }
 .tabs input[name=tab-control]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label {
   cursor: default;
-  color: #ed0f68;
+  color: rgb(237, 15, 104);
 }
 .tabs input[name=tab-control]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label svg {
-  fill: #ed0f68;
+  fill: rgb(237, 15, 104);
 }
 @media (max-width: 450px) {
   .tabs input[name=tab-control]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label {
@@ -6995,10 +6995,10 @@ h3.bgc_4 {
 }
 .tabs input[name=tab-control]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label {
   cursor: default;
-  color: #ed0f68;
+  color: rgb(237, 15, 104);
 }
 .tabs input[name=tab-control]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label svg {
-  fill: #ed0f68;
+  fill: rgb(237, 15, 104);
 }
 @media (max-width: 450px) {
   .tabs input[name=tab-control]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label {
@@ -7095,7 +7095,7 @@ footer span {
 
 a {
   text-decoration: none;
-  color: #ed0f68;
+  color: rgb(237, 15, 104);
 }
 a:hover {
   text-decoration: underline;
@@ -7110,7 +7110,7 @@ a:hover {
 }
 
 .cal-loader__plane {
-  fill: #ed0f68;
+  fill: rgb(237, 15, 104);
 }
 
 .cal-loader__path {
@@ -7159,19 +7159,19 @@ a:hover {
   }
 
   .half {
-    width: calc(100% / 2);
+    width: 50%;
   }
 
   .one-third {
-    width: calc(100% / 3);
+    width: 33.3333333333%;
   }
 
   .one-fourth {
-    width: calc(100% / 4);
+    width: 25%;
   }
 
   .two-thirds {
-    width: calc(100% / 3 * 2);
+    width: 66.6666666667%;
   }
 
   .column {
@@ -7356,7 +7356,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: #722789;
+  color: rgb(114, 39, 137);
   position: center;
   float: left;
   border-radius: 8px;
@@ -7368,7 +7368,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: #722789;
+  color: rgb(114, 39, 137);
   position: center;
   margin-left: 3px;
   float: left;
@@ -7391,7 +7391,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: #722789;
+  color: rgb(114, 39, 137);
   position: center;
   margin-left: 5px;
   float: left;
@@ -7403,7 +7403,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: #722789;
+  color: rgb(114, 39, 137);
   position: center;
   margin-left: 5px;
   float: left;
@@ -7415,7 +7415,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: #722789;
+  color: rgb(114, 39, 137);
   position: center;
   margin-left: 5px;
   float: left;
@@ -7427,7 +7427,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: #722789;
+  color: rgb(114, 39, 137);
   position: center;
   margin-left: 5px;
   float: left;
@@ -8212,6 +8212,60 @@ li {
   transition: none;
 }
 /* -------------------------------------------------------- end codepen */
+.menu-item {
+  padding: 0 40px;
+  margin: 5px 10px;
+  user-select: none;
+  cursor: pointer;
+  border: none;
+}
+
+.menu-item-wrapper.active {
+  border: 1px blue solid;
+}
+
+.menu-item.active {
+  border: 1px green solid;
+}
+
+.scroll-menu-arrow {
+  padding: 20px;
+  cursor: pointer;
+}
+
+/* -------------------------------------------------------- Inicio Producto css */
+section {
+  overflow-x: hidden;
+}
+
+.containerProducto,
+.links {
+  display: flex;
+}
+
+.containerProducto {
+  overflow-x: hidden;
+  cursor: grab;
+}
+
+article,
+p {
+  margin: 10px;
+}
+
+.dragscroll {
+  overflow: hidden;
+  cursor: grab;
+  cursor: -o-grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.imagenProducto:hover {
+  width: 500px;
+}
+
+/* -------------------------------------------------------- end Producto css  */
 .newsletter {
   display: -webkit-flex;
   display: -ms-flex;
@@ -8245,7 +8299,7 @@ li {
   top: 4px;
 }
 .newsletter .newsletterFullBody .newsHeader .newsTitle {
-  color: #722789;
+  color: rgb(114, 39, 137);
   font-size: 1em;
 }
 .newsletter .newsletterFullBody .newsEmail {
@@ -8266,12 +8320,12 @@ li {
   text-align: center;
 }
 .newsletter .newsletterFullBody .newsMsg:disabled {
-  background: #722789;
+  background: rgb(114, 39, 137);
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
-  background-color: #ed0f68;
+  background-color: rgb(237, 15, 104);
   color: white;
 }
 .newsletter .newsletterFullBody .newsFooterButton {
@@ -8280,12 +8334,12 @@ li {
   border-radius: 15px;
   margin-bottom: 10px;
   border: none;
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   color: white;
 }
 .newsletter .newsletterFullBody .newsFooterButton:hover {
   outline: none;
-  background-color: #7f3e92;
+  background-color: rgb(127, 62, 146);
 }
 
 .PDesuscribir {
@@ -8309,15 +8363,15 @@ li {
   border-radius: 5px;
   margin-top: 40px;
   border: none;
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   color: white;
 }
 .PDesuscribir .DesConfirm:hover {
   outline: none;
-  background-color: #7f3e92;
+  background-color: rgb(127, 62, 146);
 }
 .PDesuscribir .DesMsg {
-  color: #ed0f68;
+  color: rgb(237, 15, 104);
 }
 
 /*
@@ -8330,10 +8384,10 @@ li {
   align-items: center;
   align-content: center;
   display: flex;
-  background: #722789;
-  background: -moz-linear-gradient(left, #722789 0%, #ed0f68 100%);
-  background: -webkit-linear-gradient(left, #722789 0%, #ed0f68 100%);
-  background: linear-gradient(to right, #722789 0%, #ed0f68 100%);
+  background: rgb(114, 39, 137);
+  background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+  background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+  background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
 }
 @media screen and (max-width: 768px) {
@@ -8431,7 +8485,7 @@ li {
 .profile-card__name {
   font-weight: 700;
   font-size: 24px;
-  color: #722789;
+  color: rgb(114, 39, 137);
   margin-bottom: 15px;
 }
 .profile-card__txt {

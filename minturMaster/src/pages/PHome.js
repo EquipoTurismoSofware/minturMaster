@@ -13,6 +13,7 @@ import TabSlider from "../components/subcomponentes/TabSlider";
 import CardImperdibles from "../components/CardImperdibles";
 import SocialWidget from "../components/SocialWidget";
 import WeatherCard from "../components/WeatherCard";
+import Prueba from "../components/Prueba";
 
 class Home extends Component {
   constructor(props) {
@@ -52,17 +53,29 @@ class Home extends Component {
           <React.Fragment>
             <div className="menu-y-slider ">
               <Slider></Slider>
-              <center>
-                <div className="pantallaGrande">
+             {/* <center>
+                  <div className="pantallaGrande">
                   <span className="newsHome">
                     <Newsletter />
                   </span>
-                  {/*{<PantallaModal />}*/}
+                 {<PantallaModal />}
                   <SocialWidget />
                 </div>
-                {/*{ <div className="pantallaChica2">{<PantallaModal />}</div>*/}
+                {/*{ <div className="pantallaChica2">{<PantallaModal />}</div>             <Producto />
+                 
               </center>
-            </div>
+            </div>{" "}
+            <br />
+            <br />
+            <Prueba />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+             <br />*/}
             <TabSlider />
             <CardImperdibles />
             {/*<Recorridos />
@@ -122,6 +135,7 @@ class Home extends Component {
                   />
                 </center>
               </div>
+            </div>
             </div>
           </React.Fragment>
         )}

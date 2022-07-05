@@ -3,12 +3,12 @@ import React, { Component } from "react";
 import { Provider } from "./context";
 import "./App.css";
 //import { BrowserRouter as Router, Route } from "react-router-dom";
-import PMapasRecorridos from "./pages/mapas/PMapasRecorridos"
+import PMapasRecorridos from "./pages/mapas/PMapasRecorridos";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Menu from "./components/Menu";
 import ToTop from "./components/ToTop";
 import PListadoMapas from "./pages/mapas/PListadoMapas";
-import PHome from "./pages/PHome";
+import PHome from "./pages/PHome copy"; //Phome
 import PZona from "./pages/PZona";
 import PDesuscribir from "./pages/PDesuscribir";
 import PNovedades from "./pages/novedades/PNovedades";
@@ -48,7 +48,7 @@ import Prueba from "./pages/variosmenu/Prueba";
 import PCerveceria from "./pages/gastronomia/PCerveceria";
 import PGastronomicosDosep from "./pages/gastronomia/GastronomiaDosep";
 import PEstadisticas from "./pages/Estadisticas/PEstadisticas";
-import PListadoEstadisticas from "./pages/Estadisticas/PListadoEstadisticas"
+import PListadoEstadisticas from "./pages/Estadisticas/PListadoEstadisticas";
 import PZonaCerveceria from "./pages/gastronomia/PZonaCerveceria";
 import PGastronomia from "./pages/gastronomia/PGastronomia";
 import PPrincipalGastronomia from "./pages/gastronomia/PPrincipalGastronomia";
@@ -66,16 +66,15 @@ import ListadoAgenciasDosep from "./pages/variosmenu/ListadoAgenciasDosep";
 import BotonTurismoInterno from "./components/subcomponentes/BotonTurismoInterno";
 import TurismoDosep from "./components/subcomponentes/TurismoDosep";
 import Footer from "./components/Footer";
-import PGridImages from "./pages/PGridImages"
+import PGridImages from "./pages/PGridImages";
 import PVallesEncantados from "./pages/moto_turismo/PVallesEncantados";
 import PSaludYVitalidad from "./pages/moto_turismo/PSaludYVitalidad";
 import RegistroAlojamientos from "./pages/covid/voucher/RegistroAlojamientos";
-import PCaminosPintorescos from "./pages/variosmenu/CaminosPintorescos"
+import PCaminosPintorescos from "./pages/variosmenu/CaminosPintorescos";
 import PHalloweenMain from "./pages/Halloween/PHalloweenMain";
 import NotFound from "./components/NotFound";
 import EnConstruccion from "./components/PaginaEnConstruccion";
 import Tirolesas from "./pages/Tirolesas";
-
 
 import PMapas from "./pages/PMapas";
 import GastronomiaDosep from "./pages/gastronomia/GastronomiaDosep";
@@ -99,10 +98,18 @@ class App extends Component {
               <Route exact path="/desuscripcion" component={PDesuscribir} />
               <Route exact path="/turismoDark" component={PHalloweenMain} />
               <Route exact path="/estadisticas/:id" component={PEstadisticas} />
-              <Route exact path="/listadoEstadisticas" component={PListadoEstadisticas} />
+              <Route
+                exact
+                path="/listadoEstadisticas"
+                component={PListadoEstadisticas}
+              />
               <Route exact path="/circuitoDark" component={PMapasRecorridos} />
               <Route exact path="/actividades" component={PGridImages} />
-              <Route exact path="/listado-Censistas" component={ListadoCensistas} />
+              <Route
+                exact
+                path="/listado-Censistas"
+                component={ListadoCensistas}
+              />
               <Route
                 exact
                 path="/atractivos/:id"
@@ -121,11 +128,7 @@ class App extends Component {
                 path="/filtroalojamiento"
                 component={PFiltroAlojamiento}
               />
-              <Route
-                exact 
-                path="/listadoMapas" 
-                component={PListadoMapas}
-              />
+              <Route exact path="/listadoMapas" component={PListadoMapas} />
               <Route
                 exact
                 path="/filtroalojamientoAdhiere"
@@ -262,7 +265,7 @@ class App extends Component {
                 path="/registro-alojamientos-covid"
                 component={RegistroAlojamientos}
               />
-             <Route
+              <Route
                 exact
                 path="/merlo-comechingones"
                 component={EnConstruccion}
@@ -272,32 +275,24 @@ class App extends Component {
                 path="/diques-rios-saltos"
                 component={EnConstruccion}
               />
-               <Route
+              <Route
                 exact
                 path="/potrero-sierrascentrales"
                 component={EnConstruccion}
               />
-                  <Route
-                exact
-                path="/termas-salinas"
-                component={EnConstruccion}
-              />
-                  <Route
+              <Route exact path="/termas-salinas" component={EnConstruccion} />
+              <Route
                 exact
                 path="/turismo-religioso"
                 component={EnConstruccion}
               />
-                  <Route
-                exact
-                path="/mercedes-morro"
-                component={EnConstruccion}
-              />
-                 <Route
+              <Route exact path="/mercedes-morro" component={EnConstruccion} />
+              <Route
                 exact
                 path="/parques-naturales"
                 component={EnConstruccion}
               />
-                 <Route
+              <Route
                 exact
                 path="/caminos-pintorescos"
                 component={PCaminosPintorescos}
