@@ -1,5 +1,5 @@
 //Contenedor de complemento
-.container-slider {
+.container-sliderActividades {
   margin: 10% 0;
   padding: 0 10%;
   height: 100vh;
@@ -10,7 +10,7 @@
   width: 100%;
 }
 
-.slider2 {
+.slider2Actividades {
   width: 1300px;
   height: 1000px;
   border-radius: 10px;
@@ -22,7 +22,7 @@
   //box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
 }
 
-.slides {
+.slidesActividades{
   width: 400%;
   height: auto;
   display: flex;
@@ -31,11 +31,11 @@
   //  overflow: hidden;
 }
 
-.slides input {
+.slidesActividades input {
   display: none;
 }
 
-.slide {
+.slideActividades {
   width: 25%;
   height: 100%;
   transition: 2s;
@@ -47,7 +47,7 @@
   //padding: 0;
 }
 
-.imgSlide {
+.imgSlideActividades {
   //width: 800px;
   width: 100%;
   height: 100%;
@@ -65,7 +65,7 @@
   background-repeat: no-repeat;*/
 }
 
-.slide p {
+.slideActividades p {
   z-index: 3;
   font-size: 5rem;
   float: left;
@@ -77,7 +77,7 @@
   font-family: Roboto;
 }
 
-.slide span {
+.slideActividades span {
   font-weight: 600;
   font-size: large;
   font-family: Roboto;
@@ -179,17 +179,17 @@
     transition: 0.3s;
   }
 
-  .slide p {
+  .slideActividades p {
     font-size: 4rem;
     transition: 0.3s;
   }
 
-  .imgSlide {
+  .imgSlideActividades {
     border-radius: 20px;
     transition: 0.3s;
   }
 
-  .container-slider {
+  .container-sliderActividades {
     margin-top: 15%;
     transition: 0.5s;
   }
@@ -202,23 +202,23 @@
     transition: 0.3s;
   }
 
-  .slide p {
+  .slideActividades p {
     font-size: 3rem;
     transition: 0.3s;
   }
 
-  .imgSlide {
+  .imgSlideActividades {
     border-radius: 15px;
     transition: 0.3s;
   }
 
-  .slide span {
+  .slideActividades span {
     font-weight: 400;
     font-size: medium;
     transition: 0.3s;
   }
 
-  .container-slider {
+  .container-sliderActividades {
     margin-top: 20%;
     transition: 0.5s;
   }
@@ -231,22 +231,22 @@
     transition: 0.3s;
   }
 
-  .slide p {
+  .slideActividades p {
     font-size: 2rem;
     transition: 0.3s;
   }
 
-  .imgSlide {
+  .imgSlideActividades {
     border-radius: 10px;
     transition: 0.3s;
   }
 
-  .container-slider {
+  .container-sliderActividades{
     margin-top: 40%;
     transition: 0.5s;
   }
 
-  .slide span {
+  .slideActividades span {
     font-weight: 400;
     font-size: small;
     transition: 0.3s;

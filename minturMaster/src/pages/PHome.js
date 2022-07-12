@@ -14,7 +14,8 @@ import TabSlider from "../components/subcomponentes/TabSlider";
 import CardImperdibles from "../components/CardImperdibles";
 import SpeedDial from "../components/SocialWidget";
 import WeatherCard from "../components/WeatherCard";
-import Producto from "../components/Producto";
+import Producto from "../components/com.Home/Productos";
+import Etiqueta from "../components/Producto";
 import SpeedDial2 from "../components/SpeedDial";
 
 class Home extends Component {
@@ -80,7 +81,7 @@ class Home extends Component {
             <br />
             <br />
             <TabSlider />
-            <CardImperdibles />
+            <Etiqueta />
             {/*<Recorridos />
              <EventoForm />*/}
             <SliderActividades></SliderActividades>

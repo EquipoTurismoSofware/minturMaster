@@ -21,18 +21,18 @@ class SliderActividades extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="container-slider">
-          <div className="slider2">
-            <div className="slides">
+        <div className="container-sliderActividades">
+          <div className="slider2Actividades">
+            <div className="slidesActividades">
               {/* radio buttons */}
               <input type="radio" name="radio-btn" id="radio1" />
               <input type="radio" name="radio-btn" id="radio2" />
               <input type="radio" name="radio-btn" id="radio3" />
               <input type="radio" name="radio-btn" id="radio4" />
               {/* slides images  */}
-              <div className="slide first">
+              <div className="slideActividades first">
                 <img
-                  className="imgSlide"
+                  className="imgSlideActividades"
                   src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carouselActividades/trekking.jpg"
                   alt=""
                 />
@@ -50,9 +50,9 @@ class SliderActividades extends Component {
                   </span>
                 </div>
               </div>
-              <div className="slide ">
+              <div className="slideActividades ">
                 <img
-                  className="imgSlide"
+                  className="imgSlideActividades"
                   src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carouselActividades/windsurf.jpg"
                   alt=""
                 />
@@ -70,9 +70,9 @@ class SliderActividades extends Component {
                   </span>
                 </div>
               </div>
-              <div className="slide">
+              <div className="slideActividades">
                 <img
-                  className="imgSlide"
+                  className="imgSlideActividades"
                   src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carouselActividades/cabalgata.jpg"
                   alt=""
                 />
@@ -89,9 +89,9 @@ class SliderActividades extends Component {
                   </span>
                 </div>
               </div>
-              <div className="slide">
+              <div className="slideActividades">
                 <img
-                  className="imgSlide"
+                  className="imgSlideActividades"
                   src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carouselActividades/tirolesa.jpg"
                   alt=""
                 />

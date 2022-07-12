@@ -1091,3 +1091,159 @@ li {
   padding: 20px;
   cursor: pointer;
 }
+
+/* -------------------------------------------------------- inicio producto */
+
+.Productosection {
+  box-sizing: border-box;
+  background-color: red;
+}
+
+.divProducto {
+  width: 400px;
+  overflow: hidden;
+  background-color: blue;
+}
+
+.Productocontainer {
+  background-color: black;
+  margin: 10% 0;
+  padding: 0 10%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: -moz-hidden-unscrollable;
+  min-height: 300px;
+  width: 100%;
+}
+.Producto {
+  background-color: violet;
+  border: violet solid 5px;
+  border-radius: 13px 13px 13px 13px;
+  -webkit-border-radius: 13px 13px 13px 13px;
+  -moz-border-radius: 13px 13px 13px 13px;
+  flex: 1;
+  transition: 1s;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.Producto img {
+  height: 800px;
+  width: 910px;
+}
+
+.Productoarticle,
+.Productop {
+  margin: 10px;
+}
+
+.Productodragscroll {
+  cursor: grab;
+  cursor: -o-grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.Producto:hover {
+  flex: 4;
+}
+/* -------------------------------------------------------- end producto 
+
+$box-count: 4;
+
+body {
+  background-color: #111;
+  width: 100%;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+.boxes {
+  display: flex;
+
+  .box {
+    background-color: #fff;
+    flex: 1 1 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font: 1em/1 "Poppins", sans-serif;
+    font-weight: 400;
+    transition: all 0.6s ease-out;
+    position: relative;
+
+    &__title {
+      font-size: 3vw;
+      color: white;
+      margin-bottom: 0.5em;
+      transition: all 0.3s ease-out 0.1s;
+    }
+    &__content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(1, 1, 1, 0.5);
+      // backdrop-filter: blur(6px);
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      justify-items: center;
+      align-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: all 0.3s ease-in;
+      text-align: center;
+      padding: 2vw;
+    }
+    &__summary {
+      font-size: 1.2vw;
+      line-height: 1.4;
+      color: white;
+      margin: 0 auto;
+      max-width: 22vw;
+      transition: all 0.3s ease-out 0.1s;
+    }
+
+    // 		Background color for boxes
+    &:nth-child(1) {
+      background-color: #2b50aa;
+      background: url(https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)
+        center/cover no-repeat;
+    }
+    &:nth-child(2) {
+      background-color: #ff9fe5;
+      background: url(https://images.unsplash.com/photo-1590655473571-742fd3b29b78?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80)
+        center/cover no-repeat;
+    }
+    &:nth-child(3) {
+      background-color: #ffd4d4;
+      background: url(https://images.unsplash.com/photo-1465850238811-80ce79442c7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80)
+        center/cover no-repeat;
+    }
+    &:nth-child(4) {
+      background-color: #ff858d;
+      background: url(https://images.unsplash.com/photo-1585614938326-d57d07333bc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)
+        center/cover no-repeat;
+    }
+
+    // 		Hover effect
+
+    &:hover {
+      flex: 1 1 75%;
+      .box__title {
+        letter-spacing: 0;
+      }
+      .box__content {
+        opacity: 1;
+      }
+    }
+  }
+}
+*/
