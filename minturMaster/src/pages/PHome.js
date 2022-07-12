@@ -6,6 +6,7 @@ import Novedades from "../components/Novedades";
 import { Link } from "react-router-dom";
 import ReactWOW from "react-wow";
 import SliderActividades from "../components/SliderActividades";
+import GaleriaLocalidades from "../components/GaleriaLocalidades";
 import Slider from "../components/SliderClean";
 import PantallaModal from "../components/subcomponentes/Modal";
 import Newsletter from "../components/subcomponentes/Newsletter";
@@ -84,7 +85,9 @@ class Home extends Component {
             <Etiqueta />
             {/*<Recorridos />
              <EventoForm />*/}
-            <SliderActividades></SliderActividades>
+             
+            <SliderActividades />
+            <GaleriaLocalidades />
             <Novedades time="10000" />
             <Descarga />
             <div className="Recorridos">
