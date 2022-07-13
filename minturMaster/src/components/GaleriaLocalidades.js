@@ -73,7 +73,6 @@ class GaleriaLocalidades extends Component{
   render() {
     return ( 
       <React.Fragment>
-      <div class="container my-5">
         <Helmet>
           <script src="http://turismo.sanluis.gov.ar/recursos/js/HelmetGaleriaLocalidades.js"></script>
           <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
@@ -89,6 +88,8 @@ class GaleriaLocalidades extends Component{
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
           ></link>
         </Helmet>
+      <div class="container my-5">
+        
         <div id="gallery-loader" class="text-center my-5">
           <div class="mb-3">
             <div
@@ -100,7 +101,8 @@ class GaleriaLocalidades extends Component{
           </div>
         </div>
         <div class="header-gallery">
-
+        <p className="gallery-title">Galería de localidades</p>
+        <input type="text" className="gallery-search"placeholder="Buscar localidad..." />
         </div>
         {/* {this.state.loading ? (
           <div className="PFiltroAlojamiento mb-5">
@@ -109,18 +111,6 @@ class GaleriaLocalidades extends Component{
             </div>
           </div>
         ) : ( */}
-        <div>
-          <select>
-            <option value="all" selected>Todas</option>
-            <option value="sunrise">Amanecer</option>
-            <option value="sunset">Atardecer</option>
-            <option value="sport">Deporte</option>
-            <option value="hill">Sierra</option>
-          </select>
-
-          <input type="text" placeholder="Buscar localidad..." />
-
-        </div>
         <div id="gallery" class="row g-4 d-none">
           {/* Aca van las fotos */}
         </div>
