@@ -34,8 +34,8 @@ class PArbol extends Component {
   }
 
   clickImg(visible, src) {
-    console.log(visible);
-    console.log(src);
+    //console.log(visible);
+    //console.log(src);
     this.setState({
       img: {
         visible: visible,

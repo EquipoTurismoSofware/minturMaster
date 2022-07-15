@@ -66,7 +66,7 @@ body {
 .player .song .song__title {
   text-align: left;
   margin: 0;
-  color: rgb(28, 228, 45);
+  color: #1ce42d;
   font-family: "Jolly Lodger";
   font-weight: normal;
   font-size: 4em;
@@ -109,7 +109,7 @@ body {
 }
 .player .player__button i {
   font-size: 3.5em;
-  color: rgb(28, 228, 45);
+  color: #1ce42d;
 }
 .player .bar {
   user-select: none;
@@ -137,7 +137,7 @@ body {
   bottom: 0px;
   border: 1.5px solid white;
   border-radius: 50%;
-  background-color: rgb(22, 172, 34);
+  background-color: #16ac22;
 }
 @media screen and (max-width: 992px) {
   .player {
@@ -189,7 +189,7 @@ body {
 }
 .material-card-hallo .hallo-mc-content .hallo-mc-title li {
   list-style-type: none;
-  background: linear-gradient(to right, rgb(73, 0, 95) 10%, rgb(255, 0, 13) 100%);
+  background: linear-gradient(to right, #49005f 10%, #ff000d 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -248,7 +248,7 @@ body {
   font-size: 7rem;
   line-height: 80px;
   font-family: "Jolly Lodger";
-  color: rgb(28, 228, 45);
+  color: #1ce42d;
 }
 .Main-Halloween .Subtitulo-Halloween {
   position: relative;
@@ -420,7 +420,7 @@ body {
   transition: all 1.5s;
 }
 .Viewer .pagesBullets ul li.selected {
-  background-color: rgb(141, 10, 62);
+  background-color: #8d0a3e;
   color: white;
 }
 .Viewer .pages {
@@ -447,13 +447,13 @@ body {
   min-width: 30px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  background-color: rgb(237, 15, 104);
+  background-color: #ed0f68;
   color: white;
   cursor: pointer;
   transition: all 1.5s;
 }
 .Viewer .pages ul li.selected {
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   color: white;
 }
 .Viewer .btn-left,
@@ -500,13 +500,13 @@ body {
   min-width: 30px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  background-color: rgb(237, 15, 104);
+  background-color: #ed0f68;
   color: white;
   cursor: pointer;
   transition: all 1.5s;
 }
 .ViewerListados .pages ul li.selected {
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   color: white;
 }
 .ViewerListados .btn-left,
@@ -923,7 +923,7 @@ body {
 .tituloImperdibles .imp-t-sub2 {
   font-size: 2em;
   padding: 2px 15px;
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   color: #fff;
   text-transform: uppercase;
 }
@@ -1256,7 +1256,7 @@ body {
   margin: 10px 0 10px 20px;
   font-size: 2em;
   padding: 2px 15px;
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   color: #fff;
   text-transform: uppercase;
 }
@@ -1266,7 +1266,7 @@ body {
   margin: 0 20px 0 20px;
 }
 .est-main .est-titulo {
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   display: block;
   width: 100%;
   top: 10px;
@@ -1296,7 +1296,7 @@ body {
 .sub-chart-wrapper .sub-chart-wrapper-titulo {
   font-size: 1.3em;
   padding: 2px 15px;
-  background-color: rgb(237, 15, 104);
+  background-color: #ed0f68;
   color: #fff;
   text-transform: uppercase;
 }
@@ -1304,7 +1304,7 @@ body {
   font-size: 1.3em;
   padding: 2px 15px;
   margin-bottom: 15px;
-  background-color: rgb(237, 15, 104);
+  background-color: #ed0f68;
   color: #fff;
   text-transform: uppercase;
 }
@@ -1323,12 +1323,12 @@ body {
   width: 0px;
   outline: none;
   border: none;
-  background: rgb(114, 39, 137);
+  background: #722789;
   color: white;
-  text-shadow: 0 0 10px rgb(114, 39, 137);
+  text-shadow: 0 0 10px #722789;
   padding: 0 80px 0 20px;
   border-radius: 40px;
-  box-shadow: 0 0 25px 0 rgb(114, 39, 137), 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px 0 #722789, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
   transition: all 1s;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -1341,7 +1341,7 @@ body {
   cursor: text;
 }
 .input:focus .listaBusqueda {
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   width: 200px;
   max-height: auto;
   overflow: auto;
@@ -1400,7 +1400,7 @@ body {
 }
 
 .listaBusqueda {
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   width: 200px;
   max-height: auto;
   overflow: auto;
@@ -1448,7 +1448,7 @@ body {
 }
 
 .Menu {
-  background: rgb(114, 39, 137);
+  background: #722789;
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
@@ -1484,7 +1484,7 @@ body {
   white-space: nowrap;
 }
 .Menu .menu-visita-containerMenu {
-  background: rgb(114, 39, 137);
+  background: #722789;
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -1507,10 +1507,10 @@ body {
 }
 
 .sticky {
-  background: rgb(114, 39, 137);
-  background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
-  background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
-  background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+  background: #722789;
+  background: -moz-linear-gradient(left, #722789 0%, #ed0f68 100%);
+  background: -webkit-linear-gradient(left, #722789 0%, #ed0f68 100%);
+  background: linear-gradient(to right, #722789 0%, #ed0f68 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
   width: 100%;
   top: 0;
@@ -1547,7 +1547,7 @@ body {
   white-space: nowrap;
 }
 .sticky .menu-visita-containersticky {
-  background: rgb(114, 39, 137);
+  background: #722789;
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -1579,7 +1579,7 @@ body {
 
 @media only screen and (max-width: 1185px) {
   .Menu {
-    background: rgb(114, 39, 137);
+    background: #722789;
     background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
     background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
     background: linear-gradient(to right, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
@@ -1602,10 +1602,10 @@ body {
   }
 
   .sticky {
-    background: rgb(114, 39, 137);
-    background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
-    background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
-    background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+    background: #722789;
+    background: -moz-linear-gradient(left, #722789 0%, #ed0f68 100%);
+    background: -webkit-linear-gradient(left, #722789 0%, #ed0f68 100%);
+    background: linear-gradient(to right, #722789 0%, #ed0f68 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
     position: fixed;
     z-index: 99;
@@ -1623,7 +1623,7 @@ body {
 }
 @media only screen and (max-width: 992px) {
   .Menu {
-    background: rgb(114, 39, 137);
+    background: #722789;
     background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
     background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
     background: linear-gradient(to right, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
@@ -1664,7 +1664,7 @@ body {
     white-space: nowrap;
   }
   .Menu .menu-visita-containerMenu {
-    background: rgb(114, 39, 137);
+    background: #722789;
     background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
     background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
     background: linear-gradient(to right, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -1690,10 +1690,10 @@ body {
   }
 
   .sticky {
-    background: rgb(114, 39, 137);
-    background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
-    background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
-    background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+    background: #722789;
+    background: -moz-linear-gradient(left, #722789 0%, #ed0f68 100%);
+    background: -webkit-linear-gradient(left, #722789 0%, #ed0f68 100%);
+    background: linear-gradient(to right, #722789 0%, #ed0f68 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
     position: fixed;
     z-index: 99;
@@ -1731,7 +1731,7 @@ body {
     white-space: nowrap;
   }
   .sticky .menu-visita-containersticky {
-    background: rgb(114, 39, 137);
+    background: #722789;
     background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
     background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
     background: linear-gradient(to right, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -1780,7 +1780,7 @@ body {
   margin-left: 135px;
   width: 33px;
   height: 33px;
-  background: rgb(237, 15, 104);
+  background: #ed0f68;
   border-radius: 50%;
   transition: all 1s;
   z-index: 4;
@@ -1825,7 +1825,7 @@ body {
   left: 0;
   width: 100%;
   height: 50px;
-  background: rgb(114, 39, 137);
+  background: #722789;
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
@@ -2361,7 +2361,7 @@ background-position: center center;
   position: absolute;
   top: 10px;
   right: 10px;
-  color: rgb(237, 15, 104);
+  color: #ed0f68;
   cursor: pointer;
 }
 #modalMain-container .modalMain-background .modalMain .closeModal i {
@@ -2569,7 +2569,7 @@ background-position: center center;
     position: absolute;
     top: 10px;
     right: 10px;
-    color: rgb(237, 15, 104);
+    color: #ed0f68;
     cursor: pointer;
   }
   #modalMain-container .modalMain-background .modalMain .closeModal i {
@@ -2794,7 +2794,7 @@ h1 {
 }
 .accordion ul:hover li:hover a,
 .accordion ul li:focus a, .accordion ul:focus-within li:focus a {
-  background: rgb(0, 0, 0);
+  background: black;
 }
 .accordion ul:hover li:hover a *,
 .accordion ul li:focus a *, .accordion ul:focus-within li:focus a * {
@@ -4187,7 +4187,7 @@ li {
 
 .titulo-mapas {
   margin-top: 110px;
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   height: 50px;
   position: relative;
   margin-bottom: 50px;
@@ -4198,7 +4198,7 @@ li {
   top: 10px;
   left: 25px;
   background-color: #fff;
-  color: rgb(114, 39, 137);
+  color: #722789;
   font-size: 3rem;
   line-height: 3rem;
   font-weight: 800;
@@ -4260,7 +4260,7 @@ li {
     font-size: 2em;
     bottom: 40px;
     padding: 2px 40px;
-    background-color: rgb(114, 39, 137);
+    background-color: #722789;
     color: #fff;
     text-transform: uppercase;
     margin-left: 40%;
@@ -4422,7 +4422,7 @@ li {
   font-weight: 700;
   letter-spacing: 5px;
   padding-top: 10px;
-  color: rgb(237, 15, 104);
+  color: #ed0f68;
   padding-bottom: 5px;
   text-transform: uppercase;
 }
@@ -4443,14 +4443,14 @@ li {
 }
 .Recorridos .titulo-creer .reco-t-sub1 {
   font-size: 3em;
-  color: rgb(114, 39, 137);
+  color: #722789;
   text-transform: capitalize;
   font-weight: 600;
 }
 .Recorridos .titulo-creer .reco-t-sub2 {
   font-size: 2em;
   padding: 2px 15px;
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   color: #fff;
   text-transform: uppercase;
 }
@@ -4496,14 +4496,14 @@ li {
 }
 .Recorridos .reco-titulo .reco-t-sub1 {
   font-size: 3em;
-  color: rgb(114, 39, 137);
+  color: #722789;
   text-transform: capitalize;
   font-weight: 600;
 }
 .Recorridos .reco-titulo .reco-t-sub2 {
   font-size: 2em;
   padding: 2px 15px;
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   color: #fff;
   text-transform: uppercase;
 }
@@ -5129,8 +5129,8 @@ li {
 }
 
 .archivosApp {
-  background-color: rgb(237, 15, 104);
-  background: rgb(245, 183, 25);
+  background-color: #ed0f68;
+  background: #f5b719;
   background: -moz-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: linear-gradient(to right, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
@@ -5169,8 +5169,8 @@ li {
 }
 
 .Descarga {
-  background-color: rgb(237, 15, 104);
-  background: rgb(245, 183, 25);
+  background-color: #ed0f68;
+  background: #f5b719;
   background: -moz-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: linear-gradient(to right, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
@@ -5550,7 +5550,7 @@ li {
 .iconSlider i {
   margin-top: 7px;
   font-size: 30px;
-  color: rgb(204, 14, 90);
+  color: #cc0e5a;
 }
 .iconSlider:hover i {
   margin-top: 15px;
@@ -5580,7 +5580,7 @@ nav.link-list a {
   transition: background-color 0.5s ease;
 }
 nav.link-list a.is-active {
-  background-color: rgb(204, 14, 90);
+  background-color: #cc0e5a;
 }
 
 nav.btns {
@@ -5614,7 +5614,7 @@ nav.btns button:before {
   height: 44px;
   top: 0;
   left: 0;
-  border: 2px solid rgb(204, 14, 90);
+  border: 2px solid #cc0e5a;
   border-radius: 50%;
   opacity: 0;
   transition: all 0.5s ease;
@@ -5624,7 +5624,7 @@ nav.btns button span {
   transition: opacity 0.2s ease;
 }
 nav.btns button:hover {
-  background-color: rgb(204, 14, 90);
+  background-color: #cc0e5a;
   width: 64px;
   height: 64px;
   transform: translateY(-10px);
@@ -5749,7 +5749,7 @@ footer a {
   left: 0px;
   width: 100%;
   display: block;
-  background: rgb(114, 39, 137);
+  background: #722789;
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -5768,7 +5768,7 @@ footer a {
   left: 0x;
   width: 100%;
   display: block;
-  background: rgb(114, 39, 137);
+  background: #722789;
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -5787,7 +5787,7 @@ footer a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   transform-origin: top;
   transition: 0.5s;
   box-sizing: border-box;
@@ -5799,7 +5799,7 @@ footer a {
   left: 0px;
   width: 100%;
   display: block;
-  background: rgb(114, 39, 137);
+  background: #722789;
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -5848,9 +5848,9 @@ footer a {
 .EventoForm {
   height: 900px;
   width: 100%;
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   position: relative;
-  background: rgb(245, 183, 25);
+  background: #f5b719;
   background: -moz-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: linear-gradient(to right, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
@@ -5898,7 +5898,7 @@ footer a {
   margin-bottom: 10px;
   cursor: pointer;
   text-decoration: none;
-  color: rgb(114, 39, 137);
+  color: #722789;
   align-content: center;
   text-align: center;
   width: 100;
@@ -5958,7 +5958,7 @@ footer a {
   margin-bottom: 100px;
   cursor: pointer;
   text-decoration: none;
-  color: rgb(114, 39, 137);
+  color: #722789;
   align-content: center;
   text-align: center;
   width: 100px;
@@ -6067,7 +6067,7 @@ footer a {
     width: 90%;
     cursor: pointer;
     text-decoration: none;
-    color: rgb(114, 39, 137);
+    color: #722789;
   }
   .EventoForm .body-left .bl-button span {
     font-size: 1.7rem;
@@ -6077,7 +6077,7 @@ footer a {
     margin-top: 30px;
   }
   .EventoForm .body-left .bl-button svg .icon {
-    fill: rgb(114, 39, 137);
+    fill: #722789;
   }
   .EventoForm .body-left .bl-img {
     width: 250px;
@@ -6279,7 +6279,7 @@ h3.bgc_4 {
   margin-bottom: 5px;
 }
 .evento-data li i {
-  color: rgb(114, 39, 137);
+  color: #722789;
 }
 
 /*
@@ -6289,7 +6289,7 @@ h3.bgc_4 {
   padding-top: 110px;
 }
 .PNovedad .n-titulo {
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   height: 50px;
   position: relative;
   margin-bottom: 50px;
@@ -6299,7 +6299,7 @@ h3.bgc_4 {
   top: 15px;
   left: 10px;
   background-color: #fff;
-  color: rgb(114, 39, 137);
+  color: #722789;
   font-size: 2rem;
   line-height: 2rem;
   font-weight: 400;
@@ -6375,7 +6375,7 @@ h3.bgc_4 {
   width: 32px;
 }
 .novedad-item .body .btn-novedades {
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   padding: 0 8px;
   color: #fff;
   /*
@@ -6422,7 +6422,7 @@ h3.bgc_4 {
   margin: 10px 0 1px 0;
   font-size: 2em;
   padding: 2px 15px;
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   color: #fff;
   text-transform: uppercase;
 }
@@ -6530,10 +6530,10 @@ h3.bgc_4 {
   width: 300px;
   flex-shrink: 0;
   height: 300px;
-  background: rgb(114, 39, 137);
-  background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: #722789;
+  background: -moz-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: -webkit-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   border-radius: 20px;
@@ -6627,10 +6627,10 @@ h3.bgc_4 {
   line-height: 1.5em;
 }
 .blog-slider__button {
-  background: rgb(114, 39, 137);
-  background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: #722789;
+  background: -moz-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: -webkit-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
   display: inline-flex;
   padding: 15px 35px;
@@ -6689,10 +6689,10 @@ h3.bgc_4 {
   transition: all 0.3s;
 }
 .blog-slider__pagination .swiper-pagination-bullet-active {
-  background: rgb(114, 39, 137);
-  background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
-  background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
-  background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+  background: #722789;
+  background: -moz-linear-gradient(left, #722789 0%, #ed0f68 100%);
+  background: -webkit-linear-gradient(left, #722789 0%, #ed0f68 100%);
+  background: linear-gradient(to right, #722789 0%, #ed0f68 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
   border-radius: 10px;
   opacity: 1;
@@ -6711,7 +6711,7 @@ h3.bgc_4 {
   padding-top: 110px;
 }
 .Novedadesfull .nf-titulo {
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   height: 50px;
   position: relative;
   margin-bottom: 50px;
@@ -6722,7 +6722,7 @@ h3.bgc_4 {
   top: 10px;
   left: 10px;
   background-color: #fff;
-  color: rgb(114, 39, 137);
+  color: #722789;
   font-size: 3rem;
   line-height: 3rem;
   font-weight: 800;
@@ -6794,7 +6794,7 @@ h3.bgc_4 {
   margin-bottom: 0px;
 }
 .novedad-full-item .body .btn-novedades {
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   padding: 0 8px;
   color: #fff;
   /*
@@ -6845,7 +6845,7 @@ h3.bgc_4 {
   padding-top: 110px;
 }
 .Arbolesfull .nf-titulo {
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   height: 50px;
   position: relative;
   margin-bottom: 50px;
@@ -6856,7 +6856,7 @@ h3.bgc_4 {
   top: 10px;
   left: 10px;
   background-color: #fff;
-  color: rgb(114, 39, 137);
+  color: #722789;
   font-size: 3rem;
   line-height: 3rem;
   font-weight: 800;
@@ -6932,7 +6932,7 @@ h3.bgc_4 {
   margin-bottom: 0px;
 }
 .arbol-full-item .body .btn-arboles {
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   padding: 0 8px;
   color: #fff;
   /*
@@ -6983,7 +6983,7 @@ h3.bgc_4 {
   padding-top: 110px;
 }
 .PArbol .n-titulo {
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   height: 50px;
   position: relative;
   margin-bottom: 50px;
@@ -6993,7 +6993,7 @@ h3.bgc_4 {
   top: 15px;
   left: 10px;
   background-color: #fff;
-  color: rgb(114, 39, 137);
+  color: #722789;
   font-size: 2rem;
   line-height: 2rem;
   font-weight: 400;
@@ -7055,7 +7055,7 @@ h3.bgc_4 {
   width: 32px;
 }
 .arbol-item .body .btn-novedades {
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   padding: 0 8px;
   color: #fff;
 }
@@ -7082,6 +7082,36 @@ h3.bgc_4 {
     justify-self: center;
   }
 }
+.header-gallery {
+  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  margin-bottom: 1rem;
+}
+
+.gallery-search {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAB7UlEQVRoge2YQUtUURiG3+N/CIrcTEJtGxcSlIgQRCsFQ2HoR/gDhNr6b0paZkRB5iZ0pdIiUCQKEURErORpce/gEHPPzP3OnHskzrN/v/s+58y9czhSJpPJpMRZg4CTNClpTtK0pFuSxiWNSTqW9FXSZ0lrzrmN8KojAnDAIrDH8OwCHWAsdfkJYLNG8X/5BNxJVX4WOAoo3+UEmE1R/tcIync5Bx43Vb4F/Bxh+S7HwETs8o6w3/wgPlB8zaIJLEYs36UT0rHSvlyZXUl3Qx4wBFvOubY17PsuTyp+eUm6D0xZwz6BeetQA0+sQZ/AI+tQA9PWoE/gtnWogZY16BO4aR1q4IY1mPZwdcWlNegT+G4dauDEGvQJHFqHGtizBn0CH61DDWxagz6B19ahBt5Yg4OOEjuS7lmHD8m2pLZzDku4cgfKgSvWVjVYtZYfCMVxeiPiSfQ9gcdp7/9AuTIdSUchD/HwKtrq9wLMABcRduA3sBRdoJR4CPyIIPEHeN6URIviasTKO2CZYuV7aXQnHLAA7NQo/oXiYsuVM5aSSvTItIGXwHopdAqcAd+At8AL4EFF9npIhAA86yPR3DsxCrLEdeF/kah6sZu8IQmjQuIgda9a9JHYT92pNsA8cADsA09T98lkMpn+/AXa2kep5N/5DQAAAABJRU5ErkJggg==) no-repeat 5%;
+  padding-left: 35px;
+  background-size: 20px;
+  height: 40px;
+  border-radius: 18px;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.6);
+  font-weight: bold;
+  font-family: inherit;
+  margin: 1rem;
+}
+
+.gallery-title {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.7);
+  float: right;
+  position: relative;
+  font-weight: 600;
+  font-family: "Roboto";
+  font-style: italic;
+  margin: 1rem;
+}
+
+/* Falta agregar responsive media querys */
 /*
     Componente PZona.js
 */
@@ -7316,7 +7346,7 @@ h3.bgc_4 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   padding: 20px 20px;
 }
 .Atractivo-data .atractivo-fotos img {
@@ -7339,7 +7369,7 @@ h3.bgc_4 {
 }
 .Atractivo-data .atractivo-ubicacion span i {
   margin-right: 8px;
-  color: rgb(114, 39, 137);
+  color: #722789;
 }
 .Atractivo-data .atractivo-info {
   grid-area: atractivo-info;
@@ -7354,7 +7384,7 @@ h3.bgc_4 {
 }
 .Atractivo-data .atractivo-info span i {
   margin-right: 8px;
-  color: rgb(114, 39, 137);
+  color: #722789;
 }
 .Atractivo-data .atractivo-info ul li {
   text-transform: uppercase;
@@ -7398,7 +7428,7 @@ h3.bgc_4 {
   font-size: 7rem;
   line-height: 80px;
   font-family: "Jolly Lodger";
-  color: rgb(28, 228, 45);
+  color: #1ce42d;
 }
 .Atractivo-main-halloween .Container-Logo-Halloween {
   margin-top: 30px;
@@ -7544,7 +7574,7 @@ h3.bgc_4 {
   padding-top: 110px;
 }
 .ListadoAtractivofull .nf-titulo {
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   height: 50px;
   position: relative;
   margin-bottom: 50px;
@@ -7555,7 +7585,7 @@ h3.bgc_4 {
   top: 10px;
   left: 25px;
   background-color: #fff;
-  color: rgb(114, 39, 137);
+  color: #722789;
   font-size: 3rem;
   line-height: 3rem;
   font-weight: 800;
@@ -7631,7 +7661,7 @@ h3.bgc_4 {
   margin-bottom: 0px;
 }
 .atractivo-full-item .body .btn-novedades {
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   padding: 0 8px;
   color: #fff;
   /*
@@ -7681,7 +7711,7 @@ h3.bgc_4 {
     left: 25px;
     top: 10px;
     background-color: #fff;
-    color: rgb(114, 39, 137);
+    color: #722789;
     font-size: 2.5rem;
     line-height: 3rem;
     font-weight: 700;
@@ -7705,7 +7735,7 @@ h3.bgc_4 {
     top: 10px;
     left: 25px;
     background-color: #fff;
-    color: rgb(114, 39, 137);
+    color: #722789;
     font-size: 2rem;
     line-height: 2.5rem;
     font-weight: 700;
@@ -7778,7 +7808,7 @@ h3.bgc_4 {
   left: 0px;
   width: 100%;
   display: block;
-  background: rgb(114, 39, 137);
+  background: #722789;
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -7797,7 +7827,7 @@ h3.bgc_4 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(219, 14, 96);
+  background-color: #db0e60;
   transform-origin: top;
   transition: 0.5s;
   box-sizing: border-box;
@@ -7809,7 +7839,7 @@ h3.bgc_4 {
   left: 0px;
   width: 100%;
   display: block;
-  background: rgb(114, 39, 137);
+  background: #722789;
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -7888,7 +7918,7 @@ h3.bgc_4 {
   margin-right: 5px;
 }
 .material-card h2 {
-  background-color: rgb(219, 14, 96);
+  background-color: #db0e60;
   position: absolute;
   bottom: 5px;
   left: 0;
@@ -7927,7 +7957,7 @@ h3.bgc_4 {
   top: -16px;
   width: 0;
   border-left: 16px solid transparent;
-  border-bottom: 16px solid rgb(160, 11, 70);
+  border-bottom: 16px solid #a00b46;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
@@ -7961,10 +7991,10 @@ h3.bgc_4 {
 .material-card.mc-active h2:after {
   top: 100%;
   bottom: 0;
-  border-top: 16px solid rgb(160, 11, 70);
+  border-top: 16px solid #a00b46;
 }
 .material-card .mc-content {
-  background-color: rgb(255, 182, 214);
+  background-color: #ffb6d6;
   position: absolute;
   right: 0;
   top: 0;
@@ -7989,7 +8019,7 @@ h3.bgc_4 {
   line-height: 44px;
   text-align: center;
   border-color: #fff;
-  background-color: rgb(219, 14, 96);
+  background-color: #db0e60;
   cursor: pointer;
   z-index: 20;
   -webkit-transition: all 0.3s;
@@ -8155,7 +8185,7 @@ h3.bgc_4 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   padding: 20px 20px;
 }
 .Alojamiento-data .alojamiento-fotos img {
@@ -8178,7 +8208,7 @@ h3.bgc_4 {
 }
 .Alojamiento-data .alojamiento-ubicacion span i {
   margin-right: 8px;
-  color: rgb(114, 39, 137);
+  color: #722789;
 }
 .Alojamiento-data .alojamiento-info {
   grid-area: alojamiento-info;
@@ -8193,7 +8223,7 @@ h3.bgc_4 {
 }
 .Alojamiento-data .alojamiento-info span i {
   margin-right: 8px;
-  color: rgb(114, 39, 137);
+  color: #722789;
 }
 .Alojamiento-data .alojamiento-info ul li {
   text-transform: uppercase;
@@ -8412,7 +8442,7 @@ h3.bgc_4 {
   font-family: "Montserrat";
   font-weight: bold;
   font-size: 18px;
-  color: rgb(237, 15, 104);
+  color: #ed0f68;
 }
 .tabs .listatabslider {
   list-style-type: none;
@@ -8472,7 +8502,7 @@ h3.bgc_4 {
   max-width: 100%;
   margin: 0 auto;
   height: 4px;
-  background: rgb(237, 15, 104);
+  background: #ed0f68;
   border-radius: 1px;
 }
 .tabs .content {
@@ -8495,7 +8525,7 @@ h3.bgc_4 {
   width: 215px;
   display: inline-flex;
   align-items: center;
-  background: rgb(237, 15, 104);
+  background: #ed0f68;
   min-width: 160px;
   height: 50px;
   margin: 10px 0 0 0;
@@ -8560,7 +8590,7 @@ h3.bgc_4 {
   width: 190px;
   display: inline-flex;
   align-items: center;
-  background: rgb(237, 15, 104);
+  background: #ed0f68;
   height: 50px;
   border: 0;
   border-radius: 40px;
@@ -8587,7 +8617,7 @@ h3.bgc_4 {
   animation: ripples 0.6s linear infinite;
 }
 .tabs .content section h2 {
-  color: rgb(237, 15, 104);
+  color: #ed0f68;
   display: none;
 }
 .tabs .content section h2::after {
@@ -8596,16 +8626,16 @@ h3.bgc_4 {
   display: block;
   width: 30px;
   height: 3px;
-  background: rgb(237, 15, 104);
+  background: #ed0f68;
   margin-top: 5px;
   left: 1px;
 }
 .tabs input[name=tab-control]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label {
   cursor: default;
-  color: rgb(237, 15, 104);
+  color: #ed0f68;
 }
 .tabs input[name=tab-control]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label svg {
-  fill: rgb(237, 15, 104);
+  fill: #ed0f68;
 }
 @media (max-width: 450px) {
   .tabs input[name=tab-control]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label {
@@ -8620,10 +8650,10 @@ h3.bgc_4 {
 }
 .tabs input[name=tab-control]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label {
   cursor: default;
-  color: rgb(237, 15, 104);
+  color: #ed0f68;
 }
 .tabs input[name=tab-control]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label svg {
-  fill: rgb(237, 15, 104);
+  fill: #ed0f68;
 }
 @media (max-width: 450px) {
   .tabs input[name=tab-control]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label {
@@ -8638,10 +8668,10 @@ h3.bgc_4 {
 }
 .tabs input[name=tab-control]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label {
   cursor: default;
-  color: rgb(237, 15, 104);
+  color: #ed0f68;
 }
 .tabs input[name=tab-control]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label svg {
-  fill: rgb(237, 15, 104);
+  fill: #ed0f68;
 }
 @media (max-width: 450px) {
   .tabs input[name=tab-control]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label {
@@ -8738,7 +8768,7 @@ footer span {
 
 a {
   text-decoration: none;
-  color: rgb(237, 15, 104);
+  color: #ed0f68;
 }
 a:hover {
   text-decoration: underline;
@@ -8753,7 +8783,7 @@ a:hover {
 }
 
 .cal-loader__plane {
-  fill: rgb(237, 15, 104);
+  fill: #ed0f68;
 }
 
 .cal-loader__path {
@@ -8999,7 +9029,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: rgb(114, 39, 137);
+  color: #722789;
   position: center;
   float: left;
   border-radius: 8px;
@@ -9011,7 +9041,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: rgb(114, 39, 137);
+  color: #722789;
   position: center;
   margin-left: 3px;
   float: left;
@@ -9034,7 +9064,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: rgb(114, 39, 137);
+  color: #722789;
   position: center;
   margin-left: 5px;
   float: left;
@@ -9046,7 +9076,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: rgb(114, 39, 137);
+  color: #722789;
   position: center;
   margin-left: 5px;
   float: left;
@@ -9058,7 +9088,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: rgb(114, 39, 137);
+  color: #722789;
   position: center;
   margin-left: 5px;
   float: left;
@@ -9070,7 +9100,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: rgb(114, 39, 137);
+  color: #722789;
   position: center;
   margin-left: 5px;
   float: left;
@@ -10227,7 +10257,7 @@ body * {
   top: 4px;
 }
 .newsletter .newsletterFullBody .newsHeader .newsTitle {
-  color: rgb(114, 39, 137);
+  color: #722789;
   font-size: 1em;
 }
 .newsletter .newsletterFullBody .newsEmail {
@@ -10248,12 +10278,12 @@ body * {
   text-align: center;
 }
 .newsletter .newsletterFullBody .newsMsg:disabled {
-  background: rgb(114, 39, 137);
+  background: #722789;
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
-  background-color: rgb(237, 15, 104);
+  background-color: #ed0f68;
   color: white;
 }
 .newsletter .newsletterFullBody .newsFooterButton {
@@ -10262,12 +10292,12 @@ body * {
   border-radius: 15px;
   margin-bottom: 10px;
   border: none;
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   color: white;
 }
 .newsletter .newsletterFullBody .newsFooterButton:hover {
   outline: none;
-  background-color: rgb(127, 62, 146);
+  background-color: #7f3e92;
 }
 
 .PDesuscribir {
@@ -10291,15 +10321,15 @@ body * {
   border-radius: 5px;
   margin-top: 40px;
   border: none;
-  background-color: rgb(114, 39, 137);
+  background-color: #722789;
   color: white;
 }
 .PDesuscribir .DesConfirm:hover {
   outline: none;
-  background-color: rgb(127, 62, 146);
+  background-color: #7f3e92;
 }
 .PDesuscribir .DesMsg {
-  color: rgb(237, 15, 104);
+  color: #ed0f68;
 }
 
 /*
@@ -10312,10 +10342,10 @@ body * {
   align-items: center;
   align-content: center;
   display: flex;
-  background: rgb(114, 39, 137);
-  background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
-  background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
-  background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+  background: #722789;
+  background: -moz-linear-gradient(left, #722789 0%, #ed0f68 100%);
+  background: -webkit-linear-gradient(left, #722789 0%, #ed0f68 100%);
+  background: linear-gradient(to right, #722789 0%, #ed0f68 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
 }
 @media screen and (max-width: 768px) {
@@ -10413,7 +10443,7 @@ body * {
 .profile-card__name {
   font-weight: 700;
   font-size: 24px;
-  color: rgb(114, 39, 137);
+  color: #722789;
   margin-bottom: 15px;
 }
 .profile-card__txt {
