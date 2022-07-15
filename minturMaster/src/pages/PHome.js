@@ -12,11 +12,10 @@ import Newsletter from "../components/subcomponentes/Newsletter";
 import Loading from "../utils/Loading";
 import TabSlider from "../components/subcomponentes/TabSlider";
 import CardImperdibles from "../components/CardImperdibles";
-import SpeedDial from "../components/SocialWidget";
 import WeatherCard from "../components/WeatherCard";
-import Producto from "../components/com.Home/Productos";
 import Etiqueta from "../components/Producto";
 import SpeedDial2 from "../components/SpeedDial";
+import ScrollProductos from "../components/ScrollProductos";
 
 class Home extends Component {
   constructor(props) {
@@ -64,36 +63,23 @@ class Home extends Component {
                   {/*{<PantallaModal />}
                   <SocialWidget />
                   */}
-                  <SpeedDial />
                 </div>
                 {/*{ <div className="pantallaChica2">{<PantallaModal />}</div>*/}
               </center>
             </div>{" "}
+            <ScrollProductos />
             <br />
             <br />
-            <Producto />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <TabSlider />
-            <Etiqueta />
             {/*<Recorridos />
              <EventoForm />*/}
-            <SliderActividades></SliderActividades>
             <Novedades time="10000" />
-            <Descarga />
             <div className="Recorridos">
               <div className="reco-titulo">
                 <span className="reco-t-sub2">Nuestras Redes</span>
               </div>
             </div>
             <br />
-            <div className="grid-container">
+            {/*  <div className="grid-container">
               <div>
                 <center>
                   <Link to="/" className="link-menu">
@@ -140,7 +126,7 @@ class Home extends Component {
                   />
                 </center>
               </div>
-            </div>
+            </div>*/}
           </React.Fragment>
         )}
       </div>

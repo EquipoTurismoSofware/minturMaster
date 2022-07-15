@@ -685,32 +685,56 @@ li {
     z-index: -1;
   }
 }
-.sliderHome > #input-slide-autoplay:checked ~ .slider-arrow-prev > label.slide-3,
-.sliderHome > #input-slide-autoplay:checked ~ .slider-arrow-next > label.slide-1 {
+.sliderHome
+  > #input-slide-autoplay:checked
+  ~ .slider-arrow-prev
+  > label.slide-3,
+.sliderHome
+  > #input-slide-autoplay:checked
+  ~ .slider-arrow-next
+  > label.slide-1 {
   -webkit-animation: arrow 32000ms infinite -2000ms;
   -moz-animation: arrow 32000ms infinite -2000ms;
   -ms-animation: arrow 32000ms infinite -2000ms;
   -o-animation: arrow 32000ms infinite -2000ms;
   animation: arrow 32000ms infinite -2000ms;
 }
-.sliderHome > #input-slide-autoplay:checked ~ .slider-arrow-prev > label.slide-0,
-.sliderHome > #input-slide-autoplay:checked ~ .slider-arrow-next > label.slide-2 {
+.sliderHome
+  > #input-slide-autoplay:checked
+  ~ .slider-arrow-prev
+  > label.slide-0,
+.sliderHome
+  > #input-slide-autoplay:checked
+  ~ .slider-arrow-next
+  > label.slide-2 {
   -webkit-animation: arrow 32000ms infinite 6000ms;
   -moz-animation: arrow 32000ms infinite 6000ms;
   -ms-animation: arrow 32000ms infinite 6000ms;
   -o-animation: arrow 32000ms infinite 6000ms;
   animation: arrow 32000ms infinite 6000ms;
 }
-.sliderHome > #input-slide-autoplay:checked ~ .slider-arrow-prev > label.slide-1,
-.sliderHome > #input-slide-autoplay:checked ~ .slider-arrow-next > label.slide-3 {
+.sliderHome
+  > #input-slide-autoplay:checked
+  ~ .slider-arrow-prev
+  > label.slide-1,
+.sliderHome
+  > #input-slide-autoplay:checked
+  ~ .slider-arrow-next
+  > label.slide-3 {
   -webkit-animation: arrow 32000ms infinite 14000ms;
   -moz-animation: arrow 32000ms infinite 14000ms;
   -ms-animation: arrow 32000ms infinite 14000ms;
   -o-animation: arrow 32000ms infinite 14000ms;
   animation: arrow 32000ms infinite 14000ms;
 }
-.sliderHome > #input-slide-autoplay:checked ~ .slider-arrow-prev > label.slide-2,
-.sliderHome > #input-slide-autoplay:checked ~ .slider-arrow-next > label.slide-0 {
+.sliderHome
+  > #input-slide-autoplay:checked
+  ~ .slider-arrow-prev
+  > label.slide-2,
+.sliderHome
+  > #input-slide-autoplay:checked
+  ~ .slider-arrow-next
+  > label.slide-0 {
   -webkit-animation: arrow 32000ms infinite 22000ms;
   -moz-animation: arrow 32000ms infinite 22000ms;
   -ms-animation: arrow 32000ms infinite 22000ms;
@@ -934,15 +958,38 @@ li {
 }
 /* -------------------------------------------------------- end codepen */
 /* -------------------------------------------------------- footer */
-
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 1300px) {
   .sliderHome {
-    height: 73vw;
+    height: 60vw;
   }
   .sliderHome > ul > li.slide-0 {
-    background-image: url(http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: 130%;
+  }
+  .sliderHome > ul > li.slide-1 {
+    background-size: 130%;
+  }
+  .sliderHome > ul > li.slide-2 {
+    background-size: 130%;
+  }
+  .sliderHome > ul > li.slide-3 {
+    background-size: 130%;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .sliderHome {
+    height: 83vw;
+  }
+  .sliderHome > ul > li.slide-0 {
+    background-size: 180%;
+  }
+  .sliderHome > ul > li.slide-1 {
+    background-size: 180%;
+  }
+  .sliderHome > ul > li.slide-2 {
+    background-size: 180%;
+  }
+  .sliderHome > ul > li.slide-3 {
+    background-size: 180%;
   }
 }
 @media only screen and (max-width: 420px) {
@@ -956,9 +1003,10 @@ li {
   float: left;
   background-color: aqua;
 }
-.MuiSpeedDial-fab{
+.MuiSpeedDial-fab {
   background-color: aqua;
 }
-.MuiButtonBase-root{
+.MuiButtonBase-root {
   background-color: black;
-float: left;}
+  float: left;
+}

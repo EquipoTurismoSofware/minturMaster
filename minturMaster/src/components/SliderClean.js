@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Consumer } from "../context";
+import SpeedDial from "../components/SocialWidget";
 
 class Slider extends Component {
   constructor(props) {
@@ -100,6 +101,7 @@ class Slider extends Component {
               </div>
             </div>
           </div>
+          <SpeedDial />
         </div>
       </React.Fragment>
     );
