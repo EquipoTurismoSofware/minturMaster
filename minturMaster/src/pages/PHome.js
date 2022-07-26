@@ -74,6 +74,7 @@ class Home extends Component {
             {/*<Recorridos />
              <EventoForm />*/}
             <Novedades time="10000" />
+            <GaleriaLocalidades />
             <div className="Recorridos">
               <div className="reco-titulo">
                 <span className="reco-t-sub2">Nuestras Redes</span>
