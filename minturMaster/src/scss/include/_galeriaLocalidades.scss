@@ -7,10 +7,12 @@
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAB7UlEQVRoge2YQUtUURiG3+N/CIrcTEJtGxcSlIgQRCsFQ2HoR/gDhNr6b0paZkRB5iZ0pdIiUCQKEURErORpce/gEHPPzP3OnHskzrN/v/s+58y9czhSJpPJpMRZg4CTNClpTtK0pFuSxiWNSTqW9FXSZ0lrzrmN8KojAnDAIrDH8OwCHWAsdfkJYLNG8X/5BNxJVX4WOAoo3+UEmE1R/tcIync5Bx43Vb4F/Bxh+S7HwETs8o6w3/wgPlB8zaIJLEYs36UT0rHSvlyZXUl3Qx4wBFvOubY17PsuTyp+eUm6D0xZwz6BeetQA0+sQZ/AI+tQA9PWoE/gtnWogZY16BO4aR1q4IY1mPZwdcWlNegT+G4dauDEGvQJHFqHGtizBn0CH61DDWxagz6B19ahBt5Yg4OOEjuS7lmHD8m2pLZzDku4cgfKgSvWVjVYtZYfCMVxeiPiSfQ9gcdp7/9AuTIdSUchD/HwKtrq9wLMABcRduA3sBRdoJR4CPyIIPEHeN6URIviasTKO2CZYuV7aXQnHLAA7NQo/oXiYsuVM5aSSvTItIGXwHopdAqcAd+At8AL4EFF9npIhAA86yPR3DsxCrLEdeF/kah6sZu8IQmjQuIgda9a9JHYT92pNsA8cADsA09T98lkMpn+/AXa2kep5N/5DQAAAABJRU5ErkJggg==) no-repeat 5%;
     padding-left: 35px;
     background-size: 20px;
+    width: 240px;
+    color: white;
     height: 40px;
     border-radius: 18px;
     font-size: 16px;
-    background-color: rgba(255,255,255,.6);
+   // background-color: rgba(141, 40, 107, 0.6);
     font-weight: bold;
     font-family: inherit;
     margin: 1rem;
@@ -18,13 +20,57 @@
 
 .gallery-title{
     font-size: 2rem;
-    color: rgba(255,255,255,.7);
+    color: rgba(241, 236, 236, 0.7);
     float: right;
     position: relative;
     font-weight: 600;
     font-family: 'Roboto';
     font-style: italic;
     margin: 1rem;
+}
+.gallery-search::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: bold;
+}
+
+/*Lista dinamica de localidades*/
+.ul-busqueda {
+  background-color: #c42a59;
+  width: 250px;
+  max-height: auto;
+  overflow: auto;
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 40px;
+  border-radius: 2%;
+  transition: all 1s;
+  z-index: 4;
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+  opacity: 90%;
+}
+.liLista {
+  &:hover {
+    text-decoration-line: underline;
+    font-size: 18px;
+  }
+} 
+
+.linkBusqueda {
+  overflow-x: hidden;
+  margin: 0;
+  list-style: none;
+  color: white;
+  a {
+    color: white;
+    li {
+      color: white;
+      &:hover {
+        font-size: 0%;
+      }
+    }
+  }
 }
 
 .imagen-config img {
@@ -43,8 +89,9 @@
   img {width: 100%}
   
   div.container {
-    text-align: center;
+    text-align:left;
     padding: 10px 20px; 
   }
+
 
 /* Falta agregar responsive media querys */

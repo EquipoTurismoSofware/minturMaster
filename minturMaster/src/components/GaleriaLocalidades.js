@@ -350,7 +350,7 @@ class GaleriaLocalidades extends Component{
          onKeyDown={(e) => this.selectOption(e)}
          type="text"
          className="gallery-search"
-         placeholder="Buscar localidad..." 
+         placeholder="Buscar por localidad ...           &#9660;" 
          autoComplete="off"
          value={this.state.filtro}
          onChange={this.handleBusquedaChange}
