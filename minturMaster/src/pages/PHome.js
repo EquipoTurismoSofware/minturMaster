@@ -79,8 +79,7 @@ class Home extends Component {
              <EventoForm />*/}
             <Novedades time="10000" />
             <GaleriaLocalidades />
-=======
-             <EventoForm />
+            {/*  <EventoForm />
 >>>>>>> Stashed changes
             <div className="Recorridos">
               <div className="reco-titulo">

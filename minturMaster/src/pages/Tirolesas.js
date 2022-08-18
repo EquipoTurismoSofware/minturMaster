@@ -73,12 +73,7 @@ class Tirolesas extends Component {
           <React.Fragment>
             <div className="container mb-5" />
             <div className="container">
-              <div
-                className="ZonaDetalle-titulo"
-                style={{ paddingTop: "50px", backgroundColor: `#722789` }}
-              >
-                <h3 style={{ color: `#722789` }}>Tirolesas</h3>
-              </div>
+              <h3 style={{ color: `#722789` }}>Tirolesas</h3>
               <div className="parentTirolesa">
                 <div className="div1Tirolesa">
                   <span>
@@ -92,7 +87,10 @@ class Tirolesas extends Component {
                   </span>
                 </div>
                 <div className="div2Tirolesa">
-                  <img src="https://cinytec.org.ar/wp-content/uploads/2019/01/logo2019-150x105.png"></img>
+                  <img
+                    style={{ height: "100px", width:"150px" }}
+                    src="https://cinytec.org.ar/wp-content/uploads/2019/01/logo2019-150x105.png"
+                  ></img>
                 </div>
                 <div className="div3Tirolesa">
                   {" "}
