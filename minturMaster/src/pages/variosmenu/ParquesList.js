@@ -67,45 +67,45 @@ class PParques extends Component {
     if (this.state.data.length > 0) {
       ListadoAtractivofull = this.state.data.map((atrac) => {
         let descripcion = "";
-        if (atrac.descripcion.length > 395) {
-          descripcion = atrac.descripcion.substr(0, 395) + "...";
+        if (atrac.descripcion.length > 205) {
+          descripcion = atrac.descripcion.substr(0, 205) + "...";
         } else {
           descripcion = atrac.descripcion;
         }
         let indice = Math.floor(Math.random() * atrac.imagenes.length);
         return (
           <Link to={`/atractivo/${atrac.id}`} key={`atractivo-${atrac.id}`}>
-            <div className="row mb-5">
-              <div className="col">
-                <div className="atractivo-full-item">
-                  <div className="imagen">
-                    <span style={{ backgroundColor: `#5bb156` }}>
-                      {atrac.localidad} - {atrac.tipoNombre}
-                    </span>
-                    <img
-                      className="img-fluid"
-                      src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${atrac.imagenes[indice].imagen}`}
-                      alt="Img"
-                    />
-                  </div>
-                  <div
-                    className="titulo"
-                    style={{ backgroundColor: `#5bb156` }}
-                  >
-                    <h3>{atrac.nombre}</h3>
-                  </div>
-                  <div className="body">
-                    <p className="text-dark mb-2">{descripcion}</p>
-                    <span
-                      className="btn-novedades"
-                      style={{ backgroundColor: `#5bb156` }}
-                    >
-                      Leer <i className="fas fa-arrow-right" />
-                    </span>
-                  </div>
+            <div class="blog-item">
+              <a href="#">
+                <div class="icon">
+                  <img
+                    className=""
+                    src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${atrac.imagenes[indice].imagen}`}
+                    alt="Img"
+                  />
                 </div>
-              </div>
-            </div>
+                <div class="content">
+                  <div class="title" style={{ color: "#5bb156" }}>
+                    {atrac.nombre} <br></br>
+                    <span class="blog-date">
+                      {atrac.tipoNombre} - {atrac.localidad}
+                    </span>
+                  </div>
+                  <div class="rounded"></div>
+
+                  <p>{descripcion}</p>
+                </div>
+
+                <div class="item-arrow">
+                  <i
+                    class="fa fa-long-arrow-right"
+                    aria-hidden="true"
+                    style={{ color: "#5bb156" }}
+                  ></i>
+                </div>
+              </a>
+            </div>{" "}
+            <hr></hr>
           </Link>
         );
       });
@@ -121,29 +121,33 @@ class PParques extends Component {
           </div>
         ) : (
           <React.Fragment>
-            <div className="container ListadoAtractivofull">
-              <div className="nf-titulo" style={{ backgroundColor: `#5bb156` }}>
-                <span style={{ color: `#5bb156`, paddingLeft: "50px" }}>
-                  Parques Provinciales
-                </span>
-              </div>
-              <div style={{ float: "left" }}>
+            <div
+              style={{
+                paddingTop: "200px",
+                paddingBottom: "30px",
+                paddingLeft: "80px",
+              }}
+              className="container ListadoAtractivofull"
+            >
+              <h3 style={{ color: `#5bb156` }}>Parques Provinciales</h3>
+              <div style={{ float: "right", paddingLeft: "50px" }}>
                 <img
                   className="logoParques"
                   src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/icons/parques.jpg"
                 ></img>
               </div>
-              <h4 className="" style={{ color: `#808080` }}>
-                Los parques provinciales, con su cuidadoso diseño paisajístico,
-                te permiten relajarte y disfrutar de la naturaleza, en medio del
-                ambiente urbano. Estos placenteros refugios verdes te ofrecen
-                recreación, eventos y propuestas para todos los gustos y edades.
-                Cada uno de ellos con su marca distintiva, preservan vegetación
+              <h5 className="" style={{ color: `#808080` }}>
+                <br></br>
+                Con sus cuidadosos diseños paisajísticos, te permiten relajarte
+                y disfrutar de la naturaleza, en medio del ambiente urbano.
+                Estos placenteros refugios verdes te ofrecen recreación, eventos
+                y propuestas para todos los gustos y edades. <br></br>Cada uno
+                de ellos con su marca distintiva, preservan vegetación
                 autóctona, cuentan apasionantes historias y constituyen sitios
                 de vital importancia por los beneficios ambientales y sociales
-                que brindan a locales y turistas. Bienvenidos a los parques
-                provinciales.
-              </h4>
+                que brindan a locales y turistas.
+                {/* Bienvenidos a los parques provinciales.*/}
+              </h5>{" "}
             </div>
 
             <br />
