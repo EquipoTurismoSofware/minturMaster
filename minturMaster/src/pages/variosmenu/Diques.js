@@ -103,7 +103,7 @@ class PDiques extends Component {
                   ></i>
                 </div>
               </a>
-            </div>{" "}
+            </div>
             <hr></hr>
           </Link>
         );
