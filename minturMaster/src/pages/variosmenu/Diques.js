@@ -116,11 +116,8 @@ class PDiques extends Component {
         ) : (
           <React.Fragment>
             <div className="container ListadoAtractivofull">
-              <div
-                className="ZonaLocalidad-titulo"
-                style={{ backgroundColor: `#722789` }}
-              >
-                <h3 style={{ color: `#722789` }}>Diques</h3>
+              <div className="ZonaLocalidad-titulo">
+                <h3>Espejos de Agua</h3>
               </div>
               <h4 className="" style={{ color: `#808080` }}>
                 A lo largo de más de tres décadas, el Estado Provincial trabajó
@@ -133,7 +130,7 @@ class PDiques extends Component {
                 tentadoras opciones recreativas que podés disfrutar en los
                 hermosos espejos de agua sanluiseños.
               </h4>
-              <div  style={{paddingTop: "10px"}} className="Recorridos">
+              <div style={{ paddingTop: "10px" }} className="Recorridos">
                 <div className="reco-titulo">
                   <Link to="/PPermisoPesca" className="link">
                     <span className="reco-t-sub2">Ver Permisos</span>

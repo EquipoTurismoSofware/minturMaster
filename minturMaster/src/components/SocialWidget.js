@@ -102,47 +102,47 @@ export default class SocialWidget extends Component {
       <React.Fragment>
         <div class="chat-widget">
           <a
-            class="chat-widget--button-second -hide"
+            class="chat-widget--button-second "
             href="https://www.wa.link/kd2a54"
             target="_blank"
             style={{
               backgroundColor: "transparent",
               position: "absolute",
-              left: "0px",
+              right: "60px",
               bottom: "65px",
             }}
             id="widget-whatsapp"
           >
             <img
-              style={{ width: "30%" }}
+              style={{ width: "50%" }}
               src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/asistente/pin.png"
             />
           </a>
           <a
-            class="chat-widget--button-second -hide"
+            class="chat-widget--button-second "
             href="https://www.youtube.com/channel/UCiYidEtfj2VP3nAqaG1u77w/featured"
             target="_blank"
             style={{
               backgroundColor: "transparent",
               position: "absolute",
-              left: "15px",
+              right: "30px",
               bottom: "2px",
             }}
             id="widget-youtube"
           >
             <img
-              style={{ width: "50%" }}
+              style={{ width: "60%" }}
               src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/asistente/sol.png"
             />
           </a>
           <a
-            class="chat-widget--button-second -hide"
+            class="chat-widget--button-second "
             href="https://twitter.com/TurismoSanLuis_"
             target="_blank"
             style={{
               backgroundColor: "transparent",
               position: "absolute",
-              right: "80px",
+              right: "220px",
               bottom: "7px",
             }}
             id="widget-twitter"
@@ -153,13 +153,13 @@ export default class SocialWidget extends Component {
             />
           </a>
           <a
-            class="chat-widget--button-second -hide"
+            class="chat-widget--button-second "
             href="https://www.facebook.com/turismodesanluis/"
             target="_blank"
             style={{
               backgroundColor: "transparent",
               position: "absolute",
-              right: "70px",
+              right: "200px", 
               bottom: "65px",
             }}
             id="widget-facebook"
@@ -170,19 +170,19 @@ export default class SocialWidget extends Component {
             />
           </a>
           <a
-            class="chat-widget--button-second -hide "
+            class="chat-widget--button-second  "
             href="https://www.instagram.com/turismo_san_luis/"
             target="_blank"
             style={{
               backgroundColor: "transparent",
               position: "absolute",
-              right: "10px",
+              right: "125px",
               bottom: "90px",
             }}
             id="widget-instagram"
           >
             <img
-              style={{ width: "30%" }}
+              style={{ width: "50%" }}
               src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/asistente/hotel.png"
             />
           </a>

@@ -17,7 +17,8 @@ import WeatherCard from "../components/WeatherCard";
 import Etiqueta from "../components/Producto";
 import SpeedDial2 from "../components/SpeedDial";
 import ScrollProductos from "../components/ScrollProductos";
-
+import ScrollExperiencia from "../components/ScrollExperiencia";
+import BotoneraFondo from "../components/BotoneraFondo";
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -56,31 +57,37 @@ class Home extends Component {
           <React.Fragment>
             <div className="menu-y-slider ">
               <Slider></Slider>
-              <center>
-                <div className="pantallaGrande">
+              {/* <div className="pantallaGrande">
                   <span className="newsHome">
                     <Newsletter />
                   </span>
-                  {/*{<PantallaModal />}
+                {<PantallaModal />}
                   <SocialWidget />
-                  */}
+                 
                 </div>
                 {/*{ <div className="pantallaChica2">{<PantallaModal />}</div>*/}
-              </center>
-            </div>{" "}
-            <ScrollProductos />
-            <br />
-            <br />
+            </div>
+            <ScrollProductos /> <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <ScrollExperiencia />
+            <Novedades timerID="100" />
             {/*<Recorridos />
+<<<<<<< Updated upstream
              <EventoForm />*/}
             <Novedades time="10000" />
             <GaleriaLocalidades />
+=======
+             <EventoForm />
+>>>>>>> Stashed changes
             <div className="Recorridos">
               <div className="reco-titulo">
                 <span className="reco-t-sub2">Nuestras Redes</span>
               </div>
             </div>
-            <br />
+            <br />*/}
             {/*  <div className="grid-container">
               <div>
                 <center>
@@ -129,6 +136,13 @@ class Home extends Component {
                 </center>
               </div>
             </div>*/}
+            <BotoneraFondo />
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
           </React.Fragment>
         )}
       </div>

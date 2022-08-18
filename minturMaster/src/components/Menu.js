@@ -112,9 +112,10 @@ class Menu extends Component {
     this.setState({ lista: false });
   }
 
-  smallNavbar() {//When user scrolls 
+  smallNavbar() {
+    //When user scrolls
     //if(window.width > 990){// When is a expanded menu
-      document.getElementById("nav").style.position = "fixed";
+    document.getElementById("nav").style.position = "fixed";
     document.getElementById("nav").style.minHeight = "90px";
     document.getElementById("nav").style.backgroundImage =
       "url(" + "require(../utils/images/scrollNavbar.png)" + ")";
@@ -132,7 +133,8 @@ class Menu extends Component {
     // }
   }
 
-  bigNavbar() {// When user is on the top
+  bigNavbar() {
+    // When user is on the top
 
     document.getElementById("nav").style.position = "absolute";
     document.getElementById("nav").style.minHeight = "140px";
@@ -140,9 +142,9 @@ class Menu extends Component {
       "url(" + "require(../utils/images/menu-img.png)" + ")";
     document.getElementById("nav").style.top = "40px";
     document.getElementById("nav").style.width = "100%";
-    
-    document.getElementById("logoscroll").style.width = "240px";
-    document.getElementById("logoscroll").style.marginTop = "-2%";
+
+    document.getElementById("logoscroll").style.width = "200px";
+    document.getElementById("logoscroll").style.marginTop = "-1.5%";
     document.getElementById("logoscroll").style.display = "inline-block";
   }
 
@@ -326,70 +328,118 @@ class Menu extends Component {
 
     return (
       <React.Fragment>
-        <Navbar bg="navbar" variant="dark" id="nav" expand="lg">
-          <Navbar.Brand href="/">
-            <img
-              id="logoscroll"
-              src={Logo}
-              alt="San Luis"
-              className="img-brand"
+        <div className="menuNew">
+          <Navbar bg="navbar" variant="dark" id="nav" expand="lg">
+            <Navbar.Brand href="/">
+              <img
+                id="logoscroll"
+                src={Logo}
+                alt="San Luis"
+                className="img-brand"
+              />
+            </Navbar.Brand>
+            <Navbar.Toggle
+              aria-controls="responsive-navbar-nav"
+              data-bs-target="#responsive-navbar-nav"
             />
-          </Navbar.Brand>
-          <Navbar.Toggle
-            aria-controls="responsive-navbar-nav"
-            data-bs-target="#responsive-navbar-nav"
-          />
-          <Navbar.Collapse
-            id="responsive-navbar-nav"
-          >
-            <Nav className="nav-container navbar-center">
-              <Nav.Link href="#sanluis">Vení a San Luis</Nav.Link>
-              <div className="nav-space"></div>
-              <NavDropdown
-                renderMenuOnMount={true}
-                title="Tu mejor viaje"
-                id="collasible-nav-dropdown"
-              >
-                <NavDropdown.Item href="#action/3.1">
-                  Top 3 destinos
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.2">
-                  Hospedaje
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.3">
-                  Fin de semana
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Gastronomía
-                </NavDropdown.Item>
-              </NavDropdown>
-              <div className="nav-space"></div>
-              <Nav.Link href="#institucional">Institucional</Nav.Link>
-              <div className="nav-space"></div>
-              <div className="buscador-container">
-                <input
-                  onKeyDown={(e) => this.selectOption(e)}
-                  id="buscar"
-                  type="text"
-                  placeholder="Buscá tu destino             &#9660;"
-                  autoComplete="off"
-                  className="buscador-destino buscador-icon"
-                  value={this.state.filtro}
-                  onChange={this.handleBusquedaChange}
-                  onBlur={this.cancelBusqueda}
-                />
-                {this.state.lista ? (
-                  <ul className="ul-busqueda ">{filtro}</ul>
-                ) : (
-                  ""
-                )}
-              </div>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="nav-container navbar-center">
+                <NavDropdown
+                  renderMenuOnMount={true}
+                  title="Organizá tu viaje"
+                  id="collasible-nav-dropdown"
+                >
+                  <NavDropdown.Item href="#/filtroalojamiento">
+                    Hospedaje
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#/listado-guias-agencias-covid/guiasturismo">
+                    Guías de Turismo
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#/listado-guias-agencias-covid/agencias">
+                    Agencias de Viaje
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#/PPrincipalGastronomia">
+                    Gastronomía
+                  </NavDropdown.Item>
+                </NavDropdown>{" "}
+                <div className="nav-space"></div>
+                <NavDropdown
+                  renderMenuOnMount={true}
+                  title="Conocé San Luis"
+                  id="collasible-nav-dropdown"
+                >
+                  <NavDropdown.Item href="#/tirolesas">
+                    Tirolesas
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#/parques-provinciales">
+                    Parques Provinciales
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#/caminos-pintorescos">
+                    Caminos Pintorescos
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#/Diques">
+                    Diques Y Embalses
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#/riosysaltos">
+                    Ríos y Saltos
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#/PCerveceria">
+                    Caminos Cerveceros
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#/PCreerGnral">
+                    Iglesias
+                  </NavDropdown.Item>
+                </NavDropdown>
+                <div className="nav-space"></div>
+                <NavDropdown
+                  renderMenuOnMount={true}
+                  title="Institucional"
+                  id="collasible-nav-dropdown"
+                >
+                  <NavDropdown.Item href="#/listadoEstadisticas">
+                    Estadísticas
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#/novedades">
+                    Prensa Turistíca
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#/Pcontacto">
+                    Contacto
+                  </NavDropdown.Item>
+                </NavDropdown>
+                <div className="nav-space"></div>
+                <div className="buscador-container">
+                  <input
+                    onKeyDown={(e) => this.selectOption(e)}
+                    id="buscar"
+                    type="text"
+                    placeholder="Buscá tu destino             &#9660;"
+                    autoComplete="off"
+                    className="buscador-destino buscador-icon"
+                    value={this.state.filtro}
+                    onChange={this.handleBusquedaChange}
+                    onBlur={this.cancelBusqueda}
+                  />
+                  {this.state.lista ? (
+                    <ul className="ul-busqueda ">{filtro}</ul>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
+        </div>
       </React.Fragment>
     );
   }

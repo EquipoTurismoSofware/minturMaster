@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Helmet } from "react-helmet";
 import { Consumer } from "../context";
+import { Animated } from "react-animated-css";
 
 class Scroll extends Component {
   constructor(props) {
@@ -13,19 +14,60 @@ class Scroll extends Component {
   render() {
     return (
       <React.Fragment>
-        <div>
+        <div style={{ marginLeft: "1%" }}>
           <Helmet>
             <script
               type="text/javascript"
               src="http://turismo.sanluis.gov.ar/recursos/js/scroll.js"
             ></script>
           </Helmet>
+            <div className="tituloScrollActividades">
+              <center>
+                <img
+                  className=""
+                  src={`${process.env.REACT_APP_API_RECURSOS}/recursos/explora.png`}
+                  alt="Img"
+                />{" "}
+              </center>
+            </div>
           <div class="grid-container">
+            {/*
+            <div class="arrow izquierda bounce">
+              <i class="fa fa-arrow-left fa-5x" aria-hidden="true"></i>
+    </div>*/}
             <main class="grid-item main">
-              <div class="items">
-                <div class="item item1">
-                  <div class="section-title">
-                    <h2>Gastronomía</h2>
+              <div class="items"  >
+                <div class="item item4">
+                  <div class="section-title espejosAgua">
+                    <Animated
+                      animationIn="bounceInLeft"
+                      animationOut="fadeOut"
+                      isVisible={true}
+                    >
+                      <h2 id="primerp">Espejos de Agua</h2>
+                    </Animated>
+                  </div>
+                  <div class="parrafoProducto">
+                    <p className="productoP">
+                      Lo que queremos hacer es colocar este texto al lado
+                      derecho de la imagen, algo así como se observa en
+                      periódicos o revistas.
+                    </p>
+                  </div>
+                  <div className="productoSubtitulo">
+                    <h5>Oro en la Provincia</h5>
+                    <h5>Circuito de minería</h5>
+                  </div>
+                </div>
+                <div class="item item6">
+                  <div class="section-title aventura">
+                    <Animated
+                      animationIn="bounceInLeft"
+                      animationOut="fadeOut"
+                      isVisible={true}
+                    >
+                      <h2>Aventura</h2>
+                    </Animated>
                   </div>
                   <div class="parrafoProducto">
                     <p className="productoP">
@@ -39,9 +81,59 @@ class Scroll extends Component {
                     <h5>Gastronomía</h5>
                   </div>
                 </div>
+                <div class="item item3">
+                  <div class="section-title sierras">
+                    <Animated
+                      animationIn="bounceInLeft"
+                      animationOut="fadeOut"
+                      isVisible={true}
+                    >
+                      <h2>Las Sierras</h2>
+                    </Animated>
+                  </div>
+                  <div class="parrafoProducto">
+                    <p className="productoP">
+                      Lo que queremos hacer es colocar este texto al lado
+                      derecho de la imagen, algo así como se observa en
+                      periódicos o revistas.
+                    </p>
+                  </div>
+                  <div className="productoSubtitulo">
+                    <h5>Los Gigantes</h5>
+                    <h5>Todo el circuito serrano</h5>
+                  </div>
+                </div>
+                <div class="item item5">
+                  <div class="section-title parques">
+                    <Animated
+                      animationIn="bounceInLeft"
+                      animationOut="fadeOut"
+                      isVisible={true}
+                    >
+                      <h2>Parques</h2>
+                    </Animated>
+                  </div>
+                  <div class="parrafoProducto">
+                    <p className="productoP">
+                      Lo que queremos hacer es colocar este texto al lado
+                      derecho de la imagen, algo así como se observa en
+                      periódicos o revistas.
+                    </p>
+                  </div>
+                  <div className="productoSubtitulo">
+                    <h5>Parques Provinciales</h5>
+                    <h5>Gastronomía</h5>
+                  </div>
+                </div>{" "}
                 <div class="item item2">
-                  <div class="section-title" style={{ marginLeft: "80px" }}>
-                    <h2>Salinas</h2>
+                  <div class="section-title salinas">
+                    <Animated
+                      animationIn="bounceInLeft"
+                      animationOut="fadeOut"
+                      isVisible={true}
+                    >
+                      <h2>Termas y Salinas</h2>
+                    </Animated>
                   </div>
                   <div class="parrafoProducto">
                     <p className="productoP">
@@ -55,25 +147,15 @@ class Scroll extends Component {
                     <h5>Salina del Bebedero</h5>
                   </div>
                 </div>
-                <div class="item item3">
-                  <div class="section-title" style={{ marginLeft: "10px" }}>
-                    <h2>Las Sierras</h2>
-                  </div>
-                  <div class="parrafoProducto">
-                    <p className="productoP">
-                      Lo que queremos hacer es colocar este texto al lado
-                      derecho de la imagen, algo así como se observa en
-                      periódicos o revistas.
-                    </p>
-                  </div>
-                  <div className="productoSubtitulo">
-                    <h5>Gastronomía</h5>
-                    <h5>Gastronomía</h5>
-                  </div>
-                </div>
-                <div class="item item4">
+                <div class="item item1">
                   <div class="section-title">
-                    <h2>Gastronomía</h2>
+                    <Animated
+                      animationIn="bounceInLeft"
+                      animationOut="fadeOut"
+                      isVisible={true}
+                    >
+                      <h2>Gastronomía</h2>
+                    </Animated>
                   </div>
                   <div class="parrafoProducto">
                     <p className="productoP">
@@ -83,88 +165,8 @@ class Scroll extends Component {
                     </p>
                   </div>
                   <div className="productoSubtitulo">
-                    <h5>Gastronomía</h5>
-                    <h5>Gastronomía</h5>
-                  </div>
-                </div>
-                <div class="item item5">
-                  <div class="section-title" style={{ marginLeft: "100px" }}>
-                    <h2>Parques</h2>
-                  </div>
-                  <div class="parrafoProducto">
-                    <p className="productoP">
-                      Lo que queremos hacer es colocar este texto al lado
-                      derecho de la imagen, algo así como se observa en
-                      periódicos o revistas.
-                    </p>
-                  </div>
-                  <div className="productoSubtitulo">
-                    <h5>Gastronomía</h5>
-                    <h5>Gastronomía</h5>
-                  </div>
-                </div>
-                <div class="item item6">
-                  <div class="section-title">
-                    <h2>Gastronomía</h2>
-                  </div>
-                  <div class="parrafoProducto">
-                    <p className="productoP">
-                      Lo que queremos hacer es colocar este texto al lado
-                      derecho de la imagen, algo así como se observa en
-                      periódicos o revistas.
-                    </p>
-                  </div>
-                  <div className="productoSubtitulo">
-                    <h5>Gastronomía</h5>
-                    <h5>Gastronomía</h5>
-                  </div>
-                </div>
-                <div class="item item7">
-                  <div class="section-title">
-                    <h2>Gastronomía</h2>
-                  </div>
-                  <div class="parrafoProducto">
-                    <p className="productoP">
-                      Lo que queremos hacer es colocar este texto al lado
-                      derecho de la imagen, algo así como se observa en
-                      periódicos o revistas.
-                    </p>
-                  </div>
-                  <div className="productoSubtitulo">
-                    <h5>Gastronomía</h5>
-                    <h5>Gastronomía</h5>
-                  </div>
-                </div>
-                <div class="item item8">
-                  <div class="section-title">
-                    <h2>Gastronomía</h2>
-                  </div>
-                  <div class="parrafoProducto">
-                    <p className="productoP">
-                      Lo que queremos hacer es colocar este texto al lado
-                      derecho de la imagen, algo así como se observa en
-                      periódicos o revistas.
-                    </p>
-                  </div>
-                  <div className="productoSubtitulo">
-                    <h5>Gastronomía</h5>
-                    <h5>Gastronomía</h5>
-                  </div>
-                </div>
-                <div class="item item9">
-                  <div class="section-title">
-                    <h2>Gastronomía</h2>
-                  </div>
-                  <div class="parrafoProducto">
-                    <p className="productoP">
-                      Lo que queremos hacer es colocar este texto al lado
-                      derecho de la imagen, algo así como se observa en
-                      periódicos o revistas.
-                    </p>
-                  </div>
-                  <div className="productoSubtitulo">
-                    <h5>Gastronomía</h5>
-                    <h5>Gastronomía</h5>
+                    <h5>Magia Gastronómica</h5>
+                    <h5>Disfrutá de los Sabores</h5>
                   </div>
                 </div>
                 <div className="reset"></div>

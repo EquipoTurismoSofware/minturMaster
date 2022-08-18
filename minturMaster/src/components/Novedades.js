@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { Consumer } from "../context";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import SwiperCore, {Pagination} from 'swiper';
-import { Swiper, SwiperSlide} from 'swiper/react';
+import SwiperCore, { Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import 'swiper/swiper.scss';
-import 'swiper/components/pagination/pagination.scss';
+import "swiper/swiper.scss";
+import "swiper/components/pagination/pagination.scss";
 
 // install Swiper modules
 SwiperCore.use([Pagination]);
@@ -65,7 +65,7 @@ class Novedades extends Component {
       responseType: "json",
     })
       .then((response) => {
-        let data = response.data.data.registros
+        let data = response.data.data.registros;
         self.setState(
           {
             data: data,
@@ -97,42 +97,36 @@ class Novedades extends Component {
 
   render() {
     const items = this.state.data.map((item) => {
-      let descripcion = item.descripcion.substr(0, 150) + "...";
+      let descripcion = item.descripcion.substr(0, 400) + "...";
       let fecha = item.fecha.split("-");
       return (
-        <SwiperSlide
-          key={`ci-${item.id}`}
-          className="blog-slider__item"
-        >
-            <div className="blog-slider__img">
-              <img
-                style={{ height: "300px" }}
-                src={`${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${item.foto_uno}`}
-                alt="Foto"
-              />
-            </div>
+        <SwiperSlide key={`ci-${item.id}`} className="blog-slider__item">
+          <div className="blog-slider__img">
+            <img
+              style={{ height: "420px" }}
+              src={`${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${item.foto_uno}`}
+              alt="Foto"
+            />
+          </div>
 
-            <div class="blog-slider__content">
+          <div class="blog-slider__content">
             <div className="col-sm-11">
               <Link
                 to={`/novedad/${item.id}`}
                 className="link"
                 style={{ color: "black" }}
               >
-               
-                       <span className="blog-slider__code">{`${fecha[2]}/${fecha[1]}/${fecha[0]}`}</span>
-                     <div className="blog-slider__title">
-                        <h2>{item.titulo}</h2>
-                      </div>
-                      <div><h4>{item.subtitulo}</h4></div>
+                <span className="blog-slider__code">{`${fecha[2]}/${fecha[1]}/${fecha[0]}`}</span>
+                <div className="blog-slider__title">
+                  <h2>{item.titulo}</h2>
+                </div>
+                <div>
+                  <h4>{item.subtitulo}</h4>
+                </div>
 
-                    
-                      <div class="blog-slider__text">
-                        {descripcion}
-                      </div>
-                      <div class="blog-slider__button">
-                          Leer más
-                      </div>
+                <div class="blog-slider__text">{descripcion}</div>
+                <div class="blog-slider__button">Leer más</div>
+                <div class="blog-slider__button">Ver todas las noticias</div>
               </Link>
             </div>
           </div>
@@ -141,24 +135,31 @@ class Novedades extends Component {
     });
 
     return (
-      <div className="container mb-3 Novedades">
-          <Link to="/novedades" className="novedades-leyenda">
-            <span>NOVEDADES</span>
-          </Link>
-            
-              <Swiper
-                 spaceBetween={30}
-                 effect={"fade"}
-                 direction={"vertical"}
-                 loop={false}
-                 pagination={{el: '.blog-slider__pagination',
-                 clickable: true,
-                 dynamicBullets: true}}
-                 className="blog-slider"
-              >
-                  {items}
-              <div className="blog-slider__pagination"></div>
-              </Swiper>
+      <div className="" style={{ paddingTop: "100px" }}>
+        <div className="tituloScrollActividades">
+          <center>
+            <img
+              className=""
+              src={`${process.env.REACT_APP_API_RECURSOS}/recursos/novedades.png`}
+              alt="Img"
+            />{" "}
+          </center>
+        </div>
+        <Swiper
+          spaceBetween={30}
+          effect={"fade"}
+          direction={"vertical"}
+          loop={false}
+          pagination={{
+            el: ".blog-slider__pagination",
+            clickable: true,
+            dynamicBullets: true,
+          }}
+          className="blog-slider"
+        >
+          {items}
+          <div className="blog-slider__pagination"></div>
+        </Swiper>
 
         {/*    <div className="blog-slider">
           <div class="blog-slider__wrp swiper-wrapper">{items}</div>

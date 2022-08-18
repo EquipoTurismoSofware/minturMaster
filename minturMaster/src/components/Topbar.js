@@ -5,42 +5,48 @@ import Viewer from "./subcomponentes/Viewer";
 const Topbar = (props) => {
   return (
     <React.Fragment className="">
-      <div className="topBar container-fluid bg-dark">
-        <div className="row py-2 px-lg-5">
-          <div className="col-lg-4 text-center text-lg-left mb-2 mb-lg-0">
-            <div className="d-inline-flex align-items-center text-white">
-              <small>
-                <i className="fa fa-phone-alt mr-2" />
-                +54 (266) 4423479
-              </small>
-              <small className="px-3">|</small>
-              <small>
-                <i className="fa fa-envelope mr-2" />
-                contacto@turismo.sanluis.gov.ar
-              </small>
-            </div>
-          </div>
-          <div className="col-lg-4 text-center text-white">
-            <p>
-              Sitio oficial de la <b>Secretaría de Turismo</b> de la Provincia de San Luis
-            </p>
-          </div>
-          <div className="col-lg-4 text-center text-lg-right">
-            <div className="d-inline-flex align-items-center">
-              <a className="text-white px-2" href>
-                <i className="fab fa-facebook-f" />
-              </a>
-              <a className="text-white px-2" href>
-                <i className="fab fa-twitter" />
-              </a>
-              <a className="text-white px-2" href>
-                <i className="fab fa-instagram" />
-              </a>
-              <a className="text-white pl-2" href>
-                <i className="fab fa-youtube" />
-              </a>
-            </div>
-          </div>
+      <div className="topBar bg-dark">
+        <div className="text-white topBarIcon">
+          <i class="fa fa-phone-square  mr-2"></i>
+          <a href="tel:+542664423479">+54 (266) 4423479</a>
+          {/*  <i class="mr-2"> </i>| <i class="mr-2"> </i>
+          <i className="fa fa-at mr-2" />
+          <a href="mailto:contacto@turismo.sanluis.gov.ar">
+            contacto@turismo.sanluis.gov.ar
+          </a>*/}
+        </div>
+        <div className="text-white topBarTitle">
+          Sitio oficial de la <b>Secretaría de Turismo</b> de la Provincia de
+          San Luis
+        </div>
+        <div className="topBarIcon">
+          <a className="text-white px-2" href="https://walink.co/a8a41d">
+            <i className="tabIconos fab fa-whatsapp" />
+          </a>
+          <a
+            className="text-white px-2"
+            href="https://www.facebook.com/turismodesanluis"
+          >
+            <i className="tabIconos fab fa-facebook-f" />
+          </a>
+          <a
+            className="text-white px-2"
+            href="https://twitter.com/TurismoSanLuis_"
+          >
+            <i className="tabIconos fab fa-twitter" />
+          </a>
+          <a
+            className="text-white px-2"
+            href="https://www.instagram.com/turismo_san_luis/"
+          >
+            <i className="tabIconos fab fa-instagram" />
+          </a>
+          <a
+            className="text-white pl-2"
+            href="https://www.youtube.com/channel/UCiYidEtfj2VP3nAqaG1u77w"
+          >
+            <i className="tabIconos fab fa-youtube" />
+          </a>
         </div>
       </div>
     </React.Fragment>

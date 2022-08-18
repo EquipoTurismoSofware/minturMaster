@@ -5,128 +5,155 @@ class Footer extends Component {
   render() {
     return (
       <React.Fragment>
-         <div class="wrapper">
-      <div class="profile-card js-profile-card">
-        <div class="profile-card__img">
-          <img   src={`${process.env.REACT_APP_API}/recursos/logoNuevo.png`} alt="profile card" />
-        </div>
-
-        <div class="profile-card__cnt js-profile-cnt">
-          <div class="profile-card__name">Secretaría de Turismo</div>
-          <div class="profile-card__txt"></div>
-          <div class="profile-card-loc">
-            <span class="profile-card-loc__icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </span>
-            <span class="profile-card-loc__txt">
-            Av. Illia 35, esq. Junín <br />
-            San Luis, Capital
-            </span>
+        <footer class="footer-section">
+          <div class="container">
+            <div class="footer-content pt-5 pb-5">
+              <div class="row">
+                <div class="col-xl-4 col-lg-4 mb-50">
+                  <div class="footer-widget">
+                    <div class="footer-logo">
+                      <a href="index.html">
+                        <img
+                          src={`${process.env.REACT_APP_API}/recursos/logoSanLuis.png`}
+                          class="img-fluid"
+                          alt="profile card"
+                        />
+                      </a>
+                    </div>
+                    <div class="footer-text">
+                      <p>
+                        Secretaría de Turismo de la Provincia de San Luis.
+                        <br />
+                        Illia 35, San Luis, Argentina.
+                      </p>
+                    </div>
+                    <div class="footer-social-icon">
+                      <span>Seguinos</span>
+                      <a href="#">
+                        <i class="fab fa-facebook fa-2x"></i>
+                      </a>
+                      <a href="#">
+                        <i class="fab fa-twitter fa-2x"></i>
+                      </a>
+                      <a href="#">
+                        <i class="fab fa-instagram fa-2x"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                  <div class="footer-widget">
+                    <div class="footer-widget-heading">
+                      <h3>Explorá</h3>
+                    </div>
+                    <ul>
+                      <li>
+                        <a href="#">Inicio</a>
+                      </li>
+                      <li>
+                        <a href="#">Hospedaje</a>
+                      </li>
+                      <li>
+                        <a href="#">Gastronomía</a>
+                      </li>
+                      <li>
+                        <a href="#">Agencias de Viaje</a>
+                      </li>
+                      <li>
+                        <a href="#">Guías de Turismo</a>
+                      </li>
+                      <li>
+                        <a href="#">Parques Provinciales</a>
+                      </li>
+                      <li>
+                        <a href="#">Caminos Pintorescos</a>
+                      </li>
+                      <li>
+                        <a href="#">Tirolesas</a>
+                      </li>
+                      <li>
+                        <a href="#">Contactanos</a>
+                      </li>
+                      <li>
+                        <a href="#">Prensa Turistica</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                  <div class="footer-widget">
+                    <div class="footer-widget-heading">
+                      <h3>Subcribite</h3>
+                    </div>
+                    <div class="footer-text mb-25">
+                      <p>
+                        Dejanos tu mail y te contaremos todas las novedades de
+                        nuestra provincia.
+                      </p>
+                    </div>
+                    <div class="subscribe-form">
+                      <form action="#">
+                        <input
+                          type="text"
+                          placeholder="correo@electronico.com"
+                        />
+                        <button>
+                          <i class="fab fa-telegram-plane"></i>
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="imgFooter">
+                    <a href="index.html">
+                      <img
+                        src={`${process.env.REACT_APP_API}/recursos/logo4.png`}
+                        class=""
+                        alt="profile card"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="profile-card-social">
-          <a href="https://www.facebook.com/iaMuhammedErdem" class="profile-card-social__item facebookF" target="_blank">
-          <span class="icon-font">
-                <i class="fab fa-facebook fa-1x"></i>
-            </span>
-          </a>
 
-          <a href="https://twitter.com/iaMuhammedErdem" class="profile-card-social__item twitterF" target="_blank">
-            <span class="icon-font">
-                <i class="fab fa-twitter fa-1x"></i>
-            </span>
-          </a>
-          <a href="https://www.wa.link/kd2a54" class="profile-card-social__item instagramF" target="_blank">
-            <span class="icon-font">
-                <i class="fab fa-instagram fa-1x"></i>
-            </span>
-          </a>
-          <a href="https://www.wa.link/kd2a54" class="profile-card-social__item whatsappF" target="_blank">
-            <span class="icon-font">
-                <i class="fab fa-whatsapp fa-1x"></i>
-            </span>
-          </a>
-          <a href="https://www.youtube.com/channel/UCiYidEtfj2VP3nAqaG1u77w/featured" class="profile-card-social__item youtubeF" target="_blank">
-            <span class="icon-font">
-                <i class="fab fa-youtube fa-1x"></i>
-            </span>
-          </a>
-        </div>
-        <div className="profile-card__institucional">
-          <img
-            className="img-fluid"
-            src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/LOGO%20NEGRO_all.png"
-            alt="San Luis Nos Une"
-          />
-        </div>
-      </div>
-    </div>
-    {/*
-      <div className="Footer">
-        <div className="logom">
-          <Link to="/" className="link-menu">
-            <img
-              className="img-fluid"
-              src={`https://i.ibb.co/ft02QmL/SAN-LUIS-TURISMO-FULL-COLOR-TRANSP.png`}
-              alt="Primavera San Luis"
-            />
-          </Link>
-        </div>
-        <div className="ministerio">
-          <h3>Secretaría de Turismo</h3>
-          <p>Av. Illia 35, esq. Junín</p>
-          <p>
-            <a href="tel:+5492664423479">+54 (266) 4423479</a>
-          </p>
-          <p>
-            <a href="tel:+5492664644938">+54 (266) 4644938</a>
-          </p>
-          <p>San Luis, Capital</p>
-        </div>
-        <div className="social">
-          <h3>Seguinos</h3>
-          <p>
-            <i className="fab fa-facebook-square" />
-            <a
-              href="https://www.facebook.com/turismodesanluis/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              &nbsp; @TurismodeSanLuis
-            </a>
-          </p>
-          <p>
-            <i className="fab fa-twitter-square" />
-            <a
-              href="https://twitter.com/TurismoSanLuis_"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              &nbsp; @TurismoSanLuis_
-            </a>
-          </p>
-          <p>
-            <i className="fab fa-instagram" />
-            <a
-              href="https://www.instagram.com/turismo_san_luis/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              &nbsp; @Turismo_san_luis
-            </a>
-          </p>
-        </div>
-        <div className="institucional">
-          <img
-            className="img-fluid"
-            src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/pngsecretaria.png"
-            alt="San Luis Nos Une"
-          />
-        </div>
-      </div>
-    */}
+          <div class="copyright-area">
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                  <div class="copyright-text">
+                    <p>
+                      Sitio oficial de la Secretaría de Turismo Gobierno de San
+                      Luis 2022.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                  <div class="footer-menu">
+                    <ul>
+                      <li>
+                        <a href="#">Inicio</a>
+                      </li>
+                      <li>
+                        <a href="#">Hospedaje</a>
+                      </li>
+                      <li>
+                        <a href="#">Gastronomía</a>
+                      </li>
+                      <li>
+                        <a href="#">Novedades</a>
+                      </li>
+                      <li>
+                        <a href="#">Contactanos</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
       </React.Fragment>
-     
     );
   }
 }

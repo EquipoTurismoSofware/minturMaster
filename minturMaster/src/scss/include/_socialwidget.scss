@@ -23,8 +23,7 @@ $theme-color: #e64352;
     width: 3.5rem;
     height: 3.5rem;
     position: relative;
-    right: 0;
-    margin-bottom: 5.5px;
+    margin-bottom: 0rem;
     cursor: pointer;
     bottom: 4.7rem;
     z-index: 1;
@@ -67,18 +66,17 @@ $theme-color: #e64352;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
     cursor: pointer;
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 100px;
+    bottom: -40px;
     z-index: 1;
     border-radius: 50%;
     background-color: $theme-color;
     box-shadow: 0 0 0 -2px rgba(black, 1), 0 2px 4px 0 rgba(black, 0.3);
     transition: box-shadow 250ms ease;
-
     &:hover {
       box-shadow: 0 16px 10px -8px rgba(black, 0.3),
         0 4px 10px 0 rgba(black, 0.2);

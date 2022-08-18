@@ -814,7 +814,8 @@ body {
   width: 3.5rem;
   height: 3.5rem;
   position: relative;
-  margin-bottom: 0rem;
+  right: 0;
+  margin-bottom: 5.5px;
   cursor: pointer;
   bottom: 4.7rem;
   z-index: 1;
@@ -851,12 +852,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 6rem;
-  height: 6rem;
+  width: 4rem;
+  height: 4rem;
   cursor: pointer;
   position: absolute;
-  right: 100px;
-  bottom: -40px;
+  right: 0;
+  bottom: 0;
   z-index: 1;
   border-radius: 50%;
   background-color: #e64352;
@@ -2130,11 +2131,6 @@ background-position: center center;
   opacity: 90%;
 }
 
-#logoscroll {
-  width: 200px;
-  left: 28%;
-}
-
 /* Altura de los items del navbar*/
 .nav-container {
   white-space: nowrap;
@@ -2211,10 +2207,6 @@ background-position: center center;
     transform: translatex(-50%);
   }
 }
-.menuNew {
-  height: 50px;
-}
-
 /*
     Sub componente de Menu (ZonasMenu)
 */
@@ -3454,9 +3446,9 @@ li {
 .sliderHome > .slider-dot > label {
   position: relative;
   display: inline-block;
-  margin: 2vw 0.5vw;
-  width: 0.6vw;
-  height: 0.6vw;
+  margin: 1vw 0.5vw;
+  width: 0.8vw;
+  height: 0.8vw;
   border-radius: 50%;
   border: #646464 1.5px solid;
   background-color: #646464;
@@ -4131,7 +4123,7 @@ li {
 
 #tuExperiencia {
   z-index: 3;
-  margin-top: -1%;
+  margin-top: -57.5%;
   margin-right: 5%;
   float: right;
   position: relative;
@@ -4484,14 +4476,15 @@ li {
 }
 .Recorridos .titulo-creer .reco-t-sub1 {
   font-size: 3em;
-  color: black;
+  color: rgb(114, 39, 137);
   text-transform: capitalize;
   font-weight: 600;
 }
 .Recorridos .titulo-creer .reco-t-sub2 {
   font-size: 2em;
   padding: 2px 15px;
-  background-color: red;
+  background-color: rgb(114, 39, 137);
+  color: #fff;
   text-transform: uppercase;
 }
 .Recorridos .mancha-sup-izq {
@@ -4536,18 +4529,16 @@ li {
 }
 .Recorridos .reco-titulo .reco-t-sub1 {
   font-size: 3em;
-  color: black;
+  color: rgb(114, 39, 137);
   text-transform: capitalize;
   font-weight: 600;
 }
 .Recorridos .reco-titulo .reco-t-sub2 {
-  font-size: 1.5em;
+  font-size: 2em;
   padding: 2px 15px;
-  color: black;
-  font-family: "Roboto";
-  font-weight: 400;
+  background-color: rgb(114, 39, 137);
+  color: #fff;
   text-transform: uppercase;
-  text-decoration: underline;
 }
 .Recorridos .reco-container-altcaminos {
   margin: 40px auto;
@@ -6475,12 +6466,12 @@ h3.bgc_4 {
 }
 
 .blog-slider {
-  width: 70%;
+  width: 95%;
   position: relative;
   max-width: 100vw;
   margin: 60px;
   background: #fff;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   padding: 25px;
   border-radius: 25px;
   height: 420px;
@@ -6676,13 +6667,12 @@ h3.bgc_4 {
   background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgba(237, 15, 104, 0.8) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
   display: inline-flex;
-  padding: 5px 20px;
-  border-radius: 50px;
+  padding: 10px 20px;
+  border-radius: 10px;
   color: #fff;
   box-shadow: 0px 14px 80px rgba(252, 56, 56, 0.4);
   text-decoration: none;
   font-weight: 500;
-  margin-left: 2%;
   justify-content: center;
   text-align: center;
   letter-spacing: 1px;
@@ -6891,6 +6881,7 @@ h3.bgc_4 {
   padding-top: 110px;
 }
 .Arbolesfull .nf-titulo {
+  background-color: rgb(114, 39, 137);
   height: 50px;
   position: relative;
   margin-bottom: 50px;
@@ -6901,7 +6892,7 @@ h3.bgc_4 {
   top: 10px;
   left: 10px;
   background-color: #fff;
-  color: black;
+  color: rgb(114, 39, 137);
   font-size: 3rem;
   line-height: 3rem;
   font-weight: 800;
@@ -6914,19 +6905,19 @@ h3.bgc_4 {
   grid-template-columns: 300px auto;
   grid-template-rows: 75px auto;
   /*
-    .pie {
-        grid-area: pie;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-end;
-        padding-left: 10px;
-        .btn-novedades {
-            background-color: $color-uno;
-            padding: 0 8px;
-            color: #fff;
-        }
-    }
-    */
+  .pie {
+      grid-area: pie;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+      padding-left: 10px;
+      .btn-novedades {
+          background-color: $color-uno;
+          padding: 0 8px;
+          color: #fff;
+      }
+  }
+  */
 }
 .arbol-full-item .imagen {
   grid-area: imagen;
@@ -6981,9 +6972,9 @@ h3.bgc_4 {
   padding: 0 8px;
   color: #fff;
   /*
-        -webkit-border-radius: 8px;
-        border-radius: 8px;
-        */
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  */
 }
 
 @media only screen and (max-width: 370px) {
@@ -7000,18 +6991,18 @@ h3.bgc_4 {
 }
 @media only screen and (max-width: 990px) {
   /*
-    .Novedadesfull {
-        .nf-body {
-            .nf-novedad {
-                flex-direction: column;
-                .nf-novedad-left {
-                    position: fixed;
-                }
-            }
+  .Novedadesfull {
+      .nf-body {
+          .nf-novedad {
+              flex-direction: column;
+              .nf-novedad-left {
+                  position: fixed;
+              }
+          }
 
-        }
-    }
-    */
+      }
+  }
+  */
   .arbol-full-item {
     grid-template-areas: "titulo" "imagen" "body" "pie";
     grid-template-columns: 1fr;
@@ -7156,28 +7147,6 @@ h3.bgc_4 {
   margin: 1rem;
 }
 
-.imagen-config img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-div.polaroid {
-  width: 80%;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-img {
-  width: 100%;
-}
-
-div.container {
-  text-align: center;
-  padding: 10px 20px;
-}
-
 /* Falta agregar responsive media querys */
 /*
     Componente PZona.js
@@ -7281,9 +7250,14 @@ div.container {
   margin-bottom: 60px;
 }
 .ZonaLocalidad-titulo h3 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #fff;
+  text-transform: uppercase;
+  padding: 8px;
   font-weight: bold;
   font-size: 3rem;
-  font-family: "Roboto";
 }
 
 .ZonaLocalidad-Body {
@@ -7383,10 +7357,10 @@ div.container {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     /*
-        grid-gap: 30px;
-        padding-left: 20px;
-        padding-right: 20px;
-        */
+    grid-gap: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    */
   }
 }
 /*
@@ -7636,16 +7610,22 @@ div.container {
   padding-top: 110px;
 }
 .ListadoAtractivofull .nf-titulo {
+  background-color: rgb(114, 39, 137);
+  height: 50px;
   position: relative;
-  margin-top: 50px;
+  margin-bottom: 50px;
   width: 610px;
 }
 .ListadoAtractivofull .nf-titulo span {
-  font-family: "Roboto";
+  position: absolute;
+  top: 10px;
+  left: 25px;
   background-color: #fff;
+  color: rgb(114, 39, 137);
   font-size: 3rem;
   line-height: 3rem;
   font-weight: 800;
+  padding: 10px 18px;
   width: 550px;
 }
 
@@ -8802,6 +8782,24 @@ div.container {
   font-size: 10px;
   font-weight: 100;
   box-shadow: 0 0 10rem 0 #000000 inset;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 3rem;
+  background-color: #1d1f20;
+  text-align: center;
+  font-family: "Indie Flower", cursive;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+footer span {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 100;
 }
 
 a {
@@ -10004,6 +10002,7 @@ li {
 
 .grid-container {
   background: #ffffff;
+  font-family: "Rubik", sans-serif;
 }
 
 @supports (display: grid) {
@@ -10052,7 +10051,7 @@ li {
     cursor: pointer;
   }
 
-  .items.actives {
+  .items.active {
     background: rgba(255, 255, 255, 0.3);
     cursor: grabbing;
     cursor: -webkit-grabbing;
@@ -10092,13 +10091,13 @@ li {
   margin-top: 150px;
   margin-left: 20px;
   height: 320px;
-  width: 650px;
+  width: 750px;
 }
 
 .parrafoProducto .productoP {
   font-size: 18pt;
   color: transparent;
-  font-weight: 400;
+  font-weight: 100;
   padding-top: 250px;
   margin-left: 100px;
 }
@@ -10125,14 +10124,7 @@ li {
 .productoSubtitulo {
   position: absolute;
   bottom: 0px;
-  margin-left: 10px;
   color: black;
-}
-.productoSubtitulo h5 {
-  margin-top: -5px;
-}
-.productoSubtitulo :nth-child(2) {
-  font-weight: 400;
 }
 
 .productoSubtitulo > h5:first-child {
@@ -10140,19 +10132,8 @@ li {
 }
 
 .salinas {
-  margin-left: -40px;
-  margin-top: -20px;
-}
-.salinas h2 {
-  font-size: 70px;
-}
-
-.espejosAgua {
-  margin-left: -30px;
-  margin-top: -20px;
-}
-.espejosAgua h2 {
-  font-size: 70px;
+  margin-left: 100px;
+  margin-top: 100px;
 }
 
 .sierras {
@@ -10171,8 +10152,8 @@ li {
 }
 
 .item1 {
-  background-image: url("http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/scrollProductos/gastronomia.jpeg");
-  background-position: 45% 50%;
+  background-image: url("http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/scrollProductos/gastronomia.jpg");
+  background-position: 85% 15%;
   background-size: cover;
 }
 
@@ -10189,32 +10170,29 @@ li {
 }
 
 .item4 {
-  background-image: url("http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/scrollProductos/agua.jpg");
+  background-image: url("http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/scrollProductos/minas.jpg");
   background-position: 45% 15%;
   background-size: cover;
 }
 
 .item5 {
   background-image: url("http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/scrollProductos/parques.jpg");
-  background-position: 50% 15%;
+  background-position: 35% 15%;
   background-size: cover;
 }
 
 .item6 {
-  background-image: url("http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/scrollProductos/aventura.jpeg");
-  background-position: 45% 15%;
+  background-image: url("http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/scrollProductos/aventura.jpg");
+  background-position: 35% 15%;
   background-size: cover;
 }
 
 .tituloScrollActividades {
-  margin-top: 0px;
+  margin-top: 50px;
 }
 .tituloScrollActividades h5 {
   color: #28292a;
   text-transform: initial;
-}
-.tituloScrollActividades img {
-  width: 15%;
 }
 
 /* -------------------------------------------------------- end producto 
@@ -10315,198 +10293,6 @@ body * {
   }
 }
 */
-@supports (display: grid) {
-  .grid-containerExperiencia {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas: "header header header" "title title footer" "main main main";
-  }
-  @media screen and (max-width: 500px) {
-    .grid-containerExperiencia {
-      grid-template-columns: 1fr;
-      grid-template-rows: 0.3fr 1fr auto 1fr;
-      grid-template-areas: "header" "title" "main" "footer";
-    }
-  }
-
-  .grid-itemExperiencia {
-    color: #fff;
-    background: skyblue;
-    padding: 3.5em 1em;
-    font-size: 1em;
-    font-weight: 700;
-  }
-
-  .mainExperiencia {
-    color: white;
-    background-color: white;
-    grid-area: main;
-    padding: 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
-
-  .itemsExperiencia {
-    position: relative;
-    width: 100%;
-    height: 90vh;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    white-space: nowrap;
-    transition: all 0.2s;
-    transform: scale(0.98);
-    will-change: transform;
-    user-select: none;
-    cursor: pointer;
-  }
-
-  .itemsExperiencia.activex {
-    background: rgba(255, 255, 255, 0.3);
-    cursor: grabbing;
-    cursor: -webkit-grabbing;
-    transform: scale(1);
-  }
-
-  .itemExperiencia {
-    display: inline-block;
-    background: skyblue;
-    height: 90%;
-    width: 80%;
-    margin: 1em;
-    border-radius: 2em;
-    transition: 1s;
-  }
-  @media screen and (max-width: 500px) {
-    .itemExperiencia {
-      min-height: 200px;
-      min-width: 200px;
-    }
-  }
-
-  .itemExperiencia:hover {
-    transition: 0.8s;
-  }
-  .itemExperiencia:hover .productoPExperiencia {
-    color: white;
-  }
-  .itemExperiencia:hover .parrafoProductoExperiencia {
-    transition: 0.8s;
-  }
-}
-.section-titleExperiencia {
-  position: absolute;
-  height: 100%;
-  color: white;
-}
-.section-titleExperiencia h2 {
-  font-size: 130px;
-  font-family: "roboto";
-  font-weight: 800;
-  margin-left: 50px;
-  margin-top: 300px;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.productoSubtituloExperiencia {
-  position: absolute;
-  bottom: 0px;
-  color: black;
-  bottom: -1%;
-  margin-left: 5%;
-}
-
-.productoSubtituloExperiencia > h5:first-child {
-  font-weight: bold;
-}
-
-.moverDerecha {
-  margin-left: 2%;
-}
-
-.item1Experiencia {
-  background-image: url("http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/scrollExperiencia/trekking.jpg");
-  background-position: center 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.item2Experiencia {
-  background-image: url("http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/scrollExperiencia/mototurismo.jpg");
-  background-position: center 20%;
-  background-size: cover;
-}
-
-.item3Experiencia {
-  background-image: url("http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/scrollProductos/quijadas.jpg");
-  background-position: center 20%;
-  background-size: cover;
-}
-
-.item4Experiencia {
-  background-image: url("http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/scrollProductos/minas.jpg");
-  background-position: center 40%;
-  background-size: cover;
-}
-
-.item5Experiencia {
-  background-image: url("http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/scrollExperiencia/astroturismo.jpg");
-  background-position: center 80%;
-  background-size: cover;
-}
-
-.item6Experiencia {
-  background-image: url("http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/scrollProductos/aventura.jpg");
-  background-position: center 40%;
-  background-size: cover;
-}
-
-.tituloScrollActividadesExperiencia {
-  margin-top: 50px;
-}
-.tituloScrollActividadesExperiencia h5 {
-  color: #28292a;
-  text-transform: initial;
-}
-
-/* BOTONERA DEL FONDO */
-.botoneraFooter {
-  margin-top: 150px;
-  height: 300px;
-}
-
-#father {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-
-.child {
-  width: 300px;
-  height: 200px;
-  margin-top: 20px;
-  justify-content: space-between;
-}
-.child :hover {
-  cursor: pointer;
-}
-.child img {
-  width: 80%;
-}
-
-.child img:hover {
-  width: 90%;
-}
-
-@media only screen and (max-width: 500px) {
-  .botoneraFooter {
-    height: 600px;
-  }
-}
 .newsletter {
   display: -webkit-flex;
   display: -ms-flex;
@@ -10618,7 +10404,6 @@ body * {
 /*
     Componente Footer.js
 */
-/*
 .wrapper {
   width: 100%;
   height: 200px;
@@ -10626,9 +10411,14 @@ body * {
   align-items: center;
   align-content: center;
   display: flex;
-  @include degrado(1, 1);
-
-  @media screen and (max-width: 768px) {
+  background: rgb(114, 39, 137);
+  background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+  background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+  background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
     height: auto;
     min-height: 100px;
     align-items: none;
@@ -10651,13 +10441,15 @@ body * {
   grid-template-rows: 1fr;
   justify-items: center;
   align-items: center;
-
-  @media screen and (max-width: 1083px) {
+}
+@media screen and (max-width: 1083px) {
+  .profile-card {
     grid-template-areas: "profile-card__ctn profile-card__institucional";
     grid-template-columns: repeat(2, 1fr);
   }
-
-  @media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+  .profile-card {
     width: 100%;
     min-height: 460px;
     margin: auto;
@@ -10671,189 +10463,169 @@ body * {
     grid-template-columns: none;
     grid-template-rows: none;
   }
-
-  &__img {
-    width: 150px;
-    height: 150px;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    margin: 150px 0 0 -100%;
-    overflow: hidden;
-    position: absolute;
-    z-index: 4;
-    //box-shadow: 0px 5px 50px 0px rgb(108, 68, 252), 0px 0px 0px 7px rgba(107, 74, 255, 0.5);
-
-    @media screen and (max-width: 768px) {
-      margin: 0 auto 0 auto;
-      position: relative;
-    }
-
-    @media screen and (max-width: 576px) {
-      width: 120px;
-      height: 120px;
-    }
-
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-    }
+}
+.profile-card__img {
+  width: 150px;
+  height: 150px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  margin: 150px 0 0 -100%;
+  overflow: hidden;
+  position: absolute;
+  z-index: 4;
+}
+@media screen and (max-width: 768px) {
+  .profile-card__img {
+    margin: 0 auto 0 auto;
+    position: relative;
   }
-
-  &__cnt {
-    grid-area: profile-card__ctn;
-    margin-left: 80px;
-    text-align: center;
-    align-content: center;
-    transition: all 0.3s;
-
-    @media screen and (max-width: 768px) {
-      grid-area: none;
-      margin-top: -35px;
-      margin-left: 0;
-      padding: 0 20px;
-      padding-bottom: 40px;
-    }
+}
+@media screen and (max-width: 576px) {
+  .profile-card__img {
+    width: 120px;
+    height: 120px;
   }
-
-  &__name {
-    font-weight: 700;
-    font-size: 24px;
-    color: rgba(114, 39, 137, 1);
-    margin-bottom: 15px;
+}
+.profile-card__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.profile-card__cnt {
+  grid-area: profile-card__ctn;
+  margin-left: 80px;
+  text-align: center;
+  align-content: center;
+  transition: all 0.3s;
+}
+@media screen and (max-width: 768px) {
+  .profile-card__cnt {
+    grid-area: none;
+    margin-top: -35px;
+    margin-left: 0;
+    padding: 0 20px;
+    padding-bottom: 40px;
   }
-
-  &__txt {
-    font-size: 18px;
-    font-weight: 500;
-    color: #324e63;
-    margin-bottom: 15px;
-
-    strong {
-      //color: #ff2846;
-      font-weight: 700;
-    }
+}
+.profile-card__name {
+  font-weight: 700;
+  font-size: 24px;
+  color: rgb(114, 39, 137);
+  margin-bottom: 15px;
+}
+.profile-card__txt {
+  font-size: 18px;
+  font-weight: 500;
+  color: #324e63;
+  margin-bottom: 15px;
+}
+.profile-card__txt strong {
+  font-weight: 700;
+}
+.profile-card-loc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+.profile-card-loc__icon {
+  display: inline-flex;
+  font-size: 27px;
+  margin-right: 10px;
+}
+.profile-card-social {
+  grid-area: profile-card-social;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+@media screen and (max-width: 1083px) {
+  .profile-card-social {
+    display: none;
   }
-
-  &-loc {
+}
+@media screen and (max-width: 768px) {
+  .profile-card-social {
     display: flex;
+    grid-area: none;
+    margin-top: 5px;
+    margin-bottom: 10px;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
-    font-weight: 600;
-
-    &__icon {
-      display: inline-flex;
-      font-size: 27px;
-      margin-right: 10px;
-      //color: #6944ff;
-    }
+    flex-wrap: wrap;
   }
-
-  &-social {
-    grid-area: profile-card-social;
-    display: flex;
-    align-items: center;
-    position: relative;
-
-    @media screen and (max-width: 1083px) {
-      display: none;
-    }
-
-    @media screen and (max-width: 768px) {
-      display: flex;
-      grid-area: none;
-      margin-top: 5px;
-      margin-bottom: 10px;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    &__item {
-      display: flex;
-      width: 40px;
-      height: 40px;
-      margin: 5px;
-      border-radius: 50%;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      position: relative;
-      font-size: 21px;
-      transition: all 0.3s;
-
-      @media screen and (max-width: 768px) {
-        width: 50px;
-        height: 50px;
-        margin: 10px;
-        display: inline-flex;
-        box-shadow: 0px 7px 30px rgba(43, 98, 169, 0.5);
-        flex-shrink: 0;
-      }
-
-      @media screen and (min-width: 768px) {
-        &:hover {
-          transform: scale(1.2);
-        }
-      }
-
-      @media screen and (max-width: 370px) {
-        width: 45px;
-        height: 45px;
-      }
-
-      &.facebookF {
-        background: linear-gradient(45deg, #3b5998, #0078d7);
-        box-shadow: 0px 4px 30px rgba(43, 98, 169, 0.5);
-      }
-
-      &.twitterF {
-        background: linear-gradient(45deg, #1da1f2, #0e71c8);
-        box-shadow: 0px 4px 30px rgba(19, 127, 212, 0.7);
-      }
-
-      &.instagramF {
-        background: linear-gradient(
-          45deg,
-          #405de6,
-          #5851db,
-          #833ab4,
-          #c13584,
-          #e1306c,
-          #fd1d1d
-        );
-        box-shadow: 0px 4px 30px rgba(120, 64, 190, 0.6);
-      }
-
-      &.whatsappF {
-        background: linear-gradient(45deg, #00bb2d, #029424);
-        box-shadow: 0px 4px 30px #00bb2d;
-      }
-
-      &.youtubeF {
-        background: linear-gradient(45deg, #c4302b, #ad2a26);
-        box-shadow: 0px 4px 30px #c4302b;
-      }
-    }
-
-    .icon-font {
-      display: inline-flex;
-    }
+}
+.profile-card-social__item {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  position: relative;
+  font-size: 21px;
+  transition: all 0.3s;
+}
+@media screen and (max-width: 768px) {
+  .profile-card-social__item {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    display: inline-flex;
+    box-shadow: 0px 7px 30px rgba(43, 98, 169, 0.5);
+    flex-shrink: 0;
   }
-
-  &__institucional {
-    grid-area: profile-card__institucional;
-    @media screen and (max-width: 768px) {
-      grid-area: none;
-      margin: 0px 10px 0px 10px;
-    }
+}
+@media screen and (min-width: 768px) {
+  .profile-card-social__item:hover {
+    transform: scale(1.2);
+  }
+}
+@media screen and (max-width: 370px) {
+  .profile-card-social__item {
+    width: 45px;
+    height: 45px;
+  }
+}
+.profile-card-social__item.facebookF {
+  background: linear-gradient(45deg, #3b5998, #0078d7);
+  box-shadow: 0px 4px 30px rgba(43, 98, 169, 0.5);
+}
+.profile-card-social__item.twitterF {
+  background: linear-gradient(45deg, #1da1f2, #0e71c8);
+  box-shadow: 0px 4px 30px rgba(19, 127, 212, 0.7);
+}
+.profile-card-social__item.instagramF {
+  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+  box-shadow: 0px 4px 30px rgba(120, 64, 190, 0.6);
+}
+.profile-card-social__item.whatsappF {
+  background: linear-gradient(45deg, #00bb2d, #029424);
+  box-shadow: 0px 4px 30px #00bb2d;
+}
+.profile-card-social__item.youtubeF {
+  background: linear-gradient(45deg, #c4302b, #ad2a26);
+  box-shadow: 0px 4px 30px #c4302b;
+}
+.profile-card-social .icon-font {
+  display: inline-flex;
+}
+.profile-card__institucional {
+  grid-area: profile-card__institucional;
+}
+@media screen and (max-width: 768px) {
+  .profile-card__institucional {
+    grid-area: none;
+    margin: 0px 10px 0px 10px;
   }
 }
 
-
+/*
 .Footer {
     padding: 20px 40px;
     width: 100%;
@@ -10926,7 +10698,7 @@ ul {
 }
 
 .single-cta i {
-  color: #792a89;
+  color: #ff5e14;
   font-size: 30px;
   float: left;
   margin-top: 8px;
@@ -10983,7 +10755,6 @@ ul {
   display: block;
   font-size: 20px;
   font-weight: 700;
-  font-family: "Roboto";
   margin-bottom: 20px;
 }
 
@@ -11010,7 +10781,7 @@ ul {
 }
 
 .google-bg {
-  background: #792a89;
+  background: #dd4b39;
 }
 
 .footer-widget-heading h3 {
@@ -11028,7 +10799,7 @@ ul {
   bottom: -15px;
   height: 2px;
   width: 50px;
-  background: #792a89;
+  background: #ff5e14;
 }
 
 .footer-widget ul li {
@@ -11039,7 +10810,7 @@ ul {
 }
 
 .footer-widget ul li a:hover {
-  color: #792a89;
+  color: #ff5e14;
 }
 
 .footer-widget ul li a {
@@ -11063,9 +10834,9 @@ ul {
 .subscribe-form button {
   position: absolute;
   right: 0;
-  background: #792a89;
+  background: #ff5e14;
   padding: 13px 20px;
-  border: 1px solid #792a89;
+  border: 1px solid #ff5e14;
   top: 0;
 }
 
@@ -11087,7 +10858,7 @@ ul {
 }
 
 .copyright-text p a {
-  color: #792a89;
+  color: #ff5e14;
 }
 
 .footer-menu li {
@@ -11096,19 +10867,12 @@ ul {
 }
 
 .footer-menu li:hover a {
-  color: #792a89;
+  color: #ff5e14;
 }
 
 .footer-menu li a {
   font-size: 14px;
   color: #878787;
-}
-
-.imgFooter {
-  margin-top: 5%;
-}
-.imgFooter img {
-  width: 100%;
 }
 
 a:hover {
@@ -11167,4 +10931,4 @@ a:hover {
   }
 }
 
-/*# sourceMappingURL=App.css.map */
+/*# sourceMappingURL=App.c.map */

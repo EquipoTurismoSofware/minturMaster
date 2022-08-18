@@ -214,10 +214,10 @@ $content-selector: "~ .content > section";
         display: inline-flex;
         align-items: center;
         @media only screen and (max-width: 960px) {
-          left: 60%
+          left: 60%;
         }
         @media only screen and (max-width: 755px) {
-          left: 50%
+          left: 50%;
         }
         @media only screen and (max-width: 625px) {
           left: 40%;
@@ -262,7 +262,7 @@ $content-selector: "~ .content > section";
           animation: ripples 0.6s linear infinite;
         }
       }
-      .container-btnsavion{
+      .container-btnsavion {
         text-align: center;
         align-content: center;
         .btnavion-conoce {
@@ -286,7 +286,7 @@ $content-selector: "~ .content > section";
           letter-spacing: 1.1px;
           text-transform: uppercase;
           cursor: pointer;
-  
+
           &:focus,
           &:active {
             .dropdown {
@@ -295,7 +295,7 @@ $content-selector: "~ .content > section";
               visibility: visible;
             }
           }
-  
+
           .material-icons {
             margin-left: 15px;
             font-size: 25px;
@@ -408,15 +408,13 @@ $content-selector: "~ .content > section";
 
 /* Body */
 
-
-
 //PRUEBA AVION*/}
 
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700");
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower");
 
 $f-primary: "Josefin Sans", sans-serif;
-$f-secondary: "Indie Flower", cursive;
+$f-secondary: "Roboto", cursive;
 $c-front: #1d1f20;
 $c-back: #1d1f20;
 $c-back-light: #383838;
@@ -447,23 +445,6 @@ $s-footer-height: 3rem;
   font-size: 10px;
   font-weight: 100;
   box-shadow: 0 0 10rem 0 #000000 inset;
-}
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
-  height: $s-footer-height;
-  background-color: $c-back;
-  text-align: center;
-  font-family: $f-secondary;
-  font-size: 1.2rem;
-  letter-spacing: 0.1rem;
-  span {
-    font-family: $f-primary;
-    font-size: 1rem;
-    font-weight: 100;
-  }
 }
 a {
   text-decoration: none;

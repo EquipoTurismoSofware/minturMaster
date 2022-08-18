@@ -14,15 +14,14 @@
     width: 700px;
     .reco-t-sub1 {
       font-size: 3em;
-      color: $color-uno;
+      color: black;
       text-transform: capitalize;
       font-weight: 600;
     }
     .reco-t-sub2 {
       font-size: 2em;
       padding: 2px 15px;
-      background-color: $color-uno;
-      color: #fff;
+      background-color: red;
       text-transform: uppercase;
     }
   }
@@ -60,7 +59,7 @@
     background-image: url($server_path+"imgs/INF-DER.png");
     background-repeat: no-repeat;
   }
-  
+
   .reco-titulo {
     display: flex;
     flex-direction: column;
@@ -68,19 +67,21 @@
     align-items: center;
     .reco-t-sub1 {
       font-size: 3em;
-      color: $color-uno;
+      color: black;
       text-transform: capitalize;
       font-weight: 600;
     }
     .reco-t-sub2 {
-      font-size: 2em;
+      font-size: 1.5em;
       padding: 2px 15px;
-      background-color: $color-uno;
-      color: #fff;
+      color: black;
+      font-family: "Roboto";
+      font-weight: 400;
       text-transform: uppercase;
+      text-decoration: underline ;
     }
   }
-  .reco-container-altcaminos{
+  .reco-container-altcaminos {
     margin: 40px auto;
     max-width: 1024px;
     display: grid;
@@ -128,51 +129,51 @@
     }
   }
   .reco-cont-down {
-      margin: 40px auto;
-      max-width: 1024px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, 240px);
-      grid-gap: 20px;
-      widows: 100%;
-      align-content: space-between;
-      justify-content: space-around;
-      padding-bottom: 60px;
-      //grid-auto-flow: column;
-      #sierras {
-        //grid-area: sierras;
-        @include reco-zona();
-        .cuadro-color {
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: (100% - 5%);
-          display: block;
-          background-color: #cb6120;
-          width: 40%;
-        }
-        img {
-          position: absolute;
-          top: 5px;
-          left: 10px;
-          z-index: 2;
-          width: 200px;
-          height: 200px;
-          object-fit: cover;
-        }
-        .cuadro-titulo {
-          position: absolute;
-          bottom: 0;
-          left: 45%;
-          z-index: 3;
-          color: #cb6120;
-          font-size: 1.5em;
-          font-weight: 600;
-          width: 250px;
-          p {
-            margin-bottom: 0px;
-          }
+    margin: 40px auto;
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 240px);
+    grid-gap: 20px;
+    widows: 100%;
+    align-content: space-between;
+    justify-content: space-around;
+    padding-bottom: 60px;
+    //grid-auto-flow: column;
+    #sierras {
+      //grid-area: sierras;
+      @include reco-zona();
+      .cuadro-color {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: (100% - 5%);
+        display: block;
+        background-color: #cb6120;
+        width: 40%;
       }
-   }
+      img {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+        z-index: 2;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+      }
+      .cuadro-titulo {
+        position: absolute;
+        bottom: 0;
+        left: 45%;
+        z-index: 3;
+        color: #cb6120;
+        font-size: 1.5em;
+        font-weight: 600;
+        width: 250px;
+        p {
+          margin-bottom: 0px;
+        }
+      }
+    }
   }
 
   .reco-container {
