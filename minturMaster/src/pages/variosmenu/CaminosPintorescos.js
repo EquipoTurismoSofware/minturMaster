@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Loading from "../../utils/Loading";
 
-
-
 class PCaminosPintorescos extends Component {
   constructor(props) {
     super(props);
@@ -69,16 +67,47 @@ class PCaminosPintorescos extends Component {
     if (this.state.data.length > 0) {
       ListadoAtractivofull = this.state.data.map((atrac) => {
         let descripcion = "";
-        if (atrac.descripcion.length > 395) {
-          descripcion = atrac.descripcion.substr(0, 395) + "...";
+        if (atrac.descripcion.length > 205) {
+          descripcion = atrac.descripcion.substr(0, 205) + "...";
         } else {
           descripcion = atrac.descripcion;
         }
-        
+
         let indice = Math.floor(Math.random() * atrac.imagenes.length);
         return (
-          <Link to={`/atractivo/${atrac.id}`} 
-                key={`atractivo-${atrac.id}`}>
+          <Link to={`/atractivo/${atrac.id}`} key={`atractivo-${atrac.id}`}>
+            <div class="blog-item">
+              <a href="#">
+                <div class="icon">
+                  <img
+                    className=""
+                    src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${atrac.imagenes[indice].imagen}`}
+                    alt="Img"
+                  />
+                </div>
+                <div class="content">
+                  <div class="title" style={{ color: "#722789" }}>
+                    {atrac.nombre} <br></br>
+                    <span class="blog-date">
+                      {atrac.tipoNombre} - {atrac.localidad}
+                    </span>
+                  </div>
+                  <div class="rounded"></div>
+
+                  <p>{descripcion}</p>
+                </div>
+
+                <div class="item-arrow">
+                  <i
+                    class="fa fa-long-arrow-right"
+                    aria-hidden="true"
+                    style={{ color: "#e36838" }}
+                  ></i>
+                </div>
+              </a>
+            </div>{" "}
+            <hr></hr>
+            {/*           <Link to={`/atractivo/${atrac.id}`} key={`atractivo-${atrac.id}`}>
             <div className="row mb-5">
               <div className="col">
                 <div className="atractivo-full-item">
@@ -107,6 +136,7 @@ class PCaminosPintorescos extends Component {
                 </div>
               </div>
             </div>
+          </Link>*/}
           </Link>
         );
       });
@@ -120,22 +150,24 @@ class PCaminosPintorescos extends Component {
           </div>
         ) : (
           <React.Fragment>
-            <div className="container ListadoAtractivofull">
-              <div
-                className="ZonaLocalidad-titulo"
-                style={{ backgroundColor: `#722789` }}
-              >
-                <h3 style={{ color: `#722789` }}>Caminos Pintorescos</h3>
-              </div>
-              <h4 className="" style={{ color: `#808080` }}>
-              San Luis es un lugar privilegiado por la naturaleza, donde se manifiestan una infinidad de recorridos colmados
-               de diversidad, aire puro, vegetación, ríos, valles y sierras en su máxima expresión. Son una irresistible 
-               invitación a transitarlos para conectarte con entornos plenos de encanto, vistas panorámicas sorprendentes 
-               y tramos de altas serranías que deslumbran por su magnificencia.
-
-
-              </h4>
-             
+            <div
+              className="container ListadoAtractivofull"
+              style={{
+                paddingTop: "200px",
+                paddingBottom: "30px",
+                paddingLeft: "80px",
+              }}
+            >
+              <h3 style={{ color: `#722789` }}>Caminos Pintorescos</h3>
+              <h5 className="" style={{ color: `#808080` }}>
+                San Luis es un lugar privilegiado por la naturaleza, donde se
+                manifiestan una infinidad de recorridos colmados de diversidad,
+                aire puro, vegetación, ríos, valles y sierras en su máxima
+                expresión. Son una irresistible invitación a transitarlos para
+                conectarte con entornos plenos de encanto, vistas panorámicas
+                sorprendentes y tramos de altas serranías que deslumbran por su
+                magnificencia.
+              </h5>
             </div>
             <br></br>
             <div className="container">{ListadoAtractivofull}</div>
@@ -148,4 +180,3 @@ class PCaminosPintorescos extends Component {
 
 PCaminosPintorescos.contextType = Consumer;
 export default PCaminosPintorescos;
-

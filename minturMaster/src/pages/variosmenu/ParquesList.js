@@ -100,7 +100,7 @@ class PParques extends Component {
                   <i
                     class="fa fa-long-arrow-right"
                     aria-hidden="true"
-                    style={{ color: "#5bb156" }}
+                    style={{ color: "#e36838" }}
                   ></i>
                 </div>
               </a>
