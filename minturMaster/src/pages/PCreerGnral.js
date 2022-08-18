@@ -74,34 +74,37 @@ class PCreerGnral extends Component {
         let indice = Math.floor(Math.random() * atrac.imagenes.length);
         return (
           <Link to={`/atractivo/${atrac.id}`} key={`atractivo-${atrac.id}`}>
-            <div className="row mb-5">
-              <div className="col">
-                <div className="atractivo-full-item">
-                  <div className="imagen">
-                    <span style={{ backgroundColor: `#${atrac.color}` }}>
-                      {atrac.localidad}
-                    </span>
-                    <img
-                      className="img-fluid"
-                      src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${atrac.imagenes[indice].imagen}`}
-                      alt="Img"
-                    />
-                  </div>
-                  <div
-                    className="titulo"
-                    style={{ backgroundColor: `#${atrac.color}` }}
-                  >
-                    <h3>{atrac.nombre}</h3>
-                  </div>
-                  <div className="body">
-                    <p className="text-dark mb-2">{descripcion}</p>
-                    <span className="btn-novedades">
-                      Leer <i className="fas fa-arrow-right" />
-                    </span>
-                  </div>
+            <div class="blog-item">
+              <a href="#">
+                <div class="icon">
+                  <img
+                    className=""
+                    src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${atrac.imagenes[indice].imagen}`}
+                    alt="Img"
+                  />
                 </div>
-              </div>
-            </div>
+                <div class="content">
+                  <div class="title" style={{ color: "#722789" }}>
+                    {atrac.nombre} <br></br>
+                    <span class="blog-date">
+                      {atrac.tipoNombre} - {atrac.localidad}
+                    </span>
+                  </div>
+                  <div class="rounded"></div>
+
+                  <p>{descripcion}</p>
+                </div>
+
+                <div class="item-arrow">
+                  <i
+                    class="fa fa-long-arrow-right"
+                    aria-hidden="true"
+                    style={{ color: "#e36838" }}
+                  ></i>
+                </div>
+              </a>
+            </div>{" "}
+            <hr></hr>
           </Link>
         );
       });
@@ -117,26 +120,23 @@ class PCreerGnral extends Component {
           </div>
         ) : (
           <React.Fragment>
-            <div className="container ListadoAtractivofull">
-              <div
-                className="ZonaLocalidad-titulo"
-                style={{ backgroundColor: `#722789` }}
-              >
-                <h3 style={{ color: `#722789` }}>Creer en San Luis</h3>
-              </div>
-              <h4 className="" style={{ color: `#808080` }}>
+            <div
+              className="container ListadoAtractivofull"
+              style={{
+                paddingTop: "200px",
+                paddingBottom: "30px",
+                paddingLeft: "80px",
+              }}
+            >
+              <h3 style={{ color: `#722789` }}>Creer en San Luis</h3>
+              <h5 className="" style={{ color: `#808080` }}>
                 “Creer en San Luis” es encontrar las razones para vivir y
                 disfrutar el espíritu de Semana Santa durante todo el año,
                 recorriendo los caminos de la fe sanluiseña en donde uno puede
                 compartir en familia o con amigos, la paz y la belleza de
                 nuestros paisajes; la energía de nuestra gente y las expresiones
-                de la fe en cada punto de nuestra geografía. ¡Bienvenidos!
-              </h4>
-              <div style={{paddingTop: "10px"}} className="Recorridos">
-                <div className="reco-titulo" style={{ width: "200px" }}>
-                  <span className="reco-t-sub2">Imperdibles</span>
-                </div>
-              </div>
+                de la fe en cada punto de nuestra geografía.
+              </h5>
             </div>
             <br />
             <div className="container">{ListadoAtractivofull}</div>
@@ -144,7 +144,12 @@ class PCreerGnral extends Component {
               <div className="Recorridos">
                 <div>
                   <div className="titulo-creer">
-                    <span className="reco-t-sub2">También vení a conocer:</span>
+                    <span
+                      className="reco-t-sub2"
+                      style={{ backgroundColor: "transparent" }}
+                    >
+                      También vení a conocer:
+                    </span>
                   </div>
                 </div>
                 <div className="reco-container" style={{ maxWidth: "924px" }}>
