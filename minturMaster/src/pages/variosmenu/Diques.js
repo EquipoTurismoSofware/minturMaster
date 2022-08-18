@@ -74,34 +74,37 @@ class PDiques extends Component {
         let indice = Math.floor(Math.random() * atrac.imagenes.length);
         return (
           <Link to={`/atractivo/${atrac.id}`} key={`atractivo-${atrac.id}`}>
-            <div className="row mb-5">
-              <div className="col">
-                <div className="atractivo-full-item">
-                  <div className="imagen">
-                    <span style={{ backgroundColor: `#${atrac.color}` }}>
-                      {atrac.localidad} - {atrac.tipoNombre}
-                    </span>
-                    <img
-                      className="img-fluid"
-                      src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${atrac.imagenes[indice].imagen}`}
-                      alt="Img"
-                    />
-                  </div>
-                  <div
-                    className="titulo"
-                    style={{ backgroundColor: `#${atrac.color}` }}
-                  >
-                    <h3>{atrac.nombre}</h3>
-                  </div>
-                  <div className="body">
-                    <p className="text-dark mb-2">{descripcion}</p>
-                    <span className="btn-novedades">
-                      Leer <i className="fas fa-arrow-right" />
-                    </span>
-                  </div>
+            <div class="blog-item">
+              <a href="#">
+                <div class="icon">
+                  <img
+                    className=""
+                    src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${atrac.imagenes[indice].imagen}`}
+                    alt="Img"
+                  />
                 </div>
-              </div>
-            </div>
+                <div class="content">
+                  <div class="title" style={{ color: "#722789" }}>
+                    {atrac.nombre} <br></br>
+                    <span class="blog-date">
+                      {atrac.tipoNombre} - {atrac.localidad}
+                    </span>
+                  </div>
+                  <div class="rounded"></div>
+
+                  <p>{descripcion}</p>
+                </div>
+
+                <div class="item-arrow">
+                  <i
+                    class="fa fa-long-arrow-right"
+                    aria-hidden="true"
+                    style={{ color: "#e36838" }}
+                  ></i>
+                </div>
+              </a>
+            </div>{" "}
+            <hr></hr>
           </Link>
         );
       });
@@ -115,11 +118,16 @@ class PDiques extends Component {
           </div>
         ) : (
           <React.Fragment>
-            <div className="container ListadoAtractivofull">
-              <div className="ZonaLocalidad-titulo">
-                <h3>Espejos de Agua</h3>
-              </div>
-              <h4 className="" style={{ color: `#808080` }}>
+            <div
+              className="container ListadoAtractivofull"
+              style={{
+                paddingTop: "200px",
+                paddingBottom: "30px",
+                paddingLeft: "80px",
+              }}
+            >
+              <h3 style={{ color: `#722789` }}>Espejos de Agua</h3>
+              <h5 className="" style={{ color: `#808080` }}>
                 A lo largo de más de tres décadas, el Estado Provincial trabajó
                 en la construcción de grandes obras de almacenamiento y
                 distribución del agua. San Luis, con 20 diques, es la provincia
@@ -129,11 +137,13 @@ class PDiques extends Component {
                 paseos en botes, sol, playa y descanso son algunas de las
                 tentadoras opciones recreativas que podés disfrutar en los
                 hermosos espejos de agua sanluiseños.
-              </h4>
+              </h5>
               <div style={{ paddingTop: "10px" }} className="Recorridos">
                 <div className="reco-titulo">
                   <Link to="/PPermisoPesca" className="link">
-                    <span className="reco-t-sub2">Ver Permisos</span>
+                    <span className="reco-t-sub2" style={{ color: `#722789` }}>
+                      Ver Permisos
+                    </span>
                   </Link>
                 </div>
               </div>
