@@ -69,6 +69,7 @@ import Footer from "./components/Footer";
 import PGridImages from "./pages/PGridImages";
 import PVallesEncantados from "./pages/moto_turismo/PVallesEncantados";
 import PSaludYVitalidad from "./pages/moto_turismo/PSaludYVitalidad";
+import Registros from "./pages/variosmenu/Registros";
 import RegistroAlojamientos from "./pages/covid/voucher/RegistroAlojamientos";
 import PCaminosPintorescos from "./pages/variosmenu/CaminosPintorescos";
 import PHalloweenMain from "./pages/Halloween/PHalloweenMain";
@@ -210,6 +211,13 @@ class App extends Component {
                 path="/SaludYvitalidad"
                 component={PSaludYVitalidad}
               />
+              <Route
+              exact
+              path="/Registros"
+              component={Registros}
+              >
+
+              </Route>
               <Route
                 exact
                 path="/RegistroAgenciasdeViajes"

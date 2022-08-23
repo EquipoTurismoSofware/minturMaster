@@ -628,6 +628,15 @@ const ZonaMenuCinco = (props) => {
                 Estadísticas
               </Link>
             </li>
+            <li>
+              <Link
+                to="/Registros"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Registros
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
