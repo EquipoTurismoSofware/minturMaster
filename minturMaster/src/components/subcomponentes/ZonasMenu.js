@@ -574,7 +574,7 @@ const ZonaMenuCinco = (props) => {
                 />
               </span>
             </li>
-            <li>
+            {/* <li>
               <Link
                 to="/RegistroGuiasTurismo"
                 className="link"
@@ -600,7 +600,7 @@ const ZonaMenuCinco = (props) => {
               >
                 Registro para alojamientos
               </a>
-            </li>
+            </li> */}
             <li>
               <Link
                 to="/novedades"
