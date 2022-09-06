@@ -88,7 +88,7 @@ class GaleriaLocalidades extends Component{
       headers: {
         Authorization: "token",
       },
-      url: `${process.env.REACT_APP_API}/galeria_localidades`,
+      url: `${process.env.REACT_APP_API}/filtraCDT`,
       responseType: "json",
     })
       .then((response) => {

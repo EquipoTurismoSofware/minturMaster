@@ -655,20 +655,16 @@ body {
   .logoParques {
     width: 350px;
   }
-
   .pantallaGrandeGrid {
     display: inline;
     padding-left: 10px;
   }
-
   .pantallaGrandeGrid h5 {
     padding-top: 70px;
   }
-
   .imgActividades {
     width: 70%;
   }
-
   .pantallaChicaGrid {
     display: none;
   }
@@ -771,15 +767,12 @@ body {
     width: 90vw;
     height: 80vh;
   }
-
   .wave {
     top: 85%;
   }
-
   .weathercon {
     font-size: 5em;
   }
-
   .infoWeather {
     font-size: 1.5rem;
   }
@@ -788,7 +781,6 @@ body {
   .boxWeather {
     height: 80vh;
   }
-
   .wave {
     top: 115%;
   }
@@ -1195,7 +1187,6 @@ body {
     --card-width: 240px;
     --card-height: 400px;
   }
-
   .cardList {
     width: 100%;
   }
@@ -1208,18 +1199,15 @@ body {
   .cardList__btn.btn--right {
     right: 2%;
   }
-
   .cardImp.previous--card {
     display: none;
   }
   .cardImp.next--card {
     display: none;
   }
-
   .infoList {
     width: 85%;
   }
-
   .info {
     margin-left: calc(var(--card-width) / 2.5);
   }
@@ -1236,14 +1224,12 @@ body {
   :root {
     --card-width: 220px;
   }
-
   .cardList__btn.btn--left {
     left: 0.5%;
   }
   .cardList__btn.btn--right {
     right: 0.5%;
   }
-
   .info {
     margin-left: calc(var(--card-width) / 10);
   }
@@ -1599,7 +1585,6 @@ body {
   .Menu .menu-visita-containerMenu {
     top: 45px;
   }
-
   .sticky {
     background: rgb(114, 39, 137);
     background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
@@ -1687,7 +1672,6 @@ body {
     color: #fff;
     padding-top: 10px;
   }
-
   .sticky {
     background: rgb(114, 39, 137);
     background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
@@ -1901,11 +1885,9 @@ body {
   .menu-ul {
     padding-left: 10px;
   }
-
   .redes {
     display: none;
   }
-
   .logo {
     right: 100px;
     top: 50px;
@@ -1914,7 +1896,6 @@ body {
   .logo img {
     display: inline;
   }
-
   .logoGob {
     display: none;
   }
@@ -1928,7 +1909,6 @@ body {
     width: 0px;
     height: 0px;
   }
-
   .menu-ul {
     height: 200px;
     padding: 0;
@@ -1938,13 +1918,11 @@ body {
     flex-direction: column;
     padding-left: 3rem;
   }
-
   .redesMobile {
     display: inline;
     color: white;
     padding-left: 25px;
   }
-
   .listaBusqueda {
     margin: 0;
     top: 100%;
@@ -2170,7 +2148,6 @@ background-position: center center;
   .topBarTitle {
     padding-right: 150px;
   }
-
   .topBarIcon {
     display: none;
   }
@@ -2187,7 +2164,6 @@ background-position: center center;
     display: inline-block;
     width: 160px;
   }
-
   .navbar-center {
     left: 20%;
     transform: translatex(-50%);
@@ -2205,7 +2181,6 @@ background-position: center center;
     left: 30%;
     transform: translatex(-50%);
   }
-
   .navbar-center {
     left: 60%;
     transform: translatex(-50%);
@@ -2530,11 +2505,9 @@ background-position: center center;
   .pantallaGrande {
     display: none;
   }
-
   .pantallaChica {
     display: inline;
   }
-
   #modalMain-container {
     position: fixed;
     display: flex;
@@ -2636,7 +2609,6 @@ background-position: center center;
     stroke-dasharray: 778;
     stroke-dashoffset: 778;
   }
-
   @keyframes fadeInModal {
     0% {
       background: rgba(0, 0, 0, 0);
@@ -2875,7 +2847,6 @@ h1 {
   body {
     margin: 0;
   }
-
   .accordion {
     height: auto;
   }
@@ -3114,7 +3085,6 @@ source-css-scss .menu-item {
   .placasCoronavirus {
     height: 400px;
   }
-
   .imagenHome {
     position: absolute;
     bottom: 40%;
@@ -3123,11 +3093,9 @@ source-css-scss .menu-item {
   .imagenHome img {
     width: 500px;
   }
-
   .slider-home-leyenda {
     left: 4rem;
   }
-
   .campeonatoPesca {
     height: 120px;
   }
@@ -3140,14 +3108,12 @@ source-css-scss .menu-item {
     margin-top: -25px;
     margin-left: 50px;
   }
-
   .pngPesca1 {
     position: absolute;
     bottom: 2vh;
     width: 150px;
     height: 30px;
   }
-
   .pngPesca2 {
     position: absolute;
     bottom: 2vh;
@@ -3160,7 +3126,6 @@ source-css-scss .menu-item {
   .placasCoronavirus {
     height: 300px;
   }
-
   .campeonatoPesca {
     height: 130px;
     top: -50px;
@@ -3179,7 +3144,6 @@ source-css-scss .menu-item {
     margin-right: 10px;
     margin-left: 50px;
   }
-
   .imagenHome {
     position: absolute;
     bottom: 45%;
@@ -3188,7 +3152,6 @@ source-css-scss .menu-item {
   .imagenHome img {
     width: 250px;
   }
-
   .slider-home-leyenda h1 {
     font-size: 1.5rem;
     line-height: 1.5rem;
@@ -3196,7 +3159,6 @@ source-css-scss .menu-item {
   .slider-home-leyenda span {
     font-size: 1.5rem;
   }
-
   .tituloCarrusel {
     position: absolute;
     bottom: 10vh;
@@ -3204,7 +3166,6 @@ source-css-scss .menu-item {
     width: 337.5px;
     height: 120px;
   }
-
   .tituloCarrusel2 {
     position: absolute;
     bottom: 10vh;
@@ -3212,7 +3173,6 @@ source-css-scss .menu-item {
     width: 277.5px;
     height: 110.25px;
   }
-
   .tituloCarrusel3 {
     position: absolute;
     bottom: 10vh;
@@ -3220,7 +3180,6 @@ source-css-scss .menu-item {
     width: 296.25px;
     height: 110.25px;
   }
-
   .img-slider-1 {
     width: 100%;
     height: 100vh;
@@ -3232,7 +3191,6 @@ source-css-scss .menu-item {
     background-position: -300px 0px;
     background-size: cover;
   }
-
   .img-slider-2 {
     width: 100%;
     height: 100vh;
@@ -3244,7 +3202,6 @@ source-css-scss .menu-item {
     background-position: 0 0 50px 0;
     background-size: cover;
   }
-
   .img-slider-3 {
     width: 100%;
     height: 100vh;
@@ -3256,7 +3213,6 @@ source-css-scss .menu-item {
     background-position: -600px 0px;
     background-size: cover;
   }
-
   .tituloCarrusel4 {
     display: inline;
     position: absolute;
@@ -3274,16 +3230,11 @@ source-css-scss .menu-item {
 }
 
 .mancha img {
-  position: absolute;
-  /*El div será ubicado con relación a la pantalla*/
-  left: 0px;
-  /*A la derecha deje un espacio de 0px*/
-  right: 0px;
-  /*A la izquierda deje un espacio de 0px*/
-  bottom: 0px;
-  /*Abajo deje un espacio de 0px*/
-  height: 0%;
-  /*alto del div*/
+  position: absolute; /*El div será ubicado con relación a la pantalla*/
+  left: 0px; /*A la derecha deje un espacio de 0px*/
+  right: 0px; /*A la izquierda deje un espacio de 0px*/
+  bottom: 0px; /*Abajo deje un espacio de 0px*/
+  height: 0%; /*alto del div*/
   width: 100%;
   min-height: 69px;
 }
@@ -3924,19 +3875,15 @@ li {
   .sliderHome {
     height: 60vw;
   }
-
   .sliderHome > ul > li.slide-0 {
     background-size: 130%;
   }
-
   .sliderHome > ul > li.slide-1 {
     background-size: 130%;
   }
-
   .sliderHome > ul > li.slide-2 {
     background-size: 130%;
   }
-
   .sliderHome > ul > li.slide-3 {
     background-size: 130%;
   }
@@ -3945,19 +3892,15 @@ li {
   .sliderHome {
     height: 83vw;
   }
-
   .sliderHome > ul > li.slide-0 {
     background-size: 180%;
   }
-
   .sliderHome > ul > li.slide-1 {
     background-size: 180%;
   }
-
   .sliderHome > ul > li.slide-2 {
     background-size: 180%;
   }
-
   .sliderHome > ul > li.slide-3 {
     background-size: 180%;
   }
@@ -4146,17 +4089,14 @@ li {
     height: 1.66rem;
     transition: 0.3s;
   }
-
   .slideActividades p {
     font-size: 4rem;
     transition: 0.3s;
   }
-
   .imgSlideActividades {
     border-radius: 20px;
     transition: 0.3s;
   }
-
   .container-sliderActividades {
     margin-top: 15%;
     transition: 0.5s;
@@ -4168,23 +4108,19 @@ li {
     height: 1.33rem;
     transition: 0.3s;
   }
-
   .slideActividades p {
     font-size: 3rem;
     transition: 0.3s;
   }
-
   .imgSlideActividades {
     border-radius: 15px;
     transition: 0.3s;
   }
-
   .slideActividades span {
     font-weight: 400;
     font-size: medium;
     transition: 0.3s;
   }
-
   .container-sliderActividades {
     margin-top: 20%;
     transition: 0.5s;
@@ -4196,22 +4132,18 @@ li {
     height: 1rem;
     transition: 0.3s;
   }
-
   .slideActividades p {
     font-size: 2rem;
     transition: 0.3s;
   }
-
   .imgSlideActividades {
     border-radius: 10px;
     transition: 0.3s;
   }
-
   .container-sliderActividades {
     margin-top: 40%;
     transition: 0.5s;
   }
-
   .slideActividades span {
     font-weight: 400;
     font-size: small;
@@ -5277,11 +5209,9 @@ li {
   .registro1 {
     display: inline;
   }
-
   .registro2 {
     display: none;
   }
-
   .archivosApp .pruebaApp {
     width: 450px;
     height: 300px;
@@ -5312,7 +5242,6 @@ li {
     width: 450px;
     height: 350px;
   }
-
   .Descarga {
     margin-top: 160px;
     width: 100%;
@@ -5369,7 +5298,6 @@ li {
     width: 350px;
     height: 400px;
   }
-
   .Descarga {
     margin-bottom: 40px;
   }
@@ -6066,7 +5994,6 @@ footer a {
     height: 100px;
     margin: 10px;
   }
-
   .EventoForm {
     height: 110vh;
     width: 100%;
@@ -6240,14 +6167,10 @@ footer a {
   top: 0;
   opacity: 0.7;
   z-index: -2;
-  background: -moz-linear-gradient(left, rgba(115, 13, 126, 0.65) 0%, rgba(197, 1, 105, 0.25) 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, rgba(115, 13, 126, 0.65) 0%, rgba(197, 1, 105, 0.25) 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, rgba(115, 13, 126, 0.65) 0%, rgba(197, 1, 105, 0.25) 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6730d7e", endColorstr="#40c50169",GradientType=1 );
-  /* IE6-9 */
+  background: -moz-linear-gradient(left, rgba(115, 13, 126, 0.65) 0%, rgba(197, 1, 105, 0.25) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(115, 13, 126, 0.65) 0%, rgba(197, 1, 105, 0.25) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(115, 13, 126, 0.65) 0%, rgba(197, 1, 105, 0.25) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6730d7e", endColorstr="#40c50169",GradientType=1 ); /* IE6-9 */
 }
 
 .cbg-1 {
@@ -7133,17 +7056,25 @@ h3.bgc_4 {
 }
 
 .gallery-search {
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAB7UlEQVRoge2YQUtUURiG3+N/CIrcTEJtGxcSlIgQRCsFQ2HoR/gDhNr6b0paZkRB5iZ0pdIiUCQKEURErORpce/gEHPPzP3OnHskzrN/v/s+58y9czhSJpPJpMRZg4CTNClpTtK0pFuSxiWNSTqW9FXSZ0lrzrmN8KojAnDAIrDH8OwCHWAsdfkJYLNG8X/5BNxJVX4WOAoo3+UEmE1R/tcIync5Bx43Vb4F/Bxh+S7HwETs8o6w3/wgPlB8zaIJLEYs36UT0rHSvlyZXUl3Qx4wBFvOubY17PsuTyp+eUm6D0xZwz6BeetQA0+sQZ/AI+tQA9PWoE/gtnWogZY16BO4aR1q4IY1mPZwdcWlNegT+G4dauDEGvQJHFqHGtizBn0CH61DDWxagz6B19ahBt5Yg4OOEjuS7lmHD8m2pLZzDku4cgfKgSvWVjVYtZYfCMVxeiPiSfQ9gcdp7/9AuTIdSUchD/HwKtrq9wLMABcRduA3sBRdoJR4CPyIIPEHeN6URIviasTKO2CZYuV7aXQnHLAA7NQo/oXiYsuVM5aSSvTItIGXwHopdAqcAd+At8AL4EFF9npIhAA86yPR3DsxCrLEdeF/kah6sZu8IQmjQuIgda9a9JHYT92pNsA8cADsA09T98lkMpn+/AXa2kep5N/5DQAAAABJRU5ErkJggg==) no-repeat 5%;
-  padding-left: 35px;
-  background-size: 20px;
   width: 240px;
-  color: white;
   height: 40px;
+  color: white;
   border-radius: 18px;
   font-size: 16px;
+  float: none;
   font-weight: bold;
   font-family: inherit;
   margin: 1rem;
+}
+
+.buscador-icon {
+  padding-left: 35px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAB7UlEQVRoge2YQUtUURiG3+N/CIrcTEJtGxcSlIgQRCsFQ2HoR/gDhNr6b0paZkRB5iZ0pdIiUCQKEURErORpce/gEHPPzP3OnHskzrN/v/s+58y9czhSJpPJpMRZg4CTNClpTtK0pFuSxiWNSTqW9FXSZ0lrzrmN8KojAnDAIrDH8OwCHWAsdfkJYLNG8X/5BNxJVX4WOAoo3+UEmE1R/tcIync5Bx43Vb4F/Bxh+S7HwETs8o6w3/wgPlB8zaIJLEYs36UT0rHSvlyZXUl3Qx4wBFvOubY17PsuTyp+eUm6D0xZwz6BeetQA0+sQZ/AI+tQA9PWoE/gtnWogZY16BO4aR1q4IY1mPZwdcWlNegT+G4dauDEGvQJHFqHGtizBn0CH61DDWxagz6B19ahBt5Yg4OOEjuS7lmHD8m2pLZzDku4cgfKgSvWVjVYtZYfCMVxeiPiSfQ9gcdp7/9AuTIdSUchD/HwKtrq9wLMABcRduA3sBRdoJR4CPyIIPEHeN6URIviasTKO2CZYuV7aXQnHLAA7NQo/oXiYsuVM5aSSvTItIGXwHopdAqcAd+At8AL4EFF9npIhAA86yPR3DsxCrLEdeF/kah6sZu8IQmjQuIgda9a9JHYT92pNsA8cADsA09T98lkMpn+/AXa2kep5N/5DQAAAABJRU5ErkJggg==) no-repeat 5%;
+  background-size: 20px;
+}
+
+#buscar {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .gallery-title {
@@ -7163,14 +7094,15 @@ h3.bgc_4 {
 }
 
 /*Lista dinamica de localidades*/
-.ul-busqueda {
-  background-color: #c42a59;
+.ul-busquedas {
+  background-color: #722789;
   width: 250px;
   max-height: auto;
   overflow: auto;
   position: absolute;
-  margin-left: 5px;
-  margin-top: 40px;
+  margin-left: 15px;
+  margin-top: 0px;
+  padding-left: 15px;
   border-radius: 2%;
   transition: all 1s;
   z-index: 4;
@@ -7201,6 +7133,29 @@ h3.bgc_4 {
   font-size: 0%;
 }
 
+.listaBusqueda {
+  background-color: rgb(114, 39, 137);
+  width: 200px;
+  max-height: auto;
+  overflow: auto;
+  position: absolute;
+  margin-left: -19px;
+  border-radius: 2%;
+  transition: all 1s;
+  z-index: 4;
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+}
+.listaBusqueda li {
+  width: auto;
+  padding-right: 5px;
+}
+.listaBusqueda a {
+  list-style: none;
+  display: inline-block;
+}
+
 .imagen-config img {
   display: block;
   margin-left: auto;
@@ -7221,6 +7176,61 @@ img {
 div.container {
   text-align: left;
   padding: 10px 20px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  float: right;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  margin-top: 45px;
+  border-radius: 10px;
+  font-weight: normal;
+  opacity: 0.75;
+}
+
+.dropdown-content a {
+  color: #a10d59;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: transparent;
+  font-size: 17px;
+  color: white;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  color: #000;
 }
 
 /* Falta agregar responsive media querys */
@@ -7303,7 +7313,6 @@ div.container {
     grid-template-columns: 75px 1fr;
     grid-template-rows: auto;
   }
-
   #imagenes {
     flex-direction: row !important;
     flex-wrap: wrap;
@@ -7501,7 +7510,6 @@ div.container {
   .ZonaLocalidad-titulo h3 {
     font-size: 2rem;
   }
-
   .Atractivo-data {
     grid-template-areas: "atractivo-fotos" "atractivo-texto" "atractivo-ubicacion" "atractivo-info";
     grid-template-columns: 1fr;
@@ -7638,7 +7646,6 @@ div.container {
   .ZonaLocalidad-titulo-Halloween h3 {
     font-size: 1rem;
   }
-
   .Atractivo-data-halloween {
     grid-template-areas: "atractivo-fotos" "atractivo-texto" "atractivo-ubicacion" "atractivo-info";
     grid-template-columns: 1fr;
@@ -7790,7 +7797,6 @@ div.container {
     width: 700px;
     object-fit: cover;
   }
-
   .atractivo-full-item {
     grid-template-areas: "titulo" "imagen" "body" "pie";
     grid-template-columns: 1fr;
@@ -7819,7 +7825,6 @@ div.container {
     padding: 10px 18px;
     width: 460px;
   }
-
   .atractivo-full-item .imagen img {
     height: 250px;
     width: 500px;
@@ -7843,11 +7848,9 @@ div.container {
     padding: 5px 4px;
     width: 340px;
   }
-
   .atractivo-full-item .imagen img {
     width: 380px;
   }
-
   .atractivo-full-item .titulo h3 {
     font-size: 1.2rem;
     font-weight: 500;
@@ -8340,7 +8343,6 @@ div.container {
   .Alojamiento .ZonaLocalidad-titulo h3 {
     font-size: 2rem;
   }
-
   .Alojamiento-data {
     grid-template-areas: "alojamiento-fotos" "alojamiento-texto" "alojamiento-ubicacion" "alojamiento-info";
     grid-template-columns: 1fr;
@@ -8424,7 +8426,6 @@ div.container {
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas: "." "." "." ".";
   }
-
   .posicionContacto {
     padding-left: 0px;
   }
@@ -8491,10 +8492,8 @@ div.container {
 }
 .containerCensistas .boxCensistas .bottomCensistas .linksCensistas .listaCensistas {
   list-style-type: none;
-  padding: 0;
-  /* Remove padding */
-  margin: 0;
-  /* Remove margins */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
 }
 .containerCensistas .boxCensistas .bottomCensistas .linksCensistas .listaCensistas li {
   padding: 5px;
@@ -8913,23 +8912,18 @@ a:hover {
   .one {
     width: 100%;
   }
-
   .half {
     width: 50%;
   }
-
   .one-third {
     width: 33.3333333333%;
   }
-
   .one-fourth {
     width: 25%;
   }
-
   .two-thirds {
     width: 66.6666666667%;
   }
-
   .column {
     float: left;
   }
@@ -9000,7 +8994,6 @@ a:hover {
     width: 700px;
     padding: 0px 50px 0px 0px;
   }
-
   .folleto {
     width: 90%;
   }
@@ -9012,7 +9005,6 @@ a:hover {
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "." ".";
   }
-
   .instagram {
     align-self: center;
     justify-self: center;
@@ -9022,14 +9014,12 @@ a:hover {
     border: 0;
     overflow: hidden;
   }
-
   .facebook {
     height: 700px;
     border: none;
     overflow: hidden;
     width: 500px;
   }
-
   .folleto {
     width: 100%;
     padding: 10px;
@@ -9040,26 +9030,21 @@ a:hover {
   .pantallaGrande .newsHome {
     display: none;
   }
-
   .pantallaChica2 {
     display: inline;
   }
-
   .motoVideo {
     display: inline;
   }
-
   .motoVideo1 {
     display: none;
   }
-
   .grid-container {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "." ".";
   }
-
   .instagram {
     align-self: center;
     justify-self: center;
@@ -9069,7 +9054,6 @@ a:hover {
     border: 0;
     overflow: hidden;
   }
-
   .facebook {
     height: 600px;
     border: none;
@@ -10065,7 +10049,6 @@ li {
       grid-template-areas: "header" "title" "main" "footer";
     }
   }
-
   .grid-item {
     color: #fff;
     background: skyblue;
@@ -10073,7 +10056,6 @@ li {
     font-size: 1em;
     font-weight: 700;
   }
-
   .main {
     color: white;
     background-color: white;
@@ -10082,7 +10064,6 @@ li {
     overflow-x: hidden;
     overflow-y: hidden;
   }
-
   .items {
     position: relative;
     width: 100%;
@@ -10096,14 +10077,12 @@ li {
     user-select: none;
     cursor: pointer;
   }
-
   .items.actives {
     background: rgba(255, 255, 255, 0.3);
     cursor: grabbing;
     cursor: -webkit-grabbing;
     transform: scale(1);
   }
-
   .item {
     display: inline-block;
     background: skyblue;
@@ -10120,7 +10099,6 @@ li {
       min-width: 200px;
     }
   }
-
   .item:hover {
     min-width: 800px;
     transition: 0.8s;
@@ -10374,7 +10352,6 @@ body * {
       grid-template-areas: "header" "title" "main" "footer";
     }
   }
-
   .grid-itemExperiencia {
     color: #fff;
     background: skyblue;
@@ -10382,7 +10359,6 @@ body * {
     font-size: 1em;
     font-weight: 700;
   }
-
   .mainExperiencia {
     color: white;
     background-color: white;
@@ -10391,7 +10367,6 @@ body * {
     overflow-x: hidden;
     overflow-y: hidden;
   }
-
   .itemsExperiencia {
     position: relative;
     width: 100%;
@@ -10405,14 +10380,12 @@ body * {
     user-select: none;
     cursor: pointer;
   }
-
   .itemsExperiencia.activex {
     background: rgba(255, 255, 255, 0.3);
     cursor: grabbing;
     cursor: -webkit-grabbing;
     transform: scale(1);
   }
-
   .itemExperiencia {
     display: inline-block;
     background: skyblue;
@@ -10428,7 +10401,6 @@ body * {
       min-width: 200px;
     }
   }
-
   .itemExperiencia:hover {
     transition: 0.8s;
   }
@@ -10656,30 +10628,24 @@ body * {
     width: 100%;
     margin-top: 35px;
   }
-
   .blog-item .content .title {
     font-size: 18px;
   }
-
   .blog-item .item-arrow {
     margin: auto;
   }
-
   .blog-item .icon {
     width: 100%;
   }
-
   .blog-item .icon img {
     width: 100%;
     height: 150px;
     object-fit: cover;
   }
-
   .blog-item {
     width: 92%;
     margin: auto;
   }
-
   .blog-item a {
     display: block;
     padding: 30px;
@@ -10692,13 +10658,11 @@ body * {
   justify-content: center;
   width: 295px;
   z-index: 99;
-  position: fixed;
-  /* Fixed/sticky position */
+  position: fixed; /* Fixed/sticky position */
   -webkit-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-  bottom: 15px;
-  /* Place the button at the bottom of the page */
+  bottom: 15px; /* Place the button at the bottom of the page */
   left: 10px;
   background-color: white;
   border-radius: 9px;
@@ -11304,7 +11268,6 @@ a:hover {
   .menu .logo img {
     width: 180px;
   }
-
   .menu-leyenda {
     position: absolute;
     bottom: 5rem;
