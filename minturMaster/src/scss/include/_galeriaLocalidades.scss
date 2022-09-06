@@ -43,14 +43,15 @@
 }
 
 /*Lista dinamica de localidades*/
-.ul-busqueda {
-  background-color: #c42a59;
+.ul-busquedas {
+  background-color: #722789;
   width: 250px;
   max-height: auto;
   overflow: auto;
   position: absolute;
-  margin-left: 5px;
-  margin-top: 40px;
+  margin-left: 15px;
+  margin-top: 0px;
+  padding-left: 15px;
   border-radius: 2%;
   transition: all 1s;
   z-index: 4;
