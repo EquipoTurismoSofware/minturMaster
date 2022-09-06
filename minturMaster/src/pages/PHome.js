@@ -73,7 +73,7 @@ class Home extends Component {
             <br></br>
             <br></br>
             <ScrollExperiencia />
-            <Novedades timerID="100" />
+            {/* <Novedades timerID="100" /> */}
             {/*<Recorridos />
 <<<<<<< Updated upstream
              <EventoForm />*/}
