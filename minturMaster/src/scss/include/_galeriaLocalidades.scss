@@ -1,42 +1,45 @@
-
-.header-gallery{
-    background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-    margin-bottom: 1rem;
-    border-radius: 1.5rem;
+.header-gallery {
+  background: linear-gradient(
+    to right,
+    #722789 0%,
+    rgba(237, 15, 104, 0.8) 100%
+  );
+  margin-bottom: 1rem;
+  border-radius: 1.5rem;
 }
 
-.gallery-search{
-    width: 240px;
-    height: 40px;
-    color: white;
-    border-radius: 18px;
-    font-size: 16px;
-    float:none;
-   // background-color: rgba(141, 40, 107, 0.6);
-    font-weight: bold;
-    font-family: inherit;
-    margin: 1rem;
+.gallery-search {
+  width: 240px;
+  height: 40px;
+  color: white;
+  border-radius: 18px;
+  font-size: 16px;
+  float: none;
+  // background-color: rgba(141, 40, 107, 0.6);
+  font-weight: bold;
+  font-family: inherit;
+  margin: 1rem;
 }
-
 
 .buscador-icon {
   padding-left: 35px;
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAB7UlEQVRoge2YQUtUURiG3+N/CIrcTEJtGxcSlIgQRCsFQ2HoR/gDhNr6b0paZkRB5iZ0pdIiUCQKEURErORpce/gEHPPzP3OnHskzrN/v/s+58y9czhSJpPJpMRZg4CTNClpTtK0pFuSxiWNSTqW9FXSZ0lrzrmN8KojAnDAIrDH8OwCHWAsdfkJYLNG8X/5BNxJVX4WOAoo3+UEmE1R/tcIync5Bx43Vb4F/Bxh+S7HwETs8o6w3/wgPlB8zaIJLEYs36UT0rHSvlyZXUl3Qx4wBFvOubY17PsuTyp+eUm6D0xZwz6BeetQA0+sQZ/AI+tQA9PWoE/gtnWogZY16BO4aR1q4IY1mPZwdcWlNegT+G4dauDEGvQJHFqHGtizBn0CH61DDWxagz6B19ahBt5Yg4OOEjuS7lmHD8m2pLZzDku4cgfKgSvWVjVYtZYfCMVxeiPiSfQ9gcdp7/9AuTIdSUchD/HwKtrq9wLMABcRduA3sBRdoJR4CPyIIPEHeN6URIviasTKO2CZYuV7aXQnHLAA7NQo/oXiYsuVM5aSSvTItIGXwHopdAqcAd+At8AL4EFF9npIhAA86yPR3DsxCrLEdeF/kah6sZu8IQmjQuIgda9a9JHYT92pNsA8cADsA09T98lkMpn+/AXa2kep5N/5DQAAAABJRU5ErkJggg==) no-repeat 5%;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAB7UlEQVRoge2YQUtUURiG3+N/CIrcTEJtGxcSlIgQRCsFQ2HoR/gDhNr6b0paZkRB5iZ0pdIiUCQKEURErORpce/gEHPPzP3OnHskzrN/v/s+58y9czhSJpPJpMRZg4CTNClpTtK0pFuSxiWNSTqW9FXSZ0lrzrmN8KojAnDAIrDH8OwCHWAsdfkJYLNG8X/5BNxJVX4WOAoo3+UEmE1R/tcIync5Bx43Vb4F/Bxh+S7HwETs8o6w3/wgPlB8zaIJLEYs36UT0rHSvlyZXUl3Qx4wBFvOubY17PsuTyp+eUm6D0xZwz6BeetQA0+sQZ/AI+tQA9PWoE/gtnWogZY16BO4aR1q4IY1mPZwdcWlNegT+G4dauDEGvQJHFqHGtizBn0CH61DDWxagz6B19ahBt5Yg4OOEjuS7lmHD8m2pLZzDku4cgfKgSvWVjVYtZYfCMVxeiPiSfQ9gcdp7/9AuTIdSUchD/HwKtrq9wLMABcRduA3sBRdoJR4CPyIIPEHeN6URIviasTKO2CZYuV7aXQnHLAA7NQo/oXiYsuVM5aSSvTItIGXwHopdAqcAd+At8AL4EFF9npIhAA86yPR3DsxCrLEdeF/kah6sZu8IQmjQuIgda9a9JHYT92pNsA8cADsA09T98lkMpn+/AXa2kep5N/5DQAAAABJRU5ErkJggg==)
+    no-repeat 5%;
   background-size: 20px;
 }
 
 #buscar {
   background-color: rgba(0, 0, 0, 0.1);
 }
-.gallery-title{
-    font-size: 2rem;
-    color: rgba(241, 236, 236, 0.7);
-    float: right;
-    position: relative;
-    font-weight: 600;
-    font-family: 'Roboto';
-    font-style: italic;
-    margin: 1rem;
+.gallery-title {
+  font-size: 2rem;
+  color: rgba(241, 236, 236, 0.7);
+  float: right;
+  position: relative;
+  font-weight: 600;
+  font-family: "Roboto";
+  font-style: italic;
+  margin: 1rem;
 }
 .gallery-search::placeholder {
   color: rgba(255, 255, 255, 0.7);
@@ -66,7 +69,7 @@
     text-decoration-line: underline;
     font-size: 18px;
   }
-} 
+}
 
 .linkBusqueda {
   overflow-x: hidden;
@@ -109,24 +112,26 @@
 }
 
 .imagen-config img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 
-  div.polaroid {
-    width: 80%;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-  
-  img {width: 100%}
-  
-  div.container {
-    text-align:left;
-    padding: 10px 20px; 
-  }
+div.polaroid {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img {
+  width: 100%;
+}
+
+div.container {
+  text-align: left;
+  padding: 10px 20px;
+}
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
@@ -182,8 +187,21 @@
   color: #000;
 }
 
-.divider {
-  background-color: red;
-  width: 100%;
+.custom {
+  //background-color: red;
+  //height: 1rem;
+  display: inline-flex;
+}
+
+.hashtag {
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  padding: 4px 8px;
+  margin: 8px 8px;
+  background-color: #ccc;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 /* Falta agregar responsive media querys */
