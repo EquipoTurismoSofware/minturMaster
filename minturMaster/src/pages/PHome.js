@@ -19,6 +19,7 @@ import SpeedDial2 from "../components/SpeedDial";
 import ScrollProductos from "../components/ScrollProductos";
 import ScrollExperiencia from "../components/ScrollExperiencia";
 import BotoneraFondo from "../components/BotoneraFondo";
+import GaleriaLocalidadesNew from "../components/GaleriaLocalidadesNew";
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -79,6 +80,7 @@ class Home extends Component {
              <EventoForm />*/}
             <Novedades time="10000" />
             <GaleriaLocalidades />
+            {/* <GaleriaLocalidadesNew/> */}
             {/*  <EventoForm />
 >>>>>>> Stashed changes
             <div className="Recorridos">

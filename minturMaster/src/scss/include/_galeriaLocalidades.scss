@@ -2,6 +2,7 @@
 .header-gallery{
     background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
     margin-bottom: 1rem;
+    border-radius: 1.5rem;
 }
 
 .gallery-search{
@@ -181,5 +182,8 @@
   color: #000;
 }
 
-
+.divider {
+  background-color: red;
+  width: 100%;
+}
 /* Falta agregar responsive media querys */
