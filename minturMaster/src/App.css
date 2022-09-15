@@ -7131,6 +7131,7 @@ h3.bgc_4 {
   background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
   margin-bottom: 1rem;
   border-radius: 1.5rem;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .gallery-search {
@@ -7318,9 +7319,17 @@ div.container {
 .hashtag {
   right: 5%;
   position: absolute;
-  background-color: #3d3d3d;
+  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
   -webkit-border-radius: 4px;
   border-radius: 4px;
+}
+
+.localidad-tag {
+  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+}
+
+.localidad-tag p {
+  font-weight: 200;
 }
 
 .first {
