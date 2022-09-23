@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Consumer } from "../../context";
 import axios from "axios";
 import Loading from "../../utils/Loading";
-import NotFound from "../../components/NotFound"
-import CardCiudades from "../../components/CardCiudades"
+import NotFound from "../../components/NotFound";
+import CardCiudades from "../../components/CardCiudades";
 
 class ListadoGuiasAgenciasCovid extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class ListadoGuiasAgenciasCovid extends Component {
       isNotFound: true,
       data: [],
       carousel: [],
-      tipo: ""
+      tipo: "",
     };
     this.getData = this.getData.bind(this);
   }
@@ -26,45 +26,53 @@ class ListadoGuiasAgenciasCovid extends Component {
       headers: {
         Authorization: token,
       },
-      url: `${process.env.REACT_APP_API}/${this.state.tipo}${this.state.tipo == "agencias"? "/viaje": ""}`,
+      url: `${process.env.REACT_APP_API}/${this.state.tipo}${
+        this.state.tipo == "agencias" ? "/viaje" : ""
+      }`,
       responseType: "json",
     })
       .then((response) => {
         self.setState({
           loading: false,
           isNotFound: false,
-          data: response.data.data.registros
-        });        
+          data: response.data.data.registros,
+        });
       })
       .catch((error) => {
         self.setState({
-            loading: false,
-            isNotFound: true
+          loading: false,
+          isNotFound: true,
         });
         console.log(error);
       });
   }
 
   componentDidUpdate(prevProps) {
-    if(this.props.match.params.tipo !== prevProps.match.params.tipo ) {
-      this.setState({
+    if (this.props.match.params.tipo !== prevProps.match.params.tipo) {
+      this.setState(
+        {
           loading: true,
-          tipo: this.props.match.params.tipo
-      }, () => {
-        this.getData();
-      });
-  }
+          tipo: this.props.match.params.tipo,
+        },
+        () => {
+          this.getData();
+        }
+      );
+    }
   }
 
   componentDidMount() {
     document.body.scrollTop = 0; // Safari
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
-    this.setState({
-      loading: true,
-      tipo: this.props.match.params.tipo
-    }, () => {
-      this.getData();
-    });
+    this.setState(
+      {
+        loading: true,
+        tipo: this.props.match.params.tipo,
+      },
+      () => {
+        this.getData();
+      }
+    );
   }
 
   render() {
@@ -78,29 +86,25 @@ class ListadoGuiasAgenciasCovid extends Component {
             </div>
           </div>
         ) : isNotFound ? (
-            <NotFound />
-          )
-          :(
+          <NotFound />
+        ) : (
           <React.Fragment>
             <div className="container mb-5" />
             <div className="container">
-              <div
-                className="ZonaDetalle-titulo"
-                style={{ paddingTop: "50px", backgroundColor: `#722789` }}
+              <h3
+                style={{
+                  color: `#722789`,
+                  paddingTop: "60px",
+                  marginLeft: "15px",
+                }}
               >
-                <h3 style={{ color: `#722789` }}>
-                  {
-                    this.state.tipo === "guiasturismo" ?
-                    "GUÍAS DE TURISMO"
-                    :
-                    "AGENCIAS DE VIAJES"
-                  }
-                  
-                </h3>
-              </div>
-                <CardCiudades data={this.state.data} tipo={this.state.tipo} />
-           </div>
-
+                {this.state.tipo === "guiasturismo"
+                  ? "GUÍAS DE TURISMO"
+                  : "AGENCIAS DE VIAJES"}
+              </h3>
+              <hr></hr>
+              <CardCiudades data={this.state.data} tipo={this.state.tipo} />
+            </div>
           </React.Fragment>
         )}
       </div>
@@ -111,4 +115,3 @@ class ListadoGuiasAgenciasCovid extends Component {
 ListadoGuiasAgenciasCovid.contextType = Consumer;
 
 export default ListadoGuiasAgenciasCovid;
- 

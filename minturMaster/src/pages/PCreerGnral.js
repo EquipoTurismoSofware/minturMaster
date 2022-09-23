@@ -67,7 +67,7 @@ class PCreerGnral extends Component {
       ListadoAtractivofull = this.state.data.map((atrac) => {
         let descripcion = "";
         if (atrac.descripcion.length > 395) {
-          descripcion = atrac.descripcion.substr(0, 395) + "...";
+          descripcion = atrac.descripcion.substr(0, 225) + "...";
         } else {
           descripcion = atrac.descripcion;
         }
@@ -86,9 +86,7 @@ class PCreerGnral extends Component {
                 <div class="content">
                   <div class="title" style={{ color: "#722789" }}>
                     {atrac.nombre} <br></br>
-                    <span class="blog-date">
-                      {atrac.tipoNombre} - {atrac.localidad}
-                    </span>
+                    <span class="blog-date">{atrac.localidad}</span>
                   </div>
                   <div class="rounded"></div>
 
@@ -96,6 +94,8 @@ class PCreerGnral extends Component {
                 </div>
 
                 <div class="item-arrow">
+                  <p className="leerMas">Leer más</p>
+                  <br></br>
                   <i
                     class="fa fa-long-arrow-right"
                     aria-hidden="true"
@@ -140,7 +140,7 @@ class PCreerGnral extends Component {
             </div>
             <br />
             <div className="container">{ListadoAtractivofull}</div>
-            <center>
+            {/*  <center>
               <div className="Recorridos">
                 <div>
                   <div className="titulo-creer">
@@ -239,7 +239,7 @@ class PCreerGnral extends Component {
                   </Link>
                 </div>
               </div>
-            </center>
+            </center>*/}
           </React.Fragment>
         )}
       </React.Fragment>

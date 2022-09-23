@@ -97,6 +97,9 @@ class PParques extends Component {
                 </div>
 
                 <div class="item-arrow">
+                  {" "}
+                  <p className="leerMas">Leer más</p>
+                  <br></br>
                   <i
                     class="fa fa-long-arrow-right"
                     aria-hidden="true"

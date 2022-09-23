@@ -23,7 +23,6 @@ class PAtractivo extends Component {
         src: "",
         visible: false,
       },
- 
     };
     this.getData = this.getData.bind(this);
     this.verImagen = this.verImagen.bind(this);
@@ -165,11 +164,9 @@ class PAtractivo extends Component {
     this.setState(
       {
         id: this.props.match.params.id,
-        
       },
-      
+
       () => {
-       
         this.getData();
       }
     );
@@ -182,10 +179,9 @@ class PAtractivo extends Component {
     const fotos = this.state.fotos;
     const idTipo = this.state.dataAtractivo.idTipo;
 
-    
     return (
       <div className="Atractivo">
-        {loading ?(
+        {loading ? (
           <div className="PFiltroAlojamiento mb-5">
             <div>
               <Loading margins="96px" />
@@ -194,64 +190,52 @@ class PAtractivo extends Component {
         ) : isNotFound ? (
           <NotFound />
         ) : (
-          <React.Fragment >
-            <div className={this.state.dataAtractivo.idTipo == 32? "Atractivo-main-halloween": ""}>
-              <div className="menu-y-slider" >
-                <div
-                  id="carouselExampleIndicators"
-                  className="carousel slide"
-                  data-ride="carousel"
-                >
-                  <div className="carousel-inner">{carousel}</div>
-                  <a
-                    className="carousel-control-prev"
-                    href="#carouselExampleIndicators"
-                    role="button"
-                    data-slide="prev"
-                  >
-                    <span
-                      className="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span className="sr-only">Previous</span>
-                  </a>
-                  <a
-                    className="carousel-control-next"
-                    href="#carouselExampleIndicators"
-                    role="button"
-                    data-slide="next"
-                  >
-                    <span
-                      className="carousel-control-next-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span className="sr-only">Next</span>
-                  </a>
-
-                  
-                  <div className="slider-home-leyenda">
-                    <h1 className="mb-5">Atractivo Turístico</h1>
-                    
-                  </div>
-                </div>
-              </div>
+          <React.Fragment>
+            <div
+              style={{ marginTop: "190px" }}
+              className={
+                this.state.dataAtractivo.idTipo == 32
+                  ? "Atractivo-main-halloween"
+                  : ""
+              }
+            >
               <div
-                className={this.state.dataAtractivo.idTipo == 32?"ZonaLocalidad-titulo-Halloween":"ZonaLocalidad-titulo"}
-                style={this.state.dataAtractivo.idTipo == 32?{backgroundColor:`transparent`}:{backgroundColor:"#722789"}}
-                
+                className={
+                  this.state.dataAtractivo.idTipo == 32
+                    ? "ZonaLocalidad-titulo-Halloween"
+                    : "container"
+                }
+                style={
+                  this.state.dataAtractivo.idTipo == 32
+                    ? { backgroundColor: `transparent` }
+                    : {}
+                }
               >
-                <h3 style={this.state.dataAtractivo.idTipo == 32? {fontFamily:"Jolly Lodger", backgroundColor:`transparent`, color: "rgb(28, 228, 45)"}: {color: `#722789`}}
+                <h3
+                  style={
+                    this.state.dataAtractivo.idTipo == 32
+                      ? {
+                          fontFamily: "Jolly Lodger",
+                          backgroundColor: `transparent`,
+                          color: "rgb(28, 228, 45)",
+                        }
+                      : { color: `#722789` }
+                  }
                 >
                   {this.state.dataAtractivo.nombre}
                 </h3>
-            
+                <hr></hr>
               </div>
-              <div className="container" >
+              <div className="container">
                 <div className="row">
                   <div className="col">
-                  
-                    <div className={this.state.dataAtractivo.idTipo == 32? `Atractivo-data-halloween`: `Atractivo-data`}>
-                  
+                    <div
+                      className={
+                        this.state.dataAtractivo.idTipo == 32
+                          ? `Atractivo-data-halloween`
+                          : `Atractivo-data`
+                      }
+                    >
                       <div className="atractivo-texto">
                         {this.state.dataAtractivo.descripcionHTML != "" ? (
                           <p
@@ -260,30 +244,32 @@ class PAtractivo extends Component {
                             }}
                           ></p>
                         ) : (
-                          <p>{this.state.dataAtractivo.descripcion} </p>
+                          <p>
+                            {" "}
+                            <hr />
+                            {this.state.dataAtractivo.descripcion} <hr />{" "}
+                          </p>
                         )}
-                
-
                       </div>
-                    
-                      <div className="atractivo-fotos">     
-                      {this.state.dataAtractivo.audio != ""? (  
-                          
-                          <Audios nombre={this.state.dataAtractivo.nombre} url={`${process.env.REACT_APP_API_RECURSOS}/recursos/audiosAtractivos/${this.state.dataAtractivo.audio}`}></Audios>
-                          
+
+                      <div className="atractivo-fotos">
+                        {this.state.dataAtractivo.audio != "" ? (
+                          <Audios
+                            nombre={this.state.dataAtractivo.nombre}
+                            url={`${process.env.REACT_APP_API_RECURSOS}/recursos/audiosAtractivos/${this.state.dataAtractivo.audio}`}
+                          ></Audios>
                         ) : (
                           ""
-                        )}              
-                        {fotos}</div>
+                        )}
+                        {fotos}
+                      </div>
                       {this.state.dataAtractivo.latitud !== "0" ? (
                         <div className="atractivo-ubicacion">
                           <span>
                             <i className="fas fa-map-marker"></i> Ubicación
                           </span>
-                        
+
                           <div id="mapa-atr" style={{ width: "100%" }}>
-                            
-                    
                             <GoogleMap
                               lat={this.state.dataAtractivo.latitud}
                               lng={this.state.dataAtractivo.longitud}
@@ -291,12 +277,16 @@ class PAtractivo extends Component {
                               gwidth="100%"
                               gheight="400px"
                             />
-                            <a class="redirectMapBox" href={`https://www.google.com/maps?q=${this.state.dataAtractivo.latitud},${this.state.dataAtractivo.longitud}`} target='_blank'>
-                              <h1 class="redirectMapMessage">Ver en google maps</h1>
+                            <a
+                              class="redirectMapBox"
+                              href={`https://www.google.com/maps?q=${this.state.dataAtractivo.latitud},${this.state.dataAtractivo.longitud}`}
+                              target="_blank"
+                            >
+                              <h1 class="redirectMapMessage">
+                                Ver en google maps
+                              </h1>
                             </a>
                           </div>
-                        
-                          
                         </div>
                       ) : (
                         ""
@@ -304,19 +294,20 @@ class PAtractivo extends Component {
 
                       <div className="atractivo-info">
                         <div>
-                          {(this.state.dataAtractivo.lunes !== "" || 
+                          {this.state.dataAtractivo.lunes !== "" ||
                           this.state.dataAtractivo.martes !== "" ||
                           this.state.dataAtractivo.miercoles !== "" ||
                           this.state.dataAtractivo.jueves !== "" ||
                           this.state.dataAtractivo.viernes !== "" ||
                           this.state.dataAtractivo.sabado !== "" ||
-                          this.state.dataAtractivo.domingo !== "" ) 
-                          ? (
+                          this.state.dataAtractivo.domingo !== "" ? (
                             <span>
                               <i className="fas fa-clock"></i>
                               <strong>Horarios </strong>
                             </span>
-                          ) : ( "")}
+                          ) : (
+                            ""
+                          )}
 
                           <ul>
                             {this.state.dataAtractivo.lunes !== "" ? (
@@ -384,7 +375,7 @@ class PAtractivo extends Component {
                             )}
                           </ul>
                         </div>
-                        
+
                         {this.state.dataAtractivo.costo === 0 ? (
                           <span>
                             <i className="fas fa-dollar-sign"></i> Cósto: $
@@ -393,8 +384,8 @@ class PAtractivo extends Component {
                         ) : (
                           ""
                         )}
-                      
-                      {this.state.dataAtractivo.domicilio !== "" ||
+
+                        {this.state.dataAtractivo.domicilio !== "" ||
                         this.state.dataAtractivo.telefono !== "" ||
                         this.state.dataAtractivo.mail !== "" ||
                         this.state.dataAtractivo.web ? (
@@ -413,7 +404,7 @@ class PAtractivo extends Component {
                         ) : (
                           ""
                         )*/}
-                        
+
                         {this.state.dataAtractivo.domicilio !== "" ? (
                           <span className="pr-4">
                             <strong>Domicilio:</strong>{" "}
@@ -440,7 +431,8 @@ class PAtractivo extends Component {
                         )}
                         {this.state.dataAtractivo.web !== "" ? (
                           <span className="pr-4">
-                            <strong> Web:</strong> {this.state.dataAtractivo.web}
+                            <strong> Web:</strong>{" "}
+                            {this.state.dataAtractivo.web}
                           </span>
                         ) : (
                           ""
@@ -456,22 +448,24 @@ class PAtractivo extends Component {
                 onClose={this.closeImg}
               />
 
-              {this.state.dataAtractivo.idTipo == 32? 
+              {this.state.dataAtractivo.idTipo == 32 ? (
                 <div className="row">
-                <div className="col-md-6 Titulo-Halloween" >
-                  Circuito <br/>
-                  paranormal             
+                  <div className="col-md-6 Titulo-Halloween">
+                    Circuito <br />
+                    paranormal
+                  </div>
+                  <div className="col-md-6 Container-Logo-Halloween">
+                    <img
+                      id="Logo-Halloween"
+                      src={`${process.env.REACT_APP_API}/recursos/SAN LUIS.png`}
+                      alt="Img"
+                    />
+                  </div>
                 </div>
-                <div className="col-md-6 Container-Logo-Halloween">
-                  <img id="Logo-Halloween" src={`${process.env.REACT_APP_API}/recursos/SAN LUIS.png`} alt="Img" />
-                </div>
-              </div>
-                :
+              ) : (
                 ""
-              }
-              
+              )}
             </div>
-           
           </React.Fragment>
         )}
       </div>

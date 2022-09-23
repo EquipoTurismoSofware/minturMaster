@@ -111,21 +111,27 @@ class Novedades extends Component {
 
           <div class="blog-slider__content">
             <div className="col-sm-11">
+              <span className="blog-slider__code">{`${fecha[2]}/${fecha[1]}/${fecha[0]}`}</span>
+              <div className="blog-slider__title">
+                <h2>{item.titulo}</h2>
+              </div>
+              <div>
+                <h4>{item.subtitulo}</h4>
+              </div>
+
+              <div class="blog-slider__text">{descripcion}</div>
               <Link
                 to={`/novedad/${item.id}`}
                 className="link"
                 style={{ color: "black" }}
               >
-                <span className="blog-slider__code">{`${fecha[2]}/${fecha[1]}/${fecha[0]}`}</span>
-                <div className="blog-slider__title">
-                  <h2>{item.titulo}</h2>
-                </div>
-                <div>
-                  <h4>{item.subtitulo}</h4>
-                </div>
-
-                <div class="blog-slider__text">{descripcion}</div>
                 <div class="blog-slider__button">Leer más</div>
+              </Link>
+              <Link
+                to={`/novedades`}
+                className="link"
+                style={{ color: "black" }}
+              >
                 <div class="blog-slider__button">Ver todas las noticias</div>
               </Link>
             </div>

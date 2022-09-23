@@ -7,11 +7,13 @@ class BotoneraFondo extends Component {
       <div className="botoneraFooter">
         <div id="father">
           <div class="child">
-            <img
-              className="img-fluid"
-              src={`${process.env.REACT_APP_API_RECURSOS}/recursos/botoneraFondo/estadisticas.png`}
-              alt="Img"
-            />
+            <Link to="/listadoEstadisticas">
+              <img
+                className="img-fluid"
+                src={`${process.env.REACT_APP_API_RECURSOS}/recursos/botoneraFondo/estadisticas.png`}
+                alt="Img"
+              />
+            </Link>
           </div>
           <div class="child">
             {" "}

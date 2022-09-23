@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Consumer } from "../../context";
 import axios from "axios";
 import Loading from "../../utils/Loading";
-import NotFound from "../../components/NotFound"
+import NotFound from "../../components/NotFound";
 import CardCiudades from "../../components/CardCiudades";
 
 class PAeropuerto extends Component {
@@ -12,7 +12,7 @@ class PAeropuerto extends Component {
       loading: true,
       isNotFound: true,
       data: [],
-      tipo: "aeropuertos"
+      tipo: "aeropuertos",
     };
     this.getData = this.getData.bind(this);
   }
@@ -32,14 +32,13 @@ class PAeropuerto extends Component {
         self.setState({
           loading: false,
           isNotFound: false,
-          data: response.data.data.registros
+          data: response.data.data.registros,
         });
-        
       })
       .catch((error) => {
         self.setState({
-            loading: false,
-            isNotFound: true
+          loading: false,
+          isNotFound: true,
         });
         console.log(error);
       });
@@ -48,13 +47,15 @@ class PAeropuerto extends Component {
   componentDidMount() {
     document.body.scrollTop = 0; // Safari
     document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
-    this.setState({
-      loading: true
-    }, () => {
-      this.getData();
-    });
+    this.setState(
+      {
+        loading: true,
+      },
+      () => {
+        this.getData();
+      }
+    );
   }
-
 
   render() {
     const isNotFound = this.state.isNotFound;
@@ -68,20 +69,16 @@ class PAeropuerto extends Component {
           </div>
         ) : isNotFound ? (
           <NotFound />
-        )
-        :(
+        ) : (
           <React.Fragment>
             <div className="container mb-5" />
             <div className="container">
-              <div
-                className="ZonaDetalle-titulo"
-                style={{ paddingTop: "50px", backgroundColor: `#722789` }}
-              >
-                <h3 style={{ color: `#722789` }}>Aeropuertos</h3>
-              </div>
-                <CardCiudades data={this.state.data} tipo={this.state.tipo} />
+              <h2 style={{ color: `#722789`, paddingLeft: "20px" }}>
+                Aeropuertos
+              </h2>
+              <hr></hr>
+              <CardCiudades data={this.state.data} tipo={this.state.tipo} />
             </div>
-
           </React.Fragment>
         )}
       </div>

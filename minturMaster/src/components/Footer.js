@@ -29,13 +29,16 @@ class Footer extends Component {
                     </div>
                     <div class="footer-social-icon">
                       <span>Seguinos</span>
-                      <a href="#">
+                      <a href="https://walink.co/a8a41d">
+                        <i class="fab fa-whatsapp fa-2x"></i>
+                      </a>
+                      <a href="https://www.facebook.com/turismodesanluis">
                         <i class="fab fa-facebook fa-2x"></i>
                       </a>
-                      <a href="#">
+                      <a href="https://twitter.com/TurismoSanLuis_">
                         <i class="fab fa-twitter fa-2x"></i>
                       </a>
-                      <a href="#">
+                      <a href="https://www.instagram.com/turismo_san_luis/">
                         <i class="fab fa-instagram fa-2x"></i>
                       </a>
                     </div>
@@ -48,34 +51,39 @@ class Footer extends Component {
                     </div>
                     <ul>
                       <li>
-                        <a href="#">Inicio</a>
+                        <Link to="/">Inicio</Link>
                       </li>
                       <li>
-                        <a href="#">Hospedaje</a>
+                        <Link to="/filtroalojamiento">Hospedaje</Link>
                       </li>
                       <li>
-                        <a href="#">Gastronomía</a>
+                        <Link to="/listado-guias-agencias-covid/agencias">
+                          Agencias de Viaje
+                        </Link>
                       </li>
                       <li>
-                        <a href="#">Agencias de Viaje</a>
+                        <Link to="/listado-guias-agencias-covid/guiasturismo">
+                          Guías de Turismo
+                        </Link>
                       </li>
                       <li>
-                        <a href="#">Guías de Turismo</a>
+                        <Link to="/parques-provinciales">
+                          Parques Provinciales
+                        </Link>
                       </li>
                       <li>
-                        <a href="#">Parques Provinciales</a>
+                        <Link to="/caminos-pintorescos">
+                          Caminos Pintorescos
+                        </Link>
                       </li>
                       <li>
-                        <a href="#">Caminos Pintorescos</a>
+                        <Link to="/tirolesas">Tirolesas</Link>
                       </li>
                       <li>
-                        <a href="#">Tirolesas</a>
+                        <Link to="/Pcontacto">Contactanos</Link>
                       </li>
                       <li>
-                        <a href="#">Contactanos</a>
-                      </li>
-                      <li>
-                        <a href="#">Prensa Turistica</a>
+                        <Link to="/novedades">Prensa Turistica</Link>
                       </li>
                     </ul>
                   </div>
@@ -104,7 +112,7 @@ class Footer extends Component {
                     </div>
                   </div>
                   <div class="imgFooter">
-                    <a href="index.html">
+                    <a target="blank" href="https://www.sanluis.gov.ar/">
                       <img
                         src={`${process.env.REACT_APP_API}/recursos/logo4.png`}
                         class=""
@@ -132,19 +140,16 @@ class Footer extends Component {
                   <div class="footer-menu">
                     <ul>
                       <li>
-                        <a href="#">Inicio</a>
+                        <Link to="/">Inicio</Link>
                       </li>
                       <li>
-                        <a href="#">Hospedaje</a>
+                        <Link to="/filtroalojamiento">Hospedaje</Link>
                       </li>
                       <li>
-                        <a href="#">Gastronomía</a>
+                        <Link to="/novedades">Novedades</Link>
                       </li>
                       <li>
-                        <a href="#">Novedades</a>
-                      </li>
-                      <li>
-                        <a href="#">Contactanos</a>
+                        <Link to="/Pcontacto">Contactanos</Link>
                       </li>
                     </ul>
                   </div>

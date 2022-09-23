@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Helmet } from "react-helmet";
 import { Consumer } from "../context";
 import { Animated } from "react-animated-css";
+import { Link } from "react-router-dom";
 
 class Scroll extends Component {
   constructor(props) {
@@ -21,66 +22,70 @@ class Scroll extends Component {
               src="http://turismo.sanluis.gov.ar/recursos/js/scroll.js"
             ></script>
           </Helmet>
-            <div className="tituloScrollActividades">
-              <center>
-                <img
-                  className=""
-                  src={`${process.env.REACT_APP_API_RECURSOS}/recursos/explora.png`}
-                  alt="Img"
-                />{" "}
-              </center>
-            </div>
+          <div className="tituloScrollActividades">
+            <center>
+              <img
+                className=""
+                src={`${process.env.REACT_APP_API_RECURSOS}/recursos/explora.png`}
+                alt="Img"
+              />{" "}
+            </center>
+          </div>
           <div class="grid-container">
             {/*
             <div class="arrow izquierda bounce">
               <i class="fa fa-arrow-left fa-5x" aria-hidden="true"></i>
     </div>*/}
             <main class="grid-item main">
-              <div class="items"  >
-                <div class="item item4">
-                  <div class="section-title espejosAgua">
-                    <Animated
-                      animationIn="bounceInLeft"
-                      animationOut="fadeOut"
-                      isVisible={true}
-                    >
-                      <h2 id="primerp">Espejos de Agua</h2>
-                    </Animated>
+              <div class="items">
+                <Link to={"/Diques"}>
+                  <div class="item item4">
+                    <div class="section-title espejosAgua">
+                      <Animated
+                        animationIn="bounceInLeft"
+                        animationOut="fadeOut"
+                        isVisible={true}
+                      >
+                        <h2 id="primerp">Espejos de Agua</h2>
+                      </Animated>
+                    </div>
+                    <div class="parrafoProducto">
+                      <p className="productoP">
+                        Lo que queremos hacer es colocar este texto al lado
+                        derecho de la imagen, algo así como se observa en
+                        periódicos o revistas.
+                      </p>
+                    </div>
+                    <div className="productoSubtitulo">
+                      <h5>Oro en la Provincia</h5>
+                      <h5>Circuito de minería</h5>
+                    </div>
                   </div>
-                  <div class="parrafoProducto">
-                    <p className="productoP">
-                      Lo que queremos hacer es colocar este texto al lado
-                      derecho de la imagen, algo así como se observa en
-                      periódicos o revistas.
-                    </p>
+                </Link>
+                <Link to={"/Tirolesas"}>
+                  <div class="item item6">
+                    <div class="section-title aventura">
+                      <Animated
+                        animationIn="bounceInLeft"
+                        animationOut="fadeOut"
+                        isVisible={true}
+                      >
+                        <h2>Aventura</h2>
+                      </Animated>
+                    </div>
+                    <div class="parrafoProducto">
+                      <p className="productoP">
+                        Lo que queremos hacer es colocar este texto al lado
+                        derecho de la imagen, algo así como se observa en
+                        periódicos o revistas.
+                      </p>
+                    </div>
+                    <div className="productoSubtitulo">
+                      <h5>Gastronomía</h5>
+                      <h5>Gastronomía</h5>
+                    </div>
                   </div>
-                  <div className="productoSubtitulo">
-                    <h5>Oro en la Provincia</h5>
-                    <h5>Circuito de minería</h5>
-                  </div>
-                </div>
-                <div class="item item6">
-                  <div class="section-title aventura">
-                    <Animated
-                      animationIn="bounceInLeft"
-                      animationOut="fadeOut"
-                      isVisible={true}
-                    >
-                      <h2>Aventura</h2>
-                    </Animated>
-                  </div>
-                  <div class="parrafoProducto">
-                    <p className="productoP">
-                      Lo que queremos hacer es colocar este texto al lado
-                      derecho de la imagen, algo así como se observa en
-                      periódicos o revistas.
-                    </p>
-                  </div>
-                  <div className="productoSubtitulo">
-                    <h5>Gastronomía</h5>
-                    <h5>Gastronomía</h5>
-                  </div>
-                </div>
+                </Link>
                 <div class="item item3">
                   <div class="section-title sierras">
                     <Animated
@@ -103,28 +108,30 @@ class Scroll extends Component {
                     <h5>Todo el circuito serrano</h5>
                   </div>
                 </div>
-                <div class="item item5">
-                  <div class="section-title parques">
-                    <Animated
-                      animationIn="bounceInLeft"
-                      animationOut="fadeOut"
-                      isVisible={true}
-                    >
-                      <h2>Parques</h2>
-                    </Animated>
-                  </div>
-                  <div class="parrafoProducto">
-                    <p className="productoP">
-                      Lo que queremos hacer es colocar este texto al lado
-                      derecho de la imagen, algo así como se observa en
-                      periódicos o revistas.
-                    </p>
-                  </div>
-                  <div className="productoSubtitulo">
-                    <h5>Parques Provinciales</h5>
-                    <h5>Gastronomía</h5>
-                  </div>
-                </div>{" "}
+                <Link to={"/parques-provinciales"}>
+                  <div class="item item5">
+                    <div class="section-title parques">
+                      <Animated
+                        animationIn="bounceInLeft"
+                        animationOut="fadeOut"
+                        isVisible={true}
+                      >
+                        <h2>Parques</h2>
+                      </Animated>
+                    </div>
+                    <div class="parrafoProducto">
+                      <p className="productoP">
+                        Lo que queremos hacer es colocar este texto al lado
+                        derecho de la imagen, algo así como se observa en
+                        periódicos o revistas.
+                      </p>
+                    </div>
+                    <div className="productoSubtitulo">
+                      <h5>Parques Provinciales</h5>
+                      <h5>Gastronomía</h5>
+                    </div>
+                  </div>{" "}
+                </Link>
                 <div class="item item2">
                   <div class="section-title salinas">
                     <Animated
@@ -147,7 +154,8 @@ class Scroll extends Component {
                     <h5>Salina del Bebedero</h5>
                   </div>
                 </div>
-                <div class="item item1">
+                {/* 
+                 <div class="item item1">
                   <div class="section-title">
                     <Animated
                       animationIn="bounceInLeft"
@@ -168,7 +176,7 @@ class Scroll extends Component {
                     <h5>Magia Gastronómica</h5>
                     <h5>Disfrutá de los Sabores</h5>
                   </div>
-                </div>
+                </div>*/}
                 <div className="reset"></div>
               </div>
             </main>

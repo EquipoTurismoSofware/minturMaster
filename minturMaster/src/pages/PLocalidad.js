@@ -327,7 +327,6 @@ class PLocalidad extends Component {
         className="img-fluid"
         src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${selecciono}`}
         alt="Img"
-        
       />
     );
     return (
@@ -342,127 +341,80 @@ class PLocalidad extends Component {
           <NotFound />
         ) : (
           <React.Fragment>
-            <div className="menu-y-slider">
-              <div
-                id="carouselExampleIndicators"
-                className="carousel slide"
-                data-ride="carousel"
-              >
-                <div className="carousel-inner">{this.state.carousel}</div>
-                <a
-                  className="carousel-control-prev"
-                  href="#carouselExampleIndicators"
-                  role="button"
-                  data-slide="prev"
-                >
-                  <span
-                    className="carousel-control-prev-icon"
-                    aria-hidden="true"
-                  />
-                  <span className="sr-only">Previous</span>
-                </a>
-                <a
-                  className="carousel-control-next"
-                  href="#carouselExampleIndicators"
-                  role="button"
-                  data-slide="next"
-                >
-                  <span
-                    className="carousel-control-next-icon"
-                    aria-hidden="true"
-                  />
-                  <span className="sr-only">Next</span>
-                </a>
-                <div className="slider-home-leyenda">
-                  <h1 className="mb-5">Destino Turístico</h1>
-                </div>
-              </div>
-            </div>
-            
             <div
-              className="ZonaLocalidad-titulo"
-              style={{ backgroundColor: `#${this.state.dataLocalidad.color}` }}
+              className="container"
+              style={{
+                paddingTop: "200px",
+                paddingBottom: "30px",
+              }}
             >
-              <h3 style={{ color: `#${this.state.dataLocalidad.color}` }}>
+              <h3
+                style={{
+                  color: `#${this.state.dataLocalidad.color}`,
+                  paddingLeft: "40px",
+                }}
+              >
                 {this.state.dataLocalidad.nombre}
+                <hr></hr>
               </h3>
-            </div>
-            <div className="container">
-              <div className="row">
-                <div className="col">
-                  <div className="ZonaLocalidad-Body mb-5">
-                    <div id="video">
-                      {this.state.dataLocalidad.video === "" ? (
-                        <FotoRandom />
-                      ) : (
-                        <iframe
-                          title={`#${this.state.dataLocalidad.id}-${this.state.dataLocalidad.nombre}`}
-                          src={this.state.dataLocalidad.video}
-                          width="100%"
-                          height="315"
-                          frameBorder="0"
-                          allowFullScreen
-                        />
-                      )}
-                    </div>
-                 
-                   
-                 
-                        <div id="texto">
-                           {this.state.dataLocalidad.descripcionHTML != "" ? (
-                             <p
-                               dangerouslySetInnerHTML={{
-                               __html: this.state.dataLocalidad.descripcionHTML,
+              <div className="container">
+                <div className="row">
+                  <div className="col">
+                    <div className="ZonaLocalidad-Body mb-5">
+                      <div id="texto">
+                        {this.state.dataLocalidad.descripcionHTML != "" ? (
+                          <p
+                            dangerouslySetInnerHTML={{
+                              __html: this.state.dataLocalidad.descripcionHTML,
                             }}
-                             ></p>
-                             ) : (
-                             <p>{this.state.dataLocalidad.descripcion}</p>
-                                 )}
-                        </div>
-                   
-                 
-                
+                          ></p>
+                        ) : (
+                          <p>{this.state.dataLocalidad.descripcion}</p>
+                        )}
+                      </div>
 
-                    <div id="atractivos">
-                      {
-                        // <h5> cantidad de atractivos : {this.state.cantAtractivos}</h5>
-                      }
+                      <div id="atractivos">
+                        {
+                          // <h5> cantidad de atractivos : {this.state.cantAtractivos}</h5>
+                        }
 
-                      {this.state.cantAtractivos > 0 ? (
-                        <Link to={`/atractivos/${this.state.dataLocalidad.id}`}>
-                          <div className="all-link">
-                            <div
-                              className="al-nombre"
-                              style={{
-                                color: `#${this.state.dataLocalidad.color}`,
-                              }}
-                            >
-                              {this.state.dataLocalidad.nombre} <br />
+                        {this.state.cantAtractivos > 0 ? (
+                          <Link
+                            to={`/atractivos/${this.state.dataLocalidad.id}`}
+                          >
+                            <div className="all-link">
+                              <div
+                                className="al-nombre"
+                                style={{
+                                  color: `#${this.state.dataLocalidad.color}`,
+                                }}
+                              >
+                                {this.state.dataLocalidad.nombre} <br />
+                              </div>
+
+                              <div
+                                className="al-texto"
+                                style={{
+                                  color: `#${this.state.dataLocalidad.color}`,
+                                }}
+                              >
+                                ATRACTIVOS TURÍSTICOS <br />
+                              </div>
+                              <div
+                                className="al-boton"
+                                style={{
+                                  color: `#${this.state.dataLocalidad.color}`,
+                                }}
+                              >
+                                <i className="fas fa-arrow-alt-circle-right" />
+                              </div>
                             </div>
+                          </Link>
+                        ) : (
+                          ""
+                        )}
 
-                            <div
-                              className="al-texto"
-                              style={{
-                                color: `#${this.state.dataLocalidad.color}`,
-                              }}
-                            >
-                              ATRACTIVOS TURÍSTICOS <br />
-                            </div>
-                            <div
-                              className="al-boton"
-                              style={{
-                                color: `#${this.state.dataLocalidad.color}`,
-                              }}
-                            >
-                              <i className="fas fa-arrow-alt-circle-right" />
-                            </div>
-                          </div>
-                        </Link>
-                      ) : (
-                        ""
-                      )}
-
-                      {/*   {this.state.dataAtractivo.domicilio !== "" ? (
+                        {/*   {this.state.dataAtractivo.domicilio !== "" ? (
                         <span className="pr-4">
                             <strong>Domicilio:</strong>{""}
                           {this.state.dataAtractivo.domicilio}
@@ -471,78 +423,84 @@ class PLocalidad extends Component {
                         ""
                       )} */}
 
-                      {this.state.cantGastronomia > 0 ? (
-                        <Link
-                          to={`/gastronomialistado/${this.state.dataLocalidad.id}`}
-                        >
-                          <div className="all-link">
-                            <div
-                              className="al-texto"
-                              style={{
-                                color: `#${this.state.dataLocalidad.color}`,
-                              }}
-                            >
-                              GASTRONOMÍA
-                            </div>
-                            <div
-                              className="al-boton"
-                              style={{
-                                color: `#${this.state.dataLocalidad.color}`,
-                              }}
-                            >
-                              <i className="fas fa-arrow-alt-circle-right" />
-                            </div>
-                          </div>
-                        </Link>
-                      ) : ("")}
-                    </div>
-
-                    <div id="mapa">
-                      <GoogleMap
-                        lat={this.state.dataLocalidad.latitud}
-                        lng={this.state.dataLocalidad.longitud}
-                        zoom="10"
-                        gwidth="100%"
-                        gheight="400px"
-                      />
-                      <a class="redirectMapBox"  href={`https://www.google.com.ar/maps/place/${this.state.dataLocalidad.nombre}, San Luis`} target='_blank'>
-                        <h1 class="redirectMapMessage">Ver en google maps</h1>
-                      </a>
-                    </div>
-                   
-                    {
-                      //alert (this.state.cantImperdibles)
-                    }
-                   
-                   {this.state.dataLocalidad.descripcionHTML != "" || this.state.dataLocalidad.descripcion != "" ? (   
-                        
-                          this.state.cantImperdibles > 0 ? (
-                           <div
-                               id="imperdibles"
-                               style={{ backgroundColor: `#${this.state.dataLocalidad.color}`, 
+                        {this.state.cantGastronomia > 0 ? (
+                          <Link
+                            to={`/gastronomialistado/${this.state.dataLocalidad.id}`}
+                          >
+                            <div className="all-link">
+                              <div
+                                className="al-texto"
+                                style={{
+                                  color: `#${this.state.dataLocalidad.color}`,
                                 }}
-                             >
-                        
-                            <div className="imp-titulo">
-                          
-                             <h3
-                              style={{
-                              color: `#${this.state.dataLocalidad.color}`,
-                              }}
-                             >
-                                Imperdibles
-                             </h3>
+                              >
+                                GASTRONOMÍA
+                              </div>
+                              <div
+                                className="al-boton"
+                                style={{
+                                  color: `#${this.state.dataLocalidad.color}`,
+                                }}
+                              >
+                                <i className="fas fa-arrow-alt-circle-right" />
+                              </div>
                             </div>
-                               <div className="imp-body-wrap">{imperdibles}</div>
-                           </div>
-                    ) : ("")
+                          </Link>
+                        ) : (
+                          ""
+                        )}
+                      </div>
 
-                  ) : (
-                      // no hay descripcion
+                      <div id="mapa">
+                        <GoogleMap
+                          lat={this.state.dataLocalidad.latitud}
+                          lng={this.state.dataLocalidad.longitud}
+                          zoom="10"
+                          gwidth="100%"
+                          gheight="400px"
+                        />
+                        <a
+                          class="redirectMapBox"
+                          href={`https://www.google.com.ar/maps/place/${this.state.dataLocalidad.nombre}, San Luis`}
+                          target="_blank"
+                        >
+                          <h1 class="redirectMapMessage">Ver en google maps</h1>
+                        </a>
+                      </div>
+
+                      {
+                        //alert (this.state.cantImperdibles)
+                      }
+
+                      {this.state.dataLocalidad.descripcionHTML != "" ||
+                      this.state.dataLocalidad.descripcion != "" ? (
+                        this.state.cantImperdibles > 0 ? (
+                          <div
+                            id="imperdibles"
+                            style={{
+                              backgroundColor: `#${this.state.dataLocalidad.color}`,
+                            }}
+                          >
+                            <div className="imp-titulo">
+                              <h3
+                                style={{
+                                  color: `#${this.state.dataLocalidad.color}`,
+                                }}
+                              >
+                                Imperdibles
+                              </h3>
+                            </div>
+                            <div className="imp-body-wrap">{imperdibles}</div>
+                          </div>
+                        ) : (
+                          ""
+                        )
+                      ) : // no hay descripcion
                       this.state.cantImperdibles > 0 ? (
                         <div
                           id="imperdibles"
-                          style={{ top:-350,  //marginTop: -450 , //position: "relative", // marginBottom: 40  , position: "relative"
+                          style={{
+                            top: -350, //marginTop: -450 , //position: "relative", // marginBottom: 40  , position: "relative"
                             backgroundColor: `#${this.state.dataLocalidad.color}`,
                           }}
                         >
@@ -557,64 +515,73 @@ class PLocalidad extends Component {
                           </div>
                           <div className="imp-body-wrap">{imperdibles}</div>
                         </div>
-                      ) : ("")
-                    )}
+                      ) : (
+                        ""
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            {this.state.alojamientos.length != 0?
-            <div>
-              <div className="container">
-                <h4>Alojamientos</h4>
-                <div className="row">
-                  <div className="col offset-md-1">
-                    <form /*onSubmit={this.aplicarFiltro}*/ className="mb-5">
-                      <div className="form-row">
-                        <div className="form-group col-md-4">
-                          <div className="container">
-                            <label htmlFor="idtipo">Tipo</label>
-                            <select
-                              id="idtipo"
-                              name="idtipo"
-                              className="form-control"
-                              value={this.state.idtipo}
-                              onChange={this.handleChange}
-                            >
-                              {tipos}
-                            </select>
-                          </div>
-                        </div>
-                        <div className="form-group col-md-4">
-                          <div className="container">
-                            <label htmlFor="nombreAloja">Nombre</label>
-                            <input
-                              type="text"
-                              id="nombreAloja"
-                              name="nombreAloja"
-                              className="form-control"
-                              value={this.state.nombreAloja}
-                              onChange={this.handleChange}
-                            />
-                          </div>
-                        </div>
-                        {/*<div className="form-group col-md-3 d-flex align-items-end justify-content-end">
+              {this.state.alojamientos.length != 0 ? (
+                <div>
+                  <div className="container">
+                    <h4>Alojamientos</h4>
+                    <div className="row">
+                      <div className="col offset-md-1">
+                        <form
+                          /*onSubmit={this.aplicarFiltro}*/ className="mb-5"
+                        >
+                          <div className="form-row">
+                            <div className="form-group col-md-4">
+                              <div className="container">
+                                <label htmlFor="idtipo">Tipo</label>
+                                <select
+                                  id="idtipo"
+                                  name="idtipo"
+                                  className="form-control"
+                                  value={this.state.idtipo}
+                                  onChange={this.handleChange}
+                                >
+                                  {tipos}
+                                </select>
+                              </div>
+                            </div>
+                            <div className="form-group col-md-4">
+                              <div className="container">
+                                <label htmlFor="nombreAloja">Nombre</label>
+                                <input
+                                  type="text"
+                                  id="nombreAloja"
+                                  name="nombreAloja"
+                                  className="form-control"
+                                  value={this.state.nombreAloja}
+                                  onChange={this.handleChange}
+                                />
+                              </div>
+                            </div>
+                            {/*<div className="form-group col-md-3 d-flex align-items-end justify-content-end">
                               <button type="submit" className="btn btn-primary">Buscar</button>
                           </div>*/}
+                          </div>
+                        </form>
                       </div>
-                    </form>
+                    </div>
+                  </div>
+                  <div className="container">
+                    <div className="row">
+                      <div className="col">
+                        <Alojamientos
+                          idLocalidad={0}
+                          data={this.state.filtro}
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="container">
-                <div className="row">
-                  <div className="col">
-                    <Alojamientos idLocalidad={0} data={this.state.filtro} />
-                  </div>
-                </div>
-              </div>
+              ) : (
+                ""
+              )}
             </div>
-          : ""}
           </React.Fragment>
         )}
       </div>

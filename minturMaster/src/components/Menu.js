@@ -330,14 +330,16 @@ class Menu extends Component {
       <React.Fragment>
         <div className="menuNew">
           <Navbar bg="navbar" variant="dark" id="nav" expand="lg">
-            <Navbar.Brand href="/">
-              <img
-                id="logoscroll"
-                src={Logo}
-                alt="San Luis"
-                className="img-brand"
-              />
-            </Navbar.Brand>
+            <Link to={"/"}>
+              <Navbar.Brand>
+                <img
+                  id="logoscroll"
+                  src={Logo}
+                  alt="San Luis"
+                  className="img-brand"
+                />
+              </Navbar.Brand>
+            </Link>
             <Navbar.Toggle
               aria-controls="responsive-navbar-nav"
               data-bs-target="#responsive-navbar-nav"
@@ -360,11 +362,11 @@ class Menu extends Component {
                   <NavDropdown.Item href="#/listado-guias-agencias-covid/agencias">
                     Agencias de Viaje
                   </NavDropdown.Item>
-                  <NavDropdown.Divider />
+                  {/* <NavDropdown.Divider />
                   <NavDropdown.Item href="#/PPrincipalGastronomia">
                     Gastronomía
-                  </NavDropdown.Item>
-                </NavDropdown>{" "}
+     </NavDropdown.Item>*/}
+                </NavDropdown>
                 <div className="nav-space"></div>
                 <NavDropdown
                   renderMenuOnMount={true}
@@ -390,10 +392,10 @@ class Menu extends Component {
                   <NavDropdown.Item href="#/riosysaltos">
                     Ríos y Saltos
                   </NavDropdown.Item>
-                  <NavDropdown.Divider />
+                  {/*<NavDropdown.Divider />
                   <NavDropdown.Item href="#/PCerveceria">
                     Caminos Cerveceros
-                  </NavDropdown.Item>
+    </NavDropdown.Item>*/}
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#/PCreerGnral">
                     Iglesias

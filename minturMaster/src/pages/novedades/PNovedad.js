@@ -1,14 +1,18 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
 import axios from "axios";
-import { FacebookShareButton, FacebookIcon, FacebookShareCount } from 'react-share';
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  FacebookShareCount,
+} from "react-share";
 //import CompartirPost from "../compartirPost";
 //import GoogleMap from "../components/subcomponentes/GoogleMap";
 //import {Helmet} from "react-helmet";
 //import { Helmet, HelmetProvider} from 'react-helmet-async'
 import MaxImage from "../../components/subcomponentes/MaxImage";
 import Loading from "../../utils/Loading";
-import NovedadesMetaDatos from "../../components/subcomponentes/NovedadMetaDatos"
+import NovedadesMetaDatos from "../../components/subcomponentes/NovedadMetaDatos";
 
 class PNovedad extends Component {
   constructor(props) {
@@ -24,9 +28,9 @@ class PNovedad extends Component {
         descripcionHTML: "",
         foto_uno: "default.jpg",
         foto_dos: "default.jpg",
-        foto_tres:"default.jpg",
-        foto_cuatro:"default.jpg",
-        foto_cinco:"default.jpg"
+        foto_tres: "default.jpg",
+        foto_cuatro: "default.jpg",
+        foto_cinco: "default.jpg",
       },
       img: {
         visible: false,
@@ -118,13 +122,19 @@ class PNovedad extends Component {
                 </span>
               </div>
             </div>
-            <div className="container">
+            <div className="container" style={{ marginTop: "70px" }}>
               <div className="row mb-5">
                 <div className="col">
+                  <h3>
+                    {this.state.data.titulo}
+                    {this.state.data.subtitulo}
+                  </h3>
+                  <hr />
                   <div className="novedad-item">
                     <div className="imagen">
                       <img
                         className="img-fluid"
+                        style={{ marginBottom: "3px" }}
                         src={`${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_uno}`}
                         alt="Img"
                         onClick={(e) =>
@@ -137,6 +147,7 @@ class PNovedad extends Component {
                       {this.state.data.foto_dos !== "default.jpg" ? (
                         <img
                           className="img-fluid"
+                          style={{ marginBottom: "3px" }}
                           src={`${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_dos}`}
                           alt="Img"
                           onClick={(e) =>
@@ -152,6 +163,7 @@ class PNovedad extends Component {
                       {this.state.data.foto_tres !== "default.jpg" ? (
                         <img
                           className="img-fluid"
+                          style={{ marginBottom: "3px" }}
                           src={`${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_tres}`}
                           alt="Img"
                           onClick={(e) =>
@@ -164,9 +176,10 @@ class PNovedad extends Component {
                       ) : (
                         ""
                       )}
-                       {this.state.data.foto_cuatro !== "default.jpg" ? (
+                      {this.state.data.foto_cuatro !== "default.jpg" ? (
                         <img
                           className="img-fluid"
+                          style={{ marginBottom: "3px" }}
                           src={`${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_cuatro}`}
                           alt="Img"
                           onClick={(e) =>
@@ -179,9 +192,10 @@ class PNovedad extends Component {
                       ) : (
                         ""
                       )}
-                       {this.state.data.foto_cinco !== "default.jpg" ? (
+                      {this.state.data.foto_cinco !== "default.jpg" ? (
                         <img
                           className="img-fluid"
+                          style={{ marginBottom: "3px" }}
                           src={`${process.env.REACT_APP_API_RECURSOS}/recursos/novedades/${this.state.data.foto_cinco}`}
                           alt="Img"
                           onClick={(e) =>
@@ -195,31 +209,26 @@ class PNovedad extends Component {
                         ""
                       )}
                     </div>
-                    <div
-                      className="titulo"
-                      style={{ backgroundColor: this.state.data.color }}
-                    >
-                      <h3>{this.state.data.titulo}</h3>
 
-                      <h3>{this.state.data.subtitulo}</h3>
-                    </div>
                     {this.state.data.descripcionHTML != "" ? (
-                      <div className="body">
+                      <div
+                        className="body"
+                        style={{ marginTop: "-80px", marginLeft: "20px" }}
+                      >
                         <p
                           className="text-dark mb-2"
                           dangerouslySetInnerHTML={{
                             __html: this.state.data.descripcionHTML,
                           }}
                         ></p>
-
-                        <FacebookShareButton url={shareUrl}><FacebookIcon size={32} round={true} /></FacebookShareButton>
-
                       </div>
                     ) : (
                       <div className="body">
-                        <p className="text-dark mb-2">{descripcion}</p>
+                        <span className="text-dark mb-2">{descripcion}</span>
 
-                        <FacebookShareButton url={shareUrl}><FacebookIcon size={32} round={true} /></FacebookShareButton>
+                        <FacebookShareButton url={shareUrl}>
+                          <FacebookIcon size={32} round={true} />
+                        </FacebookShareButton>
                       </div>
                     )}
                   </div>

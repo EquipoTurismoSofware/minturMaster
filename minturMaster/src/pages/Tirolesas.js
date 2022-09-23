@@ -12,7 +12,7 @@ class Tirolesas extends Component {
       loading: true,
       isNotFound: true,
       data: [],
-      tipo: "casascambio",
+      tipo: "tirolesas",
     };
     this.getData = this.getData.bind(this);
   }
@@ -25,7 +25,7 @@ class Tirolesas extends Component {
       headers: {
         Authorization: token,
       },
-      url: `${process.env.REACT_APP_API}/casascambio`,
+      url: `${process.env.REACT_APP_API}/gettirolesas`,
       responseType: "json",
     })
       .then((response) => {
@@ -71,8 +71,14 @@ class Tirolesas extends Component {
           <NotFound />
         ) : (
           <React.Fragment>
-            <div className="container mb-5" />
-            <div className="container">
+            <div
+              style={{
+                paddingTop: "140px",
+                paddingBottom: "30px",
+                paddingLeft: "80px",
+              }}
+              className="container"
+            >
               <h3 style={{ color: `#722789` }}>Tirolesas</h3>
               <div className="parentTirolesa">
                 <div className="div1Tirolesa">
@@ -88,7 +94,7 @@ class Tirolesas extends Component {
                 </div>
                 <div className="div2Tirolesa">
                   <img
-                    style={{ height: "100px", width:"150px" }}
+                    style={{ height: "100px", width: "150px" }}
                     src="https://cinytec.org.ar/wp-content/uploads/2019/01/logo2019-150x105.png"
                   ></img>
                 </div>

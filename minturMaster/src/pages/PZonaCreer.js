@@ -189,43 +189,45 @@ class PZonaCreer extends Component {
   render() {
     //console.log(atractivosData);
     const localidades = this.state.localidadesDataZona.map((atrac) => {
+      let descripcion = "";
+      if (atrac.descripcion.length > 395) {
+        descripcion = atrac.descripcion.substr(0, 295) + "...";
+      } else {
+        descripcion = atrac.descripcion;
+      }
+      let indice = Math.floor(Math.random() * atrac.imagenes.length);
+
       return (
         <Link to={`/atractivo/${atrac.id}`} key={`atractivo-${atrac.id}`}>
-          <div className="row mb-5">
-            <div className="col">
-              <div className="atractivo-full-item">
-                <div className="imagen">
-                  <span
-                    style={{ backgroundColor: `#${this.state.dataZona.color}` }}
-                  >
-                    {atrac.nombre_localidad}
-                  </span>
-                  <img
-                    className="img-fluid"
-                    src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${atrac.imagenes[0].imagen}`}
-                    alt="Img"
-                  />
-                </div>
-                <div
-                  className="titulo"
-                  style={{ backgroundColor: `#${this.state.dataZona.color}` }}
-                >
-                  <h3>{atrac.nombre}</h3>
-                </div>
-                <div className="body">
-                  <p className="text-dark mb-2" style={{ height: "200px" }}>
-                    {atrac.descripcion}
-                  </p>
-                  <span
-                    className="btn-novedades"
-                    style={{ backgroundColor: `#${this.state.dataZona.color}` }}
-                  >
-                    Leer <i className="fas fa-arrow-right" />
-                  </span>
-                </div>
+          <div class="blog-item">
+            <a href="#">
+              <div class="icon">
+                <img
+                  className=""
+                  src={`${process.env.REACT_APP_API_RECURSOS}/atractivos/${atrac.imagenes[0].imagen}`}
+                  alt="Img"
+                />
               </div>
-            </div>
-          </div>
+              <div class="content">
+                <div class="title" style={{ color: "#722789" }}>
+                  {atrac.nombre} <br></br>
+                  <span class="blog-date">{atrac.localidad}</span>
+                </div>
+                <div class="rounded"></div>
+
+                <p> {descripcion}</p>
+              </div>
+
+              <div class="item-arrow">
+                <i
+                  class="fa fa-long-arrow-right"
+                  aria-hidden="true"
+                  style={{ color: "#e36838" }}
+                ></i>
+              </div>
+            </a>
+          </div>{" "}
+          <hr></hr>
         </Link>
       );
     });
@@ -239,19 +241,13 @@ class PZonaCreer extends Component {
           </div>
         ) : (
           <React.Fragment>
-            <div
-              className="ZonaDetalle-titulo"
-              style={{
-                backgroundColor: `#${this.state.dataZona.color}`,
-              }}
-            >
+            <div className="container mb-5" style={{ marginTop: "50px" }}>
               <h3 style={{ color: `#${this.state.dataZona.color}` }}>
-                Caminos de la fe "{this.state.dataZona.nombre}"
+                Postas religiosas de <br></br> {this.state.dataZona.nombre}
               </h3>
-            </div>
-            <div className="container mb-5">
               <div className="row">
                 <div className="col ZonaDetalle-Body">
+                  <div></div>
                   <div id="mapasl">
                     <img
                       className="img-fluid"
@@ -263,14 +259,6 @@ class PZonaCreer extends Component {
                     <p style={{ fontSize: "20px" }}>
                       {this.state.dataZona.descripcionCreer}
                     </p>
-                    <div>
-                      <h3 style={{ color: `#${this.state.dataZona.color}` }}>
-                        Postas religiosas de
-                      </h3>
-                      <h1 style={{ color: `#${this.state.dataZona.color}` }}>
-                        {this.state.dataZona.nombre}
-                      </h1>
-                    </div>
                   </div>
                   <div id="mapa">
                     <img

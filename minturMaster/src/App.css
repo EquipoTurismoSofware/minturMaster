@@ -379,13 +379,15 @@ body {
 .Viewer .btn-left {
   grid-area: btn-left;
 }
-.Viewer .items {
+.Viewer .itemsChildren {
   grid-area: items;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 60vh;
 }
 .Viewer .btn-right {
   grid-area: btn-right;
@@ -417,7 +419,7 @@ body {
   background-color: rgba(237, 15, 104, 0.7);
   color: white;
   cursor: pointer;
-  transition: all 1.5s;
+  transition: all 0.5s;
 }
 .Viewer .pagesBullets ul li.selected {
   background-color: rgb(141, 10, 62);
@@ -447,13 +449,14 @@ body {
   min-width: 30px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  background-color: rgb(237, 15, 104);
-  color: white;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #54575a;
+  color: black;
   cursor: pointer;
   transition: all 1.5s;
 }
 .Viewer .pages ul li.selected {
-  background-color: rgb(114, 39, 137);
+  background-color: rgb(143, 28, 168);
   color: white;
 }
 .Viewer .btn-left,
@@ -500,13 +503,13 @@ body {
   min-width: 30px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  background-color: rgb(237, 15, 104);
+  background-color: rgb(255, 255, 255);
   color: white;
   cursor: pointer;
   transition: all 1.5s;
 }
 .ViewerListados .pages ul li.selected {
-  background-color: rgb(114, 39, 137);
+  background-color: rgb(143, 28, 168);
   color: white;
 }
 .ViewerListados .btn-left,
@@ -523,6 +526,10 @@ body {
   cursor: pointer;
 }
 
+.Viewer {
+  overflow: hidden;
+}
+
 .City {
   display: flex;
   height: 300px;
@@ -535,6 +542,10 @@ body {
 .City p {
   text-align: center;
   color: #fff;
+}
+
+.children {
+  margin-left: 10px;
 }
 
 .logoParques {
@@ -922,7 +933,7 @@ body {
 .tituloImperdibles .imp-t-sub2 {
   font-size: 2em;
   padding: 2px 15px;
-  background-color: rgb(114, 39, 137);
+  background-color: rgb(143, 28, 168);
   color: #fff;
   text-transform: uppercase;
 }
@@ -1255,7 +1266,7 @@ body {
   margin: 10px 0 10px 20px;
   font-size: 2em;
   padding: 2px 15px;
-  background-color: rgb(114, 39, 137);
+  background-color: rgb(143, 28, 168);
   color: #fff;
   text-transform: uppercase;
 }
@@ -1265,7 +1276,7 @@ body {
   margin: 0 20px 0 20px;
 }
 .est-main .est-titulo {
-  background-color: rgb(114, 39, 137);
+  background-color: rgb(143, 28, 168);
   display: block;
   width: 100%;
   top: 10px;
@@ -1295,7 +1306,7 @@ body {
 .sub-chart-wrapper .sub-chart-wrapper-titulo {
   font-size: 1.3em;
   padding: 2px 15px;
-  background-color: rgb(237, 15, 104);
+  background-color: rgb(255, 255, 255);
   color: #fff;
   text-transform: uppercase;
 }
@@ -1303,7 +1314,7 @@ body {
   font-size: 1.3em;
   padding: 2px 15px;
   margin-bottom: 15px;
-  background-color: rgb(237, 15, 104);
+  background-color: rgb(255, 255, 255);
   color: #fff;
   text-transform: uppercase;
 }
@@ -1340,7 +1351,7 @@ body {
   cursor: text;
 }
 .input:focus .listaBusqueda {
-  background-color: rgb(114, 39, 137);
+  background-color: rgb(143, 28, 168);
   width: 200px;
   max-height: auto;
   overflow: auto;
@@ -1399,7 +1410,7 @@ body {
 }
 
 .listaBusqueda {
-  background-color: rgb(114, 39, 137);
+  background-color: rgb(143, 28, 168);
   width: 200px;
   max-height: auto;
   overflow: auto;
@@ -2402,7 +2413,7 @@ background-position: center center;
   position: absolute;
   top: 10px;
   right: 10px;
-  color: rgb(237, 15, 104);
+  color: rgb(255, 255, 255);
   cursor: pointer;
 }
 #modalMain-container .modalMain-background .modalMain .closeModal i {
@@ -2610,7 +2621,7 @@ background-position: center center;
     position: absolute;
     top: 10px;
     right: 10px;
-    color: rgb(237, 15, 104);
+    color: rgb(255, 255, 255);
     cursor: pointer;
   }
   #modalMain-container .modalMain-background .modalMain .closeModal i {
@@ -2736,7 +2747,7 @@ h1 {
 .accordion {
   width: 75%;
   max-width: 1080px;
-  height: 550px;
+  height: auto;
   overflow: hidden;
   margin: 50px auto;
   -moz-border-radius: 7px;
@@ -2754,7 +2765,7 @@ h1 {
   vertical-align: bottom;
   position: relative;
   width: 16.666%;
-  height: 550px;
+  height: auto;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -2767,7 +2778,7 @@ h1 {
 }
 .accordion ul li div a {
   display: block;
-  height: 550px;
+  height: auto;
   width: 100%;
   position: relative;
   z-index: 3;
@@ -2799,10 +2810,10 @@ h1 {
   font-size: 24px;
   text-transform: uppercase;
   margin-bottom: 2px;
-  top: 460px;
+  top: auto-90;
 }
 .accordion ul li div a p {
-  top: 460px;
+  top: auto-90;
   font-size: 13.5px;
 }
 .accordion ul li:nth-child(1) {
@@ -4228,7 +4239,7 @@ li {
 
 .titulo-mapas {
   margin-top: 110px;
-  background-color: rgb(114, 39, 137);
+  background-color: rgb(143, 28, 168);
   height: 50px;
   position: relative;
   margin-bottom: 50px;
@@ -4239,7 +4250,7 @@ li {
   top: 10px;
   left: 25px;
   background-color: #fff;
-  color: rgb(114, 39, 137);
+  color: rgb(143, 28, 168);
   font-size: 3rem;
   line-height: 3rem;
   font-weight: 800;
@@ -4301,7 +4312,7 @@ li {
     font-size: 2em;
     bottom: 40px;
     padding: 2px 40px;
-    background-color: rgb(114, 39, 137);
+    background-color: rgb(143, 28, 168);
     color: #fff;
     text-transform: uppercase;
     margin-left: 40%;
@@ -4463,7 +4474,7 @@ li {
   font-weight: 700;
   letter-spacing: 5px;
   padding-top: 10px;
-  color: rgb(237, 15, 104);
+  color: rgb(255, 255, 255);
   padding-bottom: 5px;
   text-transform: uppercase;
 }
@@ -5171,7 +5182,7 @@ li {
 }
 
 .archivosApp {
-  background-color: rgb(237, 15, 104);
+  background-color: rgb(255, 255, 255);
   background: rgb(245, 183, 25);
   background: -moz-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
@@ -5211,7 +5222,7 @@ li {
 }
 
 .Descarga {
-  background-color: rgb(237, 15, 104);
+  background-color: rgb(255, 255, 255);
   background: rgb(245, 183, 25);
   background: -moz-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
@@ -5829,7 +5840,7 @@ footer a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(114, 39, 137);
+  background-color: rgb(143, 28, 168);
   transform-origin: top;
   transition: 0.5s;
   box-sizing: border-box;
@@ -5890,7 +5901,7 @@ footer a {
 .EventoForm {
   height: 900px;
   width: 100%;
-  background-color: rgb(114, 39, 137);
+  background-color: rgb(143, 28, 168);
   position: relative;
   background: rgb(245, 183, 25);
   background: -moz-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
@@ -5940,7 +5951,7 @@ footer a {
   margin-bottom: 10px;
   cursor: pointer;
   text-decoration: none;
-  color: rgb(114, 39, 137);
+  color: rgb(143, 28, 168);
   align-content: center;
   text-align: center;
   width: 100;
@@ -6000,7 +6011,7 @@ footer a {
   margin-bottom: 100px;
   cursor: pointer;
   text-decoration: none;
-  color: rgb(114, 39, 137);
+  color: rgb(143, 28, 168);
   align-content: center;
   text-align: center;
   width: 100px;
@@ -6109,7 +6120,7 @@ footer a {
     width: 90%;
     cursor: pointer;
     text-decoration: none;
-    color: rgb(114, 39, 137);
+    color: rgb(143, 28, 168);
   }
   .EventoForm .body-left .bl-button span {
     font-size: 1.7rem;
@@ -6119,7 +6130,7 @@ footer a {
     margin-top: 30px;
   }
   .EventoForm .body-left .bl-button svg .icon {
-    fill: rgb(114, 39, 137);
+    fill: rgb(143, 28, 168);
   }
   .EventoForm .body-left .bl-img {
     width: 250px;
@@ -6321,7 +6332,7 @@ h3.bgc_4 {
   margin-bottom: 5px;
 }
 .evento-data li i {
-  color: rgb(114, 39, 137);
+  color: rgb(143, 28, 168);
 }
 
 /*
@@ -6331,7 +6342,7 @@ h3.bgc_4 {
   padding-top: 110px;
 }
 .PNovedad .n-titulo {
-  background-color: rgb(114, 39, 137);
+  background-color: rgb(143, 28, 168);
   height: 50px;
   position: relative;
   margin-bottom: 50px;
@@ -6341,7 +6352,7 @@ h3.bgc_4 {
   top: 15px;
   left: 10px;
   background-color: #fff;
-  color: rgb(114, 39, 137);
+  color: rgb(143, 28, 168);
   font-size: 2rem;
   line-height: 2rem;
   font-weight: 400;
@@ -6417,7 +6428,7 @@ h3.bgc_4 {
   width: 32px;
 }
 .novedad-item .body .btn-novedades {
-  background-color: rgb(114, 39, 137);
+  background-color: rgb(143, 28, 168);
   padding: 0 8px;
   color: #fff;
   /*
@@ -6464,7 +6475,7 @@ h3.bgc_4 {
   margin: 10px 0 1px 0;
   font-size: 2em;
   padding: 2px 15px;
-  background-color: rgb(114, 39, 137);
+  background-color: rgb(143, 28, 168);
   color: #fff;
   text-transform: uppercase;
 }
@@ -6757,7 +6768,7 @@ h3.bgc_4 {
   padding-top: 110px;
 }
 .Novedadesfull .nf-titulo {
-  background-color: rgb(114, 39, 137);
+  background-color: rgb(143, 28, 168);
   height: 50px;
   position: relative;
   margin-bottom: 50px;
@@ -6768,7 +6779,7 @@ h3.bgc_4 {
   top: 10px;
   left: 10px;
   background-color: #fff;
-  color: rgb(114, 39, 137);
+  color: rgb(143, 28, 168);
   font-size: 3rem;
   line-height: 3rem;
   font-weight: 800;
@@ -6840,7 +6851,7 @@ h3.bgc_4 {
   margin-bottom: 0px;
 }
 .novedad-full-item .body .btn-novedades {
-  background-color: rgb(114, 39, 137);
+  background-color: rgb(143, 28, 168);
   padding: 0 8px;
   color: #fff;
   /*
@@ -6977,7 +6988,7 @@ h3.bgc_4 {
   margin-bottom: 0px;
 }
 .arbol-full-item .body .btn-arboles {
-  background-color: rgb(114, 39, 137);
+  background-color: rgb(143, 28, 168);
   padding: 0 8px;
   color: #fff;
   /*
@@ -7028,7 +7039,7 @@ h3.bgc_4 {
   padding-top: 110px;
 }
 .PArbol .n-titulo {
-  background-color: rgb(114, 39, 137);
+  background-color: rgb(143, 28, 168);
   height: 50px;
   position: relative;
   margin-bottom: 50px;
@@ -7038,7 +7049,7 @@ h3.bgc_4 {
   top: 15px;
   left: 10px;
   background-color: #fff;
-  color: rgb(114, 39, 137);
+  color: rgb(143, 28, 168);
   font-size: 2rem;
   line-height: 2rem;
   font-weight: 400;
@@ -7100,7 +7111,7 @@ h3.bgc_4 {
   width: 32px;
 }
 .arbol-item .body .btn-novedades {
-  background-color: rgb(114, 39, 137);
+  background-color: rgb(143, 28, 168);
   padding: 0 8px;
   color: #fff;
 }
@@ -7333,8 +7344,8 @@ div.container {
 
 .ZonaLocalidad-Body {
   display: grid;
-  grid-template-areas: "video texto" "atractivos texto" "mapa imperdibles";
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "texto" "atractivos " "mapa" "imperdibles";
+  grid-template-columns: repeat(1, 1fr);
   grid-template-rows: auto;
   grid-gap: 30px;
   padding-left: 20px;
@@ -7439,7 +7450,7 @@ div.container {
 */
 .Atractivo-data {
   display: grid;
-  grid-template-areas: "atractivo-texto atractivo-fotos" "atractivo-ubicacion atractivo-info";
+  grid-template-areas: "atractivo-fotos atractivo-fotos" "atractivo-texto atractivo-texto" "atractivo-ubicacion atractivo-info";
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
   grid-gap: 20px;
@@ -7449,19 +7460,18 @@ div.container {
 }
 .Atractivo-data .atractivo-fotos {
   grid-area: atractivo-fotos;
-  display: grid;
+  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  background-color: rgb(114, 39, 137);
-  padding: 20px 20px;
+  justify-content: start;
 }
 .Atractivo-data .atractivo-fotos img {
-  width: 200px;
-  height: 150px;
+  width: 270px;
+  height: 250px;
   object-fit: cover;
-  margin: 8px;
+  border-radius: 5%;
   border: 1px solid #fff;
+  margin-right: 5px;
 }
 .Atractivo-data .atractivo-ubicacion {
   grid-area: atractivo-ubicacion;
@@ -7476,7 +7486,7 @@ div.container {
 }
 .Atractivo-data .atractivo-ubicacion span i {
   margin-right: 8px;
-  color: rgb(114, 39, 137);
+  color: rgb(143, 28, 168);
 }
 .Atractivo-data .atractivo-info {
   grid-area: atractivo-info;
@@ -7491,7 +7501,7 @@ div.container {
 }
 .Atractivo-data .atractivo-info span i {
   margin-right: 8px;
-  color: rgb(114, 39, 137);
+  color: rgb(143, 28, 168);
 }
 .Atractivo-data .atractivo-info ul li {
   text-transform: uppercase;
@@ -7762,7 +7772,7 @@ div.container {
   margin-bottom: 0px;
 }
 .atractivo-full-item .body .btn-novedades {
-  background-color: rgb(114, 39, 137);
+  background-color: rgb(143, 28, 168);
   padding: 0 8px;
   color: #fff;
   /*
@@ -7812,7 +7822,7 @@ div.container {
     left: 25px;
     top: 10px;
     background-color: #fff;
-    color: rgb(114, 39, 137);
+    color: rgb(143, 28, 168);
     font-size: 2.5rem;
     line-height: 3rem;
     font-weight: 700;
@@ -7836,7 +7846,7 @@ div.container {
     top: 10px;
     left: 25px;
     background-color: #fff;
-    color: rgb(114, 39, 137);
+    color: rgb(143, 28, 168);
     font-size: 2rem;
     line-height: 2.5rem;
     font-weight: 700;
@@ -7871,7 +7881,7 @@ div.container {
 */
 .alo-card {
   width: 270px;
-  height: 370px;
+  height: 270px;
   position: relative;
   -webkit-box-shadow: 1px 1px 10px 1px #000000;
   box-shadow: 1px 1px 10px 1px #000000;
@@ -7900,7 +7910,7 @@ div.container {
   top: 0;
   left: 0;
   width: 270px;
-  height: 370px;
+  height: 270px;
   object-fit: cover;
 }
 .alo-card .img-box .img-content .nombre {
@@ -8014,7 +8024,7 @@ div.container {
 }
 .material-card {
   position: relative;
-  height: 370px;
+  height: 270px;
   width: 270px;
   margin-right: 5px;
 }
@@ -8185,7 +8195,7 @@ div.container {
   top: 0;
   left: 0;
   width: 270px;
-  height: 370px;
+  height: 270px;
   object-fit: cover;
 }
 .material-card.mc-active .img-container {
@@ -8238,6 +8248,180 @@ div.container {
   color: #000;
 }
 
+/*FLIP CARD ALOJAMIENTOS*/
+.flipAlojamientosarticles {
+  display: grid;
+  grid-gap: 1rem;
+  place-items: center;
+}
+.flipAlojamientosarticles * {
+  transition-duration: var(--duration);
+  transition-delay: var(--delay);
+  transition-timing-function: var(--easing);
+}
+.flipAlojamientosarticles > header {
+  grid-column: 1/-1;
+}
+
+.flipAlojamientosarticles:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-color, transparent);
+  transition: background-color 1s;
+}
+
+.flipAlojamientosarticles article {
+  display: grid;
+  font-family: "Work Sans", sans-serif;
+  width: 100%;
+  --radius: 1rem;
+}
+.flipAlojamientosarticles article:hover {
+  transform: translateY(-0.5rem);
+}
+.flipAlojamientosarticles article:hover:before {
+  opacity: 1;
+}
+.flipAlojamientosarticles article:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  border-radius: var(--radius);
+  transition: transform 0.3s;
+  transition-property: transform, opacity;
+}
+.flipAlojamientosarticles article .image {
+  overflow: hidden;
+  border-radius: var(--radius);
+  transition-property: transform, border-radius;
+  transform-origin: top left;
+}
+.flipAlojamientosarticles article .image[data-flipping] {
+  border-radius: calc((var(--dw)) * var(--radius))/calc((var(--dh)) * var(--radius));
+}
+.flipAlojamientosarticles article .image .img {
+  display: block;
+  transition: inherit;
+  transform-origin: top left;
+}
+.flipAlojamientosarticles article .image[data-flipping] {
+  transition: none;
+  transform: translate(calc(-1px * var(--dx)), calc(-1px * var(--dy))) scale(calc(1 / var(--dw)), calc(1 / var(--dh)));
+}
+.flipAlojamientosarticles article .image[data-flipping] .img {
+  transform: scale(calc(var(--dw)), calc(var(--dh)));
+}
+.flipAlojamientosarticles article .content {
+  color: #aaa;
+  padding: 2rem;
+  z-index: 2;
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-content: start;
+  grid-gap: 1rem 0rem;
+  grid-template-columns: auto auto;
+  width: 100%;
+}
+.flipAlojamientosarticles article .content:before {
+  content: "";
+  background: white;
+  border-radius: var(--radius);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: inherit;
+  transform-origin: top left;
+  transition-property: transform, border-radius;
+}
+.flipAlojamientosarticles article .content[data-flipping]:before {
+  transition: none;
+  transform: scale(calc(1 / var(--dw)), calc(1 / var(--dh)));
+  border-radius: calc((var(--dw)) * var(--radius))/calc((var(--dh)) * var(--radius));
+}
+.flipAlojamientosarticles article .h1 {
+  grid-column: 1/-1;
+  font-weight: 500;
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #000;
+}
+.flipAlojamientosarticles article .svg {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+}
+.toggle {
+  background: white;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  border-radius: 50%;
+  border: none;
+  padding: 0.5em;
+  width: 2em;
+  height: 2em;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.toggle:hover {
+  opacity: 1;
+}
+.toggle .svg {
+  width: 1em;
+  display: none;
+}
+[data-view=list] .toggle [data-view=list], [data-view=card] .toggle [data-view=card] {
+  display: block;
+}
+
+/* ---------------------------------- */
+[data-flip] {
+  transition-property: transform;
+}
+[data-flip][data-flipping] {
+  transition: none;
+  transform: translate(calc(-1px * var(--dx)), calc(-1px * var(--dy)));
+}
+
+.flipAlojamientosarticles[data-view=card] {
+  grid-template-columns: repeat(2, minmax(auto, 1fr));
+  max-width: 70vw;
+  --bg-color: #3730e9;
+}
+.flipAlojamientosarticles[data-view=card] .flipAlojamientosarticles {
+  grid-template-rows: 1fr auto;
+}
+.flipAlojamientosarticles[data-view=card] .flipAlojamientosarticles .image {
+  margin-bottom: -2rem;
+}
+
+.flipAlojamientosarticles[data-view=list] {
+  --bg-color: #ffaa00;
+}
+.flipAlojamientosarticles[data-view=list] .flipAlojamientosarticles {
+  grid-template-columns: 40% 1fr;
+}
+.flipAlojamientosarticles[data-view=list] .flipAlojamientosarticles .image {
+  margin-right: -2rem;
+  height: 8em;
+  min-height: 100%;
+}
+
 /*
     Componente PAlojamiento.js y PFiltroAlojamiento.js
 */
@@ -8276,7 +8460,6 @@ div.container {
 }
 .Alojamiento-data .alojamiento-texto {
   grid-area: alojamiento-texto;
-  font-style: italic;
   font-weight: 400;
   font-size: 1.2rem;
 }
@@ -8284,17 +8467,15 @@ div.container {
   grid-area: alojamiento-fotos;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  background-color: rgb(114, 39, 137);
-  padding: 20px 20px;
 }
 .Alojamiento-data .alojamiento-fotos img {
-  width: 200px;
-  height: 150px;
+  width: 250px;
+  height: 200px;
   object-fit: cover;
-  margin: 8px;
+  margin: 3px;
   border: 1px solid #fff;
+  border-radius: 5%;
 }
 .Alojamiento-data .alojamiento-ubicacion {
   grid-area: alojamiento-ubicacion;
@@ -8309,7 +8490,7 @@ div.container {
 }
 .Alojamiento-data .alojamiento-ubicacion span i {
   margin-right: 8px;
-  color: rgb(114, 39, 137);
+  color: rgb(143, 28, 168);
 }
 .Alojamiento-data .alojamiento-info {
   grid-area: alojamiento-info;
@@ -8319,12 +8500,11 @@ div.container {
   align-items: flex-start;
 }
 .Alojamiento-data .alojamiento-info span {
-  text-transform: uppercase;
   margin-bottom: 8px;
 }
 .Alojamiento-data .alojamiento-info span i {
   margin-right: 8px;
-  color: rgb(114, 39, 137);
+  color: rgb(143, 28, 168);
 }
 .Alojamiento-data .alojamiento-info ul li {
   text-transform: uppercase;
@@ -8385,32 +8565,9 @@ div.container {
   padding-left: 70px;
 }
 .contacLlamada h5 a {
-  color: #5C7080;
+  color: #5c7080;
   line-height: 1.9rem;
   font-weight: 600;
-}
-
-.contacRedes {
-  color: #722789;
-  padding-left: 150px;
-  padding-top: 10px;
-}
-.contacRedes i {
-  font-size: 40px;
-  position: absolute;
-}
-.contacRedes h4 {
-  padding-left: 70px;
-}
-.contacRedes h5 a {
-  color: #5C7080;
-  line-height: 1.9rem;
-  font-weight: 600;
-  padding-left: 50px;
-  padding-top: 50px;
-}
-.contacRedes .iconRedes i {
-  font-size: 30px;
 }
 
 .posicionContacto {
@@ -8429,6 +8586,130 @@ div.container {
     padding-left: 0px;
   }
 }
+.service a {
+  color: #5b7abb;
+  display: block;
+}
+
+.service h5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 1rem 0 0.6rem;
+}
+
+.services-grid {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.service {
+  background: #fff;
+  margin: 2px;
+  padding: 20px;
+  margin-bottom: 150px;
+  border-radius: 4px;
+  text-align: center;
+  -webkit-box-flex: 1;
+  height: 350px;
+  flex: 1;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid #e7e7e7;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.service:hover {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+}
+
+.service i {
+  font-size: 3.45rem;
+  margin: 1rem 0;
+}
+
+.service1 i,
+.service1 h5,
+.service1 .cta {
+  color: #000000;
+}
+
+.service1:hover {
+  border: 6px solid #000000;
+}
+
+.service2 i,
+.service2 .cta {
+  color: #57207b;
+}
+
+.service2:hover {
+  border: 6px solid #57207b;
+}
+
+.service3 i,
+.service3 h5,
+.service3 .cta {
+  color: #fe660d;
+}
+
+.service3:hover {
+  border: 6px solid #fe6123;
+}
+
+.service4 i,
+.service4 h5,
+.service4 .cta {
+  color: #65a0c9;
+}
+
+.service4:hover {
+  border: 6px solid #65a0c9;
+}
+
+.service .cta span {
+  font-size: 0.6rem;
+}
+
+.service > * {
+  flex: 1 1 100%;
+}
+
+.service .cta {
+  align-self: flex-end;
+}
+
+@media all and (max-width: 900px) {
+  .services-grid {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    margin-bottom: 100px;
+  }
+
+  .service {
+    margin-bottom: 10px;
+  }
+}
+.contacRedes {
+  color: #722789;
+}
+.contacRedes i {
+  font-size: 1rem;
+}
+.contacRedes .iconRedes i {
+  font-size: 30px;
+}
+
 .containerCensistas {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9112,7 +9393,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: rgb(114, 39, 137);
+  color: rgb(143, 28, 168);
   position: center;
   float: left;
   border-radius: 8px;
@@ -9124,7 +9405,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: rgb(114, 39, 137);
+  color: rgb(143, 28, 168);
   position: center;
   margin-left: 3px;
   float: left;
@@ -9147,7 +9428,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: rgb(114, 39, 137);
+  color: rgb(143, 28, 168);
   position: center;
   margin-left: 5px;
   float: left;
@@ -9159,7 +9440,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: rgb(114, 39, 137);
+  color: rgb(143, 28, 168);
   position: center;
   margin-left: 5px;
   float: left;
@@ -9171,7 +9452,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: rgb(114, 39, 137);
+  color: rgb(143, 28, 168);
   position: center;
   margin-left: 5px;
   float: left;
@@ -9183,7 +9464,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: rgb(114, 39, 137);
+  color: rgb(143, 28, 168);
   position: center;
   margin-left: 5px;
   float: left;
@@ -10090,6 +10371,7 @@ li {
     overflow-x: hidden;
     overflow-y: hidden;
     white-space: nowrap;
+    margin-left: 10%;
     transition: all 0.2s;
     transform: scale(0.98);
     will-change: transform;
@@ -10403,7 +10685,6 @@ body * {
     transform: scale(0.98);
     will-change: transform;
     user-select: none;
-    cursor: pointer;
   }
 
   .itemsExperiencia.activex {
@@ -10573,10 +10854,27 @@ body * {
   transition: all 0.3s ease;
 }
 
+.leerMas {
+  display: none;
+  height: 20px;
+  width: 15%;
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  right: 20px;
+  top: 20px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #e36838;
+}
+
 .blog-item a:hover {
   box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.2);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+.blog-item a:hover .leerMas {
+  display: inline;
 }
 
 .blog-item .icon {
@@ -10595,7 +10893,6 @@ body * {
 
 .blog-item .content .title {
   font-size: 21px;
-  text-transform: capitalize;
   color: #25aae1;
   font-weight: 600;
   font-family: "Lato", sans-serif;
@@ -10628,6 +10925,7 @@ body * {
   text-align: center;
   font-size: 35px;
   left: 0;
+  bottom: 50px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }

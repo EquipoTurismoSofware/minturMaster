@@ -73,13 +73,12 @@ class Home extends Component {
             <br></br>
             <br></br>
             <ScrollExperiencia />
-            <Novedades timerID="100" />
-            {/*<Recorridos />
+            {/* <Novedades timerID="100" /><Recorridos />
 <<<<<<< Updated upstream
              <EventoForm />*/}
             <Novedades time="10000" />
-            <GaleriaLocalidades />
-            {/*  <EventoForm />
+            {/*  <GaleriaLocalidades />
+            <EventoForm />
 >>>>>>> Stashed changes
             <div className="Recorridos">
               <div className="reco-titulo">
@@ -136,12 +135,23 @@ class Home extends Component {
               </div>
             </div>*/}
             <BotoneraFondo />
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+            <BotoneraFondo />
+            <BotoneraFondo />
+            <BotoneraFondo />
+            <BotoneraFondo />
+            <BotoneraFondo />
+            <BotoneraFondo />
+            <BotoneraFondo />
+            <BotoneraFondo />
+            <BotoneraFondo />
+            <BotoneraFondo />
+            <BotoneraFondo />
+            <BotoneraFondo />
+            <BotoneraFondo />
+            <BotoneraFondo />
+            <BotoneraFondo />
+            <BotoneraFondo />
+
           </React.Fragment>
         )}
       </div>

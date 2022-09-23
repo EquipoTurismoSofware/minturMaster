@@ -1200,6 +1200,7 @@ li {
     overflow-x: hidden;
     overflow-y: hidden;
     white-space: nowrap;
+    margin-left: 10%;
     transition: all 0.2s;
     transform: scale(0.98);
     will-change: transform;
@@ -1509,7 +1510,6 @@ body * {
     transform: scale(0.98);
     will-change: transform;
     user-select: none;
-    cursor: pointer;
   }
 
   .itemsExperiencia.activex {
@@ -1672,11 +1672,26 @@ body * {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
+.leerMas {
+  display: none;
+  height: 20px;
+  width: 15%;
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  right: 20px;
+  top: 20px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #e36838;
+}
 .blog-item a:hover {
   box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.2);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  .leerMas {
+    display: inline;
+  }
 }
 
 .blog-item .icon {
@@ -1695,7 +1710,6 @@ body * {
 
 .blog-item .content .title {
   font-size: 21px;
-  text-transform: capitalize;
   color: #25aae1;
   font-weight: 600;
   font-family: "Lato", sans-serif;
@@ -1728,6 +1742,7 @@ body * {
   text-align: center;
   font-size: 35px;
   left: 0;
+  bottom: 50px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }

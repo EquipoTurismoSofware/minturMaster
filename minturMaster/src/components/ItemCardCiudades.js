@@ -40,7 +40,7 @@ class ItemCardCiudades extends Component {
       if (this.state.tipo === "guiasturismo") {
         return (
           <div>
-            <h3>{nov.nombre}</h3>
+            <h4>{nov.nombre}</h4>
             <span className="pr-4">
               <i className="fas fa-user" />
               &nbsp; Categoría: {nov.categoria}
@@ -64,7 +64,7 @@ class ItemCardCiudades extends Component {
       } else if (this.state.tipo === "agencias") {
         return (
           <div>
-            <h3>{nov.nombre}</h3>
+            <h4>{nov.nombre}</h4>
             <span className="pr-4">
               <i className="fas fa-user" />
               &nbsp; Dirección: {nov.domicilio}
@@ -144,7 +144,7 @@ class ItemCardCiudades extends Component {
             <hr />
           </div>
         );
-      } else if (this.state.tipo === "casascambio") {
+      } else if (this.state.tipo === "tirolesas") {
         return (
           <div>
             <a
@@ -192,7 +192,8 @@ class ItemCardCiudades extends Component {
                 </span>
               ) : (
                 ""
-              )} {nov.titular !== "" ? (
+              )}{" "}
+              {nov.titular !== "" ? (
                 <span>
                   <i
                     class="fas fa-solid fa-user-check"

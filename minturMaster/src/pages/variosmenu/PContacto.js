@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Consumer } from "../../context";
 //import axios from "axios";
 import Loading from "../../utils/Loading";
+import { Helmet } from "react-helmet";
 
 class PContacto extends Component {
   constructor(props) {
@@ -32,115 +33,80 @@ class PContacto extends Component {
           </div>
         ) : (
           <React.Fragment>
-            <div className="container">
-              <div className="row mb-3">
-                <div
-                  className="ZonaDetalle-titulo"
-                  style={{ paddingTop: "50px", backgroundColor: `#722789` }}
-                >
-                  <h3 style={{ color: `#722789` }}>Contactanos</h3>
+            <section className="container" style={{ marginTop: "90px" }}>
+              <h3 style={{ color: `#722789` }}>Contactanos</h3>
+              <p class="section-lead">
+                Estamos para ayudarte, a continuación dejamos todos los medios
+                disponibles por donde nos podemos comunicar.
+              </p>
+              <div class="services-grid">
+                <div class="service service1">
+                  <i class="fas fa-phone"></i>
+                  <h6>¡Esperamos tu llamada!</h6>
+                  <a href="tel:+5492664423479">
+                    <h6>+54 (266) 4423479</h6>
+                  </a>
+                  <br />
+                  <a href="tel:+5492664423957">
+                    {" "}
+                    <h6>+54 (266) 4423957</h6>{" "}
+                  </a>
                 </div>
-                <h3
-                  className=""
-                  style={{ paddingLeft: "15px", color: `#722789` }}
-                >
-                  Estamos para ayudarte, a continuación dejamos todos los medios
-                  disponibles por donde nos podemos comunicar.
-                </h3>
-                <br />
-                <div
-                  className="grillaContacto-grid-container"
-                  style={{ paddingLeft: "15px" }}
-                >
-                  <div className="contacLlamada">
-                    <i class="fas fa-phone-volume contactoIcon" />
-                    <h4>
-                      ¡Esperamos tu llamada! <br />
-                    </h4>
-                    <div>
-                      <br />
-                      <h5 style={{ paddingLeft: "70px" }}>
-                        <a href="tel:+5492664423479"> +54 (266) 4423479</a>
-                        <br />
-                        <a href="tel:+5492664423957">+54 (266) 4423957 </a>
-                      </h5>
-                    </div>
+
+                <div class="service service2">
+                  <i class="fas fa-users"></i> <h6>¡Seguinos!</h6>
+                  <div className="contacRedes ">
+                    <a
+                      href="https://www.facebook.com/turismodesanluis/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="fab fa-facebook-square" />
+                      &nbsp; @TurismodeSanLuis
+                    </a>
+                    <a
+                      href="https://twitter.com/TurismoSanLuis_"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="fab fa-twitter-square" /> &nbsp;
+                      @TurismoSanLuis_
+                    </a>
+                    <a
+                      href="https://www.instagram.com/turismo_san_luis/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="fab fa-instagram" />
+                      &nbsp; @Turismo_san_luis
+                    </a>
                   </div>
-                  <div className="contacRedes posicionContacto">
-                    <i class="fas fa-users" />
-                    <h4 className="">
-                      ¡Seguinos! <br />
-                    </h4>
-                    <br />
-                    <h5 style={{ paddingLeft: "70px" }}>
-                      <div className="iconRedes">
-                        <p>
-                          <i className="fab fa-facebook-square" />
-                          <a
-                            href="https://www.facebook.com/turismodesanluis/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            &nbsp; @TurismodeSanLuis
-                          </a>
-                        </p>
-                        <p>
-                          <i className="fab fa-twitter-square" />
-                          <a
-                            href="https://twitter.com/TurismoSanLuis_"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            &nbsp; @TurismoSanLuis_
-                          </a>
-                        </p>
-                        <p>
-                          <i className="fab fa-instagram" />
-                          <a
-                            href="https://www.instagram.com/turismo_san_luis/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            &nbsp; @Turismo_san_luis
-                          </a>
-                        </p>
-                      </div>
-                    </h5>
-                  </div>
-                  <div className="contacLlamada" style={{ paddingTop: "10px" }}>
-                    <i class="fas fa-map-marked-alt" />
-                    <h4>
-                      ¡Te esperamos! <br />
-                    </h4>
-                    <br />
-                    <h5 style={{ paddingLeft: "70px" }}>
-                      <a href="https://goo.gl/maps/nMd9gkUAuZJ2">
-                        Av. Arturo Illia 35
-                      </a>
-                    </h5>
-                  </div>
-                  <div
-                    className="contacLlamada posicionContacto"
-                    style={{ paddingTop: "10px" }}
-                  >
-                    <i class="fas fa-mail-bulk" />
-                    <h4>
-                      ¡Escribinos! <br />
-                    </h4>
-                    <br />
-                    <h5 style={{ paddingLeft: "70px" }}>
-                      <a href="mailto:info@turismo.sanluis.gov.ar">
-                        info@turismo.sanluis.gov.ar
-                      </a>
-                      <br />
-                      <a href="mailto:contacto@turismo.sanluis.gov.ar">
-                        contacto@turismo.sanluis.gov.ar
-                      </a>
-                    </h5>
-                  </div>
+                </div>
+
+                <div class="service service3">
+                  <i class="fas fa-map-marked-alt"></i>
+                  <h6> ¡Te esperamos!</h6>
+                  <h5>
+                    <a href="https://goo.gl/maps/nMd9gkUAuZJ2">
+                      Av. Arturo Illia 35
+                    </a>
+                  </h5>
+                </div>
+
+                <div class="service service4">
+                  <i class="fas fa-mail-bulk"></i>
+                  <h6> ¡Escribinos!</h6>
+
+                  <a href="mailto:info@turismo.sanluis.gov.ar">
+                    info@turismo.sanluis.gov.ar
+                  </a>
+                  <br />
+                  <a href="mailto:contacto@turismo.sanluis.gov.ar">
+                    contacto@turismo.sanluis.gov.ar
+                  </a>
                 </div>
               </div>
-            </div>
+            </section>
           </React.Fragment>
         )}
       </div>

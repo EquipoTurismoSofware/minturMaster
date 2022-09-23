@@ -68,7 +68,7 @@ class PRiosYSaltos extends Component {
       ListadoAtractivofull = this.state.data.map((atrac) => {
         let descripcion = "";
         if (atrac.descripcion.length > 395) {
-          descripcion = atrac.descripcion.substr(0, 395) + "...";
+          descripcion = atrac.descripcion.substr(0, 205) + "...";
         } else {
           descripcion = atrac.descripcion;
         }
@@ -97,6 +97,9 @@ class PRiosYSaltos extends Component {
                 </div>
 
                 <div class="item-arrow">
+                  {" "}
+                  <p className="leerMas">Leer más</p>
+                  <br></br>
                   <i
                     class="fa fa-long-arrow-right"
                     aria-hidden="true"

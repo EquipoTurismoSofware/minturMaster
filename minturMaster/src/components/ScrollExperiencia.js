@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Helmet } from "react-helmet";
 import { Consumer } from "../context";
 import { Animated } from "react-animated-css";
+import { Link } from "react-router-dom";
 
 class ScrollExperiencia extends Component {
   constructor(props) {
@@ -9,18 +10,14 @@ class ScrollExperiencia extends Component {
     this.state = {};
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+
+  }
 
   render() {
     return (
       <React.Fragment>
         <div>
-          <Helmet>
-            <script
-              type="text/javascript"
-              src="http://turismo.sanluis.gov.ar/recursos/js/scrollExperiencia.js"
-            ></script>
-          </Helmet>
           <div className="tituloScrollActividades">
             <center>
               <img
@@ -31,26 +28,27 @@ class ScrollExperiencia extends Component {
               />{" "}
             </center>
           </div>
-          <div class="grid-containerExperiencia">
+          <div class="grid-containerExperiencia ">
             <main class="grid-itemExperiencia mainExperiencia">
               <div class="itemsExperiencia">
                 <div class="itemExperiencia item3Experiencia">
                   <img
                     id="tuExperiencia"
                     src="http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/carouselActividades/tuExperiencia.png"
-                  />
+                  />{" "}
                   <div class="section-titleExperiencia sierras">
                     <Animated
                       animationIn="bounceInLeft"
                       animationOut="fadeOut"
                       isVisible={true}
                     >
-                      <h2>
-                        Sierra de<br></br> Las Quijadas
-                      </h2>
+                      <Link to={"/atractivo/235"}>
+                        <h2 style={{ color: "white" }}>
+                          Sierra de<br></br> Las Quijadas
+                        </h2>
+                      </Link>
                     </Animated>
                   </div>
-
                   <div className="productoSubtituloExperiencia">
                     <h5>El Gigante Rojo</h5>
                     <h5>Toda su cultura originaria</h5>
@@ -60,19 +58,20 @@ class ScrollExperiencia extends Component {
                   <img
                     id="tuExperiencia"
                     src="http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/carouselActividades/tuExperiencia.png"
-                  />
+                  />{" "}
                   <div class="section-titleExperiencia moverDerecha">
                     <Animated
                       animationIn="bounceInLeft"
                       animationOut="fadeOut"
                       isVisible={true}
                     >
-                      <h2>
-                        Salto de la <br></br> Negra Libre
-                      </h2>
+                      <Link to={"/atractivo/202"}>
+                        <h2 style={{ color: "white" }}>
+                          Salto de la <br></br> Negra Libre
+                        </h2>{" "}
+                      </Link>
                     </Animated>
                   </div>
-
                   <div className="productoSubtituloExperiencia">
                     <h5>Disfrutá del camino</h5>
                     <h5>Saltos, Cerros, Cascadas</h5>
@@ -82,7 +81,7 @@ class ScrollExperiencia extends Component {
                   <img
                     id="tuExperiencia"
                     src="http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/carouselActividades/tuExperiencia.png"
-                  />
+                  />{" "}
                   <div class="section-titleExperiencia moverDerecha">
                     <Animated
                       animationIn="bounceInLeft"
@@ -94,7 +93,6 @@ class ScrollExperiencia extends Component {
                       </h2>
                     </Animated>
                   </div>
-
                   <div className="productoSubtituloExperiencia">
                     <h5>Otro Planeta</h5>
                     <h5>Salina del Bebedero</h5>

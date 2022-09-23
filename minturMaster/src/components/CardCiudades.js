@@ -92,7 +92,7 @@ class CardCiudades extends Component {
               <li key={`nueva_zona${nov.id}`}>
                 <ul>
                   <ListSubheader>
-                    <h4 style={{ color: `#722789` }}>{`${nov.ciudad}`}</h4>
+                    <h3 style={{ color: `#722789` }}>{`${nov.ciudad}`}</h3>
                   </ListSubheader>
                   <ListItem key={`item-nueva_zona${nov.id}`}>
                     <li

@@ -3,11 +3,24 @@ import { Consumer } from "../context";
 import axios from "axios";
 import GoogleMap from "../components/subcomponentes/GoogleMap";
 import MaxImage from "../components/subcomponentes/MaxImageAlojamientos";
-import NotFound from "../components/NotFound"
+import NotFound from "../components/NotFound";
 import Loading from "../utils/Loading";
 
 const Pild = (props) => (
-  <span className="bg-dark text-white p-1 rounded m-1">{props.text}</span>
+  <span
+    className="rounded-lg"
+    style={{
+      height: "23px",
+      minWidth: "100px",
+      backgroundColor: "violet",
+      margin: "5px",
+      color: "white",
+      paddingLeft: "2px",
+      paddingRight: "2px",
+    }}
+  >
+    <center>{props.text}</center>
+  </span>
 );
 
 class PAlojamiento extends Component {
@@ -19,7 +32,7 @@ class PAlojamiento extends Component {
       id: 0,
       dataAlojamiento: {},
       fotos: [],
-      src:[],
+      src: [],
       servicios: [],
       tarifas: [],
       img: {
@@ -82,7 +95,7 @@ class PAlojamiento extends Component {
                   if (response.data.data.count > 0) {
                     let fotos = response.data.data.registros.map((a, index) => {
                       return (
-                        <img 
+                        <img
                           key={`img-atr-${a.id}`}
                           className="img-fluid img"
                           src={`${process.env.REACT_APP_API_RECURSOS}/imagenes/${a.imagen}`}
@@ -92,18 +105,16 @@ class PAlojamiento extends Component {
                           }}
                         />
                       );
-                      
                     });
-                    let src= response.data.data.registros.map((a, index) => {
-                      let sr= `${process.env.REACT_APP_API_RECURSOS}/imagenes/${a.imagen}`;
-                      return sr
-                      
+                    let src = response.data.data.registros.map((a, index) => {
+                      let sr = `${process.env.REACT_APP_API_RECURSOS}/imagenes/${a.imagen}`;
+                      return sr;
                     });
-                    console.log(src );
-                    
+                    console.log(src);
+
                     self.setState({
                       fotos: fotos,
-                      src:src, // variable para pasar las iamgenes a MaxImage
+                      src: src, // variable para pasar las iamgenes a MaxImage
                     });
                   } else {
                     //Error no se enocntró el id
@@ -154,13 +165,13 @@ class PAlojamiento extends Component {
                 .catch((error) => {
                   console.log(error);
                 });
-                self.setState({loading: false, isNotFound: false});
+              self.setState({ loading: false, isNotFound: false });
             }
           );
           console.log(this.state.dataAlojamiento);
         } else {
           //Error no se encontró el id
-          self.setState({isNotFound: true, loading: false});
+          self.setState({ isNotFound: true, loading: false });
         }
       })
       .catch((error) => {
@@ -190,6 +201,7 @@ class PAlojamiento extends Component {
         <Pild key={`servicio-${servicio.id}`} text={servicio.descripcion} />
       );
     });
+
     /*
     const tarifas = this.state.tarifas.map((tarifa) => {
       return (
@@ -204,42 +216,37 @@ class PAlojamiento extends Component {
     return (
       <div className="Alojamiento mb-5">
         {this.state.loading ? (
-          
-          <div><Loading margins="150px" /></div>
+          <div>
+            <Loading margins="150px" />
+          </div>
         ) : isNotFound ? (
           <NotFound />
-        )
-        :(
+        ) : (
           <React.Fragment>
-            <div
-              className="ZonaLocalidad-titulo"
-              style={{ backgroundColor: `#722789` }}
-            >
-              <h3 style={{ color: `#722789` }}>
-                {this.state.dataAlojamiento.nombre} 
-              </h3>
-              {
-                this.state.dataAlojamiento.adhiereDosep === "1" ?
-                <div className="contImagenDosep">
-                  <img alt="dosep" src="http://turismo.sanluis.gov.ar/api-turismo/public/recursos/Dosep-Turismo-2021---Logo.png"></img>
-                </div>
-                :
-                ""
-              }
-
-            </div>
             <div className="container">
               <div className="row">
-                <div className="col">
-                  <div className="Alojamiento-data" style={this.state.dataAlojamiento.adhiereDosep === "1"? {marginTop: "80px"} : {}}>
+                <div className="col" style={{ marginTop: "50px" }}>
+                  <h3 style={{ color: `#722789` }}>
+                    {this.state.dataAlojamiento.nombre}
+                  </h3>
+                  <hr></hr>
+                  <div
+                    className="Alojamiento-data"
+                    style={
+                      this.state.dataAlojamiento.adhiereDosep === "1"
+                        ? { marginTop: "0px" }
+                        : {}
+                    }
+                  >
                     <div className="alojamiento-texto">
                       {this.state.dataAlojamiento.descripcion}
                     </div>
+
                     <div className="alojamiento-fotos">{fotos}</div>
                     <div className="alojamiento-ubicacion">
                       <span>
-                        <i className="fas fa-map-marker"></i> Ubicación -
-                        {this.state.dataAlojamiento.nombreciudad} 
+                        <i className="fas fa-map-marker"></i> Ubicación -{" "}
+                        {this.state.dataAlojamiento.nombreciudad}
                         {this.state.dataAlojamiento.ciudad}
                       </span>
                       <div id="mapa-atr" style={{ width: "100%" }}>
@@ -262,11 +269,16 @@ class PAlojamiento extends Component {
                       </div>
                     </div>
                     <div className="alojamiento-info">
-                      <span>
-                        <i className="fas  fa-id-card"></i>Estado:{" "}
-                        {this.state.dataAlojamiento.estado}
-                      </span>
-                      {pilds.length > 0 ? (
+                      {this.state.dataAlojamiento.estado.length != 0 ? (
+                        <span>
+                          <i className="fas  fa-id-card"></i>Estado:{" "}
+                          {this.state.dataAlojamiento.estado}
+                        </span>
+                      ) : (
+                        " "
+                      )}
+
+                      {pilds.length != 0 ? (
                         <div>
                           <span>
                             <i className="fas fa-clock"></i> Servicios
@@ -325,7 +337,7 @@ class PAlojamiento extends Component {
                       ) : (
                         ""
                       )}
-                      {this.state.dataAlojamiento.web !== "" ? (
+                      {this.state.dataAlojamiento.web !== null ? (
                         <span className="pr-4">
                           Web:
                           <a
@@ -337,7 +349,7 @@ class PAlojamiento extends Component {
                           </a>
                         </span>
                       ) : (
-                        ""
+                        " "
                       )}
                     </div>
                   </div>
@@ -345,18 +357,16 @@ class PAlojamiento extends Component {
               </div>
             </div>
             <div>
-              {
-                this.state.img.visible ?
+              {this.state.img.visible ? (
                 <MaxImage
-                    id={this.state.img.src}
-                    src={this.state.src}
-                    visible={this.state.img.visible}
-                    onClose={this.closeImg}
-                
-                /> 
-                :
+                  id={this.state.img.src}
+                  src={this.state.src}
+                  visible={this.state.img.visible}
+                  onClose={this.closeImg}
+                />
+              ) : (
                 ""
-              }
+              )}
             </div>
           </React.Fragment>
         )}
