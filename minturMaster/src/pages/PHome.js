@@ -19,6 +19,7 @@ import SpeedDial2 from "../components/SpeedDial";
 import ScrollProductos from "../components/ScrollProductos";
 import ScrollExperiencia from "../components/ScrollExperiencia";
 import BotoneraFondo from "../components/BotoneraFondo";
+import GaleriaLocalidadesNew from "../components/GaleriaLocalidadesNew";
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -73,12 +74,23 @@ class Home extends Component {
             <br></br>
             <br></br>
             <ScrollExperiencia />
+<<<<<<< HEAD
             {/* <Novedades timerID="100" /><Recorridos />
 <<<<<<< Updated upstream
              <EventoForm />*/}
             <Novedades time="10000" />
             {/*  <GaleriaLocalidades />
             <EventoForm />
+=======
+            {/* <Novedades timerID="100" /> */}
+            {/*<Recorridos />
+<<<<<<< Updated upstream
+             <EventoForm />*/}
+            <Novedades time="10000" />
+            <GaleriaLocalidades />
+            {/* <GaleriaLocalidadesNew/> */}
+            {/*  <EventoForm />
+>>>>>>> b09b8ea74a5821cc59bdefe45d4499b1e0150acf
 >>>>>>> Stashed changes
             <div className="Recorridos">
               <div className="reco-titulo">

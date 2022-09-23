@@ -31,14 +31,28 @@ class GaleriaLocalidades extends Component{
         ],
         selected: 0,
       },
+      lista: false,
+      buscadorList: {
+        data: [
+          {
+            id: 0,
+            nombre: "Cargando...",
+            visible: true,
+          },
+        ],
+      }
     };
     this.clickImg = this.clickImg.bind(this);
     this.closeImg = this.closeImg.bind(this);
-    this.cambiar = this.cambiar.bind(this);
+    //this.cambiar = this.cambiar.bind(this);
     this.handleFiltroClick = this.handleFiltroClick.bind(this);
     this.selectFirstElement = this.selectFirstElement.bind(this);
     this.handleBusquedaChange = this.handleBusquedaChange.bind(this);
+    this.cancelBusqueda = this.cancelBusqueda.bind(this);
+  }
 
+  cancelBusqueda() {
+    this.setState({ lista: false });
   }
 
   clickImg(visible, src) {
@@ -82,89 +96,122 @@ class GaleriaLocalidades extends Component{
     //document.documentElement.scrollTop = 0; // Chrome, Firefox, IE y Opera
     //let id = parseInt(this.props.match.params.id, 10);
     //var token = this.context.token;
-    var self = this;
-    axios({
-      method: "get",
-      headers: {
-        Authorization: "token",
-      },
-      url: `${process.env.REACT_APP_API}/galeria_localidades`,
-      responseType: "json",
-    })
-      .then((response) => {
-        self.setState({
-          data: response.data.data.registros,
-          loading: false,
-        });
-        console.log(this.state.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // var self = this;
+    // axios({
+    //   method: "get",
+    //   headers: {
+    //     Authorization: "token",
+    //   },
+    //   url: `${process.env.REACT_APP_API}/filtraCDT`,
+    //   responseType: "json",
+    // })
+    //   .then((response) => {
+    //     self.setState({
+    //       data: response.data.data.registros,
+    //       loading: false,
+    //     });
+    //     console.log(this.state.data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   
-  ////Lista de localodades
-  fetch(`${process.env.REACT_APP_API}/ciudades`, {
+  //Buscador List
+  fetch(`${process.env.REACT_APP_API}/buscadorList`, {
     method: "GET",
     headers: {
       Authorization: "asdssffsdff",
     },
   })
-    .then((res) => res.json())
-    .then(
-      (result) => {
-        if (!result.err) {
-          var setX = result.data.registros.map((v) => {
-            return {
-              ...v,
-              visible: false,
-            };
-          });
-          this.setState(
-            {
-              localidades: {
-                data: setX,
-                selected: setX[0].id,
-              },
+  .then((res) => res.json())
+  .then(
+    (result) => {
+      if(!result.err) {
+        var setX = result.data.registros.map((v) => {
+          return {
+            ...v,
+          };
+        });
+        this.setState(
+          {
+            buscadorList: {
+              data: setX,
             },
-            () => {
-              this.handleFiltroClick(this.state.localidades.selected);
-              window.onscroll = () => {
-                var menu = document.getElementById("nav");
-                if (
-                  document.body.scrollTop > this.state.showAt ||
-                  document.documentElement.scrollTop > this.state.showAt
-                ) {
-                  if (menu) {
-                    this.setState({
-                      clase: "sticky",
-                    });
-                  }
-                } else {
-                  if (menu) {
-                    this.setState({
-                      clase: "Menu",
-                    });
-                  }
-                }
-              };
-            }
-          );
-        } else {
-          this.setState({
-            MsgVisible: true,
-            MsgBody: result.errMsg,
-          });
-        }
-      },
-      (error) => {
+          }
+        );
+      }
+      else {
         this.setState({
-          isLoaded: true,
-          error,
+          MsgVisible: true,
+          MsgBody: result.errMsg,
         });
       }
-    );
-
     }
+    )}
+
+  ////Lista de localodades
+  // fetch(`${process.env.REACT_APP_API}/ciudades`, {
+  //   method: "GET",
+  //   headers: {
+  //     Authorization: "asdssffsdff",
+  //   },
+  // });
+  //   .then((res) => res.json())
+  //   .then(
+  //     (result) => {
+  //       if (!result.err) {
+  //         var setX = result.data.registros.map((v) => {
+  //           return {
+  //             ...v,
+  //             visible: false,
+  //           };
+  //         });
+  //         this.setState(
+  //           {
+  //             localidades: {
+  //               data: setX,
+  //               selected: setX[0].id,
+  //             },
+  //           },
+  //           () => {
+  //             this.handleFiltroClick(this.state.localidades.selected);
+  //             window.onscroll = () => {
+  //               var menu = document.getElementById("nav");
+  //               if (
+  //                 document.body.scrollTop > this.state.showAt ||
+  //                 document.documentElement.scrollTop > this.state.showAt
+  //               ) {
+  //                 if (menu) {
+  //                   this.setState({
+  //                     clase: "sticky",
+  //                   });
+  //                 }
+  //               } else {
+  //                 if (menu) {
+  //                   this.setState({
+  //                     clase: "Menu",
+  //                   });
+  //                 }
+  //               }
+  //             };
+  //           }
+  //         );
+  //       } else {
+  //         this.setState({
+  //           MsgVisible: true,
+  //           MsgBody: result.errMsg,
+  //         });
+  //       }
+  //     },
+  //     (error) => {
+  //       this.setState({
+  //         isLoaded: true,
+  //         error,
+  //       });
+  //     }
+  //   );
+
+  //   }
 
     handleFiltroClick(id) {
       this.setState(
@@ -251,10 +298,10 @@ class GaleriaLocalidades extends Component{
       text.value = "";
     }
   
-    cambiar() {
-      this.setState({ mostrar: "none" });
-      this.setValueInput();
-    }
+    // cambiar() {
+    //   this.setState({ mostrar: "none" });
+    //   this.setValueInput();
+    // }
   
     closeLista() {
       this.setState({
@@ -263,10 +310,11 @@ class GaleriaLocalidades extends Component{
     }
   
   handleBusquedaChange(event) {
+  
     let valor = event.target.value;
     
     this.setState({ filtro: valor }, () => {
-      var copy = Object.assign([], this.state.localidades.data);
+      var copy = Object.assign([], this.state.buscadorList.data);
       copy = copy.map((d) => {
         if (d.nombre.toLowerCase().indexOf(valor.toLowerCase()) > -1) {
           d.visible = true;
@@ -277,44 +325,55 @@ class GaleriaLocalidades extends Component{
         return d;
       });
       this.setState({
-        localidades: {
-          ...this.state.localidades,
+        buscadorList: {
+          ...this.state.buscadorList,
           data: copy,
-          selected: 1,
+          //selected: 1,
         },
-        mostrar: "block",
+        lista: true,
       });
     });
   }
   render() {
-    var cont = 0;
 
-    const filtro = this.state.localidades.data.map((lf) => {
-      this.selectFirstElement();
-      if (lf.visible === true) {
-        return (
+    const filtro = this.state.buscadorList.data.map((item) => {
+      if(item.visible === true){
+        return(
           <li
-            value=""
-            key={`lloc-${lf.id}`}
+            id ={item["id"]} 
+            value =""
             className="linkBusqueda"
-            ref={this.link}
-            onClick={this.cambiar}
-            to={`/localidad/${lf.id}`}
-            style={{ textDecoration: "none" }}
-          >
-            <Link
-              id={`/localidad/${lf.id}`}
-              className="liLista"
-              name={cont++}
-              to={`/localidad/${lf.id}`}
-              onClick={() => this.closeLista()}
-            >
-              {lf.nombre}{" "}
-            </Link>
-          </li>
+            //onClick={alert(item["nombre"])}
+            style={{ textDecoration: "none" }}>
+              {item["nombre"]}
+            </li>
         );
       }
     });
+    // const filtro2 = this.state.localidades.data.map((lf) => {
+    //   this.selectFirstElement();
+    //   if (lf.visible === true) {
+    //     return (
+    //       <li
+    //         value=""
+    //         key={`lloc-${lf.id}`}
+    //         className="linkBusqueda"
+    //         ref={this.link}
+    //         onClick={this.cambiar}
+    //         style={{ textDecoration: "none" }}
+    //       >
+    //         <Link
+    //           id={`/localidad/${lf.id}`}
+    //           className="liLista"
+    //           name={cont++}
+    //           onClick={() => this.closeLista()}
+    //         >
+    //           {lf.nombre}{" "}
+    //         </Link>
+    //       </li>
+    //     );
+    //   }
+    // });
     return ( 
       <React.Fragment>
         <Helmet>
@@ -347,16 +406,17 @@ class GaleriaLocalidades extends Component{
         <div class="header-gallery">
         <p className="gallery-title">Galería de localidades</p>
         <input
-         onKeyDown={(e) => this.selectOption(e)}
+         id="buscar"
          type="text"
-         className="gallery-search"
-         placeholder="Buscar por localidad ...           &#9660;" 
+         className="gallery-search buscador-icon"
+         placeholder="Buscá localidad/tag...    &#9660;" 
          autoComplete="off"
          value={this.state.filtro}
          onChange={this.handleBusquedaChange}
+         onBlur={this.cancelBusqueda}
          />
           {this.state.lista ? (
-             <ul className="ul-busqueda ">{filtro}</ul>
+             <ul className="ul-busquedas">{filtro}</ul>
           ) : (
             ""
               )}

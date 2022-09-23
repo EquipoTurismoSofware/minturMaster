@@ -95,7 +95,7 @@ class PAgenciaViajes extends Component {
                   className="ZonaDetalle-titulo"
                   style={{ paddingTop: "50px", backgroundColor: `#722789` }}
                 >
-                  <h3 style={{ color: `#722789` }}>Agencias de Viajes</h3>
+                  <h3 style={{ color: `#722789` }}>AgenciaSSSs de Viajes</h3>
                 </div>
                 <div className="col">
                   <img
