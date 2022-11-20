@@ -5,7 +5,7 @@ import { FacebookShareButton, FacebookIcon, FacebookShareCount } from 'react-sha
 //import CompartirPost from "../compartirPost";
 //import GoogleMap from "../components/subcomponentes/GoogleMap";
 //import {Helmet} from "react-helmet";
-//import { Helmet, HelmetProvider} from 'react-helmet-async'
+//import { Helmet, HelmetProvider} from 'react-helmet-async' 
 import MaxImage from "../../components/subcomponentes/MaxImage";
 import Loading from "../../utils/Loading";
 import ArbolesMetaDatos from "../../components/subcomponentes/ArbolesMetaDatos";
@@ -107,7 +107,7 @@ class PArbol extends Component {
                 <meta property="og:description" content={descripcion} />
                 <meta property="og:image" content={image} />
               </Helmet>*/}
-            <div className="container PArbol">
+            <div className="container PNovedad">
               <div className="n-titulo">
                 <span>
                   {this.state.data.nombre_popular} - <i>{this.state.data.nombre_cientifico}</i>
@@ -117,7 +117,7 @@ class PArbol extends Component {
             <div className="container">
               <div className="row mb-5">
                 <div className="col">
-                  <div className="arbol-item">
+                  <div className="novedad-item">
                     <div className="imagen">
                       <img
                         className="img-fluid"

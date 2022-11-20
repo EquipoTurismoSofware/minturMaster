@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Recorridos from "../components/Recorridos";
 import EventoForm from "../components/EventoForm";
 import Descarga from "../components/Descarga";
@@ -6,7 +6,6 @@ import Novedades from "../components/Novedades";
 import { Link } from "react-router-dom";
 import ReactWOW from "react-wow";
 import SliderActividades from "../components/SliderActividades";
-import GaleriaLocalidades from "../components/GaleriaLocalidades";
 import Slider from "../components/SliderClean";
 import PantallaModal from "../components/subcomponentes/Modal";
 import Newsletter from "../components/subcomponentes/Newsletter";
@@ -19,7 +18,8 @@ import SpeedDial2 from "../components/SpeedDial";
 import ScrollProductos from "../components/ScrollProductos";
 import ScrollExperiencia from "../components/ScrollExperiencia";
 import BotoneraFondo from "../components/BotoneraFondo";
-import GaleriaLocalidadesNew from "../components/GaleriaLocalidadesNew";
+import Galeria from "../components/Galeria";
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -87,7 +87,10 @@ class Home extends Component {
 <<<<<<< Updated upstream
              <EventoForm />*/}
             <Novedades time="10000" />
-            <GaleriaLocalidades />
+            {/* <GaleriaLocalidades /> */}
+            <div>
+              <Galeria />
+            </div>
             {/* <GaleriaLocalidadesNew/> */}
             {/*  <EventoForm />
 >>>>>>> b09b8ea74a5821cc59bdefe45d4499b1e0150acf
