@@ -4,8 +4,9 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Logo from "../utils/images/logo-san-luis.png"; //  src/images
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { useEffect } from "react";
+import Container from "react-bootstrap/Container"
+//import { useState } from "react";
+//import { useEffect } from "react";
 
 class Menu extends Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class Menu extends Component {
     this.cambiar = this.cambiar.bind(this);
     this.handleBusquedaChange = this.handleBusquedaChange.bind(this);
     this.handleFiltroClick = this.handleFiltroClick.bind(this);
-    this.selectFirstElement = this.selectFirstElement.bind(this);
+    //this.selectFirstElement = this.selectFirstElement.bind(this);
     this.cancelBusqueda = this.cancelBusqueda.bind(this);
     this.closeLista = this.closeLista.bind(this);
   }
@@ -117,16 +118,16 @@ class Menu extends Component {
     //if(window.width > 990){// When is a expanded menu
     document.getElementById("nav").style.position = "fixed";
     document.getElementById("nav").style.minHeight = "90px";
-    document.getElementById("nav").style.backgroundImage =
-      "url(" + "require(../utils/images/scrollNavbar.png)" + ")";
+    //document.getElementById("nav").style.backgroundImage =
+    //  "url(" + "require(../utils/images/scrollNavbar.png)" + ")";
     document.getElementById("nav").style.backgroundRepeat = "no-repeat";
     document.getElementById("nav").style.backgroundSize = "cover";
     //document.getElementById("nav").style.backgroundPosition = "bottom";
     document.getElementById("nav").style.top = "0px";
 
-    document.getElementById("logoscroll").style.display = "inline-block";
-    document.getElementById("logoscroll").style.marginTop = "-2%";
-    document.getElementById("logoscroll").style.width = "190px";
+    //document.getElementById("logoscroll").style.display = "inline-block";
+    //document.getElementById("logoscroll").style.marginTop = "-2%";
+    //document.getElementById("logoscroll").style.width = "190px";
     // }
     // else{//When is a burger menu
 
@@ -137,23 +138,35 @@ class Menu extends Component {
     // When user is on the top
 
     document.getElementById("nav").style.position = "absolute";
-    document.getElementById("nav").style.minHeight = "140px";
-    document.getElementById("nav").style.backgroundImage =
-      "url(" + "require(../utils/images/menu-img.png)" + ")";
-    document.getElementById("nav").style.top = "40px";
+    
+    //document.getElementById("nav").style.backgroundImage =
+    //  "url(" + "require(../utils/images/menu-img.png)" + ")";
+    
     document.getElementById("nav").style.width = "100%";
+    //document.getElementById("nav").style.transition = "all: 0.5s";
 
-    document.getElementById("logoscroll").style.width = "200px";
-    document.getElementById("logoscroll").style.marginTop = "-1.5%";
-    document.getElementById("logoscroll").style.display = "inline-block";
+    if(window.innerWidth > 991){
+      document.getElementById("nav").style.top = "40px";
+      document.getElementById("nav").style.minHeight = "120px";
+      
+    }
+    else{
+      document.getElementById("nav").style.top = "0px";
+      document.getElementById("nav").style.minHeight = "90px";
+    }
+
+    //document.getElementById("logoscroll").style.width = "200px";
+    //document.getElementById("logoscroll").style.marginTop = "-2%";
+    //document.getElementById("logoscroll").style.display = "inline-block";
   }
 
+
   handleScroll = () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 40) {
       //Small Navbar
       this.smallNavbar();
     } else {
-      //Big Navbar
+      //Big Navbars
       if (window.innerWidth > 350) {
         this.bigNavbar();
       } else {
@@ -163,18 +176,18 @@ class Menu extends Component {
   };
 
   //selecciona la localidad con el tipeo de la flecha
-  selectFirstElement() {
-    let selec = document.getElementsByName(this.state.mov);
-    //console.log(this.state.mov);
-    selec.forEach((e) => {
-      //console.log(e);
-      this.setState({
-        mov: -1,
-      });
-      //this.state.mov = -1;
-      e.style = "";
-    });
-  }
+  // selectFirstElement() {
+  //   let selec = document.getElementsByName(this.state.mov);
+  //   //console.log(this.state.mov);
+  //   selec.forEach((e) => {
+  //     //console.log(e);
+  //     this.setState({
+  //       mov: -1,
+  //     });
+  //     //this.state.mov = -1;
+  //     e.style = "";
+  //   });
+  // }
 
   handleFiltroClick(id) {
     this.setState(
@@ -195,63 +208,69 @@ class Menu extends Component {
 
   selectOption(event) {
     this.state.lista = true;
-    let key = event.key;
+   
+    let text = document.getElementById("buscar");
 
-    switch (key) {
-      case "Backspace":
-        this.selectFirstElement();
-        break;
-      case "Enter":
-        if (this.state.selec != null) {
-          let select = document.getElementById(this.state.mov - 1);
-          select.forEach((e) => {
-            e.style = "";
-          });
-
-          this.state.mov = -1;
-          if (window.location.hostname === "localhost") {
-            window.location.href =
-              "http://localhost:3000/#${this.state.selec.id)";
-          } else {
-            window.location.href =
-              "http://turismo.sanluis.gov.ar/#${this.state.selec.id}";
-          }
-          this.cambiar();
-        }
-        break;
-      case "ArrowDown":
-        if (
-          this.state.mov <
-          document.getElementsByClassName("linkBusqueda").length - 1
-        ) {
-          this.state.mov++;
-
-          let select = document.getElementsByName(this.state.mov);
-          select.forEach((e) => {
-            this.state.selec = e;
-            e.style = "text-decoration-line: underline; font-size: 17px;";
-          });
-        }
-        break;
-      case "ArrowUp":
-        if (this.state.mov !== 0) {
-          this.state.mov--;
-          let select = document.getElementsByName(this.state.mov);
-          select.forEach((e) => {
-            this.state.selec = e;
-
-            e.style = "text-decoration-line: underline ; font-size: 18px;";
-          });
-        }
-        if (true) {
-          let select = document.getElementsByName(this.state.mov + 1);
-          select.forEach((e) => {
-            e.style = "";
-          });
-        }
-
-        break;
+    if(text.length == 0){
+      this.cancelBusqueda();
     }
+
+
+    // switch (key) {
+      // case "Backspace":
+      //   this.selectFirstElement();
+      //   break;
+      // case "Enter":
+      //   if (this.state.selec != null) {
+      //     let select = document.getElementById(this.state.mov - 1);
+      //     select.forEach((e) => {
+      //       e.style = "";
+      //     });
+
+      //     this.state.mov = -1;
+      //     if (window.location.hostname === "localhost") {
+      //       window.location.href =
+      //         "http://localhost:3000/#${this.state.selec.id)";
+      //     } else {
+      //       window.location.href =
+      //         "http://turismo.sanluis.gov.ar/#${this.state.selec.id}";
+      //     }
+      //     this.cambiar();
+      //   }
+      //   break;
+      // case "ArrowDown":
+      //   if (
+      //     this.state.mov <
+      //     document.getElementsByClassName("linkBusqueda").length - 1
+      //   ) {
+      //     this.state.mov++;
+
+      //     let select = document.getElementsByName(this.state.mov);
+      //     select.forEach((e) => {
+      //       this.state.selec = e;
+      //       e.style = "text-decoration-line: underline; font-size: 17px;";
+      //     });
+      //   }
+      //   break;
+      // case "ArrowUp":
+      //   if (this.state.mov !== 0) {
+      //     this.state.mov--;
+      //     let select = document.getElementsByName(this.state.mov);
+      //     select.forEach((e) => {
+      //       this.state.selec = e;
+
+      //       //e.style = "text-decoration-line: underline ; font-size: 18px;";
+      //     });
+      //   }
+      //   if (true) {
+      //     let select = document.getElementsByName(this.state.mov + 1);
+      //     select.forEach((e) => {
+      //       //e.style = "";
+      //     });
+      //   }
+
+      //   break;
+   // }
   }
 
   setValueInput() {
@@ -265,15 +284,24 @@ class Menu extends Component {
     this.setValueInput();
   }
 
-  closeLista() {
+  closeLista(clickedValue) {
+    document.getElementById("buscar").value = clickedValue;
     this.setState({
       lista: false,
     });
+
+    
+
   }
 
   handleBusquedaChange(event) {
     let valor = event.target.value;
-
+    //Oculta lista al borrar el contenido del buscador
+    if(valor == ""){
+      this.setState({
+        lista: false,
+      });
+    }
     this.setState({ filtro: valor }, () => {
       var copy = Object.assign([], this.state.localidades.data);
       copy = copy.map((d) => {
@@ -298,9 +326,10 @@ class Menu extends Component {
 
   render() {
     var cont = 0;
-    var localidad = "";
+    //var localidad = "";
+
     const filtro = this.state.localidades.data.map((lf) => {
-      this.selectFirstElement();
+      //this.selectFirstElement();
       if (lf.visible === true) {
         return (
           <li
@@ -317,7 +346,7 @@ class Menu extends Component {
               className="liLista"
               name={cont++}
               to={`/localidad/${lf.id}`}
-              onClick={() => this.closeLista()}
+              onClick={() => this.closeLista(lf.nombre)}
             >
               {lf.nombre}{" "}
             </Link>
@@ -330,7 +359,8 @@ class Menu extends Component {
       <React.Fragment>
         <div className="menuNew">
           <Navbar bg="navbar" variant="dark" id="nav" expand="lg">
-            <Link to={"/"}>
+            <Container fluid>
+            <Link to={"/"}>  
               <Navbar.Brand>
                 <img
                   id="logoscroll"
@@ -338,18 +368,21 @@ class Menu extends Component {
                   alt="San Luis"
                   className="img-brand"
                 />
+                 
               </Navbar.Brand>
-            </Link>
+              </Link>
             <Navbar.Toggle
+              //onClick={() => this.handleToggler()}
               aria-controls="responsive-navbar-nav"
               data-bs-target="#responsive-navbar-nav"
             />
-            <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="nav-container navbar-center">
+            <Navbar.Collapse id="responsive-navbar-nav ">
+              <Nav className="nav-container flex-row col-md-12">
                 <NavDropdown
                   renderMenuOnMount={true}
                   title="Organizá tu viaje"
                   id="collasible-nav-dropdown"
+                  className="offset-md-3"
                 >
                   <NavDropdown.Item href="#/filtroalojamiento">
                     Hospedaje
@@ -425,21 +458,24 @@ class Menu extends Component {
                     onKeyDown={(e) => this.selectOption(e)}
                     id="buscar"
                     type="text"
-                    placeholder="Buscá tu destino             &#9660;"
+                    //placeholder="Buscá tu destino             &#9660;"
+                    placeholder="Buscá tu destino..."
                     autoComplete="off"
                     className="buscador-destino buscador-icon"
                     value={this.state.filtro}
                     onChange={this.handleBusquedaChange}
-                    onBlur={this.cancelBusqueda}
+                    //onBlur={this.cancelBusqueda}
                   />
                   {this.state.lista ? (
-                    <ul className="ul-busqueda ">{filtro}</ul>
+                    <ul className="ul-busqueda "
+                      onBlur={this.cancelBusqueda}>{filtro}</ul>
                   ) : (
                     ""
                   )}
                 </div>
               </Nav>
             </Navbar.Collapse>
+            </Container>
           </Navbar>
         </div>
       </React.Fragment>
