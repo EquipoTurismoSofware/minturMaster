@@ -31,7 +31,7 @@
   background-position: bottom;
   background-image: url("./utils/images/menu-img.png");
   min-height: 140px;
-  max-height: 170px;
+  //max-height: 170px;
   /* Center and scale the image nicely */
   background-repeat: no-repeat;
   background-size: cover;
@@ -100,6 +100,10 @@
   font-weight: bold;
 }
 
+.linkBusqueda{
+  text-align: left;
+  text-overflow: ellipsis;
+}
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
@@ -250,6 +254,7 @@ button.navbar-toggler {
   }
 }
 
+
 @media only screen and (max-width: 991px) {
   #logoscroll{
     //width: 150px;
@@ -260,11 +265,6 @@ button.navbar-toggler {
 
   .topBar{
     display: none;
-  }
-
-  #nav{
-    //object-fit: contain;
-    //top:0px;
   }
 
   .navbar-center{
@@ -306,5 +306,34 @@ button.navbar-toggler {
 
   .dropdown-item{
     overflow: visible
+  }
+}
+
+.navbar-brand{
+  //object-fit: contain;
+  z-index: 200
+}
+
+@media only screen and (max-width: 720px){
+  .offset-md-3{
+    margin-left:1%;
+    transition: all 0.3s;
+  }
+
+  .flex-row{
+    flex-direction: column !important;
+    transition: all .3s ;
+  }
+
+  .buscador-destino{
+    float: inherit;
+  }
+
+  #nav{
+    top:0px
+  }
+
+  .ul-busqueda{
+    margin: 2px 23%;
   }
 }

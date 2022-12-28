@@ -360,17 +360,18 @@ class Menu extends Component {
         <div className="menuNew">
           <Navbar bg="navbar" variant="dark" id="nav" expand="lg">
             <Container fluid>
-            <Link to={"/"}>  
-              <Navbar.Brand>
+            {/* <Link to={"/"}>   */}
+              <Navbar.Brand  className="nav-brand">
+              <a href={"/"}> 
                 <img
                   id="logoscroll"
                   src={Logo}
                   alt="San Luis"
                   className="img-brand"
                 />
-                 
+                </a>
               </Navbar.Brand>
-              </Link>
+              {/* </Link> */}
             <Navbar.Toggle
               //onClick={() => this.handleToggler()}
               aria-controls="responsive-navbar-nav"
