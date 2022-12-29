@@ -93,19 +93,29 @@
     }
     .imp-body-wrap {
       margin: 40px 20px;
+      
+      //white-space: nowrap;
       //color: #fff;
       a {
         text-decoration: none;
         color: #fff;
         .imp-body {
+          // display: -webkit-box;
+          // -webkit-line-clamp: 3;
+          // -webkit-box-orient: vertical;
           padding: 8px;
           cursor: pointer;
           h5 {
             text-transform: uppercase;
           }
           p {
-            max-height: 145px;
+            //max-height: 145px;
             overflow: hidden;
+            text-overflow: ellipsis;
+            // white-space:nowrap;
+            // width: 1000px;
+            height: 145px;
+
           }
           &:hover {
             background-color: rgba(0, 0, 0, 0.3);
