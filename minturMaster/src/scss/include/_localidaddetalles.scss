@@ -69,9 +69,17 @@
     grid-area: mapa;
   }
   #imperdibles {
+    border-radius: 8px;
     grid-area: imperdibles;
     position: relative;
+    background: linear-gradient(
+      to right,
+      #722789 0%,
+      rgba(237, 15, 104, 0.8) 100%
+    );
+    
     .imp-titulo {
+      border-radius: 8px;
       position: absolute;
       margin-top: -20px;
       padding: 0 20px 0 5px;
@@ -79,7 +87,7 @@
       background-color: #fff;
       h3 {
         text-transform: uppercase;
-        color: #fff;
+        color:#722789;
         font-weight: bold;
       }
     }

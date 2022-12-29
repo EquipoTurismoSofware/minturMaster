@@ -3927,6 +3927,7 @@ li {
   padding-bottom: 5px;
   text-transform: uppercase;
   background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  border-radius: 8px;
 }
 
 /*
@@ -7111,10 +7112,13 @@ div#masonry img {
   grid-area: mapa;
 }
 .ZonaLocalidad-Body #imperdibles {
+  border-radius: 8px;
   grid-area: imperdibles;
   position: relative;
+  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
 }
 .ZonaLocalidad-Body #imperdibles .imp-titulo {
+  border-radius: 8px;
   position: absolute;
   margin-top: -20px;
   padding: 0 20px 0 5px;
@@ -7123,7 +7127,7 @@ div#masonry img {
 }
 .ZonaLocalidad-Body #imperdibles .imp-titulo h3 {
   text-transform: uppercase;
-  color: #fff;
+  color: #722789;
   font-weight: bold;
 }
 .ZonaLocalidad-Body #imperdibles .imp-body-wrap {

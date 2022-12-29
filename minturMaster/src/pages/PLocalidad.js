@@ -484,7 +484,7 @@ class PLocalidad extends Component {
                             <div className="imp-titulo">
                               <h3
                                 style={{
-                                  color: `#${this.state.dataLocalidad.color}`,
+                                  color: ``,
                                 }}
                               >
                                 Imperdibles
