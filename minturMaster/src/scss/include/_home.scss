@@ -64,7 +64,7 @@
   display: inline;
 }
 
-.grid-container {
+.grid-containerRedes{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
@@ -108,7 +108,7 @@
   }
 }
 @media only screen and (max-width: 1210px) {
-  .grid-container {
+  .grid-containerRedes {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
@@ -150,7 +150,7 @@
   .motoVideo1 {
     display: none;
   }
-  .grid-container {
+  .grid-containerRedes {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;

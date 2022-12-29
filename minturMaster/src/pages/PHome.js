@@ -93,7 +93,7 @@ class Home extends Component {
             // </div>
             // <br />*/}
             <center>
-              <div className="grid-container">
+              <div className="grid-containerRedes">
                 <div>
                   <center>
                     <Link to="/" className="link-menu">
