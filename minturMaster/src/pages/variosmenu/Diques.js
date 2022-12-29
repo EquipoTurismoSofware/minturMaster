@@ -124,9 +124,9 @@ class PDiques extends Component {
             <div
               className="container ListadoAtractivofull"
               style={{
-                paddingTop: "200px",
+                paddingTop: "150px",
                 paddingBottom: "30px",
-                paddingLeft: "80px",
+                paddingLeft: "30px",
               }}
             >
               <h3 style={{ color: `#722789` }}>Espejos de Agua</h3>

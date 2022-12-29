@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
 import axios from "axios";
-import { FacebookShareButton, FacebookIcon, FacebookShareCount } from 'react-share';
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  FacebookShareCount,
+} from "react-share";
 //import CompartirPost from "../compartirPost";
 //import GoogleMap from "../components/subcomponentes/GoogleMap";
 //import {Helmet} from "react-helmet";
-//import { Helmet, HelmetProvider} from 'react-helmet-async' 
+//import { Helmet, HelmetProvider} from 'react-helmet-async'
 import MaxImage from "../../components/subcomponentes/MaxImage";
 import Loading from "../../utils/Loading";
 import ArbolesMetaDatos from "../../components/subcomponentes/ArbolesMetaDatos";
@@ -107,14 +111,8 @@ class PArbol extends Component {
                 <meta property="og:description" content={descripcion} />
                 <meta property="og:image" content={image} />
               </Helmet>*/}
-            <div className="container PNovedad">
-              <div className="n-titulo">
-                <span>
-                  {this.state.data.nombre_popular} - <i>{this.state.data.nombre_cientifico}</i>
-                </span>
-              </div>
-            </div>
-            <div className="container">
+            
+            <div className="container" style={{marginTop:"100px"}}>
               <div className="row mb-5">
                 <div className="col">
                   <div className="novedad-item">
@@ -145,7 +143,7 @@ class PArbol extends Component {
                       ) : (
                         ""
                       )}
-                       {this.state.data.foto_tres !== "default.jpg" ? (
+                      {this.state.data.foto_tres !== "default.jpg" ? (
                         <img
                           className="img-fluid"
                           src={`${process.env.REACT_APP_API_RECURSOS}/recursos/arboles/${this.state.data.foto_tres}`}
@@ -160,7 +158,7 @@ class PArbol extends Component {
                       ) : (
                         ""
                       )}
-                       {this.state.data.foto_cuatro !== "default.jpg" ? (
+                      {this.state.data.foto_cuatro !== "default.jpg" ? (
                         <img
                           className="img-fluid"
                           src={`${process.env.REACT_APP_API_RECURSOS}/recursos/arboles/${this.state.data.foto_cuatro}`}
@@ -178,11 +176,16 @@ class PArbol extends Component {
                     </div>
                     <div
                       className="titulo"
-                      style={{ background: "linear-gradient(to right, #722789 0%, #ed0f68 100%);" }}
+                      style={{
+                        background:
+                          "linear-gradient(to right, #722789 0%, #ed0f68 100%);",
+                      }}
                     >
                       <h3>{this.state.data.nombre_popular}</h3>
 
-                      <h3><i>{this.state.data.nombre_cientifico}</i></h3>
+                      <h3>
+                        <i>{this.state.data.nombre_cientifico}</i>
+                      </h3>
                     </div>
                     {this.state.data.descripcionHTML != "" ? (
                       <div className="body">
@@ -193,14 +196,17 @@ class PArbol extends Component {
                           }}
                         ></p>
 
-                        <FacebookShareButton url={shareUrl}><FacebookIcon size={32} round={true} /></FacebookShareButton>
-
+                        <FacebookShareButton url={shareUrl}>
+                          <FacebookIcon size={32} round={true} />
+                        </FacebookShareButton>
                       </div>
                     ) : (
                       <div className="body">
                         <p className="text-dark mb-2">{descripcion}</p>
 
-                        <FacebookShareButton url={shareUrl}><FacebookIcon size={32} round={true} /></FacebookShareButton>
+                        <FacebookShareButton url={shareUrl}>
+                          <FacebookIcon size={32} round={true} />
+                        </FacebookShareButton>
                       </div>
                     )}
                   </div>

@@ -66,7 +66,7 @@ body {
 .player .song .song__title {
   text-align: left;
   margin: 0;
-  color: #1ce42d;
+  color: rgb(28, 228, 45);
   font-family: "Jolly Lodger";
   font-weight: normal;
   font-size: 4em;
@@ -109,7 +109,7 @@ body {
 }
 .player .player__button i {
   font-size: 3.5em;
-  color: #1ce42d;
+  color: rgb(28, 228, 45);
 }
 .player .bar {
   user-select: none;
@@ -137,7 +137,7 @@ body {
   bottom: 0px;
   border: 1.5px solid white;
   border-radius: 50%;
-  background-color: #16ac22;
+  background-color: rgb(22, 172, 34);
 }
 @media screen and (max-width: 992px) {
   .player {
@@ -189,7 +189,7 @@ body {
 }
 .material-card-hallo .hallo-mc-content .hallo-mc-title li {
   list-style-type: none;
-  background: linear-gradient(to right, #49005f 10%, #ff000d 100%);
+  background: linear-gradient(to right, rgb(73, 0, 95) 10%, rgb(255, 0, 13) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -248,7 +248,7 @@ body {
   font-size: 7rem;
   line-height: 80px;
   font-family: "Jolly Lodger";
-  color: #1ce42d;
+  color: rgb(28, 228, 45);
 }
 .Main-Halloween .Subtitulo-Halloween {
   position: relative;
@@ -422,7 +422,7 @@ body {
   transition: all 0.5s;
 }
 .Viewer .pagesBullets ul li.selected {
-  background-color: #8d0a3e;
+  background-color: rgb(141, 10, 62);
   color: white;
 }
 .Viewer .pages {
@@ -449,14 +449,14 @@ body {
   min-width: 30px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border: 1px solid #54575a;
   color: black;
   cursor: pointer;
   transition: all 1.5s;
 }
 .Viewer .pages ul li.selected {
-  background-color: #8f1ca8;
+  background-color: rgb(143, 28, 168);
   color: white;
 }
 .Viewer .btn-left,
@@ -503,13 +503,13 @@ body {
   min-width: 30px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   color: white;
   cursor: pointer;
   transition: all 1.5s;
 }
 .ViewerListados .pages ul li.selected {
-  background-color: #8f1ca8;
+  background-color: rgb(143, 28, 168);
   color: white;
 }
 .ViewerListados .btn-left,
@@ -933,7 +933,7 @@ body {
 .tituloImperdibles .imp-t-sub2 {
   font-size: 2em;
   padding: 2px 15px;
-  background-color: #8f1ca8;
+  background-color: rgb(143, 28, 168);
   color: #fff;
   text-transform: uppercase;
 }
@@ -1266,7 +1266,7 @@ body {
   margin: 10px 0 10px 20px;
   font-size: 2em;
   padding: 2px 15px;
-  background-color: #8f1ca8;
+  background-color: rgb(143, 28, 168);
   color: #fff;
   text-transform: uppercase;
 }
@@ -1276,7 +1276,7 @@ body {
   margin: 0 20px 0 20px;
 }
 .est-main .est-titulo {
-  background-color: #8f1ca8;
+  background-color: rgb(143, 28, 168);
   display: block;
   width: 100%;
   top: 10px;
@@ -1306,7 +1306,7 @@ body {
 .sub-chart-wrapper .sub-chart-wrapper-titulo {
   font-size: 1.3em;
   padding: 2px 15px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   color: #fff;
   text-transform: uppercase;
 }
@@ -1314,7 +1314,7 @@ body {
   font-size: 1.3em;
   padding: 2px 15px;
   margin-bottom: 15px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   color: #fff;
   text-transform: uppercase;
 }
@@ -1823,7 +1823,7 @@ button.navbar-toggler {
   position: absolute;
   top: 10px;
   right: 10px;
-  color: white;
+  color: rgb(255, 255, 255);
   cursor: pointer;
 }
 #modalMain-container .modalMain-background .modalMain .closeModal i {
@@ -2031,7 +2031,7 @@ button.navbar-toggler {
     position: absolute;
     top: 10px;
     right: 10px;
-    color: white;
+    color: rgb(255, 255, 255);
     cursor: pointer;
   }
   #modalMain-container .modalMain-background .modalMain .closeModal i {
@@ -2256,7 +2256,7 @@ h1 {
 }
 .accordion ul:hover li:hover a,
 .accordion ul li:focus a, .accordion ul:focus-within li:focus a {
-  background: black;
+  background: rgb(0, 0, 0);
 }
 .accordion ul:hover li:hover a *,
 .accordion ul li:focus a *, .accordion ul:focus-within li:focus a * {
@@ -3688,7 +3688,7 @@ li {
 
 .titulo-mapas {
   margin-top: 110px;
-  background-color: #8f1ca8;
+  background-color: rgb(143, 28, 168);
   height: 50px;
   position: relative;
   margin-bottom: 50px;
@@ -3699,7 +3699,7 @@ li {
   top: 10px;
   left: 25px;
   background-color: #fff;
-  color: #8f1ca8;
+  color: rgb(143, 28, 168);
   font-size: 3rem;
   line-height: 3rem;
   font-weight: 800;
@@ -3761,7 +3761,7 @@ li {
     font-size: 2em;
     bottom: 40px;
     padding: 2px 40px;
-    background-color: #8f1ca8;
+    background-color: rgb(143, 28, 168);
     color: #fff;
     text-transform: uppercase;
     margin-left: 40%;
@@ -3923,7 +3923,7 @@ li {
   font-weight: 700;
   letter-spacing: 5px;
   padding-top: 10px;
-  color: white;
+  color: rgb(255, 255, 255);
   padding-bottom: 5px;
   text-transform: uppercase;
   background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -4633,8 +4633,8 @@ li {
 }
 
 .archivosApp {
-  background-color: white;
-  background: #f5b719;
+  background-color: rgb(255, 255, 255);
+  background: rgb(245, 183, 25);
   background: -moz-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: linear-gradient(to right, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
@@ -4673,8 +4673,8 @@ li {
 }
 
 .Descarga {
-  background-color: white;
-  background: #f5b719;
+  background-color: rgb(255, 255, 255);
+  background: rgb(245, 183, 25);
   background: -moz-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: linear-gradient(to right, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
@@ -5054,7 +5054,7 @@ li {
 .iconSlider i {
   margin-top: 7px;
   font-size: 30px;
-  color: #cc0e5a;
+  color: rgb(204, 14, 90);
 }
 .iconSlider:hover i {
   margin-top: 15px;
@@ -5084,7 +5084,7 @@ nav.link-list a {
   transition: background-color 0.5s ease;
 }
 nav.link-list a.is-active {
-  background-color: #cc0e5a;
+  background-color: rgb(204, 14, 90);
 }
 
 nav.btns {
@@ -5118,7 +5118,7 @@ nav.btns button:before {
   height: 44px;
   top: 0;
   left: 0;
-  border: 2px solid #cc0e5a;
+  border: 2px solid rgb(204, 14, 90);
   border-radius: 50%;
   opacity: 0;
   transition: all 0.5s ease;
@@ -5128,7 +5128,7 @@ nav.btns button span {
   transition: opacity 0.2s ease;
 }
 nav.btns button:hover {
-  background-color: #cc0e5a;
+  background-color: rgb(204, 14, 90);
   width: 64px;
   height: 64px;
   transform: translateY(-10px);
@@ -5253,7 +5253,7 @@ footer a {
   left: 0px;
   width: 100%;
   display: block;
-  background: #722789;
+  background: rgb(114, 39, 137);
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -5272,7 +5272,7 @@ footer a {
   left: 0x;
   width: 100%;
   display: block;
-  background: #722789;
+  background: rgb(114, 39, 137);
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -5291,7 +5291,7 @@ footer a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #8f1ca8;
+  background-color: rgb(143, 28, 168);
   transform-origin: top;
   transition: 0.5s;
   box-sizing: border-box;
@@ -5303,7 +5303,7 @@ footer a {
   left: 0px;
   width: 100%;
   display: block;
-  background: #722789;
+  background: rgb(114, 39, 137);
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -5352,9 +5352,9 @@ footer a {
 .EventoForm {
   height: 900px;
   width: 100%;
-  background-color: #8f1ca8;
+  background-color: rgb(143, 28, 168);
   position: relative;
-  background: #f5b719;
+  background: rgb(245, 183, 25);
   background: -moz-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
   background: linear-gradient(to right, rgba(245, 183, 25, 0.95) 0%, rgba(223, 24, 100, 0.8) 100%);
@@ -5402,7 +5402,7 @@ footer a {
   margin-bottom: 10px;
   cursor: pointer;
   text-decoration: none;
-  color: #8f1ca8;
+  color: rgb(143, 28, 168);
   align-content: center;
   text-align: center;
   width: 100;
@@ -5462,7 +5462,7 @@ footer a {
   margin-bottom: 100px;
   cursor: pointer;
   text-decoration: none;
-  color: #8f1ca8;
+  color: rgb(143, 28, 168);
   align-content: center;
   text-align: center;
   width: 100px;
@@ -5571,7 +5571,7 @@ footer a {
     width: 90%;
     cursor: pointer;
     text-decoration: none;
-    color: #8f1ca8;
+    color: rgb(143, 28, 168);
   }
   .EventoForm .body-left .bl-button span {
     font-size: 1.7rem;
@@ -5581,7 +5581,7 @@ footer a {
     margin-top: 30px;
   }
   .EventoForm .body-left .bl-button svg .icon {
-    fill: #8f1ca8;
+    fill: rgb(143, 28, 168);
   }
   .EventoForm .body-left .bl-img {
     width: 250px;
@@ -5783,7 +5783,7 @@ h3.bgc_4 {
   margin-bottom: 5px;
 }
 .evento-data li i {
-  color: #8f1ca8;
+  color: rgb(143, 28, 168);
 }
 
 /*
@@ -5793,7 +5793,7 @@ h3.bgc_4 {
   padding-top: 110px;
 }
 .PNovedad .n-titulo {
-  background-color: #8f1ca8;
+  background-color: rgb(143, 28, 168);
   height: 50px;
   position: relative;
   margin-bottom: 50px;
@@ -5803,7 +5803,7 @@ h3.bgc_4 {
   top: 15px;
   left: 10px;
   background-color: #fff;
-  color: #8f1ca8;
+  color: rgb(143, 28, 168);
   font-size: 2rem;
   line-height: 2rem;
   font-weight: 400;
@@ -5879,7 +5879,7 @@ h3.bgc_4 {
   width: 32px;
 }
 .novedad-item .body .btn-novedades {
-  background-color: #8f1ca8;
+  background-color: rgb(143, 28, 168);
   padding: 0 8px;
   color: #fff;
   /*
@@ -5926,7 +5926,7 @@ h3.bgc_4 {
   margin: 10px 0 1px 0;
   font-size: 2em;
   padding: 2px 15px;
-  background-color: #8f1ca8;
+  background-color: rgb(143, 28, 168);
   color: #fff;
   text-transform: uppercase;
 }
@@ -6034,10 +6034,10 @@ h3.bgc_4 {
   width: 400px;
   flex-shrink: 0;
   height: 420px;
-  background: #722789;
-  background: -moz-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: -webkit-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: rgb(114, 39, 137);
+  background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgba(237, 15, 104, 0.8) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   border-radius: 20px;
@@ -6132,10 +6132,10 @@ h3.bgc_4 {
   line-height: 1.5em;
 }
 .blog-slider__button {
-  background: #722789;
-  background: -moz-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: -webkit-linear-gradient(left, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
-  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: rgb(114, 39, 137);
+  background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgba(237, 15, 104, 0.8) 100%);
+  background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgba(237, 15, 104, 0.8) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
   display: inline-flex;
   padding: 5px 20px;
@@ -6197,10 +6197,10 @@ h3.bgc_4 {
   transition: all 0.3s;
 }
 .blog-slider__pagination .swiper-pagination-bullet-active {
-  background: #722789;
-  background: -moz-linear-gradient(left, #722789 0%, #ed0f68 100%);
-  background: -webkit-linear-gradient(left, #722789 0%, #ed0f68 100%);
-  background: linear-gradient(to right, #722789 0%, #ed0f68 100%);
+  background: rgb(114, 39, 137);
+  background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+  background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+  background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
   border-radius: 10px;
   opacity: 1;
@@ -6219,7 +6219,7 @@ h3.bgc_4 {
   padding-top: 110px;
 }
 .Novedadesfull .nf-titulo {
-  background-color: #8f1ca8;
+  background-color: rgb(143, 28, 168);
   height: 50px;
   position: relative;
   margin-bottom: 50px;
@@ -6230,7 +6230,7 @@ h3.bgc_4 {
   top: 10px;
   left: 10px;
   background-color: #fff;
-  color: #8f1ca8;
+  color: rgb(143, 28, 168);
   font-size: 3rem;
   line-height: 3rem;
   font-weight: 800;
@@ -6302,7 +6302,7 @@ h3.bgc_4 {
   margin-bottom: 0px;
 }
 .novedad-full-item .body .btn-novedades {
-  background-color: #8f1ca8;
+  background-color: rgb(143, 28, 168);
   padding: 0 8px;
   color: #fff;
   /*
@@ -6439,7 +6439,7 @@ h3.bgc_4 {
   margin-bottom: 0px;
 }
 .arbol-full-item .body .btn-arboles {
-  background-color: #8f1ca8;
+  background-color: rgb(143, 28, 168);
   padding: 0 8px;
   color: #fff;
   /*
@@ -6490,7 +6490,7 @@ h3.bgc_4 {
   padding-top: 110px;
 }
 .PArbol .n-titulo {
-  background-color: #8f1ca8;
+  background-color: rgb(143, 28, 168);
   height: 50px;
   position: relative;
   margin-bottom: 50px;
@@ -6500,7 +6500,7 @@ h3.bgc_4 {
   top: 15px;
   left: 10px;
   background-color: #fff;
-  color: #8f1ca8;
+  color: rgb(143, 28, 168);
   font-size: 2rem;
   line-height: 2rem;
   font-weight: 400;
@@ -6562,7 +6562,7 @@ h3.bgc_4 {
   width: 32px;
 }
 .arbol-item .body .btn-novedades {
-  background-color: #8f1ca8;
+  background-color: rgb(143, 28, 168);
   padding: 0 8px;
   color: #fff;
 }
@@ -6671,7 +6671,7 @@ h3.bgc_4 {
 }
 
 .listaBusqueda {
-  background-color: #8f1ca8;
+  background-color: rgb(143, 28, 168);
   width: 200px;
   max-height: auto;
   overflow: auto;
@@ -6918,7 +6918,7 @@ div.container {
 }
 
 .hvr-border-fade:hover, .hvr-border-fade:focus, .hvr-border-fade:active {
-  box-shadow: inset 0 0 0 4px #bc20d18f, 0 0 2px rgba(0, 0, 0, 0);
+  box-shadow: inset 0 0 0 4px rgba(188, 32, 209, 0.5607843137), 0 0 2px rgba(0, 0, 0, 0);
   /* Hack to improve aliasing on mobile/tablet devices */
 }
 
@@ -7205,7 +7205,7 @@ div#masonry img {
 }
 .Atractivo-data .atractivo-ubicacion span i {
   margin-right: 8px;
-  color: #8f1ca8;
+  color: rgb(143, 28, 168);
 }
 .Atractivo-data .atractivo-info {
   grid-area: atractivo-info;
@@ -7220,7 +7220,7 @@ div#masonry img {
 }
 .Atractivo-data .atractivo-info span i {
   margin-right: 8px;
-  color: #8f1ca8;
+  color: rgb(143, 28, 168);
 }
 .Atractivo-data .atractivo-info ul li {
   text-transform: uppercase;
@@ -7264,7 +7264,7 @@ div#masonry img {
   font-size: 7rem;
   line-height: 80px;
   font-family: "Jolly Lodger";
-  color: #1ce42d;
+  color: rgb(28, 228, 45);
 }
 .Atractivo-main-halloween .Container-Logo-Halloween {
   margin-top: 30px;
@@ -7491,7 +7491,7 @@ div#masonry img {
   margin-bottom: 0px;
 }
 .atractivo-full-item .body .btn-novedades {
-  background-color: #8f1ca8;
+  background-color: rgb(143, 28, 168);
   padding: 0 8px;
   color: #fff;
   /*
@@ -7541,7 +7541,7 @@ div#masonry img {
     left: 25px;
     top: 10px;
     background-color: #fff;
-    color: #8f1ca8;
+    color: rgb(143, 28, 168);
     font-size: 2.5rem;
     line-height: 3rem;
     font-weight: 700;
@@ -7565,7 +7565,7 @@ div#masonry img {
     top: 10px;
     left: 25px;
     background-color: #fff;
-    color: #8f1ca8;
+    color: rgb(143, 28, 168);
     font-size: 2rem;
     line-height: 2.5rem;
     font-weight: 700;
@@ -7638,7 +7638,7 @@ div#masonry img {
   left: 0px;
   width: 100%;
   display: block;
-  background: #722789;
+  background: rgb(114, 39, 137);
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -7657,7 +7657,7 @@ div#masonry img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #db0e60;
+  background-color: rgb(219, 14, 96);
   transform-origin: top;
   transition: 0.5s;
   box-sizing: border-box;
@@ -7669,7 +7669,7 @@ div#masonry img {
   left: 0px;
   width: 100%;
   display: block;
-  background: #722789;
+  background: rgb(114, 39, 137);
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.95) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -7748,7 +7748,7 @@ div#masonry img {
   margin-right: 5px;
 }
 .material-card h2 {
-  background-color: #db0e60;
+  background-color: rgb(219, 14, 96);
   position: absolute;
   bottom: 5px;
   left: 0;
@@ -7787,7 +7787,7 @@ div#masonry img {
   top: -16px;
   width: 0;
   border-left: 16px solid transparent;
-  border-bottom: 16px solid #a00b46;
+  border-bottom: 16px solid rgb(160, 11, 70);
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
@@ -7821,10 +7821,10 @@ div#masonry img {
 .material-card.mc-active h2:after {
   top: 100%;
   bottom: 0;
-  border-top: 16px solid #a00b46;
+  border-top: 16px solid rgb(160, 11, 70);
 }
 .material-card .mc-content {
-  background-color: #ffb6d6;
+  background-color: rgb(255, 182, 214);
   position: absolute;
   right: 0;
   top: 0;
@@ -7849,7 +7849,7 @@ div#masonry img {
   line-height: 44px;
   text-align: center;
   border-color: #fff;
-  background-color: #db0e60;
+  background-color: rgb(219, 14, 96);
   cursor: pointer;
   z-index: 20;
   -webkit-transition: all 0.3s;
@@ -8209,7 +8209,7 @@ div#masonry img {
 }
 .Alojamiento-data .alojamiento-ubicacion span i {
   margin-right: 8px;
-  color: #8f1ca8;
+  color: rgb(143, 28, 168);
 }
 .Alojamiento-data .alojamiento-info {
   grid-area: alojamiento-info;
@@ -8223,7 +8223,7 @@ div#masonry img {
 }
 .Alojamiento-data .alojamiento-info span i {
   margin-right: 8px;
-  color: #8f1ca8;
+  color: rgb(143, 28, 168);
 }
 .Alojamiento-data .alojamiento-info ul li {
   text-transform: uppercase;
@@ -8543,7 +8543,7 @@ div#masonry img {
   font-family: "Montserrat";
   font-weight: bold;
   font-size: 18px;
-  color: #ed0f68;
+  color: rgb(237, 15, 104);
 }
 .tabs .listatabslider {
   list-style-type: none;
@@ -8603,7 +8603,7 @@ div#masonry img {
   max-width: 100%;
   margin: 0 auto;
   height: 4px;
-  background: #ed0f68;
+  background: rgb(237, 15, 104);
   border-radius: 1px;
 }
 .tabs .content {
@@ -8626,7 +8626,7 @@ div#masonry img {
   width: 215px;
   display: inline-flex;
   align-items: center;
-  background: #ed0f68;
+  background: rgb(237, 15, 104);
   min-width: 160px;
   height: 50px;
   margin: 10px 0 0 0;
@@ -8691,7 +8691,7 @@ div#masonry img {
   width: 190px;
   display: inline-flex;
   align-items: center;
-  background: #ed0f68;
+  background: rgb(237, 15, 104);
   height: 50px;
   border: 0;
   border-radius: 40px;
@@ -8718,7 +8718,7 @@ div#masonry img {
   animation: ripples 0.6s linear infinite;
 }
 .tabs .content section h2 {
-  color: #ed0f68;
+  color: rgb(237, 15, 104);
   display: none;
 }
 .tabs .content section h2::after {
@@ -8727,16 +8727,16 @@ div#masonry img {
   display: block;
   width: 30px;
   height: 3px;
-  background: #ed0f68;
+  background: rgb(237, 15, 104);
   margin-top: 5px;
   left: 1px;
 }
 .tabs input[name=tab-control]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label {
   cursor: default;
-  color: #ed0f68;
+  color: rgb(237, 15, 104);
 }
 .tabs input[name=tab-control]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label svg {
-  fill: #ed0f68;
+  fill: rgb(237, 15, 104);
 }
 @media (max-width: 450px) {
   .tabs input[name=tab-control]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label {
@@ -8751,10 +8751,10 @@ div#masonry img {
 }
 .tabs input[name=tab-control]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label {
   cursor: default;
-  color: #ed0f68;
+  color: rgb(237, 15, 104);
 }
 .tabs input[name=tab-control]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label svg {
-  fill: #ed0f68;
+  fill: rgb(237, 15, 104);
 }
 @media (max-width: 450px) {
   .tabs input[name=tab-control]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label {
@@ -8769,10 +8769,10 @@ div#masonry img {
 }
 .tabs input[name=tab-control]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label {
   cursor: default;
-  color: #ed0f68;
+  color: rgb(237, 15, 104);
 }
 .tabs input[name=tab-control]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label svg {
-  fill: #ed0f68;
+  fill: rgb(237, 15, 104);
 }
 @media (max-width: 450px) {
   .tabs input[name=tab-control]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label {
@@ -8851,7 +8851,7 @@ div#masonry img {
 
 a {
   text-decoration: none;
-  color: #ed0f68;
+  color: rgb(237, 15, 104);
 }
 a:hover {
   text-decoration: underline;
@@ -8866,7 +8866,7 @@ a:hover {
 }
 
 .cal-loader__plane {
-  fill: #ed0f68;
+  fill: rgb(237, 15, 104);
 }
 
 .cal-loader__path {
@@ -8966,10 +8966,8 @@ a:hover {
 }
 
 .instagram {
-  align-self: center;
-  justify-self: center;
   width: 800px;
-  padding: 0px 0px 0px 50px;
+  margin-left: 15%;
   height: 700px;
   border: 0;
   overflow: hidden;
@@ -9112,7 +9110,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: #8f1ca8;
+  color: rgb(143, 28, 168);
   position: center;
   float: left;
   border-radius: 8px;
@@ -9124,7 +9122,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: #8f1ca8;
+  color: rgb(143, 28, 168);
   position: center;
   margin-left: 3px;
   float: left;
@@ -9147,7 +9145,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: #8f1ca8;
+  color: rgb(143, 28, 168);
   position: center;
   margin-left: 5px;
   float: left;
@@ -9159,7 +9157,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: #8f1ca8;
+  color: rgb(143, 28, 168);
   position: center;
   margin-left: 5px;
   float: left;
@@ -9171,7 +9169,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: #8f1ca8;
+  color: rgb(143, 28, 168);
   position: center;
   margin-left: 5px;
   float: left;
@@ -9183,7 +9181,7 @@ a:hover {
   height: 55px;
   width: 40px;
   background-color: #ecdbfb;
-  color: #8f1ca8;
+  color: rgb(143, 28, 168);
   position: center;
   margin-left: 5px;
   float: left;
@@ -10853,6 +10851,18 @@ figure figcaption button {
   }
 }
 @media screen and (max-width: 786px) {
+  .instagram {
+    margin-left: -5%;
+  }
+
+  .facebook {
+    margin-left: -5%;
+  }
+
+  .tituloFace {
+    margin-left: -5%;
+  }
+
   .imgActividades {
     width: 70%;
   }
@@ -10950,7 +10960,7 @@ figure figcaption button {
   top: 4px;
 }
 .newsletter .newsletterFullBody .newsHeader .newsTitle {
-  color: #722789;
+  color: rgb(114, 39, 137);
   font-size: 1em;
 }
 .newsletter .newsletterFullBody .newsEmail {
@@ -10971,12 +10981,12 @@ figure figcaption button {
   text-align: center;
 }
 .newsletter .newsletterFullBody .newsMsg:disabled {
-  background: #722789;
+  background: rgb(114, 39, 137);
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
-  background-color: #ed0f68;
+  background-color: rgb(237, 15, 104);
   color: white;
 }
 .newsletter .newsletterFullBody .newsFooterButton {
@@ -10985,12 +10995,12 @@ figure figcaption button {
   border-radius: 15px;
   margin-bottom: 10px;
   border: none;
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   color: white;
 }
 .newsletter .newsletterFullBody .newsFooterButton:hover {
   outline: none;
-  background-color: #7f3e92;
+  background-color: rgb(127, 62, 146);
 }
 
 .PDesuscribir {
@@ -11014,15 +11024,15 @@ figure figcaption button {
   border-radius: 5px;
   margin-top: 40px;
   border: none;
-  background-color: #722789;
+  background-color: rgb(114, 39, 137);
   color: white;
 }
 .PDesuscribir .DesConfirm:hover {
   outline: none;
-  background-color: #7f3e92;
+  background-color: rgb(127, 62, 146);
 }
 .PDesuscribir .DesMsg {
-  color: #ed0f68;
+  color: rgb(237, 15, 104);
 }
 
 /*
@@ -11569,7 +11579,7 @@ ul {
   filter: brightness(100%);
   transform: scale(1.02);
   z-index: 50;
-  box-shadow: 0px 0px 5px 2px #302f2f;
+  box-shadow: 0px 0px 5px 2px rgb(48, 47, 47);
 }
 
 /*MODAL IMAGES CONTAINER*/
@@ -11598,7 +11608,7 @@ ul {
   position: relative;
   max-width: 90%;
   max-height: 90%;
-  background: black;
+  background: rgb(0, 0, 0);
   z-index: 10000;
 }
 
@@ -11640,7 +11650,7 @@ p {
   width: 100%;
   height: 65%;
   max-width: 100%;
-  background-color: #dddcdce8;
+  background-color: rgba(221, 220, 220, 0.9098039216);
   border-radius: 25px;
   color: black;
   border: none;
@@ -11682,7 +11692,7 @@ header {
   box-shadow: 0 0 0 2px white;
   height: 85%;
   display: flex;
-  background: #00a653;
+  background: rgb(0, 166, 83);
   align-items: center;
   padding: 0 7px;
   margin-right: auto;
@@ -11721,7 +11731,7 @@ a {
 }
 
 .signUp {
-  background: #12a497;
+  background: rgb(18, 164, 151);
   box-shadow: 0 0 0 2px white;
 }
 
@@ -11731,7 +11741,7 @@ a {
 }
 
 .signUp:hover {
-  background: #10887e;
+  background: rgb(16, 136, 126);
   box-shadow: 0 0 0 2px rgba(230, 230, 230, 0.89);
 }
 
@@ -11786,13 +11796,13 @@ a {
 .hashtag-container:hover {
   filter: brightness(100%);
   z-index: 50;
-  box-shadow: 0px 0px 5px 2px #302f2f;
+  box-shadow: 0px 0px 5px 2px rgb(48, 47, 47);
 }
 .hashtag-container:hover .my-masonry-grid_column > div > img {
   filter: brightness(100%);
   transform: scale(1.02);
   z-index: 50;
-  box-shadow: 0px 0px 5px 2px #302f2f;
+  box-shadow: 0px 0px 5px 2px rgb(48, 47, 47);
 }
 
 .hashtag {
@@ -11865,7 +11875,7 @@ a {
   display: flex;
   flex-direction: column;
   padding: 25px;
-  background: linear-gradient(to right, #722789 0%, #ed0f68 100%);
+  background: linear-gradient(to right, #722789 0%, rgb(237, 15, 104) 100%);
 }
 
 .contain {
@@ -11909,7 +11919,7 @@ a {
   text-align: center;
   margin: 0% 1%;
   min-width: 100px;
-  background: linear-gradient(to right, #722789 0%, #ed0f68 100%);
+  background: linear-gradient(to right, #722789 0%, rgb(237, 15, 104) 100%);
   transition: all 0.3s ease;
 }
 
@@ -11920,7 +11930,7 @@ a {
 }
 
 .title-close-btn:hover {
-  color: #f1ecec;
+  color: rgb(241, 236, 236);
   cursor: pointer;
 }
 
@@ -11975,11 +11985,11 @@ a {
 @keyframes flicker {
   0% {
     opacity: 0.5;
-    text-shadow: 2px 2px 10px #ed0f68;
+    text-shadow: 2px 2px 10px rgb(237, 15, 104);
   }
   100% {
     opacity: 1;
-    text-shadow: 2px 2px 20px #ed0f68;
+    text-shadow: 2px 2px 20px rgb(237, 15, 104);
   }
 }
 a:hover {

@@ -69,10 +69,6 @@ class Home extends Component {
                 {/*{ <div className="pantallaChica2">{<PantallaModal />}</div>*/}
             </div>
             {/*<br></br> */}
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
             <ComponentHome1></ComponentHome1>
             <Novedades timerID="100" />
             {/*               
@@ -106,7 +102,6 @@ class Home extends Component {
                     </Link>
                     <br />
                     <br />
-
                     {/* <script src="https://cdn.lightwidget.com/widgets/lightwidget.js" />
                   <iframe
                     src="//lightwidget.com/widgets/b1d0a9aa676b5c91b1d4db290b168f9a.html"
@@ -114,13 +109,14 @@ class Home extends Component {
                     allowtransparency="true"
                     className="instagram lightwidget-widget "
                   />*/}
-                    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js" />
+
+                    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
                     <iframe
-                      title="lightwidgetInstagram"
-                      src="//lightwidget.com/widgets/b6f0a3e74f58596f8c1d72d412fc2b0f.html"
+                      src="//lightwidget.com/widgets/9acc76b9fae65939aef1e7c6e27667ef.html"
+                      scrolling="no"
                       allowtransparency="true"
-                      className="instagram lightwidget-widget"
-                    />
+                      class="instagram lightwidget-widget"
+                    ></iframe>
                   </center>
                 </div>
                 <div>
@@ -128,7 +124,7 @@ class Home extends Component {
                     <div style={{ width: "100%" }}>
                       <Link to="/" className="link-menu">
                         <img
-                          className="img-fluid"
+                          className="img-fluid tituloFace"
                           src={`https://i.ibb.co/pdtB79Z/LOGO-FACE.png`}
                           alt="Primavera San Luis"
                           style={{ width: "300px" }}
@@ -149,6 +145,7 @@ class Home extends Component {
                 </div>
               </div>
             </center>
+            <br></br> <br></br>
             <BotoneraFondo />
             <br></br> <br></br>
             <br></br>

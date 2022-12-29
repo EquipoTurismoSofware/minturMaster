@@ -286,6 +286,11 @@ class App extends Component {
                 path="/diques-rios-saltos"
                 component={EnConstruccion}
               />
+               <Route
+                exact
+                path="/enConstruccion"
+                component={EnConstruccion}
+              />
               <Route
                 exact
                 path="/potrero-sierrascentrales"

@@ -157,7 +157,7 @@ class PRiosYSaltos extends Component {
             <div
               className="container ListadoAtractivofull"
               style={{
-                paddingTop: "200px",
+                paddingTop: "150px",
                 paddingLeft: "80px",
               }}
             >

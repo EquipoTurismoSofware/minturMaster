@@ -350,7 +350,7 @@ class PLocalidad extends Component {
             >
               <h3
                 style={{
-                  color: `#${this.state.dataLocalidad.color}`,
+                  color: `#722789`,
                   paddingLeft: "40px",
                 }}
               >
@@ -386,27 +386,25 @@ class PLocalidad extends Component {
                               <div
                                 className="al-nombre"
                                 style={{
-                                  color: `#${this.state.dataLocalidad.color}`,
+                                  color: `#722789`,
                                 }}
                               >
-                                {this.state.dataLocalidad.nombre} <br />
+                                <h3>
+                                  Conocé a {this.state.dataLocalidad.nombre}{" "}
+                                </h3>
+                                <br />
                               </div>
 
                               <div
                                 className="al-texto"
                                 style={{
-                                  color: `#${this.state.dataLocalidad.color}`,
+                                  color: `#722789`,
                                 }}
                               >
-                                ATRACTIVOS TURÍSTICOS <br />
-                              </div>
-                              <div
-                                className="al-boton"
-                                style={{
-                                  color: `#${this.state.dataLocalidad.color}`,
-                                }}
-                              >
-                                <i className="fas fa-arrow-alt-circle-right" />
+                                HACÉ CLICK Y EXPLORÁ <br></br>
+                                ATRACTIVOS TURÍSTICOS{" "}
+                                <i className="fas fa-arrow-alt-circle-right" />{" "}
+                                <br />{" "}
                               </div>
                             </div>
                           </Link>
@@ -421,7 +419,7 @@ class PLocalidad extends Component {
                         </span>
                       ) : (
                         ""
-                      )} */}
+                      )} 
 
                         {this.state.cantGastronomia > 0 ? (
                           <Link
@@ -448,7 +446,7 @@ class PLocalidad extends Component {
                           </Link>
                         ) : (
                           ""
-                        )}
+                        )}*/}
                       </div>
 
                       <div id="mapa">
@@ -476,9 +474,9 @@ class PLocalidad extends Component {
                       this.state.dataLocalidad.descripcion != "" ? (
                         this.state.cantImperdibles > 0 ? (
                           <div
-                            id="imperdibles"
+                            id="imperdibles" 
                             style={{
-                              backgroundColor: `#${this.state.dataLocalidad.color}`,
+                              backgroundColor: ``,
                             }}
                           >
                             <div className="imp-titulo">
@@ -501,13 +499,13 @@ class PLocalidad extends Component {
                           id="imperdibles"
                           style={{
                             top: -350, //marginTop: -450 , //position: "relative", // marginBottom: 40  , position: "relative"
-                            backgroundColor: `#${this.state.dataLocalidad.color}`,
+                            backgroundColor: ``,
                           }}
                         >
                           <div className="imp-titulo">
                             <h3
                               style={{
-                                color: `#${this.state.dataLocalidad.color}`,
+                                color: ``,
                               }}
                             >
                               Imperdibles

@@ -71,10 +71,8 @@
   grid-template-areas: ". .";
 }
 .instagram {
-  align-self: center;
-  justify-self: center;
   width: 800px;
-  padding: 0px 0px 0px 50px;
+  margin-left: 15%;
   height: 700px;
   border: 0;
   overflow: hidden;
@@ -1959,6 +1957,16 @@ figure {
 }
 
 @media screen and (max-width: 786px) {
+  .instagram {
+      margin-left: -5%;
+  }
+  .facebook {
+    margin-left: -5%;
+  }
+  .tituloFace {
+    margin-left: -5%;
+  }
+
   .imgActividades {
     width: 70%;
   }

@@ -126,9 +126,9 @@ class PParques extends Component {
           <React.Fragment>
             <div
               style={{
-                paddingTop: "200px",
+                paddingTop: "150px",
                 paddingBottom: "30px",
-                paddingLeft: "80px",
+                paddingLeft: "30px",
               }}
               className="container ListadoAtractivofull"
             >

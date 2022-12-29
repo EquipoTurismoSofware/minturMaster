@@ -24,7 +24,7 @@ class PContacto extends Component {
 
   render() {
     return (
-      <div className="PEventos" style={{ paddingTop: "110px" }}>
+      <div className="PEventos" style={{ paddingTop: "50px" }}>
         {this.state.loading ? (
           <div className="PFiltroAlojamiento mb-5">
             <div>

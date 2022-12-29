@@ -15,14 +15,16 @@ class BotoneraFondo extends Component {
               />
             </Link>
           </div>
-          <div class="child">
-            {" "}
-            <img
-              className="img-fluid"
-              src={`${process.env.REACT_APP_API_RECURSOS}/recursos/botoneraFondo/obras.png`}
-              alt="Img"
-            />
-          </div>
+          <Link to="/enConstruccion">
+            <div class="child">
+              {" "}
+              <img
+                className="img-fluid"
+                src={`${process.env.REACT_APP_API_RECURSOS}/recursos/botoneraFondo/obras.png`}
+                alt="Img"
+              />
+            </div>
+          </Link>
           <div class="child">
             {" "}
             <img
