@@ -495,6 +495,7 @@ body {
   padding-inline-start: 0;
 }
 .ViewerListados .pages ul li {
+  border: 1px solid #54575a;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -504,7 +505,7 @@ body {
   -webkit-border-radius: 2px;
   border-radius: 2px;
   background-color: rgb(255, 255, 255);
-  color: white;
+  color: black;
   cursor: pointer;
   transition: all 1.5s;
 }
@@ -7145,8 +7146,9 @@ div#masonry img {
   text-transform: uppercase;
 }
 .ZonaLocalidad-Body #imperdibles .imp-body-wrap a .imp-body p {
-  max-height: 145px;
   overflow: hidden;
+  text-overflow: ellipsis;
+  height: 145px;
 }
 .ZonaLocalidad-Body #imperdibles .imp-body-wrap a .imp-body:hover {
   background-color: rgba(0, 0, 0, 0.3);
