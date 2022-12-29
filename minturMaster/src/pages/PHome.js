@@ -68,15 +68,16 @@ class Home extends Component {
                 </div>
                 {/*{ <div className="pantallaChica2">{<PantallaModal />}</div>*/}
             </div>
-            <ScrollProductos /> <br></br>
+            {/* <ScrollProductos /> <br></br> */}
             <br></br>
             <br></br>
             <br></br>
             <br></br>
             <ScrollExperiencia />
-            {/* <Novedades timerID="100" /><Recorridos />
-             <EventoForm />*/}
-            <Novedades time="10000" />
+            <Novedades timerID="100" />
+            {/* <Recorridos /> */}
+            {/* <EventoForm />*/} 
+            {/* <Novedades time="10000" /> */}
             {/* <EventoForm /> */}
             {/* <Novedades timerID="100" /> */}
             {/* <Recorridos /> */}
@@ -126,7 +127,7 @@ class Home extends Component {
                     </Link>
                   </div>
                   <br />
-                  <iframe
+                  {/* <iframe
                     title="facebook"
                     src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fturismodesanluis%2F&tabs=timeline&width=1000&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=1914035878882625"
                     className="facebook"
@@ -134,7 +135,7 @@ class Home extends Component {
                     frameBorder="0"
                     allowtransparency="true"
                     allow="encrypted-media"
-                  />
+                  /> */}
                 </center>
               </div>
             </div>

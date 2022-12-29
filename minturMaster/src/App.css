@@ -3887,6 +3887,7 @@ li {
   color: white;
   padding-bottom: 5px;
   text-transform: uppercase;
+  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
 }
 
 /*
