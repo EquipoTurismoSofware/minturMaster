@@ -50,7 +50,7 @@
 }
 
 .img-slider {
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .img-slider-1 {
@@ -58,32 +58,39 @@
   background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/1-min.jpg);
   background-repeat: no-repeat;
   //background-position: 0 0 50px 0;
-  //background-size: cover;
+  background-size: cover;
+  background-position: center;
 }
+
 
 .img-slider-2 {
   @include img-slider;
   background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/FONDO%201-min.png);
   background-repeat: no-repeat;
-  background-position: 0 0 50px 0;
+  //background-position: 0 0 50px 0;
   background-size: cover;
+  background-position: center
 }
 
 .img-slider-3 {
   @include img-slider;
   background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/FONDO%203-min.png);
   background-repeat: no-repeat;
-  background-position: 0 0 50px 0;
+  //background-position: 0 0 50px 0;
   background-size: cover;
+  background-position: center;
 }
+
 
 .img-slider-4 {
   @include img-slider;
   background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/4.jpg);
   background-repeat: no-repeat;
-  background-position: 0 0;
+  //background-position: 0 0;
   background-size: cover;
+  background-position: center;
 }
+
 
 .tituloCarrusel {
   position: absolute;
@@ -255,23 +262,26 @@
     @include img-slider;
     background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/1-min.jpg);
     background-repeat: no-repeat;
-    background-position: -300px 0px;
+    //background-position: -300px 0px;
     background-size: cover;
+    background-position: center
   }
 
   .img-slider-2 {
     @include img-slider;
     background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/PRIMAVERA1.jpg);
     background-repeat: no-repeat;
-    background-position: 0 0 50px 0;
+    //background-position: 0 0 50px 0;
     background-size: cover;
+    background-position: center;
   }
 
   .img-slider-3 {
     @include img-slider;
     background-image: url(http://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/FONDO%203-min.png);
     background-repeat: no-repeat;
-    background-position: -600px 0px;
+    //background-position: -600px 0px;
+    background-position: center;
     background-size: cover;
   }
 
@@ -298,12 +308,18 @@
   bottom: 0px; /*Abajo deje un espacio de 0px*/
   height: 0%; /*alto del div*/
   width: 100%;
-  min-height: 69px;
+  min-height: 60px;
+  max-height: 140px;
+  background-position:bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 /* -------------------------------------------------------- reset */
 .cuerpoSlider {
   width: 100%;
-  height: 100%;
+  //height: 100%;
+  height: 90vh;
   margin: 0 auto;
 }
 .cuerpoSlider * {
@@ -339,20 +355,22 @@ li {
 /* -------------------------------------------------------- codepen */
 /* -------------------------------------------------------- slider */
 .sliderHome {
-  height: 45vw;
+  //height: 42vw;
+  height: 90vh;
   overflow: hidden;
+  width: 100%;
 }
 /* -------------------------------------------------------- slide */
 .sliderHome > ul {
-  height: 100%;
+  height: 90vh;
   z-index: 100;
 }
+
 .sliderHome > ul > li {
-  height: 100%;
+  height: 90vh;
   position: absolute;
   left: 0;
   top: 0;
-
   opacity: 0;
   z-index: 1;
   -webkit-transition: all 2000ms ease;
@@ -360,6 +378,7 @@ li {
   -ms-transition: all 2000ms ease;
   -o-transition: all 2000ms ease;
   transition: all 2000ms ease;
+  //background-position: center;
 }
 .sliderHome > #input-slide-0:checked ~ ul > li.slide-0,
 .sliderHome > #input-slide-1:checked ~ ul > li.slide-1,
@@ -370,23 +389,31 @@ li {
 }
 .sliderHome > ul > li.slide-0 {
   background-image: url(http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/1.jpg);
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
+  object-fit: cover;
+  background-position: center;
 }
 .sliderHome > ul > li.slide-1 {
   background-image: url(http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/2.jpg);
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
+  object-fit: cover;
+  background-position: center;
 }
 .sliderHome > ul > li.slide-2 {
   background-image: url(http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/3.jpg);
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
+  object-fit: cover;
+  background-position: center;
 }
 .sliderHome > ul > li.slide-3 {
   background-image: url(http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/4.jpg);
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
+  object-fit: cover;
+  background-position: center;
 }
 /* -------------------------------------------------------- arrow */
 .sliderHome > .slider-arrow-prev,
@@ -960,42 +987,85 @@ li {
 /* -------------------------------------------------------- footer */
 @media only screen and (max-width: 1300px) {
   .sliderHome {
-    height: 60vw;
+    //height: 60vw;
   }
   .sliderHome > ul > li.slide-0 {
-    background-size: 130%;
+    //background-size: 130%;
+    background-position: 15% 15%;
   }
   .sliderHome > ul > li.slide-1 {
-    background-size: 130%;
+    //background-size: 130%;
+    background-position: 50% 15%;
   }
   .sliderHome > ul > li.slide-2 {
-    background-size: 130%;
+    //background-size: 130%;
+    background-position: 50% 15%;
   }
   .sliderHome > ul > li.slide-3 {
-    background-size: 130%;
+    //background-size: 130%;
+    background-position: 70% 15%;
+  }
+
+  .slider-dot{
+    display: none;
   }
 }
 @media only screen and (max-width: 720px) {
   .sliderHome {
-    height: 83vw;
+    //height: 83vw;
   }
   .sliderHome > ul > li.slide-0 {
-    background-size: 180%;
+    //background-size: 180%;
+    background-position: 5% 15%;
   }
   .sliderHome > ul > li.slide-1 {
-    background-size: 180%;
+    //background-size: 180%;
+    background-position: 50% 15%;
   }
   .sliderHome > ul > li.slide-2 {
-    background-size: 180%;
+    //background-size: 180%;
+    background-position: 50% 15%;
   }
   .sliderHome > ul > li.slide-3 {
-    background-size: 180%;
+    //background-size: 180%;
+    background-position: 10% 15%;
+  }
+  .mancha img{
+    min-height: 40px;
+  }
+
+  .slider-dot{
+    display: none;
   }
 }
 @media only screen and (max-width: 420px) {
   .sliderHome {
-    height: 65vw;
-    overflow: hidden;
+   // height: 65vw;
+    //overflow: hidden;
+  }
+
+  .sliderHome > ul > li.slide-0 {
+    //background-size: 180%;
+    background-position: 10% 15%;
+  }
+  .sliderHome > ul > li.slide-1 {
+    //background-size: 180%;
+    background-position: 50% 15%;
+  }
+  .sliderHome > ul > li.slide-2 {
+    //background-size: 180%;
+    background-position: 50% 15%;
+  }
+  .sliderHome > ul > li.slide-3 {
+    //background-size: 180%;
+    background-position: 10% 15%;
+  }
+
+  .mancha img{
+    min-height: 30px;
+  }
+  .slider-dot{
+    display: none;
   }
 }
 

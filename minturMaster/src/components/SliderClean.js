@@ -15,7 +15,7 @@ class Slider extends Component {
       <React.Fragment>
         <div>
           <div className="cuerpoSlider">
-            <div className="mancha"></div>
+            {/* <div className="mancha"></div> */}
             <div className="sliderHome">
               <input
                 name="input-slider"
@@ -101,7 +101,7 @@ class Slider extends Component {
               </div>
             </div>
           </div>
-          <SpeedDial />
+          {/* <SpeedDial /> */}
         </div>
       </React.Fragment>
     );
