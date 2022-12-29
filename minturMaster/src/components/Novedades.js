@@ -142,15 +142,16 @@ class Novedades extends Component {
 
     return (
       <div className="" style={{ paddingTop: "100px" }}>
-        <div className="tituloScrollActividades">
-          <center>
+        <center>
+          <div className="imgActividades">
             <img
               className=""
               src={`${process.env.REACT_APP_API_RECURSOS}/recursos/novedades.png`}
               alt="Img"
             />{" "}
-          </center>
-        </div>
+          </div>
+        </center>
+
         <Swiper
           spaceBetween={30}
           effect={"fade"}

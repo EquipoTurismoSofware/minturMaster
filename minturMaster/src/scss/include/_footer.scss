@@ -459,7 +459,14 @@ ul {
 
 .imgFooter {
   margin-top: 5%;
-  img{
+  img {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-section {
+    padding-left: 20px;
+    padding-right: 10px;
   }
 }
