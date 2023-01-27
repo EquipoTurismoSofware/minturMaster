@@ -211,11 +211,7 @@ const ZonaMenuDos = (props) => {
               </Link>
             </li>
             <li>
-              <Link
-                to="/PParquesList"
-                className="link"
-                onClick={props.onZonaClick}
-              >
+              <Link to="/parques-provinciales" className="link" onClick={props.onZonaClick}>
                 Parques Provinciales
               </Link>
             </li>
@@ -240,24 +236,6 @@ const ZonaMenuDos = (props) => {
                 onClick={props.onZonaClick}
               >
                 Ríos y Saltos
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/PPrincipalGastronomia"
-                className="link"
-                onClick={props.onZonaClick}
-              >
-                Ruta Gastronómica
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/PCerveceria"
-                className="link"
-                onClick={props.onZonaClick}
-              >
-                Caminos Cerveceros
               </Link>
             </li>
             <li>
@@ -315,6 +293,23 @@ const ZonaMenuDos = (props) => {
               >
                 Alojamientos - Adheridos al Protocolo
               </a>
+            </li> <li>
+              <Link
+                to="/PPrincipalGastronomia"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Ruta Gastronómica
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/PCerveceria"
+                className="link"
+                onClick={props.onZonaClick}
+              >
+                Caminos Cerveceros
+              </Link>
             </li>*/}
           </ul>
         </div>
@@ -485,8 +480,7 @@ const ZonaMenuCuatro = (props) => {
               >
                 Alojamientos
               </Link>
-            </li>*/}
-            <li>
+            </li> <li>
               <Link
                 to="/PPrincipalGastronomia"
                 className="link"
@@ -503,7 +497,8 @@ const ZonaMenuCuatro = (props) => {
               >
                 Caminos Cerveceros
               </Link>
-            </li>
+            </li>*/}
+
             <li>
               <Link
                 to="/PCreerGnral"
@@ -525,7 +520,7 @@ const ZonaMenuCinco = (props) => {
       <div className="d-flex">
         <div className="ZonaMenu-Lista mr-3">
           <ul>
-            {/*<li>
+            {/*<li> 
               <a
                 href="#/turismo-dosep"
                 className="link"
@@ -545,26 +540,7 @@ const ZonaMenuCinco = (props) => {
                 />
               </span>
                 </li>*/}
-            <li>
-              <Link
-                to="/coronavirus"
-                className="link"
-                onClick={props.onZonaClick}
-              >
-                Info Importante
-              </Link>
-              <span className="link-menu" onClick={(e) => this.setMenu(4, e)}>
-                <img
-                  alt="coronel3"
-                  style={{
-                    height: `20px`,
-                    marginLeft: "5px",
-                    marginTop: "-5px",
-                  }}
-                  src={`${process.env.REACT_APP_API_RECURSOS}/recursos/coronel3.png`}
-                />
-              </span>
-            </li>
+
             <li>
               <a
                 type="_blank"

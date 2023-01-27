@@ -5,7 +5,7 @@ import "./App.css";
 //import { BrowserRouter as Router, Route } from "react-router-dom";
 import PMapasRecorridos from "./pages/mapas/PMapasRecorridos";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
-import Menu from "./components/Menu"; // MenuOld
+import Menu from "./components/MenuOld"; // Menu
 import ToTop from "./components/ToTop";
 import PListadoMapas from "./pages/mapas/PListadoMapas";
 import PHome from "./pages/PHome"; //PHome copy

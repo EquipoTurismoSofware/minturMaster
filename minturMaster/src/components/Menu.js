@@ -16,7 +16,7 @@ class Menu extends Component {
       lista: true,
       mov: 0,
       selec: null,
-      mostrar: "block",
+      mostrar: "inline-block",
       filtro: "",
       localidades: {
         data: [
@@ -280,7 +280,7 @@ class Menu extends Component {
   }
 
   cambiar() {
-    this.setState({ mostrar: "none" });
+    this.setState({ mostrar: "inline" });
     this.setValueInput();
   }
 
@@ -319,7 +319,7 @@ class Menu extends Component {
           data: copy,
           selected: 1,
         },
-        mostrar: "block",
+        mostrar: "inline-block",
       });
     });
   }

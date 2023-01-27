@@ -132,7 +132,7 @@ class Footer extends Component {
                   <div class="copyright-text">
                     <p>
                       Sitio oficial de la Secretaría de Turismo Gobierno de San
-                      Luis 2022.
+                      Luis 2023.
                     </p>
                   </div>
                 </div>

@@ -1,3 +1,63 @@
+/*NUEVO COMPONENTE DE DESCARGA DE MAPAS*/
+
+.btn-lg,
+a:focus,
+a:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.card-1 {
+  box-shadow: 2px 4px 15px 0px #d0166f;
+  width: 60%;
+  height: 90%;
+  margin-bottom: 5%;
+}
+
+.small {
+  font-size: 9px !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.btn-round-lg {
+  border-radius: 22.5px;
+  background-color: #ab1e7a;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.9px;
+  padding: 8px 20px 8px 20px !important;
+  border: 1px solid #fff;
+}
+
+.btn-round-lg:hover {
+  background-color: $color-uno;
+  color: $color-dos;
+  border: 1px solid #fff;
+}
+
+.btn-round-lg:focus {
+  border: 1px solid #fff !important;
+}
+
+.card {
+  background-color: transparent !important;
+  border: 0px solid #ab1e7a;
+
+  border-radius: 22.5px;
+}
+.mapasTitle {
+  color: #ab1e7a;
+  text-transform: uppercase;
+}
+
+.TituloMapas {
+  text-transform: uppercase;
+  color: #ab1e7a;
+}
 /*
     Componente Descarga App
 */
@@ -162,14 +222,24 @@
         margin: 30px 0px 0px 0px;
       }
     }
-    
+
     .contenedorAnimacion {
       margin: -5% 0 6% 0;
     }
   }
+  .imgMapas {
+    width: 70%;
+    margin-left: 20%;
+    margin-bottom: 5%;
+    align-content: center;
+    justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 500px) {
+  .card-1 {
+    width: 90%;
+  }
   .archivosApp {
     .pruebaApp {
       width: 350px;
@@ -337,7 +407,7 @@
       100% {
         top: -54%;
         right: -54%;
-      } 
+      }
     }
   }
 }

@@ -1,4 +1,6 @@
 import React, { Component, useState } from "react";
+import { Helmet } from "react-helmet";
+
 import Recorridos from "../components/Recorridos";
 import EventoForm from "../components/EventoForm";
 import Descarga from "../components/Descarga";
@@ -71,6 +73,7 @@ class Home extends Component {
             {/*<br></br> */}
             <ComponentHome1></ComponentHome1>
             <Novedades timerID="100" />
+            <Descarga />
             {/*               
        
  <Recorridos /> */}
@@ -109,14 +112,16 @@ class Home extends Component {
                     allowtransparency="true"
                     className="instagram lightwidget-widget "
                   />*/}
-
-                    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-                    <iframe
-                      src="//lightwidget.com/widgets/9acc76b9fae65939aef1e7c6e27667ef.html"
-                      scrolling="no"
-                      allowtransparency="true"
-                      class="instagram lightwidget-widget"
-                    ></iframe>
+                    <Helmet>
+                      <script
+                        type="text/javascript"
+                        src="http://turismo.sanluis.gov.ar/recursos/js/instagram.js"
+                      ></script>
+                    </Helmet>
+                    <div
+                      class="instagram embedsocial-hashtag"
+                      data-ref="aec058c58cb9744559a7457f2daa5eb89cbe1a72"
+                    ></div>
                   </center>
                 </div>
                 <div>
