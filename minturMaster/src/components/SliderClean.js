@@ -53,25 +53,25 @@ class Slider extends Component {
                 <li className="slide-0 mancha">
                   <img
                     className=""
-                    src="http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/2.png"
+                    src="https://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/2.png"
                   ></img>
                 </li>
                 <li className="slide-1 mancha">
                   <img
                     className=""
-                    src="http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/2.png"
+                    src="https://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/2.png"
                   ></img>
                 </li>
                 <li className="slide-2 mancha">
                   <img
                     className=""
-                    src="http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/2.png"
+                    src="https://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/2.png"
                   ></img>
                 </li>
                 <li className="slide-3 mancha">
                   <img
                     className=""
-                    src="http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/2.png"
+                    src="https://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/2.png"
                   ></img>
                 </li>
               </ul>

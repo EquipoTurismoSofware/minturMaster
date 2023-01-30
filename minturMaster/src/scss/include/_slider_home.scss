@@ -388,28 +388,28 @@ li {
   z-index: 2;
 }
 .sliderHome > ul > li.slide-0 {
-  background-image: url(http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/1.jpg);
+  background-image: url(https://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   object-fit: cover;
   background-position: center;
 }
 .sliderHome > ul > li.slide-1 {
-  background-image: url(http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/2.jpg);
+  background-image: url(https://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   object-fit: cover;
   background-position: center;
 }
 .sliderHome > ul > li.slide-2 {
-  background-image: url(http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/3.jpg);
+  background-image: url(https://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/3.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   object-fit: cover;
   background-position: center;
 }
 .sliderHome > ul > li.slide-3 {
-  background-image: url(http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/4.jpg);
+  background-image: url(https://turismo.sanluis.gov.ar/api-turismo/public/recursos/carousel/4.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   object-fit: cover;
@@ -502,7 +502,7 @@ li {
   width: 100%;
   top: 0;
   left: 0;
-  cursor: default;
+  cursor: default; 
 
   z-index: 0;
   opacity: 0;

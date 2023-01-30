@@ -12,35 +12,40 @@ class Descarga extends Component {
 
   render() {
     return (
-      <ReactWOW animation="fadeIn">
-        <div className="Descarga">
-          <div className="contenedorAnimacion">
-            <div className="container container_1">
-              <div className="piece"></div>
-              <div className="piece"></div>
-              <div className="piece"></div>
-              <div className="piece"></div>
-              <div className="text2"></div>
+      <div class=" d-flex justify-content-center">
+        <div class=" card shaodw-lg  card-1">
+          <div class="card-body  d-flex pt-0">
+            <div class="container row justify-content-md-center align-items-center">
+              <div class="col-md-3 imgMapas align-items-center">
+                <center>
+                  <img
+                    class=" img-fluid"
+                    src="https://turismo.sanluis.gov.ar/recursos/mapa.png"
+                  />
+                </center>
+              </div>
+              <div class="col-md-6   text-center">
+                <h5 class="card-title mapasTitle">
+                  <b>Descargá los mapas de la provincia</b>
+                </h5>
+                <h6 class="card-title">
+                  Hacé click y obtené sus versiones digitales para verlas en tu
+                  celular.
+                </h6>
+                <br></br>
+                <Link to="/descargar-mapas">
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-round-lg btn-lg"
+                  >
+                    Ingresar
+                  </button>
+                </Link>
+              </div>
             </div>
-            <div className="container_2 map-marker"></div>
           </div>
-
-          <Link to="descargar-mapas" style={{ textDecoration: "none" }} className="descarga-container-main">
-            <div className="descarga-leyenda">
-              <div className="descarga-titulos">
-                <span className="dt-1"> ¡Hacé click acá!</span>
-                <span className="dt-2">
-                  para obtener los mapas de toda la provincia
-                </span>
-              </div>
-
-              <div className="descarga-icono">
-                <i className="fas fa-arrow-down" />
-              </div>
-            </div>
-          </Link>
         </div>
-      </ReactWOW>
+      </div>
     );
   }
 }

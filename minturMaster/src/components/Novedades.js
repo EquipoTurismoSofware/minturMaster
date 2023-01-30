@@ -97,7 +97,7 @@ class Novedades extends Component {
 
   render() {
     const items = this.state.data.map((item) => {
-      let descripcion = item.descripcion.substr(0, 400) + "...";
+      let descripcion = item.descripcion.substr(0, 200) + "...";
       let fecha = item.fecha.split("-");
       return (
         <SwiperSlide key={`ci-${item.id}`} className="blog-slider__item">

@@ -39,7 +39,10 @@ export default class Mapas extends Component {
           self.setState({
             dataZona: response.data.data.registros[0],
           });
-          window.open(`${process.env.REACT_APP_API_RECURSOS}/folletos/${this.state.dataZona.pdf}`, '_blank');
+          window.open(
+            `${process.env.REACT_APP_API_RECURSOS}/folletos/${this.state.dataZona.pdf}`,
+            "_blank"
+          );
         } else {
           //Error no se enocntró el id
         }
@@ -61,19 +64,17 @@ export default class Mapas extends Component {
       <ReactWOW animation="fadeIn" data-wow-delay="10s">
         <div>
           <div className="Recorridos">
-            <div className="mancha-sup-izq" />
-            <div className="mancha-sup-der" />
             <center>
               <div className="reco-titulo">
                 <br />
                 <br />
                 <br />
-                <span className="reco-t-sub1">Descargar</span>
-                <span className="reco-t-sub2">Mapas Turisticos</span>
+                <h2 className=" TituloMapas">Descargar</h2>
+                <h4 className=" TituloMapas">Mapas Turístico</h4>
               </div>
             </center>
-            <div className="reco-container" style={{paddingBottom: "45px"}}>
-              <a
+            <div className="reco-container" style={{ paddingBottom: "45px" }}>
+              {/*  <a
                 onClick={() => this.descargar("4")}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -100,7 +101,7 @@ export default class Mapas extends Component {
                             Folletería
                           </a>
                         </div>
-                  */}
+                 
 
                   <div className="cuadro-titulo">
                     <p>Sierras</p>
@@ -233,7 +234,7 @@ export default class Mapas extends Component {
                     <p>Salinas</p>
                   </div>
                 </div>
-              </a>
+              </a> */}
               <a
                 href={`${process.env.REACT_APP_API_RECURSOS}/mapas-folletos/final mapa ciudad sl + rutas 2020.pdf`}
                 target="_blank"
@@ -320,7 +321,7 @@ export default class Mapas extends Component {
                     alt=""
                   />
                   <div className="cuadro-titulo">
-                    <p>Potrero de</p> 
+                    <p>Potrero de</p>
                     <p>los Funes</p>
                   </div>
                 </div>
@@ -343,14 +344,9 @@ export default class Mapas extends Component {
                   </div>
                 </div>
               </a>
-
             </div>
-
-            <div className="mancha-inf-izq" />
-            <div className="mancha-inf-der" />
           </div>
         </div>
-        
       </ReactWOW>
     );
   }

@@ -36,7 +36,7 @@ class Menu extends Component {
       MsgBody: "",
       clase: "Menu",
       showAt: 45,
-      climaShow: false
+      climaShow: false,
     };
 
     this.link = React.createRef();
@@ -179,24 +179,29 @@ class Menu extends Component {
   //funcion para ocultar el las opciones desplegadas
   closeMenu() {
     // console.log("close");
-    if (this.state.ocultar === 0) this.setState({ 
-      visibleMenu: false 
-    }, () => {
-      this.cambiar();
-    });
-    
+    if (this.state.ocultar === 0)
+      this.setState(
+        {
+          visibleMenu: false,
+        },
+        () => {
+          this.cambiar();
+        }
+      );
   }
 
   setMenu(id) {
     this.closeLista();
-    
+
     if (this.state.visibleMenu === false || id !== this.state.idSubMenu) {
-      this.setState({ 
-        visibleMenu: true 
-      }, () => {    
-        this.cambiar();
-      });
-      
+      this.setState(
+        {
+          visibleMenu: true,
+        },
+        () => {
+          this.cambiar();
+        }
+      );
     }
     this.state.idSubMenu = id;
   }
@@ -387,27 +392,30 @@ class Menu extends Component {
               {
                 localidades: {
                   data: setX,
-                  selected: setX[0].id
+                  selected: setX[0].id,
                 },
               },
               () => {
                 this.handleFiltroClick(this.state.localidades.selected);
                 window.onscroll = () => {
-                  var menu = document.getElementById('nav');
-                  if(document.body.scrollTop > this.state.showAt || document.documentElement.scrollTop > this.state.showAt) {
-                      if(menu) {
-                        this.setState({
-                          clase: "sticky"
-                        })
-                      }
+                  var menu = document.getElementById("nav");
+                  if (
+                    document.body.scrollTop > this.state.showAt ||
+                    document.documentElement.scrollTop > this.state.showAt
+                  ) {
+                    if (menu) {
+                      this.setState({
+                        clase: "sticky",
+                      });
+                    }
                   } else {
-                      if(menu) {
-                        this.setState({
-                          clase: "Menu"
-                        })
-                      }
+                    if (menu) {
+                      this.setState({
+                        clase: "Menu",
+                      });
+                    }
                   }
-              };
+                };
               }
             );
           } else {
@@ -425,7 +433,6 @@ class Menu extends Component {
           });
         }
       );
-     
   }
 
   render() {
@@ -462,7 +469,6 @@ class Menu extends Component {
     });
     return (
       <React.Fragment>
-        
         <nav className={`navbar navbar-expand-lg ${this.state.clase}`} id="nav">
           <Link
             to="/"
@@ -496,12 +502,6 @@ class Menu extends Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarText">
             <ul className="navbar-nav mr-auto">
-              <li
-                className="nav-item link-menu"
-                onMouseOver={(e) => this.setMenu(1, e)}
-              >
-                <span className="nav-link">¿QUÉ VISITAMOS?</span>
-              </li>
               {/*
               <li className="nav-item link-menu">
                 <span
@@ -509,7 +509,12 @@ class Menu extends Component {
                   onMouseOver={(e) => this.setMenu(4, e)}
                 >
                   ¿QUÉ HACEMOS?
-                </span>
+                </span> <li
+                className="nav-item link-menu"
+                onMouseOver={(e) => this.setMenu(1, e)}
+              >
+                <span className="nav-link">¿QUÉ VISITAMOS?</span>
+              </li>
               </li>*/}
               <li className="nav-item link-menu">
                 <span
@@ -622,36 +627,36 @@ class Menu extends Component {
               </div>
             </span>
           </div>
-           {this.state.visibleMenu ? (
-          <div
-            id="toggle"
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarText"
-            aria-controls="navbarText"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-            onClick={() => this.closeMenu()}
-            className={`menu-visita-container${this.state.clase} animated fadeIn`} 
-            onMouseLeave={(e) => this.closeMenu(e)}
-            /*style={{background: "rgb(114,39,137)",
+          {this.state.visibleMenu ? (
+            <div
+              id="toggle"
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarText"
+              aria-controls="navbarText"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              onClick={() => this.closeMenu()}
+              className={`menu-visita-container${this.state.clase} animated fadeIn`}
+              onMouseLeave={(e) => this.closeMenu(e)}
+              /*style={{background: "rgb(114,39,137)",
             background: "-moz-linear-gradient(left, rgba(114,39,137,1) 0%, rgba(237,15,104,0.8) 100%)",
             background: "-webkit-linear-gradient(left, rgba(114,39,137,1) 0%,rgba(237,15,104,0.8) 100%)",
             background: "linear-gradient(to right, rgba(114,39,137,1) 0%,rgba(237,15,104,0.8) 100%)"}}
-            */>
-            <div className="menu-visita">
-              <ZonasMenu
-                idMenu={this.state.idSubMenu}
-                onZonaClick={this.closeMenu}
-              />
+            */
+            >
+              <div className="menu-visita">
+                <ZonasMenu
+                  idMenu={this.state.idSubMenu}
+                  onZonaClick={this.closeMenu}
+                />
+              </div>
             </div>
-          </div>
-        ) : (
-          ""
-        )}
+          ) : (
+            ""
+          )}
         </nav>
-       
       </React.Fragment>
     );
   }
