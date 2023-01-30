@@ -82,6 +82,7 @@ import PMapas from "./pages/PMapas";
 import GastronomiaDosep from "./pages/gastronomia/GastronomiaDosep";
 import ListadoCensistas from "./pages/Censo/ListadoCensistas";
 import TopBar from "./components/Topbar";
+import Header from "./components/Header";
 
 
 class App extends Component {

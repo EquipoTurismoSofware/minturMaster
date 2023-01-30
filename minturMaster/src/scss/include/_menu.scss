@@ -1,8 +1,6 @@
 /*
-    Componente Menu.js
+    TopBar
 */
-
-/*-------------Menu nueva estetica para probar ------------*/
 
 .topBar {
   position: absolute;
@@ -19,7 +17,7 @@
   }
   .tabIconos:hover {
     font-size: 20px;
-    transition: all  0.3s
+    transition: all 0.3s;
   }
 }
 
@@ -27,17 +25,20 @@
   padding-right: 150px;
 }
 
+/*
+    Navbar
+*/
 .bg-navbar {
   background-position: bottom;
   background-image: url("./utils/images/menu-img.png");
-  min-height: 140px;
+  min-height: 120px; 
   //max-height: 170px;
   /* Center and scale the image nicely */
   background-repeat: no-repeat;
   background-size: cover;
 
   /* Needed to position the navbar */
-  position: absolute;
+  position: fixed;
   top: 40px;
   width: 100%;
   z-index: 101;
@@ -52,31 +53,13 @@
   //transition: all 0.1s;
 }
 
-.navbar-center {
-  position: absolute;
-  left: 50%;
-  transform: translatex(-50%);
-}
-
 .nav-space {
   width: 2rem;
   height: 1px;
 }
 
-.nav-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-
-  padding-top: 40px;
-  padding-right: 50px;
-  color: #f2f2f2;
-  font-size: 17px;
-  width: 100%;
-}
-
 .buscador-destino {
-  width: 240px;
+  width: 250px;
   height: 40px;
   float: right;
   border-radius: 18px;
@@ -100,63 +83,9 @@
   font-weight: bold;
 }
 
-.linkBusqueda{
+.linkBusqueda {
   text-align: left;
   text-overflow: ellipsis;
-}
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  float: right;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  margin-top: 45px;
-  border-radius: 10px;
-  font-weight: normal;
-  opacity: 0.75;
-}
-
-.dropdown-content a {
-  color: #a10d59;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: center;
-  width: 100%;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-  border-radius: 10px;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Style The Dropdown Button */
-.dropbtn {
-  background-color: transparent;
-  font-size: 17px;
-  color: white;
-  padding: 16px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-  color: #000;
 }
 
 /* cambio de estilo del Navbar al scrollear
@@ -178,32 +107,37 @@ background-position: center center;
   transform: translatex(-50%);
 }
 
-#collasible-nav-dropdown {
-  color: whitesmoke;
-}
+// #collasible-nav-dropdown {
+//   //color: whitesmoke;
+// }
 
 /* shows dropdown menu options from navbar */
-.nav-item.dropdown:hover .dropdown-menu {
-  display: block;
-  opacity: 90%;
-}
+// .nav-item.dropdown:hover .dropdown-menu {
+//   display: block;
+//   opacity: 90%;
+// }
 
 #logoscroll {
   //width: 200px;
-  width:150px;
+  width: 150px;
   //left: 28%;
   left: 10%;
-  margin-top: -2%;
+  margin-top: -5%;
   -webkit-filter: drop-shadow(5px 5px 5px #222);
   filter: drop-shadow(5px 5px 5px #222);
+  max-width: fit-content;
 }
 
 /* Altura de los items del navbar*/
 .nav-container {
   white-space: nowrap;
   margin: 2% 0;
-  float: right;
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+  //float: right;
 }
+
 /*Lista dinamica de localidades*/
 .ul-busqueda {
   background-color: #c42a59;
@@ -222,11 +156,9 @@ background-position: center center;
   opacity: 75%;
 }
 
-
-.menuNew {
-  height: 50px;
-}
-
+// .menuNew {
+//   height: 50px;
+// }
 
 button.navbar-toggler {
   float: right;
@@ -234,34 +166,33 @@ button.navbar-toggler {
   margin: 20px;
 }
 
-
 .liLista {
   &:hover {
     // text-decoration-line: underline;
     // font-size: 18px;
     animation: glow 1s ease-in-out infinite alternate;
   }
-  
 }
 
 @keyframes glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+      0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
   }
-  
+
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+      0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
   }
 }
 
-
 @media only screen and (max-width: 991px) {
-  #logoscroll{
-    //width: 150px;
-    left:  50%;
-    transition: all 0.3s;
+  // #logoscroll{
+  //   //width: 150px;
+  //   left:  50%;
+  //   transition: all 0.3s;
 
-  }
+  // }
 
   .topBar{
     display: none;
@@ -292,6 +223,7 @@ button.navbar-toggler {
 
   .dropdown-item{
     font-size: small;
+    overflow: visible
   }
 
   .ul-busqueda{
@@ -303,15 +235,15 @@ button.navbar-toggler {
     margin-left: 10%;
     transition: all 0.3s;
   }
-
-  .dropdown-item{
-    overflow: visible
-  }
 }
 
 .navbar-brand{
   //object-fit: contain;
   z-index: 200
+}
+
+#nav{
+  top:0px
 }
 
 @media only screen and (max-width: 720px){
@@ -334,6 +266,6 @@ button.navbar-toggler {
   }
 
   .ul-busqueda{
-    margin: 2px 23%;
+    margin: 2px;
   }
 }

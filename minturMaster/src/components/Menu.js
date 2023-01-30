@@ -1,12 +1,9 @@
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
+import {Navbar, Nav, NavDropdown} from "react-bootstrap";
 import Logo from "../utils/images/logo-san-luis.png"; //  src/images
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container"
-//import { useState } from "react";
-//import { useEffect } from "react";
+//import {LinkContainer} from "react-router-bootstrap"
 
 class Menu extends Component {
   constructor(props) {
@@ -34,7 +31,6 @@ class Menu extends Component {
     this.cambiar = this.cambiar.bind(this);
     this.handleBusquedaChange = this.handleBusquedaChange.bind(this);
     this.handleFiltroClick = this.handleFiltroClick.bind(this);
-    //this.selectFirstElement = this.selectFirstElement.bind(this);
     this.cancelBusqueda = this.cancelBusqueda.bind(this);
     this.closeLista = this.closeLista.bind(this);
   }
@@ -67,26 +63,8 @@ class Menu extends Component {
                 },
               },
               () => {
-                this.handleFiltroClick(this.state.localidades.selected);
-                window.onscroll = () => {
-                  var menu = document.getElementById("nav");
-                  if (
-                    document.body.scrollTop > this.state.showAt ||
-                    document.documentElement.scrollTop > this.state.showAt
-                  ) {
-                    if (menu) {
-                      this.setState({
-                        clase: "sticky",
-                      });
-                    }
-                  } else {
-                    if (menu) {
-                      this.setState({
-                        clase: "Menu",
-                      });
-                    }
-                  }
-                };
+                //this.handleFiltroClick(this.state.localidades.selected);
+                //this.menuMode();
               }
             );
           } else {
@@ -98,7 +76,7 @@ class Menu extends Component {
         },
         (error) => {
           this.setState({
-            isLoaded: true,
+            loading: true,
             error,
           });
         }
@@ -113,54 +91,57 @@ class Menu extends Component {
     this.setState({ lista: false });
   }
 
+//Disabled
+  // menuMode() {
+  //   window.onscroll = () => {
+  //     var menu = document.getElementById("nav");
+  //     if (
+  //       document.body.scrollTop > this.state.showAt ||
+  //       document.documentElement.scrollTop > this.state.showAt
+  //     ) {
+  //       if (menu) {
+  //         this.setState({
+  //           clase: "sticky",
+  //         });
+  //       }
+  //     } else {
+  //       if (menu) {
+  //         this.setState({
+  //           clase: "Menu",
+  //         });
+  //       }
+  //     }
+  //   };
+  // }
+
   smallNavbar() {
     //When user scrolls
-    //if(window.width > 990){// When is a expanded menu
-    document.getElementById("nav").style.position = "fixed";
-    document.getElementById("nav").style.minHeight = "90px";
-    //document.getElementById("nav").style.backgroundImage =
-    //  "url(" + "require(../utils/images/scrollNavbar.png)" + ")";
-    document.getElementById("nav").style.backgroundRepeat = "no-repeat";
+    //document.getElementById("nav").style.position = "fixed";
+    //document.getElementById("nav").style.minHeight = "100px";
+    //document.getElementById("nav").style.backgroundRepeat = "no-repeat";
     document.getElementById("nav").style.backgroundSize = "cover";
-    //document.getElementById("nav").style.backgroundPosition = "bottom";
+
     document.getElementById("nav").style.top = "0px";
 
-    //document.getElementById("logoscroll").style.display = "inline-block";
-    //document.getElementById("logoscroll").style.marginTop = "-2%";
-    //document.getElementById("logoscroll").style.width = "190px";
-    // }
-    // else{//When is a burger menu
-
-    // }
   }
 
   bigNavbar() {
     // When user is on the top
+    //document.getElementById("nav").style.position = "fixed";
+    //document.getElementById("nav").style.width = "100%";
 
-    document.getElementById("nav").style.position = "absolute";
-    
-    //document.getElementById("nav").style.backgroundImage =
-    //  "url(" + "require(../utils/images/menu-img.png)" + ")";
-    
-    document.getElementById("nav").style.width = "100%";
-    //document.getElementById("nav").style.transition = "all: 0.5s";
-
+    //Si el top bar desaparece, subimos el nav a top 0.
     if(window.innerWidth > 991){
       document.getElementById("nav").style.top = "40px";
-      document.getElementById("nav").style.minHeight = "120px";
-      
+      //document.getElementById("nav").style.minHeight = "120px";
     }
     else{
       document.getElementById("nav").style.top = "0px";
-      document.getElementById("nav").style.minHeight = "90px";
+      //document.getElementById("nav").style.minHeight = "90px";
     }
-
-    //document.getElementById("logoscroll").style.width = "200px";
-    //document.getElementById("logoscroll").style.marginTop = "-2%";
-    //document.getElementById("logoscroll").style.display = "inline-block";
   }
-
-
+  
+//Fade between small and big navbar
   handleScroll = () => {
     if (window.scrollY > 40) {
       //Small Navbar
@@ -174,20 +155,6 @@ class Menu extends Component {
       }
     }
   };
-
-  //selecciona la localidad con el tipeo de la flecha
-  // selectFirstElement() {
-  //   let selec = document.getElementsByName(this.state.mov);
-  //   //console.log(this.state.mov);
-  //   selec.forEach((e) => {
-  //     //console.log(e);
-  //     this.setState({
-  //       mov: -1,
-  //     });
-  //     //this.state.mov = -1;
-  //     e.style = "";
-  //   });
-  // }
 
   handleFiltroClick(id) {
     this.setState(
@@ -214,63 +181,6 @@ class Menu extends Component {
     if(text.length == 0){
       this.cancelBusqueda();
     }
-
-
-    // switch (key) {
-      // case "Backspace":
-      //   this.selectFirstElement();
-      //   break;
-      // case "Enter":
-      //   if (this.state.selec != null) {
-      //     let select = document.getElementById(this.state.mov - 1);
-      //     select.forEach((e) => {
-      //       e.style = "";
-      //     });
-
-      //     this.state.mov = -1;
-      //     if (window.location.hostname === "localhost") {
-      //       window.location.href =
-      //         "http://localhost:3000/#${this.state.selec.id)";
-      //     } else {
-      //       window.location.href =
-      //         "http://turismo.sanluis.gov.ar/#${this.state.selec.id}";
-      //     }
-      //     this.cambiar();
-      //   }
-      //   break;
-      // case "ArrowDown":
-      //   if (
-      //     this.state.mov <
-      //     document.getElementsByClassName("linkBusqueda").length - 1
-      //   ) {
-      //     this.state.mov++;
-
-      //     let select = document.getElementsByName(this.state.mov);
-      //     select.forEach((e) => {
-      //       this.state.selec = e;
-      //       e.style = "text-decoration-line: underline; font-size: 17px;";
-      //     });
-      //   }
-      //   break;
-      // case "ArrowUp":
-      //   if (this.state.mov !== 0) {
-      //     this.state.mov--;
-      //     let select = document.getElementsByName(this.state.mov);
-      //     select.forEach((e) => {
-      //       this.state.selec = e;
-
-      //       //e.style = "text-decoration-line: underline ; font-size: 18px;";
-      //     });
-      //   }
-      //   if (true) {
-      //     let select = document.getElementsByName(this.state.mov + 1);
-      //     select.forEach((e) => {
-      //       //e.style = "";
-      //     });
-      //   }
-
-      //   break;
-   // }
   }
 
   setValueInput() {
@@ -289,9 +199,6 @@ class Menu extends Component {
     this.setState({
       lista: false,
     });
-
-    
-
   }
 
   handleBusquedaChange(event) {
@@ -358,32 +265,29 @@ class Menu extends Component {
     return (
       <React.Fragment>
         <div className="menuNew">
-          <Navbar bg="navbar" variant="dark" id="nav" expand="lg">
-            <Container fluid>
-            {/* <Link to={"/"}>   */}
-              <Navbar.Brand  className="nav-brand">
+          <Navbar bg="navbar" variant="dark" id="nav" sticky="top" expand="lg" collapseOnSelect>
+              <Navbar.Brand  className="">
               <a href={"/"}> 
                 <img
                   id="logoscroll"
                   src={Logo}
                   alt="San Luis"
-                  className="img-brand"
+                  className=""
                 />
                 </a>
               </Navbar.Brand>
-              {/* </Link> */}
             <Navbar.Toggle
               //onClick={() => this.handleToggler()}
               aria-controls="responsive-navbar-nav"
               data-bs-target="#responsive-navbar-nav"
             />
             <Navbar.Collapse id="responsive-navbar-nav ">
-              <Nav className="nav-container flex-row col-md-12">
+              <Nav className="nav-container flex-row navbar-expand-lg">
                 <NavDropdown
-                  renderMenuOnMount={true}
+                  renderMenuOnMount={false}
                   title="Organizá tu viaje"
-                  id="collasible-nav-dropdown"
-                  className="offset-md-3"
+                  //id="collasible-nav-dropdown"
+                  className=""
                 >
                   <NavDropdown.Item href="#/filtroalojamiento">
                     Hospedaje
@@ -396,14 +300,13 @@ class Menu extends Component {
                   <NavDropdown.Item href="#/listado-guias-agencias-covid/agencias">
                     Agencias de Viaje
                   </NavDropdown.Item>
-                  {/* <NavDropdown.Divider />
-                  <NavDropdown.Item href="#/PPrincipalGastronomia">
+                 {/* <NavDropdown.Item href="#/PPrincipalGastronomia">
                     Gastronomía
      </NavDropdown.Item>*/}
                 </NavDropdown>
                 <div className="nav-space"></div>
                 <NavDropdown
-                  renderMenuOnMount={true}
+                  //renderMenuOnMount={true}
                   title="Conocé San Luis"
                   id="collasible-nav-dropdown"
                 >
@@ -426,10 +329,6 @@ class Menu extends Component {
                   <NavDropdown.Item href="#/riosysaltos">
                     Ríos y Saltos
                   </NavDropdown.Item>
-                  {/*<NavDropdown.Divider />
-                  <NavDropdown.Item href="#/PCerveceria">
-                    Caminos Cerveceros
-    </NavDropdown.Item>*/}
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#/PCreerGnral">
                     Iglesias
@@ -437,7 +336,7 @@ class Menu extends Component {
                 </NavDropdown>
                 <div className="nav-space"></div>
                 <NavDropdown
-                  renderMenuOnMount={true}
+                  //renderMenuOnMount={true}
                   title="Institucional"
                   id="collasible-nav-dropdown"
                 >
@@ -459,7 +358,6 @@ class Menu extends Component {
                     onKeyDown={(e) => this.selectOption(e)}
                     id="buscar"
                     type="text"
-                    //placeholder="Buscá tu destino             &#9660;"
                     placeholder="Buscá tu destino..."
                     autoComplete="off"
                     className="buscador-destino buscador-icon"
@@ -476,7 +374,6 @@ class Menu extends Component {
                 </div>
               </Nav>
             </Navbar.Collapse>
-            </Container>
           </Navbar>
         </div>
       </React.Fragment>
