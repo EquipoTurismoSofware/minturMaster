@@ -5,7 +5,7 @@ import "./App.css";
 //import { BrowserRouter as Router, Route } from "react-router-dom";
 import PMapasRecorridos from "./pages/mapas/PMapasRecorridos";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
-import Menu from "./components/MenuOld"; // Menu
+import Menu from "./components/Menu"; // Menu
 import ToTop from "./components/ToTop";
 import PListadoMapas from "./pages/mapas/PListadoMapas";
 import PHome from "./pages/PHome"; //PHome copy
@@ -82,7 +82,7 @@ import PMapas from "./pages/PMapas";
 import GastronomiaDosep from "./pages/gastronomia/GastronomiaDosep";
 import ListadoCensistas from "./pages/Censo/ListadoCensistas";
 import TopBar from "./components/Topbar";
-import Header from "./components/Header";
+import PGustosSanLuis from "./pages/PGustosSanLuis";
 
 
 class App extends Component {
@@ -100,6 +100,7 @@ class App extends Component {
               <Route exact path="/arboles" component={PArboles} />
               <Route exact path="/arbol/:id" component={PArbol} />
               <Route exact path="/zona/:id" component={PZona} />
+              <Route exact path="/gustosSanLuis" component={PGustosSanLuis} />
               <Route exact path="/localidad/:id" component={PLocalidad} />
               <Route exact path="/atractivo/:id" component={PAtractivo} />
               <Route exact path="/gastronomia/:id" component={PGastronomia} />

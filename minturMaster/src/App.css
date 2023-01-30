@@ -1334,12 +1334,12 @@ body {
   width: 0px;
   outline: none;
   border: none;
-  background: rgb(114, 39, 137);
+  background: #722789;
   color: white;
-  text-shadow: 0 0 10px rgb(114, 39, 137);
+  text-shadow: 0 0 10px #722789;
   padding: 0 80px 0 20px;
   border-radius: 40px;
-  box-shadow: 0 0 25px 0 rgb(114, 39, 137), 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px 0 #722789, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
   transition: all 1s;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -1352,7 +1352,7 @@ body {
   cursor: text;
 }
 .input:focus .listaBusqueda {
-  background-color: rgb(143, 28, 168);
+  background-color: #8f1ca8;
   width: 200px;
   max-height: auto;
   overflow: auto;
@@ -1409,7 +1409,7 @@ body {
 }
 
 .listaBusqueda {
-  background-color: rgb(143, 28, 168);
+  background-color: #8f1ca8;
   width: 200px;
   max-height: auto;
   overflow: auto;
@@ -1457,7 +1457,7 @@ body {
 }
 
 .Menu {
-  background: rgb(114, 39, 137);
+  background: #722789;
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
@@ -1493,7 +1493,7 @@ body {
   white-space: nowrap;
 }
 .Menu .menu-visita-containerMenu {
-  background: rgb(114, 39, 137);
+  background: #722789;
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -1516,10 +1516,10 @@ body {
 }
 
 .sticky {
-  background: rgb(114, 39, 137);
-  background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
-  background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
-  background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+  background: #722789;
+  background: -moz-linear-gradient(left, #722789 0%, #ed0f68 100%);
+  background: -webkit-linear-gradient(left, #722789 0%, #ed0f68 100%);
+  background: linear-gradient(to right, #722789 0%, #ed0f68 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
   width: 100%;
   top: 0;
@@ -1556,7 +1556,7 @@ body {
   white-space: nowrap;
 }
 .sticky .menu-visita-containersticky {
-  background: rgb(114, 39, 137);
+  background: #722789;
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -1588,7 +1588,7 @@ body {
 
 @media only screen and (max-width: 1185px) {
   .Menu {
-    background: rgb(114, 39, 137);
+    background: #722789;
     background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
     background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
     background: linear-gradient(to right, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
@@ -1611,10 +1611,10 @@ body {
   }
 
   .sticky {
-    background: rgb(114, 39, 137);
-    background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
-    background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
-    background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+    background: #722789;
+    background: -moz-linear-gradient(left, #722789 0%, #ed0f68 100%);
+    background: -webkit-linear-gradient(left, #722789 0%, #ed0f68 100%);
+    background: linear-gradient(to right, #722789 0%, #ed0f68 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
     position: fixed;
     z-index: 99;
@@ -1632,7 +1632,7 @@ body {
 }
 @media only screen and (max-width: 992px) {
   .Menu {
-    background: rgb(114, 39, 137);
+    background: #722789;
     background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
     background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
     background: linear-gradient(to right, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
@@ -1673,7 +1673,7 @@ body {
     white-space: nowrap;
   }
   .Menu .menu-visita-containerMenu {
-    background: rgb(114, 39, 137);
+    background: #722789;
     background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
     background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
     background: linear-gradient(to right, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -1699,10 +1699,10 @@ body {
   }
 
   .sticky {
-    background: rgb(114, 39, 137);
-    background: -moz-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
-    background: -webkit-linear-gradient(left, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
-    background: linear-gradient(to right, rgb(114, 39, 137) 0%, rgb(237, 15, 104) 100%);
+    background: #722789;
+    background: -moz-linear-gradient(left, #722789 0%, #ed0f68 100%);
+    background: -webkit-linear-gradient(left, #722789 0%, #ed0f68 100%);
+    background: linear-gradient(to right, #722789 0%, #ed0f68 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#722789", endColorstr="#ed0f68",GradientType=1 );
     position: fixed;
     z-index: 99;
@@ -1740,7 +1740,7 @@ body {
     white-space: nowrap;
   }
   .sticky .menu-visita-containersticky {
-    background: rgb(114, 39, 137);
+    background: #722789;
     background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
     background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
     background: linear-gradient(to right, rgba(114, 39, 137, 0.9) 0%, rgba(237, 15, 104, 0.8) 100%);
@@ -1789,7 +1789,7 @@ body {
   margin-left: 135px;
   width: 33px;
   height: 33px;
-  background: rgb(237, 15, 104);
+  background: #ed0f68;
   border-radius: 50%;
   transition: all 1s;
   z-index: 4;
@@ -1834,7 +1834,7 @@ body {
   left: 0;
   width: 100%;
   height: 50px;
-  background: rgb(114, 39, 137);
+  background: #722789;
   background: -moz-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   background: -webkit-linear-gradient(left, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
   background: linear-gradient(to right, rgba(114, 39, 137, 0.6) 0%, rgba(237, 15, 104, 0.7) 100%);
@@ -2101,6 +2101,10 @@ background-position: center center;
   opacity: 75%;
 }
 
+.menuNew {
+  height: 50px;
+}
+
 button.navbar-toggler {
   float: right;
   padding: 5px;
@@ -2120,6 +2124,11 @@ button.navbar-toggler {
   }
 }
 @media only screen and (max-width: 991px) {
+  #logoscroll {
+    left: 50%;
+    transition: all 0.3s;
+  }
+
   .topBar {
     display: none;
   }
@@ -2161,13 +2170,13 @@ button.navbar-toggler {
     margin-left: 10%;
     transition: all 0.3s;
   }
+
+  .dropdown-item {
+    overflow: visible;
+  }
 }
 .navbar-brand {
   z-index: 200;
-}
-
-#nav {
-  top: 0px;
 }
 
 @media only screen and (max-width: 720px) {
@@ -2190,7 +2199,7 @@ button.navbar-toggler {
   }
 
   .ul-busqueda {
-    margin: 2px;
+    margin: 2px 23%;
   }
 }
 /*
@@ -5217,8 +5226,8 @@ a:active {
 }
 
 .btn-round-lg:hover {
-  background-color: rgb(143, 28, 168);
-  color: rgb(255, 255, 255);
+  background-color: #8f1ca8;
+  color: white;
   border: 1px solid #fff;
 }
 
@@ -12614,6 +12623,12 @@ a {
     text-shadow: 2px 2px 20px #ed0f68;
   }
 }
+.gustos-san-luis {
+  padding-top: 200px;
+  padding-bottom: 50px;
+  display: inline-block;
+}
+
 a:hover {
   color: inherit;
   text-decoration: none;
