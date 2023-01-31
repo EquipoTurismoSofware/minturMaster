@@ -1,5 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .gustos-san-luis{
     padding-top: 200px;
     padding-bottom: 50px;
-    display: inline-block;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 50px;
+   //background-color: aqua;
+}
+
+.img-puntanidad-gastonomica{
+    display: table-cell;
+    padding: 0% 10%;
+    width: 28%;
+    position: absolute;
+}
+
+.img-puntanidad-gastonomica img{
+    vertical-align: top;
+}
+
+.img-title{
+    display: table-cell;
+    padding: 0% 5%;
+}
+
+.intro{
+    width:100%;
+    padding: 0% 5%;
+    margin-bottom: 5%;   
+}
+
+.intro p{
+    font-family: 'Roboto' sans-serif;
+    text-align: center;
+    font-weight: 400;
+    font-size: larger;
+    color: rgb(156, 156, 171);
 }

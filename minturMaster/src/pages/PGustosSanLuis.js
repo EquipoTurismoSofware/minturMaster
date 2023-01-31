@@ -1,9 +1,9 @@
 import React from "react";
 import { Component } from "react";
 import Loading from "../utils/Loading";
-import PuntanidadGastronimica from "../utils/images/puntanidad-gastronomica.png"
-import GustoASanLuis from "../utils/images/gusto-a-san-luis.png"
-import Sello from '../utils/images/sello.png'
+import PuntanidadGastronimica from "../utils/images/puntanidad-gastronomica.png";
+import GustoASanLuis from "../utils/images/gusto-a-san-luis.png";
+import Sello from "../utils/images/sello.png";
 
 class GustosSanLuis extends Component {
   constructor(props) {
@@ -31,16 +31,19 @@ class GustosSanLuis extends Component {
           </div>
         ) : (
           <>
-            <div className="gustos-san-luis col-md-12">
-              <div className="col-md-2">
-                <img  className="" src={PuntanidadGastronimica} />
+            <div className="gustos-san-luis">
+              <div className="img-puntanidad-gastonomica">
+                <img className="" src={PuntanidadGastronimica} />
               </div>
-              <div className="col-md-2">
-              <img  className="" src={GustoASanLuis} />
+              <div className="img-title">
+                <img className="" src={GustoASanLuis} />
               </div>
-              <div className="col-md-2">
-              <img  className="" src={Sello} />
+              <div className="img-puntanidad-gastonomica">
+                <img className="" src={Sello} />
               </div>
+            </div>
+            <div className="intro">
+              <p>La construcción de un sello de identidad gastronómica constituye la primera herramienta de calidad, diseñada para integrar a todos establecimientos gastronómicos que brinden una experiencia culinaria, ofreciendo platos elaborados con ingredientes autóctonos. En este sentido, la secretaría de turismo de San Luis, impulsa el turismo gastronómico con el objetivo de resaltar la gastronomía local, destacando sus vínculos con los diferentes entornos sociales, naturales, culturales. </p>
             </div>
           </>
         )}
