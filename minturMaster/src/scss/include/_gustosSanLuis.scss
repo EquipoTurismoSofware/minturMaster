@@ -39,3 +39,14 @@
     font-size: larger;
     color: rgb(156, 156, 171);
 }
+
+.btn-override{
+    color: rgba(114, 39, 137, 1);
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.btn-override:hover{
+    color: rgba(114, 39, 137, 1);
+    text-decoration: none;
+}
