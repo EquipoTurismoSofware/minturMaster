@@ -36,17 +36,86 @@
     font-family: 'Roboto' sans-serif;
     text-align: center;
     font-weight: 400;
-    font-size: larger;
+    font-size: 1.5rem;
     color: rgb(156, 156, 171);
+}
+
+.seccion-title{
+    font-size: 2rem;
 }
 
 .btn-override{
     color: rgba(114, 39, 137, 1);
     font-weight: bolder;
     text-decoration: none;
+    font-size: large;
 }
 
 .btn-override:hover{
     color: rgba(114, 39, 137, 1);
     text-decoration: none;
+}
+
+.card-header{
+    background-color: white;
+    border: 1px solid rgb(156, 156, 171); 
+}
+
+.card-header:hover{
+    background-color:rgba(114, 39, 137, 0.3);
+}
+
+#headingOne{
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+#headingTwo{
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+#headingThree{
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+#headingFour{
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+#headingFive{
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+#headingSix{
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.card-body{
+    background-color: white;
+    margin-bottom: 2rem;
+    border: 1px solid rgb(156, 156, 171); 
+    border-radius: 12px;
+}
+
+.card-body:hover{
+    text-decoration: none;
+}
+
+.card-body p{
+    font-family: 'Roboto' sans-serif;
+    color: rgb(156, 156, 171);
+    font-weight: 400;
+    font-size: large;
+}
+
+.card-body{
+    font-family: 'Roboto' sans-serif;
+    color: rgb(156, 156, 171);
+}
+
+.enum{
+    text-indent: 40px;
 }
