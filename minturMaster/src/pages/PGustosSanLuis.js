@@ -4,12 +4,13 @@ import Loading from "../utils/Loading";
 import PuntanidadGastronimica from "../utils/images/puntanidad-gastronomica.png";
 import GustoASanLuis from "../utils/images/gusto-a-san-luis.png";
 import Sello from "../utils/images/sello.png";
+import LoginForm from "../components/LoginForm";
 
 class GustosSanLuis extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: false,
+      loading: true,
     };
     //Funciones bind
   }
@@ -27,6 +28,7 @@ class GustosSanLuis extends Component {
           <div className="PFiltroAlojamiento mb-5">
             <div>
               <Loading margins="96px" />
+              <LoginForm/>
             </div>
           </div>
         ) : (
@@ -297,23 +299,23 @@ class GustosSanLuis extends Component {
                   <div class="card-body">
                     <p>Para la participación del sello de identidad gastronómico puntano, en primer lugar es necesario poseer la habilitación municipal, cumpliendo con las reglamentaciones vigentes y ofrecer platos/bebidas autóctonos de forma permanente. Estos platos deberán ser elaborados con un porcentaje representativo de ingredientes regionales.</p>
                     <p>La inscripción para la implementación del sello de identidad gastronómico será de carácter gratuita y voluntaria. </p>
-                    <p>1) Habilitacion Municipal</p>
-                    <p>2) Seguridad e Higiene:</p>
+                    <p>1. Habilitacion Municipal</p>
+                    <p>2. Seguridad e Higiene:</p>
                     <p className="enum"> • Cumplimiento de las normas</p>
                     <p className="enum"> • Conservación de insumos</p>
                     <p className="enum"> • Instalaciones y luminaria</p>
                     <p className="enum"> • Utensilios </p>
                     <p className="enum"> • Temperaturas</p>
-                    <p>3) Unidad de medidas de satisfaccion del cliente</p>
-                    <p>4) Incorporación a la oferta gastronómica de platos/bebidas con un porcentaje representativo de ingredientes regionales, pudiendo estar reflejados en:</p>
+                    <p>3. Unidad de medidas de satisfaccion del cliente</p>
+                    <p>4. Incorporación a la oferta gastronómica de platos/bebidas con un porcentaje representativo de ingredientes regionales, pudiendo estar reflejados en:</p>
                     <p className="enum"> • Menú / Carta</p>
                     <p className="enum"> • Plato</p>
                     <p className="enum"> • Productores</p>
                     <p className="enum"> • Procedimientos</p>
-                    <p>5) Organigrama, en donde todas sus partes estén interiorizadas, sobre la incorporación del sello</p>
-                    <p>6) Conocimiento y Capacitaciones</p>
-                    <p>7) Proveedores</p>
-                    <p>8) Equipamiento:</p>
+                    <p>5. Organigrama, en donde todas sus partes estén interiorizadas, sobre la incorporación del sello</p>
+                    <p>6. Conocimiento y Capacitaciones</p>
+                    <p>7. Proveedores</p>
+                    <p>8. Equipamiento:</p>
                     <p className="enum"> • Servicios sanitarios</p>
                     <p className="enum"> • Conservación</p>
                     <p className="enum"> • Iluminación </p>

@@ -38,6 +38,7 @@ background-color: rgb(114,39,137);
 @import url("https://fonts.googleapis.com/css?family=Audiowide|Monoton|Poiret+One|Raleway");
 @import url("https://fonts.googleapis.com/css?family=Quicksand:400,500,700&subset=latin-ext");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -12743,6 +12744,34 @@ a {
 
 .enum {
   text-indent: 40px;
+}
+
+.login-border {
+  border-color: #722789;
+  border-radius: 12px;
+  border-style: solid;
+  border-width: 2px;
+  padding: 3%;
+  padding-bottom: 1%;
+}
+
+.form-group label {
+  font-family: "Roboto" sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #9c9cab;
+}
+
+.btn-login {
+  background: linear-gradient(to right, #722789 0%, rgba(237, 15, 104, 0.8) 100%);
+  border-color: #722789;
+}
+
+h3 {
+  font-family: "Roboto" sans-serif;
+  color: #722789;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 a:hover {
