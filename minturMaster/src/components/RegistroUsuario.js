@@ -10,7 +10,7 @@ class UserRegistration extends Component {
       password: "",
     };
   }
-
+  //Modifica el prop del componente 
   handleInicioSesion = () => {
     this.props.handleRegister()
   }

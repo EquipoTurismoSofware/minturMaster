@@ -7,11 +7,64 @@ class LoginForm extends Component {
     this. state = {
       username: "",
       password: "",
-      register: false
+      register: false,
+      usuarios: {
+        data: [
+          {
+            id: 0,
+            email: "",
+            password: "",
+            nombre: "",
+            activo: -1
+          }
+        ]
+      }
     };
   }
 
+  componentDidMount(){
 
+    //Get usuarios
+    fetch(`${process.env.REACT_APP_API}/usersGastronomicos`, {
+      method: "GET",
+      headers: {
+        Authorization: "asdssffsdff",
+      },
+    })
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          if (!result.err) {
+            var setX = result.data.registros.map((v) => {
+              return {
+                ...v
+              };
+            });
+            this.setState(
+              {
+                usuarios: {
+                  data: setX
+                },
+              },
+              () => {
+                //console.log(this.state.usuarios)
+              }
+            );
+          } else {
+            // this.setState({
+            //   MsgVisible: true,
+            //   MsgBody: result.errMsg,
+            // });
+          }
+        },
+        (error) => {
+          this.setState({
+            loading: true,
+            error,
+          });
+        }
+      );
+  }
 
   handleRegister = () => {
     this.setState({
@@ -29,6 +82,8 @@ class LoginForm extends Component {
     // Validar los datos
     console.log("Username: ", this.state.username);
     console.log("Password: ", this.state.password);
+
+
   };
 
   render() {
