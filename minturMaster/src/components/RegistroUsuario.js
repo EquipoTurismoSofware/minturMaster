@@ -5,15 +5,20 @@ class UserRegistration extends Component {
     super(props);
 
     this.state = {
-      username: "",
-      email: "",
-      password: "",
+      username: "Pepito Perez",
+      email: "pepito.perez@gmail.com",
+      password: "qwerty123",
+      passwordConfirm: "qwerty123",
+      msg: {
+        visible: false,
+        body: "",
+      },
     };
   }
-  //Modifica el prop del componente 
+  //Modifica el prop del componente
   handleInicioSesion = () => {
-    this.props.handleRegister()
-  }
+    this.props.handleRegister();
+  };
 
   handleInputChange = (event) => {
     const target = event.target;
@@ -27,7 +32,60 @@ class UserRegistration extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // Your registration logic goes here, using this.state.username, this.state.email, and this.state.password
+
+    const data = new FormData();
+    data.append("email", this.state.email);
+    data.append("password", this.state.password);
+    data.append("nombre", this.state.username);
+
+    //Validaciones
+    if (this.state.password == this.state.passwordConfirm) {
+      console.log("Son iguales");
+      if (this.state.password.length >= 8) {
+        console.log("Tiene mas de 8 caracteres");
+        console.log(data);
+        //Falta validacion de mail
+
+        //Create user
+        fetch(`${process.env.REACT_APP_API}/userGastronomico`, {
+          method: "POST",
+          headers: {
+            Authorization: "",
+          },
+          body: data,
+        })
+          .then((res) => res.json())
+          .then(
+            (result) => {
+              if (!result.err) {
+                this.setState(
+                  {
+                    msg: {
+                      visible: true,
+                      body: "Usuario registrado correctamente.",
+                    },
+                  },
+                  () => {}
+                );
+              } else {
+                this.setState({
+                  visible: true,
+                  body: result.errMsgs.join(", "),
+                });
+              }
+            },
+            (error) => {
+              //???
+              this.setState({
+                msg: {
+                  visible: true,
+                  body: error,
+                },
+              });
+            }
+          );
+      }
+    }
   };
 
   render() {
@@ -73,7 +131,7 @@ class UserRegistration extends Component {
                 type="password"
                 name="passwordConfirm"
                 className="form-control"
-                value={this.state.password}
+                value={this.state.passwordConfirm}
                 onChange={this.handleInputChange}
               />
             </div>
@@ -84,8 +142,12 @@ class UserRegistration extends Component {
             </div>
             <div className="row justify-content-center">
               <p id="emailHelp" class="form-text text-muted">
-                Ya tienes un usuario? 
-                <button type="button" class="btn btn-link" onClick={this.handleInicioSesion}>
+                Ya tienes un usuario?
+                <button
+                  type="button"
+                  class="btn btn-link"
+                  onClick={this.handleInicioSesion}
+                >
                   Iniciar sesión
                 </button>
               </p>

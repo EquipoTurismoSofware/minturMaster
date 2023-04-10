@@ -5,12 +5,18 @@ import PuntanidadGastronimica from "../utils/images/puntanidad-gastronomica.png"
 import GustoASanLuis from "../utils/images/gusto-a-san-luis.png";
 import Sello from "../utils/images/sello.png";
 import LoginForm from "../components/LoginForm";
+import { Link } from "react-router-dom";
 
 class GustosSanLuis extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true,
+      loading: false,
+      authorized: false,
+      msg: {
+        visible: false,
+        body: "",
+      },
     };
     //Funciones bind
   }
@@ -19,16 +25,28 @@ class GustosSanLuis extends Component {
 
   componentDidMount() {}
 
+  okLogin = () => {
+    this.setState({
+      authorized: true,
+    });
+  };
+
+  handleLogAuth = () => {
+    this.setState({ authorized: false });
+  };
+
   render() {
     //Variables
+    const authorized = this.state.authorized;
     const loading = this.state.loading;
+
     return (
       <div>
-        {loading ? (
+        {!authorized ? (
           <div className="PFiltroAlojamiento mb-5">
             <div>
-              <Loading margins="96px" />
-              <LoginForm/>
+              {/* <Loading margins="96px" /> */}
+              <LoginForm okLogin={this.okLogin} />
             </div>
           </div>
         ) : (
@@ -168,41 +186,26 @@ class GustosSanLuis extends Component {
                   data-parent="#accordionExample"
                 >
                   <div class="card-body">
-                    <p>
-                    1. Presentación del Sello de Identidad Gastronómica.
-                    </p>
+                    <p>1. Presentación del Sello de Identidad Gastronómica.</p>
+                    <br />
+                    <p>2. Diagnóstico participativo.</p>
                     <br />
                     <p>
-                    2. Diagnóstico participativo.
+                      3. Inscripción de postulantes que cumplan con los
+                      requisitos.
                     </p>
                     <br />
-                    <p>
-                      3. Inscripción de postulantes que cumplan con los requisitos.
-                    </p>
+                    <p>4. Capacitaciones.</p>
                     <br />
-                    <p>
-                      4. Capacitaciones.
-                    </p>
+                    <p>5. Postulación de las alternativas gastronómicas.</p>
                     <br />
-                    <p>
-                      5. Postulación de las alternativas gastronómicas.
-                    </p>
+                    <p>6. Auditorías.</p>
                     <br />
-                    <p>
-                      6. Auditorías. 
-                    </p>
+                    <p>7. Elección por jurados.</p>
                     <br />
-                    <p>
-                      7. Elección por jurados.
-                    </p>
+                    <p>8. Premiación.</p>
                     <br />
-                    <p>
-                      8. Premiación. 
-                    </p>
-                    <br />
-                    <p>
-                      9. Asignación del sello.
-                    </p>
+                    <p>9. Asignación del sello.</p>
                   </div>
                 </div>
               </div>
@@ -228,18 +231,33 @@ class GustosSanLuis extends Component {
                   data-parent="#accordionExample"
                 >
                   <div class="card-body">
-                    <h4>Beneficios para el turista del Sello de identidad gastronómico:</h4>
-                    <p> • Oferta gastronómica amplia que ofrece platos autóctonos. </p>
-                    <p> • Conocimiento de ingredientes y/o especies autóctonas. </p>
+                    <h4>
+                      Beneficios para el turista del Sello de identidad
+                      gastronómico:
+                    </h4>
+                    <p>
+                      {" "}
+                      • Oferta gastronómica amplia que ofrece platos autóctonos.{" "}
+                    </p>
+                    <p>
+                      {" "}
+                      • Conocimiento de ingredientes y/o especies autóctonas.{" "}
+                    </p>
                     <p> • Vivencia de una experiencia culinaria de calidad. </p>
                     <br />
-                    <h4>Beneficios para el sector del Sello de identidad gastronómico:</h4>
+                    <h4>
+                      Beneficios para el sector del Sello de identidad
+                      gastronómico:
+                    </h4>
                     <p> • Capacitaciones y talleres. </p>
                     <p> • Asesoramientos. </p>
                     <p> • Relevamientos técnicos.</p>
                     <p> • Entrega de sello de identidad gastronómica. </p>
                     <p> • Pertenecer a la oferta gastronómica regional. </p>
-                    <p> • Difusión y promoción de establecimientos gastronómicos. </p>
+                    <p>
+                      {" "}
+                      • Difusión y promoción de establecimientos gastronómicos.{" "}
+                    </p>
                     <p> • Establecimiento de estándares de calidad. </p>
                   </div>
                 </div>
@@ -255,7 +273,9 @@ class GustosSanLuis extends Component {
                       aria-expanded="false"
                       aria-controls="collapseFive"
                     >
-                      <p className="seccion-title">· Premios y Reconocimientos</p>
+                      <p className="seccion-title">
+                        · Premios y Reconocimientos
+                      </p>
                     </button>
                   </h2>
                 </div>
@@ -267,11 +287,26 @@ class GustosSanLuis extends Component {
                 >
                   <div class="card-body">
                   <h4>Premios y Reconocimientos:</h4>
-                    <p> • Primer Premio: Orden de compra <b>$1.000.000</b></p>
-                    <p> • Segundo Premio: Orden de compra <b>$700.000</b> </p>
-                    <p> • Tercer Premio: Orden de compra <b>$500.000</b></p>
-                    <p> • Cuarto Premio: Orden de compra <b>$300.000</b> </p>
-                    <p> • Quinto Premio: Orden de compra <b>$200.000</b></p>
+                    <p>
+                      {" "}
+                      • Primer Premio: Orden de compra <b>$1.000.000</b>
+                    </p>
+                    <p>
+                      {" "}
+                      • Segundo Premio: Orden de compra <b>$700.000</b>{" "}
+                    </p>
+                    <p>
+                      {" "}
+                      • Tercer Premio: Orden de compra <b>$500.000</b>
+                    </p>
+                    <p>
+                      {" "}
+                      • Cuarto Premio: Orden de compra <b>$300.000</b>{" "}
+                    </p>
+                    <p>
+                      {" "}
+                      • Quinto Premio: Orden de compra <b>$200.000</b>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -297,8 +332,20 @@ class GustosSanLuis extends Component {
                   data-parent="#accordionExample"
                 >
                   <div class="card-body">
-                    <p>Para la participación del sello de identidad gastronómico puntano, en primer lugar es necesario poseer la habilitación municipal, cumpliendo con las reglamentaciones vigentes y ofrecer platos/bebidas autóctonos de forma permanente. Estos platos deberán ser elaborados con un porcentaje representativo de ingredientes regionales.</p>
-                    <p>La inscripción para la implementación del sello de identidad gastronómico será de carácter gratuita y voluntaria. </p>
+                    <p>
+                      Para la participación del sello de identidad gastronómico
+                      puntano, en primer lugar es necesario poseer la
+                      habilitación municipal, cumpliendo con las
+                      reglamentaciones vigentes y ofrecer platos/bebidas
+                      autóctonos de forma permanente. Estos platos deberán ser
+                      elaborados con un porcentaje representativo de
+                      ingredientes regionales.
+                    </p>
+                    <p>
+                      La inscripción para la implementación del sello de
+                      identidad gastronómico será de carácter gratuita y
+                      voluntaria.{" "}
+                    </p>
                     <p>1. Habilitacion Municipal</p>
                     <p>2. Seguridad e Higiene:</p>
                     <p className="enum"> • Cumplimiento de las normas</p>
@@ -307,12 +354,19 @@ class GustosSanLuis extends Component {
                     <p className="enum"> • Utensilios </p>
                     <p className="enum"> • Temperaturas</p>
                     <p>3. Unidad de medidas de satisfaccion del cliente</p>
-                    <p>4. Incorporación a la oferta gastronómica de platos/bebidas con un porcentaje representativo de ingredientes regionales, pudiendo estar reflejados en:</p>
+                    <p>
+                      4. Incorporación a la oferta gastronómica de
+                      platos/bebidas con un porcentaje representativo de
+                      ingredientes regionales, pudiendo estar reflejados en:
+                    </p>
                     <p className="enum"> • Menú / Carta</p>
                     <p className="enum"> • Plato</p>
                     <p className="enum"> • Productores</p>
                     <p className="enum"> • Procedimientos</p>
-                    <p>5. Organigrama, en donde todas sus partes estén interiorizadas, sobre la incorporación del sello</p>
+                    <p>
+                      5. Organigrama, en donde todas sus partes estén
+                      interiorizadas, sobre la incorporación del sello
+                    </p>
                     <p>6. Conocimiento y Capacitaciones</p>
                     <p>7. Proveedores</p>
                     <p>8. Equipamiento:</p>
@@ -324,6 +378,43 @@ class GustosSanLuis extends Component {
                     <p className="enum"> • Accesibilidad</p>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            <div className="gastro-container">
+              <div className="pres">
+                <figure class="gastro-items ">
+                  <h1>PRESENTACION</h1>
+                  <img className="imgPresentacion" src="" alt="" />
+                  <figcaption className="figcaption">
+                    <h3 className="titleItem">Conocé</h3>
+                    <p>
+                      Insertar decripcion de Presentacion
+                      <br />
+                      <br />
+                    </p>
+                    <Link to={"/gustosSanLuis/presentacion"}>
+                      <button>Más</button>
+                    </Link>
+                  </figcaption>
+                </figure>
+              </div>
+              <div className="cap">
+                <figure class="gastro-items ">
+                  <h1>CAPACITACIONES</h1>
+                  <img className="imgCapacitacion" src="" alt="" />
+                  <figcaption className="figcaption">
+                    <h3 className="titleItem">Explorá</h3>
+                    <p>
+                      Insertar decripcion de Capacitacion
+                      <br />
+                      <br />
+                    </p>
+                    <Link to={"/gustosSanLuis/capacitacion"}>
+                      <button>Más</button>
+                    </Link>
+                  </figcaption>
+                </figure>
               </div>
             </div>
           </>
