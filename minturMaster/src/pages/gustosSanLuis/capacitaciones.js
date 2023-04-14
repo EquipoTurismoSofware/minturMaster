@@ -27,7 +27,7 @@ class GustosSanLuisCapacitaciones extends Component {
       height: '390',
       width: '640',
       playerVars: {
-        autoplay: 1,
+        autoplay: 0 ,
       },
     };
 
@@ -46,7 +46,9 @@ class GustosSanLuisCapacitaciones extends Component {
             </div>
 
             <div class="accordion" id="accordionExample">
+                {/* Modulo 1 card */}
               <div class="card">
+              
                 <div class="card-header" id="headingOne">
                   <h2 class="mb-0">
                     <button
@@ -57,7 +59,7 @@ class GustosSanLuisCapacitaciones extends Component {
                       aria-expanded="true"
                       aria-controls="collapseOne"
                     >
-                      <p className="seccion-title">· MODULO 1 </p>
+                      <p className="seccion-title">· MODULO 1 | ¿Qué es la Gastronomía?</p>
                     </button>
                   </h2>
                 </div>
@@ -70,7 +72,40 @@ class GustosSanLuisCapacitaciones extends Component {
                 >
                   <div class="card-body">
                     <p>
-                      1. Introduccion a la gastronomia:
+                      1. ¿Qué es la Gastronomía?
+                    </p>
+                    <br />
+                    <YouTube videoId={videoId} opts={opts}  />
+                  </div>
+                </div>
+              </div>
+              
+                {/* Modulo 2 card */}
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button
+                      class="btn btn-link btn-block text-left collapsed btn-override"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapseTwo"
+                      aria-expanded="true"
+                      aria-controls="collapseTwo"
+                    >
+                      <p className="seccion-title">· MODULO 2 | Primeros pasos </p>
+                    </button>
+                  </h2>
+                </div>
+
+                <div
+                  id="collapseTwo"
+                  class="collapse"
+                  aria-labelledby="headingTwo"
+                  data-parent="#accordionExample"
+                >
+                  <div class="card-body">
+                    <p>
+                      1. Primeros pasos:
                     </p>
                     <br />
                     <YouTube videoId={videoId} opts={opts}  />

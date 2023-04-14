@@ -103,7 +103,7 @@ class App extends Component {
               <Route exact path="/arbol/:id" component={PArbol} />
               <Route exact path="/zona/:id" component={PZona} />
               <Route exact path="/gustosSanLuis" component={PGustosSanLuis} />
-              <Route exact path='/gustosSanLuis/capacitacion' component={PGustosSanLuisCapacitaciones} />
+              <Route exact path='/gustosSanLuis/Capacitaciones' component={PGustosSanLuisCapacitaciones} />
               <Route exact path="/localidad/:id" component={PLocalidad} />
               <Route exact path="/atractivo/:id" component={PAtractivo} />
               <Route exact path="/gastronomia/:id" component={PGastronomia} />

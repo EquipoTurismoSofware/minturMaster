@@ -5,7 +5,7 @@ import PuntanidadGastronimica from "../utils/images/puntanidad-gastronomica.png"
 import GustoASanLuis from "../utils/images/gusto-a-san-luis.png";
 import Sello from "../utils/images/sello.png";
 import LoginForm from "../components/LoginForm";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; 
 
 class GustosSanLuis extends Component {
   constructor(props) {
@@ -410,7 +410,7 @@ class GustosSanLuis extends Component {
                       <br />
                       <br />
                     </p>
-                    <Link to={"/gustosSanLuis/capacitacion"}>
+                    <Link to={"/gustosSanLuis/Capacitaciones"}>
                       <button>Más</button>
                     </Link>
                   </figcaption>
