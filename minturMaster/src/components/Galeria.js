@@ -5,7 +5,7 @@ import Loading from "../utils/Loading";
 
 const Gallery = () => {
   const [searchFilter, setSearchFilter] = useState("");
-  const [getHashtagsG, setGetHashtagsG] = useState([]);
+  //const [getHashtagsG, setGetHashtagsG] = useState([]);
   const [tagsSelected, setTagsSelected] = useState([]);
   const [loading, setLoading] = useState(true);
   
@@ -13,19 +13,19 @@ const Gallery = () => {
 
   //Api call - sugerencias de busqueda
   useEffect(() => {
-    async function fetchHashtagsG() {
-      const URL = `${process.env.REACT_APP_API}/tags`;
-      try {
-        const res = await axios.get(URL);
+    // async function fetchHashtagsG() {
+    //   const URL = `${process.env.REACT_APP_API}/tags`;
+    //   try {
+    //     const res = await axios.get(URL);
 
-        setGetHashtagsG(res.data.data.registros);
+    //     setGetHashtagsG(res.data.data.registros);
 
-      } catch (error) {
-        console.log(error);
-      }
-    }
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // }
 
-    fetchHashtagsG();
+    // fetchHashtagsG();
     setLoading(false);
   }, []);
 
@@ -69,7 +69,6 @@ const Gallery = () => {
       <div className="PFiltroAlojamiento mb-5">
       <div>
         <Loading margins="96px" />
-        Cargando Gallery...
       </div>
     </div>
     ) : (

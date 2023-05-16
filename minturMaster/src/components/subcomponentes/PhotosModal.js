@@ -18,7 +18,7 @@ function PhotosModal( {closeModal, src, city, hashtags}) {
    while (cont < hashtags.length){
     namedTags[cont] = (
           <span
-          className={`hashtag-modal text-light small col-md-1`}
+          className={`hashtag-modal text-light col-md-1`}
         >
           {hashtags[cont]}
         </span>

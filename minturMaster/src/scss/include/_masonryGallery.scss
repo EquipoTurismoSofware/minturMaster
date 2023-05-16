@@ -313,6 +313,7 @@ a {
   background-color: rgba(0, 0, 0, 0.8);
   padding: 0;
   max-height: 80%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .modal-background {
@@ -342,11 +343,11 @@ a {
   display: flex;
   flex-direction: column;
   padding: 25px;
-  background: linear-gradient(
-    to right,
-    #722789 0%,
-    rgba(237, 15, 104) 100%
-  );
+  // background: linear-gradient(
+  //   to right,
+  //   #722789 0%,
+  //   rgba(237, 15, 104) 100%
+  // );
 }
 
 .contain{
@@ -354,12 +355,24 @@ a {
   height: inherit;
   object-fit: contain;
 }
-
-.modal-container .modal-title {
+.modal-title{
   display: inline-block;
   text-align: center;
   margin-top: 0px;
-  color: rgba(241, 236, 236, 0.8);
+  color:  rgba(237, 15, 104);
+  text-shadow: 2px 2px 4px #666666;
+}
+
+.modal-container {
+  display: inline-block;
+  text-align: center;
+  margin-top: 0px;
+  //color: rgba(241, 236, 236, 0.8);
+  // background: linear-gradient(
+  //   to right,
+  //   #722789 0%,
+  //   rgba(237, 15, 104) 100%
+  // );
 }
 
 .title-close-btn {
@@ -385,7 +398,7 @@ a {
 }
 
 .hashtag-modal {
-  border:2px solid white;
+  //border:2px solid white;
   border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   text-align: center;
@@ -477,4 +490,7 @@ a {
 		opacity: 1;
 		text-shadow: 2px 2px 20px $blue;
 	}
+
+  
 }
+

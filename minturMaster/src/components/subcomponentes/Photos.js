@@ -25,7 +25,7 @@ const Photos = (props) => {
   //Get de fotos y hashtags
   useEffect(() => {
     async function fetchPhotos() {
-      const URL = `${process.env.REACT_APP_API}/fotos`;
+      const URL = `${process.env.REACT_APP_API}/fotos/16`;
       try {
         const res = await axios.get(URL);
 
@@ -52,20 +52,42 @@ const Photos = (props) => {
 
   const Posts = getPhotos
     .filter((item) => {
-      //setLoading(true);
-      // let cont = 0;
-      let searchParam = props.searchFilter;
 
+      let cont = 0;
+      let searchParam = props.searchFilter;
+      let matchesTagsId = [];
+      let foundMatch = false;
+
+      getHashtags.forEach(function(tag){
+        if(tag.nombre.includes(searchParam)){
+          matchesTagsId[cont] = tag.id; 
+          cont++;
+        }
+      })
+
+      let splitedTags = item.tags.split(",");
+      
+      for (let i = 0; i < splitedTags.length; i++) {
+        if (matchesTagsId.some(id => parseInt(id) === parseInt(splitedTags[i]))) {
+          foundMatch = true;
+          break;
+        }
+      }
+      
       if (
         item.ciudad
           .toString()
           .toLowerCase()
-          .includes(searchParam.toLowerCase())
-      ) {
-        return item;
-        //cont++;
+          .includes(searchParam.toLowerCase())) { 
+            foundMatch = true;
       }
-    }) //{cont > 0 ? (
+      if(foundMatch){
+        console.log(item);
+      }
+
+      return foundMatch ? item : null;
+
+    })
     .map(({ id, imagen, ciudad, tags }) => {
       imagen =
         "http://www.turismo.sanluis.gov.ar/api-turismo/public/recursos/galeriaLocalidad/" +
@@ -100,7 +122,7 @@ const Photos = (props) => {
 
             namedTags[countTag] = (
               <span
-                className={`hashtag text-light small col-sm-auto m-0 ${positionTag}`}
+                className={`hashtag text-light col-sm-auto m-0 ${positionTag}`}
               >
                 #{tag.nombre}
               </span>
