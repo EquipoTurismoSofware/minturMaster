@@ -5,7 +5,7 @@ import "./App.css";
 //import { BrowserRouter as Router, Route } from "react-router-dom";
 import PMapasRecorridos from "./pages/mapas/PMapasRecorridos";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
-import Menu from "./components/Menu"; // Menu
+import Menu from "./components/Menu"; // Menu MenuOld
 import ToTop from "./components/ToTop";
 import PListadoMapas from "./pages/mapas/PListadoMapas";
 import PHome from "./pages/PHome"; //PHome copy
@@ -93,7 +93,7 @@ class App extends Component {
         <Router history={Router.hashHistory}>
           <React.Fragment>
             <TopBar />
-            <Menu />
+            <Menu id="menu" />
             <Switch>
               
               <Route exact path="/" component={PHome} />
@@ -291,11 +291,7 @@ class App extends Component {
                 path="/diques-rios-saltos"
                 component={EnConstruccion}
               />
-               <Route
-                exact
-                path="/enConstruccion"
-                component={EnConstruccion}
-              />
+              <Route exact path="/enConstruccion" component={EnConstruccion} />
               <Route
                 exact
                 path="/potrero-sierrascentrales"

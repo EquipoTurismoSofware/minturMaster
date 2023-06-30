@@ -60,17 +60,17 @@ class Home extends Component {
           <React.Fragment>
             <div className="menu-y-slider ">
               <Slider></Slider>
-              {/* <div className="pantallaGrande">
-                  <span className="newsHome">
-                    <Newsletter />
-                  </span>
-                {<PantallaModal />}
-                  <SocialWidget />
-                 
-                </div>
-                {/*{ <div className="pantallaChica2">{<PantallaModal />}</div>*/}
+              {/*<div className="pantallaGrande">
+              <span className="newsHome">
+                  <Newsletter />
+                </span>     <SocialWidget />
+                 {<PantallaModal />}
+              
+               
+             </div>
+              <div className="pantallaChica2">{<PantallaModal/>}</div> */}
             </div>
-            {/*<br></br> */}
+            <br></br>
             <ComponentHome1></ComponentHome1>
             <Novedades timerID="100" />
             <Descarga />

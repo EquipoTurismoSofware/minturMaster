@@ -12,13 +12,13 @@ class Footer extends Component {
                 <div class="col-xl-4 col-lg-4 mb-50">
                   <div class="footer-widget">
                     <div class="footer-logo">
-                      <a href="index.html">
+                      <Link to="/">
                         <img
                           src={`${process.env.REACT_APP_API}/recursos/logoSanLuis.png`}
                           class="img-fluid"
                           alt="profile card"
                         />
-                      </a>
+                      </Link>
                     </div>
                     <div class="footer-text">
                       <p>

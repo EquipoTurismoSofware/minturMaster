@@ -25,11 +25,11 @@ export default class PantallaModal extends Component {
   }
 
   componentDidMount() {
-    if (window.screen.width <= 410) {
+    if (window.screen.width <= 500) {
       this.setState(
         {
           foto:
-            "http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/verano2022mobile.jpeg",
+            "http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/PP2mobil.jpg",
         },
         () => {
           var mContainer = document.getElementById(`modalMain-container`);
@@ -42,7 +42,7 @@ export default class PantallaModal extends Component {
       this.setState(
         {
           foto:
-            "http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/verano2022.jpeg",
+            "http://turismo.sanluis.gov.ar/api-turismo/public/recursos/modal/PP2.jpg",
         },
         () => {
           var mContainer = document.getElementById(`modalMain-container`);
@@ -64,12 +64,16 @@ export default class PantallaModal extends Component {
           <div class="modalMain-background">
             <div class="modalMain">
               <a className="closeModal" onClick={() => this.closeModal()}>
-                <i style={{color:"white"}} class="far fa-times-circle"></i>
+                <i style={{ color: "white" }} class="far fa-times-circle"></i>
               </a>
 
-              <Link to="/actividades" className="link-menu">
+              <a
+                href="https://forms.gle/zA6iPfrjxmQ782B37"
+                className="link-menu"
+                target="_blank"
+                   >
                 <img src={this.state.foto} />
-              </Link>
+              </a>
               <svg
                 class="modalMain-svg"
                 xmlns="http://www.w3.org/2000/svg"

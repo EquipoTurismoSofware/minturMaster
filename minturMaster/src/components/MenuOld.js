@@ -482,7 +482,7 @@ class Menu extends Component {
           <div className="logoGob2 animated bounceInDown delay-2s" style={{}}>
             <Link to="/" className="link-menu  ">
               <img
-                src={`https://i.ibb.co/7g7LDjz/logo-gob.png`}
+                src={`${process.env.REACT_APP_API}/recursos/icons/logo-gobierno-blanco-sin-frase.png`}
                 alt="San Luis"
               />
             </Link>
@@ -620,7 +620,7 @@ class Menu extends Component {
               >
                 <Link to="/" className="link-menu  ">
                   <img
-                    src={`https://i.ibb.co/7g7LDjz/logo-gob.png`}
+                    src={`${process.env.REACT_APP_API}/recursos/icons/logo-gobierno-blanco-sin-frase.png`}
                     alt="San Luis"
                   />
                 </Link>

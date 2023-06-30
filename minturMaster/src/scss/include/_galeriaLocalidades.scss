@@ -65,15 +65,16 @@
   //padding-left: 15px;
   border-radius: 1rem;
   transition: all 1s;
-  z-index: 4;
+  z-index: 99;
   color: white;
   font-weight: 500;
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
-  opacity: 90%;
 }
 
 
-.linkBusqueda {
+.linkBusqueda { 
+  z-index: 99;
+
   overflow-x: hidden;
   margin: 0;
   list-style: none;
@@ -106,7 +107,7 @@
   border-radius: 2%;
 
   transition: all 1s;
-  z-index: 4;
+  z-index: 99;
   color: white;
   font-weight: 500;
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
@@ -434,12 +435,7 @@ div#masonry img {
 	width: 33.3%;
 	transition: .8s opacity;
 }
-// div#masonry:hover img {
-// 	opacity: 0.3;
-// }
-// div#masonry:hover img:hover {
-// 	opacity: 1;
-// }
+
 .grid-item{
   padding: 0px;
 }

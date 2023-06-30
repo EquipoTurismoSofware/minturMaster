@@ -25,11 +25,11 @@ background-color: rgb(114,39,137);
 */
 
 @mixin degrado($opacity-start, $opacity-end) {
-    background: rgb(114,39,137);
-    background: -moz-linear-gradient(left, rgba(114,39,137,$opacity-start) 0%, rgba(237,15,104,$opacity-end) 100%);
+    background: #691E71;
+    /*background: -moz-linear-gradient(left, rgba(114,39,137,$opacity-start) 0%, rgba(237,15,104,$opacity-end) 100%);
     background: -webkit-linear-gradient(left, rgba(114,39,137,$opacity-start) 0%,rgba(237,15,104,$opacity-end) 100%);
     background: linear-gradient(to right, rgba(114,39,137,$opacity-start) 0%,rgba(237,15,104,$opacity-end) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#722789', endColorstr='#ed0f68',GradientType=1 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#722789', endColorstr='#ed0f68',GradientType=1 );*/
 }
 
 @mixin degrado2($opacity-start, $opacity-end) {

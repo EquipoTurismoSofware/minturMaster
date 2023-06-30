@@ -1,8 +1,8 @@
-import {Navbar, Nav, NavDropdown} from "react-bootstrap";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import Logo from "../utils/images/logo-san-luis.png"; //  src/images
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Container from "react-bootstrap/Container"
+import Container from "react-bootstrap/Container";
 //import {LinkContainer} from "react-router-bootstrap"
 
 class Menu extends Component {
@@ -91,7 +91,7 @@ class Menu extends Component {
     this.setState({ lista: false });
   }
 
-//Disabled
+  //Disabled
   // menuMode() {
   //   window.onscroll = () => {
   //     var menu = document.getElementById("nav");
@@ -122,7 +122,6 @@ class Menu extends Component {
     document.getElementById("nav").style.backgroundSize = "cover";
 
     document.getElementById("nav").style.top = "0px";
-
   }
 
   bigNavbar() {
@@ -131,17 +130,16 @@ class Menu extends Component {
     //document.getElementById("nav").style.width = "100%";
 
     //Si el top bar desaparece, subimos el nav a top 0.
-    if(window.innerWidth > 991){
+    if (window.innerWidth > 991) {
       document.getElementById("nav").style.top = "40px";
       //document.getElementById("nav").style.minHeight = "120px";
-    }
-    else{
+    } else {
       document.getElementById("nav").style.top = "0px";
       //document.getElementById("nav").style.minHeight = "90px";
     }
   }
-  
-//Fade between small and big navbar
+
+  //Fade between small and big navbar
   handleScroll = () => {
     if (window.scrollY > 40) {
       //Small Navbar
@@ -175,10 +173,10 @@ class Menu extends Component {
 
   selectOption(event) {
     this.state.lista = true;
-   
+
     let text = document.getElementById("buscar");
 
-    if(text.length == 0){
+    if (text.length == 0) {
       this.cancelBusqueda();
     }
   }
@@ -204,7 +202,7 @@ class Menu extends Component {
   handleBusquedaChange(event) {
     let valor = event.target.value;
     //Oculta lista al borrar el contenido del buscador
-    if(valor == ""){
+    if (valor == "") {
       this.setState({
         lista: false,
       });
@@ -265,24 +263,26 @@ class Menu extends Component {
     return (
       <React.Fragment>
         <div className="menuNew">
-          <Navbar bg="navbar" variant="dark" id="nav" sticky="top" expand="lg" collapseOnSelect>
-              <Navbar.Brand  className="">
-              <a href={"/"}> 
-                <img
-                  id="logoscroll"
-                  src={Logo}
-                  alt="San Luis"
-                  className=""
-                />
-                </a>
-              </Navbar.Brand>
+          <Navbar
+            bg="navbar"
+            variant="dark"
+            id="nav"
+            sticky="top"
+            expand="lg"
+            collapseOnSelect
+          >
+            <Navbar.Brand className="">
+              <a href={"/"}>
+                <img id="logoscroll" src={Logo} alt="San Luis" className="" />
+              </a>
+            </Navbar.Brand>
             <Navbar.Toggle
               //onClick={() => this.handleToggler()}
               aria-controls="responsive-navbar-nav"
               data-bs-target="#responsive-navbar-nav"
             />
             <Navbar.Collapse id="responsive-navbar-nav ">
-              <Nav className="nav-container flex-row navbar-expand-lg">
+              <Nav className="navbar container flex-row navbar-expand-lg">
                 <NavDropdown
                   renderMenuOnMount={false}
                   title="Organizá tu viaje"
@@ -300,7 +300,7 @@ class Menu extends Component {
                   <NavDropdown.Item href="#/listado-guias-agencias-covid/agencias">
                     Agencias de Viaje
                   </NavDropdown.Item>
-                 {/* <NavDropdown.Item href="#/PPrincipalGastronomia">
+                  {/* <NavDropdown.Item href="#/PPrincipalGastronomia">
                     Gastronomía
      </NavDropdown.Item>*/}
                 </NavDropdown>
@@ -358,16 +358,14 @@ class Menu extends Component {
                     onKeyDown={(e) => this.selectOption(e)}
                     id="buscar"
                     type="text"
-                    placeholder="Buscá tu destino..."
+                    placeholder="Buscá..."
                     autoComplete="off"
                     className="buscador-destino buscador-icon"
                     value={this.state.filtro}
                     onChange={this.handleBusquedaChange}
-                    //onBlur={this.cancelBusqueda}
                   />
                   {this.state.lista ? (
-                    <ul className="ul-busqueda "
-                      onBlur={this.cancelBusqueda}>{filtro}</ul>
+                    <ul className="ul-busqueda">{filtro}</ul>
                   ) : (
                     ""
                   )}

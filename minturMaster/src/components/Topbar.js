@@ -5,9 +5,9 @@ import Viewer from "./subcomponentes/Viewer";
 const Topbar = (props) => {
   return (
     <React.Fragment className="">
-      <div className="topBar bg-dark">
+      <div className="topBar ">
         <div className="text-white topBarIcon">
-          <i class="fa fa-phone-square  mr-2"></i>
+          <i className="fa fa-phone-square  mr-2"></i>
           <a href="tel:+542664423479">+54 (266) 4423479</a>
           {/*  <i class="mr-2"> </i>| <i class="mr-2"> </i>
           <i className="fa fa-at mr-2" />
@@ -53,6 +53,5 @@ const Topbar = (props) => {
   );
 };
 
-Topbar.contextType = Consumer;
-
 export default Topbar;
+Topbar.contextType = Consumer;
