@@ -17,8 +17,8 @@ export class Provider extends Component {
     async getToken() {
         let self = this;
         let data_user = {
-            email: "hansjal@gmail.com",
-            password: "quilmes"
+            email: "federiconj@gmail.com",
+            password: "fede22nico1994"
         }
         let respuesta = await axios.post(`${process.env.REACT_APP_API}/user/login`, data_user);
         let { token } = respuesta.data.data;

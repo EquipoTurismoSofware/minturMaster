@@ -119,7 +119,6 @@ class Menu extends Component {
     //document.getElementById("nav").style.position = "fixed";
     //document.getElementById("nav").style.minHeight = "100px";
     //document.getElementById("nav").style.backgroundRepeat = "no-repeat";
-    document.getElementById("nav").style.backgroundSize = "cover";
 
     document.getElementById("nav").style.top = "0px";
   }
@@ -277,12 +276,11 @@ class Menu extends Component {
               </a>
             </Navbar.Brand>
             <Navbar.Toggle
-              //onClick={() => this.handleToggler()}
               aria-controls="responsive-navbar-nav"
               data-bs-target="#responsive-navbar-nav"
             />
             <Navbar.Collapse id="responsive-navbar-nav ">
-              <Nav className="navbar container flex-row navbar-expand-lg">
+              <Nav className="justify-content-center flex-grow-1  ">
                 <NavDropdown
                   renderMenuOnMount={false}
                   title="Organizá tu viaje"
@@ -300,6 +298,10 @@ class Menu extends Component {
                   <NavDropdown.Item href="#/listado-guias-agencias-covid/agencias">
                     Agencias de Viaje
                   </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#/agencia-vuelos">
+                    Vuelos a Chile
+                  </NavDropdown.Item>
                   {/* <NavDropdown.Item href="#/PPrincipalGastronomia">
                     Gastronomía
      </NavDropdown.Item>*/}
@@ -316,6 +318,10 @@ class Menu extends Component {
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#/parques-provinciales">
                     Parques Provinciales
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#/atractivo/235">
+                    Parque Nacional
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#/caminos-pintorescos">
@@ -365,7 +371,9 @@ class Menu extends Component {
                     onChange={this.handleBusquedaChange}
                   />
                   {this.state.lista ? (
-                    <ul className="ul-busqueda">{filtro}</ul>
+                    <ul className="ul-busqueda " onBlur={this.cancelBusqueda}>
+                      {filtro}
+                    </ul>
                   ) : (
                     ""
                   )}

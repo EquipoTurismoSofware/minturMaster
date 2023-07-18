@@ -83,8 +83,8 @@ import GastronomiaDosep from "./pages/gastronomia/GastronomiaDosep";
 import ListadoCensistas from "./pages/Censo/ListadoCensistas";
 import TopBar from "./components/Topbar";
 import PGustosSanLuis from "./pages/PGustosSanLuis";
-import PGustosSanLuisCapacitaciones from './pages/gustosSanLuis/capacitaciones';
-
+import PGustosSanLuisCapacitaciones from "./pages/gustosSanLuis/capacitaciones";
+import VuelosAgencia from "./pages/variosmenu/AgenciasVuelos";
 
 class App extends Component {
   render() {
@@ -95,7 +95,6 @@ class App extends Component {
             <TopBar />
             <Menu id="menu" />
             <Switch>
-              
               <Route exact path="/" component={PHome} />
               <Route exact path="/novedades" component={PNovedades} />
               <Route exact path="/novedad/:id" component={PNovedad} />
@@ -103,7 +102,11 @@ class App extends Component {
               <Route exact path="/arbol/:id" component={PArbol} />
               <Route exact path="/zona/:id" component={PZona} />
               <Route exact path="/gustosSanLuis" component={PGustosSanLuis} />
-              <Route exact path='/gustosSanLuis/Capacitaciones' component={PGustosSanLuisCapacitaciones} />
+              <Route
+                exact
+                path="/gustosSanLuis/Capacitaciones"
+                component={PGustosSanLuisCapacitaciones}
+              />
               <Route exact path="/localidad/:id" component={PLocalidad} />
               <Route exact path="/atractivo/:id" component={PAtractivo} />
               <Route exact path="/gastronomia/:id" component={PGastronomia} />
@@ -314,6 +317,7 @@ class App extends Component {
                 path="/caminos-pintorescos"
                 component={PCaminosPintorescos}
               />
+              <Route exact path="/agencia-vuelos" component={VuelosAgencia} />
               <Route path="*">
                 <NotFound />
               </Route>
