@@ -85,6 +85,7 @@ import TopBar from "./components/Topbar";
 import PGustosSanLuis from "./pages/PGustosSanLuis";
 import PGustosSanLuisCapacitaciones from "./pages/gustosSanLuis/capacitaciones";
 import VuelosAgencia from "./pages/variosmenu/AgenciasVuelos";
+import TermasSalinas from "./components/Termas_salinas";
 
 class App extends Component {
   render() {
@@ -191,6 +192,7 @@ class App extends Component {
               <Route exact path="/PContacto" component={PContacto} />
               <Route exact path="/diques" component={PDiques} />
               <Route exact path="/Recorridos" component={Recorridos} />
+              <Route exact path="/termas-salinas" component={TermasSalinas} />
               <Route exact path="/PComer" component={PComer} />
               <Route exact path="/PServicios" component={PServicios} />
               <Route
