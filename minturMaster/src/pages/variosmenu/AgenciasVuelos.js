@@ -289,7 +289,7 @@ class Tirolesas extends Component {
                                   className="fas fa-phone"
                                   style={{ color: `#722789` }}
                                 />
-                                &nbsp; Telefono:(2652) 42-1017
+                                &nbsp; Telefono:(2664) - 421017
                               </span>
                               <br />
                               <span>
@@ -303,6 +303,7 @@ class Tirolesas extends Component {
                             </a>
                             <hr />
                           </li>
+                          {/* 
                           <li>
                             <a
                               href="https://goo.gl/maps/dQaMiQAafK8qxypJ7?coh=178571&entry=tt"
@@ -350,7 +351,7 @@ class Tirolesas extends Component {
                               </span>
                             </a>
                             <hr />
-                          </li>
+                          </li>*/}
                           <li>
                             <a
                               href="https://goo.gl/maps/9ji8PYtRHZXpLGrQ6"

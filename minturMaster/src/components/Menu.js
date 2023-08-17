@@ -324,6 +324,10 @@ class Menu extends Component {
                     Parque Nacional
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
+                  <NavDropdown.Item href="#/termas-salinas">
+                    Termas y Salinas
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
                   <NavDropdown.Item href="#/caminos-pintorescos">
                     Caminos Pintorescos
                   </NavDropdown.Item>

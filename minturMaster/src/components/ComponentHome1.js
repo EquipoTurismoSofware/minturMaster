@@ -32,7 +32,7 @@ class ComponentHome1 extends Component {
                 <h1>Espejos de Agua</h1>
                 <img className="imgPrueba1" src="" alt="" />
                 <figcaption>
-                  <h3>Disfrutá</h3>
+                  <h3 style={{ color: "white" }}>Disfrutá</h3>
                   <p>
                     En San Luis hay más de 20 opciones diferentes para conocer,
                     disfrutar y practicar una diversidad de deportes acuáticos.
@@ -53,7 +53,7 @@ class ComponentHome1 extends Component {
                 <h1>Oro en la Provincia</h1>
                 <img className="imgPrueba3" />
                 <figcaption>
-                  <h3>Explorá</h3>
+                  <h3 style={{ color: "white" }}>Explorá</h3>
                   <p>
                     La Carolina aún conserva los vestigios de la mayor fiebre
                     del oro registrada en Argentina. Caminar por el interior de
@@ -75,7 +75,7 @@ class ComponentHome1 extends Component {
                 <img className="imgPrueba4" />
 
                 <figcaption>
-                  <h3>Animate</h3>
+                  <h3 style={{ color: "white" }}>Animate</h3>
                   <p>
                     Imposible aburrirse. Quien busca adrenalina, en San Luis la
                     encuentra. Cabalgatas, cuatriciclos, tirolesa, trekking en
@@ -97,7 +97,7 @@ class ComponentHome1 extends Component {
                 <img className="imgPrueba6" />
 
                 <figcaption>
-                  <h3>Respirá</h3>
+                  <h3 style={{ color: "white" }}>Respirá</h3>
                   <p>
                     Espacios de naturaleza y vida silvestre donde se fusionan
                     las actividades al aire libre para quienes disfrutan de la
