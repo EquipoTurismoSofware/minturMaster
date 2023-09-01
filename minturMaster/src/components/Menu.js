@@ -354,6 +354,13 @@ class Menu extends Component {
                     Estadísticas
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
+                  <NavDropdown.Item
+                    target="_blank"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSeK3j4XzI6Qo_AzMjEsItrGx8n3Ui2S8cYA18dFOI4xWs99wQ/viewform"
+                  >
+                    Formulario para Guías
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
                   <NavDropdown.Item href="#/novedades">
                     Prensa Turistíca
                   </NavDropdown.Item>
